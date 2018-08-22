@@ -1,6 +1,6 @@
-*Issue #, if available:*
+<!--
+Since these model classes are auto-generated using the [JSON schemas](https://developer.amazon.com/docs/custom-skills/request-and-response-json-reference.html) 
+in the developer documentation, we do not currently accept Pull Requests.
 
-*Description of changes:*
-
-
-By submitting this pull request, I confirm that my contribution is made under the terms of the Apache 2.0 license.
+All Pull Requests will be automatically closed. 
+!-->
