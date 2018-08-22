@@ -42,5 +42,5 @@ Got Feedback?
   before opening a new one. It would also be helpful if you follow the
   templates for issue creation. Please follow the
   `contributing guidelines <CONTRIBUTING.md>`__!!
-- We currently do not accept Pull Requests on this repo. Any pull request will be closed without review.
+- We currently **DO NOT** accept Pull Requests on this repo. Any pull request will be **closed** without review.
 - Request and vote for Alexa features on `User Voice <https://alexa.uservoice.com/forums/906892-alexa-skills-developer-voice-and-vote>`__
