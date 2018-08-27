@@ -42,5 +42,5 @@ Got Feedback?
   before opening a new one. It would also be helpful if you follow the
   templates for issue creation. Please follow the
   `contributing guidelines <CONTRIBUTING.md>`__!!
-- We currently **DO NOT** accept Pull Requests on this repo. Any pull request will be **closed** without review.
+- Since these model classes are auto-generated using the `JSON schemas <https://developer.amazon.com/docs/custom-skills/request-and-response-json-reference.html>`_ in the developer documentation, we do **NOT** currently accept Pull Requests. All Pull Requests will be automatically **closed**, unless the request is generic and applies across **ALL** model classes.
 - Request and vote for Alexa features on `User Voice <https://alexa.uservoice.com/forums/906892-alexa-skills-developer-voice-and-vote>`__
