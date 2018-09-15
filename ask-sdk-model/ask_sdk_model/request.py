@@ -63,6 +63,8 @@ class Request(object):
         |
         | IntentRequest: :py:class:`ask_sdk_model.intent_request.IntentRequest`,
         |
+        | CanFulfillIntentRequest: :py:class:`ask_sdk_model.can_fulfill_intent_request.CanFulfillIntentRequest`,
+        |
         | AudioPlayer.PlaybackFailed: :py:class:`ask_sdk_model.interfaces.audioplayer.playback_failed_request.PlaybackFailedRequest`,
         |
         | LaunchRequest: :py:class:`ask_sdk_model.launch_request.LaunchRequest`,
@@ -128,6 +130,7 @@ class Request(object):
         'AlexaHouseholdListEvent.ItemsCreated': 'ask_sdk_model.services.list_management.list_items_created_event_request.ListItemsCreatedEventRequest',
         'SessionEndedRequest': 'ask_sdk_model.session_ended_request.SessionEndedRequest',
         'IntentRequest': 'ask_sdk_model.intent_request.IntentRequest',
+        'CanFulfillIntentRequest': 'ask_sdk_model.can_fulfill_intent_request.CanFulfillIntentRequest',
         'AudioPlayer.PlaybackFailed': 'ask_sdk_model.interfaces.audioplayer.playback_failed_request.PlaybackFailedRequest',
         'LaunchRequest': 'ask_sdk_model.launch_request.LaunchRequest',
         'AudioPlayer.PlaybackStopped': 'ask_sdk_model.interfaces.audioplayer.playback_stopped_request.PlaybackStoppedRequest',
