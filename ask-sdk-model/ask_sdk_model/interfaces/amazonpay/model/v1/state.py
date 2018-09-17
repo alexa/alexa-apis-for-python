@@ -31,14 +31,13 @@ class State(Enum):
 
 
 
-    Allowed enum values: [Pending, Open, Declined, Closed, Completed, ]
+    Allowed enum values: [Pending, Open, Declined, Closed, Completed]
     """
     Pending = "Pending"
     Open = "Open"
     Declined = "Declined"
     Closed = "Closed"
     Completed = "Completed"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

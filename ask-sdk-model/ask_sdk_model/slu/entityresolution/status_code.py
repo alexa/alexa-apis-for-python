@@ -31,13 +31,12 @@ class StatusCode(Enum):
 
 
 
-    Allowed enum values: [ER_SUCCESS_MATCH, ER_SUCCESS_NO_MATCH, ER_ERROR_TIMEOUT, ER_ERROR_EXCEPTION, ]
+    Allowed enum values: [ER_SUCCESS_MATCH, ER_SUCCESS_NO_MATCH, ER_ERROR_TIMEOUT, ER_ERROR_EXCEPTION]
     """
     ER_SUCCESS_MATCH = "ER_SUCCESS_MATCH"
     ER_SUCCESS_NO_MATCH = "ER_SUCCESS_NO_MATCH"
     ER_ERROR_TIMEOUT = "ER_ERROR_TIMEOUT"
     ER_ERROR_EXCEPTION = "ER_ERROR_EXCEPTION"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

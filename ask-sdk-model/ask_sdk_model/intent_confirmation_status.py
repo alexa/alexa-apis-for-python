@@ -31,12 +31,11 @@ class IntentConfirmationStatus(Enum):
 
 
 
-    Allowed enum values: [NONE, DENIED, CONFIRMED, ]
+    Allowed enum values: [NONE, DENIED, CONFIRMED]
     """
     NONE = "NONE"
     DENIED = "DENIED"
     CONFIRMED = "CONFIRMED"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

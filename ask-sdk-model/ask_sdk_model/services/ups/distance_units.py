@@ -29,11 +29,10 @@ class DistanceUnits(Enum):
     """
 
 
-    Allowed enum values: [METRIC, IMPERIAL, ]
+    Allowed enum values: [METRIC, IMPERIAL]
     """
     METRIC = "METRIC"
     IMPERIAL = "IMPERIAL"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

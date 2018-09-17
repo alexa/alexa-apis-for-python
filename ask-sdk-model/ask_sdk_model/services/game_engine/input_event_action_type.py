@@ -31,11 +31,10 @@ class InputEventActionType(Enum):
 
 
 
-    Allowed enum values: [down, up, ]
+    Allowed enum values: [down, up]
     """
     down = "down"
     up = "up"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

@@ -31,11 +31,10 @@ class ReleaseEnvironment(Enum):
 
 
 
-    Allowed enum values: [LIVE, SANDBOX, ]
+    Allowed enum values: [LIVE, SANDBOX]
     """
     LIVE = "LIVE"
     SANDBOX = "SANDBOX"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

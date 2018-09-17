@@ -31,11 +31,10 @@ class EventReportingType(Enum):
 
 
 
-    Allowed enum values: [history, matches, ]
+    Allowed enum values: [history, matches]
     """
     history = "history"
     matches = "matches"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

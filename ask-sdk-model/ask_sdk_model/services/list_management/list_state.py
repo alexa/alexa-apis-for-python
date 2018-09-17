@@ -29,11 +29,10 @@ class ListState(Enum):
     """
 
 
-    Allowed enum values: [active, archived, ]
+    Allowed enum values: [active, archived]
     """
     active = "active"
     archived = "archived"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

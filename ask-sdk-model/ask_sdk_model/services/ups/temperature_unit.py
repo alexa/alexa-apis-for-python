@@ -29,11 +29,10 @@ class TemperatureUnit(Enum):
     """
 
 
-    Allowed enum values: [CELSIUS, FAHRENHEIT, ]
+    Allowed enum values: [CELSIUS, FAHRENHEIT]
     """
     CELSIUS = "CELSIUS"
     FAHRENHEIT = "FAHRENHEIT"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

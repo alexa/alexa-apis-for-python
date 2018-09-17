@@ -31,12 +31,11 @@ class SessionEndedReason(Enum):
 
 
 
-    Allowed enum values: [USER_INITIATED, ERROR, EXCEEDED_MAX_REPROMPTS, ]
+    Allowed enum values: [USER_INITIATED, ERROR, EXCEEDED_MAX_REPROMPTS]
     """
     USER_INITIATED = "USER_INITIATED"
     ERROR = "ERROR"
     EXCEEDED_MAX_REPROMPTS = "EXCEEDED_MAX_REPROMPTS"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

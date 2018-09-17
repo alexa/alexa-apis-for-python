@@ -29,12 +29,11 @@ class ErrorType(Enum):
     """
 
 
-    Allowed enum values: [INVALID_RESPONSE, DEVICE_COMMUNICATION_ERROR, INTERNAL_SERVICE_ERROR, ]
+    Allowed enum values: [INVALID_RESPONSE, DEVICE_COMMUNICATION_ERROR, INTERNAL_SERVICE_ERROR]
     """
     INVALID_RESPONSE = "INVALID_RESPONSE"
     DEVICE_COMMUNICATION_ERROR = "DEVICE_COMMUNICATION_ERROR"
     INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

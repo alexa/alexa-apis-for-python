@@ -31,11 +31,10 @@ class ProductType(Enum):
 
 
 
-    Allowed enum values: [SUBSCRIPTION, ENTITLEMENT, ]
+    Allowed enum values: [SUBSCRIPTION, ENTITLEMENT]
     """
     SUBSCRIPTION = "SUBSCRIPTION"
     ENTITLEMENT = "ENTITLEMENT"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

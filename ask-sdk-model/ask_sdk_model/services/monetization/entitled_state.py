@@ -31,11 +31,10 @@ class EntitledState(Enum):
 
 
 
-    Allowed enum values: [ENTITLED, NOT_ENTITLED, ]
+    Allowed enum values: [ENTITLED, NOT_ENTITLED]
     """
     ENTITLED = "ENTITLED"
     NOT_ENTITLED = "NOT_ENTITLED"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

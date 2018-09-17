@@ -31,14 +31,13 @@ class BillingAgreementStatus(Enum):
 
 
 
-    Allowed enum values: [CANCELED, CLOSED, DRAFT, OPEN, SUSPENDED, ]
+    Allowed enum values: [CANCELED, CLOSED, DRAFT, OPEN, SUSPENDED]
     """
     CANCELED = "CANCELED"
     CLOSED = "CLOSED"
     DRAFT = "DRAFT"
     OPEN = "OPEN"
     SUSPENDED = "SUSPENDED"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

@@ -26,3 +26,9 @@ CHANGELOG
 ~~~~~
 
 * APIs for getting device timezone, distance measurement, temperature measurement
+
+1.0.0
+-----
+
+* Production release of ASK Models Package.
+

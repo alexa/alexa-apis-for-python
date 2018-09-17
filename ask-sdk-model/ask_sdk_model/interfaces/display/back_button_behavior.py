@@ -29,11 +29,10 @@ class BackButtonBehavior(Enum):
     """
 
 
-    Allowed enum values: [HIDDEN, VISIBLE, ]
+    Allowed enum values: [HIDDEN, VISIBLE]
     """
     HIDDEN = "HIDDEN"
     VISIBLE = "VISIBLE"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

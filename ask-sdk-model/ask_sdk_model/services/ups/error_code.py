@@ -31,7 +31,7 @@ class ErrorCode(Enum):
 
 
 
-    Allowed enum values: [INVALID_KEY, INVALID_VALUE, INVALID_TOKEN, INVALID_URI, DEVICE_UNREACHABLE, UNKNOWN_ERROR, ]
+    Allowed enum values: [INVALID_KEY, INVALID_VALUE, INVALID_TOKEN, INVALID_URI, DEVICE_UNREACHABLE, UNKNOWN_ERROR]
     """
     INVALID_KEY = "INVALID_KEY"
     INVALID_VALUE = "INVALID_VALUE"
@@ -39,7 +39,6 @@ class ErrorCode(Enum):
     INVALID_URI = "INVALID_URI"
     DEVICE_UNREACHABLE = "DEVICE_UNREACHABLE"
     UNKNOWN_ERROR = "UNKNOWN_ERROR"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

@@ -14,5 +14,5 @@ The model definitions in this package are auto-generated. The issues and pull re
 on the repository are not monitored and may get closed without investigation. Please use
 these community resources for getting help:
 
-* Use the `ASK SDK <https://github.com/alexa-labs/alexa-skills-kit-sdk-for-python>`_ for building skills and filing bugs.
+* Use the `ASK SDK <https://github.com/alexa/alexa-skills-kit-sdk-for-python>`_ for building skills and filing bugs.
 * Request and vote for `Alexa features <https://alexa.uservoice.com/forums/906892-alexa-skills-developer-voice-and-vote>`_!

@@ -31,12 +31,11 @@ class DialogState(Enum):
 
 
 
-    Allowed enum values: [STARTED, IN_PROGRESS, COMPLETED, ]
+    Allowed enum values: [STARTED, IN_PROGRESS, COMPLETED]
     """
     STARTED = "STARTED"
     IN_PROGRESS = "IN_PROGRESS"
     COMPLETED = "COMPLETED"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

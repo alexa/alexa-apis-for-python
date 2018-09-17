@@ -31,11 +31,10 @@ class PurchasableState(Enum):
 
 
 
-    Allowed enum values: [PURCHASABLE, NOT_PURCHASABLE, ]
+    Allowed enum values: [PURCHASABLE, NOT_PURCHASABLE]
     """
     PURCHASABLE = "PURCHASABLE"
     NOT_PURCHASABLE = "NOT_PURCHASABLE"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

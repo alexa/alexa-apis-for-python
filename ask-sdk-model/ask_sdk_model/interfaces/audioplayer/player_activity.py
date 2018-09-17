@@ -29,7 +29,7 @@ class PlayerActivity(Enum):
     """
 
 
-    Allowed enum values: [PLAYING, PAUSED, FINISHED, BUFFER_UNDERRUN, IDLE, STOPPED, ]
+    Allowed enum values: [PLAYING, PAUSED, FINISHED, BUFFER_UNDERRUN, IDLE, STOPPED]
     """
     PLAYING = "PLAYING"
     PAUSED = "PAUSED"
@@ -37,7 +37,6 @@ class PlayerActivity(Enum):
     BUFFER_UNDERRUN = "BUFFER_UNDERRUN"
     IDLE = "IDLE"
     STOPPED = "STOPPED"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

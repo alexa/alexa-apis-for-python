@@ -29,11 +29,10 @@ class ListItemState(Enum):
     """
 
 
-    Allowed enum values: [active, completed, ]
+    Allowed enum values: [active, completed]
     """
     active = "active"
     completed = "completed"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

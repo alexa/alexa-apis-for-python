@@ -31,11 +31,10 @@ class PaymentAction(Enum):
 
 
 
-    Allowed enum values: [Authorize, AuthorizeAndCapture, ]
+    Allowed enum values: [Authorize, AuthorizeAndCapture]
     """
     Authorize = "Authorize"
     AuthorizeAndCapture = "AuthorizeAndCapture"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

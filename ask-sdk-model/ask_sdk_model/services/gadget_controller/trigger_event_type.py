@@ -31,12 +31,11 @@ class TriggerEventType(Enum):
 
 
 
-    Allowed enum values: [buttonDown, buttonUp, none, ]
+    Allowed enum values: [buttonDown, buttonUp, none]
     """
     buttonDown = "buttonDown"
     buttonUp = "buttonUp"
     none = "none"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

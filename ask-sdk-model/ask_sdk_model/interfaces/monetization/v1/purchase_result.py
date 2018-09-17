@@ -31,14 +31,13 @@ class PurchaseResult(Enum):
 
 
 
-    Allowed enum values: [ACCEPTED, DECLINED, NOT_ENTITLED, ERROR, ALREADY_PURCHASED, ]
+    Allowed enum values: [ACCEPTED, DECLINED, NOT_ENTITLED, ERROR, ALREADY_PURCHASED]
     """
     ACCEPTED = "ACCEPTED"
     DECLINED = "DECLINED"
     NOT_ENTITLED = "NOT_ENTITLED"
     ERROR = "ERROR"
     ALREADY_PURCHASED = "ALREADY_PURCHASED"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

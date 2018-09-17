@@ -29,11 +29,10 @@ class ClearBehavior(Enum):
     """
 
 
-    Allowed enum values: [CLEAR_ALL, CLEAR_ENQUEUED, ]
+    Allowed enum values: [CLEAR_ALL, CLEAR_ENQUEUED]
     """
     CLEAR_ALL = "CLEAR_ALL"
     CLEAR_ENQUEUED = "CLEAR_ENQUEUED"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

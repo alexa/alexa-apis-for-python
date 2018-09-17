@@ -29,14 +29,13 @@ class ImageSize(Enum):
     """
 
 
-    Allowed enum values: [X_SMALL, SMALL, MEDIUM, LARGE, X_LARGE, ]
+    Allowed enum values: [X_SMALL, SMALL, MEDIUM, LARGE, X_LARGE]
     """
     X_SMALL = "X_SMALL"
     SMALL = "SMALL"
     MEDIUM = "MEDIUM"
     LARGE = "LARGE"
     X_LARGE = "X_LARGE"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

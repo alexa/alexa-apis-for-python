@@ -31,12 +31,11 @@ class PatternRecognizerAnchorType(Enum):
 
 
 
-    Allowed enum values: [start, end, anywhere, ]
+    Allowed enum values: [start, end, anywhere]
     """
     start = "start"
     end = "end"
     anywhere = "anywhere"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

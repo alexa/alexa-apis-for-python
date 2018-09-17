@@ -29,12 +29,11 @@ class PlayBehavior(Enum):
     """
 
 
-    Allowed enum values: [ENQUEUE, REPLACE_ALL, REPLACE_ENQUEUED, ]
+    Allowed enum values: [ENQUEUE, REPLACE_ALL, REPLACE_ENQUEUED]
     """
     ENQUEUE = "ENQUEUE"
     REPLACE_ALL = "REPLACE_ALL"
     REPLACE_ENQUEUED = "REPLACE_ENQUEUED"
-
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
