@@ -31,7 +31,7 @@ class Error(object):
 
     :param code: 
     :type code: (optional) ask_sdk_model.services.ups.error_code.ErrorCode
-    :param message: A human readable description of error. 
+    :param message: A human readable description of error.
     :type message: (optional) str
 
     """
@@ -51,7 +51,7 @@ class Error(object):
 
         :param code: 
         :type code: (optional) ask_sdk_model.services.ups.error_code.ErrorCode
-        :param message: A human readable description of error. 
+        :param message: A human readable description of error.
         :type message: (optional) str
         """
         self.__discriminator_value = None

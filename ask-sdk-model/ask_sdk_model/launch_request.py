@@ -67,7 +67,8 @@ class LaunchRequest(Request):
         self.__discriminator_value = "LaunchRequest"
 
         self.object_type = self.__discriminator_value
-        super(LaunchRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
+        super(LaunchRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp)
+        self.locale = locale
 
     def to_dict(self):
         # type: () -> Dict[str, object]

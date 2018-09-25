@@ -58,7 +58,7 @@ class MonetizationServiceClient(BaseServiceClient):
         :type purchasable: str
         :param entitled: Filter products based on whether they are entitled to the user or not. * 'ENTITLED' - Products that the user is entitled to. * 'NOT_ENTITLED' - Products that the user is not entitled to.
         :type entitled: str
-        :param product_type: Product type. * 'SUBSCRIPTION' - Once purchased, customers will own the content for the subscription period. * 'ENTITLEMENT' - Once purchased, customers will own the content forever.
+        :param product_type: Product type. * 'SUBSCRIPTION' - Once purchased, customers will own the content for the subscription period. * 'ENTITLEMENT' - Once purchased, customers will own the content forever. * 'CONSUMABLE' - Once purchased, customers will be entitled to the content until it is consumed. It can also be re-purchased.
         :type product_type: str
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element, the value of which can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that In-Skill Products API understands. Token has expiry of 24 hours.
         :type next_token: str

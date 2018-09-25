@@ -35,60 +35,61 @@ class PlaybackFailedRequest(Request):
     :type request_id: (optional) str
     :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
     :type timestamp: (optional) datetime
-    :param locale: A string indicating the user’s locale. For example: en-US.
-    :type locale: (optional) str
     :param current_playback_state: 
     :type current_playback_state: (optional) ask_sdk_model.interfaces.audioplayer.current_playback_state.CurrentPlaybackState
     :param error: 
     :type error: (optional) ask_sdk_model.interfaces.audioplayer.error.Error
     :param token: 
     :type token: (optional) str
+    :param locale: A string indicating the user’s locale. For example: en-US.
+    :type locale: (optional) str
 
     """
     deserialized_types = {
         'object_type': 'str',
         'request_id': 'str',
         'timestamp': 'datetime',
-        'locale': 'str',
         'current_playback_state': 'ask_sdk_model.interfaces.audioplayer.current_playback_state.CurrentPlaybackState',
         'error': 'ask_sdk_model.interfaces.audioplayer.error.Error',
-        'token': 'str'
+        'token': 'str',
+        'locale': 'str'
     }
 
     attribute_map = {
         'object_type': 'type',
         'request_id': 'requestId',
         'timestamp': 'timestamp',
-        'locale': 'locale',
         'current_playback_state': 'currentPlaybackState',
         'error': 'error',
-        'token': 'token'
+        'token': 'token',
+        'locale': 'locale'
     }
 
-    def __init__(self, request_id=None, timestamp=None, locale=None, current_playback_state=None, error=None, token=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[CurrentPlaybackState], Optional[Error], Optional[str]) -> None
+    def __init__(self, request_id=None, timestamp=None, current_playback_state=None, error=None, token=None, locale=None):
+        # type: (Optional[str], Optional[datetime], Optional[CurrentPlaybackState], Optional[Error], Optional[str], Optional[str]) -> None
         """
 
         :param request_id: Represents the unique identifier for the specific request.
         :type request_id: (optional) str
         :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
         :type timestamp: (optional) datetime
-        :param locale: A string indicating the user’s locale. For example: en-US.
-        :type locale: (optional) str
         :param current_playback_state: 
         :type current_playback_state: (optional) ask_sdk_model.interfaces.audioplayer.current_playback_state.CurrentPlaybackState
         :param error: 
         :type error: (optional) ask_sdk_model.interfaces.audioplayer.error.Error
         :param token: 
         :type token: (optional) str
+        :param locale: A string indicating the user’s locale. For example: en-US.
+        :type locale: (optional) str
         """
         self.__discriminator_value = "AudioPlayer.PlaybackFailed"
 
         self.object_type = self.__discriminator_value
-        super(PlaybackFailedRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
+        super(PlaybackFailedRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp)
         self.current_playback_state = current_playback_state
         self.error = error
         self.token = token
+        self.locale = locale
 
     def to_dict(self):
         # type: () -> Dict[str, object]

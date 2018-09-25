@@ -65,7 +65,8 @@ class NextCommandIssuedRequest(Request):
         self.__discriminator_value = "PlaybackController.NextCommandIssued"
 
         self.object_type = self.__discriminator_value
-        super(NextCommandIssuedRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
+        super(NextCommandIssuedRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp)
+        self.locale = locale
 
     def to_dict(self):
         # type: () -> Dict[str, object]

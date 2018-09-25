@@ -33,39 +33,47 @@ class SkillEnabledRequest(Request):
     :type request_id: (optional) str
     :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
     :type timestamp: (optional) datetime
-    :param locale: A string indicating the user’s locale. For example: en-US.
-    :type locale: (optional) str
+    :param event_creation_time: 
+    :type event_creation_time: (optional) datetime
+    :param event_publishing_time: 
+    :type event_publishing_time: (optional) datetime
 
     """
     deserialized_types = {
         'object_type': 'str',
         'request_id': 'str',
         'timestamp': 'datetime',
-        'locale': 'str'
+        'event_creation_time': 'datetime',
+        'event_publishing_time': 'datetime'
     }
 
     attribute_map = {
         'object_type': 'type',
         'request_id': 'requestId',
         'timestamp': 'timestamp',
-        'locale': 'locale'
+        'event_creation_time': 'eventCreationTime',
+        'event_publishing_time': 'eventPublishingTime'
     }
 
-    def __init__(self, request_id=None, timestamp=None, locale=None):
-        # type: (Optional[str], Optional[datetime], Optional[str]) -> None
+    def __init__(self, request_id=None, timestamp=None, event_creation_time=None, event_publishing_time=None):
+        # type: (Optional[str], Optional[datetime], Optional[datetime], Optional[datetime]) -> None
         """
 
         :param request_id: Represents the unique identifier for the specific request.
         :type request_id: (optional) str
         :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
         :type timestamp: (optional) datetime
-        :param locale: A string indicating the user’s locale. For example: en-US.
-        :type locale: (optional) str
+        :param event_creation_time: 
+        :type event_creation_time: (optional) datetime
+        :param event_publishing_time: 
+        :type event_publishing_time: (optional) datetime
         """
         self.__discriminator_value = "AlexaSkillEvent.SkillEnabled"
 
         self.object_type = self.__discriminator_value
-        super(SkillEnabledRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
+        super(SkillEnabledRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp)
+        self.event_creation_time = event_creation_time
+        self.event_publishing_time = event_publishing_time
 
     def to_dict(self):
         # type: () -> Dict[str, object]

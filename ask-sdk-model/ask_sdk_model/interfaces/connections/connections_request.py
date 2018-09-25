@@ -35,53 +35,54 @@ class ConnectionsRequest(Request):
     :type request_id: (optional) str
     :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
     :type timestamp: (optional) datetime
-    :param locale: A string indicating the user’s locale. For example: en-US.
-    :type locale: (optional) str
     :param name: Name of the action sent by the referrer skill.
     :type name: (optional) str
     :param payload: This is an object sent between the two skills for processing a ConnectionsRequest or ConnectionsResponse. This will always be a valid payload based on Action schema for the requester action.
     :type payload: (optional) dict(str, object)
+    :param locale: A string indicating the user’s locale. For example: en-US.
+    :type locale: (optional) str
 
     """
     deserialized_types = {
         'object_type': 'str',
         'request_id': 'str',
         'timestamp': 'datetime',
-        'locale': 'str',
         'name': 'str',
-        'payload': 'dict(str, object)'
+        'payload': 'dict(str, object)',
+        'locale': 'str'
     }
 
     attribute_map = {
         'object_type': 'type',
         'request_id': 'requestId',
         'timestamp': 'timestamp',
-        'locale': 'locale',
         'name': 'name',
-        'payload': 'payload'
+        'payload': 'payload',
+        'locale': 'locale'
     }
 
-    def __init__(self, request_id=None, timestamp=None, locale=None, name=None, payload=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[str], Optional[Dict[str, object]]) -> None
+    def __init__(self, request_id=None, timestamp=None, name=None, payload=None, locale=None):
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[Dict[str, object]], Optional[str]) -> None
         """This is the request object that a skill will receive as a result of Connections.SendRequest directive from sender skill.
 
         :param request_id: Represents the unique identifier for the specific request.
         :type request_id: (optional) str
         :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
         :type timestamp: (optional) datetime
-        :param locale: A string indicating the user’s locale. For example: en-US.
-        :type locale: (optional) str
         :param name: Name of the action sent by the referrer skill.
         :type name: (optional) str
         :param payload: This is an object sent between the two skills for processing a ConnectionsRequest or ConnectionsResponse. This will always be a valid payload based on Action schema for the requester action.
         :type payload: (optional) dict(str, object)
+        :param locale: A string indicating the user’s locale. For example: en-US.
+        :type locale: (optional) str
         """
         self.__discriminator_value = "Connections.Request"
 
         self.object_type = self.__discriminator_value
-        super(ConnectionsRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
+        super(ConnectionsRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp)
         self.name = name
         self.payload = payload
+        self.locale = locale
 
     def to_dict(self):
         # type: () -> Dict[str, object]

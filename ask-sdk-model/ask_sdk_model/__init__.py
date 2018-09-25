@@ -23,11 +23,13 @@ from .intent import Intent
 from .intent_confirmation_status import IntentConfirmationStatus
 from .intent_request import IntentRequest
 from .launch_request import LaunchRequest
+from .permission_status import PermissionStatus
 from .permissions import Permissions
 from .request import Request
 from .request_envelope import RequestEnvelope
 from .response import Response
 from .response_envelope import ResponseEnvelope
+from .scope import Scope
 from .session import Session
 from .session_ended_error import SessionEndedError
 from .session_ended_error_type import SessionEndedErrorType

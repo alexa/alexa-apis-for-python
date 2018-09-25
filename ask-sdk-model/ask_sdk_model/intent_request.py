@@ -37,53 +37,54 @@ class IntentRequest(Request):
     :type request_id: (optional) str
     :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
     :type timestamp: (optional) datetime
-    :param locale: A string indicating the user’s locale. For example: en-US.
-    :type locale: (optional) str
     :param dialog_state: Enumeration indicating the status of the multi-turn dialog. This property is included if the skill meets the requirements to use the Dialog directives. Note that COMPLETED is only possible when you use the Dialog.Delegate directive. If you use intent confirmation, dialogState is considered COMPLETED if the user denies the entire intent (for instance, by answering “no” when asked the confirmation prompt). Be sure to also check the confirmationStatus property on the Intent object before fulfilling the user’s request.
     :type dialog_state: (optional) ask_sdk_model.dialog_state.DialogState
     :param intent: An object that represents what the user wants.
     :type intent: (optional) ask_sdk_model.intent.Intent
+    :param locale: A string indicating the user’s locale. For example: en-US.
+    :type locale: (optional) str
 
     """
     deserialized_types = {
         'object_type': 'str',
         'request_id': 'str',
         'timestamp': 'datetime',
-        'locale': 'str',
         'dialog_state': 'ask_sdk_model.dialog_state.DialogState',
-        'intent': 'ask_sdk_model.intent.Intent'
+        'intent': 'ask_sdk_model.intent.Intent',
+        'locale': 'str'
     }
 
     attribute_map = {
         'object_type': 'type',
         'request_id': 'requestId',
         'timestamp': 'timestamp',
-        'locale': 'locale',
         'dialog_state': 'dialogState',
-        'intent': 'intent'
+        'intent': 'intent',
+        'locale': 'locale'
     }
 
-    def __init__(self, request_id=None, timestamp=None, locale=None, dialog_state=None, intent=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[DialogState], Optional[Intent]) -> None
+    def __init__(self, request_id=None, timestamp=None, dialog_state=None, intent=None, locale=None):
+        # type: (Optional[str], Optional[datetime], Optional[DialogState], Optional[Intent], Optional[str]) -> None
         """An IntentRequest is an object that represents a request made to a skill based on what the user wants to do.
 
         :param request_id: Represents the unique identifier for the specific request.
         :type request_id: (optional) str
         :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
         :type timestamp: (optional) datetime
-        :param locale: A string indicating the user’s locale. For example: en-US.
-        :type locale: (optional) str
         :param dialog_state: Enumeration indicating the status of the multi-turn dialog. This property is included if the skill meets the requirements to use the Dialog directives. Note that COMPLETED is only possible when you use the Dialog.Delegate directive. If you use intent confirmation, dialogState is considered COMPLETED if the user denies the entire intent (for instance, by answering “no” when asked the confirmation prompt). Be sure to also check the confirmationStatus property on the Intent object before fulfilling the user’s request.
         :type dialog_state: (optional) ask_sdk_model.dialog_state.DialogState
         :param intent: An object that represents what the user wants.
         :type intent: (optional) ask_sdk_model.intent.Intent
+        :param locale: A string indicating the user’s locale. For example: en-US.
+        :type locale: (optional) str
         """
         self.__discriminator_value = "IntentRequest"
 
         self.object_type = self.__discriminator_value
-        super(IntentRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
+        super(IntentRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp)
         self.dialog_state = dialog_state
         self.intent = intent
+        self.locale = locale
 
     def to_dict(self):
         # type: () -> Dict[str, object]

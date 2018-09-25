@@ -27,7 +27,7 @@ if typing.TYPE_CHECKING:
 
 class ErrorCode(Enum):
     """
-    A more precise error code. Some of these codes may not apply to some APIs.   - INVALID_KEY: the setting key is not supported   - INVALID_VALUE: the setting value is not valid   - INVALID_TOKEN: the token is invalid   - INVALID_URI: the uri is invalid   - DEVICE_UNREACHABLE: the device is offline   - UNKNOWN_ERROR: internal service error 
+    A more precise error code. Some of these codes may not apply to some APIs. - INVALID_KEY: the setting key is not supported - INVALID_VALUE: the setting value is not valid - INVALID_TOKEN: the token is invalid - INVALID_URI: the uri is invalid - DEVICE_UNREACHABLE: the device is offline - UNKNOWN_ERROR: internal service error
 
 
 

@@ -24,6 +24,7 @@ if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional
     from datetime import datetime
     from ask_sdk_model.services.monetization.purchasable_state import PurchasableState
+    from ask_sdk_model.services.monetization.purchase_mode import PurchaseMode
     from ask_sdk_model.services.monetization.entitled_state import EntitledState
     from ask_sdk_model.services.monetization.product_type import ProductType
 
@@ -45,6 +46,10 @@ class InSkillProduct(object):
     :type purchasable: (optional) ask_sdk_model.services.monetization.purchasable_state.PurchasableState
     :param entitled: 
     :type entitled: (optional) ask_sdk_model.services.monetization.entitled_state.EntitledState
+    :param active_entitlement_count: Total active purchases of the product made by the user. Note - For ENTITLEMENT and SUBSCRIPTION product types, the value is either zero(NOT_ENTITLED) or one(ENTITLED). For CONSUMABLE product type the value is zero or more, as CONSUMABLE can be re-purchased.
+    :type active_entitlement_count: (optional) int
+    :param purchase_mode: 
+    :type purchase_mode: (optional) ask_sdk_model.services.monetization.purchase_mode.PurchaseMode
 
     """
     deserialized_types = {
@@ -54,7 +59,9 @@ class InSkillProduct(object):
         'object_type': 'ask_sdk_model.services.monetization.product_type.ProductType',
         'summary': 'str',
         'purchasable': 'ask_sdk_model.services.monetization.purchasable_state.PurchasableState',
-        'entitled': 'ask_sdk_model.services.monetization.entitled_state.EntitledState'
+        'entitled': 'ask_sdk_model.services.monetization.entitled_state.EntitledState',
+        'active_entitlement_count': 'int',
+        'purchase_mode': 'ask_sdk_model.services.monetization.purchase_mode.PurchaseMode'
     }
 
     attribute_map = {
@@ -64,11 +71,13 @@ class InSkillProduct(object):
         'object_type': 'type',
         'summary': 'summary',
         'purchasable': 'purchasable',
-        'entitled': 'entitled'
+        'entitled': 'entitled',
+        'active_entitlement_count': 'activeEntitlementCount',
+        'purchase_mode': 'purchaseMode'
     }
 
-    def __init__(self, product_id=None, reference_name=None, name=None, object_type=None, summary=None, purchasable=None, entitled=None):
-        # type: (Optional[str], Optional[str], Optional[str], Optional[ProductType], Optional[str], Optional[PurchasableState], Optional[EntitledState]) -> None
+    def __init__(self, product_id=None, reference_name=None, name=None, object_type=None, summary=None, purchasable=None, entitled=None, active_entitlement_count=None, purchase_mode=None):
+        # type: (Optional[str], Optional[str], Optional[str], Optional[ProductType], Optional[str], Optional[PurchasableState], Optional[EntitledState], Optional[int], Optional[PurchaseMode]) -> None
         """
 
         :param product_id: Product Id
@@ -85,6 +94,10 @@ class InSkillProduct(object):
         :type purchasable: (optional) ask_sdk_model.services.monetization.purchasable_state.PurchasableState
         :param entitled: 
         :type entitled: (optional) ask_sdk_model.services.monetization.entitled_state.EntitledState
+        :param active_entitlement_count: Total active purchases of the product made by the user. Note - For ENTITLEMENT and SUBSCRIPTION product types, the value is either zero(NOT_ENTITLED) or one(ENTITLED). For CONSUMABLE product type the value is zero or more, as CONSUMABLE can be re-purchased.
+        :type active_entitlement_count: (optional) int
+        :param purchase_mode: 
+        :type purchase_mode: (optional) ask_sdk_model.services.monetization.purchase_mode.PurchaseMode
         """
         self.__discriminator_value = None
 
@@ -95,6 +108,8 @@ class InSkillProduct(object):
         self.summary = summary
         self.purchasable = purchasable
         self.entitled = entitled
+        self.active_entitlement_count = active_entitlement_count
+        self.purchase_mode = purchase_mode
 
     def to_dict(self):
         # type: () -> Dict[str, object]

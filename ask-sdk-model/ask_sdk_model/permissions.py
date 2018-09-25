@@ -23,6 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional
     from datetime import datetime
+    from ask_sdk_model.scope import Scope
 
 
 class Permissions(object):
@@ -32,26 +33,33 @@ class Permissions(object):
 
     :param consent_token: A token listing all the permissions granted for this user
     :type consent_token: (optional) str
+    :param scopes: A map where the key is a LoginWithAmazon(LWA) scope and value is a list of key:value pairs which describe the state of user actions on the LWA scope. For e.g. \&quot;scopes\&quot; :{ \&quot;alexa::devices:all:geolocation:read\&quot;:{\&quot;status\&quot;:\&quot;GRANTED\&quot;}} This value of \&quot;alexa::devices:all:geolocation:read\&quot; will determine if the Geolocation data access is granted by the user, or else it will show a card of type AskForPermissionsConsent to the user to get this permission.
+    :type scopes: (optional) dict(str, ask_sdk_model.scope.Scope)
 
     """
     deserialized_types = {
-        'consent_token': 'str'
+        'consent_token': 'str',
+        'scopes': 'dict(str, ask_sdk_model.scope.Scope)'
     }
 
     attribute_map = {
-        'consent_token': 'consentToken'
+        'consent_token': 'consentToken',
+        'scopes': 'scopes'
     }
 
-    def __init__(self, consent_token=None):
-        # type: (Optional[str]) -> None
+    def __init__(self, consent_token=None, scopes=None):
+        # type: (Optional[str], Optional[Dict[str, Scope]]) -> None
         """Contains a consentToken allowing the skill access to information that the customer has consented to provide, such as address information. Note that the consentToken is deprecated. Use the apiAccessToken available in the context object to determine the user’s permissions.
 
         :param consent_token: A token listing all the permissions granted for this user
         :type consent_token: (optional) str
+        :param scopes: A map where the key is a LoginWithAmazon(LWA) scope and value is a list of key:value pairs which describe the state of user actions on the LWA scope. For e.g. \&quot;scopes\&quot; :{ \&quot;alexa::devices:all:geolocation:read\&quot;:{\&quot;status\&quot;:\&quot;GRANTED\&quot;}} This value of \&quot;alexa::devices:all:geolocation:read\&quot; will determine if the Geolocation data access is granted by the user, or else it will show a card of type AskForPermissionsConsent to the user to get this permission.
+        :type scopes: (optional) dict(str, ask_sdk_model.scope.Scope)
         """
         self.__discriminator_value = None
 
         self.consent_token = consent_token
+        self.scopes = scopes
 
     def to_dict(self):
         # type: () -> Dict[str, object]

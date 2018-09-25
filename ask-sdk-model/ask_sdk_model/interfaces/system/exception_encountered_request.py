@@ -35,53 +35,54 @@ class ExceptionEncounteredRequest(Request):
     :type request_id: (optional) str
     :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
     :type timestamp: (optional) datetime
-    :param locale: A string indicating the user’s locale. For example: en-US.
-    :type locale: (optional) str
     :param error: 
     :type error: (optional) ask_sdk_model.interfaces.system.error.Error
     :param cause: 
     :type cause: (optional) ask_sdk_model.interfaces.system.error_cause.ErrorCause
+    :param locale: A string indicating the user’s locale. For example: en-US.
+    :type locale: (optional) str
 
     """
     deserialized_types = {
         'object_type': 'str',
         'request_id': 'str',
         'timestamp': 'datetime',
-        'locale': 'str',
         'error': 'ask_sdk_model.interfaces.system.error.Error',
-        'cause': 'ask_sdk_model.interfaces.system.error_cause.ErrorCause'
+        'cause': 'ask_sdk_model.interfaces.system.error_cause.ErrorCause',
+        'locale': 'str'
     }
 
     attribute_map = {
         'object_type': 'type',
         'request_id': 'requestId',
         'timestamp': 'timestamp',
-        'locale': 'locale',
         'error': 'error',
-        'cause': 'cause'
+        'cause': 'cause',
+        'locale': 'locale'
     }
 
-    def __init__(self, request_id=None, timestamp=None, locale=None, error=None, cause=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[Error], Optional[ErrorCause]) -> None
+    def __init__(self, request_id=None, timestamp=None, error=None, cause=None, locale=None):
+        # type: (Optional[str], Optional[datetime], Optional[Error], Optional[ErrorCause], Optional[str]) -> None
         """
 
         :param request_id: Represents the unique identifier for the specific request.
         :type request_id: (optional) str
         :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
         :type timestamp: (optional) datetime
-        :param locale: A string indicating the user’s locale. For example: en-US.
-        :type locale: (optional) str
         :param error: 
         :type error: (optional) ask_sdk_model.interfaces.system.error.Error
         :param cause: 
         :type cause: (optional) ask_sdk_model.interfaces.system.error_cause.ErrorCause
+        :param locale: A string indicating the user’s locale. For example: en-US.
+        :type locale: (optional) str
         """
         self.__discriminator_value = "System.ExceptionEncountered"
 
         self.object_type = self.__discriminator_value
-        super(ExceptionEncounteredRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
+        super(ExceptionEncounteredRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp)
         self.error = error
         self.cause = cause
+        self.locale = locale
 
     def to_dict(self):
         # type: () -> Dict[str, object]

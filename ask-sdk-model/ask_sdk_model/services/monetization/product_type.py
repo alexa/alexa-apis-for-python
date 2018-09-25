@@ -27,14 +27,15 @@ if typing.TYPE_CHECKING:
 
 class ProductType(Enum):
     """
-    Product type. * &#39;SUBSCRIPTION&#39; - Once purchased, customers will own the content for the subscription period. * &#39;ENTITLEMENT&#39; - Once purchased, customers will own the content forever.
+    Product type. * &#39;SUBSCRIPTION&#39; - Once purchased, customers will own the content for the subscription period. * &#39;ENTITLEMENT&#39; - Once purchased, customers will own the content forever. * &#39;CONSUMABLE&#39; - Once purchased, customers will be entitled to the content until it is consumed. It can also be re-purchased.
 
 
 
-    Allowed enum values: [SUBSCRIPTION, ENTITLEMENT]
+    Allowed enum values: [SUBSCRIPTION, ENTITLEMENT, CONSUMABLE]
     """
     SUBSCRIPTION = "SUBSCRIPTION"
     ENTITLEMENT = "ENTITLEMENT"
+    CONSUMABLE = "CONSUMABLE"
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

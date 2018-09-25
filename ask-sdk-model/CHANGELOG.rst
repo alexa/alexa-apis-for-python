@@ -32,3 +32,16 @@ CHANGELOG
 
 * Production release of ASK Models Package.
 
+1.1.0
+~~~~~
+
+* Models for "Consumables" in In-Skill Products.
+
+* APIs for Amazon Pay V2 that includes :
+
+  - No consent token requirement in request.
+  - Have billing address details for eligible Amazon Pay merchants in Response.
+  - Permission scope addition to Permissions object.
+
+* Update Skill Event Models to include additional attributes like 'eventPublishingTime' etc.
+
