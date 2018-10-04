@@ -45,3 +45,8 @@ CHANGELOG
 
 * Update Skill Event Models to include additional attributes like 'eventPublishingTime' etc.
 
+1.2.0
+~~~~~
+
+* Models for "PrintRequest" and "ReservationRequest" in Skill Connections.
+
