@@ -1,7 +1,19 @@
-=========================
-Alexa APIs for Python
-=========================
-|Docs| |License|
+.. raw:: html
+
+    <embed>
+        <p align="center">
+          <img src="https://m.media-amazon.com/images/G/01/mobile-apps/dex/avs/docs/ux/branding/mark1._TTH_.png">
+          <br/>
+          <h1 align="center">Alexa APIs for Python</h1>
+          <p align="center">
+            <a href="https://alexa-skills-kit-python-sdk.readthedocs.io"><img src="https://img.shields.io/readthedocs/alexa-skills-kit-python-sdk.svg?style=flat"></a>
+            <a href="https://github.com/alexa/alexa-apis-for-python/blob/master/LICENSE"><img src="https://img.shields.io/badge/License-Apache%202.0-blue.svg"></a>
+            <a href="https://pypi.python.org/pypi/ask-sdk-model/"><img src="http://img.shields.io/pypi/v/ask-sdk-model.svg?style=flat"></a>
+            <a href="https://pypi.org/project/ask-sdk-model/"><img src="https://pepy.tech/badge/ask-sdk-model"></a>
+            <a hreg="https://pypi.python.org/pypi/ask-sdk-model/"><img src="https://img.shields.io/pypi/pyversions/ask-sdk-model.svg?style=flat"></a>
+          </p>
+        </p>
+    </embed>
 
 The **Alexa APIs for Python** consists of python classes that represent the 
 request and response JSON of Alexa services. These models act as a core 
@@ -17,14 +29,17 @@ in the developer documentation.
 .. |Model Version| image:: http://img.shields.io/pypi/v/ask-sdk-model.svg?style=flat
     :target: https://pypi.python.org/pypi/ask-sdk-model/
     :alt: Version
-.. |License| image:: http://img.shields.io/pypi/l/ask-sdk-core.svg?style=flat
+.. |Model Downloads| image:: https://pepy.tech/badge/ask-sdk-model
+    :target: https://pepy.tech/project/ask-sdk-model
+    :alt: Downloads
+.. |License| image:: https://img.shields.io/badge/License-Apache%202.0-blue.svg
     :target: https://github.com/alexa/alexa-apis-for-python/blob/master/LICENSE
     :alt: License
 
 ====================================   =======
 Package                                Version
 ------------------------------------   -------
-ask-sdk-model                          |Model Version|
+ask-sdk-model                          |Model Version| |Model Downloads|
 ====================================   =======
 
 
