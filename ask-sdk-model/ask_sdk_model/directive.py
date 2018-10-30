@@ -43,6 +43,8 @@ class Directive(object):
         |
         | AudioPlayer.Play: :py:class:`ask_sdk_model.interfaces.audioplayer.play_directive.PlayDirective`,
         |
+        | Alexa.Presentation.APL.ExecuteCommands: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.execute_commands_directive.ExecuteCommandsDirective`,
+        |
         | Connections.SendRequest: :py:class:`ask_sdk_model.interfaces.connections.send_request_directive.SendRequestDirective`,
         |
         | Display.RenderTemplate: :py:class:`ask_sdk_model.interfaces.display.render_template_directive.RenderTemplateDirective`,
@@ -60,6 +62,8 @@ class Directive(object):
         | VideoApp.Launch: :py:class:`ask_sdk_model.interfaces.videoapp.launch_directive.LaunchDirective`,
         |
         | GameEngine.StopInputHandler: :py:class:`ask_sdk_model.interfaces.game_engine.stop_input_handler_directive.StopInputHandlerDirective`,
+        |
+        | Alexa.Presentation.APL.RenderDocument: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.render_document_directive.RenderDocumentDirective`,
         |
         | Connections.SendResponse: :py:class:`ask_sdk_model.interfaces.connections.send_response_directive.SendResponseDirective`,
         |
@@ -80,6 +84,7 @@ class Directive(object):
         'AudioPlayer.Stop': 'ask_sdk_model.interfaces.audioplayer.stop_directive.StopDirective',
         'Dialog.ConfirmSlot': 'ask_sdk_model.dialog.confirm_slot_directive.ConfirmSlotDirective',
         'AudioPlayer.Play': 'ask_sdk_model.interfaces.audioplayer.play_directive.PlayDirective',
+        'Alexa.Presentation.APL.ExecuteCommands': 'ask_sdk_model.interfaces.alexa.presentation.apl.execute_commands_directive.ExecuteCommandsDirective',
         'Connections.SendRequest': 'ask_sdk_model.interfaces.connections.send_request_directive.SendRequestDirective',
         'Display.RenderTemplate': 'ask_sdk_model.interfaces.display.render_template_directive.RenderTemplateDirective',
         'GadgetController.SetLight': 'ask_sdk_model.interfaces.gadget_controller.set_light_directive.SetLightDirective',
@@ -89,6 +94,7 @@ class Directive(object):
         'GameEngine.StartInputHandler': 'ask_sdk_model.interfaces.game_engine.start_input_handler_directive.StartInputHandlerDirective',
         'VideoApp.Launch': 'ask_sdk_model.interfaces.videoapp.launch_directive.LaunchDirective',
         'GameEngine.StopInputHandler': 'ask_sdk_model.interfaces.game_engine.stop_input_handler_directive.StopInputHandlerDirective',
+        'Alexa.Presentation.APL.RenderDocument': 'ask_sdk_model.interfaces.alexa.presentation.apl.render_document_directive.RenderDocumentDirective',
         'Connections.SendResponse': 'ask_sdk_model.interfaces.connections.send_response_directive.SendResponseDirective',
         'Dialog.ElicitSlot': 'ask_sdk_model.dialog.elicit_slot_directive.ElicitSlotDirective',
         'AudioPlayer.ClearQueue': 'ask_sdk_model.interfaces.audioplayer.clear_queue_directive.ClearQueueDirective'

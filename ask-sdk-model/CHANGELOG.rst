@@ -50,3 +50,11 @@ CHANGELOG
 
 * Models for "PrintRequest" and "ReservationRequest" in Skill Connections.
 
+1.3.0
+~~~~~
+
+* Models for "Alexa Presentation Language". The Alexa Presentation Language
+  (APL) enables you to build interactive voice experiences that include
+  graphics, images, slideshows, and video, and to customize them for
+  different device types.
+

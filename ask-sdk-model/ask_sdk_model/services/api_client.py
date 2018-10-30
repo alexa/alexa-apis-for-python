@@ -19,7 +19,7 @@ if typing.TYPE_CHECKING:
     from .api_client_response import ApiClientResponse
 
 
-class ApiClient:
+class ApiClient(object):
     """Represents a basic contract for API request invocation."""
     __metaclass__ = ABCMeta
 

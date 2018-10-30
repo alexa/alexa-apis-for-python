@@ -25,19 +25,16 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class PurchaseResult(Enum):
+class HighlightMode(Enum):
     """
-    Response from purchase directives:   * ACCEPTED - User have accepted the offer to purchase the product   * DECLINED - User have declined the offer to purchase the product   * NOT_ENTITLED - User tries to cancel/return a product he/she is  not entitled to.   * ALREADY_PURCHASED - User has already purchased the product   * ERROR - An internal error occurred 
+    How highlighting is applied: on a line-by-line basis, or to the entire block. Defaults to block.
 
 
 
-    Allowed enum values: [ACCEPTED, DECLINED, NOT_ENTITLED, ERROR, ALREADY_PURCHASED]
+    Allowed enum values: [BLOCK, LINE]
     """
-    ACCEPTED = "ACCEPTED"
-    DECLINED = "DECLINED"
-    NOT_ENTITLED = "NOT_ENTITLED"
-    ERROR = "ERROR"
-    ALREADY_PURCHASED = "ALREADY_PURCHASED"
+    BLOCK = "BLOCK"
+    LINE = "LINE"
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
@@ -57,7 +54,7 @@ class PurchaseResult(Enum):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, PurchaseResult):
+        if not isinstance(other, HighlightMode):
             return False
 
         return self.__dict__ == other.__dict__

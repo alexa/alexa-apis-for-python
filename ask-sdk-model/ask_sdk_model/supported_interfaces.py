@@ -24,6 +24,7 @@ if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional
     from datetime import datetime
     from ask_sdk_model.interfaces.audioplayer.audio_player_interface import AudioPlayerInterface
+    from ask_sdk_model.interfaces.alexa.presentation.apl.alexa_presentation_apl_interface import AlexaPresentationAplInterface
     from ask_sdk_model.interfaces.videoapp.video_app_interface import VideoAppInterface
     from ask_sdk_model.interfaces.display.display_interface import DisplayInterface
 
@@ -33,6 +34,8 @@ class SupportedInterfaces(object):
     An object listing each interface that the device supports. For example, if supportedInterfaces includes AudioPlayer {}, then you know that the device supports streaming audio using the AudioPlayer interface.
 
 
+    :param alexa_presentation_apl: 
+    :type alexa_presentation_apl: (optional) ask_sdk_model.interfaces.alexa.presentation.apl.alexa_presentation_apl_interface.AlexaPresentationAplInterface
     :param audio_player: 
     :type audio_player: (optional) ask_sdk_model.interfaces.audioplayer.audio_player_interface.AudioPlayerInterface
     :param display: 
@@ -42,21 +45,25 @@ class SupportedInterfaces(object):
 
     """
     deserialized_types = {
+        'alexa_presentation_apl': 'ask_sdk_model.interfaces.alexa.presentation.apl.alexa_presentation_apl_interface.AlexaPresentationAplInterface',
         'audio_player': 'ask_sdk_model.interfaces.audioplayer.audio_player_interface.AudioPlayerInterface',
         'display': 'ask_sdk_model.interfaces.display.display_interface.DisplayInterface',
         'video_app': 'ask_sdk_model.interfaces.videoapp.video_app_interface.VideoAppInterface'
     }
 
     attribute_map = {
+        'alexa_presentation_apl': 'Alexa.Presentation.APL',
         'audio_player': 'AudioPlayer',
         'display': 'Display',
         'video_app': 'VideoApp'
     }
 
-    def __init__(self, audio_player=None, display=None, video_app=None):
-        # type: (Optional[AudioPlayerInterface], Optional[DisplayInterface], Optional[VideoAppInterface]) -> None
+    def __init__(self, alexa_presentation_apl=None, audio_player=None, display=None, video_app=None):
+        # type: (Optional[AlexaPresentationAplInterface], Optional[AudioPlayerInterface], Optional[DisplayInterface], Optional[VideoAppInterface]) -> None
         """An object listing each interface that the device supports. For example, if supportedInterfaces includes AudioPlayer {}, then you know that the device supports streaming audio using the AudioPlayer interface.
 
+        :param alexa_presentation_apl: 
+        :type alexa_presentation_apl: (optional) ask_sdk_model.interfaces.alexa.presentation.apl.alexa_presentation_apl_interface.AlexaPresentationAplInterface
         :param audio_player: 
         :type audio_player: (optional) ask_sdk_model.interfaces.audioplayer.audio_player_interface.AudioPlayerInterface
         :param display: 
@@ -66,6 +73,7 @@ class SupportedInterfaces(object):
         """
         self.__discriminator_value = None
 
+        self.alexa_presentation_apl = alexa_presentation_apl
         self.audio_player = audio_player
         self.display = display
         self.video_app = video_app

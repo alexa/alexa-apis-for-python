@@ -19,7 +19,7 @@ if typing.TYPE_CHECKING:
     T = TypeVar('T')
 
 
-class Serializer:
+class Serializer(object):
     """Represents an abstract object used for Serialization tasks"""
     __metaclass__ = ABCMeta
 

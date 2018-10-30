@@ -49,6 +49,8 @@ class Request(object):
         |
         | AlexaHouseholdListEvent.ListUpdated: :py:class:`ask_sdk_model.services.list_management.list_updated_event_request.ListUpdatedEventRequest`,
         |
+        | Alexa.Presentation.APL.UserEvent: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.user_event.UserEvent`,
+        |
         | AlexaSkillEvent.SkillDisabled: :py:class:`ask_sdk_model.events.skillevents.skill_disabled_request.SkillDisabledRequest`,
         |
         | Display.ElementSelected: :py:class:`ask_sdk_model.interfaces.display.element_selected_request.ElementSelectedRequest`,
@@ -118,6 +120,7 @@ class Request(object):
         'AudioPlayer.PlaybackFinished': 'ask_sdk_model.interfaces.audioplayer.playback_finished_request.PlaybackFinishedRequest',
         'AlexaSkillEvent.SkillEnabled': 'ask_sdk_model.events.skillevents.skill_enabled_request.SkillEnabledRequest',
         'AlexaHouseholdListEvent.ListUpdated': 'ask_sdk_model.services.list_management.list_updated_event_request.ListUpdatedEventRequest',
+        'Alexa.Presentation.APL.UserEvent': 'ask_sdk_model.interfaces.alexa.presentation.apl.user_event.UserEvent',
         'AlexaSkillEvent.SkillDisabled': 'ask_sdk_model.events.skillevents.skill_disabled_request.SkillDisabledRequest',
         'Display.ElementSelected': 'ask_sdk_model.interfaces.display.element_selected_request.ElementSelectedRequest',
         'AlexaSkillEvent.SkillPermissionChanged': 'ask_sdk_model.events.skillevents.permission_changed_request.PermissionChangedRequest',
