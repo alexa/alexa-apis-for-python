@@ -23,6 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional
     from datetime import datetime
+    from ask_sdk_model.canfulfill.can_fulfill_intent import CanFulfillIntent
     from ask_sdk_model.ui.card import Card
     from ask_sdk_model.ui.output_speech import OutputSpeech
     from ask_sdk_model.directive import Directive
@@ -42,6 +43,8 @@ class Response(object):
     :type directives: (optional) list[ask_sdk_model.directive.Directive]
     :param should_end_session: 
     :type should_end_session: (optional) bool
+    :param can_fulfill_intent: 
+    :type can_fulfill_intent: (optional) ask_sdk_model.canfulfill.can_fulfill_intent.CanFulfillIntent
 
     """
     deserialized_types = {
@@ -49,7 +52,8 @@ class Response(object):
         'card': 'ask_sdk_model.ui.card.Card',
         'reprompt': 'ask_sdk_model.ui.reprompt.Reprompt',
         'directives': 'list[ask_sdk_model.directive.Directive]',
-        'should_end_session': 'bool'
+        'should_end_session': 'bool',
+        'can_fulfill_intent': 'ask_sdk_model.canfulfill.can_fulfill_intent.CanFulfillIntent'
     }
 
     attribute_map = {
@@ -57,11 +61,12 @@ class Response(object):
         'card': 'card',
         'reprompt': 'reprompt',
         'directives': 'directives',
-        'should_end_session': 'shouldEndSession'
+        'should_end_session': 'shouldEndSession',
+        'can_fulfill_intent': 'canFulfillIntent'
     }
 
-    def __init__(self, output_speech=None, card=None, reprompt=None, directives=None, should_end_session=None):
-        # type: (Optional[OutputSpeech], Optional[Card], Optional[Reprompt], Optional[List[Directive]], Optional[bool]) -> None
+    def __init__(self, output_speech=None, card=None, reprompt=None, directives=None, should_end_session=None, can_fulfill_intent=None):
+        # type: (Optional[OutputSpeech], Optional[Card], Optional[Reprompt], Optional[List[Directive]], Optional[bool], Optional[CanFulfillIntent]) -> None
         """
 
         :param output_speech: 
@@ -74,6 +79,8 @@ class Response(object):
         :type directives: (optional) list[ask_sdk_model.directive.Directive]
         :param should_end_session: 
         :type should_end_session: (optional) bool
+        :param can_fulfill_intent: 
+        :type can_fulfill_intent: (optional) ask_sdk_model.canfulfill.can_fulfill_intent.CanFulfillIntent
         """
         self.__discriminator_value = None
 
@@ -82,6 +89,7 @@ class Response(object):
         self.reprompt = reprompt
         self.directives = directives
         self.should_end_session = should_end_session
+        self.can_fulfill_intent = can_fulfill_intent
 
     def to_dict(self):
         # type: () -> Dict[str, object]

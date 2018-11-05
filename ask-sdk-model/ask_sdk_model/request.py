@@ -65,6 +65,8 @@ class Request(object):
         |
         | AudioPlayer.PlaybackFailed: :py:class:`ask_sdk_model.interfaces.audioplayer.playback_failed_request.PlaybackFailedRequest`,
         |
+        | CanFulfillIntentRequest: :py:class:`ask_sdk_model.canfulfill.can_fulfill_intent_request.CanFulfillIntentRequest`,
+        |
         | LaunchRequest: :py:class:`ask_sdk_model.launch_request.LaunchRequest`,
         |
         | AudioPlayer.PlaybackStopped: :py:class:`ask_sdk_model.interfaces.audioplayer.playback_stopped_request.PlaybackStoppedRequest`,
@@ -128,6 +130,7 @@ class Request(object):
         'SessionEndedRequest': 'ask_sdk_model.session_ended_request.SessionEndedRequest',
         'IntentRequest': 'ask_sdk_model.intent_request.IntentRequest',
         'AudioPlayer.PlaybackFailed': 'ask_sdk_model.interfaces.audioplayer.playback_failed_request.PlaybackFailedRequest',
+        'CanFulfillIntentRequest': 'ask_sdk_model.canfulfill.can_fulfill_intent_request.CanFulfillIntentRequest',
         'LaunchRequest': 'ask_sdk_model.launch_request.LaunchRequest',
         'AudioPlayer.PlaybackStopped': 'ask_sdk_model.interfaces.audioplayer.playback_stopped_request.PlaybackStoppedRequest',
         'PlaybackController.PreviousCommandIssued': 'ask_sdk_model.interfaces.playbackcontroller.previous_command_issued_request.PreviousCommandIssuedRequest',
