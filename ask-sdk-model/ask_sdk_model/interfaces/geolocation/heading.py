@@ -18,7 +18,6 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
-from ask_sdk_model.request import Request
 
 
 if typing.TYPE_CHECKING:
@@ -26,46 +25,40 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class PauseCommandIssuedRequest(Request):
+class Heading(object):
     """
+    An object containing the heading direction information of the device.
 
-    :param request_id: Represents the unique identifier for the specific request.
-    :type request_id: (optional) str
-    :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
-    :type timestamp: (optional) datetime
-    :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
-    :type locale: (optional) str
+
+    :param direction_in_degrees: A double representing the direction of the device in degrees.
+    :type direction_in_degrees: (optional) float
+    :param accuracy_in_degrees: A double representing the accuracy of the heading measurement in degrees.
+    :type accuracy_in_degrees: (optional) float
 
     """
     deserialized_types = {
-        'object_type': 'str',
-        'request_id': 'str',
-        'timestamp': 'datetime',
-        'locale': 'str'
+        'direction_in_degrees': 'float',
+        'accuracy_in_degrees': 'float'
     }
 
     attribute_map = {
-        'object_type': 'type',
-        'request_id': 'requestId',
-        'timestamp': 'timestamp',
-        'locale': 'locale'
+        'direction_in_degrees': 'directionInDegrees',
+        'accuracy_in_degrees': 'accuracyInDegrees'
     }
 
-    def __init__(self, request_id=None, timestamp=None, locale=None):
-        # type: (Optional[str], Optional[datetime], Optional[str]) -> None
-        """
+    def __init__(self, direction_in_degrees=None, accuracy_in_degrees=None):
+        # type: (Optional[float], Optional[float]) -> None
+        """An object containing the heading direction information of the device.
 
-        :param request_id: Represents the unique identifier for the specific request.
-        :type request_id: (optional) str
-        :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
-        :type timestamp: (optional) datetime
-        :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
-        :type locale: (optional) str
+        :param direction_in_degrees: A double representing the direction of the device in degrees.
+        :type direction_in_degrees: (optional) float
+        :param accuracy_in_degrees: A double representing the accuracy of the heading measurement in degrees.
+        :type accuracy_in_degrees: (optional) float
         """
-        self.__discriminator_value = "PlaybackController.PauseCommandIssued"
+        self.__discriminator_value = None
 
-        self.object_type = self.__discriminator_value
-        super(PauseCommandIssuedRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
+        self.direction_in_degrees = direction_in_degrees
+        self.accuracy_in_degrees = accuracy_in_degrees
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -110,7 +103,7 @@ class PauseCommandIssuedRequest(Request):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, PauseCommandIssuedRequest):
+        if not isinstance(other, Heading):
             return False
 
         return self.__dict__ == other.__dict__

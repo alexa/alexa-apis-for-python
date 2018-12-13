@@ -58,3 +58,27 @@ CHANGELOG
   graphics, images, slideshows, and video, and to customize them for
   different device types.
 
+
+
+1.4.0
+~~~~~~~
+
+This release includes the following:
+- Models for [CanFulfillIntentRequest, for Name-free Interactions](https://developer.amazon.com/docs/custom-skills/implement-canfulfillintentrequest-for-name-free-interaction.html)
+
+
+1.5.0
+~~~~~~~
+
+This release includes the following : 
+
+- Models for Location Services.
+- Updated models for Game engine interface.
+
+
+1.5.1
+^^^^^^^
+
+This release includes the following:
+
+- Updated interfaces for Location Services

@@ -37,54 +37,53 @@ class CanFulfillIntentRequest(Request):
     :type request_id: (optional) str
     :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
     :type timestamp: (optional) datetime
+    :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
+    :type locale: (optional) str
     :param dialog_state: 
     :type dialog_state: (optional) ask_sdk_model.dialog_state.DialogState
     :param intent: 
     :type intent: (optional) ask_sdk_model.intent.Intent
-    :param locale: A string indicating the user’s locale. For example: en-US.
-    :type locale: (optional) str
 
     """
     deserialized_types = {
         'object_type': 'str',
         'request_id': 'str',
         'timestamp': 'datetime',
+        'locale': 'str',
         'dialog_state': 'ask_sdk_model.dialog_state.DialogState',
-        'intent': 'ask_sdk_model.intent.Intent',
-        'locale': 'str'
+        'intent': 'ask_sdk_model.intent.Intent'
     }
 
     attribute_map = {
         'object_type': 'type',
         'request_id': 'requestId',
         'timestamp': 'timestamp',
+        'locale': 'locale',
         'dialog_state': 'dialogState',
-        'intent': 'intent',
-        'locale': 'locale'
+        'intent': 'intent'
     }
 
-    def __init__(self, request_id=None, timestamp=None, dialog_state=None, intent=None, locale=None):
-        # type: (Optional[str], Optional[datetime], Optional[DialogState], Optional[Intent], Optional[str]) -> None
+    def __init__(self, request_id=None, timestamp=None, locale=None, dialog_state=None, intent=None):
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[DialogState], Optional[Intent]) -> None
         """An object that represents a request made to skill to query whether the skill can understand and fulfill the intent request with detected slots, before actually asking the skill to take action. Skill should be aware this is not to actually take action, skill should handle this request without causing side-effect, skill should not modify some state outside its scope or has an observable interaction with its calling functions or the outside world besides returning a value, such as playing sound,turning on/off lights, committing a transaction or a charge.
 
         :param request_id: Represents the unique identifier for the specific request.
         :type request_id: (optional) str
         :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
         :type timestamp: (optional) datetime
+        :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
+        :type locale: (optional) str
         :param dialog_state: 
         :type dialog_state: (optional) ask_sdk_model.dialog_state.DialogState
         :param intent: 
         :type intent: (optional) ask_sdk_model.intent.Intent
-        :param locale: A string indicating the user’s locale. For example: en-US.
-        :type locale: (optional) str
         """
         self.__discriminator_value = "CanFulfillIntentRequest"
 
         self.object_type = self.__discriminator_value
-        super(CanFulfillIntentRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp)
+        super(CanFulfillIntentRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
         self.dialog_state = dialog_state
         self.intent = intent
-        self.locale = locale
 
     def to_dict(self):
         # type: () -> Dict[str, object]

@@ -33,6 +33,8 @@ class UserEvent(Request):
     :type request_id: (optional) str
     :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
     :type timestamp: (optional) datetime
+    :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
+    :type locale: (optional) str
     :param token: A unique token for the active presentation.
     :type token: (optional) str
     :param arguments: The array of argument data to pass to Alexa.
@@ -47,6 +49,7 @@ class UserEvent(Request):
         'object_type': 'str',
         'request_id': 'str',
         'timestamp': 'datetime',
+        'locale': 'str',
         'token': 'str',
         'arguments': 'list[object]',
         'source': 'object',
@@ -57,20 +60,23 @@ class UserEvent(Request):
         'object_type': 'type',
         'request_id': 'requestId',
         'timestamp': 'timestamp',
+        'locale': 'locale',
         'token': 'token',
         'arguments': 'arguments',
         'source': 'source',
         'components': 'components'
     }
 
-    def __init__(self, request_id=None, timestamp=None, token=None, arguments=None, source=None, components=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[List[object]], Optional[object], Optional[object]) -> None
+    def __init__(self, request_id=None, timestamp=None, locale=None, token=None, arguments=None, source=None, components=None):
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[str], Optional[List[object]], Optional[object], Optional[object]) -> None
         """
 
         :param request_id: Represents the unique identifier for the specific request.
         :type request_id: (optional) str
         :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
         :type timestamp: (optional) datetime
+        :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
+        :type locale: (optional) str
         :param token: A unique token for the active presentation.
         :type token: (optional) str
         :param arguments: The array of argument data to pass to Alexa.
@@ -83,7 +89,7 @@ class UserEvent(Request):
         self.__discriminator_value = "Alexa.Presentation.APL.UserEvent"
 
         self.object_type = self.__discriminator_value
-        super(UserEvent, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp)
+        super(UserEvent, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
         self.token = token
         self.arguments = arguments
         self.source = source

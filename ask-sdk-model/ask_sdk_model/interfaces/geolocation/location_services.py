@@ -18,54 +18,49 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
-from ask_sdk_model.request import Request
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional
     from datetime import datetime
+    from ask_sdk_model.interfaces.geolocation.status import Status
+    from ask_sdk_model.interfaces.geolocation.access import Access
 
 
-class PauseCommandIssuedRequest(Request):
+class LocationServices(object):
     """
+    An object containing status and access.
 
-    :param request_id: Represents the unique identifier for the specific request.
-    :type request_id: (optional) str
-    :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
-    :type timestamp: (optional) datetime
-    :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
-    :type locale: (optional) str
+
+    :param status: A string representing the status of whether location services is currently running or not on the host OS of device.
+    :type status: (optional) ask_sdk_model.interfaces.geolocation.status.Status
+    :param access: A string representing if Alexa has access to location services running on the hostOS of device.
+    :type access: (optional) ask_sdk_model.interfaces.geolocation.access.Access
 
     """
     deserialized_types = {
-        'object_type': 'str',
-        'request_id': 'str',
-        'timestamp': 'datetime',
-        'locale': 'str'
+        'status': 'ask_sdk_model.interfaces.geolocation.status.Status',
+        'access': 'ask_sdk_model.interfaces.geolocation.access.Access'
     }
 
     attribute_map = {
-        'object_type': 'type',
-        'request_id': 'requestId',
-        'timestamp': 'timestamp',
-        'locale': 'locale'
+        'status': 'status',
+        'access': 'access'
     }
 
-    def __init__(self, request_id=None, timestamp=None, locale=None):
-        # type: (Optional[str], Optional[datetime], Optional[str]) -> None
-        """
+    def __init__(self, status=None, access=None):
+        # type: (Optional[Status], Optional[Access]) -> None
+        """An object containing status and access.
 
-        :param request_id: Represents the unique identifier for the specific request.
-        :type request_id: (optional) str
-        :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
-        :type timestamp: (optional) datetime
-        :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
-        :type locale: (optional) str
+        :param status: A string representing the status of whether location services is currently running or not on the host OS of device.
+        :type status: (optional) ask_sdk_model.interfaces.geolocation.status.Status
+        :param access: A string representing if Alexa has access to location services running on the hostOS of device.
+        :type access: (optional) ask_sdk_model.interfaces.geolocation.access.Access
         """
-        self.__discriminator_value = "PlaybackController.PauseCommandIssued"
+        self.__discriminator_value = None
 
-        self.object_type = self.__discriminator_value
-        super(PauseCommandIssuedRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
+        self.status = status
+        self.access = access
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -110,7 +105,7 @@ class PauseCommandIssuedRequest(Request):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, PauseCommandIssuedRequest):
+        if not isinstance(other, LocationServices):
             return False
 
         return self.__dict__ == other.__dict__

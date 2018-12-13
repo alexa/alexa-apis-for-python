@@ -37,6 +37,8 @@ class Request(object):
     :type request_id: (optional) str
     :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
     :type timestamp: (optional) datetime
+    :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
+    :type locale: (optional) str
 
     .. note::
 
@@ -109,13 +111,15 @@ class Request(object):
     deserialized_types = {
         'object_type': 'str',
         'request_id': 'str',
-        'timestamp': 'datetime'
+        'timestamp': 'datetime',
+        'locale': 'str'
     }
 
     attribute_map = {
         'object_type': 'type',
         'request_id': 'requestId',
-        'timestamp': 'timestamp'
+        'timestamp': 'timestamp',
+        'locale': 'locale'
     }
 
     discriminator_value_class_map = {
@@ -157,8 +161,8 @@ class Request(object):
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def __init__(self, object_type=None, request_id=None, timestamp=None):
-        # type: (Optional[str], Optional[str], Optional[datetime]) -> None
+    def __init__(self, object_type=None, request_id=None, timestamp=None, locale=None):
+        # type: (Optional[str], Optional[str], Optional[datetime], Optional[str]) -> None
         """A request object that provides the details of the user’s request. The request body contains the parameters necessary for the service to perform its logic and generate a response.
 
         :param object_type: Describes the type of the request.
@@ -167,12 +171,15 @@ class Request(object):
         :type request_id: (optional) str
         :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
         :type timestamp: (optional) datetime
+        :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
+        :type locale: (optional) str
         """
         self.__discriminator_value = None
 
         self.object_type = object_type
         self.request_id = request_id
         self.timestamp = timestamp
+        self.locale = locale
 
     @classmethod
     def get_real_child_model(cls, data):

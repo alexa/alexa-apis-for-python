@@ -34,6 +34,8 @@ class ListItemsCreatedEventRequest(Request):
     :type request_id: (optional) str
     :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
     :type timestamp: (optional) datetime
+    :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
+    :type locale: (optional) str
     :param body: 
     :type body: (optional) ask_sdk_model.services.list_management.list_item_body.ListItemBody
     :param event_creation_time: 
@@ -46,6 +48,7 @@ class ListItemsCreatedEventRequest(Request):
         'object_type': 'str',
         'request_id': 'str',
         'timestamp': 'datetime',
+        'locale': 'str',
         'body': 'ask_sdk_model.services.list_management.list_item_body.ListItemBody',
         'event_creation_time': 'datetime',
         'event_publishing_time': 'datetime'
@@ -55,19 +58,22 @@ class ListItemsCreatedEventRequest(Request):
         'object_type': 'type',
         'request_id': 'requestId',
         'timestamp': 'timestamp',
+        'locale': 'locale',
         'body': 'body',
         'event_creation_time': 'eventCreationTime',
         'event_publishing_time': 'eventPublishingTime'
     }
 
-    def __init__(self, request_id=None, timestamp=None, body=None, event_creation_time=None, event_publishing_time=None):
-        # type: (Optional[str], Optional[datetime], Optional[ListItemBody], Optional[datetime], Optional[datetime]) -> None
+    def __init__(self, request_id=None, timestamp=None, locale=None, body=None, event_creation_time=None, event_publishing_time=None):
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[ListItemBody], Optional[datetime], Optional[datetime]) -> None
         """
 
         :param request_id: Represents the unique identifier for the specific request.
         :type request_id: (optional) str
         :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
         :type timestamp: (optional) datetime
+        :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
+        :type locale: (optional) str
         :param body: 
         :type body: (optional) ask_sdk_model.services.list_management.list_item_body.ListItemBody
         :param event_creation_time: 
@@ -78,7 +84,7 @@ class ListItemsCreatedEventRequest(Request):
         self.__discriminator_value = "AlexaHouseholdListEvent.ItemsCreated"
 
         self.object_type = self.__discriminator_value
-        super(ListItemsCreatedEventRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp)
+        super(ListItemsCreatedEventRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
         self.body = body
         self.event_creation_time = event_creation_time
         self.event_publishing_time = event_publishing_time

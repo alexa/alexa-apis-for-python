@@ -26,6 +26,7 @@ if typing.TYPE_CHECKING:
     from ask_sdk_model.interfaces.audioplayer.audio_player_interface import AudioPlayerInterface
     from ask_sdk_model.interfaces.alexa.presentation.apl.alexa_presentation_apl_interface import AlexaPresentationAplInterface
     from ask_sdk_model.interfaces.videoapp.video_app_interface import VideoAppInterface
+    from ask_sdk_model.interfaces.geolocation.geolocation_interface import GeolocationInterface
     from ask_sdk_model.interfaces.display.display_interface import DisplayInterface
 
 
@@ -42,24 +43,28 @@ class SupportedInterfaces(object):
     :type display: (optional) ask_sdk_model.interfaces.display.display_interface.DisplayInterface
     :param video_app: 
     :type video_app: (optional) ask_sdk_model.interfaces.videoapp.video_app_interface.VideoAppInterface
+    :param geolocation: 
+    :type geolocation: (optional) ask_sdk_model.interfaces.geolocation.geolocation_interface.GeolocationInterface
 
     """
     deserialized_types = {
         'alexa_presentation_apl': 'ask_sdk_model.interfaces.alexa.presentation.apl.alexa_presentation_apl_interface.AlexaPresentationAplInterface',
         'audio_player': 'ask_sdk_model.interfaces.audioplayer.audio_player_interface.AudioPlayerInterface',
         'display': 'ask_sdk_model.interfaces.display.display_interface.DisplayInterface',
-        'video_app': 'ask_sdk_model.interfaces.videoapp.video_app_interface.VideoAppInterface'
+        'video_app': 'ask_sdk_model.interfaces.videoapp.video_app_interface.VideoAppInterface',
+        'geolocation': 'ask_sdk_model.interfaces.geolocation.geolocation_interface.GeolocationInterface'
     }
 
     attribute_map = {
         'alexa_presentation_apl': 'Alexa.Presentation.APL',
         'audio_player': 'AudioPlayer',
         'display': 'Display',
-        'video_app': 'VideoApp'
+        'video_app': 'VideoApp',
+        'geolocation': 'Geolocation'
     }
 
-    def __init__(self, alexa_presentation_apl=None, audio_player=None, display=None, video_app=None):
-        # type: (Optional[AlexaPresentationAplInterface], Optional[AudioPlayerInterface], Optional[DisplayInterface], Optional[VideoAppInterface]) -> None
+    def __init__(self, alexa_presentation_apl=None, audio_player=None, display=None, video_app=None, geolocation=None):
+        # type: (Optional[AlexaPresentationAplInterface], Optional[AudioPlayerInterface], Optional[DisplayInterface], Optional[VideoAppInterface], Optional[GeolocationInterface]) -> None
         """An object listing each interface that the device supports. For example, if supportedInterfaces includes AudioPlayer {}, then you know that the device supports streaming audio using the AudioPlayer interface.
 
         :param alexa_presentation_apl: 
@@ -70,6 +75,8 @@ class SupportedInterfaces(object):
         :type display: (optional) ask_sdk_model.interfaces.display.display_interface.DisplayInterface
         :param video_app: 
         :type video_app: (optional) ask_sdk_model.interfaces.videoapp.video_app_interface.VideoAppInterface
+        :param geolocation: 
+        :type geolocation: (optional) ask_sdk_model.interfaces.geolocation.geolocation_interface.GeolocationInterface
         """
         self.__discriminator_value = None
 
@@ -77,6 +84,7 @@ class SupportedInterfaces(object):
         self.audio_player = audio_player
         self.display = display
         self.video_app = video_app
+        self.geolocation = geolocation
 
     def to_dict(self):
         # type: () -> Dict[str, object]

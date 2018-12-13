@@ -18,7 +18,6 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
-from ask_sdk_model.request import Request
 
 
 if typing.TYPE_CHECKING:
@@ -26,46 +25,23 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class PauseCommandIssuedRequest(Request):
+class GeolocationInterface(object):
     """
 
-    :param request_id: Represents the unique identifier for the specific request.
-    :type request_id: (optional) str
-    :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
-    :type timestamp: (optional) datetime
-    :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
-    :type locale: (optional) str
 
     """
     deserialized_types = {
-        'object_type': 'str',
-        'request_id': 'str',
-        'timestamp': 'datetime',
-        'locale': 'str'
     }
 
     attribute_map = {
-        'object_type': 'type',
-        'request_id': 'requestId',
-        'timestamp': 'timestamp',
-        'locale': 'locale'
     }
 
-    def __init__(self, request_id=None, timestamp=None, locale=None):
-        # type: (Optional[str], Optional[datetime], Optional[str]) -> None
+    def __init__(self):
+        # type: () -> None
         """
 
-        :param request_id: Represents the unique identifier for the specific request.
-        :type request_id: (optional) str
-        :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
-        :type timestamp: (optional) datetime
-        :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
-        :type locale: (optional) str
         """
-        self.__discriminator_value = "PlaybackController.PauseCommandIssued"
-
-        self.object_type = self.__discriminator_value
-        super(PauseCommandIssuedRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
+        self.__discriminator_value = None
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -110,7 +86,7 @@ class PauseCommandIssuedRequest(Request):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, PauseCommandIssuedRequest):
+        if not isinstance(other, GeolocationInterface):
             return False
 
         return self.__dict__ == other.__dict__

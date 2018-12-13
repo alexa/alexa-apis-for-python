@@ -37,22 +37,26 @@ class Pattern(object):
     :type colors: (optional) list[str]
     :param action: 
     :type action: (optional) ask_sdk_model.services.game_engine.input_event_action_type.InputEventActionType
+    :param repeat: The number of times that the specified action must occur to be considered complete.
+    :type repeat: (optional) int
 
     """
     deserialized_types = {
         'gadget_ids': 'list[str]',
         'colors': 'list[str]',
-        'action': 'ask_sdk_model.services.game_engine.input_event_action_type.InputEventActionType'
+        'action': 'ask_sdk_model.services.game_engine.input_event_action_type.InputEventActionType',
+        'repeat': 'int'
     }
 
     attribute_map = {
         'gadget_ids': 'gadgetIds',
         'colors': 'colors',
-        'action': 'action'
+        'action': 'action',
+        'repeat': 'repeat'
     }
 
-    def __init__(self, gadget_ids=None, colors=None, action=None):
-        # type: (Optional[List[object]], Optional[List[object]], Optional[InputEventActionType]) -> None
+    def __init__(self, gadget_ids=None, colors=None, action=None, repeat=None):
+        # type: (Optional[List[object]], Optional[List[object]], Optional[InputEventActionType], Optional[int]) -> None
         """An object that provides all of the events that need to occur, in a specific order, for this recognizer to be true. Omitting any parameters in this object means \&quot;match anything\&quot;.
 
         :param gadget_ids: A whitelist of gadgetIds that are eligible for this match.
@@ -61,12 +65,15 @@ class Pattern(object):
         :type colors: (optional) list[str]
         :param action: 
         :type action: (optional) ask_sdk_model.services.game_engine.input_event_action_type.InputEventActionType
+        :param repeat: The number of times that the specified action must occur to be considered complete.
+        :type repeat: (optional) int
         """
         self.__discriminator_value = None
 
         self.gadget_ids = gadget_ids
         self.colors = colors
         self.action = action
+        self.repeat = repeat
 
     def to_dict(self):
         # type: () -> Dict[str, object]

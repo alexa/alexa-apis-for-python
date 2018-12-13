@@ -36,6 +36,8 @@ class ConnectionsResponse(Request):
     :type request_id: (optional) str
     :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
     :type timestamp: (optional) datetime
+    :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
+    :type locale: (optional) str
     :param status: 
     :type status: (optional) ask_sdk_model.interfaces.connections.connections_status.ConnectionsStatus
     :param name: Name of the action for which response is received.
@@ -44,40 +46,40 @@ class ConnectionsResponse(Request):
     :type payload: (optional) dict(str, object)
     :param token: This is the token that the skill originally sent with the ConnectionsSendRequest directive.
     :type token: (optional) str
-    :param locale: A string indicating the user’s locale. For example: en-US.
-    :type locale: (optional) str
 
     """
     deserialized_types = {
         'object_type': 'str',
         'request_id': 'str',
         'timestamp': 'datetime',
+        'locale': 'str',
         'status': 'ask_sdk_model.interfaces.connections.connections_status.ConnectionsStatus',
         'name': 'str',
         'payload': 'dict(str, object)',
-        'token': 'str',
-        'locale': 'str'
+        'token': 'str'
     }
 
     attribute_map = {
         'object_type': 'type',
         'request_id': 'requestId',
         'timestamp': 'timestamp',
+        'locale': 'locale',
         'status': 'status',
         'name': 'name',
         'payload': 'payload',
-        'token': 'token',
-        'locale': 'locale'
+        'token': 'token'
     }
 
-    def __init__(self, request_id=None, timestamp=None, status=None, name=None, payload=None, token=None, locale=None):
-        # type: (Optional[str], Optional[datetime], Optional[ConnectionsStatus], Optional[str], Optional[Dict[str, object]], Optional[str], Optional[str]) -> None
+    def __init__(self, request_id=None, timestamp=None, locale=None, status=None, name=None, payload=None, token=None):
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[ConnectionsStatus], Optional[str], Optional[Dict[str, object]], Optional[str]) -> None
         """This is the request object that a skill will receive as a result of Connections.SendResponse directive from referrer skill.
 
         :param request_id: Represents the unique identifier for the specific request.
         :type request_id: (optional) str
         :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
         :type timestamp: (optional) datetime
+        :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
+        :type locale: (optional) str
         :param status: 
         :type status: (optional) ask_sdk_model.interfaces.connections.connections_status.ConnectionsStatus
         :param name: Name of the action for which response is received.
@@ -86,18 +88,15 @@ class ConnectionsResponse(Request):
         :type payload: (optional) dict(str, object)
         :param token: This is the token that the skill originally sent with the ConnectionsSendRequest directive.
         :type token: (optional) str
-        :param locale: A string indicating the user’s locale. For example: en-US.
-        :type locale: (optional) str
         """
         self.__discriminator_value = "Connections.Response"
 
         self.object_type = self.__discriminator_value
-        super(ConnectionsResponse, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp)
+        super(ConnectionsResponse, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
         self.status = status
         self.name = name
         self.payload = payload
         self.token = token
-        self.locale = locale
 
     def to_dict(self):
         # type: () -> Dict[str, object]

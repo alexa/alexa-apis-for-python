@@ -33,7 +33,7 @@ class User(object):
 
     :param user_id: A string that represents a unique identifier for the user who made the request. The length of this identifier can vary, but is never more than 255 characters. The userId is automatically generated when a user enables the skill in the Alexa app. Note: Disabling and re-enabling a skill generates a new identifier.
     :type user_id: (optional) str
-    :param access_token:  a token identifying the user in another system. This is only provided if the user has successfully linked their account. See Linking an Alexa User with a User in Your System for more details.
+    :param access_token: A token identifying the user in another system. This is only provided if the user has successfully linked their account. See Linking an Alexa User with a User in Your System for more details.
     :type access_token: (optional) str
     :param permissions: 
     :type permissions: (optional) ask_sdk_model.permissions.Permissions
@@ -57,7 +57,7 @@ class User(object):
 
         :param user_id: A string that represents a unique identifier for the user who made the request. The length of this identifier can vary, but is never more than 255 characters. The userId is automatically generated when a user enables the skill in the Alexa app. Note: Disabling and re-enabling a skill generates a new identifier.
         :type user_id: (optional) str
-        :param access_token:  a token identifying the user in another system. This is only provided if the user has successfully linked their account. See Linking an Alexa User with a User in Your System for more details.
+        :param access_token: A token identifying the user in another system. This is only provided if the user has successfully linked their account. See Linking an Alexa User with a User in Your System for more details.
         :type access_token: (optional) str
         :param permissions: 
         :type permissions: (optional) ask_sdk_model.permissions.Permissions

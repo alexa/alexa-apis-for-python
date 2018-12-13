@@ -33,7 +33,7 @@ class PlayCommandIssuedRequest(Request):
     :type request_id: (optional) str
     :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
     :type timestamp: (optional) datetime
-    :param locale: A string indicating the user’s locale. For example: en-US.
+    :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
     :type locale: (optional) str
 
     """
@@ -59,14 +59,13 @@ class PlayCommandIssuedRequest(Request):
         :type request_id: (optional) str
         :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
         :type timestamp: (optional) datetime
-        :param locale: A string indicating the user’s locale. For example: en-US.
+        :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
         :type locale: (optional) str
         """
         self.__discriminator_value = "PlaybackController.PlayCommandIssued"
 
         self.object_type = self.__discriminator_value
-        super(PlayCommandIssuedRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp)
-        self.locale = locale
+        super(PlayCommandIssuedRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
 
     def to_dict(self):
         # type: () -> Dict[str, object]
