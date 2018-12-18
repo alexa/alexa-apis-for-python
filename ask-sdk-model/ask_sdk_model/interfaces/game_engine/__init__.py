@@ -14,6 +14,6 @@
 #
 from __future__ import absolute_import
 
-from .input_handler_event_request import InputHandlerEventRequest
 from .start_input_handler_directive import StartInputHandlerDirective
+from .input_handler_event_request import InputHandlerEventRequest
 from .stop_input_handler_directive import StopInputHandlerDirective

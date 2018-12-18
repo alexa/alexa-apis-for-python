@@ -14,8 +14,8 @@
 #
 from __future__ import absolute_import
 
-from .amazon_pay_error_response import AmazonPayErrorResponse
-from .charge_amazon_pay import ChargeAmazonPay
 from .charge_amazon_pay_result import ChargeAmazonPayResult
-from .setup_amazon_pay import SetupAmazonPay
 from .setup_amazon_pay_result import SetupAmazonPayResult
+from .charge_amazon_pay import ChargeAmazonPay
+from .amazon_pay_error_response import AmazonPayErrorResponse
+from .setup_amazon_pay import SetupAmazonPay

@@ -14,11 +14,11 @@
 #
 from __future__ import absolute_import
 
-from .account_linked_body import AccountLinkedBody
+from .permission_changed_request import PermissionChangedRequest
 from .account_linked_request import AccountLinkedRequest
+from .permission_body import PermissionBody
+from .account_linked_body import AccountLinkedBody
+from .skill_enabled_request import SkillEnabledRequest
+from .skill_disabled_request import SkillDisabledRequest
 from .permission import Permission
 from .permission_accepted_request import PermissionAcceptedRequest
-from .permission_body import PermissionBody
-from .permission_changed_request import PermissionChangedRequest
-from .skill_disabled_request import SkillDisabledRequest
-from .skill_enabled_request import SkillEnabledRequest

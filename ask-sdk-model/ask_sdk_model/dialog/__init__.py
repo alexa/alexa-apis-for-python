@@ -14,7 +14,7 @@
 #
 from __future__ import absolute_import
 
-from .confirm_intent_directive import ConfirmIntentDirective
-from .confirm_slot_directive import ConfirmSlotDirective
 from .delegate_directive import DelegateDirective
+from .confirm_slot_directive import ConfirmSlotDirective
 from .elicit_slot_directive import ElicitSlotDirective
+from .confirm_intent_directive import ConfirmIntentDirective

@@ -82,3 +82,11 @@ This release includes the following :
 This release includes the following:
 
 - Updated interfaces for Location Services
+
+
+1.6.0
+~~~~~~~
+
+This release includes the following : 
+
+- Models for Reminders

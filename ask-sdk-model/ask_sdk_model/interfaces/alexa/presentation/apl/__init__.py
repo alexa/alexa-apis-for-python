@@ -14,15 +14,15 @@
 #
 from __future__ import absolute_import
 
-from .alexa_presentation_apl_interface import AlexaPresentationAplInterface
-from .align import Align
-from .auto_page_command import AutoPageCommand
-from .command import Command
-from .execute_commands_directive import ExecuteCommandsDirective
-from .highlight_mode import HighlightMode
 from .position import Position
-from .render_document_directive import RenderDocumentDirective
-from .runtime import Runtime
-from .set_page_command import SetPageCommand
-from .speak_item_command import SpeakItemCommand
 from .user_event import UserEvent
+from .render_document_directive import RenderDocumentDirective
+from .auto_page_command import AutoPageCommand
+from .speak_item_command import SpeakItemCommand
+from .align import Align
+from .highlight_mode import HighlightMode
+from .runtime import Runtime
+from .execute_commands_directive import ExecuteCommandsDirective
+from .command import Command
+from .set_page_command import SetPageCommand
+from .alexa_presentation_apl_interface import AlexaPresentationAplInterface

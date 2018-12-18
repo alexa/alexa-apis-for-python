@@ -14,12 +14,12 @@
 #
 from __future__ import absolute_import
 
-from .access import Access
-from .altitude import Altitude
-from .coordinate import Coordinate
-from .geolocation_interface import GeolocationInterface
 from .geolocation_state import GeolocationState
-from .heading import Heading
-from .location_services import LocationServices
-from .speed import Speed
+from .geolocation_interface import GeolocationInterface
 from .status import Status
+from .coordinate import Coordinate
+from .speed import Speed
+from .heading import Heading
+from .altitude import Altitude
+from .location_services import LocationServices
+from .access import Access

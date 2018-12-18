@@ -22,6 +22,7 @@ from .device_address import DeviceAddressServiceClient
 from .directive import DirectiveServiceClient
 from .list_management import ListManagementServiceClient
 from .monetization import MonetizationServiceClient
+from .reminder_management import ReminderManagementServiceClient
 from .ups import UpsServiceClient
 
 if typing.TYPE_CHECKING:
@@ -93,6 +94,20 @@ class ServiceClientFactory(object):
         except Exception as e:
             raise ValueError(
                 "ServiceClientFactory Error while initializing MonetizationServiceClient: " + e)
+
+    def get_reminder_management_service(self):
+        # type: () -> ReminderManagementServiceClient
+        """Get ReminderManagementServiceClient for reminder_management_service.
+
+        :return: Client for calling the service
+        :rtype: ReminderManagementServiceClient
+        :raises: :py:class:`ValueError`
+        """
+        try:
+            return ReminderManagementServiceClient(self.api_configuration)
+        except Exception as e:
+            raise ValueError(
+                "ServiceClientFactory Error while initializing ReminderManagementServiceClient: " + e)
 
     def get_ups_service(self):
         # type: () -> UpsServiceClient
