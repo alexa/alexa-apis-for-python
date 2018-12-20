@@ -22,5 +22,6 @@ from .standard_card import StandardCard
 from .output_speech import OutputSpeech
 from .image import Image
 from .card import Card
+from .play_behavior import PlayBehavior
 from .ask_for_permissions_consent_card import AskForPermissionsConsentCard
 from .simple_card import SimpleCard

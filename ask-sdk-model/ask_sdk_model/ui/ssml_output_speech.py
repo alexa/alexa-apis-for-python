@@ -24,36 +24,43 @@ from ask_sdk_model.ui.output_speech import OutputSpeech
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional
     from datetime import datetime
+    from ask_sdk_model.ui.play_behavior import PlayBehavior
 
 
 class SsmlOutputSpeech(OutputSpeech):
     """
 
+    :param play_behavior: 
+    :type play_behavior: (optional) ask_sdk_model.ui.play_behavior.PlayBehavior
     :param ssml: 
     :type ssml: (optional) str
 
     """
     deserialized_types = {
         'object_type': 'str',
+        'play_behavior': 'ask_sdk_model.ui.play_behavior.PlayBehavior',
         'ssml': 'str'
     }
 
     attribute_map = {
         'object_type': 'type',
+        'play_behavior': 'playBehavior',
         'ssml': 'ssml'
     }
 
-    def __init__(self, ssml=None):
-        # type: (Optional[str]) -> None
+    def __init__(self, play_behavior=None, ssml=None):
+        # type: (Optional[PlayBehavior], Optional[str]) -> None
         """
 
+        :param play_behavior: 
+        :type play_behavior: (optional) ask_sdk_model.ui.play_behavior.PlayBehavior
         :param ssml: 
         :type ssml: (optional) str
         """
         self.__discriminator_value = "SSML"
 
         self.object_type = self.__discriminator_value
-        super(SsmlOutputSpeech, self).__init__(object_type=self.__discriminator_value)
+        super(SsmlOutputSpeech, self).__init__(object_type=self.__discriminator_value, play_behavior=play_behavior)
         self.ssml = ssml
 
     def to_dict(self):

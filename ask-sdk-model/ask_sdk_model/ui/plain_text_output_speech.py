@@ -24,36 +24,43 @@ from ask_sdk_model.ui.output_speech import OutputSpeech
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional
     from datetime import datetime
+    from ask_sdk_model.ui.play_behavior import PlayBehavior
 
 
 class PlainTextOutputSpeech(OutputSpeech):
     """
 
+    :param play_behavior: 
+    :type play_behavior: (optional) ask_sdk_model.ui.play_behavior.PlayBehavior
     :param text: 
     :type text: (optional) str
 
     """
     deserialized_types = {
         'object_type': 'str',
+        'play_behavior': 'ask_sdk_model.ui.play_behavior.PlayBehavior',
         'text': 'str'
     }
 
     attribute_map = {
         'object_type': 'type',
+        'play_behavior': 'playBehavior',
         'text': 'text'
     }
 
-    def __init__(self, text=None):
-        # type: (Optional[str]) -> None
+    def __init__(self, play_behavior=None, text=None):
+        # type: (Optional[PlayBehavior], Optional[str]) -> None
         """
 
+        :param play_behavior: 
+        :type play_behavior: (optional) ask_sdk_model.ui.play_behavior.PlayBehavior
         :param text: 
         :type text: (optional) str
         """
         self.__discriminator_value = "PlainText"
 
         self.object_type = self.__discriminator_value
-        super(PlainTextOutputSpeech, self).__init__(object_type=self.__discriminator_value)
+        super(PlainTextOutputSpeech, self).__init__(object_type=self.__discriminator_value, play_behavior=play_behavior)
         self.text = text
 
     def to_dict(self):

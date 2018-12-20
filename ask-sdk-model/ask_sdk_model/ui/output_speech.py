@@ -24,6 +24,7 @@ from abc import ABCMeta, abstractmethod
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional
     from datetime import datetime
+    from ask_sdk_model.ui.play_behavior import PlayBehavior
 
 
 class OutputSpeech(object):
@@ -31,6 +32,8 @@ class OutputSpeech(object):
 
     :param object_type: 
     :type object_type: (optional) str
+    :param play_behavior: 
+    :type play_behavior: (optional) ask_sdk_model.ui.play_behavior.PlayBehavior
 
     .. note::
 
@@ -43,11 +46,13 @@ class OutputSpeech(object):
 
     """
     deserialized_types = {
-        'object_type': 'str'
+        'object_type': 'str',
+        'play_behavior': 'ask_sdk_model.ui.play_behavior.PlayBehavior'
     }
 
     attribute_map = {
-        'object_type': 'type'
+        'object_type': 'type',
+        'play_behavior': 'playBehavior'
     }
 
     discriminator_value_class_map = {
@@ -60,16 +65,19 @@ class OutputSpeech(object):
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def __init__(self, object_type=None):
-        # type: (Optional[str]) -> None
+    def __init__(self, object_type=None, play_behavior=None):
+        # type: (Optional[str], Optional[PlayBehavior]) -> None
         """
 
         :param object_type: 
         :type object_type: (optional) str
+        :param play_behavior: 
+        :type play_behavior: (optional) ask_sdk_model.ui.play_behavior.PlayBehavior
         """
         self.__discriminator_value = None
 
         self.object_type = object_type
+        self.play_behavior = play_behavior
 
     @classmethod
     def get_real_child_model(cls, data):

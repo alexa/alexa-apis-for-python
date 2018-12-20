@@ -25,16 +25,17 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class Status(Enum):
+class PlayBehavior(Enum):
     """
-    Status of reminder
+    Determines whether Alexa will queue or play this output speech immediately interrupting other speech
 
 
 
-    Allowed enum values: [ON, COMPLETED]
+    Allowed enum values: [ENQUEUE, REPLACE_ALL, REPLACE_ENQUEUED]
     """
-    ON = "ON"
-    COMPLETED = "COMPLETED"
+    ENQUEUE = "ENQUEUE"
+    REPLACE_ALL = "REPLACE_ALL"
+    REPLACE_ENQUEUED = "REPLACE_ENQUEUED"
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
@@ -54,7 +55,7 @@ class Status(Enum):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Status):
+        if not isinstance(other, PlayBehavior):
             return False
 
         return self.__dict__ == other.__dict__

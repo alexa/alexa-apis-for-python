@@ -90,3 +90,12 @@ This release includes the following:
 This release includes the following : 
 
 - Models for Reminders
+
+
+1.6.1
+^^^^^^^
+
+This release contains the following changes:
+
+- Updated enum values for Reminder Status
+- Updated OutputSpeech model
