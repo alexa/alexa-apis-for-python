@@ -31,10 +31,10 @@ class Position(Enum):
 
 
 
-    Allowed enum values: [ABSOLUTE, RELATIVE]
+    Allowed enum values: [absolute, relative]
     """
-    ABSOLUTE = "ABSOLUTE"
-    RELATIVE = "RELATIVE"
+    absolute = "absolute"
+    relative = "relative"
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

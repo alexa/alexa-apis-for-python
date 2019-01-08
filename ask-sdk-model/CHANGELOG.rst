@@ -99,3 +99,11 @@ This release contains the following changes:
 
 - Updated enum values for Reminder Status
 - Updated OutputSpeech model
+
+
+1.6.2
+^^^^^^^
+
+This release contains the following : 
+
+- Updated enum values for APL components.

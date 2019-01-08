@@ -31,12 +31,12 @@ class Align(Enum):
 
 
 
-    Allowed enum values: [CENTER, FIRST, LAST, VISIBLE]
+    Allowed enum values: [center, first, last, visible]
     """
-    CENTER = "CENTER"
-    FIRST = "FIRST"
-    LAST = "LAST"
-    VISIBLE = "VISIBLE"
+    center = "center"
+    first = "first"
+    last = "last"
+    visible = "visible"
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""

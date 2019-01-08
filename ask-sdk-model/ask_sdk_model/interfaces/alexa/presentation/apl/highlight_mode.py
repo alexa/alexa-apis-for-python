@@ -31,10 +31,10 @@ class HighlightMode(Enum):
 
 
 
-    Allowed enum values: [BLOCK, LINE]
+    Allowed enum values: [block, line]
     """
-    BLOCK = "BLOCK"
-    LINE = "LINE"
+    block = "block"
+    line = "line"
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
