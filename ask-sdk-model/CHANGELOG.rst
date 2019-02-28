@@ -107,3 +107,12 @@ This release contains the following changes:
 This release contains the following : 
 
 - Updated enum values for APL components.
+
+
+1.7.0
+~~~~~~~
+
+This release contains the following changes : 
+
+- Support for proactive event calls from out of skill session.
+- Remove delete reminders support.

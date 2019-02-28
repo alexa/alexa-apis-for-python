@@ -1,7 +1,7 @@
 # coding: utf-8
 
 #
-# Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file
 # except in compliance with the License. A copy of the License is located at
@@ -45,7 +45,6 @@ class ListManagementServiceClient(BaseServiceClient):
     :param api_configuration: Instance of :py:class:`ask_sdk_model.services.api_configuration.ApiConfiguration`
     :type api_configuration: ask_sdk_model.services.api_configuration.ApiConfiguration
     """
-
     def __init__(self, api_configuration):
         # type: (ApiConfiguration) -> None
         """
@@ -67,7 +66,9 @@ class ListManagementServiceClient(BaseServiceClient):
             params[key] = val
         del params['kwargs']
 
-        resource_path = '/v2/householdlists/'.replace('{format}', 'json')
+        resource_path = '/v2/householdlists/'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
 
         query_params = []
@@ -116,7 +117,9 @@ class ListManagementServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `list_id` when calling `" + operation_name + "`")
 
-        resource_path = '/v2/householdlists/{listId}/'.replace('{format}', 'json')
+        resource_path = '/v2/householdlists/{listId}/'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
         if 'list_id' in params:
             path_params['listId'] = params['list_id']
@@ -175,7 +178,9 @@ class ListManagementServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `item_id` when calling `" + operation_name + "`")
 
-        resource_path = '/v2/householdlists/{listId}/items/{itemId}/'.replace('{format}', 'json')
+        resource_path = '/v2/householdlists/{listId}/items/{itemId}/'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
         if 'list_id' in params:
             path_params['listId'] = params['list_id']
@@ -236,7 +241,9 @@ class ListManagementServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `item_id` when calling `" + operation_name + "`")
 
-        resource_path = '/v2/householdlists/{listId}/items/{itemId}/'.replace('{format}', 'json')
+        resource_path = '/v2/householdlists/{listId}/items/{itemId}/'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
         if 'list_id' in params:
             path_params['listId'] = params['list_id']
@@ -303,7 +310,9 @@ class ListManagementServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `update_list_item_request` when calling `" + operation_name + "`")
 
-        resource_path = '/v2/householdlists/{listId}/items/{itemId}/'.replace('{format}', 'json')
+        resource_path = '/v2/householdlists/{listId}/items/{itemId}/'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
         if 'list_id' in params:
             path_params['listId'] = params['list_id']
@@ -367,7 +376,9 @@ class ListManagementServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `create_list_item_request` when calling `" + operation_name + "`")
 
-        resource_path = '/v2/householdlists/{listId}/items/'.replace('{format}', 'json')
+        resource_path = '/v2/householdlists/{listId}/items/'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
         if 'list_id' in params:
             path_params['listId'] = params['list_id']
@@ -429,7 +440,9 @@ class ListManagementServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `update_list_request` when calling `" + operation_name + "`")
 
-        resource_path = '/v2/householdlists/{listId}/'.replace('{format}', 'json')
+        resource_path = '/v2/householdlists/{listId}/'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
         if 'list_id' in params:
             path_params['listId'] = params['list_id']
@@ -492,7 +505,9 @@ class ListManagementServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `status` when calling `" + operation_name + "`")
 
-        resource_path = '/v2/householdlists/{listId}/{status}/'.replace('{format}', 'json')
+        resource_path = '/v2/householdlists/{listId}/{status}/'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
         if 'list_id' in params:
             path_params['listId'] = params['list_id']
@@ -548,7 +563,9 @@ class ListManagementServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `create_list_request` when calling `" + operation_name + "`")
 
-        resource_path = '/v2/householdlists/'.replace('{format}', 'json')
+        resource_path = '/v2/householdlists/'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
 
         query_params = []

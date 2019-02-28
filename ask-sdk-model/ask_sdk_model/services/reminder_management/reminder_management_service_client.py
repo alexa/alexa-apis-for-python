@@ -1,7 +1,7 @@
 # coding: utf-8
 
 #
-# Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file
 # except in compliance with the License. A copy of the License is located at
@@ -40,7 +40,6 @@ class ReminderManagementServiceClient(BaseServiceClient):
     :param api_configuration: Instance of :py:class:`ask_sdk_model.services.api_configuration.ApiConfiguration`
     :type api_configuration: ask_sdk_model.services.api_configuration.ApiConfiguration
     """
-
     def __init__(self, api_configuration):
         # type: (ApiConfiguration) -> None
         """
@@ -68,7 +67,9 @@ class ReminderManagementServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `alert_token` when calling `" + operation_name + "`")
 
-        resource_path = '/v1/alerts/reminders/{alertToken}'.replace('{format}', 'json')
+        resource_path = '/v1/alerts/reminders/{alertToken}'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
         if 'alert_token' in params:
             path_params['alertToken'] = params['alert_token']
@@ -120,7 +121,9 @@ class ReminderManagementServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `alert_token` when calling `" + operation_name + "`")
 
-        resource_path = '/v1/alerts/reminders/{alertToken}'.replace('{format}', 'json')
+        resource_path = '/v1/alerts/reminders/{alertToken}'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
         if 'alert_token' in params:
             path_params['alertToken'] = params['alert_token']
@@ -178,7 +181,9 @@ class ReminderManagementServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `reminder_request` when calling `" + operation_name + "`")
 
-        resource_path = '/v1/alerts/reminders/{alertToken}'.replace('{format}', 'json')
+        resource_path = '/v1/alerts/reminders/{alertToken}'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
         if 'alert_token' in params:
             path_params['alertToken'] = params['alert_token']
@@ -215,50 +220,6 @@ class ReminderManagementServiceClient(BaseServiceClient):
             response_definitions=error_definitions,
             response_type="ask_sdk_model.services.reminder_management.reminder_response.ReminderResponse")
 
-    def delete_reminders(self, **kwargs):
-        # type: () -> Union[Error]
-        """
-        This API is invoked by the skill to delete all reminders created by the caller. 
-
-        :rtype: None
-        """
-        operation_name = "delete_reminders"
-        params = locals()
-        for key, val in six.iteritems(params['kwargs']):
-            params[key] = val
-        del params['kwargs']
-
-        resource_path = '/v1/alerts/reminders/'.replace('{format}', 'json')
-        path_params = {}
-
-        query_params = []
-
-        header_params = []
-
-        body_params = None
-        header_params.append(('Content-type', 'application/json'))
-
-        # Authentication setting
-        authorization_value = "Bearer " + self._authorization_value
-        header_params.append(("Authorization", authorization_value))
-
-        error_definitions = []
-        error_definitions.append(ServiceClientResponse(response_type=None, status_code=200, message="Success"))
-        error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=401, message="UserAuthenticationException. Request is not authorized/authenticated e.g. If customer does not have permission to create a reminder."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=429, message="RateExceededException e.g. When the skill is throttled for exceeding the max rate"))
-        error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=500, message="Internal Server Error"))
-
-        self.invoke(
-            method="DELETE",
-            endpoint=self._api_endpoint,
-            path=resource_path,
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-            body=body_params,
-            response_definitions=error_definitions,
-            response_type=None)
-
     def get_reminders(self, **kwargs):
         # type: () -> Union[GetRemindersResponse, Error]
         """
@@ -272,7 +233,9 @@ class ReminderManagementServiceClient(BaseServiceClient):
             params[key] = val
         del params['kwargs']
 
-        resource_path = '/v1/alerts/reminders/'.replace('{format}', 'json')
+        resource_path = '/v1/alerts/reminders/'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
 
         query_params = []
@@ -322,7 +285,9 @@ class ReminderManagementServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `reminder_request` when calling `" + operation_name + "`")
 
-        resource_path = '/v1/alerts/reminders/'.replace('{format}', 'json')
+        resource_path = '/v1/alerts/reminders/'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
 
         query_params = []

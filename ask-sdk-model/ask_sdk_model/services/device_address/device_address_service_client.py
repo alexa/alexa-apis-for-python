@@ -1,7 +1,7 @@
 # coding: utf-8
 
 #
-# Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file
 # except in compliance with the License. A copy of the License is located at
@@ -38,7 +38,6 @@ class DeviceAddressServiceClient(BaseServiceClient):
     :param api_configuration: Instance of :py:class:`ask_sdk_model.services.api_configuration.ApiConfiguration`
     :type api_configuration: ask_sdk_model.services.api_configuration.ApiConfiguration
     """
-
     def __init__(self, api_configuration):
         # type: (ApiConfiguration) -> None
         """
@@ -66,7 +65,9 @@ class DeviceAddressServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `device_id` when calling `" + operation_name + "`")
 
-        resource_path = '/v1/devices/{deviceId}/settings/address/countryAndPostalCode'.replace('{format}', 'json')
+        resource_path = '/v1/devices/{deviceId}/settings/address/countryAndPostalCode'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
         if 'device_id' in params:
             path_params['deviceId'] = params['device_id']
@@ -120,7 +121,9 @@ class DeviceAddressServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `device_id` when calling `" + operation_name + "`")
 
-        resource_path = '/v1/devices/{deviceId}/settings/address'.replace('{format}', 'json')
+        resource_path = '/v1/devices/{deviceId}/settings/address'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
         if 'device_id' in params:
             path_params['deviceId'] = params['device_id']

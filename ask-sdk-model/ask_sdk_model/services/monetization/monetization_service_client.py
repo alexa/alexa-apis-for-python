@@ -1,7 +1,7 @@
 # coding: utf-8
 
 #
-# Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file
 # except in compliance with the License. A copy of the License is located at
@@ -38,7 +38,6 @@ class MonetizationServiceClient(BaseServiceClient):
     :param api_configuration: Instance of :py:class:`ask_sdk_model.services.api_configuration.ApiConfiguration`
     :type api_configuration: ask_sdk_model.services.api_configuration.ApiConfiguration
     """
-
     def __init__(self, api_configuration):
         # type: (ApiConfiguration) -> None
         """
@@ -76,7 +75,9 @@ class MonetizationServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `accept_language` when calling `" + operation_name + "`")
 
-        resource_path = '/v1/users/~current/skills/~current/inSkillProducts'.replace('{format}', 'json')
+        resource_path = '/v1/users/~current/skills/~current/inSkillProducts'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
 
         query_params = []
@@ -144,7 +145,9 @@ class MonetizationServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `product_id` when calling `" + operation_name + "`")
 
-        resource_path = '/v1/users/~current/skills/~current/inSkillProducts/{productId}'.replace('{format}', 'json')
+        resource_path = '/v1/users/~current/skills/~current/inSkillProducts/{productId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
         if 'product_id' in params:
             path_params['productId'] = params['product_id']

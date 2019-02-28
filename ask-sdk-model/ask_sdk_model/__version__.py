@@ -1,5 +1,5 @@
 #
-# Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file
 # except in compliance with the License. A copy of the License is located at
@@ -14,7 +14,7 @@
 __pip_package_name__ = 'ask-sdk-model'
 __description__ = 'The ASK SDK Model package provides model definitions, for building Alexa Skills.'
 __url__ = 'https://github.com/alexa/alexa-apis-for-python'
-__version__ = '1.6.2'
+__version__ = '1.7.0'
 __author__ = 'Alexa Skills Kit'
 __author_email__ = 'ask-sdk-dynamic@amazon.com'
 __license__ = 'Apache 2.0'

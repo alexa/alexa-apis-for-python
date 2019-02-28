@@ -1,7 +1,7 @@
 # coding: utf-8
 
 #
-# Copyright 2018 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+# Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 #
 # Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file
 # except in compliance with the License. A copy of the License is located at
@@ -40,7 +40,6 @@ class UpsServiceClient(BaseServiceClient):
     :param api_configuration: Instance of :py:class:`ask_sdk_model.services.api_configuration.ApiConfiguration`
     :type api_configuration: ask_sdk_model.services.api_configuration.ApiConfiguration
     """
-
     def __init__(self, api_configuration):
         # type: (ApiConfiguration) -> None
         """
@@ -62,7 +61,9 @@ class UpsServiceClient(BaseServiceClient):
             params[key] = val
         del params['kwargs']
 
-        resource_path = '/v2/accounts/~current/settings/Profile.email'.replace('{format}', 'json')
+        resource_path = '/v2/accounts/~current/settings/Profile.email'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
 
         query_params = []
@@ -108,7 +109,9 @@ class UpsServiceClient(BaseServiceClient):
             params[key] = val
         del params['kwargs']
 
-        resource_path = '/v2/accounts/~current/settings/Profile.givenName'.replace('{format}', 'json')
+        resource_path = '/v2/accounts/~current/settings/Profile.givenName'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
 
         query_params = []
@@ -154,7 +157,9 @@ class UpsServiceClient(BaseServiceClient):
             params[key] = val
         del params['kwargs']
 
-        resource_path = '/v2/accounts/~current/settings/Profile.mobileNumber'.replace('{format}', 'json')
+        resource_path = '/v2/accounts/~current/settings/Profile.mobileNumber'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
 
         query_params = []
@@ -200,7 +205,9 @@ class UpsServiceClient(BaseServiceClient):
             params[key] = val
         del params['kwargs']
 
-        resource_path = '/v2/accounts/~current/settings/Profile.name'.replace('{format}', 'json')
+        resource_path = '/v2/accounts/~current/settings/Profile.name'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
 
         query_params = []
@@ -252,7 +259,9 @@ class UpsServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `device_id` when calling `" + operation_name + "`")
 
-        resource_path = '/v2/devices/{deviceId}/settings/System.distanceUnits'.replace('{format}', 'json')
+        resource_path = '/v2/devices/{deviceId}/settings/System.distanceUnits'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
         if 'device_id' in params:
             path_params['deviceId'] = params['device_id']
@@ -306,7 +315,9 @@ class UpsServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `device_id` when calling `" + operation_name + "`")
 
-        resource_path = '/v2/devices/{deviceId}/settings/System.temperatureUnit'.replace('{format}', 'json')
+        resource_path = '/v2/devices/{deviceId}/settings/System.temperatureUnit'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
         if 'device_id' in params:
             path_params['deviceId'] = params['device_id']
@@ -360,7 +371,9 @@ class UpsServiceClient(BaseServiceClient):
             raise ValueError(
                 "Missing the required parameter `device_id` when calling `" + operation_name + "`")
 
-        resource_path = '/v2/devices/{deviceId}/settings/System.timeZone'.replace('{format}', 'json')
+        resource_path = '/v2/devices/{deviceId}/settings/System.timeZone'
+        resource_path = resource_path.replace('{format}', 'json')
+
         path_params = {}
         if 'device_id' in params:
             path_params['deviceId'] = params['device_id']

@@ -15,10 +15,13 @@
 from __future__ import absolute_import
 
 from .permission_changed_request import PermissionChangedRequest
+from .proactive_subscription_changed_body import ProactiveSubscriptionChangedBody
 from .account_linked_request import AccountLinkedRequest
 from .permission_body import PermissionBody
 from .account_linked_body import AccountLinkedBody
 from .skill_enabled_request import SkillEnabledRequest
 from .skill_disabled_request import SkillDisabledRequest
+from .proactive_subscription_event import ProactiveSubscriptionEvent
 from .permission import Permission
 from .permission_accepted_request import PermissionAcceptedRequest
+from .proactive_subscription_changed_request import ProactiveSubscriptionChangedRequest

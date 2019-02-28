@@ -24,3 +24,4 @@ from .service_client_response import ServiceClientResponse
 from .service_exception import ServiceException
 from .api_client_request import ApiClientRequest
 from .api_client_message import ApiClientMessage
+from .authentication_configuration import AuthenticationConfiguration
