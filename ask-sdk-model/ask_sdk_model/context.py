@@ -24,6 +24,7 @@ if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional
     from datetime import datetime
     from ask_sdk_model.interfaces.system.system_state import SystemState
+    from ask_sdk_model.interfaces.automotive.automotive_state import AutomotiveState
     from ask_sdk_model.interfaces.geolocation.geolocation_state import GeolocationState
     from ask_sdk_model.interfaces.audioplayer.audio_player_state import AudioPlayerState
     from ask_sdk_model.interfaces.viewport.viewport_state import ViewportState
@@ -37,6 +38,8 @@ class Context(object):
     :type system: (optional) ask_sdk_model.interfaces.system.system_state.SystemState
     :param audio_player: Provides the current state for the AudioPlayer interface.
     :type audio_player: (optional) ask_sdk_model.interfaces.audioplayer.audio_player_state.AudioPlayerState
+    :param automotive: Provides the automotive specific information of the device.
+    :type automotive: (optional) ask_sdk_model.interfaces.automotive.automotive_state.AutomotiveState
     :param display: Provides the current state for the Display interface.
     :type display: (optional) ask_sdk_model.interfaces.display.display_state.DisplayState
     :param geolocation: Provides the last gathered geolocation information of the device.
@@ -48,6 +51,7 @@ class Context(object):
     deserialized_types = {
         'system': 'ask_sdk_model.interfaces.system.system_state.SystemState',
         'audio_player': 'ask_sdk_model.interfaces.audioplayer.audio_player_state.AudioPlayerState',
+        'automotive': 'ask_sdk_model.interfaces.automotive.automotive_state.AutomotiveState',
         'display': 'ask_sdk_model.interfaces.display.display_state.DisplayState',
         'geolocation': 'ask_sdk_model.interfaces.geolocation.geolocation_state.GeolocationState',
         'viewport': 'ask_sdk_model.interfaces.viewport.viewport_state.ViewportState'
@@ -56,19 +60,22 @@ class Context(object):
     attribute_map = {
         'system': 'System',
         'audio_player': 'AudioPlayer',
+        'automotive': 'Automotive',
         'display': 'Display',
         'geolocation': 'Geolocation',
         'viewport': 'Viewport'
     }
 
-    def __init__(self, system=None, audio_player=None, display=None, geolocation=None, viewport=None):
-        # type: (Optional[SystemState], Optional[AudioPlayerState], Optional[DisplayState], Optional[GeolocationState], Optional[ViewportState]) -> None
+    def __init__(self, system=None, audio_player=None, automotive=None, display=None, geolocation=None, viewport=None):
+        # type: (Optional[SystemState], Optional[AudioPlayerState], Optional[AutomotiveState], Optional[DisplayState], Optional[GeolocationState], Optional[ViewportState]) -> None
         """
 
         :param system: Provides information about the current state of the Alexa service and the device interacting with your skill.
         :type system: (optional) ask_sdk_model.interfaces.system.system_state.SystemState
         :param audio_player: Provides the current state for the AudioPlayer interface.
         :type audio_player: (optional) ask_sdk_model.interfaces.audioplayer.audio_player_state.AudioPlayerState
+        :param automotive: Provides the automotive specific information of the device.
+        :type automotive: (optional) ask_sdk_model.interfaces.automotive.automotive_state.AutomotiveState
         :param display: Provides the current state for the Display interface.
         :type display: (optional) ask_sdk_model.interfaces.display.display_state.DisplayState
         :param geolocation: Provides the last gathered geolocation information of the device.
@@ -80,6 +87,7 @@ class Context(object):
 
         self.system = system
         self.audio_player = audio_player
+        self.automotive = automotive
         self.display = display
         self.geolocation = geolocation
         self.viewport = viewport
