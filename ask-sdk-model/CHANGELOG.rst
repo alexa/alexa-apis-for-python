@@ -121,6 +121,7 @@ This release contains the following changes :
 1.8.0
 ~~~~~~~
 
-This release contains the following :
-Introduces support for customizing your skill’s experience for Echo Auto, which is now shipping to select customers via our invite program, and vehicles and other aftermarket devices that support Alexa Auto. 
-The automotive experience introduces another way for customers to interact with skills, while they are on-the-go and their attention is on the road. Now you can adapt your skill experience to be succinct, location-aware, and adaptive to your customer’s needs while they’re outside the home.
+This release contains the following changes :
+
+- Introduces support for customizing your skill’s experience for Echo Auto, which is now shipping to select customers via our invite program, and vehicles and other aftermarket devices that support Alexa Auto. 
+- The automotive experience introduces another way for customers to interact with skills, while they are on-the-go and their attention is on the road. Now you can adapt your skill experience to be succinct, location-aware, and adaptive to your customer’s needs while they’re outside the home.
