@@ -17,6 +17,7 @@ from __future__ import absolute_import
 from .error import Error
 from .product_type import ProductType
 from .in_skill_products_response import InSkillProductsResponse
+from .entitlement_reason import EntitlementReason
 from .purchasable_state import PurchasableState
 from .in_skill_product import InSkillProduct
 from .monetization_service_client import MonetizationServiceClient

@@ -14,8 +14,7 @@
 #
 from __future__ import absolute_import
 
-from .delegate_directive import DelegateDirective
-from .confirm_slot_directive import ConfirmSlotDirective
-from .elicit_slot_directive import ElicitSlotDirective
-from .confirm_intent_directive import ConfirmIntentDirective
-from .dynamic_entities_directive import DynamicEntitiesDirective
+from .entity_value_and_synonyms import EntityValueAndSynonyms
+from .update_behavior import UpdateBehavior
+from .entity_list_item import EntityListItem
+from .entity import Entity
