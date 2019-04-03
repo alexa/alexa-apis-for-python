@@ -60,7 +60,7 @@ class ChargeAmazonPayRequest(BaseAmazonPayEntity):
         'authorize_attributes': 'ask_sdk_model.interfaces.amazonpay.model.request.authorize_attributes.AuthorizeAttributes',
         'seller_order_attributes': 'ask_sdk_model.interfaces.amazonpay.model.request.seller_order_attributes.SellerOrderAttributes',
         'provider_attributes': 'ask_sdk_model.interfaces.amazonpay.model.request.provider_attributes.ProviderAttributes'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': '@type',
@@ -71,7 +71,7 @@ class ChargeAmazonPayRequest(BaseAmazonPayEntity):
         'authorize_attributes': 'authorizeAttributes',
         'seller_order_attributes': 'sellerOrderAttributes',
         'provider_attributes': 'providerAttributes'
-    }
+}  # type: Dict
 
     def __init__(self, version=None, seller_id=None, billing_agreement_id=None, payment_action=None, authorize_attributes=None, seller_order_attributes=None, provider_attributes=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[PaymentAction], Optional[AuthorizeAttributes], Optional[SellerOrderAttributes], Optional[ProviderAttributes]) -> None
@@ -92,7 +92,7 @@ class ChargeAmazonPayRequest(BaseAmazonPayEntity):
         :param provider_attributes: 
         :type provider_attributes: (optional) ask_sdk_model.interfaces.amazonpay.model.request.provider_attributes.ProviderAttributes
         """
-        self.__discriminator_value = "ChargeAmazonPayRequest"
+        self.__discriminator_value = "ChargeAmazonPayRequest"  # type: str
 
         self.object_type = self.__discriminator_value
         super(ChargeAmazonPayRequest, self).__init__(object_type=self.__discriminator_value, version=version)
@@ -106,7 +106,7 @@ class ChargeAmazonPayRequest(BaseAmazonPayEntity):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -45,14 +45,14 @@ class Restaurant(BaseEntity):
         'version': 'str',
         'name': 'str',
         'location': 'ask_sdk_model.interfaces.connections.entities.postal_address.PostalAddress'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': '@type',
         'version': '@version',
         'name': 'name',
         'location': 'location'
-    }
+}  # type: Dict
 
     def __init__(self, version=None, name=None, location=None):
         # type: (Optional[str], Optional[str], Optional[PostalAddress]) -> None
@@ -65,7 +65,7 @@ class Restaurant(BaseEntity):
         :param location: location
         :type location: (optional) ask_sdk_model.interfaces.connections.entities.postal_address.PostalAddress
         """
-        self.__discriminator_value = "Restaurant"
+        self.__discriminator_value = "Restaurant"  # type: str
 
         self.object_type = self.__discriminator_value
         super(Restaurant, self).__init__(object_type=self.__discriminator_value, version=version)
@@ -75,7 +75,7 @@ class Restaurant(BaseEntity):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -50,7 +50,7 @@ class Trigger(object):
         'offset_in_seconds': 'int',
         'time_zone_id': 'str',
         'recurrence': 'ask_sdk_model.services.reminder_management.recurrence.Recurrence'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
@@ -58,7 +58,7 @@ class Trigger(object):
         'offset_in_seconds': 'offsetInSeconds',
         'time_zone_id': 'timeZoneId',
         'recurrence': 'recurrence'
-    }
+}  # type: Dict
 
     def __init__(self, object_type=None, scheduled_time=None, offset_in_seconds=None, time_zone_id=None, recurrence=None):
         # type: (Optional[TriggerType], Optional[datetime], Optional[int], Optional[str], Optional[Recurrence]) -> None
@@ -75,7 +75,7 @@ class Trigger(object):
         :param recurrence: 
         :type recurrence: (optional) ask_sdk_model.services.reminder_management.recurrence.Recurrence
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.object_type = object_type
         self.scheduled_time = scheduled_time
@@ -86,7 +86,7 @@ class Trigger(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

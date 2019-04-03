@@ -40,12 +40,12 @@ class Entity(object):
     deserialized_types = {
         'id': 'str',
         'name': 'ask_sdk_model.er.dynamic.entity_value_and_synonyms.EntityValueAndSynonyms'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'id': 'id',
         'name': 'name'
-    }
+}  # type: Dict
 
     def __init__(self, id=None, name=None):
         # type: (Optional[str], Optional[EntityValueAndSynonyms]) -> None
@@ -56,7 +56,7 @@ class Entity(object):
         :param name: 
         :type name: (optional) ask_sdk_model.er.dynamic.entity_value_and_synonyms.EntityValueAndSynonyms
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.id = id
         self.name = name
@@ -64,7 +64,7 @@ class Entity(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -64,7 +64,7 @@ class ViewportState(object):
         'current_pixel_height': 'float',
         'touch': 'list[ask_sdk_model.interfaces.viewport.touch.Touch]',
         'keyboard': 'list[ask_sdk_model.interfaces.viewport.keyboard.Keyboard]'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'experiences': 'experiences',
@@ -76,7 +76,7 @@ class ViewportState(object):
         'current_pixel_height': 'currentPixelHeight',
         'touch': 'touch',
         'keyboard': 'keyboard'
-    }
+}  # type: Dict
 
     def __init__(self, experiences=None, shape=None, pixel_width=None, pixel_height=None, dpi=None, current_pixel_width=None, current_pixel_height=None, touch=None, keyboard=None):
         # type: (Optional[List[Experience]], Optional[Shape], Optional[float], Optional[float], Optional[float], Optional[float], Optional[float], Optional[List[Touch]], Optional[List[Keyboard]]) -> None
@@ -101,7 +101,7 @@ class ViewportState(object):
         :param keyboard: The physical button input mechanisms supported by the device. An empty array indicates physical button input is unsupported.
         :type keyboard: (optional) list[ask_sdk_model.interfaces.viewport.keyboard.Keyboard]
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.experiences = experiences
         self.shape = shape
@@ -116,7 +116,7 @@ class ViewportState(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

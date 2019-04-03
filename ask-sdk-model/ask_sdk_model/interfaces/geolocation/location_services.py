@@ -41,12 +41,12 @@ class LocationServices(object):
     deserialized_types = {
         'status': 'ask_sdk_model.interfaces.geolocation.status.Status',
         'access': 'ask_sdk_model.interfaces.geolocation.access.Access'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'status': 'status',
         'access': 'access'
-    }
+}  # type: Dict
 
     def __init__(self, status=None, access=None):
         # type: (Optional[Status], Optional[Access]) -> None
@@ -57,7 +57,7 @@ class LocationServices(object):
         :param access: A string representing if Alexa has access to location services running on the hostOS of device.
         :type access: (optional) ask_sdk_model.interfaces.geolocation.access.Access
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.status = status
         self.access = access
@@ -65,7 +65,7 @@ class LocationServices(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

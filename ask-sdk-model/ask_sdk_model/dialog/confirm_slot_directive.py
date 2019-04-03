@@ -40,13 +40,13 @@ class ConfirmSlotDirective(Directive):
         'object_type': 'str',
         'updated_intent': 'ask_sdk_model.intent.Intent',
         'slot_to_confirm': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
         'updated_intent': 'updatedIntent',
         'slot_to_confirm': 'slotToConfirm'
-    }
+}  # type: Dict
 
     def __init__(self, updated_intent=None, slot_to_confirm=None):
         # type: (Optional[Intent], Optional[str]) -> None
@@ -57,7 +57,7 @@ class ConfirmSlotDirective(Directive):
         :param slot_to_confirm: 
         :type slot_to_confirm: (optional) str
         """
-        self.__discriminator_value = "Dialog.ConfirmSlot"
+        self.__discriminator_value = "Dialog.ConfirmSlot"  # type: str
 
         self.object_type = self.__discriminator_value
         super(ConfirmSlotDirective, self).__init__(object_type=self.__discriminator_value)
@@ -67,7 +67,7 @@ class ConfirmSlotDirective(Directive):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

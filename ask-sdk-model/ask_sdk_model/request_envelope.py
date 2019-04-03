@@ -48,14 +48,14 @@ class RequestEnvelope(object):
         'session': 'ask_sdk_model.session.Session',
         'context': 'ask_sdk_model.context.Context',
         'request': 'ask_sdk_model.request.Request'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'version': 'version',
         'session': 'session',
         'context': 'context',
         'request': 'request'
-    }
+}  # type: Dict
 
     def __init__(self, version=None, session=None, context=None, request=None):
         # type: (Optional[str], Optional[Session], Optional[Context], Optional[Request]) -> None
@@ -70,7 +70,7 @@ class RequestEnvelope(object):
         :param request: A request object that provides the details of the user’s request.
         :type request: (optional) ask_sdk_model.request.Request
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.version = version
         self.session = session
@@ -80,7 +80,7 @@ class RequestEnvelope(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

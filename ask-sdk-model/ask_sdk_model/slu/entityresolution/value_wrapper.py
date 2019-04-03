@@ -37,11 +37,11 @@ class ValueWrapper(object):
     """
     deserialized_types = {
         'value': 'ask_sdk_model.slu.entityresolution.value.Value'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'value': 'value'
-    }
+}  # type: Dict
 
     def __init__(self, value=None):
         # type: (Optional[Value]) -> None
@@ -50,14 +50,14 @@ class ValueWrapper(object):
         :param value: 
         :type value: (optional) ask_sdk_model.slu.entityresolution.value.Value
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.value = value
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

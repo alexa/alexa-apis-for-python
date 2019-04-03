@@ -52,7 +52,7 @@ class AlexaList(object):
         'version': 'int',
         'items': 'list[ask_sdk_model.services.list_management.alexa_list_item.AlexaListItem]',
         'links': 'ask_sdk_model.services.list_management.links.Links'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'list_id': 'listId',
@@ -61,7 +61,7 @@ class AlexaList(object):
         'version': 'version',
         'items': 'items',
         'links': 'links'
-    }
+}  # type: Dict
 
     def __init__(self, list_id=None, name=None, state=None, version=None, items=None, links=None):
         # type: (Optional[str], Optional[str], Optional[ListState], Optional[int], Optional[List[AlexaListItem]], Optional[Links]) -> None
@@ -80,7 +80,7 @@ class AlexaList(object):
         :param links: 
         :type links: (optional) ask_sdk_model.services.list_management.links.Links
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.list_id = list_id
         self.name = name
@@ -92,7 +92,7 @@ class AlexaList(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

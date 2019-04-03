@@ -40,12 +40,12 @@ class Device(object):
     deserialized_types = {
         'device_id': 'str',
         'supported_interfaces': 'ask_sdk_model.supported_interfaces.SupportedInterfaces'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'device_id': 'deviceId',
         'supported_interfaces': 'supportedInterfaces'
-    }
+}  # type: Dict
 
     def __init__(self, device_id=None, supported_interfaces=None):
         # type: (Optional[str], Optional[SupportedInterfaces]) -> None
@@ -56,7 +56,7 @@ class Device(object):
         :param supported_interfaces: Lists each interface that the device supports. For example, if supportedInterfaces includes AudioPlayer {}, then you know that the device supports streaming audio using the AudioPlayer interface
         :type supported_interfaces: (optional) ask_sdk_model.supported_interfaces.SupportedInterfaces
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.device_id = device_id
         self.supported_interfaces = supported_interfaces
@@ -64,7 +64,7 @@ class Device(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

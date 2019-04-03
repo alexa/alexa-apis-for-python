@@ -45,7 +45,7 @@ class MessageReceivedRequest(Request):
         'timestamp': 'datetime',
         'locale': 'str',
         'message': 'dict(str, object)'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
@@ -53,7 +53,7 @@ class MessageReceivedRequest(Request):
         'timestamp': 'timestamp',
         'locale': 'locale',
         'message': 'message'
-    }
+}  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, message=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[Dict[str, object]]) -> None
@@ -68,7 +68,7 @@ class MessageReceivedRequest(Request):
         :param message: 
         :type message: (optional) dict(str, object)
         """
-        self.__discriminator_value = "Messaging.MessageReceived"
+        self.__discriminator_value = "Messaging.MessageReceived"  # type: str
 
         self.object_type = self.__discriminator_value
         super(MessageReceivedRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
@@ -77,7 +77,7 @@ class MessageReceivedRequest(Request):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

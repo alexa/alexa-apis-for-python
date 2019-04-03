@@ -37,11 +37,11 @@ class Resolutions(object):
     """
     deserialized_types = {
         'resolutions_per_authority': 'list[ask_sdk_model.slu.entityresolution.resolution.Resolution]'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'resolutions_per_authority': 'resolutionsPerAuthority'
-    }
+}  # type: Dict
 
     def __init__(self, resolutions_per_authority=None):
         # type: (Optional[List[Resolution]]) -> None
@@ -50,14 +50,14 @@ class Resolutions(object):
         :param resolutions_per_authority: 
         :type resolutions_per_authority: (optional) list[ask_sdk_model.slu.entityresolution.resolution.Resolution]
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.resolutions_per_authority = resolutions_per_authority
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

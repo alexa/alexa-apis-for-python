@@ -25,7 +25,7 @@ from ask_sdk_model.services.service_client_response import ServiceClientResponse
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Union
+    from typing import Dict, List, Union, Any
     from datetime import datetime
     from ask_sdk_model.services.ups.phone_number import PhoneNumber
     from ask_sdk_model.services.ups.distance_units import DistanceUnits
@@ -49,7 +49,7 @@ class UpsServiceClient(BaseServiceClient):
         super(UpsServiceClient, self).__init__(api_configuration)
 
     def get_profile_email(self, **kwargs):
-        # type: () -> Union[str, Error]
+        # type: (**Any) -> Union[str, Error]
         """
         Gets the email address of the customer associated with the current enablement. Requires customer consent for scopes: [alexa::profile:email:read] 
 
@@ -64,11 +64,11 @@ class UpsServiceClient(BaseServiceClient):
         resource_path = '/v2/accounts/~current/settings/Profile.email'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
@@ -77,7 +77,7 @@ class UpsServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="str", status_code=200, message="Successfully retrieved the requested information."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=204, message="The query did not return any results."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=401, message="The authentication token is malformed or invalid."))
@@ -97,7 +97,7 @@ class UpsServiceClient(BaseServiceClient):
             response_type="str")
 
     def get_profile_given_name(self, **kwargs):
-        # type: () -> Union[str, Error]
+        # type: (**Any) -> Union[str, Error]
         """
         Gets the given name (first name) of the customer associated with the current enablement. Requires customer consent for scopes: [alexa::profile:given_name:read] 
 
@@ -112,11 +112,11 @@ class UpsServiceClient(BaseServiceClient):
         resource_path = '/v2/accounts/~current/settings/Profile.givenName'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
@@ -125,7 +125,7 @@ class UpsServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="str", status_code=200, message="Successfully retrieved the requested information."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=204, message="The query did not return any results."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=401, message="The authentication token is malformed or invalid."))
@@ -145,7 +145,7 @@ class UpsServiceClient(BaseServiceClient):
             response_type="str")
 
     def get_profile_mobile_number(self, **kwargs):
-        # type: () -> Union[PhoneNumber, Error]
+        # type: (**Any) -> Union[PhoneNumber, Error]
         """
         Gets the mobile phone number of the customer associated with the current enablement. Requires customer consent for scopes: [alexa::profile:mobile_number:read] 
 
@@ -160,11 +160,11 @@ class UpsServiceClient(BaseServiceClient):
         resource_path = '/v2/accounts/~current/settings/Profile.mobileNumber'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
@@ -173,7 +173,7 @@ class UpsServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.phone_number.PhoneNumber", status_code=200, message="Successfully retrieved the requested information."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=204, message="The query did not return any results."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=401, message="The authentication token is malformed or invalid."))
@@ -193,7 +193,7 @@ class UpsServiceClient(BaseServiceClient):
             response_type="ask_sdk_model.services.ups.phone_number.PhoneNumber")
 
     def get_profile_name(self, **kwargs):
-        # type: () -> Union[str, Error]
+        # type: (**Any) -> Union[str, Error]
         """
         Gets the full name of the customer associated with the current enablement. Requires customer consent for scopes: [alexa::profile:name:read] 
 
@@ -208,11 +208,11 @@ class UpsServiceClient(BaseServiceClient):
         resource_path = '/v2/accounts/~current/settings/Profile.name'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
@@ -221,7 +221,7 @@ class UpsServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="str", status_code=200, message="Successfully retrieved the requested information."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=204, message="The query did not return any results."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=401, message="The authentication token is malformed or invalid."))
@@ -241,7 +241,7 @@ class UpsServiceClient(BaseServiceClient):
             response_type="str")
 
     def get_system_distance_units(self, device_id, **kwargs):
-        # type: (str) -> Union[Error, DistanceUnits]
+        # type: (str, **Any) -> Union[Error, DistanceUnits]
         """
         Gets the distance measurement unit of the device. Does not require explict customer consent. 
 
@@ -262,13 +262,13 @@ class UpsServiceClient(BaseServiceClient):
         resource_path = '/v2/devices/{deviceId}/settings/System.distanceUnits'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
         if 'device_id' in params:
             path_params['deviceId'] = params['device_id']
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
@@ -277,7 +277,7 @@ class UpsServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.distance_units.DistanceUnits", status_code=200, message="Successfully get the setting"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=204, message="The query did not return any results."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=401, message="The authentication token is malformed or invalid."))
@@ -297,7 +297,7 @@ class UpsServiceClient(BaseServiceClient):
             response_type="ask_sdk_model.services.ups.distance_units.DistanceUnits")
 
     def get_system_temperature_unit(self, device_id, **kwargs):
-        # type: (str) -> Union[TemperatureUnit, Error]
+        # type: (str, **Any) -> Union[TemperatureUnit, Error]
         """
         Gets the temperature measurement units of the device. Does not require explict customer consent. 
 
@@ -318,13 +318,13 @@ class UpsServiceClient(BaseServiceClient):
         resource_path = '/v2/devices/{deviceId}/settings/System.temperatureUnit'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
         if 'device_id' in params:
             path_params['deviceId'] = params['device_id']
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
@@ -333,7 +333,7 @@ class UpsServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.temperature_unit.TemperatureUnit", status_code=200, message="Successfully get the setting"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=204, message="The query did not return any results."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=401, message="The authentication token is malformed or invalid."))
@@ -353,7 +353,7 @@ class UpsServiceClient(BaseServiceClient):
             response_type="ask_sdk_model.services.ups.temperature_unit.TemperatureUnit")
 
     def get_system_time_zone(self, device_id, **kwargs):
-        # type: (str) -> Union[str, Error]
+        # type: (str, **Any) -> Union[str, Error]
         """
         Gets the time zone of the device. Does not require explict customer consent. 
 
@@ -374,13 +374,13 @@ class UpsServiceClient(BaseServiceClient):
         resource_path = '/v2/devices/{deviceId}/settings/System.timeZone'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
         if 'device_id' in params:
             path_params['deviceId'] = params['device_id']
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
@@ -389,7 +389,7 @@ class UpsServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="str", status_code=200, message="Successfully get the setting"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=204, message="The query did not return any results."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=401, message="The authentication token is malformed or invalid."))

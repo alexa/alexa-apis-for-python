@@ -38,12 +38,12 @@ class Error(object):
     deserialized_types = {
         'message': 'str',
         'object_type': 'ask_sdk_model.interfaces.audioplayer.error_type.ErrorType'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'message': 'message',
         'object_type': 'type'
-    }
+}  # type: Dict
 
     def __init__(self, message=None, object_type=None):
         # type: (Optional[str], Optional[ErrorType]) -> None
@@ -54,7 +54,7 @@ class Error(object):
         :param object_type: 
         :type object_type: (optional) ask_sdk_model.interfaces.audioplayer.error_type.ErrorType
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.message = message
         self.object_type = object_type
@@ -62,7 +62,7 @@ class Error(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

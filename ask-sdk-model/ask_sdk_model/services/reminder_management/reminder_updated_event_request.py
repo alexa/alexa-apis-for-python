@@ -46,7 +46,7 @@ class ReminderUpdatedEventRequest(Request):
         'timestamp': 'datetime',
         'locale': 'str',
         'body': 'ask_sdk_model.services.reminder_management.event.Event'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
@@ -54,7 +54,7 @@ class ReminderUpdatedEventRequest(Request):
         'timestamp': 'timestamp',
         'locale': 'locale',
         'body': 'body'
-    }
+}  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, body=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[Event]) -> None
@@ -69,7 +69,7 @@ class ReminderUpdatedEventRequest(Request):
         :param body: 
         :type body: (optional) ask_sdk_model.services.reminder_management.event.Event
         """
-        self.__discriminator_value = "Reminders.ReminderUpdated"
+        self.__discriminator_value = "Reminders.ReminderUpdated"  # type: str
 
         self.object_type = self.__discriminator_value
         super(ReminderUpdatedEventRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
@@ -78,7 +78,7 @@ class ReminderUpdatedEventRequest(Request):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

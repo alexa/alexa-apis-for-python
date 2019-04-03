@@ -25,7 +25,7 @@ from ask_sdk_model.services.service_client_response import ServiceClientResponse
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Union
+    from typing import Dict, List, Union, Any
     from datetime import datetime
     from ask_sdk_model.services.reminder_management.get_reminders_response import GetRemindersResponse
     from ask_sdk_model.services.reminder_management.get_reminder_response import GetReminderResponse
@@ -49,7 +49,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
         super(ReminderManagementServiceClient, self).__init__(api_configuration)
 
     def delete_reminder(self, alert_token, **kwargs):
-        # type: (str) -> Union[Error]
+        # type: (str, **Any) -> Union[Error]
         """
         This API is invoked by the skill to delete a single reminder. 
 
@@ -70,13 +70,13 @@ class ReminderManagementServiceClient(BaseServiceClient):
         resource_path = '/v1/alerts/reminders/{alertToken}'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
         if 'alert_token' in params:
             path_params['alertToken'] = params['alert_token']
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
@@ -85,7 +85,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=200, message="Success"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=401, message="UserAuthenticationException. Request is not authorized/authenticated e.g. If customer does not have permission to create a reminder."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=429, message="RateExceededException e.g. When the skill is throttled for exceeding the max rate"))
@@ -103,7 +103,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
             response_type=None)
 
     def get_reminder(self, alert_token, **kwargs):
-        # type: (str) -> Union[GetReminderResponse, Error]
+        # type: (str, **Any) -> Union[GetReminderResponse, Error]
         """
         This API is invoked by the skill to get a single reminder. 
 
@@ -124,13 +124,13 @@ class ReminderManagementServiceClient(BaseServiceClient):
         resource_path = '/v1/alerts/reminders/{alertToken}'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
         if 'alert_token' in params:
             path_params['alertToken'] = params['alert_token']
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
@@ -139,7 +139,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.get_reminder_response.GetReminderResponse", status_code=200, message="Success"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=401, message="UserAuthenticationException. Request is not authorized/authenticated e.g. If customer does not have permission to create a reminder."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=429, message="RateExceededException e.g. When the skill is throttled for exceeding the max rate"))
@@ -157,7 +157,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
             response_type="ask_sdk_model.services.reminder_management.get_reminder_response.GetReminderResponse")
 
     def update_reminder(self, alert_token, reminder_request, **kwargs):
-        # type: (str, ReminderRequest) -> Union[ReminderResponse, Error]
+        # type: (str, ReminderRequest, **Any) -> Union[ReminderResponse, Error]
         """
         This API is invoked by the skill to update a reminder. 
 
@@ -184,13 +184,13 @@ class ReminderManagementServiceClient(BaseServiceClient):
         resource_path = '/v1/alerts/reminders/{alertToken}'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
         if 'alert_token' in params:
             path_params['alertToken'] = params['alert_token']
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         if 'reminder_request' in params:
@@ -201,7 +201,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.reminder_response.ReminderResponse", status_code=200, message="Success"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=400, message="Bad Request"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=404, message="NotFoundException e.g. Retured when reminder is not found"))
@@ -221,7 +221,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
             response_type="ask_sdk_model.services.reminder_management.reminder_response.ReminderResponse")
 
     def get_reminders(self, **kwargs):
-        # type: () -> Union[GetRemindersResponse, Error]
+        # type: (**Any) -> Union[GetRemindersResponse, Error]
         """
         This API is invoked by the skill to get a all reminders created by the caller. 
 
@@ -236,11 +236,11 @@ class ReminderManagementServiceClient(BaseServiceClient):
         resource_path = '/v1/alerts/reminders/'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
@@ -249,7 +249,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.get_reminders_response.GetRemindersResponse", status_code=200, message="Success"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=401, message="UserAuthenticationException. Request is not authorized/authenticated e.g. If customer does not have permission to create a reminder."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=429, message="RateExceededException e.g. When the skill is throttled for exceeding the max rate"))
@@ -267,7 +267,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
             response_type="ask_sdk_model.services.reminder_management.get_reminders_response.GetRemindersResponse")
 
     def create_reminder(self, reminder_request, **kwargs):
-        # type: (ReminderRequest) -> Union[ReminderResponse, Error]
+        # type: (ReminderRequest, **Any) -> Union[ReminderResponse, Error]
         """
         This API is invoked by the skill to create a new reminder. 
 
@@ -288,11 +288,11 @@ class ReminderManagementServiceClient(BaseServiceClient):
         resource_path = '/v1/alerts/reminders/'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         if 'reminder_request' in params:
@@ -303,7 +303,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.reminder_response.ReminderResponse", status_code=200, message="Success"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=400, message="Bad Request"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=403, message="Forbidden"))

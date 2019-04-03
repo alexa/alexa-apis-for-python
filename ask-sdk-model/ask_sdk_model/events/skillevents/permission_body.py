@@ -35,11 +35,11 @@ class PermissionBody(object):
     """
     deserialized_types = {
         'accepted_permissions': 'list[ask_sdk_model.events.skillevents.permission.Permission]'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'accepted_permissions': 'acceptedPermissions'
-    }
+}  # type: Dict
 
     def __init__(self, accepted_permissions=None):
         # type: (Optional[List[Permission]]) -> None
@@ -48,14 +48,14 @@ class PermissionBody(object):
         :param accepted_permissions: 
         :type accepted_permissions: (optional) list[ask_sdk_model.events.skillevents.permission.Permission]
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.accepted_permissions = accepted_permissions
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

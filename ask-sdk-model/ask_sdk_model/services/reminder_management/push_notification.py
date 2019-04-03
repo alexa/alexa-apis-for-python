@@ -37,11 +37,11 @@ class PushNotification(object):
     """
     deserialized_types = {
         'status': 'ask_sdk_model.services.reminder_management.push_notification_status.PushNotificationStatus'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'status': 'status'
-    }
+}  # type: Dict
 
     def __init__(self, status=None):
         # type: (Optional[PushNotificationStatus]) -> None
@@ -50,14 +50,14 @@ class PushNotification(object):
         :param status: 
         :type status: (optional) ask_sdk_model.services.reminder_management.push_notification_status.PushNotificationStatus
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.status = status
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

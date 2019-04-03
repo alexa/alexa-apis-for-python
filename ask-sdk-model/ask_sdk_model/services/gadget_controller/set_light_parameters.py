@@ -44,13 +44,13 @@ class SetLightParameters(object):
         'trigger_event': 'ask_sdk_model.services.gadget_controller.trigger_event_type.TriggerEventType',
         'trigger_event_time_ms': 'int',
         'animations': 'list[ask_sdk_model.services.gadget_controller.light_animation.LightAnimation]'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'trigger_event': 'triggerEvent',
         'trigger_event_time_ms': 'triggerEventTimeMs',
         'animations': 'animations'
-    }
+}  # type: Dict
 
     def __init__(self, trigger_event=None, trigger_event_time_ms=None, animations=None):
         # type: (Optional[TriggerEventType], Optional[int], Optional[List[LightAnimation]]) -> None
@@ -63,7 +63,7 @@ class SetLightParameters(object):
         :param animations: 
         :type animations: (optional) list[ask_sdk_model.services.gadget_controller.light_animation.LightAnimation]
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.trigger_event = trigger_event
         self.trigger_event_time_ms = trigger_event_time_ms
@@ -72,7 +72,7 @@ class SetLightParameters(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

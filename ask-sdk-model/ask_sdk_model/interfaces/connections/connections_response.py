@@ -57,7 +57,7 @@ class ConnectionsResponse(Request):
         'name': 'str',
         'payload': 'dict(str, object)',
         'token': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
@@ -68,7 +68,7 @@ class ConnectionsResponse(Request):
         'name': 'name',
         'payload': 'payload',
         'token': 'token'
-    }
+}  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, status=None, name=None, payload=None, token=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[ConnectionsStatus], Optional[str], Optional[Dict[str, object]], Optional[str]) -> None
@@ -89,7 +89,7 @@ class ConnectionsResponse(Request):
         :param token: This is the token that the skill originally sent with the ConnectionsSendRequest directive.
         :type token: (optional) str
         """
-        self.__discriminator_value = "Connections.Response"
+        self.__discriminator_value = "Connections.Response"  # type: str
 
         self.object_type = self.__discriminator_value
         super(ConnectionsResponse, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
@@ -101,7 +101,7 @@ class ConnectionsResponse(Request):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

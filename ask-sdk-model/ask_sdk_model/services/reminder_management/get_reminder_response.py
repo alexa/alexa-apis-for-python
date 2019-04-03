@@ -62,7 +62,7 @@ class GetReminderResponse(Reminder):
         'alert_info': 'ask_sdk_model.services.reminder_management.alert_info.AlertInfo',
         'push_notification': 'ask_sdk_model.services.reminder_management.push_notification.PushNotification',
         'version': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'alert_token': 'alertToken',
@@ -73,7 +73,7 @@ class GetReminderResponse(Reminder):
         'alert_info': 'alertInfo',
         'push_notification': 'pushNotification',
         'version': 'version'
-    }
+}  # type: Dict
 
     def __init__(self, alert_token=None, created_time=None, updated_time=None, status=None, trigger=None, alert_info=None, push_notification=None, version=None):
         # type: (Optional[str], Optional[datetime], Optional[datetime], Optional[Status], Optional[Trigger], Optional[AlertInfo], Optional[PushNotification], Optional[str]) -> None
@@ -96,14 +96,14 @@ class GetReminderResponse(Reminder):
         :param version: Version of reminder alert
         :type version: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         super(GetReminderResponse, self).__init__(alert_token=alert_token, created_time=created_time, updated_time=updated_time, status=status, trigger=trigger, alert_info=alert_info, push_notification=push_notification, version=version)
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

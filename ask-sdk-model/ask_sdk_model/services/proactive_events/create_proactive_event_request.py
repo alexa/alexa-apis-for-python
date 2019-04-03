@@ -51,7 +51,7 @@ class CreateProactiveEventRequest(object):
         'event': 'ask_sdk_model.services.proactive_events.event.Event',
         'localized_attributes': 'list[object]',
         'relevant_audience': 'ask_sdk_model.services.proactive_events.relevant_audience.RelevantAudience'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'timestamp': 'timestamp',
@@ -60,7 +60,7 @@ class CreateProactiveEventRequest(object):
         'event': 'event',
         'localized_attributes': 'localizedAttributes',
         'relevant_audience': 'relevantAudience'
-    }
+}  # type: Dict
 
     def __init__(self, timestamp=None, reference_id=None, expiry_time=None, event=None, localized_attributes=None, relevant_audience=None):
         # type: (Optional[datetime], Optional[str], Optional[datetime], Optional[Event], Optional[List[object]], Optional[RelevantAudience]) -> None
@@ -79,7 +79,7 @@ class CreateProactiveEventRequest(object):
         :param relevant_audience: 
         :type relevant_audience: (optional) ask_sdk_model.services.proactive_events.relevant_audience.RelevantAudience
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.timestamp = timestamp
         self.reference_id = reference_id
@@ -91,7 +91,7 @@ class CreateProactiveEventRequest(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -34,11 +34,11 @@ class ProactiveSubscriptionEvent(object):
     """
     deserialized_types = {
         'event_name': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'event_name': 'eventName'
-    }
+}  # type: Dict
 
     def __init__(self, event_name=None):
         # type: (Optional[str]) -> None
@@ -47,14 +47,14 @@ class ProactiveSubscriptionEvent(object):
         :param event_name: 
         :type event_name: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.event_name = event_name
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

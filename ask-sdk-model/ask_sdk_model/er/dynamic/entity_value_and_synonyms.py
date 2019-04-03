@@ -39,12 +39,12 @@ class EntityValueAndSynonyms(object):
     deserialized_types = {
         'value': 'str',
         'synonyms': 'list[str]'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'value': 'value',
         'synonyms': 'synonyms'
-    }
+}  # type: Dict
 
     def __init__(self, value=None, synonyms=None):
         # type: (Optional[str], Optional[List[object]]) -> None
@@ -55,7 +55,7 @@ class EntityValueAndSynonyms(object):
         :param synonyms: An array of synonyms for the entity
         :type synonyms: (optional) list[str]
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.value = value
         self.synonyms = synonyms
@@ -63,7 +63,7 @@ class EntityValueAndSynonyms(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

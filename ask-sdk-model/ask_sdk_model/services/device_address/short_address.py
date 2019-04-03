@@ -37,12 +37,12 @@ class ShortAddress(object):
     deserialized_types = {
         'country_code': 'str',
         'postal_code': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'country_code': 'countryCode',
         'postal_code': 'postalCode'
-    }
+}  # type: Dict
 
     def __init__(self, country_code=None, postal_code=None):
         # type: (Optional[str], Optional[str]) -> None
@@ -53,7 +53,7 @@ class ShortAddress(object):
         :param postal_code: 
         :type postal_code: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.country_code = country_code
         self.postal_code = postal_code
@@ -61,7 +61,7 @@ class ShortAddress(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -35,11 +35,11 @@ class ProactiveSubscriptionChangedBody(object):
     """
     deserialized_types = {
         'subscriptions': 'list[ask_sdk_model.events.skillevents.proactive_subscription_event.ProactiveSubscriptionEvent]'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'subscriptions': 'subscriptions'
-    }
+}  # type: Dict
 
     def __init__(self, subscriptions=None):
         # type: (Optional[List[ProactiveSubscriptionEvent]]) -> None
@@ -48,14 +48,14 @@ class ProactiveSubscriptionChangedBody(object):
         :param subscriptions: The list of events that this customer is currently subscribed to. If a customer unsubscribes from an event, this list will contain remaining event types to which the customer is still subscribed to receive from your skill. If the list of subscriptions is empty, this customer has unsubscribed from all event types from your skill. 
         :type subscriptions: (optional) list[ask_sdk_model.events.skillevents.proactive_subscription_event.ProactiveSubscriptionEvent]
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.subscriptions = subscriptions
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

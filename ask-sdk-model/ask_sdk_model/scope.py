@@ -37,11 +37,11 @@ class Scope(object):
     """
     deserialized_types = {
         'status': 'ask_sdk_model.permission_status.PermissionStatus'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'status': 'status'
-    }
+}  # type: Dict
 
     def __init__(self, status=None):
         # type: (Optional[PermissionStatus]) -> None
@@ -50,14 +50,14 @@ class Scope(object):
         :param status: 
         :type status: (optional) ask_sdk_model.permission_status.PermissionStatus
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.status = status
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

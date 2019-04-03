@@ -50,7 +50,7 @@ class ExceptionEncounteredRequest(Request):
         'locale': 'str',
         'error': 'ask_sdk_model.interfaces.system.error.Error',
         'cause': 'ask_sdk_model.interfaces.system.error_cause.ErrorCause'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
@@ -59,7 +59,7 @@ class ExceptionEncounteredRequest(Request):
         'locale': 'locale',
         'error': 'error',
         'cause': 'cause'
-    }
+}  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, error=None, cause=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[Error], Optional[ErrorCause]) -> None
@@ -76,7 +76,7 @@ class ExceptionEncounteredRequest(Request):
         :param cause: 
         :type cause: (optional) ask_sdk_model.interfaces.system.error_cause.ErrorCause
         """
-        self.__discriminator_value = "System.ExceptionEncountered"
+        self.__discriminator_value = "System.ExceptionEncountered"  # type: str
 
         self.object_type = self.__discriminator_value
         super(ExceptionEncounteredRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
@@ -86,7 +86,7 @@ class ExceptionEncounteredRequest(Request):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -43,14 +43,14 @@ class Stream(object):
         'token': 'str',
         'url': 'str',
         'offset_in_milliseconds': 'int'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'expected_previous_token': 'expectedPreviousToken',
         'token': 'token',
         'url': 'url',
         'offset_in_milliseconds': 'offsetInMilliseconds'
-    }
+}  # type: Dict
 
     def __init__(self, expected_previous_token=None, token=None, url=None, offset_in_milliseconds=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[int]) -> None
@@ -65,7 +65,7 @@ class Stream(object):
         :param offset_in_milliseconds: 
         :type offset_in_milliseconds: (optional) int
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.expected_previous_token = expected_previous_token
         self.token = token
@@ -75,7 +75,7 @@ class Stream(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

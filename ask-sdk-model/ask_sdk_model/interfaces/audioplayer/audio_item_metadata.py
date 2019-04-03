@@ -46,14 +46,14 @@ class AudioItemMetadata(object):
         'subtitle': 'str',
         'art': 'ask_sdk_model.interfaces.display.image.Image',
         'background_image': 'ask_sdk_model.interfaces.display.image.Image'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'title': 'title',
         'subtitle': 'subtitle',
         'art': 'art',
         'background_image': 'backgroundImage'
-    }
+}  # type: Dict
 
     def __init__(self, title=None, subtitle=None, art=None, background_image=None):
         # type: (Optional[str], Optional[str], Optional[Image], Optional[Image]) -> None
@@ -68,7 +68,7 @@ class AudioItemMetadata(object):
         :param background_image: An optional background image for the audio item.
         :type background_image: (optional) ask_sdk_model.interfaces.display.image.Image
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.title = title
         self.subtitle = subtitle
@@ -78,7 +78,7 @@ class AudioItemMetadata(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

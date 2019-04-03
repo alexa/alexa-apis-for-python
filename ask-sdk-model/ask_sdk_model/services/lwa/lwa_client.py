@@ -29,7 +29,7 @@ if typing.TYPE_CHECKING:
     from .access_token_response import AccessTokenResponse
     from ..api_configuration import ApiConfiguration
     from ..authentication_configuration import AuthenticationConfiguration
-
+    from typing import Any, Dict, List, Optional
 
 class LwaClient(BaseServiceClient):
     """Client to call Login with Amazon (LWA) to retrieve access tokens.
@@ -71,7 +71,7 @@ class LwaClient(BaseServiceClient):
         if authentication_configuration is None:
             raise ValueError("authentication_configuration must be provided")
         self._authentication_configuration = authentication_configuration
-        self._scoped_token_cache = dict()
+        self._scoped_token_cache = dict()  # type: Dict
 
     def get_access_token_for_scope(self, scope):
         # type: (str) -> str
@@ -89,7 +89,7 @@ class LwaClient(BaseServiceClient):
         :return: Retrieved access token for the given scope and
             configured client id, client secret
         :rtype: str
-        :raises: :py:class:`ValueError` is no scope is passed.
+        :raises: :py:class:`ValueError` is no scope is passed and :py:class:`ValueError` if LWA AccessTokenResponse is None.
         """
         if scope is None:
             raise ValueError("scope must be provided")
@@ -111,6 +111,9 @@ class LwaClient(BaseServiceClient):
         lwa_response = self._generate_access_token(
             access_token_request=access_token_request)
 
+        if lwa_response is None or lwa_response.expires_in is None:
+            raise ValueError("Invalid response from LWA Client generate access token call")
+
         access_token = AccessToken(
             token=lwa_response.access_token,
             expiry=local_now + timedelta(seconds=lwa_response.expires_in)
@@ -120,7 +123,7 @@ class LwaClient(BaseServiceClient):
         return access_token.token
 
     def _generate_access_token(self, access_token_request, **kwargs):
-        # type: (AccessTokenRequest) -> AccessTokenResponse
+        # type: (AccessTokenRequest, **Any) -> Optional[AccessTokenResponse]
         """Generate access token by calling the LWA API.
 
         :param access_token_request: The access token request with client
@@ -139,8 +142,8 @@ class LwaClient(BaseServiceClient):
 
         endpoint = "https://api.amazon.com"
         resource_path = '/auth/O2/token'.replace('{format}', 'json')
-        path_params = {}
-        query_params = []
+        path_params = {}  # type: Dict
+        query_params = []  # type: List
         header_params = [
             ('Content-type', 'application/x-www-form-urlencoded')]
 
@@ -153,7 +156,7 @@ class LwaClient(BaseServiceClient):
             [grant_type_param, client_id_param, client_secret_param,
              scope_param])
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(
             response_type=(
                 "ask_sdk_model.services.lwa.access_token_response."
@@ -176,7 +179,7 @@ class LwaClient(BaseServiceClient):
             status_code=503,
             message="Service Unavailable"))
 
-        return self.invoke(
+        return self.invoke(  # type: ignore
             method="POST",
             endpoint=endpoint,
             path=resource_path,

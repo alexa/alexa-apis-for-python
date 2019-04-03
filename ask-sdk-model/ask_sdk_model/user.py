@@ -43,13 +43,13 @@ class User(object):
         'user_id': 'str',
         'access_token': 'str',
         'permissions': 'ask_sdk_model.permissions.Permissions'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'user_id': 'userId',
         'access_token': 'accessToken',
         'permissions': 'permissions'
-    }
+}  # type: Dict
 
     def __init__(self, user_id=None, access_token=None, permissions=None):
         # type: (Optional[str], Optional[str], Optional[Permissions]) -> None
@@ -62,7 +62,7 @@ class User(object):
         :param permissions: 
         :type permissions: (optional) ask_sdk_model.permissions.Permissions
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.user_id = user_id
         self.access_token = access_token
@@ -71,7 +71,7 @@ class User(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

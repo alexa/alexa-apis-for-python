@@ -36,11 +36,11 @@ class InSkillProduct(object):
     """
     deserialized_types = {
         'product_id': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'product_id': 'productId'
-    }
+}  # type: Dict
 
     def __init__(self, product_id=None):
         # type: (Optional[str]) -> None
@@ -49,14 +49,14 @@ class InSkillProduct(object):
         :param product_id: The product ID of In Skill Product.
         :type product_id: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.product_id = product_id
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

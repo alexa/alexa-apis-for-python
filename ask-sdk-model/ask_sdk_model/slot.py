@@ -45,14 +45,14 @@ class Slot(object):
         'value': 'str',
         'confirmation_status': 'ask_sdk_model.slot_confirmation_status.SlotConfirmationStatus',
         'resolutions': 'ask_sdk_model.slu.entityresolution.resolutions.Resolutions'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'name': 'name',
         'value': 'value',
         'confirmation_status': 'confirmationStatus',
         'resolutions': 'resolutions'
-    }
+}  # type: Dict
 
     def __init__(self, name=None, value=None, confirmation_status=None, resolutions=None):
         # type: (Optional[str], Optional[str], Optional[SlotConfirmationStatus], Optional[Resolutions]) -> None
@@ -67,7 +67,7 @@ class Slot(object):
         :param resolutions: Contains the results of entity resolution. These are organized by authority. An authority represents the source for the data provided for the slot. For a custom slot type, the authority is the slot type you defined.
         :type resolutions: (optional) ask_sdk_model.slu.entityresolution.resolutions.Resolutions
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.name = name
         self.value = value
@@ -77,7 +77,7 @@ class Slot(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

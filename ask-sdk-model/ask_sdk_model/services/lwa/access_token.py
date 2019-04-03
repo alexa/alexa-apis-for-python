@@ -19,11 +19,6 @@ import typing
 
 if typing.TYPE_CHECKING:
     from datetime import datetime
-    try:
-        long
-    except NameError:
-        long = int
-
 
 class AccessToken(object):
     """Represents the access token provided by LWA (Login With Amazon).

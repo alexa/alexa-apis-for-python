@@ -36,11 +36,11 @@ class Runtime(object):
     """
     deserialized_types = {
         'max_version': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'max_version': 'maxVersion'
-    }
+}  # type: Dict
 
     def __init__(self, max_version=None):
         # type: (Optional[str]) -> None
@@ -49,14 +49,14 @@ class Runtime(object):
         :param max_version: Maximum APL version supported by the runtime.
         :type max_version: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.max_version = max_version
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

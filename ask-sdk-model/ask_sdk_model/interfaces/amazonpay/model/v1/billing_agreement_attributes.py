@@ -43,13 +43,13 @@ class BillingAgreementAttributes(object):
         'platform_id': 'str',
         'seller_note': 'str',
         'seller_billing_agreement_attributes': 'ask_sdk_model.interfaces.amazonpay.model.v1.seller_billing_agreement_attributes.SellerBillingAgreementAttributes'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'platform_id': 'platformId',
         'seller_note': 'sellerNote',
         'seller_billing_agreement_attributes': 'sellerBillingAgreementAttributes'
-    }
+}  # type: Dict
 
     def __init__(self, platform_id=None, seller_note=None, seller_billing_agreement_attributes=None):
         # type: (Optional[str], Optional[str], Optional[SellerBillingAgreementAttributes]) -> None
@@ -62,7 +62,7 @@ class BillingAgreementAttributes(object):
         :param seller_billing_agreement_attributes: 
         :type seller_billing_agreement_attributes: (optional) ask_sdk_model.interfaces.amazonpay.model.v1.seller_billing_agreement_attributes.SellerBillingAgreementAttributes
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.platform_id = platform_id
         self.seller_note = seller_note
@@ -71,7 +71,7 @@ class BillingAgreementAttributes(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

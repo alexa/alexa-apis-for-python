@@ -33,18 +33,18 @@ class LinkAccountCard(Card):
     """
     deserialized_types = {
         'object_type': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type'
-    }
+}  # type: Dict
 
     def __init__(self):
         # type: () -> None
         """
 
         """
-        self.__discriminator_value = "LinkAccount"
+        self.__discriminator_value = "LinkAccount"  # type: str
 
         self.object_type = self.__discriminator_value
         super(LinkAccountCard, self).__init__(object_type=self.__discriminator_value)
@@ -52,7 +52,7 @@ class LinkAccountCard(Card):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

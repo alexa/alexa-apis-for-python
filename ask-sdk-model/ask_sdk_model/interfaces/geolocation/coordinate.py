@@ -42,13 +42,13 @@ class Coordinate(object):
         'latitude_in_degrees': 'float',
         'longitude_in_degrees': 'float',
         'accuracy_in_meters': 'float'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'latitude_in_degrees': 'latitudeInDegrees',
         'longitude_in_degrees': 'longitudeInDegrees',
         'accuracy_in_meters': 'accuracyInMeters'
-    }
+}  # type: Dict
 
     def __init__(self, latitude_in_degrees=None, longitude_in_degrees=None, accuracy_in_meters=None):
         # type: (Optional[float], Optional[float], Optional[float]) -> None
@@ -61,7 +61,7 @@ class Coordinate(object):
         :param accuracy_in_meters: A double representing the accuracy of geolocation data in meters.
         :type accuracy_in_meters: (optional) float
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.latitude_in_degrees = latitude_in_degrees
         self.longitude_in_degrees = longitude_in_degrees
@@ -70,7 +70,7 @@ class Coordinate(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -54,7 +54,7 @@ class AccountLinkedRequest(Request):
         'body': 'ask_sdk_model.events.skillevents.account_linked_body.AccountLinkedBody',
         'event_creation_time': 'datetime',
         'event_publishing_time': 'datetime'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
@@ -64,7 +64,7 @@ class AccountLinkedRequest(Request):
         'body': 'body',
         'event_creation_time': 'eventCreationTime',
         'event_publishing_time': 'eventPublishingTime'
-    }
+}  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, body=None, event_creation_time=None, event_publishing_time=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[AccountLinkedBody], Optional[datetime], Optional[datetime]) -> None
@@ -83,7 +83,7 @@ class AccountLinkedRequest(Request):
         :param event_publishing_time: 
         :type event_publishing_time: (optional) datetime
         """
-        self.__discriminator_value = "AlexaSkillEvent.SkillAccountLinked"
+        self.__discriminator_value = "AlexaSkillEvent.SkillAccountLinked"  # type: str
 
         self.object_type = self.__discriminator_value
         super(AccountLinkedRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
@@ -94,7 +94,7 @@ class AccountLinkedRequest(Request):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

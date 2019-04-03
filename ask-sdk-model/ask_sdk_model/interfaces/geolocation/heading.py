@@ -39,12 +39,12 @@ class Heading(object):
     deserialized_types = {
         'direction_in_degrees': 'float',
         'accuracy_in_degrees': 'float'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'direction_in_degrees': 'directionInDegrees',
         'accuracy_in_degrees': 'accuracyInDegrees'
-    }
+}  # type: Dict
 
     def __init__(self, direction_in_degrees=None, accuracy_in_degrees=None):
         # type: (Optional[float], Optional[float]) -> None
@@ -55,7 +55,7 @@ class Heading(object):
         :param accuracy_in_degrees: A double representing the accuracy of the heading measurement in degrees.
         :type accuracy_in_degrees: (optional) float
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.direction_in_degrees = direction_in_degrees
         self.accuracy_in_degrees = accuracy_in_degrees
@@ -63,7 +63,7 @@ class Heading(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

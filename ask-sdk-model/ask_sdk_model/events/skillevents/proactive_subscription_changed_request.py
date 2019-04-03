@@ -48,7 +48,7 @@ class ProactiveSubscriptionChangedRequest(Request):
         'timestamp': 'datetime',
         'locale': 'str',
         'body': 'ask_sdk_model.events.skillevents.proactive_subscription_changed_body.ProactiveSubscriptionChangedBody'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
@@ -56,7 +56,7 @@ class ProactiveSubscriptionChangedRequest(Request):
         'timestamp': 'timestamp',
         'locale': 'locale',
         'body': 'body'
-    }
+}  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, body=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[ProactiveSubscriptionChangedBody]) -> None
@@ -71,7 +71,7 @@ class ProactiveSubscriptionChangedRequest(Request):
         :param body: 
         :type body: (optional) ask_sdk_model.events.skillevents.proactive_subscription_changed_body.ProactiveSubscriptionChangedBody
         """
-        self.__discriminator_value = "AlexaSkillEvent.ProactiveSubscriptionChanged"
+        self.__discriminator_value = "AlexaSkillEvent.ProactiveSubscriptionChanged"  # type: str
 
         self.object_type = self.__discriminator_value
         super(ProactiveSubscriptionChangedRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
@@ -80,7 +80,7 @@ class ProactiveSubscriptionChangedRequest(Request):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -34,11 +34,11 @@ class ReminderDeletedEvent(object):
     """
     deserialized_types = {
         'alert_tokens': 'list[str]'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'alert_tokens': 'alertTokens'
-    }
+}  # type: Dict
 
     def __init__(self, alert_tokens=None):
         # type: (Optional[List[object]]) -> None
@@ -47,14 +47,14 @@ class ReminderDeletedEvent(object):
         :param alert_tokens: 
         :type alert_tokens: (optional) list[str]
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.alert_tokens = alert_tokens
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

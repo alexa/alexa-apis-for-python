@@ -41,12 +41,12 @@ class CanFulfillSlot(object):
     deserialized_types = {
         'can_understand': 'ask_sdk_model.canfulfill.can_understand_slot_values.CanUnderstandSlotValues',
         'can_fulfill': 'ask_sdk_model.canfulfill.can_fulfill_slot_values.CanFulfillSlotValues'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'can_understand': 'canUnderstand',
         'can_fulfill': 'canFulfill'
-    }
+}  # type: Dict
 
     def __init__(self, can_understand=None, can_fulfill=None):
         # type: (Optional[CanUnderstandSlotValues], Optional[CanFulfillSlotValues]) -> None
@@ -57,7 +57,7 @@ class CanFulfillSlot(object):
         :param can_fulfill: 
         :type can_fulfill: (optional) ask_sdk_model.canfulfill.can_fulfill_slot_values.CanFulfillSlotValues
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.can_understand = can_understand
         self.can_fulfill = can_fulfill
@@ -65,7 +65,7 @@ class CanFulfillSlot(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -63,7 +63,7 @@ class SetupAmazonPayRequest(BaseAmazonPayEntity):
         'need_amazon_shipping_address': 'bool',
         'sandbox_mode': 'bool',
         'sandbox_customer_email_id': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': '@type',
@@ -76,7 +76,7 @@ class SetupAmazonPayRequest(BaseAmazonPayEntity):
         'need_amazon_shipping_address': 'needAmazonShippingAddress',
         'sandbox_mode': 'sandboxMode',
         'sandbox_customer_email_id': 'sandboxCustomerEmailId'
-    }
+}  # type: Dict
 
     def __init__(self, version=None, seller_id=None, country_of_establishment=None, ledger_currency=None, checkout_language=None, billing_agreement_attributes=None, need_amazon_shipping_address=False, sandbox_mode=False, sandbox_customer_email_id=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[BillingAgreementAttributes], Optional[bool], Optional[bool], Optional[str]) -> None
@@ -101,7 +101,7 @@ class SetupAmazonPayRequest(BaseAmazonPayEntity):
         :param sandbox_customer_email_id: Use this parameter to create a Sandbox payment object. In order to use this parameter, you first create a Sandbox user account in Seller Central. Then, pass the email address associated with that Sandbox user account.
         :type sandbox_customer_email_id: (optional) str
         """
-        self.__discriminator_value = "SetupAmazonPayRequest"
+        self.__discriminator_value = "SetupAmazonPayRequest"  # type: str
 
         self.object_type = self.__discriminator_value
         super(SetupAmazonPayRequest, self).__init__(object_type=self.__discriminator_value, version=version)
@@ -117,7 +117,7 @@ class SetupAmazonPayRequest(BaseAmazonPayEntity):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -52,7 +52,7 @@ class IntentRequest(Request):
         'locale': 'str',
         'dialog_state': 'ask_sdk_model.dialog_state.DialogState',
         'intent': 'ask_sdk_model.intent.Intent'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
@@ -61,7 +61,7 @@ class IntentRequest(Request):
         'locale': 'locale',
         'dialog_state': 'dialogState',
         'intent': 'intent'
-    }
+}  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, dialog_state=None, intent=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[DialogState], Optional[Intent]) -> None
@@ -78,7 +78,7 @@ class IntentRequest(Request):
         :param intent: An object that represents what the user wants.
         :type intent: (optional) ask_sdk_model.intent.Intent
         """
-        self.__discriminator_value = "IntentRequest"
+        self.__discriminator_value = "IntentRequest"  # type: str
 
         self.object_type = self.__discriminator_value
         super(IntentRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
@@ -88,7 +88,7 @@ class IntentRequest(Request):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

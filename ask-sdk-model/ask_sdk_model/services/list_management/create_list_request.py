@@ -38,12 +38,12 @@ class CreateListRequest(object):
     deserialized_types = {
         'name': 'str',
         'state': 'ask_sdk_model.services.list_management.list_state.ListState'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'name': 'name',
         'state': 'state'
-    }
+}  # type: Dict
 
     def __init__(self, name=None, state=None):
         # type: (Optional[str], Optional[ListState]) -> None
@@ -54,7 +54,7 @@ class CreateListRequest(object):
         :param state: 
         :type state: (optional) ask_sdk_model.services.list_management.list_state.ListState
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.name = name
         self.state = state
@@ -62,7 +62,7 @@ class CreateListRequest(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

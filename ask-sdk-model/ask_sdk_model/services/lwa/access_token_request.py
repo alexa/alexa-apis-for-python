@@ -67,9 +67,9 @@ class AccessTokenRequest(object):
         self.scope = scope
 
     def to_dict(self):
-        # type: () -> Dict[str, object]
+        # type: () -> Dict
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -42,13 +42,13 @@ class ExecuteCommandsDirective(Directive):
         'object_type': 'str',
         'commands': 'list[ask_sdk_model.interfaces.alexa.presentation.apl.command.Command]',
         'token': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
         'commands': 'commands',
         'token': 'token'
-    }
+}  # type: Dict
 
     def __init__(self, commands=None, token=None):
         # type: (Optional[List[Command]], Optional[str]) -> None
@@ -59,7 +59,7 @@ class ExecuteCommandsDirective(Directive):
         :param token: A skill defined token, unique for each presentation. Must match the token provided by the skill in the RenderDocument directive used to render the original APL document.
         :type token: (optional) str
         """
-        self.__discriminator_value = "Alexa.Presentation.APL.ExecuteCommands"
+        self.__discriminator_value = "Alexa.Presentation.APL.ExecuteCommands"  # type: str
 
         self.object_type = self.__discriminator_value
         super(ExecuteCommandsDirective, self).__init__(object_type=self.__discriminator_value)
@@ -69,7 +69,7 @@ class ExecuteCommandsDirective(Directive):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

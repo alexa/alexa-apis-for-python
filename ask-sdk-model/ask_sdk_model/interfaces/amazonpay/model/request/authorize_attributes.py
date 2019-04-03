@@ -54,7 +54,7 @@ class AuthorizeAttributes(BaseAmazonPayEntity):
         'soft_descriptor': 'str',
         'object_type': 'str',
         'version': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'authorization_reference_id': 'authorizationReferenceId',
@@ -64,7 +64,7 @@ class AuthorizeAttributes(BaseAmazonPayEntity):
         'soft_descriptor': 'softDescriptor',
         'object_type': '@type',
         'version': '@version'
-    }
+}  # type: Dict
 
     def __init__(self, authorization_reference_id=None, authorization_amount=None, transaction_timeout=None, seller_authorization_note=None, soft_descriptor=None, version=None):
         # type: (Optional[str], Optional[Price], Optional[int], Optional[str], Optional[str], Optional[str]) -> None
@@ -83,7 +83,7 @@ class AuthorizeAttributes(BaseAmazonPayEntity):
         :param version: Version of the Amazon Pay Entity. Can be 2 or greater.
         :type version: (optional) str
         """
-        self.__discriminator_value = "AuthorizeAttributes"
+        self.__discriminator_value = "AuthorizeAttributes"  # type: str
 
         self.object_type = self.__discriminator_value
         super(AuthorizeAttributes, self).__init__(object_type=self.__discriminator_value, version=version)
@@ -96,7 +96,7 @@ class AuthorizeAttributes(BaseAmazonPayEntity):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

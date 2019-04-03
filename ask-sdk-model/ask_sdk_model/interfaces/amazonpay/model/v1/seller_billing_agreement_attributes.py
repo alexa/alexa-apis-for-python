@@ -42,13 +42,13 @@ class SellerBillingAgreementAttributes(object):
         'seller_billing_agreement_id': 'str',
         'store_name': 'str',
         'custom_information': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'seller_billing_agreement_id': 'sellerBillingAgreementId',
         'store_name': 'storeName',
         'custom_information': 'customInformation'
-    }
+}  # type: Dict
 
     def __init__(self, seller_billing_agreement_id=None, store_name=None, custom_information=None):
         # type: (Optional[str], Optional[str], Optional[str]) -> None
@@ -61,7 +61,7 @@ class SellerBillingAgreementAttributes(object):
         :param custom_information: Any additional information that you wish to include with this billing agreement. At least one request parameter must be specified.
         :type custom_information: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.seller_billing_agreement_id = seller_billing_agreement_id
         self.store_name = store_name
@@ -70,7 +70,7 @@ class SellerBillingAgreementAttributes(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

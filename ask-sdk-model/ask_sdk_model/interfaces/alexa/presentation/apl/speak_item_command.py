@@ -58,7 +58,7 @@ class SpeakItemCommand(Command):
         'component_id': 'str',
         'highlight_mode': 'ask_sdk_model.interfaces.alexa.presentation.apl.highlight_mode.HighlightMode',
         'minimum_dwell_time': 'int'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
@@ -69,7 +69,7 @@ class SpeakItemCommand(Command):
         'component_id': 'componentId',
         'highlight_mode': 'highlightMode',
         'minimum_dwell_time': 'minimumDwellTime'
-    }
+}  # type: Dict
 
     def __init__(self, delay=None, description=None, when=None, align=None, component_id=None, highlight_mode=None, minimum_dwell_time=None):
         # type: (Optional[int], Optional[str], Optional[bool], Optional[Align], Optional[str], Optional[HighlightMode], Optional[int]) -> None
@@ -90,7 +90,7 @@ class SpeakItemCommand(Command):
         :param minimum_dwell_time: The minimum number of milliseconds that an item should be highlighted for. Defaults to 0.
         :type minimum_dwell_time: (optional) int
         """
-        self.__discriminator_value = "SpeakItem"
+        self.__discriminator_value = "SpeakItem"  # type: str
 
         self.object_type = self.__discriminator_value
         super(SpeakItemCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, when=when)
@@ -102,7 +102,7 @@ class SpeakItemCommand(Command):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

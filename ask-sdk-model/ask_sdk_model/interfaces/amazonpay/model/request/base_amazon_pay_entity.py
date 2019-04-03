@@ -61,12 +61,12 @@ class BaseAmazonPayEntity(object):
     deserialized_types = {
         'object_type': 'str',
         'version': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': '@type',
         'version': '@version'
-    }
+}  # type: Dict
 
     discriminator_value_class_map = {
         'AuthorizeAttributes': 'ask_sdk_model.interfaces.amazonpay.model.request.authorize_attributes.AuthorizeAttributes',
@@ -94,14 +94,14 @@ class BaseAmazonPayEntity(object):
         :param version: Version of the Amazon Pay Entity. Can be 2 or greater.
         :type version: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.object_type = object_type
         self.version = version
 
     @classmethod
     def get_real_child_model(cls, data):
-        # type: (Dict[str, str]) -> str
+        # type: (Dict[str, str]) -> Optional[str]
         """Returns the real base class specified by the discriminator"""
         discriminator_value = data[cls.json_discriminator_key]
         return cls.discriminator_value_class_map.get(discriminator_value)
@@ -109,7 +109,7 @@ class BaseAmazonPayEntity(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

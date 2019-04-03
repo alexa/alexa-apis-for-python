@@ -41,12 +41,12 @@ class SendDirectiveRequest(object):
     deserialized_types = {
         'header': 'ask_sdk_model.services.directive.header.Header',
         'directive': 'ask_sdk_model.services.directive.directive.Directive'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'header': 'header',
         'directive': 'directive'
-    }
+}  # type: Dict
 
     def __init__(self, header=None, directive=None):
         # type: (Optional[Header], Optional[Directive]) -> None
@@ -57,7 +57,7 @@ class SendDirectiveRequest(object):
         :param directive: Directive Content.
         :type directive: (optional) ask_sdk_model.services.directive.directive.Directive
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.header = header
         self.directive = directive
@@ -65,7 +65,7 @@ class SendDirectiveRequest(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -28,7 +28,7 @@ from ask_sdk_model.services.proactive_events.skill_stage import SkillStage
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Union
+    from typing import Dict, List, Union, Any
     from datetime import datetime
     from ask_sdk_model.services.proactive_events.error import Error
     from ask_sdk_model.services.proactive_events.create_proactive_event_request import CreateProactiveEventRequest
@@ -54,7 +54,7 @@ class ProactiveEventsServiceClient(BaseServiceClient):
             authentication_configuration=authentication_configuration)
 
     def create_proactive_event(self, create_proactive_event_request, stage, **kwargs):
-        # type: (CreateProactiveEventRequest, SkillStage) -> Union[Error]
+        # type: (CreateProactiveEventRequest, SkillStage, **Any) -> Union[Error]
         """
         Create a new proactive event in live stage.
 
@@ -77,11 +77,11 @@ class ProactiveEventsServiceClient(BaseServiceClient):
             resource_path += "/stages/development"
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         if 'create_proactive_event_request' in params:
@@ -94,7 +94,7 @@ class ProactiveEventsServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + access_token
         header_params.append(('Authorization', authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=202, message="Request accepted"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.proactive_events.error.Error", status_code=400, message="A required parameter is not present or is incorrectly formatted, or the requested creation of a resource has already been completed by a previous request. "))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.proactive_events.error.Error", status_code=403, message="The authentication token is invalid or doesn&#39;t have authentication to access the resource"))

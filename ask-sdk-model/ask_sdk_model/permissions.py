@@ -40,12 +40,12 @@ class Permissions(object):
     deserialized_types = {
         'consent_token': 'str',
         'scopes': 'dict(str, ask_sdk_model.scope.Scope)'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'consent_token': 'consentToken',
         'scopes': 'scopes'
-    }
+}  # type: Dict
 
     def __init__(self, consent_token=None, scopes=None):
         # type: (Optional[str], Optional[Dict[str, Scope]]) -> None
@@ -56,7 +56,7 @@ class Permissions(object):
         :param scopes: A map where the key is a LoginWithAmazon(LWA) scope and value is a list of key:value pairs which describe the state of user actions on the LWA scope. For e.g. \&quot;scopes\&quot; :{ \&quot;alexa::devices:all:geolocation:read\&quot;:{\&quot;status\&quot;:\&quot;GRANTED\&quot;}} This value of \&quot;alexa::devices:all:geolocation:read\&quot; will determine if the Geolocation data access is granted by the user, or else it will show a card of type AskForPermissionsConsent to the user to get this permission.
         :type scopes: (optional) dict(str, ask_sdk_model.scope.Scope)
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.consent_token = consent_token
         self.scopes = scopes
@@ -64,7 +64,7 @@ class Permissions(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

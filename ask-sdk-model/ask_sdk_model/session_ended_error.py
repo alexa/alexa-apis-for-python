@@ -40,12 +40,12 @@ class SessionEndedError(object):
     deserialized_types = {
         'object_type': 'ask_sdk_model.session_ended_error_type.SessionEndedErrorType',
         'message': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
         'message': 'message'
-    }
+}  # type: Dict
 
     def __init__(self, object_type=None, message=None):
         # type: (Optional[SessionEndedErrorType], Optional[str]) -> None
@@ -56,7 +56,7 @@ class SessionEndedError(object):
         :param message: A string providing more information about the error.
         :type message: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.object_type = object_type
         self.message = message
@@ -64,7 +64,7 @@ class SessionEndedError(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

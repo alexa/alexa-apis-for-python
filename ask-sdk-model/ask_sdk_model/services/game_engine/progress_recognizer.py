@@ -41,13 +41,13 @@ class ProgressRecognizer(Recognizer):
         'object_type': 'str',
         'recognizer': 'str',
         'completion': 'float'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
         'recognizer': 'recognizer',
         'completion': 'completion'
-    }
+}  # type: Dict
 
     def __init__(self, recognizer=None, completion=None):
         # type: (Optional[str], Optional[float]) -> None
@@ -58,7 +58,7 @@ class ProgressRecognizer(Recognizer):
         :param completion: The completion threshold, as a decimal percentage, of the specified recognizer before which this recognizer becomes true.
         :type completion: (optional) float
         """
-        self.__discriminator_value = "progress"
+        self.__discriminator_value = "progress"  # type: str
 
         self.object_type = self.__discriminator_value
         super(ProgressRecognizer, self).__init__(object_type=self.__discriminator_value)
@@ -68,7 +68,7 @@ class ProgressRecognizer(Recognizer):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

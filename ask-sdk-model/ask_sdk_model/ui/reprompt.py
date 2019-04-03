@@ -35,11 +35,11 @@ class Reprompt(object):
     """
     deserialized_types = {
         'output_speech': 'ask_sdk_model.ui.output_speech.OutputSpeech'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'output_speech': 'outputSpeech'
-    }
+}  # type: Dict
 
     def __init__(self, output_speech=None):
         # type: (Optional[OutputSpeech]) -> None
@@ -48,14 +48,14 @@ class Reprompt(object):
         :param output_speech: 
         :type output_speech: (optional) ask_sdk_model.ui.output_speech.OutputSpeech
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.output_speech = output_speech
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

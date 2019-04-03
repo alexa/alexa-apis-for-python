@@ -39,13 +39,13 @@ class SimpleCard(Card):
         'object_type': 'str',
         'title': 'str',
         'content': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
         'title': 'title',
         'content': 'content'
-    }
+}  # type: Dict
 
     def __init__(self, title=None, content=None):
         # type: (Optional[str], Optional[str]) -> None
@@ -56,7 +56,7 @@ class SimpleCard(Card):
         :param content: 
         :type content: (optional) str
         """
-        self.__discriminator_value = "Simple"
+        self.__discriminator_value = "Simple"  # type: str
 
         self.object_type = self.__discriminator_value
         super(SimpleCard, self).__init__(object_type=self.__discriminator_value)
@@ -66,7 +66,7 @@ class SimpleCard(Card):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

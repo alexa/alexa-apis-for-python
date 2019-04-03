@@ -15,7 +15,7 @@ import typing
 from abc import ABCMeta, abstractmethod
 
 if typing.TYPE_CHECKING:
-    from typing import TypeVar
+    from typing import TypeVar, Optional, Union
     T = TypeVar('T')
 
 
@@ -36,7 +36,7 @@ class Serializer(object):
 
     @abstractmethod
     def deserialize(self, payload, obj_type):
-        # type: (str, T) -> T
+        # type: (Optional[str], Union[str,T]) -> T
         """Deserializes the payload to object of provided obj_type.
 
         :param payload: String to deserialize

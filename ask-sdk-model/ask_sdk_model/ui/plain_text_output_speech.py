@@ -40,13 +40,13 @@ class PlainTextOutputSpeech(OutputSpeech):
         'object_type': 'str',
         'play_behavior': 'ask_sdk_model.ui.play_behavior.PlayBehavior',
         'text': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
         'play_behavior': 'playBehavior',
         'text': 'text'
-    }
+}  # type: Dict
 
     def __init__(self, play_behavior=None, text=None):
         # type: (Optional[PlayBehavior], Optional[str]) -> None
@@ -57,7 +57,7 @@ class PlainTextOutputSpeech(OutputSpeech):
         :param text: 
         :type text: (optional) str
         """
-        self.__discriminator_value = "PlainText"
+        self.__discriminator_value = "PlainText"  # type: str
 
         self.object_type = self.__discriminator_value
         super(PlainTextOutputSpeech, self).__init__(object_type=self.__discriminator_value, play_behavior=play_behavior)
@@ -66,7 +66,7 @@ class PlainTextOutputSpeech(OutputSpeech):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

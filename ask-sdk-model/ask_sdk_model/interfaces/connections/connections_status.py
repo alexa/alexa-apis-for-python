@@ -39,12 +39,12 @@ class ConnectionsStatus(object):
     deserialized_types = {
         'code': 'str',
         'message': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'code': 'code',
         'message': 'message'
-    }
+}  # type: Dict
 
     def __init__(self, code=None, message=None):
         # type: (Optional[str], Optional[str]) -> None
@@ -55,7 +55,7 @@ class ConnectionsStatus(object):
         :param message: This is a message that goes along with response code that can provide more information about what occurred
         :type message: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.code = code
         self.message = message
@@ -63,7 +63,7 @@ class ConnectionsStatus(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

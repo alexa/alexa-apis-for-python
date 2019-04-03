@@ -39,12 +39,12 @@ class AmazonPayErrorResponse(object):
     deserialized_types = {
         'error_code': 'str',
         'error_message': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'error_code': 'errorCode',
         'error_message': 'errorMessage'
-    }
+}  # type: Dict
 
     def __init__(self, error_code=None, error_message=None):
         # type: (Optional[str], Optional[str]) -> None
@@ -55,7 +55,7 @@ class AmazonPayErrorResponse(object):
         :param error_message: Description of the error.
         :type error_message: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.error_code = error_code
         self.error_message = error_message
@@ -63,7 +63,7 @@ class AmazonPayErrorResponse(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

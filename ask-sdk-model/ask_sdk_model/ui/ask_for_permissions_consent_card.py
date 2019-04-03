@@ -36,12 +36,12 @@ class AskForPermissionsConsentCard(Card):
     deserialized_types = {
         'object_type': 'str',
         'permissions': 'list[str]'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
         'permissions': 'permissions'
-    }
+}  # type: Dict
 
     def __init__(self, permissions=None):
         # type: (Optional[List[object]]) -> None
@@ -50,7 +50,7 @@ class AskForPermissionsConsentCard(Card):
         :param permissions: 
         :type permissions: (optional) list[str]
         """
-        self.__discriminator_value = "AskForPermissionsConsent"
+        self.__discriminator_value = "AskForPermissionsConsent"  # type: str
 
         self.object_type = self.__discriminator_value
         super(AskForPermissionsConsentCard, self).__init__(object_type=self.__discriminator_value)
@@ -59,7 +59,7 @@ class AskForPermissionsConsentCard(Card):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

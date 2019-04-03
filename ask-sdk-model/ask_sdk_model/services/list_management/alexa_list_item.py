@@ -53,7 +53,7 @@ class AlexaListItem(object):
         'created_time': 'str',
         'updated_time': 'str',
         'href': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'id': 'id',
@@ -63,7 +63,7 @@ class AlexaListItem(object):
         'created_time': 'createdTime',
         'updated_time': 'updatedTime',
         'href': 'href'
-    }
+}  # type: Dict
 
     def __init__(self, id=None, version=None, value=None, status=None, created_time=None, updated_time=None, href=None):
         # type: (Optional[str], Optional[int], Optional[str], Optional[ListItemState], Optional[str], Optional[str], Optional[str]) -> None
@@ -84,7 +84,7 @@ class AlexaListItem(object):
         :param href: URL to retrieve the item from.
         :type href: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.id = id
         self.version = version
@@ -97,7 +97,7 @@ class AlexaListItem(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

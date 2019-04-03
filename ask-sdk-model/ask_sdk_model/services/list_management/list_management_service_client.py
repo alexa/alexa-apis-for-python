@@ -25,7 +25,7 @@ from ask_sdk_model.services.service_client_response import ServiceClientResponse
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Union
+    from typing import Dict, List, Union, Any
     from datetime import datetime
     from ask_sdk_model.services.list_management.forbidden_error import ForbiddenError
     from ask_sdk_model.services.list_management.alexa_lists_metadata import AlexaListsMetadata
@@ -54,7 +54,7 @@ class ListManagementServiceClient(BaseServiceClient):
         super(ListManagementServiceClient, self).__init__(api_configuration)
 
     def get_lists_metadata(self, **kwargs):
-        # type: () -> Union[ForbiddenError, Error, AlexaListsMetadata]
+        # type: (**Any) -> Union[ForbiddenError, Error, AlexaListsMetadata]
         """
         Retrieves the metadata for all customer lists, including the customer’s default lists. 
 
@@ -69,11 +69,11 @@ class ListManagementServiceClient(BaseServiceClient):
         resource_path = '/v2/householdlists/'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
@@ -82,7 +82,7 @@ class ListManagementServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.alexa_lists_metadata.AlexaListsMetadata", status_code=200, message="Success"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.forbidden_error.ForbiddenError", status_code=403, message="Forbidden"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.error.Error", status_code=500, message="Internal Server Error"))
@@ -99,7 +99,7 @@ class ListManagementServiceClient(BaseServiceClient):
             response_type="ask_sdk_model.services.list_management.alexa_lists_metadata.AlexaListsMetadata")
 
     def delete_list(self, list_id, **kwargs):
-        # type: (str) -> Union[Error]
+        # type: (str, **Any) -> Union[Error]
         """
         This API deletes a customer custom list.
 
@@ -120,13 +120,13 @@ class ListManagementServiceClient(BaseServiceClient):
         resource_path = '/v2/householdlists/{listId}/'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
         if 'list_id' in params:
             path_params['listId'] = params['list_id']
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
@@ -135,7 +135,7 @@ class ListManagementServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=200, message="Success"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.error.Error", status_code=403, message="Forbidden"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.error.Error", status_code=404, message="Not Found"))
@@ -154,7 +154,7 @@ class ListManagementServiceClient(BaseServiceClient):
             response_type=None)
 
     def delete_list_item(self, list_id, item_id, **kwargs):
-        # type: (str, str) -> Union[Error]
+        # type: (str, str, **Any) -> Union[Error]
         """
         This API deletes an item in the specified list.
 
@@ -181,15 +181,15 @@ class ListManagementServiceClient(BaseServiceClient):
         resource_path = '/v2/householdlists/{listId}/items/{itemId}/'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
         if 'list_id' in params:
             path_params['listId'] = params['list_id']
         if 'item_id' in params:
             path_params['itemId'] = params['item_id']
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
@@ -198,7 +198,7 @@ class ListManagementServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=200, message="Success"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.error.Error", status_code=403, message="Forbidden"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.error.Error", status_code=404, message="Not Found"))
@@ -217,7 +217,7 @@ class ListManagementServiceClient(BaseServiceClient):
             response_type=None)
 
     def get_list_item(self, list_id, item_id, **kwargs):
-        # type: (str, str) -> Union[AlexaListItem, Error]
+        # type: (str, str, **Any) -> Union[AlexaListItem, Error]
         """
         This API can be used to retrieve single item with in any list by listId and itemId. This API can read list items from an archived list. Attempting to read list items from a deleted list return an ObjectNotFound 404 error. 
 
@@ -244,15 +244,15 @@ class ListManagementServiceClient(BaseServiceClient):
         resource_path = '/v2/householdlists/{listId}/items/{itemId}/'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
         if 'list_id' in params:
             path_params['listId'] = params['list_id']
         if 'item_id' in params:
             path_params['itemId'] = params['item_id']
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
@@ -261,7 +261,7 @@ class ListManagementServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.alexa_list_item.AlexaListItem", status_code=200, message="Success"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.error.Error", status_code=403, message="Forbidden"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.error.Error", status_code=404, message="Not Found"))
@@ -280,7 +280,7 @@ class ListManagementServiceClient(BaseServiceClient):
             response_type="ask_sdk_model.services.list_management.alexa_list_item.AlexaListItem")
 
     def update_list_item(self, list_id, item_id, update_list_item_request, **kwargs):
-        # type: (str, str, UpdateListItemRequest) -> Union[AlexaListItem, Error]
+        # type: (str, str, UpdateListItemRequest, **Any) -> Union[AlexaListItem, Error]
         """
         API used to update an item value or item status.
 
@@ -313,15 +313,15 @@ class ListManagementServiceClient(BaseServiceClient):
         resource_path = '/v2/householdlists/{listId}/items/{itemId}/'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
         if 'list_id' in params:
             path_params['listId'] = params['list_id']
         if 'item_id' in params:
             path_params['itemId'] = params['item_id']
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         if 'update_list_item_request' in params:
@@ -332,7 +332,7 @@ class ListManagementServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.alexa_list_item.AlexaListItem", status_code=200, message="Success"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.error.Error", status_code=403, message="Forbidden"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.error.Error", status_code=404, message="Not Found"))
@@ -352,7 +352,7 @@ class ListManagementServiceClient(BaseServiceClient):
             response_type="ask_sdk_model.services.list_management.alexa_list_item.AlexaListItem")
 
     def create_list_item(self, list_id, create_list_item_request, **kwargs):
-        # type: (str, CreateListItemRequest) -> Union[AlexaListItem, Error]
+        # type: (str, CreateListItemRequest, **Any) -> Union[AlexaListItem, Error]
         """
         This API creates an item in an active list or in a default list.
 
@@ -379,13 +379,13 @@ class ListManagementServiceClient(BaseServiceClient):
         resource_path = '/v2/householdlists/{listId}/items/'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
         if 'list_id' in params:
             path_params['listId'] = params['list_id']
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         if 'create_list_item_request' in params:
@@ -396,7 +396,7 @@ class ListManagementServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.alexa_list_item.AlexaListItem", status_code=201, message="Success"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.error.Error", status_code=400, message="Bad Request"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.error.Error", status_code=403, message="Forbidden"))
@@ -416,7 +416,7 @@ class ListManagementServiceClient(BaseServiceClient):
             response_type="ask_sdk_model.services.list_management.alexa_list_item.AlexaListItem")
 
     def update_list(self, list_id, update_list_request, **kwargs):
-        # type: (str, UpdateListRequest) -> Union[Error, AlexaListMetadata]
+        # type: (str, UpdateListRequest, **Any) -> Union[Error, AlexaListMetadata]
         """
         This API updates a custom list. Only the list name or state can be updated. An Alexa customer can turn an archived list into an active one. 
 
@@ -443,13 +443,13 @@ class ListManagementServiceClient(BaseServiceClient):
         resource_path = '/v2/householdlists/{listId}/'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
         if 'list_id' in params:
             path_params['listId'] = params['list_id']
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         if 'update_list_request' in params:
@@ -460,7 +460,7 @@ class ListManagementServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.alexa_list_metadata.AlexaListMetadata", status_code=200, message="Success"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.error.Error", status_code=400, message="Bad Request"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.error.Error", status_code=403, message="Forbidden"))
@@ -481,7 +481,7 @@ class ListManagementServiceClient(BaseServiceClient):
             response_type="ask_sdk_model.services.list_management.alexa_list_metadata.AlexaListMetadata")
 
     def get_list(self, list_id, status, **kwargs):
-        # type: (str, str) -> Union[AlexaList, Error]
+        # type: (str, str, **Any) -> Union[AlexaList, Error]
         """
         Retrieves the list metadata including the items in the list with requested status. 
 
@@ -508,15 +508,15 @@ class ListManagementServiceClient(BaseServiceClient):
         resource_path = '/v2/householdlists/{listId}/{status}/'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
         if 'list_id' in params:
             path_params['listId'] = params['list_id']
         if 'status' in params:
             path_params['status'] = params['status']
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
@@ -525,7 +525,7 @@ class ListManagementServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.alexa_list.AlexaList", status_code=200, message="Success"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.error.Error", status_code=400, message="Bad Request"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.error.Error", status_code=403, message="Forbidden"))
@@ -545,7 +545,7 @@ class ListManagementServiceClient(BaseServiceClient):
             response_type="ask_sdk_model.services.list_management.alexa_list.AlexaList")
 
     def create_list(self, create_list_request, **kwargs):
-        # type: (CreateListRequest) -> Union[Error, AlexaListMetadata]
+        # type: (CreateListRequest, **Any) -> Union[Error, AlexaListMetadata]
         """
         This API creates a custom list. The new list name must be different than any existing list name. 
 
@@ -566,11 +566,11 @@ class ListManagementServiceClient(BaseServiceClient):
         resource_path = '/v2/householdlists/'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         if 'create_list_request' in params:
@@ -581,7 +581,7 @@ class ListManagementServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.alexa_list_metadata.AlexaListMetadata", status_code=201, message="Success"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.error.Error", status_code=400, message="Bad Request"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.list_management.error.Error", status_code=403, message="Forbidden"))

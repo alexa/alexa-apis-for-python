@@ -50,7 +50,7 @@ class ConnectionsRequest(Request):
         'locale': 'str',
         'name': 'str',
         'payload': 'dict(str, object)'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
@@ -59,7 +59,7 @@ class ConnectionsRequest(Request):
         'locale': 'locale',
         'name': 'name',
         'payload': 'payload'
-    }
+}  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, name=None, payload=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[str], Optional[Dict[str, object]]) -> None
@@ -76,7 +76,7 @@ class ConnectionsRequest(Request):
         :param payload: This is an object sent between the two skills for processing a ConnectionsRequest or ConnectionsResponse. This will always be a valid payload based on Action schema for the requester action.
         :type payload: (optional) dict(str, object)
         """
-        self.__discriminator_value = "Connections.Request"
+        self.__discriminator_value = "Connections.Request"  # type: str
 
         self.object_type = self.__discriminator_value
         super(ConnectionsRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
@@ -86,7 +86,7 @@ class ConnectionsRequest(Request):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -47,7 +47,7 @@ class SellerBillingAgreementAttributes(BaseAmazonPayEntity):
         'custom_information': 'str',
         'object_type': 'str',
         'version': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'seller_billing_agreement_id': 'sellerBillingAgreementId',
@@ -55,7 +55,7 @@ class SellerBillingAgreementAttributes(BaseAmazonPayEntity):
         'custom_information': 'customInformation',
         'object_type': '@type',
         'version': '@version'
-    }
+}  # type: Dict
 
     def __init__(self, seller_billing_agreement_id=None, store_name=None, custom_information=None, version=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[str]) -> None
@@ -70,7 +70,7 @@ class SellerBillingAgreementAttributes(BaseAmazonPayEntity):
         :param version: Version of the Amazon Pay Entity. Can be 2 or greater.
         :type version: (optional) str
         """
-        self.__discriminator_value = "SellerBillingAgreementAttributes"
+        self.__discriminator_value = "SellerBillingAgreementAttributes"  # type: str
 
         self.object_type = self.__discriminator_value
         super(SellerBillingAgreementAttributes, self).__init__(object_type=self.__discriminator_value, version=version)
@@ -81,7 +81,7 @@ class SellerBillingAgreementAttributes(BaseAmazonPayEntity):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

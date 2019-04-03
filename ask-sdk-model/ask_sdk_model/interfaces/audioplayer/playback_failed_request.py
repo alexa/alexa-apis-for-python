@@ -53,7 +53,7 @@ class PlaybackFailedRequest(Request):
         'current_playback_state': 'ask_sdk_model.interfaces.audioplayer.current_playback_state.CurrentPlaybackState',
         'error': 'ask_sdk_model.interfaces.audioplayer.error.Error',
         'token': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
@@ -63,7 +63,7 @@ class PlaybackFailedRequest(Request):
         'current_playback_state': 'currentPlaybackState',
         'error': 'error',
         'token': 'token'
-    }
+}  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, current_playback_state=None, error=None, token=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[CurrentPlaybackState], Optional[Error], Optional[str]) -> None
@@ -82,7 +82,7 @@ class PlaybackFailedRequest(Request):
         :param token: 
         :type token: (optional) str
         """
-        self.__discriminator_value = "AudioPlayer.PlaybackFailed"
+        self.__discriminator_value = "AudioPlayer.PlaybackFailed"  # type: str
 
         self.object_type = self.__discriminator_value
         super(PlaybackFailedRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
@@ -93,7 +93,7 @@ class PlaybackFailedRequest(Request):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

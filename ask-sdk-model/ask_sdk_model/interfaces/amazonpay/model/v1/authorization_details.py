@@ -74,7 +74,7 @@ class AuthorizationDetails(object):
         'soft_decline': 'bool',
         'capture_now': 'bool',
         'soft_descriptor': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'amazon_authorization_id': 'amazonAuthorizationId',
@@ -90,7 +90,7 @@ class AuthorizationDetails(object):
         'soft_decline': 'softDecline',
         'capture_now': 'captureNow',
         'soft_descriptor': 'softDescriptor'
-    }
+}  # type: Dict
 
     def __init__(self, amazon_authorization_id=None, authorization_reference_id=None, seller_authorization_note=None, authorization_amount=None, captured_amount=None, authorization_fee=None, id_list=None, creation_timestamp=None, expiration_timestamp=None, authorization_status=None, soft_decline=None, capture_now=None, soft_descriptor=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[Price], Optional[Price], Optional[Price], Optional[List[object]], Optional[datetime], Optional[datetime], Optional[AuthorizationStatus], Optional[bool], Optional[bool], Optional[str]) -> None
@@ -123,7 +123,7 @@ class AuthorizationDetails(object):
         :param soft_descriptor: This is the description to be shown on the buyer&#39;s payment instrument statement if AuthorizeAndCapture was chosen.
         :type soft_descriptor: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.amazon_authorization_id = amazon_authorization_id
         self.authorization_reference_id = authorization_reference_id
@@ -142,7 +142,7 @@ class AuthorizationDetails(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

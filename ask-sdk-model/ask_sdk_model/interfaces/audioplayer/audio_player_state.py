@@ -41,13 +41,13 @@ class AudioPlayerState(object):
         'offset_in_milliseconds': 'int',
         'token': 'str',
         'player_activity': 'ask_sdk_model.interfaces.audioplayer.player_activity.PlayerActivity'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'offset_in_milliseconds': 'offsetInMilliseconds',
         'token': 'token',
         'player_activity': 'playerActivity'
-    }
+}  # type: Dict
 
     def __init__(self, offset_in_milliseconds=None, token=None, player_activity=None):
         # type: (Optional[int], Optional[str], Optional[PlayerActivity]) -> None
@@ -60,7 +60,7 @@ class AudioPlayerState(object):
         :param player_activity: 
         :type player_activity: (optional) ask_sdk_model.interfaces.audioplayer.player_activity.PlayerActivity
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.offset_in_milliseconds = offset_in_milliseconds
         self.token = token
@@ -69,7 +69,7 @@ class AudioPlayerState(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

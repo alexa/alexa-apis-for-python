@@ -36,11 +36,11 @@ class Application(object):
     """
     deserialized_types = {
         'application_id': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'application_id': 'applicationId'
-    }
+}  # type: Dict
 
     def __init__(self, application_id=None):
         # type: (Optional[str]) -> None
@@ -49,14 +49,14 @@ class Application(object):
         :param application_id: A string representing the application identifier for your skill.
         :type application_id: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.application_id = application_id
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

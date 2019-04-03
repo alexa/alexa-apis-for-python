@@ -48,14 +48,14 @@ class ReminderRequest(object):
         'trigger': 'ask_sdk_model.services.reminder_management.trigger.Trigger',
         'alert_info': 'ask_sdk_model.services.reminder_management.alert_info.AlertInfo',
         'push_notification': 'ask_sdk_model.services.reminder_management.push_notification.PushNotification'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'request_time': 'requestTime',
         'trigger': 'trigger',
         'alert_info': 'alertInfo',
         'push_notification': 'pushNotification'
-    }
+}  # type: Dict
 
     def __init__(self, request_time=None, trigger=None, alert_info=None, push_notification=None):
         # type: (Optional[datetime], Optional[Trigger], Optional[AlertInfo], Optional[PushNotification]) -> None
@@ -70,7 +70,7 @@ class ReminderRequest(object):
         :param push_notification: 
         :type push_notification: (optional) ask_sdk_model.services.reminder_management.push_notification.PushNotification
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.request_time = request_time
         self.trigger = trigger
@@ -80,7 +80,7 @@ class ReminderRequest(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

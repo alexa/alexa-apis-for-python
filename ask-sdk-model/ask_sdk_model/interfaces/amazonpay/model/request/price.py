@@ -44,14 +44,14 @@ class Price(BaseAmazonPayEntity):
         'currency_code': 'str',
         'object_type': 'str',
         'version': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'amount': 'amount',
         'currency_code': 'currencyCode',
         'object_type': '@type',
         'version': '@version'
-    }
+}  # type: Dict
 
     def __init__(self, amount=None, currency_code=None, version=None):
         # type: (Optional[str], Optional[str], Optional[str]) -> None
@@ -64,7 +64,7 @@ class Price(BaseAmazonPayEntity):
         :param version: Version of the Amazon Pay Entity. Can be 2 or greater.
         :type version: (optional) str
         """
-        self.__discriminator_value = "Price"
+        self.__discriminator_value = "Price"  # type: str
 
         self.object_type = self.__discriminator_value
         super(Price, self).__init__(object_type=self.__discriminator_value, version=version)
@@ -74,7 +74,7 @@ class Price(BaseAmazonPayEntity):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

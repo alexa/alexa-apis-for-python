@@ -48,7 +48,7 @@ class ScheduleFoodEstablishmentReservationRequest(BaseRequest):
         'start_time': 'str',
         'party_size': 'str',
         'restaurant': 'ask_sdk_model.interfaces.connections.entities.restaurant.Restaurant'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': '@type',
@@ -56,7 +56,7 @@ class ScheduleFoodEstablishmentReservationRequest(BaseRequest):
         'start_time': 'startTime',
         'party_size': 'partySize',
         'restaurant': 'restaurant'
-    }
+}  # type: Dict
 
     def __init__(self, version=None, start_time=None, party_size=None, restaurant=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[Restaurant]) -> None
@@ -71,7 +71,7 @@ class ScheduleFoodEstablishmentReservationRequest(BaseRequest):
         :param restaurant: restaurant
         :type restaurant: (optional) ask_sdk_model.interfaces.connections.entities.restaurant.Restaurant
         """
-        self.__discriminator_value = "ScheduleFoodEstablishmentReservationRequest"
+        self.__discriminator_value = "ScheduleFoodEstablishmentReservationRequest"  # type: str
 
         self.object_type = self.__discriminator_value
         super(ScheduleFoodEstablishmentReservationRequest, self).__init__(object_type=self.__discriminator_value, version=version)
@@ -82,7 +82,7 @@ class ScheduleFoodEstablishmentReservationRequest(BaseRequest):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

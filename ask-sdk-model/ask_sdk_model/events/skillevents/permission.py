@@ -34,11 +34,11 @@ class Permission(object):
     """
     deserialized_types = {
         'scope': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'scope': 'scope'
-    }
+}  # type: Dict
 
     def __init__(self, scope=None):
         # type: (Optional[str]) -> None
@@ -47,14 +47,14 @@ class Permission(object):
         :param scope: 
         :type scope: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.scope = scope
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

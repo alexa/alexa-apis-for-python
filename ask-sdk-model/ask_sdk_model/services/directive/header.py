@@ -34,11 +34,11 @@ class Header(object):
     """
     deserialized_types = {
         'request_id': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'request_id': 'requestId'
-    }
+}  # type: Dict
 
     def __init__(self, request_id=None):
         # type: (Optional[str]) -> None
@@ -47,14 +47,14 @@ class Header(object):
         :param request_id: This represents the current requestId for what the skill/speechlet was invoked.
         :type request_id: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.request_id = request_id
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

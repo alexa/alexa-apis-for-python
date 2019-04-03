@@ -37,12 +37,12 @@ class PhoneNumber(object):
     deserialized_types = {
         'country_code': 'str',
         'phone_number': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'country_code': 'countryCode',
         'phone_number': 'phoneNumber'
-    }
+}  # type: Dict
 
     def __init__(self, country_code=None, phone_number=None):
         # type: (Optional[str], Optional[str]) -> None
@@ -53,7 +53,7 @@ class PhoneNumber(object):
         :param phone_number: 
         :type phone_number: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.country_code = country_code
         self.phone_number = phone_number
@@ -61,7 +61,7 @@ class PhoneNumber(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

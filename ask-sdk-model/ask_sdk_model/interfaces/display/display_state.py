@@ -34,11 +34,11 @@ class DisplayState(object):
     """
     deserialized_types = {
         'token': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'token': 'token'
-    }
+}  # type: Dict
 
     def __init__(self, token=None):
         # type: (Optional[str]) -> None
@@ -47,14 +47,14 @@ class DisplayState(object):
         :param token: 
         :type token: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.token = token
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

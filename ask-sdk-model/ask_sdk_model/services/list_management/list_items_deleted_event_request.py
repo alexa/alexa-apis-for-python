@@ -52,7 +52,7 @@ class ListItemsDeletedEventRequest(Request):
         'body': 'ask_sdk_model.services.list_management.list_item_body.ListItemBody',
         'event_creation_time': 'datetime',
         'event_publishing_time': 'datetime'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
@@ -62,7 +62,7 @@ class ListItemsDeletedEventRequest(Request):
         'body': 'body',
         'event_creation_time': 'eventCreationTime',
         'event_publishing_time': 'eventPublishingTime'
-    }
+}  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, body=None, event_creation_time=None, event_publishing_time=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[ListItemBody], Optional[datetime], Optional[datetime]) -> None
@@ -81,7 +81,7 @@ class ListItemsDeletedEventRequest(Request):
         :param event_publishing_time: 
         :type event_publishing_time: (optional) datetime
         """
-        self.__discriminator_value = "AlexaHouseholdListEvent.ItemsDeleted"
+        self.__discriminator_value = "AlexaHouseholdListEvent.ItemsDeleted"  # type: str
 
         self.object_type = self.__discriminator_value
         super(ListItemsDeletedEventRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
@@ -92,7 +92,7 @@ class ListItemsDeletedEventRequest(Request):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

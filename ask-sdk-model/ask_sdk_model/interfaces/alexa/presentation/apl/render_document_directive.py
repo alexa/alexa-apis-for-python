@@ -45,7 +45,7 @@ class RenderDocumentDirective(Directive):
         'document': 'dict(str, object)',
         'datasources': 'dict(str, object)',
         'packages': 'list[object]'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
@@ -53,7 +53,7 @@ class RenderDocumentDirective(Directive):
         'document': 'document',
         'datasources': 'datasources',
         'packages': 'packages'
-    }
+}  # type: Dict
 
     def __init__(self, token=None, document=None, datasources=None, packages=None):
         # type: (Optional[str], Optional[Dict[str, object]], Optional[Dict[str, object]], Optional[List[object]]) -> None
@@ -68,7 +68,7 @@ class RenderDocumentDirective(Directive):
         :param packages: A list of packages including layouts, styles, and images etc.
         :type packages: (optional) list[object]
         """
-        self.__discriminator_value = "Alexa.Presentation.APL.RenderDocument"
+        self.__discriminator_value = "Alexa.Presentation.APL.RenderDocument"  # type: str
 
         self.object_type = self.__discriminator_value
         super(RenderDocumentDirective, self).__init__(object_type=self.__discriminator_value)
@@ -80,7 +80,7 @@ class RenderDocumentDirective(Directive):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

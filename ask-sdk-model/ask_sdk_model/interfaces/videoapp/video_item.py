@@ -38,12 +38,12 @@ class VideoItem(object):
     deserialized_types = {
         'source': 'str',
         'metadata': 'ask_sdk_model.interfaces.videoapp.metadata.Metadata'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'source': 'source',
         'metadata': 'metadata'
-    }
+}  # type: Dict
 
     def __init__(self, source=None, metadata=None):
         # type: (Optional[str], Optional[Metadata]) -> None
@@ -54,7 +54,7 @@ class VideoItem(object):
         :param metadata: 
         :type metadata: (optional) ask_sdk_model.interfaces.videoapp.metadata.Metadata
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.source = source
         self.metadata = metadata
@@ -62,7 +62,7 @@ class VideoItem(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

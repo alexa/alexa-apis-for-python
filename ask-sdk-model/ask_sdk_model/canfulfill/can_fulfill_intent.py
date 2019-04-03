@@ -41,12 +41,12 @@ class CanFulfillIntent(object):
     deserialized_types = {
         'can_fulfill': 'ask_sdk_model.canfulfill.can_fulfill_intent_values.CanFulfillIntentValues',
         'slots': 'dict(str, ask_sdk_model.canfulfill.can_fulfill_slot.CanFulfillSlot)'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'can_fulfill': 'canFulfill',
         'slots': 'slots'
-    }
+}  # type: Dict
 
     def __init__(self, can_fulfill=None, slots=None):
         # type: (Optional[CanFulfillIntentValues], Optional[Dict[str, CanFulfillSlot]]) -> None
@@ -57,7 +57,7 @@ class CanFulfillIntent(object):
         :param slots: A map that represents skill&#39;s detailed response to each detected slot within the intent such as if skill can understand and fulfill the detected slot. This supplements the overall canFulfillIntent response and help Alexa make better ranking and arbitration decisions. The key is the name of the slot. The value is an object of type CanFulfillSlot.
         :type slots: (optional) dict(str, ask_sdk_model.canfulfill.can_fulfill_slot.CanFulfillSlot)
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.can_fulfill = can_fulfill
         self.slots = slots
@@ -65,7 +65,7 @@ class CanFulfillIntent(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

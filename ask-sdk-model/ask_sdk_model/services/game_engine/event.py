@@ -52,7 +52,7 @@ class Event(object):
         'reports': 'ask_sdk_model.services.game_engine.event_reporting_type.EventReportingType',
         'maximum_invocations': 'int',
         'trigger_time_milliseconds': 'int'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'should_end_input_handler': 'shouldEndInputHandler',
@@ -61,7 +61,7 @@ class Event(object):
         'reports': 'reports',
         'maximum_invocations': 'maximumInvocations',
         'trigger_time_milliseconds': 'triggerTimeMilliseconds'
-    }
+}  # type: Dict
 
     def __init__(self, should_end_input_handler=None, meets=None, fails=None, reports=None, maximum_invocations=None, trigger_time_milliseconds=None):
         # type: (Optional[bool], Optional[List[object]], Optional[List[object]], Optional[EventReportingType], Optional[int], Optional[int]) -> None
@@ -80,7 +80,7 @@ class Event(object):
         :param trigger_time_milliseconds: Adds a time constraint to the event. Instead of being considered whenever a raw button event occurs, an event that has this parameter will only be considered once at triggerTimeMilliseconds after the Input Handler has started. Because a time-triggered event can only fire once, the maximumInvocations value is ignored. Omit this property entirely if you do not want to time-constrain the event. 
         :type trigger_time_milliseconds: (optional) int
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.should_end_input_handler = should_end_input_handler
         self.meets = meets
@@ -92,7 +92,7 @@ class Event(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

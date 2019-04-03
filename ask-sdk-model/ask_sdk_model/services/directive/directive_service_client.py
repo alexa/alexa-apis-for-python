@@ -25,7 +25,7 @@ from ask_sdk_model.services.service_client_response import ServiceClientResponse
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Union
+    from typing import Dict, List, Union, Any
     from datetime import datetime
     from ask_sdk_model.services.directive.error import Error
     from ask_sdk_model.services.directive.send_directive_request import SendDirectiveRequest
@@ -46,7 +46,7 @@ class DirectiveServiceClient(BaseServiceClient):
         super(DirectiveServiceClient, self).__init__(api_configuration)
 
     def enqueue(self, send_directive_request, **kwargs):
-        # type: (SendDirectiveRequest) -> Union[Error]
+        # type: (SendDirectiveRequest, **Any) -> Union[Error]
         """
         Send directives to Alexa.
 
@@ -67,11 +67,11 @@ class DirectiveServiceClient(BaseServiceClient):
         resource_path = '/v1/directives'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         if 'send_directive_request' in params:
@@ -82,7 +82,7 @@ class DirectiveServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="Directive sent successfully."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.directive.error.Error", status_code=400, message="Directive not valid."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.directive.error.Error", status_code=401, message="Not Authorized."))

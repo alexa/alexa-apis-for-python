@@ -31,22 +31,22 @@ class VideoAppInterface(object):
 
     """
     deserialized_types = {
-    }
+    }  # type: Dict
 
     attribute_map = {
-    }
+}  # type: Dict
 
     def __init__(self):
         # type: () -> None
         """
 
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

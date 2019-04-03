@@ -52,7 +52,7 @@ class SessionEndedRequest(Request):
         'locale': 'str',
         'reason': 'ask_sdk_model.session_ended_reason.SessionEndedReason',
         'error': 'ask_sdk_model.session_ended_error.SessionEndedError'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
@@ -61,7 +61,7 @@ class SessionEndedRequest(Request):
         'locale': 'locale',
         'reason': 'reason',
         'error': 'error'
-    }
+}  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, reason=None, error=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[SessionEndedReason], Optional[SessionEndedError]) -> None
@@ -78,7 +78,7 @@ class SessionEndedRequest(Request):
         :param error: An error object providing more information about the error that occurred.
         :type error: (optional) ask_sdk_model.session_ended_error.SessionEndedError
         """
-        self.__discriminator_value = "SessionEndedRequest"
+        self.__discriminator_value = "SessionEndedRequest"  # type: str
 
         self.object_type = self.__discriminator_value
         super(SessionEndedRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
@@ -88,7 +88,7 @@ class SessionEndedRequest(Request):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

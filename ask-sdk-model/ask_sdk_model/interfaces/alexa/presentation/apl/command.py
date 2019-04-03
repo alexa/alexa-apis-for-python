@@ -47,9 +47,29 @@ class Command(object):
 
         | SetPage: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.set_page_command.SetPageCommand`,
         |
+        | ControlMedia: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.control_media_command.ControlMediaCommand`,
+        |
+        | Sequential: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.sequential_command.SequentialCommand`,
+        |
+        | SetState: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.set_state_command.SetStateCommand`,
+        |
         | SpeakItem: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.speak_item_command.SpeakItemCommand`,
         |
-        | AutoPage: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.auto_page_command.AutoPageCommand`
+        | AutoPage: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.auto_page_command.AutoPageCommand`,
+        |
+        | Parallel: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.parallel_command.ParallelCommand`,
+        |
+        | PlayMedia: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.play_media_command.PlayMediaCommand`,
+        |
+        | ScrollToIndex: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.scroll_to_index_command.ScrollToIndexCommand`,
+        |
+        | Scroll: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.scroll_command.ScrollCommand`,
+        |
+        | Idle: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.idle_command.IdleCommand`,
+        |
+        | SendEvent: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.send_event_command.SendEventCommand`,
+        |
+        | SpeakList: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.speak_list_command.SpeakListCommand`
 
     """
     deserialized_types = {
@@ -57,19 +77,29 @@ class Command(object):
         'delay': 'int',
         'description': 'str',
         'when': 'bool'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
         'delay': 'delay',
         'description': 'description',
         'when': 'when'
-    }
+}  # type: Dict
 
     discriminator_value_class_map = {
         'SetPage': 'ask_sdk_model.interfaces.alexa.presentation.apl.set_page_command.SetPageCommand',
+        'ControlMedia': 'ask_sdk_model.interfaces.alexa.presentation.apl.control_media_command.ControlMediaCommand',
+        'Sequential': 'ask_sdk_model.interfaces.alexa.presentation.apl.sequential_command.SequentialCommand',
+        'SetState': 'ask_sdk_model.interfaces.alexa.presentation.apl.set_state_command.SetStateCommand',
         'SpeakItem': 'ask_sdk_model.interfaces.alexa.presentation.apl.speak_item_command.SpeakItemCommand',
-        'AutoPage': 'ask_sdk_model.interfaces.alexa.presentation.apl.auto_page_command.AutoPageCommand'
+        'AutoPage': 'ask_sdk_model.interfaces.alexa.presentation.apl.auto_page_command.AutoPageCommand',
+        'Parallel': 'ask_sdk_model.interfaces.alexa.presentation.apl.parallel_command.ParallelCommand',
+        'PlayMedia': 'ask_sdk_model.interfaces.alexa.presentation.apl.play_media_command.PlayMediaCommand',
+        'ScrollToIndex': 'ask_sdk_model.interfaces.alexa.presentation.apl.scroll_to_index_command.ScrollToIndexCommand',
+        'Scroll': 'ask_sdk_model.interfaces.alexa.presentation.apl.scroll_command.ScrollCommand',
+        'Idle': 'ask_sdk_model.interfaces.alexa.presentation.apl.idle_command.IdleCommand',
+        'SendEvent': 'ask_sdk_model.interfaces.alexa.presentation.apl.send_event_command.SendEventCommand',
+        'SpeakList': 'ask_sdk_model.interfaces.alexa.presentation.apl.speak_list_command.SpeakListCommand'
     }
 
     json_discriminator_key = "type"
@@ -90,7 +120,7 @@ class Command(object):
         :param when: If false, the execution of the command is skipped. Defaults to true.
         :type when: (optional) bool
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.object_type = object_type
         self.delay = delay
@@ -99,7 +129,7 @@ class Command(object):
 
     @classmethod
     def get_real_child_model(cls, data):
-        # type: (Dict[str, str]) -> str
+        # type: (Dict[str, str]) -> Optional[str]
         """Returns the real base class specified by the discriminator"""
         discriminator_value = data[cls.json_discriminator_key]
         return cls.discriminator_value_class_map.get(discriminator_value)
@@ -107,7 +137,7 @@ class Command(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -40,12 +40,12 @@ class ProviderAttributes(object):
     deserialized_types = {
         'provider_id': 'str',
         'provider_credit_list': 'list[ask_sdk_model.interfaces.amazonpay.model.v1.provider_credit.ProviderCredit]'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'provider_id': 'providerId',
         'provider_credit_list': 'providerCreditList'
-    }
+}  # type: Dict
 
     def __init__(self, provider_id=None, provider_credit_list=None):
         # type: (Optional[str], Optional[List[ProviderCredit]]) -> None
@@ -56,7 +56,7 @@ class ProviderAttributes(object):
         :param provider_credit_list: List of provider credit.
         :type provider_credit_list: (optional) list[ask_sdk_model.interfaces.amazonpay.model.v1.provider_credit.ProviderCredit]
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.provider_id = provider_id
         self.provider_credit_list = provider_credit_list
@@ -64,7 +64,7 @@ class ProviderAttributes(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -54,7 +54,7 @@ class GeolocationState(object):
         'heading': 'ask_sdk_model.interfaces.geolocation.heading.Heading',
         'speed': 'ask_sdk_model.interfaces.geolocation.speed.Speed',
         'location_services': 'ask_sdk_model.interfaces.geolocation.location_services.LocationServices'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'timestamp': 'timestamp',
@@ -63,7 +63,7 @@ class GeolocationState(object):
         'heading': 'heading',
         'speed': 'speed',
         'location_services': 'locationServices'
-    }
+}  # type: Dict
 
     def __init__(self, timestamp=None, coordinate=None, altitude=None, heading=None, speed=None, location_services=None):
         # type: (Optional[str], Optional[Coordinate], Optional[Altitude], Optional[Heading], Optional[Speed], Optional[LocationServices]) -> None
@@ -82,7 +82,7 @@ class GeolocationState(object):
         :param location_services: 
         :type location_services: (optional) ask_sdk_model.interfaces.geolocation.location_services.LocationServices
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.timestamp = timestamp
         self.coordinate = coordinate
@@ -94,7 +94,7 @@ class GeolocationState(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

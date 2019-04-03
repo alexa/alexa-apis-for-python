@@ -54,7 +54,7 @@ class BillingAgreementDetails(object):
         'checkout_language': 'str',
         'release_environment': 'ask_sdk_model.interfaces.amazonpay.model.v1.release_environment.ReleaseEnvironment',
         'billing_agreement_status': 'ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_status.BillingAgreementStatus'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'billing_agreement_id': 'billingAgreementId',
@@ -63,7 +63,7 @@ class BillingAgreementDetails(object):
         'checkout_language': 'checkoutLanguage',
         'release_environment': 'releaseEnvironment',
         'billing_agreement_status': 'billingAgreementStatus'
-    }
+}  # type: Dict
 
     def __init__(self, billing_agreement_id=None, creation_timestamp=None, destination=None, checkout_language=None, release_environment=None, billing_agreement_status=None):
         # type: (Optional[str], Optional[datetime], Optional[Destination], Optional[str], Optional[ReleaseEnvironment], Optional[BillingAgreementStatus]) -> None
@@ -82,7 +82,7 @@ class BillingAgreementDetails(object):
         :param billing_agreement_status: 
         :type billing_agreement_status: (optional) ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_status.BillingAgreementStatus
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.billing_agreement_id = billing_agreement_id
         self.creation_timestamp = creation_timestamp
@@ -94,7 +94,7 @@ class BillingAgreementDetails(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

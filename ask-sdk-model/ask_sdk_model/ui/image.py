@@ -37,12 +37,12 @@ class Image(object):
     deserialized_types = {
         'small_image_url': 'str',
         'large_image_url': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'small_image_url': 'smallImageUrl',
         'large_image_url': 'largeImageUrl'
-    }
+}  # type: Dict
 
     def __init__(self, small_image_url=None, large_image_url=None):
         # type: (Optional[str], Optional[str]) -> None
@@ -53,7 +53,7 @@ class Image(object):
         :param large_image_url: 
         :type large_image_url: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.small_image_url = small_image_url
         self.large_image_url = large_image_url
@@ -61,7 +61,7 @@ class Image(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

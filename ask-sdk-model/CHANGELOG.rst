@@ -121,9 +121,10 @@ This release contains the following changes :
 1.8.0
 ~~~~~~~
 
-This release contains the following :
-Introduces support for customizing your skill’s experience for Echo Auto, which is now shipping to select customers via our invite program, and vehicles and other aftermarket devices that support Alexa Auto. 
-The automotive experience introduces another way for customers to interact with skills, while they are on-the-go and their attention is on the road. Now you can adapt your skill experience to be succinct, location-aware, and adaptive to your customer’s needs while they’re outside the home.
+This release contains the following changes :
+
+- Introduces support for customizing your skill's experience for Echo Auto, which is now shipping to select customers via our invite program, and vehicles and other aftermarket devices that support Alexa Auto.
+- The automotive experience introduces another way for customers to interact with skills, while they are on-the-go and their attention is on the road. Now you can adapt your skill experience to be succinct, location-aware, and adaptive to your customer's needs while they're outside the home.
 
 
 1.9.0
@@ -133,3 +134,13 @@ This release contains the following changes :
 
 - Dynamic entities for customized interactions
 - Add additional 'entitlementReason' field in In-Skill products
+
+
+1.10.0
+~~~~~~~
+
+This release contains the following changes :
+
+- The `Skill Messaging API <https://developer.amazon.com/docs/smapi/skill-messaging-api-reference.html>`__ is now supported. Use the Skill Messaging API to send a message request to a skill for a specified user. 
+- Adds support for additional `APL Standard Commands <https://developer.amazon.com/docs/alexa-presentation-language/apl-standard-commands.html>`__.
+- Packaged type information in models as per `PEP 0561 <https://www.python.org/dev/peps/pep-0561/>`__.

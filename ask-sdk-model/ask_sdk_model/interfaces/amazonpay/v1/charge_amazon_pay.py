@@ -58,7 +58,7 @@ class ChargeAmazonPay(object):
         'authorize_attributes': 'ask_sdk_model.interfaces.amazonpay.model.v1.authorize_attributes.AuthorizeAttributes',
         'seller_order_attributes': 'ask_sdk_model.interfaces.amazonpay.model.v1.seller_order_attributes.SellerOrderAttributes',
         'provider_attributes': 'ask_sdk_model.interfaces.amazonpay.model.v1.provider_attributes.ProviderAttributes'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'consent_token': 'consentToken',
@@ -68,7 +68,7 @@ class ChargeAmazonPay(object):
         'authorize_attributes': 'authorizeAttributes',
         'seller_order_attributes': 'sellerOrderAttributes',
         'provider_attributes': 'providerAttributes'
-    }
+}  # type: Dict
 
     def __init__(self, consent_token=None, seller_id=None, billing_agreement_id=None, payment_action=None, authorize_attributes=None, seller_order_attributes=None, provider_attributes=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[PaymentAction], Optional[AuthorizeAttributes], Optional[SellerOrderAttributes], Optional[ProviderAttributes]) -> None
@@ -89,7 +89,7 @@ class ChargeAmazonPay(object):
         :param provider_attributes: 
         :type provider_attributes: (optional) ask_sdk_model.interfaces.amazonpay.model.v1.provider_attributes.ProviderAttributes
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.consent_token = consent_token
         self.seller_id = seller_id
@@ -102,7 +102,7 @@ class ChargeAmazonPay(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

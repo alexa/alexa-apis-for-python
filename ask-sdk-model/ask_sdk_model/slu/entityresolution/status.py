@@ -35,11 +35,11 @@ class Status(object):
     """
     deserialized_types = {
         'code': 'ask_sdk_model.slu.entityresolution.status_code.StatusCode'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'code': 'code'
-    }
+}  # type: Dict
 
     def __init__(self, code=None):
         # type: (Optional[StatusCode]) -> None
@@ -48,14 +48,14 @@ class Status(object):
         :param code: Indication of the results of attempting to resolve the user utterance against the defined slot types.
         :type code: (optional) ask_sdk_model.slu.entityresolution.status_code.StatusCode
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.code = code
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

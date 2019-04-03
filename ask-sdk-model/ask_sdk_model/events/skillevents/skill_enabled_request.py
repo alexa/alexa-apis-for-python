@@ -48,7 +48,7 @@ class SkillEnabledRequest(Request):
         'locale': 'str',
         'event_creation_time': 'datetime',
         'event_publishing_time': 'datetime'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
@@ -57,7 +57,7 @@ class SkillEnabledRequest(Request):
         'locale': 'locale',
         'event_creation_time': 'eventCreationTime',
         'event_publishing_time': 'eventPublishingTime'
-    }
+}  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, event_creation_time=None, event_publishing_time=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[datetime], Optional[datetime]) -> None
@@ -74,7 +74,7 @@ class SkillEnabledRequest(Request):
         :param event_publishing_time: 
         :type event_publishing_time: (optional) datetime
         """
-        self.__discriminator_value = "AlexaSkillEvent.SkillEnabled"
+        self.__discriminator_value = "AlexaSkillEvent.SkillEnabled"  # type: str
 
         self.object_type = self.__discriminator_value
         super(SkillEnabledRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
@@ -84,7 +84,7 @@ class SkillEnabledRequest(Request):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

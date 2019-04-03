@@ -32,7 +32,7 @@ class AccessTokenResponse(object):
     :type access_token: str
     :param expires_in: The duration in seconds of the access token
         lifetime
-    :type expires_in: long
+    :type expires_in: int
     :param scope: The scope specified in the access token request
     :type scope: str
     :param token_type: The type of token issued
@@ -40,7 +40,7 @@ class AccessTokenResponse(object):
     """
     deserialized_types = {
         'access_token': 'str',
-        'expires_in': 'long',
+        'expires_in': 'int',
         'scope': 'str',
         'token_type': 'str'
     }
@@ -55,14 +55,14 @@ class AccessTokenResponse(object):
     def __init__(
             self, access_token=None, expires_in=None,
             scope=None, token_type=None):
-        # type: (Optional[str], Optional[str], Optional[str], Optional[str]) -> None
+        # type: (Optional[str], Optional[int], Optional[str], Optional[str]) -> None
         """LWA response for retrieving an access token.
 
         :param access_token: The access token from LWA
         :type access_token: str
         :param expires_in: The duration in seconds of the access token
             lifetime
-        :type expires_in: long
+        :type expires_in: int
         :param scope: The scope specified in the access token request
         :type scope: str
         :param token_type: The type of token issued
@@ -78,7 +78,7 @@ class AccessTokenResponse(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -40,13 +40,13 @@ class SsmlOutputSpeech(OutputSpeech):
         'object_type': 'str',
         'play_behavior': 'ask_sdk_model.ui.play_behavior.PlayBehavior',
         'ssml': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
         'play_behavior': 'playBehavior',
         'ssml': 'ssml'
-    }
+}  # type: Dict
 
     def __init__(self, play_behavior=None, ssml=None):
         # type: (Optional[PlayBehavior], Optional[str]) -> None
@@ -57,7 +57,7 @@ class SsmlOutputSpeech(OutputSpeech):
         :param ssml: 
         :type ssml: (optional) str
         """
-        self.__discriminator_value = "SSML"
+        self.__discriminator_value = "SSML"  # type: str
 
         self.object_type = self.__discriminator_value
         super(SsmlOutputSpeech, self).__init__(object_type=self.__discriminator_value, play_behavior=play_behavior)
@@ -66,7 +66,7 @@ class SsmlOutputSpeech(OutputSpeech):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

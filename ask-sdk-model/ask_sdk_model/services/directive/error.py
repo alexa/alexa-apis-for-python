@@ -37,12 +37,12 @@ class Error(object):
     deserialized_types = {
         'code': 'int',
         'message': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'code': 'code',
         'message': 'message'
-    }
+}  # type: Dict
 
     def __init__(self, code=None, message=None):
         # type: (Optional[int], Optional[str]) -> None
@@ -53,7 +53,7 @@ class Error(object):
         :param message: Readable description of error.
         :type message: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.code = code
         self.message = message
@@ -61,7 +61,7 @@ class Error(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

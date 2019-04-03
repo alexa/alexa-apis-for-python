@@ -45,14 +45,14 @@ class SetLightDirective(Directive):
         'version': 'int',
         'target_gadgets': 'list[str]',
         'parameters': 'ask_sdk_model.services.gadget_controller.set_light_parameters.SetLightParameters'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
         'version': 'version',
         'target_gadgets': 'targetGadgets',
         'parameters': 'parameters'
-    }
+}  # type: Dict
 
     def __init__(self, version=None, target_gadgets=None, parameters=None):
         # type: (Optional[int], Optional[List[object]], Optional[SetLightParameters]) -> None
@@ -65,7 +65,7 @@ class SetLightDirective(Directive):
         :param parameters: 
         :type parameters: (optional) ask_sdk_model.services.gadget_controller.set_light_parameters.SetLightParameters
         """
-        self.__discriminator_value = "GadgetController.SetLight"
+        self.__discriminator_value = "GadgetController.SetLight"  # type: str
 
         self.object_type = self.__discriminator_value
         super(SetLightDirective, self).__init__(object_type=self.__discriminator_value)
@@ -76,7 +76,7 @@ class SetLightDirective(Directive):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

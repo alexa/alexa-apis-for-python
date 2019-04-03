@@ -41,13 +41,13 @@ class DynamicEntitiesDirective(Directive):
         'object_type': 'str',
         'update_behavior': 'ask_sdk_model.er.dynamic.update_behavior.UpdateBehavior',
         'types': 'list[ask_sdk_model.er.dynamic.entity_list_item.EntityListItem]'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
         'update_behavior': 'updateBehavior',
         'types': 'types'
-    }
+}  # type: Dict
 
     def __init__(self, update_behavior=None, types=None):
         # type: (Optional[UpdateBehavior], Optional[List[EntityListItem]]) -> None
@@ -58,7 +58,7 @@ class DynamicEntitiesDirective(Directive):
         :param types: 
         :type types: (optional) list[ask_sdk_model.er.dynamic.entity_list_item.EntityListItem]
         """
-        self.__discriminator_value = "Dialog.UpdateDynamicEntities"
+        self.__discriminator_value = "Dialog.UpdateDynamicEntities"  # type: str
 
         self.object_type = self.__discriminator_value
         super(DynamicEntitiesDirective, self).__init__(object_type=self.__discriminator_value)
@@ -68,7 +68,7 @@ class DynamicEntitiesDirective(Directive):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

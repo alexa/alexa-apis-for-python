@@ -48,7 +48,7 @@ class PlaybackFinishedRequest(Request):
         'locale': 'str',
         'offset_in_milliseconds': 'int',
         'token': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
@@ -57,7 +57,7 @@ class PlaybackFinishedRequest(Request):
         'locale': 'locale',
         'offset_in_milliseconds': 'offsetInMilliseconds',
         'token': 'token'
-    }
+}  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, offset_in_milliseconds=None, token=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[int], Optional[str]) -> None
@@ -74,7 +74,7 @@ class PlaybackFinishedRequest(Request):
         :param token: 
         :type token: (optional) str
         """
-        self.__discriminator_value = "AudioPlayer.PlaybackFinished"
+        self.__discriminator_value = "AudioPlayer.PlaybackFinished"  # type: str
 
         self.object_type = self.__discriminator_value
         super(PlaybackFinishedRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
@@ -84,7 +84,7 @@ class PlaybackFinishedRequest(Request):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

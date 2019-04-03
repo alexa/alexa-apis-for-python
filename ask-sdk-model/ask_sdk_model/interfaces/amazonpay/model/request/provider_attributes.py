@@ -45,14 +45,14 @@ class ProviderAttributes(BaseAmazonPayEntity):
         'provider_credit_list': 'list[ask_sdk_model.interfaces.amazonpay.model.request.provider_credit.ProviderCredit]',
         'object_type': 'str',
         'version': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'provider_id': 'providerId',
         'provider_credit_list': 'providerCreditList',
         'object_type': '@type',
         'version': '@version'
-    }
+}  # type: Dict
 
     def __init__(self, provider_id=None, provider_credit_list=None, version=None):
         # type: (Optional[str], Optional[List[ProviderCredit]], Optional[str]) -> None
@@ -65,7 +65,7 @@ class ProviderAttributes(BaseAmazonPayEntity):
         :param version: Version of the Amazon Pay Entity. Can be 2 or greater.
         :type version: (optional) str
         """
-        self.__discriminator_value = "ProviderAttributes"
+        self.__discriminator_value = "ProviderAttributes"  # type: str
 
         self.object_type = self.__discriminator_value
         super(ProviderAttributes, self).__init__(object_type=self.__discriminator_value, version=version)
@@ -75,7 +75,7 @@ class ProviderAttributes(BaseAmazonPayEntity):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

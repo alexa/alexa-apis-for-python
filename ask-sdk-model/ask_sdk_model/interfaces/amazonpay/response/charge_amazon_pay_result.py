@@ -41,12 +41,12 @@ class ChargeAmazonPayResult(ChargeAmazonPayResult):
     deserialized_types = {
         'amazon_order_reference_id': 'str',
         'authorization_details': 'ask_sdk_model.interfaces.amazonpay.model.response.authorization_details.AuthorizationDetails'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'amazon_order_reference_id': 'amazonOrderReferenceId',
         'authorization_details': 'authorizationDetails'
-    }
+}  # type: Dict
 
     def __init__(self, amazon_order_reference_id=None, authorization_details=None):
         # type: (Optional[str], Optional[AuthorizationDetails]) -> None
@@ -57,7 +57,7 @@ class ChargeAmazonPayResult(ChargeAmazonPayResult):
         :param authorization_details: 
         :type authorization_details: (optional) ask_sdk_model.interfaces.amazonpay.model.response.authorization_details.AuthorizationDetails
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         super(ChargeAmazonPayResult, self).__init__(amazon_order_reference_id=amazon_order_reference_id, authorization_details=authorization_details)
         self.authorization_details = authorization_details
@@ -65,7 +65,7 @@ class ChargeAmazonPayResult(ChargeAmazonPayResult):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

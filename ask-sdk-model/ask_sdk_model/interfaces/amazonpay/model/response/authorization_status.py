@@ -47,14 +47,14 @@ class AuthorizationStatus(AuthorizationStatus):
         'reason_code': 'str',
         'reason_description': 'str',
         'last_update_timestamp': 'datetime'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'state': 'state',
         'reason_code': 'reasonCode',
         'reason_description': 'reasonDescription',
         'last_update_timestamp': 'lastUpdateTimestamp'
-    }
+}  # type: Dict
 
     def __init__(self, state=None, reason_code=None, reason_description=None, last_update_timestamp=None):
         # type: (Optional[State], Optional[str], Optional[str], Optional[datetime]) -> None
@@ -69,7 +69,7 @@ class AuthorizationStatus(AuthorizationStatus):
         :param last_update_timestamp: A timestamp that indicates the time when the authorization, capture, or refund state was last updated. In ISO 8601 format
         :type last_update_timestamp: (optional) datetime
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         super(AuthorizationStatus, self).__init__(state=state, reason_code=reason_code, reason_description=reason_description, last_update_timestamp=last_update_timestamp)
         self.state = state
@@ -77,7 +77,7 @@ class AuthorizationStatus(AuthorizationStatus):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

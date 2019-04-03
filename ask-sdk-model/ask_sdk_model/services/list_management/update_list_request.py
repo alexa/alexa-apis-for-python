@@ -41,13 +41,13 @@ class UpdateListRequest(object):
         'name': 'str',
         'state': 'ask_sdk_model.services.list_management.list_state.ListState',
         'version': 'int'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'name': 'name',
         'state': 'state',
         'version': 'version'
-    }
+}  # type: Dict
 
     def __init__(self, name=None, state=None, version=None):
         # type: (Optional[str], Optional[ListState], Optional[int]) -> None
@@ -60,7 +60,7 @@ class UpdateListRequest(object):
         :param version: 
         :type version: (optional) int
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.name = name
         self.state = state
@@ -69,7 +69,7 @@ class UpdateListRequest(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -42,13 +42,13 @@ class SendResponseDirective(Directive):
         'object_type': 'str',
         'status': 'ask_sdk_model.interfaces.connections.connections_status.ConnectionsStatus',
         'payload': 'dict(str, object)'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
         'status': 'status',
         'payload': 'payload'
-    }
+}  # type: Dict
 
     def __init__(self, status=None, payload=None):
         # type: (Optional[ConnectionsStatus], Optional[Dict[str, object]]) -> None
@@ -59,7 +59,7 @@ class SendResponseDirective(Directive):
         :param payload: This is an object sent to referrer skill as is.
         :type payload: (optional) dict(str, object)
         """
-        self.__discriminator_value = "Connections.SendResponse"
+        self.__discriminator_value = "Connections.SendResponse"  # type: str
 
         self.object_type = self.__discriminator_value
         super(SendResponseDirective, self).__init__(object_type=self.__discriminator_value)
@@ -69,7 +69,7 @@ class SendResponseDirective(Directive):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -45,7 +45,7 @@ class ElementSelectedRequest(Request):
         'timestamp': 'datetime',
         'locale': 'str',
         'token': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
@@ -53,7 +53,7 @@ class ElementSelectedRequest(Request):
         'timestamp': 'timestamp',
         'locale': 'locale',
         'token': 'token'
-    }
+}  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, token=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[str]) -> None
@@ -68,7 +68,7 @@ class ElementSelectedRequest(Request):
         :param token: 
         :type token: (optional) str
         """
-        self.__discriminator_value = "Display.ElementSelected"
+        self.__discriminator_value = "Display.ElementSelected"  # type: str
 
         self.object_type = self.__discriminator_value
         super(ElementSelectedRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
@@ -77,7 +77,7 @@ class ElementSelectedRequest(Request):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

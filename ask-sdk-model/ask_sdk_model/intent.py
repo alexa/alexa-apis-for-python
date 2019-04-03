@@ -44,13 +44,13 @@ class Intent(object):
         'name': 'str',
         'slots': 'dict(str, ask_sdk_model.slot.Slot)',
         'confirmation_status': 'ask_sdk_model.intent_confirmation_status.IntentConfirmationStatus'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'name': 'name',
         'slots': 'slots',
         'confirmation_status': 'confirmationStatus'
-    }
+}  # type: Dict
 
     def __init__(self, name=None, slots=None, confirmation_status=None):
         # type: (Optional[str], Optional[Dict[str, Slot]], Optional[IntentConfirmationStatus]) -> None
@@ -63,7 +63,7 @@ class Intent(object):
         :param confirmation_status: 
         :type confirmation_status: (optional) ask_sdk_model.intent_confirmation_status.IntentConfirmationStatus
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.name = name
         self.slots = slots
@@ -72,7 +72,7 @@ class Intent(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -125,14 +125,14 @@ class Request(object):
         'request_id': 'str',
         'timestamp': 'datetime',
         'locale': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
         'request_id': 'requestId',
         'timestamp': 'timestamp',
         'locale': 'locale'
-    }
+}  # type: Dict
 
     discriminator_value_class_map = {
         'AudioPlayer.PlaybackFinished': 'ask_sdk_model.interfaces.audioplayer.playback_finished_request.PlaybackFinishedRequest',
@@ -192,7 +192,7 @@ class Request(object):
         :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
         :type locale: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.object_type = object_type
         self.request_id = request_id
@@ -201,7 +201,7 @@ class Request(object):
 
     @classmethod
     def get_real_child_model(cls, data):
-        # type: (Dict[str, str]) -> str
+        # type: (Dict[str, str]) -> Optional[str]
         """Returns the real base class specified by the discriminator"""
         discriminator_value = data[cls.json_discriminator_key]
         return cls.discriminator_value_class_map.get(discriminator_value)
@@ -209,7 +209,7 @@ class Request(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

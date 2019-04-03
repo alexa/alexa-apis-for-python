@@ -61,13 +61,13 @@ class Template(object):
         'object_type': 'str',
         'token': 'str',
         'back_button': 'ask_sdk_model.interfaces.display.back_button_behavior.BackButtonBehavior'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
         'token': 'token',
         'back_button': 'backButton'
-    }
+}  # type: Dict
 
     discriminator_value_class_map = {
         'ListTemplate2': 'ask_sdk_model.interfaces.display.list_template2.ListTemplate2',
@@ -95,7 +95,7 @@ class Template(object):
         :param back_button: 
         :type back_button: (optional) ask_sdk_model.interfaces.display.back_button_behavior.BackButtonBehavior
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.object_type = object_type
         self.token = token
@@ -103,7 +103,7 @@ class Template(object):
 
     @classmethod
     def get_real_child_model(cls, data):
-        # type: (Dict[str, str]) -> str
+        # type: (Dict[str, str]) -> Optional[str]
         """Returns the real base class specified by the discriminator"""
         discriminator_value = data[cls.json_discriminator_key]
         return cls.discriminator_value_class_map.get(discriminator_value)
@@ -111,7 +111,7 @@ class Template(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

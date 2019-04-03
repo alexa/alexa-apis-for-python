@@ -40,13 +40,13 @@ class SpokenText(object):
         'locale': 'str',
         'ssml': 'str',
         'text': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'locale': 'locale',
         'ssml': 'ssml',
         'text': 'text'
-    }
+}  # type: Dict
 
     def __init__(self, locale=None, ssml=None, text=None):
         # type: (Optional[str], Optional[str], Optional[str]) -> None
@@ -59,7 +59,7 @@ class SpokenText(object):
         :param text: Spoken text in plain text format.
         :type text: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.locale = locale
         self.ssml = ssml
@@ -68,7 +68,7 @@ class SpokenText(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -39,12 +39,12 @@ class Value(object):
     deserialized_types = {
         'name': 'str',
         'id': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'name': 'name',
         'id': 'id'
-    }
+}  # type: Dict
 
     def __init__(self, name=None, id=None):
         # type: (Optional[str], Optional[str]) -> None
@@ -55,7 +55,7 @@ class Value(object):
         :param id: The id for the resolution value.
         :type id: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.name = name
         self.id = id
@@ -63,7 +63,7 @@ class Value(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

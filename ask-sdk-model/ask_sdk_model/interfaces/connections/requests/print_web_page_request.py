@@ -47,7 +47,7 @@ class PrintWebPageRequest(BaseRequest):
         'title': 'str',
         'url': 'str',
         'description': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': '@type',
@@ -55,7 +55,7 @@ class PrintWebPageRequest(BaseRequest):
         'title': 'title',
         'url': 'url',
         'description': 'description'
-    }
+}  # type: Dict
 
     def __init__(self, version=None, title=None, url=None, description=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[str]) -> None
@@ -70,7 +70,7 @@ class PrintWebPageRequest(BaseRequest):
         :param description: description of the image
         :type description: (optional) str
         """
-        self.__discriminator_value = "PrintWebPageRequest"
+        self.__discriminator_value = "PrintWebPageRequest"  # type: str
 
         self.object_type = self.__discriminator_value
         super(PrintWebPageRequest, self).__init__(object_type=self.__discriminator_value, version=version)
@@ -81,7 +81,7 @@ class PrintWebPageRequest(BaseRequest):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

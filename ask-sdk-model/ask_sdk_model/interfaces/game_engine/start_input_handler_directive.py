@@ -47,7 +47,7 @@ class StartInputHandlerDirective(Directive):
         'proxies': 'list[str]',
         'recognizers': 'dict(str, ask_sdk_model.services.game_engine.recognizer.Recognizer)',
         'events': 'dict(str, ask_sdk_model.services.game_engine.event.Event)'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
@@ -55,7 +55,7 @@ class StartInputHandlerDirective(Directive):
         'proxies': 'proxies',
         'recognizers': 'recognizers',
         'events': 'events'
-    }
+}  # type: Dict
 
     def __init__(self, timeout=None, proxies=None, recognizers=None, events=None):
         # type: (Optional[int], Optional[List[object]], Optional[Dict[str, Recognizer]], Optional[Dict[str, Event]]) -> None
@@ -70,7 +70,7 @@ class StartInputHandlerDirective(Directive):
         :param events: The logic that determines when your skill is notified of Echo Button input. Events are listed here as object keys, where the keys specify the name of an event. 
         :type events: (optional) dict(str, ask_sdk_model.services.game_engine.event.Event)
         """
-        self.__discriminator_value = "GameEngine.StartInputHandler"
+        self.__discriminator_value = "GameEngine.StartInputHandler"  # type: str
 
         self.object_type = self.__discriminator_value
         super(StartInputHandlerDirective, self).__init__(object_type=self.__discriminator_value)
@@ -82,7 +82,7 @@ class StartInputHandlerDirective(Directive):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

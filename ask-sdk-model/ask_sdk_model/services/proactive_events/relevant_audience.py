@@ -40,12 +40,12 @@ class RelevantAudience(object):
     deserialized_types = {
         'object_type': 'ask_sdk_model.services.proactive_events.relevant_audience_type.RelevantAudienceType',
         'payload': 'object'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
         'payload': 'payload'
-    }
+}  # type: Dict
 
     def __init__(self, object_type=None, payload=None):
         # type: (Optional[RelevantAudienceType], Optional[object]) -> None
@@ -56,7 +56,7 @@ class RelevantAudience(object):
         :param payload: If relevantAudience.type is set to Multicast, then the payload object is empty. Otherwise, the userId value for which the event is targeted is required. 
         :type payload: (optional) object
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.object_type = object_type
         self.payload = payload
@@ -64,7 +64,7 @@ class RelevantAudience(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -39,12 +39,12 @@ class Event(object):
     deserialized_types = {
         'name': 'str',
         'payload': 'object'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'name': 'name',
         'payload': 'payload'
-    }
+}  # type: Dict
 
     def __init__(self, name=None, payload=None):
         # type: (Optional[str], Optional[object]) -> None
@@ -55,7 +55,7 @@ class Event(object):
         :param payload: 
         :type payload: (optional) object
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.name = name
         self.payload = payload
@@ -63,7 +63,7 @@ class Event(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

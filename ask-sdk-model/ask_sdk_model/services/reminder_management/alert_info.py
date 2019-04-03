@@ -37,11 +37,11 @@ class AlertInfo(object):
     """
     deserialized_types = {
         'spoken_info': 'ask_sdk_model.services.reminder_management.spoken_info.SpokenInfo'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'spoken_info': 'spokenInfo'
-    }
+}  # type: Dict
 
     def __init__(self, spoken_info=None):
         # type: (Optional[SpokenInfo]) -> None
@@ -50,14 +50,14 @@ class AlertInfo(object):
         :param spoken_info: 
         :type spoken_info: (optional) ask_sdk_model.services.reminder_management.spoken_info.SpokenInfo
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.spoken_info = spoken_info
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

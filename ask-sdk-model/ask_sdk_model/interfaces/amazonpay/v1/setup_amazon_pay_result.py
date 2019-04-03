@@ -37,11 +37,11 @@ class SetupAmazonPayResult(object):
     """
     deserialized_types = {
         'billing_agreement_details': 'ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_details.BillingAgreementDetails'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'billing_agreement_details': 'billingAgreementDetails'
-    }
+}  # type: Dict
 
     def __init__(self, billing_agreement_details=None):
         # type: (Optional[BillingAgreementDetails]) -> None
@@ -50,14 +50,14 @@ class SetupAmazonPayResult(object):
         :param billing_agreement_details: 
         :type billing_agreement_details: (optional) ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_details.BillingAgreementDetails
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.billing_agreement_details = billing_agreement_details
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

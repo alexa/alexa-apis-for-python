@@ -37,12 +37,12 @@ class ListItemBody(object):
     deserialized_types = {
         'list_id': 'str',
         'list_item_ids': 'list[str]'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'list_id': 'listId',
         'list_item_ids': 'listItemIds'
-    }
+}  # type: Dict
 
     def __init__(self, list_id=None, list_item_ids=None):
         # type: (Optional[str], Optional[List[object]]) -> None
@@ -53,7 +53,7 @@ class ListItemBody(object):
         :param list_item_ids: 
         :type list_item_ids: (optional) list[str]
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.list_id = list_id
         self.list_item_ids = list_item_ids
@@ -61,7 +61,7 @@ class ListItemBody(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

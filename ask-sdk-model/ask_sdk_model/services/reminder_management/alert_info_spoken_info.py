@@ -37,11 +37,11 @@ class SpokenInfo(object):
     """
     deserialized_types = {
         'content': 'list[ask_sdk_model.services.reminder_management.spoken_text.SpokenText]'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'content': 'content'
-    }
+}  # type: Dict
 
     def __init__(self, content=None):
         # type: (Optional[List[SpokenText]]) -> None
@@ -50,14 +50,14 @@ class SpokenInfo(object):
         :param content: 
         :type content: (optional) list[ask_sdk_model.services.reminder_management.spoken_text.SpokenText]
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.content = content
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

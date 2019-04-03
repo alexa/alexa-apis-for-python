@@ -46,14 +46,14 @@ class Pattern(object):
         'colors': 'list[str]',
         'action': 'ask_sdk_model.services.game_engine.input_event_action_type.InputEventActionType',
         'repeat': 'int'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'gadget_ids': 'gadgetIds',
         'colors': 'colors',
         'action': 'action',
         'repeat': 'repeat'
-    }
+}  # type: Dict
 
     def __init__(self, gadget_ids=None, colors=None, action=None, repeat=None):
         # type: (Optional[List[object]], Optional[List[object]], Optional[InputEventActionType], Optional[int]) -> None
@@ -68,7 +68,7 @@ class Pattern(object):
         :param repeat: The number of times that the specified action must occur to be considered complete.
         :type repeat: (optional) int
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.gadget_ids = gadget_ids
         self.colors = colors
@@ -78,7 +78,7 @@ class Pattern(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

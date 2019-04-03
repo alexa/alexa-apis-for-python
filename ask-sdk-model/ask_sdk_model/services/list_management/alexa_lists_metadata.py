@@ -35,11 +35,11 @@ class AlexaListsMetadata(object):
     """
     deserialized_types = {
         'lists': 'list[ask_sdk_model.services.list_management.alexa_list_metadata.AlexaListMetadata]'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'lists': 'lists'
-    }
+}  # type: Dict
 
     def __init__(self, lists=None):
         # type: (Optional[List[AlexaListMetadata]]) -> None
@@ -48,14 +48,14 @@ class AlexaListsMetadata(object):
         :param lists: 
         :type lists: (optional) list[ask_sdk_model.services.list_management.alexa_list_metadata.AlexaListMetadata]
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.lists = lists
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

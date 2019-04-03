@@ -44,14 +44,14 @@ class LaunchRequest(Request):
         'request_id': 'str',
         'timestamp': 'datetime',
         'locale': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
         'request_id': 'requestId',
         'timestamp': 'timestamp',
         'locale': 'locale'
-    }
+}  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None):
         # type: (Optional[str], Optional[datetime], Optional[str]) -> None
@@ -64,7 +64,7 @@ class LaunchRequest(Request):
         :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
         :type locale: (optional) str
         """
-        self.__discriminator_value = "LaunchRequest"
+        self.__discriminator_value = "LaunchRequest"  # type: str
 
         self.object_type = self.__discriminator_value
         super(LaunchRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
@@ -72,7 +72,7 @@ class LaunchRequest(Request):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

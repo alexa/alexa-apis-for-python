@@ -37,12 +37,12 @@ class DelegateDirective(Directive):
     deserialized_types = {
         'object_type': 'str',
         'updated_intent': 'ask_sdk_model.intent.Intent'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
         'updated_intent': 'updatedIntent'
-    }
+}  # type: Dict
 
     def __init__(self, updated_intent=None):
         # type: (Optional[Intent]) -> None
@@ -51,7 +51,7 @@ class DelegateDirective(Directive):
         :param updated_intent: 
         :type updated_intent: (optional) ask_sdk_model.intent.Intent
         """
-        self.__discriminator_value = "Dialog.Delegate"
+        self.__discriminator_value = "Dialog.Delegate"  # type: str
 
         self.object_type = self.__discriminator_value
         super(DelegateDirective, self).__init__(object_type=self.__discriminator_value)
@@ -60,7 +60,7 @@ class DelegateDirective(Directive):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

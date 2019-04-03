@@ -39,12 +39,12 @@ class Price(object):
     deserialized_types = {
         'amount': 'str',
         'currency_code': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'amount': 'amount',
         'currency_code': 'currencyCode'
-    }
+}  # type: Dict
 
     def __init__(self, amount=None, currency_code=None):
         # type: (Optional[str], Optional[str]) -> None
@@ -55,7 +55,7 @@ class Price(object):
         :param currency_code: Currency code for the amount.
         :type currency_code: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.amount = amount
         self.currency_code = currency_code
@@ -63,7 +63,7 @@ class Price(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

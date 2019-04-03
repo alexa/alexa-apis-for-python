@@ -43,13 +43,13 @@ class GetRemindersResponse(object):
         'total_count': 'str',
         'alerts': 'list[ask_sdk_model.services.reminder_management.reminder.Reminder]',
         'links': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'total_count': 'totalCount',
         'alerts': 'alerts',
         'links': 'links'
-    }
+}  # type: Dict
 
     def __init__(self, total_count=None, alerts=None, links=None):
         # type: (Optional[str], Optional[List[Reminder]], Optional[str]) -> None
@@ -62,7 +62,7 @@ class GetRemindersResponse(object):
         :param links: Link to retrieve next set of alerts if total count is greater than max results
         :type links: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.total_count = total_count
         self.alerts = alerts
@@ -71,7 +71,7 @@ class GetRemindersResponse(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -51,7 +51,7 @@ class BodyTemplate6(Template):
         'background_image': 'ask_sdk_model.interfaces.display.image.Image',
         'text_content': 'ask_sdk_model.interfaces.display.text_content.TextContent',
         'image': 'ask_sdk_model.interfaces.display.image.Image'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
@@ -60,7 +60,7 @@ class BodyTemplate6(Template):
         'background_image': 'backgroundImage',
         'text_content': 'textContent',
         'image': 'image'
-    }
+}  # type: Dict
 
     def __init__(self, token=None, back_button=None, background_image=None, text_content=None, image=None):
         # type: (Optional[str], Optional[BackButtonBehavior], Optional[Image], Optional[TextContent], Optional[Image]) -> None
@@ -77,7 +77,7 @@ class BodyTemplate6(Template):
         :param image: 
         :type image: (optional) ask_sdk_model.interfaces.display.image.Image
         """
-        self.__discriminator_value = "BodyTemplate6"
+        self.__discriminator_value = "BodyTemplate6"  # type: str
 
         self.object_type = self.__discriminator_value
         super(BodyTemplate6, self).__init__(object_type=self.__discriminator_value, token=token, back_button=back_button)
@@ -88,7 +88,7 @@ class BodyTemplate6(Template):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

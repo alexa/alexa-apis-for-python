@@ -52,7 +52,7 @@ class ReminderResponse(object):
         'status': 'ask_sdk_model.services.reminder_management.status.Status',
         'version': 'str',
         'href': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'alert_token': 'alertToken',
@@ -61,7 +61,7 @@ class ReminderResponse(object):
         'status': 'status',
         'version': 'version',
         'href': 'href'
-    }
+}  # type: Dict
 
     def __init__(self, alert_token=None, created_time=None, updated_time=None, status=None, version=None, href=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[Status], Optional[str], Optional[str]) -> None
@@ -80,7 +80,7 @@ class ReminderResponse(object):
         :param href: URI to retrieve the created alert
         :type href: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.alert_token = alert_token
         self.created_time = created_time
@@ -92,7 +92,7 @@ class ReminderResponse(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

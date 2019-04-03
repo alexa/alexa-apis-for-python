@@ -55,7 +55,7 @@ class Context(object):
         'display': 'ask_sdk_model.interfaces.display.display_state.DisplayState',
         'geolocation': 'ask_sdk_model.interfaces.geolocation.geolocation_state.GeolocationState',
         'viewport': 'ask_sdk_model.interfaces.viewport.viewport_state.ViewportState'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'system': 'System',
@@ -64,7 +64,7 @@ class Context(object):
         'display': 'Display',
         'geolocation': 'Geolocation',
         'viewport': 'Viewport'
-    }
+}  # type: Dict
 
     def __init__(self, system=None, audio_player=None, automotive=None, display=None, geolocation=None, viewport=None):
         # type: (Optional[SystemState], Optional[AudioPlayerState], Optional[AutomotiveState], Optional[DisplayState], Optional[GeolocationState], Optional[ViewportState]) -> None
@@ -83,7 +83,7 @@ class Context(object):
         :param viewport: Provides the characteristics of a device&#39;s viewport.
         :type viewport: (optional) ask_sdk_model.interfaces.viewport.viewport_state.ViewportState
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.system = system
         self.audio_player = audio_player
@@ -95,7 +95,7 @@ class Context(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

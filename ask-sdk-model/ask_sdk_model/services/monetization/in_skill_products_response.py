@@ -41,13 +41,13 @@ class InSkillProductsResponse(object):
         'in_skill_products': 'list[ask_sdk_model.services.monetization.in_skill_product.InSkillProduct]',
         'is_truncated': 'bool',
         'next_token': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'in_skill_products': 'inSkillProducts',
         'is_truncated': 'isTruncated',
         'next_token': 'nextToken'
-    }
+}  # type: Dict
 
     def __init__(self, in_skill_products=None, is_truncated=None, next_token=None):
         # type: (Optional[List[InSkillProduct]], Optional[bool], Optional[str]) -> None
@@ -60,7 +60,7 @@ class InSkillProductsResponse(object):
         :param next_token: 
         :type next_token: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.in_skill_products = in_skill_products
         self.is_truncated = is_truncated
@@ -69,7 +69,7 @@ class InSkillProductsResponse(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

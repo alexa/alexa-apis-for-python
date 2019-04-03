@@ -25,7 +25,7 @@ from ask_sdk_model.services.service_client_response import ServiceClientResponse
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Union
+    from typing import Dict, List, Union, Any
     from datetime import datetime
     from ask_sdk_model.services.monetization.error import Error
     from ask_sdk_model.services.monetization.in_skill_product import InSkillProduct
@@ -47,7 +47,7 @@ class MonetizationServiceClient(BaseServiceClient):
         super(MonetizationServiceClient, self).__init__(api_configuration)
 
     def get_in_skill_products(self, accept_language, **kwargs):
-        # type: (str, str, str, str, str, float) -> Union[Error, InSkillProductsResponse]
+        # type: (str, **Any) -> Union[Error, InSkillProductsResponse]
         """
         Gets In-Skill Products based on user's context for the Skill.
 
@@ -78,9 +78,9 @@ class MonetizationServiceClient(BaseServiceClient):
         resource_path = '/v1/users/~current/skills/~current/inSkillProducts'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
 
-        query_params = []
+        query_params = []  # type: List
         if 'purchasable' in params:
             query_params.append(('purchasable', params['purchasable']))
         if 'entitled' in params:
@@ -92,7 +92,7 @@ class MonetizationServiceClient(BaseServiceClient):
         if 'max_results' in params:
             query_params.append(('maxResults', params['max_results']))
 
-        header_params = []
+        header_params = []  # type: List
         if 'accept_language' in params:
             header_params.append(('Accept-Language', params['accept_language']))
 
@@ -103,7 +103,7 @@ class MonetizationServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.monetization.in_skill_products_response.InSkillProductsResponse", status_code=200, message="Returns a list of In-Skill products on success."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.monetization.error.Error", status_code=400, message="Invalid request"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.monetization.error.Error", status_code=401, message="The authentication token is invalid or doesn&#39;t have access to make this request"))
@@ -121,7 +121,7 @@ class MonetizationServiceClient(BaseServiceClient):
             response_type="ask_sdk_model.services.monetization.in_skill_products_response.InSkillProductsResponse")
 
     def get_in_skill_product(self, accept_language, product_id, **kwargs):
-        # type: (str, str) -> Union[Error, InSkillProduct]
+        # type: (str, str, **Any) -> Union[Error, InSkillProduct]
         """
         Get In-Skill Product information based on user context for the Skill.
 
@@ -148,13 +148,13 @@ class MonetizationServiceClient(BaseServiceClient):
         resource_path = '/v1/users/~current/skills/~current/inSkillProducts/{productId}'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
         if 'product_id' in params:
             path_params['productId'] = params['product_id']
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
         if 'accept_language' in params:
             header_params.append(('Accept-Language', params['accept_language']))
 
@@ -165,7 +165,7 @@ class MonetizationServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.monetization.in_skill_product.InSkillProduct", status_code=200, message="Returns an In-Skill Product on success."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.monetization.error.Error", status_code=400, message="Invalid request."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.monetization.error.Error", status_code=401, message="The authentication token is invalid or doesn&#39;t have access to make this request"))

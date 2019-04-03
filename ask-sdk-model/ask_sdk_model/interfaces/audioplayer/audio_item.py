@@ -39,12 +39,12 @@ class AudioItem(object):
     deserialized_types = {
         'stream': 'ask_sdk_model.interfaces.audioplayer.stream.Stream',
         'metadata': 'ask_sdk_model.interfaces.audioplayer.audio_item_metadata.AudioItemMetadata'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'stream': 'stream',
         'metadata': 'metadata'
-    }
+}  # type: Dict
 
     def __init__(self, stream=None, metadata=None):
         # type: (Optional[Stream], Optional[AudioItemMetadata]) -> None
@@ -55,7 +55,7 @@ class AudioItem(object):
         :param metadata: 
         :type metadata: (optional) ask_sdk_model.interfaces.audioplayer.audio_item_metadata.AudioItemMetadata
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.stream = stream
         self.metadata = metadata
@@ -63,7 +63,7 @@ class AudioItem(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

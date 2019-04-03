@@ -35,11 +35,11 @@ class AlexaPresentationAplInterface(object):
     """
     deserialized_types = {
         'runtime': 'ask_sdk_model.interfaces.alexa.presentation.apl.runtime.Runtime'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'runtime': 'runtime'
-    }
+}  # type: Dict
 
     def __init__(self, runtime=None):
         # type: (Optional[Runtime]) -> None
@@ -48,14 +48,14 @@ class AlexaPresentationAplInterface(object):
         :param runtime: 
         :type runtime: (optional) ask_sdk_model.interfaces.alexa.presentation.apl.runtime.Runtime
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.runtime = runtime
 
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -53,12 +53,12 @@ class BaseRequest(object):
     deserialized_types = {
         'object_type': 'str',
         'version': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': '@type',
         'version': '@version'
-    }
+}  # type: Dict
 
     discriminator_value_class_map = {
         'ScheduleFoodEstablishmentReservationRequest': 'ask_sdk_model.interfaces.connections.requests.schedule_food_establishment_reservation_request.ScheduleFoodEstablishmentReservationRequest',
@@ -82,14 +82,14 @@ class BaseRequest(object):
         :param version: version of the request
         :type version: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.object_type = object_type
         self.version = version
 
     @classmethod
     def get_real_child_model(cls, data):
-        # type: (Dict[str, str]) -> str
+        # type: (Dict[str, str]) -> Optional[str]
         """Returns the real base class specified by the discriminator"""
         discriminator_value = data[cls.json_discriminator_key]
         return cls.discriminator_value_class_map.get(discriminator_value)
@@ -97,7 +97,7 @@ class BaseRequest(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

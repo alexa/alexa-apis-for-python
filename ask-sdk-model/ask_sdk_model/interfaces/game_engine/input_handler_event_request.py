@@ -51,7 +51,7 @@ class InputHandlerEventRequest(Request):
         'locale': 'str',
         'originating_request_id': 'str',
         'events': 'list[ask_sdk_model.services.game_engine.input_handler_event.InputHandlerEvent]'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
@@ -60,7 +60,7 @@ class InputHandlerEventRequest(Request):
         'locale': 'locale',
         'originating_request_id': 'originatingRequestId',
         'events': 'events'
-    }
+}  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, originating_request_id=None, events=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[str], Optional[List[InputHandlerEvent]]) -> None
@@ -77,7 +77,7 @@ class InputHandlerEventRequest(Request):
         :param events: 
         :type events: (optional) list[ask_sdk_model.services.game_engine.input_handler_event.InputHandlerEvent]
         """
-        self.__discriminator_value = "GameEngine.InputHandlerEvent"
+        self.__discriminator_value = "GameEngine.InputHandlerEvent"  # type: str
 
         self.object_type = self.__discriminator_value
         super(InputHandlerEventRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
@@ -87,7 +87,7 @@ class InputHandlerEventRequest(Request):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

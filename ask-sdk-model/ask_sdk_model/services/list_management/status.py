@@ -38,12 +38,12 @@ class Status(object):
     deserialized_types = {
         'url': 'str',
         'status': 'ask_sdk_model.services.list_management.list_item_state.ListItemState'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'url': 'url',
         'status': 'status'
-    }
+}  # type: Dict
 
     def __init__(self, url=None, status=None):
         # type: (Optional[str], Optional[ListItemState]) -> None
@@ -54,7 +54,7 @@ class Status(object):
         :param status: 
         :type status: (optional) ask_sdk_model.services.list_management.list_item_state.ListItemState
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.url = url
         self.status = status
@@ -62,7 +62,7 @@ class Status(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -25,7 +25,7 @@ from ask_sdk_model.services.service_client_response import ServiceClientResponse
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Union
+    from typing import Dict, List, Union, Any
     from datetime import datetime
     from ask_sdk_model.services.device_address.short_address import ShortAddress
     from ask_sdk_model.services.device_address.error import Error
@@ -47,7 +47,7 @@ class DeviceAddressServiceClient(BaseServiceClient):
         super(DeviceAddressServiceClient, self).__init__(api_configuration)
 
     def get_country_and_postal_code(self, device_id, **kwargs):
-        # type: (str) -> Union[ShortAddress, Error]
+        # type: (str, **Any) -> Union[ShortAddress, Error]
         """
         Gets the country and postal code of a device 
 
@@ -68,13 +68,13 @@ class DeviceAddressServiceClient(BaseServiceClient):
         resource_path = '/v1/devices/{deviceId}/settings/address/countryAndPostalCode'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
         if 'device_id' in params:
             path_params['deviceId'] = params['device_id']
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
@@ -83,7 +83,7 @@ class DeviceAddressServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.device_address.short_address.ShortAddress", status_code=200, message="Successfully get the country and postal code of the deviceId"))
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="No content could be queried out"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.device_address.error.Error", status_code=403, message="The authentication token is invalid or doesn&#39;t have access to the resource"))
@@ -103,7 +103,7 @@ class DeviceAddressServiceClient(BaseServiceClient):
             response_type="ask_sdk_model.services.device_address.short_address.ShortAddress")
 
     def get_full_address(self, device_id, **kwargs):
-        # type: (str) -> Union[Address, Error]
+        # type: (str, **Any) -> Union[Address, Error]
         """
         Gets the address of a device 
 
@@ -124,13 +124,13 @@ class DeviceAddressServiceClient(BaseServiceClient):
         resource_path = '/v1/devices/{deviceId}/settings/address'
         resource_path = resource_path.replace('{format}', 'json')
 
-        path_params = {}
+        path_params = {}  # type: Dict
         if 'device_id' in params:
             path_params['deviceId'] = params['device_id']
 
-        query_params = []
+        query_params = []  # type: List
 
-        header_params = []
+        header_params = []  # type: List
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
@@ -139,7 +139,7 @@ class DeviceAddressServiceClient(BaseServiceClient):
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
 
-        error_definitions = []
+        error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.device_address.address.Address", status_code=200, message="Successfully get the address of the device"))
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="No content could be queried out"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.device_address.error.Error", status_code=403, message="The authentication token is invalid or doesn&#39;t have access to the resource"))

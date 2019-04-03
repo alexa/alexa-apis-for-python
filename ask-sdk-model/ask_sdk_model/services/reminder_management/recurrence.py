@@ -44,13 +44,13 @@ class Recurrence(object):
         'freq': 'ask_sdk_model.services.reminder_management.recurrence_freq.RecurrenceFreq',
         'by_day': 'list[ask_sdk_model.services.reminder_management.recurrence_day.RecurrenceDay]',
         'interval': 'int'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'freq': 'freq',
         'by_day': 'byDay',
         'interval': 'interval'
-    }
+}  # type: Dict
 
     def __init__(self, freq=None, by_day=None, interval=None):
         # type: (Optional[RecurrenceFreq], Optional[List[RecurrenceDay]], Optional[int]) -> None
@@ -63,7 +63,7 @@ class Recurrence(object):
         :param interval: contains a positive integer representing at which intervals the recurrence rule repeats
         :type interval: (optional) int
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.freq = freq
         self.by_day = by_day
@@ -72,7 +72,7 @@ class Recurrence(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

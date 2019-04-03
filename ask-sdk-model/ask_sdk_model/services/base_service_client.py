@@ -25,7 +25,7 @@ else:
     unicode_type = unicode
 
 if typing.TYPE_CHECKING:
-    from typing import TypeVar, Union, List, Dict, Tuple
+    from typing import TypeVar, Union, List, Dict, Tuple, Optional
     from .service_client_response import ServiceClientResponse
     from .api_configuration import ApiConfiguration
     T = TypeVar('T')
@@ -79,13 +79,19 @@ class BaseServiceClient(object):
         :type response_type: class
         :return: Response object instance of the response_type provided
         :rtype: object
-        :raises: :py:class:`ask_sdk_model.services.service_exception.ServiceException`
+        :raises: :py:class:`ask_sdk_model.services.service_exception.ServiceException` if service fails and :py:class:`ValueError` if serializer or API Client is not configured in api_configuration # noqa: E501
         """
         request = ApiClientRequest()
         request.url = BaseServiceClient.__build_url(
             endpoint=endpoint, path=path, query_params=query_params, path_params=path_params)
         request.method = method
         request.headers = header_params
+
+        if self._serializer is None:
+            raise ValueError("Serializer is None")
+
+        if self._api_client is None:
+           raise ValueError("API client is None")
 
         if body:
             request.body = self._serializer.serialize(body)
@@ -96,15 +102,18 @@ class BaseServiceClient(object):
             raise ServiceException(
                 message="Call to service failed: {}".format(str(e)), status_code=500, headers=None, body=None)
 
+        if response.status_code is None:
+            raise ServiceException(message="Invalid Response, no status code", status_code=500, headers=None, body=None)
+
         if BaseServiceClient.__is_code_successful(response.status_code):
             if response_type is None:
                 return None
             return self._serializer.deserialize(response.body, response_type)
 
         if response_definitions:
-            exception_metadata = [d for d in response_definitions if d.status_code == response.status_code]
-            if exception_metadata:
-                exception_metadata = exception_metadata[0]
+            exception_metadata_list = [d for d in response_definitions if d.status_code == response.status_code]
+            if exception_metadata_list:
+                exception_metadata = exception_metadata_list[0]
                 exception_body = self._serializer.deserialize(response.body, exception_metadata.response_type)
                 raise ServiceException(
                     message=exception_metadata.message, status_code=exception_metadata.status_code,
@@ -143,7 +152,7 @@ class BaseServiceClient(object):
 
     @staticmethod
     def __build_query_string(query_params, is_query_start):
-        # type: (List[tuple[str, str]], bool) -> str
+        # type: (List[Tuple[str, str]], bool) -> str
         """Build query string from query parameters.
 
         :param query_params: Parameters sent as part of query string
@@ -161,15 +170,15 @@ class BaseServiceClient(object):
         for query_param in query_params:
             param_name = query_param[0]
             param_value = query_param[1]
-            param_name = param_name.encode("utf-8") if isinstance(param_name, unicode_type) else param_name
-            param_value = param_value.encode("utf-8") if isinstance(param_value, unicode_type) else param_value
-            encoded_query_params.append((param_name, param_value))
+            param_name_encoded = param_name.encode("utf-8") if isinstance(param_name, unicode_type) else param_name
+            param_value_encoded = param_value.encode("utf-8") if isinstance(param_value, unicode_type) else param_value
+            encoded_query_params.append((param_name_encoded, param_value_encoded))
 
         return query_string + urlencode(encoded_query_params)
 
     @staticmethod
     def __build_url(endpoint, path, query_params, path_params):
-        # type: (str, str, List[tuple[str, str]], Dict[str, str]) -> str
+        # type: (str, str, List[Tuple[str, str]], Dict[str, str]) -> str
         """Build URL from the provided parameters.
 
         :param endpoint: Endpoint to be sending the api call

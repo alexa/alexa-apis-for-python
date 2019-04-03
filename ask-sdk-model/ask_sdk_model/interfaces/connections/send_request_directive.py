@@ -44,14 +44,14 @@ class SendRequestDirective(Directive):
         'name': 'str',
         'payload': 'dict(str, object)',
         'token': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
         'name': 'name',
         'payload': 'payload',
         'token': 'token'
-    }
+}  # type: Dict
 
     def __init__(self, name=None, payload=None, token=None):
         # type: (Optional[str], Optional[Dict[str, object]], Optional[str]) -> None
@@ -64,7 +64,7 @@ class SendRequestDirective(Directive):
         :param token: This is an echo back string that skills send when during Connections.SendRequest directive. They will receive it when they get the ConnectionsResponse. It is never sent to the skill handling the request.
         :type token: (optional) str
         """
-        self.__discriminator_value = "Connections.SendRequest"
+        self.__discriminator_value = "Connections.SendRequest"  # type: str
 
         self.object_type = self.__discriminator_value
         super(SendRequestDirective, self).__init__(object_type=self.__discriminator_value)
@@ -75,7 +75,7 @@ class SendRequestDirective(Directive):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -53,7 +53,7 @@ class SupportedInterfaces(object):
         'display': 'ask_sdk_model.interfaces.display.display_interface.DisplayInterface',
         'video_app': 'ask_sdk_model.interfaces.videoapp.video_app_interface.VideoAppInterface',
         'geolocation': 'ask_sdk_model.interfaces.geolocation.geolocation_interface.GeolocationInterface'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'alexa_presentation_apl': 'Alexa.Presentation.APL',
@@ -61,7 +61,7 @@ class SupportedInterfaces(object):
         'display': 'Display',
         'video_app': 'VideoApp',
         'geolocation': 'Geolocation'
-    }
+}  # type: Dict
 
     def __init__(self, alexa_presentation_apl=None, audio_player=None, display=None, video_app=None, geolocation=None):
         # type: (Optional[AlexaPresentationAplInterface], Optional[AudioPlayerInterface], Optional[DisplayInterface], Optional[VideoAppInterface], Optional[GeolocationInterface]) -> None
@@ -78,7 +78,7 @@ class SupportedInterfaces(object):
         :param geolocation: 
         :type geolocation: (optional) ask_sdk_model.interfaces.geolocation.geolocation_interface.GeolocationInterface
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.alexa_presentation_apl = alexa_presentation_apl
         self.audio_player = audio_player
@@ -89,7 +89,7 @@ class SupportedInterfaces(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

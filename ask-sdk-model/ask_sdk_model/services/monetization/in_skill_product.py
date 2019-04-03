@@ -66,7 +66,7 @@ class InSkillProduct(object):
         'entitlement_reason': 'ask_sdk_model.services.monetization.entitlement_reason.EntitlementReason',
         'active_entitlement_count': 'int',
         'purchase_mode': 'ask_sdk_model.services.monetization.purchase_mode.PurchaseMode'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'product_id': 'productId',
@@ -79,7 +79,7 @@ class InSkillProduct(object):
         'entitlement_reason': 'entitlementReason',
         'active_entitlement_count': 'activeEntitlementCount',
         'purchase_mode': 'purchaseMode'
-    }
+}  # type: Dict
 
     def __init__(self, product_id=None, reference_name=None, name=None, object_type=None, summary=None, purchasable=None, entitled=None, entitlement_reason=None, active_entitlement_count=None, purchase_mode=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[ProductType], Optional[str], Optional[PurchasableState], Optional[EntitledState], Optional[EntitlementReason], Optional[int], Optional[PurchaseMode]) -> None
@@ -106,7 +106,7 @@ class InSkillProduct(object):
         :param purchase_mode: 
         :type purchase_mode: (optional) ask_sdk_model.services.monetization.purchase_mode.PurchaseMode
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.product_id = product_id
         self.reference_name = reference_name
@@ -122,7 +122,7 @@ class InSkillProduct(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

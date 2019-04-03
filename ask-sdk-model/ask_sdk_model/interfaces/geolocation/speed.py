@@ -39,12 +39,12 @@ class Speed(object):
     deserialized_types = {
         'speed_in_meters_per_second': 'float',
         'accuracy_in_meters_per_second': 'float'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'speed_in_meters_per_second': 'speedInMetersPerSecond',
         'accuracy_in_meters_per_second': 'accuracyInMetersPerSecond'
-    }
+}  # type: Dict
 
     def __init__(self, speed_in_meters_per_second=None, accuracy_in_meters_per_second=None):
         # type: (Optional[float], Optional[float]) -> None
@@ -55,7 +55,7 @@ class Speed(object):
         :param accuracy_in_meters_per_second: A double representing the accuracy of the speed measurement in meters.
         :type accuracy_in_meters_per_second: (optional) float
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.speed_in_meters_per_second = speed_in_meters_per_second
         self.accuracy_in_meters_per_second = accuracy_in_meters_per_second
@@ -63,7 +63,7 @@ class Speed(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

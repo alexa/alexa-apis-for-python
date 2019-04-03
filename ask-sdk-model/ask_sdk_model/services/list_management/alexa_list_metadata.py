@@ -48,7 +48,7 @@ class AlexaListMetadata(object):
         'state': 'ask_sdk_model.services.list_management.list_state.ListState',
         'version': 'int',
         'status_map': 'list[ask_sdk_model.services.list_management.status.Status]'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'list_id': 'listId',
@@ -56,7 +56,7 @@ class AlexaListMetadata(object):
         'state': 'state',
         'version': 'version',
         'status_map': 'statusMap'
-    }
+}  # type: Dict
 
     def __init__(self, list_id=None, name=None, state=None, version=None, status_map=None):
         # type: (Optional[str], Optional[str], Optional[ListState], Optional[int], Optional[List[Status]]) -> None
@@ -73,7 +73,7 @@ class AlexaListMetadata(object):
         :param status_map: 
         :type status_map: (optional) list[ask_sdk_model.services.list_management.status.Status]
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.list_id = list_id
         self.name = name
@@ -84,7 +84,7 @@ class AlexaListMetadata(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

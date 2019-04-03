@@ -38,12 +38,12 @@ class Image(object):
     deserialized_types = {
         'content_description': 'str',
         'sources': 'list[ask_sdk_model.interfaces.display.image_instance.ImageInstance]'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'content_description': 'contentDescription',
         'sources': 'sources'
-    }
+}  # type: Dict
 
     def __init__(self, content_description=None, sources=None):
         # type: (Optional[str], Optional[List[ImageInstance]]) -> None
@@ -54,7 +54,7 @@ class Image(object):
         :param sources: 
         :type sources: (optional) list[ask_sdk_model.interfaces.display.image_instance.ImageInstance]
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.content_description = content_description
         self.sources = sources
@@ -62,7 +62,7 @@ class Image(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

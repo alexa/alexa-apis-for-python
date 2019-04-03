@@ -39,12 +39,12 @@ class Altitude(object):
     deserialized_types = {
         'altitude_in_meters': 'float',
         'accuracy_in_meters': 'float'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'altitude_in_meters': 'altitudeInMeters',
         'accuracy_in_meters': 'accuracyInMeters'
-    }
+}  # type: Dict
 
     def __init__(self, altitude_in_meters=None, accuracy_in_meters=None):
         # type: (Optional[float], Optional[float]) -> None
@@ -55,7 +55,7 @@ class Altitude(object):
         :param accuracy_in_meters: A double representing the accuracy of the altitude measurement in meters.
         :type accuracy_in_meters: (optional) float
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.altitude_in_meters = altitude_in_meters
         self.accuracy_in_meters = accuracy_in_meters
@@ -63,7 +63,7 @@ class Altitude(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

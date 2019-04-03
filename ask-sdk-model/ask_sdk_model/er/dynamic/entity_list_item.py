@@ -40,12 +40,12 @@ class EntityListItem(object):
     deserialized_types = {
         'name': 'str',
         'values': 'list[ask_sdk_model.er.dynamic.entity.Entity]'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'name': 'name',
         'values': 'values'
-    }
+}  # type: Dict
 
     def __init__(self, name=None, values=None):
         # type: (Optional[str], Optional[List[Entity]]) -> None
@@ -56,7 +56,7 @@ class EntityListItem(object):
         :param values: A list of dynamic entities which are of the same type
         :type values: (optional) list[ask_sdk_model.er.dynamic.entity.Entity]
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.name = name
         self.values = values
@@ -64,7 +64,7 @@ class EntityListItem(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

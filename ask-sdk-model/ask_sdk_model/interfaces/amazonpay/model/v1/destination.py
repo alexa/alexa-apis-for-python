@@ -66,7 +66,7 @@ class Destination(object):
         'postal_code': 'str',
         'country_code': 'str',
         'phone': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'name': 'name',
@@ -80,7 +80,7 @@ class Destination(object):
         'postal_code': 'postalCode',
         'country_code': 'countryCode',
         'phone': 'phone'
-    }
+}  # type: Dict
 
     def __init__(self, name=None, company_name=None, address_line1=None, address_line2=None, address_line3=None, city=None, district_or_county=None, state_or_region=None, postal_code=None, country_code=None, phone=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str]) -> None
@@ -109,7 +109,7 @@ class Destination(object):
         :param phone: The phone number
         :type phone: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.name = name
         self.company_name = company_name
@@ -126,7 +126,7 @@ class Destination(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

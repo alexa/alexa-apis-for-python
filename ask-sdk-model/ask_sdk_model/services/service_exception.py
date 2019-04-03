@@ -14,7 +14,7 @@
 import typing
 
 if typing.TypeVar:
-    from typing import TypeVar, List, Tuple
+    from typing import TypeVar, List, Tuple, Optional
     T = TypeVar('T')
 
 
@@ -32,7 +32,7 @@ class ServiceException(Exception):
     """
 
     def __init__(self, message, status_code, headers, body):
-        # type: (str, int, List[Tuple[str, str]], T) -> None
+        # type: (str, int, Optional[List[Tuple[str, str]]], Optional[T]) -> None
         """
         Exception thrown by a Service client when an error response was received or some operation failed.
 

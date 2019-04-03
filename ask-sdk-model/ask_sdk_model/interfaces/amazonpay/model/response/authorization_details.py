@@ -79,7 +79,7 @@ class AuthorizationDetails(AuthorizationDetails):
         'capture_now': 'bool',
         'soft_descriptor': 'str',
         'authorization_billing_address': 'ask_sdk_model.interfaces.amazonpay.model.response.destination.Destination'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'amazon_authorization_id': 'amazonAuthorizationId',
@@ -96,7 +96,7 @@ class AuthorizationDetails(AuthorizationDetails):
         'capture_now': 'captureNow',
         'soft_descriptor': 'softDescriptor',
         'authorization_billing_address': 'authorizationBillingAddress'
-    }
+}  # type: Dict
 
     def __init__(self, amazon_authorization_id=None, authorization_reference_id=None, seller_authorization_note=None, authorization_amount=None, captured_amount=None, authorization_fee=None, id_list=None, creation_timestamp=None, expiration_timestamp=None, authorization_status=None, soft_decline=None, capture_now=None, soft_descriptor=None, authorization_billing_address=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[Price], Optional[Price], Optional[Price], Optional[List[object]], Optional[datetime], Optional[datetime], Optional[AuthorizationStatus], Optional[bool], Optional[bool], Optional[str], Optional[Destination]) -> None
@@ -131,7 +131,7 @@ class AuthorizationDetails(AuthorizationDetails):
         :param authorization_billing_address: 
         :type authorization_billing_address: (optional) ask_sdk_model.interfaces.amazonpay.model.response.destination.Destination
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         super(AuthorizationDetails, self).__init__(amazon_authorization_id=amazon_authorization_id, authorization_reference_id=authorization_reference_id, seller_authorization_note=seller_authorization_note, authorization_amount=authorization_amount, captured_amount=captured_amount, authorization_fee=authorization_fee, id_list=id_list, creation_timestamp=creation_timestamp, expiration_timestamp=expiration_timestamp, authorization_status=authorization_status, soft_decline=soft_decline, capture_now=capture_now, soft_descriptor=soft_descriptor)
         self.authorization_amount = authorization_amount
@@ -143,7 +143,7 @@ class AuthorizationDetails(AuthorizationDetails):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

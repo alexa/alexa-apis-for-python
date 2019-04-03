@@ -38,12 +38,12 @@ class Event(object):
     deserialized_types = {
         'status': 'ask_sdk_model.services.reminder_management.status.Status',
         'alert_token': 'str'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'status': 'status',
         'alert_token': 'alertToken'
-    }
+}  # type: Dict
 
     def __init__(self, status=None, alert_token=None):
         # type: (Optional[Status], Optional[str]) -> None
@@ -54,7 +54,7 @@ class Event(object):
         :param alert_token: 
         :type alert_token: (optional) str
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.status = status
         self.alert_token = alert_token
@@ -62,7 +62,7 @@ class Event(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

@@ -54,7 +54,7 @@ class UserEvent(Request):
         'arguments': 'list[object]',
         'source': 'object',
         'components': 'object'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
@@ -65,7 +65,7 @@ class UserEvent(Request):
         'arguments': 'arguments',
         'source': 'source',
         'components': 'components'
-    }
+}  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, token=None, arguments=None, source=None, components=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[str], Optional[List[object]], Optional[object], Optional[object]) -> None
@@ -86,7 +86,7 @@ class UserEvent(Request):
         :param components: Components associated with the request.
         :type components: (optional) object
         """
-        self.__discriminator_value = "Alexa.Presentation.APL.UserEvent"
+        self.__discriminator_value = "Alexa.Presentation.APL.UserEvent"  # type: str
 
         self.object_type = self.__discriminator_value
         super(UserEvent, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
@@ -98,7 +98,7 @@ class UserEvent(Request):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)

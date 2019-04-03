@@ -41,13 +41,13 @@ class TextContent(object):
         'primary_text': 'ask_sdk_model.interfaces.display.text_field.TextField',
         'secondary_text': 'ask_sdk_model.interfaces.display.text_field.TextField',
         'tertiary_text': 'ask_sdk_model.interfaces.display.text_field.TextField'
-    }
+    }  # type: Dict
 
     attribute_map = {
         'primary_text': 'primaryText',
         'secondary_text': 'secondaryText',
         'tertiary_text': 'tertiaryText'
-    }
+}  # type: Dict
 
     def __init__(self, primary_text=None, secondary_text=None, tertiary_text=None):
         # type: (Optional[TextField], Optional[TextField], Optional[TextField]) -> None
@@ -60,7 +60,7 @@ class TextContent(object):
         :param tertiary_text: 
         :type tertiary_text: (optional) ask_sdk_model.interfaces.display.text_field.TextField
         """
-        self.__discriminator_value = None
+        self.__discriminator_value = None  # type: str
 
         self.primary_text = primary_text
         self.secondary_text = secondary_text
@@ -69,7 +69,7 @@ class TextContent(object):
     def to_dict(self):
         # type: () -> Dict[str, object]
         """Returns the model properties as a dict"""
-        result = {}
+        result = {}  # type: Dict
 
         for attr, _ in six.iteritems(self.deserialized_types):
             value = getattr(self, attr)
