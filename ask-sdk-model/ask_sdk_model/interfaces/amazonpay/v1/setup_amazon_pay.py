@@ -73,7 +73,7 @@ class SetupAmazonPay(object):
         'need_amazon_shipping_address': 'needAmazonShippingAddress',
         'sandbox_mode': 'sandboxMode',
         'sandbox_customer_email_id': 'sandboxCustomerEmailId'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, consent_token=None, seller_id=None, country_of_establishment=None, ledger_currency=None, checkout_language=None, billing_agreement_attributes=None, need_amazon_shipping_address=False, sandbox_mode=False, sandbox_customer_email_id=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[BillingAgreementAttributes], Optional[bool], Optional[bool], Optional[str]) -> None

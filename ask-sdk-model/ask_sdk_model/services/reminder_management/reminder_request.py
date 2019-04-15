@@ -55,7 +55,7 @@ class ReminderRequest(object):
         'trigger': 'trigger',
         'alert_info': 'alertInfo',
         'push_notification': 'pushNotification'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, request_time=None, trigger=None, alert_info=None, push_notification=None):
         # type: (Optional[datetime], Optional[Trigger], Optional[AlertInfo], Optional[PushNotification]) -> None

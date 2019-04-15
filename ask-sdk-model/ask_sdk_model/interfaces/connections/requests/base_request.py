@@ -58,7 +58,7 @@ class BaseRequest(object):
     attribute_map = {
         'object_type': '@type',
         'version': '@version'
-}  # type: Dict
+    }  # type: Dict
 
     discriminator_value_class_map = {
         'ScheduleFoodEstablishmentReservationRequest': 'ask_sdk_model.interfaces.connections.requests.schedule_food_establishment_reservation_request.ScheduleFoodEstablishmentReservationRequest',

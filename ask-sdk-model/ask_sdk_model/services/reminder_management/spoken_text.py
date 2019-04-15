@@ -46,7 +46,7 @@ class SpokenText(object):
         'locale': 'locale',
         'ssml': 'ssml',
         'text': 'text'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, locale=None, ssml=None, text=None):
         # type: (Optional[str], Optional[str], Optional[str]) -> None

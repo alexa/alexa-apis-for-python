@@ -38,7 +38,7 @@ class DisplayState(object):
 
     attribute_map = {
         'token': 'token'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, token=None):
         # type: (Optional[str]) -> None

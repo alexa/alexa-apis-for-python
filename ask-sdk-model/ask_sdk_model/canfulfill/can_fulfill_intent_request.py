@@ -61,7 +61,7 @@ class CanFulfillIntentRequest(Request):
         'locale': 'locale',
         'dialog_state': 'dialogState',
         'intent': 'intent'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, dialog_state=None, intent=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[DialogState], Optional[Intent]) -> None

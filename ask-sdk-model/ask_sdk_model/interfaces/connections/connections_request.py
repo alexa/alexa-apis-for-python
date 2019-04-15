@@ -59,7 +59,7 @@ class ConnectionsRequest(Request):
         'locale': 'locale',
         'name': 'name',
         'payload': 'payload'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, name=None, payload=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[str], Optional[Dict[str, object]]) -> None

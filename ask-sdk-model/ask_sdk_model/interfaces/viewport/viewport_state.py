@@ -76,7 +76,7 @@ class ViewportState(object):
         'current_pixel_height': 'currentPixelHeight',
         'touch': 'touch',
         'keyboard': 'keyboard'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, experiences=None, shape=None, pixel_width=None, pixel_height=None, dpi=None, current_pixel_width=None, current_pixel_height=None, touch=None, keyboard=None):
         # type: (Optional[List[Experience]], Optional[Shape], Optional[float], Optional[float], Optional[float], Optional[float], Optional[float], Optional[List[Touch]], Optional[List[Keyboard]]) -> None

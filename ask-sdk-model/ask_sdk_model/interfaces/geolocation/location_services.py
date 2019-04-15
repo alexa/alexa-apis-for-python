@@ -46,7 +46,7 @@ class LocationServices(object):
     attribute_map = {
         'status': 'status',
         'access': 'access'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, status=None, access=None):
         # type: (Optional[Status], Optional[Access]) -> None

@@ -47,7 +47,7 @@ class DynamicEntitiesDirective(Directive):
         'object_type': 'type',
         'update_behavior': 'updateBehavior',
         'types': 'types'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, update_behavior=None, types=None):
         # type: (Optional[UpdateBehavior], Optional[List[EntityListItem]]) -> None

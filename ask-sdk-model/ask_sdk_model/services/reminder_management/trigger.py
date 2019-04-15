@@ -58,7 +58,7 @@ class Trigger(object):
         'offset_in_seconds': 'offsetInSeconds',
         'time_zone_id': 'timeZoneId',
         'recurrence': 'recurrence'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, object_type=None, scheduled_time=None, offset_in_seconds=None, time_zone_id=None, recurrence=None):
         # type: (Optional[TriggerType], Optional[datetime], Optional[int], Optional[str], Optional[Recurrence]) -> None

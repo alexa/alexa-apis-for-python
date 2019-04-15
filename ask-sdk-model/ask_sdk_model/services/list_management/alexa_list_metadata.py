@@ -56,7 +56,7 @@ class AlexaListMetadata(object):
         'state': 'state',
         'version': 'version',
         'status_map': 'statusMap'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, list_id=None, name=None, state=None, version=None, status_map=None):
         # type: (Optional[str], Optional[str], Optional[ListState], Optional[int], Optional[List[Status]]) -> None

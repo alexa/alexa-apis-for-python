@@ -47,7 +47,7 @@ class InSkillProductsResponse(object):
         'in_skill_products': 'inSkillProducts',
         'is_truncated': 'isTruncated',
         'next_token': 'nextToken'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, in_skill_products=None, is_truncated=None, next_token=None):
         # type: (Optional[List[InSkillProduct]], Optional[bool], Optional[str]) -> None

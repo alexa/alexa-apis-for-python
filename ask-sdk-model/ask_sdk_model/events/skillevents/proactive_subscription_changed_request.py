@@ -56,7 +56,7 @@ class ProactiveSubscriptionChangedRequest(Request):
         'timestamp': 'timestamp',
         'locale': 'locale',
         'body': 'body'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, body=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[ProactiveSubscriptionChangedBody]) -> None

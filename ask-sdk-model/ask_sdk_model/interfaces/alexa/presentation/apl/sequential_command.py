@@ -60,7 +60,7 @@ class SequentialCommand(Command):
         'when': 'when',
         'commands': 'commands',
         'repeat_count': 'repeatCount'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, delay=None, description=None, when=None, commands=None, repeat_count=None):
         # type: (Optional[int], Optional[str], Optional[bool], Optional[List[Command]], Optional[int]) -> None

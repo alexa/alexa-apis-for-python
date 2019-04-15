@@ -37,7 +37,7 @@ class StopDirective(Directive):
 
     attribute_map = {
         'object_type': 'type'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self):
         # type: () -> None

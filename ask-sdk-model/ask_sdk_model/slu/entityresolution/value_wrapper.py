@@ -41,7 +41,7 @@ class ValueWrapper(object):
 
     attribute_map = {
         'value': 'value'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, value=None):
         # type: (Optional[Value]) -> None

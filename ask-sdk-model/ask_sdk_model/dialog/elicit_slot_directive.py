@@ -46,7 +46,7 @@ class ElicitSlotDirective(Directive):
         'object_type': 'type',
         'updated_intent': 'updatedIntent',
         'slot_to_elicit': 'slotToElicit'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, updated_intent=None, slot_to_elicit=None):
         # type: (Optional[Intent], Optional[str]) -> None

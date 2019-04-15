@@ -39,7 +39,7 @@ class PermissionBody(object):
 
     attribute_map = {
         'accepted_permissions': 'acceptedPermissions'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, accepted_permissions=None):
         # type: (Optional[List[Permission]]) -> None

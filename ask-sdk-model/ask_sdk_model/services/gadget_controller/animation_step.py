@@ -46,7 +46,7 @@ class AnimationStep(object):
         'duration_ms': 'durationMs',
         'color': 'color',
         'blend': 'blend'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, duration_ms=None, color=None, blend=None):
         # type: (Optional[int], Optional[str], Optional[bool]) -> None

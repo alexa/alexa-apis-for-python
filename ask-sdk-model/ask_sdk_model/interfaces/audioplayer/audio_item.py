@@ -44,7 +44,7 @@ class AudioItem(object):
     attribute_map = {
         'stream': 'stream',
         'metadata': 'metadata'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, stream=None, metadata=None):
         # type: (Optional[Stream], Optional[AudioItemMetadata]) -> None

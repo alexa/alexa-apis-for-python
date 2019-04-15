@@ -45,7 +45,7 @@ class Permissions(object):
     attribute_map = {
         'consent_token': 'consentToken',
         'scopes': 'scopes'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, consent_token=None, scopes=None):
         # type: (Optional[str], Optional[Dict[str, Scope]]) -> None

@@ -38,7 +38,7 @@ class Permission(object):
 
     attribute_map = {
         'scope': 'scope'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, scope=None):
         # type: (Optional[str]) -> None

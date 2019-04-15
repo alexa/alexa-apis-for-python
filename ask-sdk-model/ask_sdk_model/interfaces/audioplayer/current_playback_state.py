@@ -47,7 +47,7 @@ class CurrentPlaybackState(object):
         'offset_in_milliseconds': 'offsetInMilliseconds',
         'player_activity': 'playerActivity',
         'token': 'token'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, offset_in_milliseconds=None, player_activity=None, token=None):
         # type: (Optional[int], Optional[PlayerActivity], Optional[str]) -> None

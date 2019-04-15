@@ -44,7 +44,7 @@ class EntityValueAndSynonyms(object):
     attribute_map = {
         'value': 'value',
         'synonyms': 'synonyms'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, value=None, synonyms=None):
         # type: (Optional[str], Optional[List[object]]) -> None

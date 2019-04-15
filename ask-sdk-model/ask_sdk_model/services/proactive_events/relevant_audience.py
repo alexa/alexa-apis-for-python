@@ -45,7 +45,7 @@ class RelevantAudience(object):
     attribute_map = {
         'object_type': 'type',
         'payload': 'payload'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, object_type=None, payload=None):
         # type: (Optional[RelevantAudienceType], Optional[object]) -> None

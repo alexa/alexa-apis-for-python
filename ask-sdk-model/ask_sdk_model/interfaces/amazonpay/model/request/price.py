@@ -51,7 +51,7 @@ class Price(BaseAmazonPayEntity):
         'currency_code': 'currencyCode',
         'object_type': '@type',
         'version': '@version'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, amount=None, currency_code=None, version=None):
         # type: (Optional[str], Optional[str], Optional[str]) -> None

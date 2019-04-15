@@ -65,7 +65,7 @@ class PlayMediaCommand(Command):
         'audio_track': 'audioTrack',
         'component_id': 'componentId',
         'source': 'source'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, delay=None, description=None, when=None, audio_track=None, component_id=None, source=None):
         # type: (Optional[int], Optional[str], Optional[bool], Optional[AudioTrack], Optional[str], Optional[List[VideoSource]]) -> None

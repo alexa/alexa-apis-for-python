@@ -63,7 +63,7 @@ class AlexaListItem(object):
         'created_time': 'createdTime',
         'updated_time': 'updatedTime',
         'href': 'href'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, id=None, version=None, value=None, status=None, created_time=None, updated_time=None, href=None):
         # type: (Optional[str], Optional[int], Optional[str], Optional[ListItemState], Optional[str], Optional[str], Optional[str]) -> None

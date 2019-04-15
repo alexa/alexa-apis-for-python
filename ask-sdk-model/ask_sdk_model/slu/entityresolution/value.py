@@ -44,7 +44,7 @@ class Value(object):
     attribute_map = {
         'name': 'name',
         'id': 'id'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, name=None, id=None):
         # type: (Optional[str], Optional[str]) -> None

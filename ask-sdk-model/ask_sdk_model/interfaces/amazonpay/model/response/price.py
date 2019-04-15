@@ -45,7 +45,7 @@ class Price(Price):
     attribute_map = {
         'amount': 'amount',
         'currency_code': 'currencyCode'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, amount=None, currency_code=None):
         # type: (Optional[str], Optional[str]) -> None

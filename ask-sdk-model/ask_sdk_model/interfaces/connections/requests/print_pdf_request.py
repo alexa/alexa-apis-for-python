@@ -55,7 +55,7 @@ class PrintPDFRequest(BaseRequest):
         'title': 'title',
         'url': 'url',
         'description': 'description'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, version=None, title=None, url=None, description=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[str]) -> None

@@ -42,7 +42,7 @@ class HintDirective(Directive):
     attribute_map = {
         'object_type': 'type',
         'hint': 'hint'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, hint=None):
         # type: (Optional[Hint]) -> None

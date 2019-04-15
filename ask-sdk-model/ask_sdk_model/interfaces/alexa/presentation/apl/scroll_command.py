@@ -59,7 +59,7 @@ class ScrollCommand(Command):
         'when': 'when',
         'distance': 'distance',
         'component_id': 'componentId'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, delay=None, description=None, when=None, distance=None, component_id=None):
         # type: (Optional[int], Optional[str], Optional[bool], Optional[int], Optional[str]) -> None

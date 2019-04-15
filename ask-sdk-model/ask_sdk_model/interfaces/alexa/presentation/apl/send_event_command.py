@@ -59,7 +59,7 @@ class SendEventCommand(Command):
         'when': 'when',
         'arguments': 'arguments',
         'components': 'components'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, delay=None, description=None, when=None, arguments=None, components=None):
         # type: (Optional[int], Optional[str], Optional[bool], Optional[List[object]], Optional[List[object]]) -> None

@@ -53,7 +53,7 @@ class RenderDocumentDirective(Directive):
         'document': 'document',
         'datasources': 'datasources',
         'packages': 'packages'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, token=None, document=None, datasources=None, packages=None):
         # type: (Optional[str], Optional[Dict[str, object]], Optional[Dict[str, object]], Optional[List[object]]) -> None

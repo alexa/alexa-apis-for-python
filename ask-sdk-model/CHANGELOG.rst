@@ -144,3 +144,12 @@ This release contains the following changes :
 - The `Skill Messaging API <https://developer.amazon.com/docs/smapi/skill-messaging-api-reference.html>`__ is now supported. Use the Skill Messaging API to send a message request to a skill for a specified user. 
 - Adds support for additional `APL Standard Commands <https://developer.amazon.com/docs/alexa-presentation-language/apl-standard-commands.html>`__.
 - Packaged type information in models as per `PEP 0561 <https://www.python.org/dev/peps/pep-0561/>`__.
+
+
+1.10.1
+^^^^^^^
+
+This release includes the following : 
+
+- Fixing the imports under `reminder_management` service, to deserialize the reminders correctly.
+

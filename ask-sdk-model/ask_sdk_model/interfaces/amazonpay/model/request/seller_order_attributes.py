@@ -59,7 +59,7 @@ class SellerOrderAttributes(BaseAmazonPayEntity):
         'seller_note': 'sellerNote',
         'object_type': '@type',
         'version': '@version'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, seller_order_id=None, store_name=None, custom_information=None, seller_note=None, version=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[str]) -> None

@@ -63,7 +63,7 @@ class PlaybackFailedRequest(Request):
         'current_playback_state': 'currentPlaybackState',
         'error': 'error',
         'token': 'token'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, current_playback_state=None, error=None, token=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[CurrentPlaybackState], Optional[Error], Optional[str]) -> None

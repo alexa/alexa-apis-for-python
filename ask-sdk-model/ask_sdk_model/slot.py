@@ -52,7 +52,7 @@ class Slot(object):
         'value': 'value',
         'confirmation_status': 'confirmationStatus',
         'resolutions': 'resolutions'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, name=None, value=None, confirmation_status=None, resolutions=None):
         # type: (Optional[str], Optional[str], Optional[SlotConfirmationStatus], Optional[Resolutions]) -> None

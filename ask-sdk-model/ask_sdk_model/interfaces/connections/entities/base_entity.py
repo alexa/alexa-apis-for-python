@@ -52,7 +52,7 @@ class BaseEntity(object):
     attribute_map = {
         'object_type': '@type',
         'version': '@version'
-}  # type: Dict
+    }  # type: Dict
 
     discriminator_value_class_map = {
         'Restaurant': 'ask_sdk_model.interfaces.connections.entities.restaurant.Restaurant',

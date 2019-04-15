@@ -59,7 +59,7 @@ class PrintImageRequest(BaseRequest):
         'url': 'url',
         'description': 'description',
         'image_type': 'imageType'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, version=None, title=None, url=None, description=None, image_type=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[str]) -> None

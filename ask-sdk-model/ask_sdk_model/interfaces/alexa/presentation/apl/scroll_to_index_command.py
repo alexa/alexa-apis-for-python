@@ -64,7 +64,7 @@ class ScrollToIndexCommand(Command):
         'align': 'align',
         'component_id': 'componentId',
         'index': 'index'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, delay=None, description=None, when=None, align=None, component_id=None, index=None):
         # type: (Optional[int], Optional[str], Optional[bool], Optional[Align], Optional[str], Optional[int]) -> None

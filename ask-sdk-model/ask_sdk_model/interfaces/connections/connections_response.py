@@ -68,7 +68,7 @@ class ConnectionsResponse(Request):
         'name': 'name',
         'payload': 'payload',
         'token': 'token'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, status=None, name=None, payload=None, token=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[ConnectionsStatus], Optional[str], Optional[Dict[str, object]], Optional[str]) -> None

@@ -53,7 +53,7 @@ class AuthorizationStatus(object):
         'reason_code': 'reasonCode',
         'reason_description': 'reasonDescription',
         'last_update_timestamp': 'lastUpdateTimestamp'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, state=None, reason_code=None, reason_description=None, last_update_timestamp=None):
         # type: (Optional[State], Optional[str], Optional[str], Optional[datetime]) -> None

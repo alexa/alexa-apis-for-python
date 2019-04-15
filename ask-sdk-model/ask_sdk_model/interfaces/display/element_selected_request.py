@@ -53,7 +53,7 @@ class ElementSelectedRequest(Request):
         'timestamp': 'timestamp',
         'locale': 'locale',
         'token': 'token'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, token=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[str]) -> None

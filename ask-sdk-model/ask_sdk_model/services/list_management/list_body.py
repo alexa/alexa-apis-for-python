@@ -38,7 +38,7 @@ class ListBody(object):
 
     attribute_map = {
         'list_id': 'listId'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, list_id=None):
         # type: (Optional[str]) -> None

@@ -65,7 +65,7 @@ class UserEvent(Request):
         'arguments': 'arguments',
         'source': 'source',
         'components': 'components'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, token=None, arguments=None, source=None, components=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[str], Optional[List[object]], Optional[object], Optional[object]) -> None

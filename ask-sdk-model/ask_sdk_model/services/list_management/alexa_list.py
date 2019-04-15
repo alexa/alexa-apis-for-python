@@ -61,7 +61,7 @@ class AlexaList(object):
         'version': 'version',
         'items': 'items',
         'links': 'links'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, list_id=None, name=None, state=None, version=None, items=None, links=None):
         # type: (Optional[str], Optional[str], Optional[ListState], Optional[int], Optional[List[AlexaListItem]], Optional[Links]) -> None

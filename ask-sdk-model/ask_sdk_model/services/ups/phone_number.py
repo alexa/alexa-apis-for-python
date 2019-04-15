@@ -42,7 +42,7 @@ class PhoneNumber(object):
     attribute_map = {
         'country_code': 'countryCode',
         'phone_number': 'phoneNumber'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, country_code=None, phone_number=None):
         # type: (Optional[str], Optional[str]) -> None

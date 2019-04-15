@@ -79,7 +79,7 @@ class InSkillProduct(object):
         'entitlement_reason': 'entitlementReason',
         'active_entitlement_count': 'activeEntitlementCount',
         'purchase_mode': 'purchaseMode'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, product_id=None, reference_name=None, name=None, object_type=None, summary=None, purchasable=None, entitled=None, entitlement_reason=None, active_entitlement_count=None, purchase_mode=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[ProductType], Optional[str], Optional[PurchasableState], Optional[EntitledState], Optional[EntitlementReason], Optional[int], Optional[PurchaseMode]) -> None

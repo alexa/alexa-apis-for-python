@@ -43,7 +43,7 @@ class Error(object):
     attribute_map = {
         'object_type': 'type',
         'message': 'message'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, object_type=None, message=None):
         # type: (Optional[ErrorType], Optional[str]) -> None

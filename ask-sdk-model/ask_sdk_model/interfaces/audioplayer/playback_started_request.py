@@ -57,7 +57,7 @@ class PlaybackStartedRequest(Request):
         'locale': 'locale',
         'offset_in_milliseconds': 'offsetInMilliseconds',
         'token': 'token'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, offset_in_milliseconds=None, token=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[int], Optional[str]) -> None

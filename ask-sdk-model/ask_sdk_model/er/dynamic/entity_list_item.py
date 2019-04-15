@@ -45,7 +45,7 @@ class EntityListItem(object):
     attribute_map = {
         'name': 'name',
         'values': 'values'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, name=None, values=None):
         # type: (Optional[str], Optional[List[Entity]]) -> None

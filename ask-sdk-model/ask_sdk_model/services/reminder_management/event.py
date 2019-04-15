@@ -43,7 +43,7 @@ class Event(object):
     attribute_map = {
         'status': 'status',
         'alert_token': 'alertToken'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, status=None, alert_token=None):
         # type: (Optional[Status], Optional[str]) -> None

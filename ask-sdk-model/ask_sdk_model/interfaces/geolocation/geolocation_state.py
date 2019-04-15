@@ -63,7 +63,7 @@ class GeolocationState(object):
         'heading': 'heading',
         'speed': 'speed',
         'location_services': 'locationServices'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, timestamp=None, coordinate=None, altitude=None, heading=None, speed=None, location_services=None):
         # type: (Optional[str], Optional[Coordinate], Optional[Altitude], Optional[Heading], Optional[Speed], Optional[LocationServices]) -> None

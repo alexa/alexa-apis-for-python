@@ -42,7 +42,7 @@ class LaunchDirective(Directive):
     attribute_map = {
         'object_type': 'type',
         'video_item': 'videoItem'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, video_item=None):
         # type: (Optional[VideoItem]) -> None

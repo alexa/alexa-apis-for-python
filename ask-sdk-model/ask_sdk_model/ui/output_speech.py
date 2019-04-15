@@ -53,7 +53,7 @@ class OutputSpeech(object):
     attribute_map = {
         'object_type': 'type',
         'play_behavior': 'playBehavior'
-}  # type: Dict
+    }  # type: Dict
 
     discriminator_value_class_map = {
         'SSML': 'ask_sdk_model.ui.ssml_output_speech.SsmlOutputSpeech',

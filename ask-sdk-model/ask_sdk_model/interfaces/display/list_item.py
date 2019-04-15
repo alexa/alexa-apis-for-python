@@ -48,7 +48,7 @@ class ListItem(object):
         'token': 'token',
         'image': 'image',
         'text_content': 'textContent'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, token=None, image=None, text_content=None):
         # type: (Optional[str], Optional[Image], Optional[TextContent]) -> None

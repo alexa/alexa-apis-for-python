@@ -44,7 +44,7 @@ class ConnectionsStatus(object):
     attribute_map = {
         'code': 'code',
         'message': 'message'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, code=None, message=None):
         # type: (Optional[str], Optional[str]) -> None

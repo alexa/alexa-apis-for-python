@@ -44,7 +44,7 @@ class Altitude(object):
     attribute_map = {
         'altitude_in_meters': 'altitudeInMeters',
         'accuracy_in_meters': 'accuracyInMeters'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, altitude_in_meters=None, accuracy_in_meters=None):
         # type: (Optional[float], Optional[float]) -> None

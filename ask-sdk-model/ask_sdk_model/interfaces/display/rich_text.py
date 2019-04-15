@@ -41,7 +41,7 @@ class RichText(TextField):
     attribute_map = {
         'object_type': 'type',
         'text': 'text'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, text=None):
         # type: (Optional[str]) -> None

@@ -49,7 +49,7 @@ class GetRemindersResponse(object):
         'total_count': 'totalCount',
         'alerts': 'alerts',
         'links': 'links'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, total_count=None, alerts=None, links=None):
         # type: (Optional[str], Optional[List[Reminder]], Optional[str]) -> None

@@ -68,7 +68,7 @@ class Address(object):
         'city': 'city',
         'district_or_county': 'districtOrCounty',
         'postal_code': 'postalCode'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, address_line1=None, address_line2=None, address_line3=None, country_code=None, state_or_region=None, city=None, district_or_county=None, postal_code=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str]) -> None

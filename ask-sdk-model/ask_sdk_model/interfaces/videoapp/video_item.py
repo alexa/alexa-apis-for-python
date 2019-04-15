@@ -43,7 +43,7 @@ class VideoItem(object):
     attribute_map = {
         'source': 'source',
         'metadata': 'metadata'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, source=None, metadata=None):
         # type: (Optional[str], Optional[Metadata]) -> None

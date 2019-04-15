@@ -47,7 +47,7 @@ class LightAnimation(object):
         'repeat': 'repeat',
         'target_lights': 'targetLights',
         'sequence': 'sequence'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, repeat=None, target_lights=None, sequence=None):
         # type: (Optional[int], Optional[List[object]], Optional[List[AnimationStep]]) -> None

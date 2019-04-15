@@ -52,7 +52,7 @@ class SetLightDirective(Directive):
         'version': 'version',
         'target_gadgets': 'targetGadgets',
         'parameters': 'parameters'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, version=None, target_gadgets=None, parameters=None):
         # type: (Optional[int], Optional[List[object]], Optional[SetLightParameters]) -> None

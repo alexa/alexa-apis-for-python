@@ -41,7 +41,7 @@ class Scope(object):
 
     attribute_map = {
         'status': 'status'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, status=None):
         # type: (Optional[PermissionStatus]) -> None

@@ -42,7 +42,7 @@ class RenderTemplateDirective(Directive):
     attribute_map = {
         'object_type': 'type',
         'template': 'template'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, template=None):
         # type: (Optional[Template]) -> None

@@ -53,7 +53,7 @@ class AudioItemMetadata(object):
         'subtitle': 'subtitle',
         'art': 'art',
         'background_image': 'backgroundImage'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, title=None, subtitle=None, art=None, background_image=None):
         # type: (Optional[str], Optional[str], Optional[Image], Optional[Image]) -> None

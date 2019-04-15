@@ -47,7 +47,7 @@ class ProgressRecognizer(Recognizer):
         'object_type': 'type',
         'recognizer': 'recognizer',
         'completion': 'completion'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, recognizer=None, completion=None):
         # type: (Optional[str], Optional[float]) -> None

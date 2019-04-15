@@ -49,7 +49,7 @@ class BillingAgreementAttributes(object):
         'platform_id': 'platformId',
         'seller_note': 'sellerNote',
         'seller_billing_agreement_attributes': 'sellerBillingAgreementAttributes'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, platform_id=None, seller_note=None, seller_billing_agreement_attributes=None):
         # type: (Optional[str], Optional[str], Optional[SellerBillingAgreementAttributes]) -> None

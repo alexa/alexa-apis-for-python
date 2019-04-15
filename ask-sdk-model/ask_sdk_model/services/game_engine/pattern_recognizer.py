@@ -61,7 +61,7 @@ class PatternRecognizer(Recognizer):
         'gadget_ids': 'gadgetIds',
         'actions': 'actions',
         'pattern': 'pattern'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, anchor=None, fuzzy=None, gadget_ids=None, actions=None, pattern=None):
         # type: (Optional[PatternRecognizerAnchorType], Optional[bool], Optional[List[object]], Optional[List[object]], Optional[List[Pattern]]) -> None

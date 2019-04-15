@@ -63,7 +63,7 @@ class Response(object):
         'directives': 'directives',
         'should_end_session': 'shouldEndSession',
         'can_fulfill_intent': 'canFulfillIntent'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, output_speech=None, card=None, reprompt=None, directives=None, should_end_session=None, can_fulfill_intent=None):
         # type: (Optional[OutputSpeech], Optional[Card], Optional[Reprompt], Optional[List[Directive]], Optional[bool], Optional[CanFulfillIntent]) -> None

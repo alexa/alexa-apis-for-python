@@ -61,7 +61,7 @@ class SupportedInterfaces(object):
         'display': 'Display',
         'video_app': 'VideoApp',
         'geolocation': 'Geolocation'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, alexa_presentation_apl=None, audio_player=None, display=None, video_app=None, geolocation=None):
         # type: (Optional[AlexaPresentationAplInterface], Optional[AudioPlayerInterface], Optional[DisplayInterface], Optional[VideoAppInterface], Optional[GeolocationInterface]) -> None

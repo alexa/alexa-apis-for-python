@@ -39,7 +39,7 @@ class Status(object):
 
     attribute_map = {
         'code': 'code'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, code=None):
         # type: (Optional[StatusCode]) -> None

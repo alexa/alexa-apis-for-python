@@ -40,7 +40,7 @@ class InSkillProduct(object):
 
     attribute_map = {
         'product_id': 'productId'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, product_id=None):
         # type: (Optional[str]) -> None

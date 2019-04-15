@@ -44,7 +44,7 @@ class Heading(object):
     attribute_map = {
         'direction_in_degrees': 'directionInDegrees',
         'accuracy_in_degrees': 'accuracyInDegrees'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, direction_in_degrees=None, accuracy_in_degrees=None):
         # type: (Optional[float], Optional[float]) -> None

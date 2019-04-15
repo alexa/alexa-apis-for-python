@@ -43,7 +43,7 @@ class ProviderCredit(object):
     attribute_map = {
         'provider_id': 'providerId',
         'credit': 'credit'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, provider_id=None, credit=None):
         # type: (Optional[str], Optional[Price]) -> None

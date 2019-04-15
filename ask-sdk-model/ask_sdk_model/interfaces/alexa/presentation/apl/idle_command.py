@@ -51,7 +51,7 @@ class IdleCommand(Command):
         'delay': 'delay',
         'description': 'description',
         'when': 'when'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, delay=None, description=None, when=None):
         # type: (Optional[int], Optional[str], Optional[bool]) -> None

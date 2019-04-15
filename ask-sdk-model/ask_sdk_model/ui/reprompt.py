@@ -39,7 +39,7 @@ class Reprompt(object):
 
     attribute_map = {
         'output_speech': 'outputSpeech'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, output_speech=None):
         # type: (Optional[OutputSpeech]) -> None

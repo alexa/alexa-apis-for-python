@@ -72,7 +72,7 @@ class SpeakListCommand(Command):
         'count': 'count',
         'minimum_dwell_time': 'minimumDwellTime',
         'start': 'start'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, delay=None, description=None, when=None, align=None, component_id=None, count=None, minimum_dwell_time=None, start=None):
         # type: (Optional[int], Optional[str], Optional[bool], Optional[Align], Optional[str], Optional[int], Optional[int], Optional[int]) -> None

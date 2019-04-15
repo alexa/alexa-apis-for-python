@@ -53,7 +53,7 @@ class Pattern(object):
         'colors': 'colors',
         'action': 'action',
         'repeat': 'repeat'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, gadget_ids=None, colors=None, action=None, repeat=None):
         # type: (Optional[List[object]], Optional[List[object]], Optional[InputEventActionType], Optional[int]) -> None

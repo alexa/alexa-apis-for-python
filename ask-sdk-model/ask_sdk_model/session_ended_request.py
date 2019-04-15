@@ -61,7 +61,7 @@ class SessionEndedRequest(Request):
         'locale': 'locale',
         'reason': 'reason',
         'error': 'error'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, reason=None, error=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[SessionEndedReason], Optional[SessionEndedError]) -> None

@@ -38,7 +38,7 @@ class ForbiddenError(object):
 
     attribute_map = {
         'message': 'Message'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, message=None):
         # type: (Optional[str]) -> None

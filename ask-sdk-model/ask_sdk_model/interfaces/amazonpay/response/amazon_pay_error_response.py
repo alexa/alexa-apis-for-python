@@ -45,7 +45,7 @@ class AmazonPayErrorResponse(AmazonPayErrorResponse):
     attribute_map = {
         'error_code': 'errorCode',
         'error_message': 'errorMessage'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, error_code=None, error_message=None):
         # type: (Optional[str], Optional[str]) -> None

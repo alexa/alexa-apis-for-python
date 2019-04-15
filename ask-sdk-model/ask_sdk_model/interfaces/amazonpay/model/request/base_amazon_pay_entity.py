@@ -66,7 +66,7 @@ class BaseAmazonPayEntity(object):
     attribute_map = {
         'object_type': '@type',
         'version': '@version'
-}  # type: Dict
+    }  # type: Dict
 
     discriminator_value_class_map = {
         'AuthorizeAttributes': 'ask_sdk_model.interfaces.amazonpay.model.request.authorize_attributes.AuthorizeAttributes',

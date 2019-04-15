@@ -39,7 +39,7 @@ class AlexaPresentationAplInterface(object):
 
     attribute_map = {
         'runtime': 'runtime'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, runtime=None):
         # type: (Optional[Runtime]) -> None

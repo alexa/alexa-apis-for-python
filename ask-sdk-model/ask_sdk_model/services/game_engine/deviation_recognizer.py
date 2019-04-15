@@ -43,7 +43,7 @@ class DeviationRecognizer(Recognizer):
     attribute_map = {
         'object_type': 'type',
         'recognizer': 'recognizer'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, recognizer=None):
         # type: (Optional[str]) -> None

@@ -46,7 +46,7 @@ class CanFulfillSlot(object):
     attribute_map = {
         'can_understand': 'canUnderstand',
         'can_fulfill': 'canFulfill'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, can_understand=None, can_fulfill=None):
         # type: (Optional[CanUnderstandSlotValues], Optional[CanFulfillSlotValues]) -> None

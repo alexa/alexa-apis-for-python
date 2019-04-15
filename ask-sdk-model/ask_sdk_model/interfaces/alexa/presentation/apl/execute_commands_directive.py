@@ -48,7 +48,7 @@ class ExecuteCommandsDirective(Directive):
         'object_type': 'type',
         'commands': 'commands',
         'token': 'token'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, commands=None, token=None):
         # type: (Optional[List[Command]], Optional[str]) -> None

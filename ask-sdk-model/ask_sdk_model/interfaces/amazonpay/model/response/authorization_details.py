@@ -96,7 +96,7 @@ class AuthorizationDetails(AuthorizationDetails):
         'capture_now': 'captureNow',
         'soft_descriptor': 'softDescriptor',
         'authorization_billing_address': 'authorizationBillingAddress'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, amazon_authorization_id=None, authorization_reference_id=None, seller_authorization_note=None, authorization_amount=None, captured_amount=None, authorization_fee=None, id_list=None, creation_timestamp=None, expiration_timestamp=None, authorization_status=None, soft_decline=None, capture_now=None, soft_descriptor=None, authorization_billing_address=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[Price], Optional[Price], Optional[Price], Optional[List[object]], Optional[datetime], Optional[datetime], Optional[AuthorizationStatus], Optional[bool], Optional[bool], Optional[str], Optional[Destination]) -> None

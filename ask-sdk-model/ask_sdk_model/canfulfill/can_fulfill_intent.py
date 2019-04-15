@@ -46,7 +46,7 @@ class CanFulfillIntent(object):
     attribute_map = {
         'can_fulfill': 'canFulfill',
         'slots': 'slots'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, can_fulfill=None, slots=None):
         # type: (Optional[CanFulfillIntentValues], Optional[Dict[str, CanFulfillSlot]]) -> None

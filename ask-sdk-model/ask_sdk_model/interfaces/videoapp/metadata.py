@@ -42,7 +42,7 @@ class Metadata(object):
     attribute_map = {
         'title': 'title',
         'subtitle': 'subtitle'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, title=None, subtitle=None):
         # type: (Optional[str], Optional[str]) -> None

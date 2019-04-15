@@ -57,7 +57,7 @@ class SystemState(object):
         'device': 'device',
         'api_endpoint': 'apiEndpoint',
         'api_access_token': 'apiAccessToken'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, application=None, user=None, device=None, api_endpoint=None, api_access_token=None):
         # type: (Optional[Application], Optional[User], Optional[Device], Optional[str], Optional[str]) -> None

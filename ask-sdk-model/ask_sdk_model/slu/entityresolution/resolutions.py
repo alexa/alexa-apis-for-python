@@ -41,7 +41,7 @@ class Resolutions(object):
 
     attribute_map = {
         'resolutions_per_authority': 'resolutionsPerAuthority'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, resolutions_per_authority=None):
         # type: (Optional[List[Resolution]]) -> None

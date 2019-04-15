@@ -40,7 +40,7 @@ class Application(object):
 
     attribute_map = {
         'application_id': 'applicationId'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, application_id=None):
         # type: (Optional[str]) -> None

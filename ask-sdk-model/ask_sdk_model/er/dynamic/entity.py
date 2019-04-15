@@ -45,7 +45,7 @@ class Entity(object):
     attribute_map = {
         'id': 'id',
         'name': 'name'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, id=None, name=None):
         # type: (Optional[str], Optional[EntityValueAndSynonyms]) -> None

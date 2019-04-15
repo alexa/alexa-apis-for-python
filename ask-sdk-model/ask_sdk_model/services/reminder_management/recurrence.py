@@ -50,7 +50,7 @@ class Recurrence(object):
         'freq': 'freq',
         'by_day': 'byDay',
         'interval': 'interval'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, freq=None, by_day=None, interval=None):
         # type: (Optional[RecurrenceFreq], Optional[List[RecurrenceDay]], Optional[int]) -> None

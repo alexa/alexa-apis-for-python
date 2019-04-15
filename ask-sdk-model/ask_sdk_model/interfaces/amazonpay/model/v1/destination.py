@@ -80,7 +80,7 @@ class Destination(object):
         'postal_code': 'postalCode',
         'country_code': 'countryCode',
         'phone': 'phone'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, name=None, company_name=None, address_line1=None, address_line2=None, address_line3=None, city=None, district_or_county=None, state_or_region=None, postal_code=None, country_code=None, phone=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str]) -> None

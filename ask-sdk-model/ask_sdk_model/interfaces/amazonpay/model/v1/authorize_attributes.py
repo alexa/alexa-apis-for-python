@@ -57,7 +57,7 @@ class AuthorizeAttributes(object):
         'transaction_timeout': 'transactionTimeout',
         'seller_authorization_note': 'sellerAuthorizationNote',
         'soft_descriptor': 'softDescriptor'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, authorization_reference_id=None, authorization_amount=None, transaction_timeout=None, seller_authorization_note=None, soft_descriptor=None):
         # type: (Optional[str], Optional[Price], Optional[int], Optional[str], Optional[str]) -> None

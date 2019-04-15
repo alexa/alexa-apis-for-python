@@ -41,7 +41,7 @@ class StopInputHandlerDirective(Directive):
     attribute_map = {
         'object_type': 'type',
         'originating_request_id': 'originatingRequestId'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, originating_request_id=None):
         # type: (Optional[str]) -> None

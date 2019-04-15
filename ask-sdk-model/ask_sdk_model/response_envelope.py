@@ -51,7 +51,7 @@ class ResponseEnvelope(object):
         'session_attributes': 'sessionAttributes',
         'user_agent': 'userAgent',
         'response': 'response'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, version=None, session_attributes=None, user_agent=None, response=None):
         # type: (Optional[str], Optional[Dict[str, object]], Optional[str], Optional[Response]) -> None

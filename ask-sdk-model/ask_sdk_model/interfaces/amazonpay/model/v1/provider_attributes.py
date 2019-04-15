@@ -45,7 +45,7 @@ class ProviderAttributes(object):
     attribute_map = {
         'provider_id': 'providerId',
         'provider_credit_list': 'providerCreditList'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, provider_id=None, provider_credit_list=None):
         # type: (Optional[str], Optional[List[ProviderCredit]]) -> None

@@ -44,7 +44,7 @@ class Event(object):
     attribute_map = {
         'name': 'name',
         'payload': 'payload'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, name=None, payload=None):
         # type: (Optional[str], Optional[object]) -> None

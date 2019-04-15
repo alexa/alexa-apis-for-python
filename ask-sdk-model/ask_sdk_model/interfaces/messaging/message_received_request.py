@@ -53,7 +53,7 @@ class MessageReceivedRequest(Request):
         'timestamp': 'timestamp',
         'locale': 'locale',
         'message': 'message'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, message=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[Dict[str, object]]) -> None

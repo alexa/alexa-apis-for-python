@@ -48,7 +48,7 @@ class TextField(object):
 
     attribute_map = {
         'object_type': 'type'
-}  # type: Dict
+    }  # type: Dict
 
     discriminator_value_class_map = {
         'RichText': 'ask_sdk_model.interfaces.display.rich_text.RichText',

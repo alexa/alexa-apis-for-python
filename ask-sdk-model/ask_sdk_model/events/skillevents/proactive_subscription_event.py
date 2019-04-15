@@ -38,7 +38,7 @@ class ProactiveSubscriptionEvent(object):
 
     attribute_map = {
         'event_name': 'eventName'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, event_name=None):
         # type: (Optional[str]) -> None

@@ -58,7 +58,7 @@ class Session(object):
         'user': 'user',
         'attributes': 'attributes',
         'application': 'application'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, new=None, session_id=None, user=None, attributes=None, application=None):
         # type: (Optional[bool], Optional[str], Optional[User], Optional[Dict[str, object]], Optional[Application]) -> None

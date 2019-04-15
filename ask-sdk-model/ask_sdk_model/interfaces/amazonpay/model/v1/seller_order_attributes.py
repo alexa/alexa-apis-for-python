@@ -52,7 +52,7 @@ class SellerOrderAttributes(object):
         'store_name': 'storeName',
         'custom_information': 'customInformation',
         'seller_note': 'sellerNote'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, seller_order_id=None, store_name=None, custom_information=None, seller_note=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[str]) -> None

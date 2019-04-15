@@ -45,7 +45,7 @@ class Device(object):
     attribute_map = {
         'device_id': 'deviceId',
         'supported_interfaces': 'supportedInterfaces'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, device_id=None, supported_interfaces=None):
         # type: (Optional[str], Optional[SupportedInterfaces]) -> None

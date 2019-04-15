@@ -56,7 +56,7 @@ class ScheduleFoodEstablishmentReservationRequest(BaseRequest):
         'start_time': 'startTime',
         'party_size': 'partySize',
         'restaurant': 'restaurant'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, version=None, start_time=None, party_size=None, restaurant=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[Restaurant]) -> None

@@ -57,7 +57,7 @@ class SkillEnabledRequest(Request):
         'locale': 'locale',
         'event_creation_time': 'eventCreationTime',
         'event_publishing_time': 'eventPublishingTime'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, event_creation_time=None, event_publishing_time=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[datetime], Optional[datetime]) -> None

@@ -84,7 +84,7 @@ class Command(object):
         'delay': 'delay',
         'description': 'description',
         'when': 'when'
-}  # type: Dict
+    }  # type: Dict
 
     discriminator_value_class_map = {
         'SetPage': 'ask_sdk_model.interfaces.alexa.presentation.apl.set_page_command.SetPageCommand',

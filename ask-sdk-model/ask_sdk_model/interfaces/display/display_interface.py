@@ -42,7 +42,7 @@ class DisplayInterface(object):
     attribute_map = {
         'template_version': 'templateVersion',
         'markup_version': 'markupVersion'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, template_version=None, markup_version=None):
         # type: (Optional[str], Optional[str]) -> None

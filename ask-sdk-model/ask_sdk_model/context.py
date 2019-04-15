@@ -64,7 +64,7 @@ class Context(object):
         'display': 'Display',
         'geolocation': 'Geolocation',
         'viewport': 'Viewport'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, system=None, audio_player=None, automotive=None, display=None, geolocation=None, viewport=None):
         # type: (Optional[SystemState], Optional[AudioPlayerState], Optional[AutomotiveState], Optional[DisplayState], Optional[GeolocationState], Optional[ViewportState]) -> None

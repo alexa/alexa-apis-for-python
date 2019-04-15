@@ -56,7 +56,7 @@ class VideoSource(object):
         'url': 'url',
         'repeat_count': 'repeatCount',
         'offset': 'offset'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, description=None, duration=None, url=None, repeat_count=None, offset=None):
         # type: (Optional[str], Optional[int], Optional[str], Optional[int], Optional[int]) -> None

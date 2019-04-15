@@ -64,7 +64,7 @@ class AuthorizeAttributes(BaseAmazonPayEntity):
         'soft_descriptor': 'softDescriptor',
         'object_type': '@type',
         'version': '@version'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, authorization_reference_id=None, authorization_amount=None, transaction_timeout=None, seller_authorization_note=None, soft_descriptor=None, version=None):
         # type: (Optional[str], Optional[Price], Optional[int], Optional[str], Optional[str], Optional[str]) -> None

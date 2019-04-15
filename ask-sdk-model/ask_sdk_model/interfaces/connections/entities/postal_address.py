@@ -63,7 +63,7 @@ class PostalAddress(BaseEntity):
         'region': 'region',
         'postal_code': 'postalCode',
         'country': 'country'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, version=None, street_address=None, locality=None, region=None, postal_code=None, country=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str]) -> None

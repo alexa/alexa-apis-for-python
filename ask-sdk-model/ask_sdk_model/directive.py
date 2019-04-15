@@ -80,7 +80,7 @@ class Directive(object):
 
     attribute_map = {
         'object_type': 'type'
-}  # type: Dict
+    }  # type: Dict
 
     discriminator_value_class_map = {
         'AudioPlayer.Stop': 'ask_sdk_model.interfaces.audioplayer.stop_directive.StopDirective',

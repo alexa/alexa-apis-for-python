@@ -52,7 +52,7 @@ class Recognizer(object):
 
     attribute_map = {
         'object_type': 'type'
-}  # type: Dict
+    }  # type: Dict
 
     discriminator_value_class_map = {
         'progress': 'ask_sdk_model.services.game_engine.progress_recognizer.ProgressRecognizer',

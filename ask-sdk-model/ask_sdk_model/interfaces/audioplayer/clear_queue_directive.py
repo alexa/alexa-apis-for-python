@@ -42,7 +42,7 @@ class ClearQueueDirective(Directive):
     attribute_map = {
         'object_type': 'type',
         'clear_behavior': 'clearBehavior'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, clear_behavior=None):
         # type: (Optional[ClearBehavior]) -> None

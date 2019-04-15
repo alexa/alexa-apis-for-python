@@ -50,7 +50,7 @@ class Intent(object):
         'name': 'name',
         'slots': 'slots',
         'confirmation_status': 'confirmationStatus'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, name=None, slots=None, confirmation_status=None):
         # type: (Optional[str], Optional[Dict[str, Slot]], Optional[IntentConfirmationStatus]) -> None

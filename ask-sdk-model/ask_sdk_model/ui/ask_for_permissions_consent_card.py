@@ -41,7 +41,7 @@ class AskForPermissionsConsentCard(Card):
     attribute_map = {
         'object_type': 'type',
         'permissions': 'permissions'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, permissions=None):
         # type: (Optional[List[object]]) -> None

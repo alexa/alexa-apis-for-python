@@ -41,7 +41,7 @@ class SpeakDirective(Directive):
     attribute_map = {
         'object_type': 'type',
         'speech': 'speech'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, speech=None):
         # type: (Optional[str]) -> None

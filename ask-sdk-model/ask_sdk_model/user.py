@@ -49,7 +49,7 @@ class User(object):
         'user_id': 'userId',
         'access_token': 'accessToken',
         'permissions': 'permissions'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, user_id=None, access_token=None, permissions=None):
         # type: (Optional[str], Optional[str], Optional[Permissions]) -> None

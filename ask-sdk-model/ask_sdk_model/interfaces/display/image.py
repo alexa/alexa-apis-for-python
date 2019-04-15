@@ -43,7 +43,7 @@ class Image(object):
     attribute_map = {
         'content_description': 'contentDescription',
         'sources': 'sources'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, content_description=None, sources=None):
         # type: (Optional[str], Optional[List[ImageInstance]]) -> None

@@ -38,7 +38,7 @@ class ErrorCause(object):
 
     attribute_map = {
         'request_id': 'requestId'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, request_id=None):
         # type: (Optional[str]) -> None

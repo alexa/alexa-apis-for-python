@@ -46,7 +46,7 @@ class PlainTextOutputSpeech(OutputSpeech):
         'object_type': 'type',
         'play_behavior': 'playBehavior',
         'text': 'text'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, play_behavior=None, text=None):
         # type: (Optional[PlayBehavior], Optional[str]) -> None

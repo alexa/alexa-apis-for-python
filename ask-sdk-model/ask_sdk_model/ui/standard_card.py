@@ -50,7 +50,7 @@ class StandardCard(Card):
         'title': 'title',
         'text': 'text',
         'image': 'image'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, title=None, text=None, image=None):
         # type: (Optional[str], Optional[str], Optional[Image]) -> None

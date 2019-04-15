@@ -39,7 +39,7 @@ class AlexaListsMetadata(object):
 
     attribute_map = {
         'lists': 'lists'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, lists=None):
         # type: (Optional[List[AlexaListMetadata]]) -> None

@@ -42,7 +42,7 @@ class Image(object):
     attribute_map = {
         'small_image_url': 'smallImageUrl',
         'large_image_url': 'largeImageUrl'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, small_image_url=None, large_image_url=None):
         # type: (Optional[str], Optional[str]) -> None

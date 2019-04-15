@@ -34,7 +34,7 @@ class VideoAppInterface(object):
     }  # type: Dict
 
     attribute_map = {
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self):
         # type: () -> None

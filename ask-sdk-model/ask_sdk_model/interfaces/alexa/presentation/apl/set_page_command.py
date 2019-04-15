@@ -64,7 +64,7 @@ class SetPageCommand(Command):
         'component_id': 'componentId',
         'position': 'position',
         'value': 'value'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, delay=None, description=None, when=None, component_id=None, position=None, value=None):
         # type: (Optional[int], Optional[str], Optional[bool], Optional[str], Optional[Position], Optional[int]) -> None

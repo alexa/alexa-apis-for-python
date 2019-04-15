@@ -43,7 +43,7 @@ class CreateListItemRequest(object):
     attribute_map = {
         'value': 'value',
         'status': 'status'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, value=None, status=None):
         # type: (Optional[str], Optional[ListItemState]) -> None

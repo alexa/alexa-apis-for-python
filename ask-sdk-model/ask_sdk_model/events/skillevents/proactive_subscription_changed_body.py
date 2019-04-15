@@ -39,7 +39,7 @@ class ProactiveSubscriptionChangedBody(object):
 
     attribute_map = {
         'subscriptions': 'subscriptions'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, subscriptions=None):
         # type: (Optional[List[ProactiveSubscriptionEvent]]) -> None

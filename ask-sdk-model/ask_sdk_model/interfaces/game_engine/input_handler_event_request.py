@@ -60,7 +60,7 @@ class InputHandlerEventRequest(Request):
         'locale': 'locale',
         'originating_request_id': 'originatingRequestId',
         'events': 'events'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None, originating_request_id=None, events=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[str], Optional[List[InputHandlerEvent]]) -> None

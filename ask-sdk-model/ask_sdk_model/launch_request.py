@@ -51,7 +51,7 @@ class LaunchRequest(Request):
         'request_id': 'requestId',
         'timestamp': 'timestamp',
         'locale': 'locale'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, request_id=None, timestamp=None, locale=None):
         # type: (Optional[str], Optional[datetime], Optional[str]) -> None

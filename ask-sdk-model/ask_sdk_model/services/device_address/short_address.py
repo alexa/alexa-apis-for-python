@@ -42,7 +42,7 @@ class ShortAddress(object):
     attribute_map = {
         'country_code': 'countryCode',
         'postal_code': 'postalCode'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, country_code=None, postal_code=None):
         # type: (Optional[str], Optional[str]) -> None

@@ -132,7 +132,7 @@ class Request(object):
         'request_id': 'requestId',
         'timestamp': 'timestamp',
         'locale': 'locale'
-}  # type: Dict
+    }  # type: Dict
 
     discriminator_value_class_map = {
         'AudioPlayer.PlaybackFinished': 'ask_sdk_model.interfaces.audioplayer.playback_finished_request.PlaybackFinishedRequest',

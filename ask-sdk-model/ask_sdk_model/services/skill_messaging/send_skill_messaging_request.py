@@ -44,7 +44,7 @@ class SendSkillMessagingRequest(object):
     attribute_map = {
         'data': 'data',
         'expires_after_seconds': 'expiresAfterSeconds'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, data=None, expires_after_seconds=None):
         # type: (Optional[object], Optional[int]) -> None

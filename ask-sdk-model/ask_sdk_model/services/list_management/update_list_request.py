@@ -47,7 +47,7 @@ class UpdateListRequest(object):
         'name': 'name',
         'state': 'state',
         'version': 'version'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, name=None, state=None, version=None):
         # type: (Optional[str], Optional[ListState], Optional[int]) -> None

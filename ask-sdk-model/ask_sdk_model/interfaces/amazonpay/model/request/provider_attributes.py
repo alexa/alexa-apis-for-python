@@ -52,7 +52,7 @@ class ProviderAttributes(BaseAmazonPayEntity):
         'provider_credit_list': 'providerCreditList',
         'object_type': '@type',
         'version': '@version'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, provider_id=None, provider_credit_list=None, version=None):
         # type: (Optional[str], Optional[List[ProviderCredit]], Optional[str]) -> None

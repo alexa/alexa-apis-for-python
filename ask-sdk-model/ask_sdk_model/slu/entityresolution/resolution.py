@@ -50,7 +50,7 @@ class Resolution(object):
         'authority': 'authority',
         'status': 'status',
         'values': 'values'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, authority=None, status=None, values=None):
         # type: (Optional[str], Optional[Status], Optional[List[ValueWrapper]]) -> None

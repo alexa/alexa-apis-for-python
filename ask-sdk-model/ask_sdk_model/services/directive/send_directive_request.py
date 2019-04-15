@@ -46,7 +46,7 @@ class SendDirectiveRequest(object):
     attribute_map = {
         'header': 'header',
         'directive': 'directive'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, header=None, directive=None):
         # type: (Optional[Header], Optional[Directive]) -> None

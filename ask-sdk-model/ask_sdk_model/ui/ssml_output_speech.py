@@ -46,7 +46,7 @@ class SsmlOutputSpeech(OutputSpeech):
         'object_type': 'type',
         'play_behavior': 'playBehavior',
         'ssml': 'ssml'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, play_behavior=None, ssml=None):
         # type: (Optional[PlayBehavior], Optional[str]) -> None

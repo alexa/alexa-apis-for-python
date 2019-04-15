@@ -55,7 +55,7 @@ class SellerBillingAgreementAttributes(BaseAmazonPayEntity):
         'custom_information': 'customInformation',
         'object_type': '@type',
         'version': '@version'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, seller_billing_agreement_id=None, store_name=None, custom_information=None, version=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[str]) -> None

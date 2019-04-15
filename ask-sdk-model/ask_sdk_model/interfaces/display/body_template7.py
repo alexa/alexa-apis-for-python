@@ -59,7 +59,7 @@ class BodyTemplate7(Template):
         'title': 'title',
         'image': 'image',
         'background_image': 'backgroundImage'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, token=None, back_button=None, title=None, image=None, background_image=None):
         # type: (Optional[str], Optional[BackButtonBehavior], Optional[str], Optional[Image], Optional[Image]) -> None

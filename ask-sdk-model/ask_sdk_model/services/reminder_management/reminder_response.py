@@ -61,7 +61,7 @@ class ReminderResponse(object):
         'status': 'status',
         'version': 'version',
         'href': 'href'
-}  # type: Dict
+    }  # type: Dict
 
     def __init__(self, alert_token=None, created_time=None, updated_time=None, status=None, version=None, href=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[Status], Optional[str], Optional[str]) -> None
