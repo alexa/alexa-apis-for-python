@@ -27,6 +27,7 @@ if typing.TYPE_CHECKING:
     from ask_sdk_model.interfaces.viewport.touch import Touch
     from ask_sdk_model.interfaces.viewport.keyboard import Keyboard
     from ask_sdk_model.interfaces.viewport.shape import Shape
+    from ask_sdk_model.interfaces.viewport.video import Video
 
 
 class ViewportState(object):
@@ -52,6 +53,8 @@ class ViewportState(object):
     :type touch: (optional) list[ask_sdk_model.interfaces.viewport.touch.Touch]
     :param keyboard: The physical button input mechanisms supported by the device. An empty array indicates physical button input is unsupported.
     :type keyboard: (optional) list[ask_sdk_model.interfaces.viewport.keyboard.Keyboard]
+    :param video: 
+    :type video: (optional) ask_sdk_model.interfaces.viewport.video.Video
 
     """
     deserialized_types = {
@@ -63,7 +66,8 @@ class ViewportState(object):
         'current_pixel_width': 'float',
         'current_pixel_height': 'float',
         'touch': 'list[ask_sdk_model.interfaces.viewport.touch.Touch]',
-        'keyboard': 'list[ask_sdk_model.interfaces.viewport.keyboard.Keyboard]'
+        'keyboard': 'list[ask_sdk_model.interfaces.viewport.keyboard.Keyboard]',
+        'video': 'ask_sdk_model.interfaces.viewport.video.Video'
     }  # type: Dict
 
     attribute_map = {
@@ -75,11 +79,12 @@ class ViewportState(object):
         'current_pixel_width': 'currentPixelWidth',
         'current_pixel_height': 'currentPixelHeight',
         'touch': 'touch',
-        'keyboard': 'keyboard'
+        'keyboard': 'keyboard',
+        'video': 'video'
     }  # type: Dict
 
-    def __init__(self, experiences=None, shape=None, pixel_width=None, pixel_height=None, dpi=None, current_pixel_width=None, current_pixel_height=None, touch=None, keyboard=None):
-        # type: (Optional[List[Experience]], Optional[Shape], Optional[float], Optional[float], Optional[float], Optional[float], Optional[float], Optional[List[Touch]], Optional[List[Keyboard]]) -> None
+    def __init__(self, experiences=None, shape=None, pixel_width=None, pixel_height=None, dpi=None, current_pixel_width=None, current_pixel_height=None, touch=None, keyboard=None, video=None):
+        # type: (Optional[List[Experience]], Optional[Shape], Optional[float], Optional[float], Optional[float], Optional[float], Optional[float], Optional[List[Touch]], Optional[List[Keyboard]], Optional[Video]) -> None
         """This object contains the characteristics related to the device&#39;s viewport.
 
         :param experiences: The experiences supported by the device, in descending order of arcMinuteWidth and arcMinuteHeight.
@@ -100,6 +105,8 @@ class ViewportState(object):
         :type touch: (optional) list[ask_sdk_model.interfaces.viewport.touch.Touch]
         :param keyboard: The physical button input mechanisms supported by the device. An empty array indicates physical button input is unsupported.
         :type keyboard: (optional) list[ask_sdk_model.interfaces.viewport.keyboard.Keyboard]
+        :param video: 
+        :type video: (optional) ask_sdk_model.interfaces.viewport.video.Video
         """
         self.__discriminator_value = None  # type: str
 
@@ -112,6 +119,7 @@ class ViewportState(object):
         self.current_pixel_height = current_pixel_height
         self.touch = touch
         self.keyboard = keyboard
+        self.video = video
 
     def to_dict(self):
         # type: () -> Dict[str, object]

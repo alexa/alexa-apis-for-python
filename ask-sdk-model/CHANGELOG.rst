@@ -153,3 +153,9 @@ This release includes the following :
 
 - Fixing the imports under `reminder_management` service, to deserialize the reminders correctly.
 
+
+
+1.10.2
+^^^^^^^
+
+- Added video codecs information in the APL Viewport Characteristic `Video property <https://developer.amazon.com/docs/alexa-presentation-language/apl-viewport-characteristics.html#video>`__. 
