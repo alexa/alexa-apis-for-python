@@ -159,3 +159,12 @@ This release includes the following :
 ^^^^^^^
 
 - Added video codecs information in the APL Viewport Characteristic `Video property <https://developer.amazon.com/docs/alexa-presentation-language/apl-viewport-characteristics.html#video>`__. 
+
+
+1.10.3
+^^^^^^^
+
+This release contains the following changes:
+
+- Fix the `deserialized_type` for viewport_state.video object
+

@@ -27,7 +27,7 @@ if typing.TYPE_CHECKING:
     from ask_sdk_model.interfaces.viewport.touch import Touch
     from ask_sdk_model.interfaces.viewport.keyboard import Keyboard
     from ask_sdk_model.interfaces.viewport.shape import Shape
-    from ask_sdk_model.interfaces.viewport.video import Video
+    from ask_sdk_model.interfaces.viewport.viewport_state_video import Video
 
 
 class ViewportState(object):
@@ -54,7 +54,7 @@ class ViewportState(object):
     :param keyboard: The physical button input mechanisms supported by the device. An empty array indicates physical button input is unsupported.
     :type keyboard: (optional) list[ask_sdk_model.interfaces.viewport.keyboard.Keyboard]
     :param video: 
-    :type video: (optional) ask_sdk_model.interfaces.viewport.video.Video
+    :type video: (optional) ask_sdk_model.interfaces.viewport.viewport_state_video.Video
 
     """
     deserialized_types = {
@@ -67,7 +67,7 @@ class ViewportState(object):
         'current_pixel_height': 'float',
         'touch': 'list[ask_sdk_model.interfaces.viewport.touch.Touch]',
         'keyboard': 'list[ask_sdk_model.interfaces.viewport.keyboard.Keyboard]',
-        'video': 'ask_sdk_model.interfaces.viewport.video.Video'
+        'video': 'ask_sdk_model.interfaces.viewport.viewport_state_video.Video'
     }  # type: Dict
 
     attribute_map = {
@@ -106,7 +106,7 @@ class ViewportState(object):
         :param keyboard: The physical button input mechanisms supported by the device. An empty array indicates physical button input is unsupported.
         :type keyboard: (optional) list[ask_sdk_model.interfaces.viewport.keyboard.Keyboard]
         :param video: 
-        :type video: (optional) ask_sdk_model.interfaces.viewport.video.Video
+        :type video: (optional) ask_sdk_model.interfaces.viewport.viewport_state_video.Video
         """
         self.__discriminator_value = None  # type: str
 
