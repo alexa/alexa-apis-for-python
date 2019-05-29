@@ -67,6 +67,8 @@ class Command(object):
         |
         | Idle: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.idle_command.IdleCommand`,
         |
+        | SetValue: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.set_value_command.SetValueCommand`,
+        |
         | SendEvent: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.send_event_command.SendEventCommand`,
         |
         | SpeakList: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.speak_list_command.SpeakListCommand`
@@ -98,6 +100,7 @@ class Command(object):
         'ScrollToIndex': 'ask_sdk_model.interfaces.alexa.presentation.apl.scroll_to_index_command.ScrollToIndexCommand',
         'Scroll': 'ask_sdk_model.interfaces.alexa.presentation.apl.scroll_command.ScrollCommand',
         'Idle': 'ask_sdk_model.interfaces.alexa.presentation.apl.idle_command.IdleCommand',
+        'SetValue': 'ask_sdk_model.interfaces.alexa.presentation.apl.set_value_command.SetValueCommand',
         'SendEvent': 'ask_sdk_model.interfaces.alexa.presentation.apl.send_event_command.SendEventCommand',
         'SpeakList': 'ask_sdk_model.interfaces.alexa.presentation.apl.speak_list_command.SpeakListCommand'
     }

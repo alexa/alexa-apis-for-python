@@ -21,6 +21,7 @@ from .play_media_command import PlayMediaCommand
 from .render_document_directive import RenderDocumentDirective
 from .audio_track import AudioTrack
 from .parallel_command import ParallelCommand
+from .set_value_command import SetValueCommand
 from .scroll_command import ScrollCommand
 from .auto_page_command import AutoPageCommand
 from .speak_item_command import SpeakItemCommand

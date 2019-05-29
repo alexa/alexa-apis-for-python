@@ -168,3 +168,12 @@ This release contains the following changes:
 
 - Fix the `deserialized_type` for viewport_state.video object
 
+
+
+1.11.0
+~~~~~~~
+
+This release contains the following changes : 
+
+- APL `SetValue <https://developer.amazon.com/docs/alexa-presentation-language/apl-standard-commands.html#setvalue-command>`__ command support.
+
