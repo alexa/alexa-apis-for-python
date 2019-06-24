@@ -22,7 +22,7 @@ from ask_sdk_model.interfaces.amazonpay.model.request.base_amazon_pay_entity imp
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
 
 
@@ -35,7 +35,7 @@ class Price(BaseAmazonPayEntity):
     :type amount: (optional) str
     :param currency_code: Currency code for the amount.
     :type currency_code: (optional) str
-    :param version: Version of the Amazon Pay Entity. Can be 2 or greater.
+    :param version: Version of the Amazon Pay Entity. Can be 1 or greater.
     :type version: (optional) str
 
     """
@@ -61,7 +61,7 @@ class Price(BaseAmazonPayEntity):
         :type amount: (optional) str
         :param currency_code: Currency code for the amount.
         :type currency_code: (optional) str
-        :param version: Version of the Amazon Pay Entity. Can be 2 or greater.
+        :param version: Version of the Amazon Pay Entity. Can be 1 or greater.
         :type version: (optional) str
         """
         self.__discriminator_value = "Price"  # type: str

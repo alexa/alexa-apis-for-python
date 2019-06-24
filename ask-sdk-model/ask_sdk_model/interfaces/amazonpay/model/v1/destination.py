@@ -21,13 +21,13 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
 
 
 class Destination(object):
     """
-    The default shipping address of the buyer. Returned if needAmazonShippingAddress is set to true.
+    Destination object containing the details of an Address.
 
 
     :param name: The name or business name
@@ -84,7 +84,7 @@ class Destination(object):
 
     def __init__(self, name=None, company_name=None, address_line1=None, address_line2=None, address_line3=None, city=None, district_or_county=None, state_or_region=None, postal_code=None, country_code=None, phone=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str]) -> None
-        """The default shipping address of the buyer. Returned if needAmazonShippingAddress is set to true.
+        """Destination object containing the details of an Address.
 
         :param name: The name or business name
         :type name: (optional) str

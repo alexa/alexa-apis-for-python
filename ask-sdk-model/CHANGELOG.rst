@@ -177,3 +177,15 @@ This release contains the following changes :
 
 - APL `SetValue <https://developer.amazon.com/docs/alexa-presentation-language/apl-standard-commands.html#setvalue-command>`__ command support.
 
+
+
+1.12.0
+~~~~~~~
+
+This release contains the following changes : 
+
+- Added APL commands `AnimateItemCommand`, `OpenUrlCommand`, `SetFocusCommand`, `ClearFocusCommand`.
+- Added `finally` and `catch` attributes in `SequentialCommand`.
+- Provide APL expression language in some APL commands, alongside their primitive types (eg: `delay` in all commands).
+- Added `ENDPOINT_TIMEOUT` enumeration in `SessionEndedReason`.
+

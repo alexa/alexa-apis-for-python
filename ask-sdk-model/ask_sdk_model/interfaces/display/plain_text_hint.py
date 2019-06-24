@@ -22,7 +22,7 @@ from ask_sdk_model.interfaces.display.hint import Hint
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
 
 

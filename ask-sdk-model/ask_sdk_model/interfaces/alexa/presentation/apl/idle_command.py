@@ -22,7 +22,7 @@ from ask_sdk_model.interfaces.alexa.presentation.apl.command import Command
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
 
 
@@ -54,7 +54,7 @@ class IdleCommand(Command):
     }  # type: Dict
 
     def __init__(self, delay=None, description=None, when=None):
-        # type: (Optional[int], Optional[str], Optional[bool]) -> None
+        # type: (Union[int, str, None], Optional[str], Optional[bool]) -> None
         """The idle command does nothing. It may be a placeholder or used to insert a calculated delay in a longer series of commands.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.

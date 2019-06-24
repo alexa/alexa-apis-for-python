@@ -22,7 +22,7 @@ from ask_sdk_model.services.game_engine.recognizer import Recognizer
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
     from ask_sdk_model.services.game_engine.pattern import Pattern
     from ask_sdk_model.services.game_engine.pattern_recognizer_anchor_type import PatternRecognizerAnchorType

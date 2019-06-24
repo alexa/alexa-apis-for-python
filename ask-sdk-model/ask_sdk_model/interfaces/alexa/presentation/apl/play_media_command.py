@@ -22,7 +22,7 @@ from ask_sdk_model.interfaces.alexa.presentation.apl.command import Command
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
     from ask_sdk_model.interfaces.alexa.presentation.apl.video_source import VideoSource
     from ask_sdk_model.interfaces.alexa.presentation.apl.audio_track import AudioTrack
@@ -68,7 +68,7 @@ class PlayMediaCommand(Command):
     }  # type: Dict
 
     def __init__(self, delay=None, description=None, when=None, audio_track=None, component_id=None, source=None):
-        # type: (Optional[int], Optional[str], Optional[bool], Optional[AudioTrack], Optional[str], Optional[List[VideoSource]]) -> None
+        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[AudioTrack], Optional[str], Optional[List[VideoSource]]) -> None
         """Plays media on a media player (currently only a Video player; audio may be added in the future). The media may be on the background audio track or may be sequenced with speak directives).
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.

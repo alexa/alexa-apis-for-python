@@ -22,7 +22,7 @@ from ask_sdk_model.interfaces.alexa.presentation.apl.command import Command
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
 
 
@@ -62,7 +62,7 @@ class SendEventCommand(Command):
     }  # type: Dict
 
     def __init__(self, delay=None, description=None, when=None, arguments=None, components=None):
-        # type: (Optional[int], Optional[str], Optional[bool], Optional[List[object]], Optional[List[object]]) -> None
+        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[List[object]], Optional[List[object]]) -> None
         """The SendEvent command allows the APL author to generate and send an event to Alexa.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.

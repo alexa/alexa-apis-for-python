@@ -22,7 +22,7 @@ from ask_sdk_model.interfaces.alexa.presentation.apl.command import Command
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
     from ask_sdk_model.interfaces.alexa.presentation.apl.component_state import ComponentState
 
@@ -67,7 +67,7 @@ class SetStateCommand(Command):
     }  # type: Dict
 
     def __init__(self, delay=None, description=None, when=None, component_id=None, state=None, value=None):
-        # type: (Optional[int], Optional[str], Optional[bool], Optional[str], Optional[ComponentState], Optional[bool]) -> None
+        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Optional[ComponentState], Union[bool, str, None]) -> None
         """The SetState command changes one of the component’s state settings. The SetState command can be used to change the checked, disabled, and focused states. The karaoke and pressed states may not be directly set; use the Select command or SpeakItem commands to change those states. Also, note that the focused state may only be set - it can’t be cleared.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.

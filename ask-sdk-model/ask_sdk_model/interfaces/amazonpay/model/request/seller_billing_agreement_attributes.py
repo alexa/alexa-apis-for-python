@@ -22,7 +22,7 @@ from ask_sdk_model.interfaces.amazonpay.model.request.base_amazon_pay_entity imp
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
 
 
@@ -37,7 +37,7 @@ class SellerBillingAgreementAttributes(BaseAmazonPayEntity):
     :type store_name: (optional) str
     :param custom_information: Any additional information that you wish to include with this billing agreement. At least one request parameter must be specified.
     :type custom_information: (optional) str
-    :param version: Version of the Amazon Pay Entity. Can be 2 or greater.
+    :param version: Version of the Amazon Pay Entity. Can be 1 or greater.
     :type version: (optional) str
 
     """
@@ -67,7 +67,7 @@ class SellerBillingAgreementAttributes(BaseAmazonPayEntity):
         :type store_name: (optional) str
         :param custom_information: Any additional information that you wish to include with this billing agreement. At least one request parameter must be specified.
         :type custom_information: (optional) str
-        :param version: Version of the Amazon Pay Entity. Can be 2 or greater.
+        :param version: Version of the Amazon Pay Entity. Can be 1 or greater.
         :type version: (optional) str
         """
         self.__discriminator_value = "SellerBillingAgreementAttributes"  # type: str

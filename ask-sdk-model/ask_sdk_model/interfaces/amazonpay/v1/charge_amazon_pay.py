@@ -21,7 +21,7 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
     from ask_sdk_model.interfaces.amazonpay.model.v1.seller_order_attributes import SellerOrderAttributes
     from ask_sdk_model.interfaces.amazonpay.model.v1.payment_action import PaymentAction

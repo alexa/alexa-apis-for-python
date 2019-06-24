@@ -22,7 +22,7 @@ from abc import ABCMeta, abstractmethod
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
 
 
@@ -31,7 +31,7 @@ class BaseAmazonPayEntity(object):
 
     :param object_type: 
     :type object_type: (optional) str
-    :param version: Version of the Amazon Pay Entity. Can be 2 or greater.
+    :param version: Version of the Amazon Pay Entity. Can be 1 or greater.
     :type version: (optional) str
 
     .. note::
@@ -91,7 +91,7 @@ class BaseAmazonPayEntity(object):
 
         :param object_type: 
         :type object_type: (optional) str
-        :param version: Version of the Amazon Pay Entity. Can be 2 or greater.
+        :param version: Version of the Amazon Pay Entity. Can be 1 or greater.
         :type version: (optional) str
         """
         self.__discriminator_value = None  # type: str

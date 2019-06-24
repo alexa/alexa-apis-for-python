@@ -21,12 +21,14 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
 
 
 class ReleaseEnvironment(Enum):
     """
+    Indicates if the contract is for a Live (Production) or Sandbox environment.
+
 
 
     Allowed enum values: [LIVE, SANDBOX]

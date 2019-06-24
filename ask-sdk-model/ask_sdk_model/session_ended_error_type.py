@@ -21,7 +21,7 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
 
 
@@ -31,11 +31,12 @@ class SessionEndedErrorType(Enum):
 
 
 
-    Allowed enum values: [INVALID_RESPONSE, DEVICE_COMMUNICATION_ERROR, INTERNAL_SERVICE_ERROR]
+    Allowed enum values: [INVALID_RESPONSE, DEVICE_COMMUNICATION_ERROR, INTERNAL_SERVICE_ERROR, ENDPOINT_TIMEOUT]
     """
     INVALID_RESPONSE = "INVALID_RESPONSE"
     DEVICE_COMMUNICATION_ERROR = "DEVICE_COMMUNICATION_ERROR"
     INTERNAL_SERVICE_ERROR = "INTERNAL_SERVICE_ERROR"
+    ENDPOINT_TIMEOUT = "ENDPOINT_TIMEOUT"
 
     def to_dict(self):
         # type: () -> Dict[str, object]

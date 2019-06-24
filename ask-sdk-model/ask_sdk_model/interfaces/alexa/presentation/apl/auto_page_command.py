@@ -22,7 +22,7 @@ from ask_sdk_model.interfaces.alexa.presentation.apl.command import Command
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
 
 
@@ -66,7 +66,7 @@ class AutoPageCommand(Command):
     }  # type: Dict
 
     def __init__(self, delay=None, description=None, when=None, component_id=None, count=None, duration=None):
-        # type: (Optional[int], Optional[str], Optional[bool], Optional[str], Optional[int], Optional[int]) -> None
+        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Union[int, str, None], Union[int, str, None]) -> None
         """Automatically progress through a series of pages displayed in a Pager component. The AutoPage command finishes after the last page has been displayed for the requested time period.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.

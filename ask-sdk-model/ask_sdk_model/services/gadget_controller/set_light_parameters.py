@@ -21,7 +21,7 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
     from ask_sdk_model.services.gadget_controller.light_animation import LightAnimation
     from ask_sdk_model.services.gadget_controller.trigger_event_type import TriggerEventType

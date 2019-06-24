@@ -22,7 +22,7 @@ from ask_sdk_model.interfaces.alexa.presentation.apl.command import Command
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
     from ask_sdk_model.interfaces.alexa.presentation.apl.position import Position
 
@@ -67,7 +67,7 @@ class SetPageCommand(Command):
     }  # type: Dict
 
     def __init__(self, delay=None, description=None, when=None, component_id=None, position=None, value=None):
-        # type: (Optional[int], Optional[str], Optional[bool], Optional[str], Optional[Position], Optional[int]) -> None
+        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Optional[Position], Union[int, str, None]) -> None
         """Change the page displayed in a Pager component. The SetPage command finishes when the item is fully in view.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.

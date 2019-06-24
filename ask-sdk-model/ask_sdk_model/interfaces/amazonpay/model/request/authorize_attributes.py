@@ -22,7 +22,7 @@ from ask_sdk_model.interfaces.amazonpay.model.request.base_amazon_pay_entity imp
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
     from ask_sdk_model.interfaces.amazonpay.model.request.price import Price
 
@@ -42,7 +42,7 @@ class AuthorizeAttributes(BaseAmazonPayEntity):
     :type seller_authorization_note: (optional) str
     :param soft_descriptor: The description to be shown on the user&#39;s payment instrument statement if AuthorizeAndCapture is chosen. Format of soft descriptor sent to the payment processor is \&quot;AMZ* &lt;soft descriptor specified here&gt;\&quot;. Default is \&quot;AMZ*&lt;SELLER_NAME&gt; amzn.com/ pmts WA\&quot;. Maximum length can be 16 characters.
     :type soft_descriptor: (optional) str
-    :param version: Version of the Amazon Pay Entity. Can be 2 or greater.
+    :param version: Version of the Amazon Pay Entity. Can be 1 or greater.
     :type version: (optional) str
 
     """
@@ -80,7 +80,7 @@ class AuthorizeAttributes(BaseAmazonPayEntity):
         :type seller_authorization_note: (optional) str
         :param soft_descriptor: The description to be shown on the user&#39;s payment instrument statement if AuthorizeAndCapture is chosen. Format of soft descriptor sent to the payment processor is \&quot;AMZ* &lt;soft descriptor specified here&gt;\&quot;. Default is \&quot;AMZ*&lt;SELLER_NAME&gt; amzn.com/ pmts WA\&quot;. Maximum length can be 16 characters.
         :type soft_descriptor: (optional) str
-        :param version: Version of the Amazon Pay Entity. Can be 2 or greater.
+        :param version: Version of the Amazon Pay Entity. Can be 1 or greater.
         :type version: (optional) str
         """
         self.__discriminator_value = "AuthorizeAttributes"  # type: str

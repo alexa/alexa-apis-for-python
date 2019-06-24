@@ -22,7 +22,7 @@ from ask_sdk_model.interfaces.amazonpay.v1.amazon_pay_error_response import Amaz
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
 
 

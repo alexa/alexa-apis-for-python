@@ -22,7 +22,7 @@ from abc import ABCMeta, abstractmethod
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
 
 
@@ -59,7 +59,11 @@ class Command(object):
         |
         | Parallel: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.parallel_command.ParallelCommand`,
         |
+        | OpenURL: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.open_url_command.OpenUrlCommand`,
+        |
         | PlayMedia: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.play_media_command.PlayMediaCommand`,
+        |
+        | ClearFocus: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.clear_focus_command.ClearFocusCommand`,
         |
         | ScrollToIndex: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.scroll_to_index_command.ScrollToIndexCommand`,
         |
@@ -67,7 +71,11 @@ class Command(object):
         |
         | Idle: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.idle_command.IdleCommand`,
         |
+        | AnimateItem: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.animate_item_command.AnimateItemCommand`,
+        |
         | SetValue: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.set_value_command.SetValueCommand`,
+        |
+        | SetFocus: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.set_focus_command.SetFocusCommand`,
         |
         | SendEvent: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.send_event_command.SendEventCommand`,
         |
@@ -96,11 +104,15 @@ class Command(object):
         'SpeakItem': 'ask_sdk_model.interfaces.alexa.presentation.apl.speak_item_command.SpeakItemCommand',
         'AutoPage': 'ask_sdk_model.interfaces.alexa.presentation.apl.auto_page_command.AutoPageCommand',
         'Parallel': 'ask_sdk_model.interfaces.alexa.presentation.apl.parallel_command.ParallelCommand',
+        'OpenURL': 'ask_sdk_model.interfaces.alexa.presentation.apl.open_url_command.OpenUrlCommand',
         'PlayMedia': 'ask_sdk_model.interfaces.alexa.presentation.apl.play_media_command.PlayMediaCommand',
+        'ClearFocus': 'ask_sdk_model.interfaces.alexa.presentation.apl.clear_focus_command.ClearFocusCommand',
         'ScrollToIndex': 'ask_sdk_model.interfaces.alexa.presentation.apl.scroll_to_index_command.ScrollToIndexCommand',
         'Scroll': 'ask_sdk_model.interfaces.alexa.presentation.apl.scroll_command.ScrollCommand',
         'Idle': 'ask_sdk_model.interfaces.alexa.presentation.apl.idle_command.IdleCommand',
+        'AnimateItem': 'ask_sdk_model.interfaces.alexa.presentation.apl.animate_item_command.AnimateItemCommand',
         'SetValue': 'ask_sdk_model.interfaces.alexa.presentation.apl.set_value_command.SetValueCommand',
+        'SetFocus': 'ask_sdk_model.interfaces.alexa.presentation.apl.set_focus_command.SetFocusCommand',
         'SendEvent': 'ask_sdk_model.interfaces.alexa.presentation.apl.send_event_command.SendEventCommand',
         'SpeakList': 'ask_sdk_model.interfaces.alexa.presentation.apl.speak_list_command.SpeakListCommand'
     }
@@ -111,7 +123,7 @@ class Command(object):
 
     @abstractmethod
     def __init__(self, object_type=None, delay=None, description=None, when=None):
-        # type: (Optional[str], Optional[int], Optional[str], Optional[bool]) -> None
+        # type: (Optional[str], Union[int, str, None], Optional[str], Optional[bool]) -> None
         """A message that can change the visual or audio presentation of the content on the screen.
 
         :param object_type: Defines the command type and dictates which properties must/can be included.

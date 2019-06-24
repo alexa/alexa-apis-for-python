@@ -22,7 +22,7 @@ from abc import ABCMeta, abstractmethod
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
     from ask_sdk_model.ui.play_behavior import PlayBehavior
 

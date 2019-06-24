@@ -21,7 +21,7 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
     from ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_status import BillingAgreementStatus
     from ask_sdk_model.interfaces.amazonpay.model.v1.destination import Destination
@@ -37,7 +37,7 @@ class BillingAgreementDetails(object):
     :type billing_agreement_id: (optional) str
     :param creation_timestamp: Time at which billing agreement details created.
     :type creation_timestamp: (optional) datetime
-    :param destination: 
+    :param destination: The default shipping address of the buyer. Returned if needAmazonShippingAddress is set to true.
     :type destination: (optional) ask_sdk_model.interfaces.amazonpay.model.v1.destination.Destination
     :param checkout_language: Merchant&#39;s preferred language of checkout.
     :type checkout_language: (optional) str
@@ -73,7 +73,7 @@ class BillingAgreementDetails(object):
         :type billing_agreement_id: (optional) str
         :param creation_timestamp: Time at which billing agreement details created.
         :type creation_timestamp: (optional) datetime
-        :param destination: 
+        :param destination: The default shipping address of the buyer. Returned if needAmazonShippingAddress is set to true.
         :type destination: (optional) ask_sdk_model.interfaces.amazonpay.model.v1.destination.Destination
         :param checkout_language: Merchant&#39;s preferred language of checkout.
         :type checkout_language: (optional) str

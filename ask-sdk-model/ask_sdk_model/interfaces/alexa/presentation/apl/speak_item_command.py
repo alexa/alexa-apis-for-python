@@ -22,7 +22,7 @@ from ask_sdk_model.interfaces.alexa.presentation.apl.command import Command
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
     from ask_sdk_model.interfaces.alexa.presentation.apl.highlight_mode import HighlightMode
     from ask_sdk_model.interfaces.alexa.presentation.apl.align import Align
@@ -72,7 +72,7 @@ class SpeakItemCommand(Command):
     }  # type: Dict
 
     def __init__(self, delay=None, description=None, when=None, align=None, component_id=None, highlight_mode=None, minimum_dwell_time=None):
-        # type: (Optional[int], Optional[str], Optional[bool], Optional[Align], Optional[str], Optional[HighlightMode], Optional[int]) -> None
+        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[Align], Optional[str], Optional[HighlightMode], Union[int, str, None]) -> None
         """Reads the contents of a single item on the screen. By default the item will be scrolled into view if it is not currently visible.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.

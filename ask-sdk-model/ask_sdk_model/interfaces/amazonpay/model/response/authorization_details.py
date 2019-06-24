@@ -22,7 +22,7 @@ from ask_sdk_model.interfaces.amazonpay.model.v1.authorization_details import Au
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
     from ask_sdk_model.interfaces.amazonpay.model.response.authorization_status import AuthorizationStatus
     from ask_sdk_model.interfaces.amazonpay.model.response.destination import Destination

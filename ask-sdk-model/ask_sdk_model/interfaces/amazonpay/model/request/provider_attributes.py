@@ -22,7 +22,7 @@ from ask_sdk_model.interfaces.amazonpay.model.request.base_amazon_pay_entity imp
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
     from ask_sdk_model.interfaces.amazonpay.model.request.provider_credit import ProviderCredit
 
@@ -36,7 +36,7 @@ class ProviderAttributes(BaseAmazonPayEntity):
     :type provider_id: (optional) str
     :param provider_credit_list: List of provider credit.
     :type provider_credit_list: (optional) list[ask_sdk_model.interfaces.amazonpay.model.request.provider_credit.ProviderCredit]
-    :param version: Version of the Amazon Pay Entity. Can be 2 or greater.
+    :param version: Version of the Amazon Pay Entity. Can be 1 or greater.
     :type version: (optional) str
 
     """
@@ -62,7 +62,7 @@ class ProviderAttributes(BaseAmazonPayEntity):
         :type provider_id: (optional) str
         :param provider_credit_list: List of provider credit.
         :type provider_credit_list: (optional) list[ask_sdk_model.interfaces.amazonpay.model.request.provider_credit.ProviderCredit]
-        :param version: Version of the Amazon Pay Entity. Can be 2 or greater.
+        :param version: Version of the Amazon Pay Entity. Can be 1 or greater.
         :type version: (optional) str
         """
         self.__discriminator_value = "ProviderAttributes"  # type: str

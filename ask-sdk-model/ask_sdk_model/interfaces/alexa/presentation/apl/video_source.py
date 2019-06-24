@@ -21,7 +21,7 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
 
 
@@ -59,7 +59,7 @@ class VideoSource(object):
     }  # type: Dict
 
     def __init__(self, description=None, duration=None, url=None, repeat_count=None, offset=None):
-        # type: (Optional[str], Optional[int], Optional[str], Optional[int], Optional[int]) -> None
+        # type: (Optional[str], Union[int, str, None], Optional[str], Union[int, str, None], Union[int, str, None]) -> None
         """The source property holds the video clip or sequence of video clips to play.
 
         :param description: Optional description of this source material

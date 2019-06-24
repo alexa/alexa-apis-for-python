@@ -22,7 +22,7 @@ from ask_sdk_model.interfaces.display.template import Template
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
     from ask_sdk_model.interfaces.display.back_button_behavior import BackButtonBehavior
     from ask_sdk_model.interfaces.display.image import Image

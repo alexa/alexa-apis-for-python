@@ -22,7 +22,7 @@ from ask_sdk_model.interfaces.alexa.presentation.apl.command import Command
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
 
 
@@ -62,7 +62,7 @@ class ScrollCommand(Command):
     }  # type: Dict
 
     def __init__(self, delay=None, description=None, when=None, distance=None, component_id=None):
-        # type: (Optional[int], Optional[str], Optional[bool], Optional[int], Optional[str]) -> None
+        # type: (Union[int, str, None], Optional[str], Optional[bool], Union[int, str, None], Optional[str]) -> None
         """Scroll a ScrollView or Sequence forward or backward by a number of pages. The Scroll command has the following properties in addition to the regular command properties.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.

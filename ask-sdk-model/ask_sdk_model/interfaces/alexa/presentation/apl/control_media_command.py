@@ -22,7 +22,7 @@ from ask_sdk_model.interfaces.alexa.presentation.apl.command import Command
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
     from ask_sdk_model.interfaces.alexa.presentation.apl.media_command_type import MediaCommandType
 
@@ -67,7 +67,7 @@ class ControlMediaCommand(Command):
     }  # type: Dict
 
     def __init__(self, delay=None, description=None, when=None, command=None, component_id=None, value=None):
-        # type: (Optional[int], Optional[str], Optional[bool], Optional[MediaCommandType], Optional[str], Optional[int]) -> None
+        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[MediaCommandType], Optional[str], Union[int, str, None]) -> None
         """Control a media player to play, pause, change tracks, or perform some other common action.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.

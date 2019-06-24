@@ -22,7 +22,7 @@ from ask_sdk_model.request import Request
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
     from ask_sdk_model.services.list_management.list_item_body import ListItemBody
 

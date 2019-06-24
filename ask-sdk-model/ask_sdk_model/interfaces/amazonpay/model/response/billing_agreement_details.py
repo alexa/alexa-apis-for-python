@@ -22,7 +22,7 @@ from ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_details impor
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional
+    from typing import Dict, List, Optional, Union
     from datetime import datetime
     from ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_status import BillingAgreementStatus
     from ask_sdk_model.interfaces.amazonpay.model.v1.destination import Destination
@@ -39,7 +39,7 @@ class BillingAgreementDetails(BillingAgreementDetails):
     :type billing_agreement_id: (optional) str
     :param creation_timestamp: Time at which billing agreement details created.
     :type creation_timestamp: (optional) datetime
-    :param destination: 
+    :param destination: The default shipping address of the buyer. Returned if needAmazonShippingAddress is set to true.
     :type destination: (optional) ask_sdk_model.interfaces.amazonpay.model.v1.destination.Destination
     :param checkout_language: Merchant&#39;s preferred language of checkout.
     :type checkout_language: (optional) str
@@ -47,7 +47,7 @@ class BillingAgreementDetails(BillingAgreementDetails):
     :type release_environment: (optional) ask_sdk_model.interfaces.amazonpay.model.response.release_environment.ReleaseEnvironment
     :param billing_agreement_status: 
     :type billing_agreement_status: (optional) ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_status.BillingAgreementStatus
-    :param billing_address: 
+    :param billing_address: The Billing Address of the payment instrument associated with Billing Agreement.
     :type billing_address: (optional) ask_sdk_model.interfaces.amazonpay.model.response.destination.Destination
 
     """
@@ -79,7 +79,7 @@ class BillingAgreementDetails(BillingAgreementDetails):
         :type billing_agreement_id: (optional) str
         :param creation_timestamp: Time at which billing agreement details created.
         :type creation_timestamp: (optional) datetime
-        :param destination: 
+        :param destination: The default shipping address of the buyer. Returned if needAmazonShippingAddress is set to true.
         :type destination: (optional) ask_sdk_model.interfaces.amazonpay.model.v1.destination.Destination
         :param checkout_language: Merchant&#39;s preferred language of checkout.
         :type checkout_language: (optional) str
@@ -87,7 +87,7 @@ class BillingAgreementDetails(BillingAgreementDetails):
         :type release_environment: (optional) ask_sdk_model.interfaces.amazonpay.model.response.release_environment.ReleaseEnvironment
         :param billing_agreement_status: 
         :type billing_agreement_status: (optional) ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_status.BillingAgreementStatus
-        :param billing_address: 
+        :param billing_address: The Billing Address of the payment instrument associated with Billing Agreement.
         :type billing_address: (optional) ask_sdk_model.interfaces.amazonpay.model.response.destination.Destination
         """
         self.__discriminator_value = None  # type: str
