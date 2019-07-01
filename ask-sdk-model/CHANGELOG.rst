@@ -189,3 +189,11 @@ This release contains the following changes :
 - Provide APL expression language in some APL commands, alongside their primitive types (eg: `delay` in all commands).
 - Added `ENDPOINT_TIMEOUT` enumeration in `SessionEndedReason`.
 
+
+
+1.13.0
+~~~~~~~
+
+This release contains the following changes : 
+
+-  Models for `Skill Connections <https://developer.amazon.com/docs/custom-skills/skill-connections.html>`__. With the Skill Connections feature, you can enable an Alexa skill to fulfill a customer request that it can't otherwise handle by forwarding the request to another skill for fulfillment. 

@@ -65,6 +65,8 @@ class Request(object):
         |
         | Reminders.ReminderUpdated: :py:class:`ask_sdk_model.services.reminder_management.reminder_updated_event_request.ReminderUpdatedEventRequest`,
         |
+        | SessionResumedRequest: :py:class:`ask_sdk_model.session_resumed_request.SessionResumedRequest`,
+        |
         | SessionEndedRequest: :py:class:`ask_sdk_model.session_ended_request.SessionEndedRequest`,
         |
         | IntentRequest: :py:class:`ask_sdk_model.intent_request.IntentRequest`,
@@ -145,6 +147,7 @@ class Request(object):
         'AlexaSkillEvent.SkillPermissionChanged': 'ask_sdk_model.events.skillevents.permission_changed_request.PermissionChangedRequest',
         'AlexaHouseholdListEvent.ItemsCreated': 'ask_sdk_model.services.list_management.list_items_created_event_request.ListItemsCreatedEventRequest',
         'Reminders.ReminderUpdated': 'ask_sdk_model.services.reminder_management.reminder_updated_event_request.ReminderUpdatedEventRequest',
+        'SessionResumedRequest': 'ask_sdk_model.session_resumed_request.SessionResumedRequest',
         'SessionEndedRequest': 'ask_sdk_model.session_ended_request.SessionEndedRequest',
         'IntentRequest': 'ask_sdk_model.intent_request.IntentRequest',
         'AudioPlayer.PlaybackFailed': 'ask_sdk_model.interfaces.audioplayer.playback_failed_request.PlaybackFailedRequest',

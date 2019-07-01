@@ -59,11 +59,15 @@ class Directive(object):
         |
         | Dialog.ConfirmIntent: :py:class:`ask_sdk_model.dialog.confirm_intent_directive.ConfirmIntentDirective`,
         |
+        | Connections.StartConnection: :py:class:`ask_sdk_model.interfaces.connections.v1.start_connection_directive.StartConnectionDirective`,
+        |
         | GameEngine.StartInputHandler: :py:class:`ask_sdk_model.interfaces.game_engine.start_input_handler_directive.StartInputHandlerDirective`,
         |
         | VideoApp.Launch: :py:class:`ask_sdk_model.interfaces.videoapp.launch_directive.LaunchDirective`,
         |
         | GameEngine.StopInputHandler: :py:class:`ask_sdk_model.interfaces.game_engine.stop_input_handler_directive.StopInputHandlerDirective`,
+        |
+        | Tasks.CompleteTask: :py:class:`ask_sdk_model.interfaces.tasks.complete_task_directive.CompleteTaskDirective`,
         |
         | Alexa.Presentation.APL.RenderDocument: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.render_document_directive.RenderDocumentDirective`,
         |
@@ -94,9 +98,11 @@ class Directive(object):
         'Dialog.Delegate': 'ask_sdk_model.dialog.delegate_directive.DelegateDirective',
         'Hint': 'ask_sdk_model.interfaces.display.hint_directive.HintDirective',
         'Dialog.ConfirmIntent': 'ask_sdk_model.dialog.confirm_intent_directive.ConfirmIntentDirective',
+        'Connections.StartConnection': 'ask_sdk_model.interfaces.connections.v1.start_connection_directive.StartConnectionDirective',
         'GameEngine.StartInputHandler': 'ask_sdk_model.interfaces.game_engine.start_input_handler_directive.StartInputHandlerDirective',
         'VideoApp.Launch': 'ask_sdk_model.interfaces.videoapp.launch_directive.LaunchDirective',
         'GameEngine.StopInputHandler': 'ask_sdk_model.interfaces.game_engine.stop_input_handler_directive.StopInputHandlerDirective',
+        'Tasks.CompleteTask': 'ask_sdk_model.interfaces.tasks.complete_task_directive.CompleteTaskDirective',
         'Alexa.Presentation.APL.RenderDocument': 'ask_sdk_model.interfaces.alexa.presentation.apl.render_document_directive.RenderDocumentDirective',
         'Connections.SendResponse': 'ask_sdk_model.interfaces.connections.send_response_directive.SendResponseDirective',
         'Dialog.ElicitSlot': 'ask_sdk_model.dialog.elicit_slot_directive.ElicitSlotDirective',

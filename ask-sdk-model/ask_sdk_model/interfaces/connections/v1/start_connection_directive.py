@@ -18,64 +18,59 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
-from ask_sdk_model.request import Request
+from ask_sdk_model.directive import Directive
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_sdk_model.task import Task
 
 
-class LaunchRequest(Request):
+class StartConnectionDirective(Directive):
     """
-    Represents that a user made a request to an Alexa skill, but did not provide a specific intent.
+    This is the directive that a skill can send as part of their response to a session based request to start a connection. A response will be returned to the skill when the connection is handled.
 
 
-    :param request_id: Represents the unique identifier for the specific request.
-    :type request_id: (optional) str
-    :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
-    :type timestamp: (optional) datetime
-    :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
-    :type locale: (optional) str
-    :param task: 
-    :type task: (optional) ask_sdk_model.task.Task
+    :param uri: This defines the name and version of connection that the requester is trying to send. The format of the uri should follow this pattern: connection://connectionName/connectionVersion. Invalid uri will cause an error which will be sent back to the requester.
+    :type uri: (optional) str
+    :param input: This is the input to the connection that the requester is trying to send. It is predefined by the handler of the connection. If the input format is incorrect, an error will be sent to to the requester.
+    :type input: (optional) dict(str, object)
+    :param token: This is an echo back string that requester will receive it when it gets resumed. It is never sent to the handler of the connection.
+    :type token: (optional) str
 
     """
     deserialized_types = {
         'object_type': 'str',
-        'request_id': 'str',
-        'timestamp': 'datetime',
-        'locale': 'str',
-        'task': 'ask_sdk_model.task.Task'
+        'uri': 'str',
+        'input': 'dict(str, object)',
+        'token': 'str'
     }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
-        'request_id': 'requestId',
-        'timestamp': 'timestamp',
-        'locale': 'locale',
-        'task': 'task'
+        'uri': 'uri',
+        'input': 'input',
+        'token': 'token'
     }  # type: Dict
 
-    def __init__(self, request_id=None, timestamp=None, locale=None, task=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[Task]) -> None
-        """Represents that a user made a request to an Alexa skill, but did not provide a specific intent.
+    def __init__(self, uri=None, input=None, token=None):
+        # type: (Optional[str], Optional[Dict[str, object]], Optional[str]) -> None
+        """This is the directive that a skill can send as part of their response to a session based request to start a connection. A response will be returned to the skill when the connection is handled.
 
-        :param request_id: Represents the unique identifier for the specific request.
-        :type request_id: (optional) str
-        :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
-        :type timestamp: (optional) datetime
-        :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
-        :type locale: (optional) str
-        :param task: 
-        :type task: (optional) ask_sdk_model.task.Task
+        :param uri: This defines the name and version of connection that the requester is trying to send. The format of the uri should follow this pattern: connection://connectionName/connectionVersion. Invalid uri will cause an error which will be sent back to the requester.
+        :type uri: (optional) str
+        :param input: This is the input to the connection that the requester is trying to send. It is predefined by the handler of the connection. If the input format is incorrect, an error will be sent to to the requester.
+        :type input: (optional) dict(str, object)
+        :param token: This is an echo back string that requester will receive it when it gets resumed. It is never sent to the handler of the connection.
+        :type token: (optional) str
         """
-        self.__discriminator_value = "LaunchRequest"  # type: str
+        self.__discriminator_value = "Connections.StartConnection"  # type: str
 
         self.object_type = self.__discriminator_value
-        super(LaunchRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
-        self.task = task
+        super(StartConnectionDirective, self).__init__(object_type=self.__discriminator_value)
+        self.uri = uri
+        self.input = input
+        self.token = token
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -120,7 +115,7 @@ class LaunchRequest(Request):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, LaunchRequest):
+        if not isinstance(other, StartConnectionDirective):
             return False
 
         return self.__dict__ == other.__dict__

@@ -18,64 +18,54 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
-from ask_sdk_model.request import Request
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_sdk_model.task import Task
 
 
-class LaunchRequest(Request):
+class Task(object):
     """
-    Represents that a user made a request to an Alexa skill, but did not provide a specific intent.
+    This object encapsulates a specific functionality.
 
 
-    :param request_id: Represents the unique identifier for the specific request.
-    :type request_id: (optional) str
-    :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
-    :type timestamp: (optional) datetime
-    :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
-    :type locale: (optional) str
-    :param task: 
-    :type task: (optional) ask_sdk_model.task.Task
+    :param name: Represents the name of the task.
+    :type name: (optional) str
+    :param version: Represents the version of the task.
+    :type version: (optional) str
+    :param input: Represents the input to handle the task.
+    :type input: (optional) object
 
     """
     deserialized_types = {
-        'object_type': 'str',
-        'request_id': 'str',
-        'timestamp': 'datetime',
-        'locale': 'str',
-        'task': 'ask_sdk_model.task.Task'
+        'name': 'str',
+        'version': 'str',
+        'input': 'object'
     }  # type: Dict
 
     attribute_map = {
-        'object_type': 'type',
-        'request_id': 'requestId',
-        'timestamp': 'timestamp',
-        'locale': 'locale',
-        'task': 'task'
+        'name': 'name',
+        'version': 'version',
+        'input': 'input'
     }  # type: Dict
 
-    def __init__(self, request_id=None, timestamp=None, locale=None, task=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[Task]) -> None
-        """Represents that a user made a request to an Alexa skill, but did not provide a specific intent.
+    def __init__(self, name=None, version=None, input=None):
+        # type: (Optional[str], Optional[str], Optional[object]) -> None
+        """This object encapsulates a specific functionality.
 
-        :param request_id: Represents the unique identifier for the specific request.
-        :type request_id: (optional) str
-        :param timestamp: Provides the date and time when Alexa sent the request as an ISO 8601 formatted string. Used to verify the request when hosting your skill as a web service.
-        :type timestamp: (optional) datetime
-        :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
-        :type locale: (optional) str
-        :param task: 
-        :type task: (optional) ask_sdk_model.task.Task
+        :param name: Represents the name of the task.
+        :type name: (optional) str
+        :param version: Represents the version of the task.
+        :type version: (optional) str
+        :param input: Represents the input to handle the task.
+        :type input: (optional) object
         """
-        self.__discriminator_value = "LaunchRequest"  # type: str
+        self.__discriminator_value = None  # type: str
 
-        self.object_type = self.__discriminator_value
-        super(LaunchRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
-        self.task = task
+        self.name = name
+        self.version = version
+        self.input = input
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -120,7 +110,7 @@ class LaunchRequest(Request):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, LaunchRequest):
+        if not isinstance(other, Task):
             return False
 
         return self.__dict__ == other.__dict__

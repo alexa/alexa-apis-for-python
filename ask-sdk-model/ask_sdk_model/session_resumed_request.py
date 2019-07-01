@@ -24,12 +24,12 @@ from ask_sdk_model.request import Request
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_sdk_model.task import Task
+    from ask_sdk_model.cause import Cause
 
 
-class LaunchRequest(Request):
+class SessionResumedRequest(Request):
     """
-    Represents that a user made a request to an Alexa skill, but did not provide a specific intent.
+    The request to resume a skill&#39;s session and tells the skill why it is resumed.
 
 
     :param request_id: Represents the unique identifier for the specific request.
@@ -38,8 +38,8 @@ class LaunchRequest(Request):
     :type timestamp: (optional) datetime
     :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
     :type locale: (optional) str
-    :param task: 
-    :type task: (optional) ask_sdk_model.task.Task
+    :param cause: 
+    :type cause: (optional) ask_sdk_model.cause.Cause
 
     """
     deserialized_types = {
@@ -47,7 +47,7 @@ class LaunchRequest(Request):
         'request_id': 'str',
         'timestamp': 'datetime',
         'locale': 'str',
-        'task': 'ask_sdk_model.task.Task'
+        'cause': 'ask_sdk_model.cause.Cause'
     }  # type: Dict
 
     attribute_map = {
@@ -55,12 +55,12 @@ class LaunchRequest(Request):
         'request_id': 'requestId',
         'timestamp': 'timestamp',
         'locale': 'locale',
-        'task': 'task'
+        'cause': 'cause'
     }  # type: Dict
 
-    def __init__(self, request_id=None, timestamp=None, locale=None, task=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[Task]) -> None
-        """Represents that a user made a request to an Alexa skill, but did not provide a specific intent.
+    def __init__(self, request_id=None, timestamp=None, locale=None, cause=None):
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[Cause]) -> None
+        """The request to resume a skill&#39;s session and tells the skill why it is resumed.
 
         :param request_id: Represents the unique identifier for the specific request.
         :type request_id: (optional) str
@@ -68,14 +68,14 @@ class LaunchRequest(Request):
         :type timestamp: (optional) datetime
         :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
         :type locale: (optional) str
-        :param task: 
-        :type task: (optional) ask_sdk_model.task.Task
+        :param cause: 
+        :type cause: (optional) ask_sdk_model.cause.Cause
         """
-        self.__discriminator_value = "LaunchRequest"  # type: str
+        self.__discriminator_value = "SessionResumedRequest"  # type: str
 
         self.object_type = self.__discriminator_value
-        super(LaunchRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
-        self.task = task
+        super(SessionResumedRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
+        self.cause = cause
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -120,7 +120,7 @@ class LaunchRequest(Request):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, LaunchRequest):
+        if not isinstance(other, SessionResumedRequest):
             return False
 
         return self.__dict__ == other.__dict__
