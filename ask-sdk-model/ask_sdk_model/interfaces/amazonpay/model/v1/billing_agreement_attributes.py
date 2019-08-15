@@ -24,6 +24,8 @@ if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
     from ask_sdk_model.interfaces.amazonpay.model.v1.seller_billing_agreement_attributes import SellerBillingAgreementAttributes
+    from ask_sdk_model.interfaces.amazonpay.model.v1.price import Price
+    from ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_type import BillingAgreementType
 
 
 class BillingAgreementAttributes(object):
@@ -37,22 +39,30 @@ class BillingAgreementAttributes(object):
     :type seller_note: (optional) str
     :param seller_billing_agreement_attributes: 
     :type seller_billing_agreement_attributes: (optional) ask_sdk_model.interfaces.amazonpay.model.v1.seller_billing_agreement_attributes.SellerBillingAgreementAttributes
+    :param billing_agreement_type: 
+    :type billing_agreement_type: (optional) ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_type.BillingAgreementType
+    :param subscription_amount: 
+    :type subscription_amount: (optional) ask_sdk_model.interfaces.amazonpay.model.v1.price.Price
 
     """
     deserialized_types = {
         'platform_id': 'str',
         'seller_note': 'str',
-        'seller_billing_agreement_attributes': 'ask_sdk_model.interfaces.amazonpay.model.v1.seller_billing_agreement_attributes.SellerBillingAgreementAttributes'
+        'seller_billing_agreement_attributes': 'ask_sdk_model.interfaces.amazonpay.model.v1.seller_billing_agreement_attributes.SellerBillingAgreementAttributes',
+        'billing_agreement_type': 'ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_type.BillingAgreementType',
+        'subscription_amount': 'ask_sdk_model.interfaces.amazonpay.model.v1.price.Price'
     }  # type: Dict
 
     attribute_map = {
         'platform_id': 'platformId',
         'seller_note': 'sellerNote',
-        'seller_billing_agreement_attributes': 'sellerBillingAgreementAttributes'
+        'seller_billing_agreement_attributes': 'sellerBillingAgreementAttributes',
+        'billing_agreement_type': 'billingAgreementType',
+        'subscription_amount': 'subscriptionAmount'
     }  # type: Dict
 
-    def __init__(self, platform_id=None, seller_note=None, seller_billing_agreement_attributes=None):
-        # type: (Optional[str], Optional[str], Optional[SellerBillingAgreementAttributes]) -> None
+    def __init__(self, platform_id=None, seller_note=None, seller_billing_agreement_attributes=None, billing_agreement_type=None, subscription_amount=None):
+        # type: (Optional[str], Optional[str], Optional[SellerBillingAgreementAttributes], Optional[BillingAgreementType], Optional[Price]) -> None
         """The merchant can choose to set the attributes specified in the BillingAgreementAttributes.
 
         :param platform_id: Represents the SellerId of the Solution Provider that developed the eCommerce platform. This value is only used by Solution Providers, for whom it is required. It should not be provided by merchants creating their own custom integration. Do not specify the SellerId of the merchant for this request parameter. If you are a merchant, do not enter a PlatformId.
@@ -61,12 +71,18 @@ class BillingAgreementAttributes(object):
         :type seller_note: (optional) str
         :param seller_billing_agreement_attributes: 
         :type seller_billing_agreement_attributes: (optional) ask_sdk_model.interfaces.amazonpay.model.v1.seller_billing_agreement_attributes.SellerBillingAgreementAttributes
+        :param billing_agreement_type: 
+        :type billing_agreement_type: (optional) ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_type.BillingAgreementType
+        :param subscription_amount: 
+        :type subscription_amount: (optional) ask_sdk_model.interfaces.amazonpay.model.v1.price.Price
         """
         self.__discriminator_value = None  # type: str
 
         self.platform_id = platform_id
         self.seller_note = seller_note
         self.seller_billing_agreement_attributes = seller_billing_agreement_attributes
+        self.billing_agreement_type = billing_agreement_type
+        self.subscription_amount = subscription_amount
 
     def to_dict(self):
         # type: () -> Dict[str, object]

@@ -77,6 +77,8 @@ class Request(object):
         |
         | Reminders.ReminderStarted: :py:class:`ask_sdk_model.services.reminder_management.reminder_started_event_request.ReminderStartedEventRequest`,
         |
+        | CustomInterfaceController.Expired: :py:class:`ask_sdk_model.interfaces.custom_interface_controller.expired_request.ExpiredRequest`,
+        |
         | LaunchRequest: :py:class:`ask_sdk_model.launch_request.LaunchRequest`,
         |
         | Reminders.ReminderCreated: :py:class:`ask_sdk_model.services.reminder_management.reminder_created_event_request.ReminderCreatedEventRequest`,
@@ -94,6 +96,8 @@ class Request(object):
         | AudioPlayer.PlaybackStarted: :py:class:`ask_sdk_model.interfaces.audioplayer.playback_started_request.PlaybackStartedRequest`,
         |
         | AudioPlayer.PlaybackNearlyFinished: :py:class:`ask_sdk_model.interfaces.audioplayer.playback_nearly_finished_request.PlaybackNearlyFinishedRequest`,
+        |
+        | CustomInterfaceController.EventsReceived: :py:class:`ask_sdk_model.interfaces.custom_interface_controller.events_received_request.EventsReceivedRequest`,
         |
         | Reminders.ReminderStatusChanged: :py:class:`ask_sdk_model.services.reminder_management.reminder_status_changed_event_request.ReminderStatusChangedEventRequest`,
         |
@@ -153,6 +157,7 @@ class Request(object):
         'AudioPlayer.PlaybackFailed': 'ask_sdk_model.interfaces.audioplayer.playback_failed_request.PlaybackFailedRequest',
         'CanFulfillIntentRequest': 'ask_sdk_model.canfulfill.can_fulfill_intent_request.CanFulfillIntentRequest',
         'Reminders.ReminderStarted': 'ask_sdk_model.services.reminder_management.reminder_started_event_request.ReminderStartedEventRequest',
+        'CustomInterfaceController.Expired': 'ask_sdk_model.interfaces.custom_interface_controller.expired_request.ExpiredRequest',
         'LaunchRequest': 'ask_sdk_model.launch_request.LaunchRequest',
         'Reminders.ReminderCreated': 'ask_sdk_model.services.reminder_management.reminder_created_event_request.ReminderCreatedEventRequest',
         'AudioPlayer.PlaybackStopped': 'ask_sdk_model.interfaces.audioplayer.playback_stopped_request.PlaybackStoppedRequest',
@@ -162,6 +167,7 @@ class Request(object):
         'AlexaHouseholdListEvent.ListCreated': 'ask_sdk_model.services.list_management.list_created_event_request.ListCreatedEventRequest',
         'AudioPlayer.PlaybackStarted': 'ask_sdk_model.interfaces.audioplayer.playback_started_request.PlaybackStartedRequest',
         'AudioPlayer.PlaybackNearlyFinished': 'ask_sdk_model.interfaces.audioplayer.playback_nearly_finished_request.PlaybackNearlyFinishedRequest',
+        'CustomInterfaceController.EventsReceived': 'ask_sdk_model.interfaces.custom_interface_controller.events_received_request.EventsReceivedRequest',
         'Reminders.ReminderStatusChanged': 'ask_sdk_model.services.reminder_management.reminder_status_changed_event_request.ReminderStatusChangedEventRequest',
         'AlexaHouseholdListEvent.ItemsDeleted': 'ask_sdk_model.services.list_management.list_items_deleted_event_request.ListItemsDeletedEventRequest',
         'Reminders.ReminderDeleted': 'ask_sdk_model.services.reminder_management.reminder_deleted_event_request.ReminderDeletedEventRequest',

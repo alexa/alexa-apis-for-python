@@ -197,3 +197,13 @@ This release contains the following changes :
 This release contains the following changes : 
 
 -  Models for `Skill Connections <https://developer.amazon.com/docs/custom-skills/skill-connections.html>`__. With the Skill Connections feature, you can enable an Alexa skill to fulfill a customer request that it can't otherwise handle by forwarding the request to another skill for fulfillment. 
+
+
+1.14.0
+~~~~~~~
+
+This release contains the following changes : 
+
+-  Models for [Custom interfaces](https://developer.amazon.com/docs/alexa-gadgets-toolkit-preview/custom-interface.html). The custom interfaces feature enables Alexa Skill Developers to implement interactions between skills and gadgets using developer-defined directives and events.
+
+-  Added BillingAgreementType and SubscriptionAmount in BillingAgreementAttributes. This change is mandatory for skills in EU, and optional for NA and JP. With this upgrade, skill developers in EU can enjoy full benefits of the Amazon Pay solution that supports PSD2.

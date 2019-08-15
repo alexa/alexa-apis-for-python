@@ -29,3 +29,4 @@ from .provider_attributes import ProviderAttributes
 from .billing_agreement_attributes import BillingAgreementAttributes
 from .provider_credit import ProviderCredit
 from .seller_billing_agreement_attributes import SellerBillingAgreementAttributes
+from .billing_agreement_type import BillingAgreementType
