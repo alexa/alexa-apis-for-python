@@ -23,50 +23,36 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_sdk_model.permissions import Permissions
+    from ask_sdk_model.services.endpoint_enumeration.endpoint_info import EndpointInfo
 
 
-class User(object):
+class EndpointEnumerationResponse(object):
     """
-    An object that describes the Amazon account for which the skill is enabled.
+    Contains the list of endpoints.
 
 
-    :param user_id: A string that represents a unique identifier for the user who made the request. The length of this identifier can vary, but is never more than 255 characters. The userId is automatically generated when a user enables the skill in the Alexa app. Note: Disabling and re-enabling a skill generates a new identifier.
-    :type user_id: (optional) str
-    :param access_token: A token identifying the user in another system. This is only provided if the user has successfully linked their skill account with their Amazon account.
-    :type access_token: (optional) str
-    :param permissions: 
-    :type permissions: (optional) ask_sdk_model.permissions.Permissions
+    :param endpoints: The list of endpoints.
+    :type endpoints: (optional) list[ask_sdk_model.services.endpoint_enumeration.endpoint_info.EndpointInfo]
 
     """
     deserialized_types = {
-        'user_id': 'str',
-        'access_token': 'str',
-        'permissions': 'ask_sdk_model.permissions.Permissions'
+        'endpoints': 'list[ask_sdk_model.services.endpoint_enumeration.endpoint_info.EndpointInfo]'
     }  # type: Dict
 
     attribute_map = {
-        'user_id': 'userId',
-        'access_token': 'accessToken',
-        'permissions': 'permissions'
+        'endpoints': 'endpoints'
     }  # type: Dict
 
-    def __init__(self, user_id=None, access_token=None, permissions=None):
-        # type: (Optional[str], Optional[str], Optional[Permissions]) -> None
-        """An object that describes the Amazon account for which the skill is enabled.
+    def __init__(self, endpoints=None):
+        # type: (Optional[List[EndpointInfo]]) -> None
+        """Contains the list of endpoints.
 
-        :param user_id: A string that represents a unique identifier for the user who made the request. The length of this identifier can vary, but is never more than 255 characters. The userId is automatically generated when a user enables the skill in the Alexa app. Note: Disabling and re-enabling a skill generates a new identifier.
-        :type user_id: (optional) str
-        :param access_token: A token identifying the user in another system. This is only provided if the user has successfully linked their skill account with their Amazon account.
-        :type access_token: (optional) str
-        :param permissions: 
-        :type permissions: (optional) ask_sdk_model.permissions.Permissions
+        :param endpoints: The list of endpoints.
+        :type endpoints: (optional) list[ask_sdk_model.services.endpoint_enumeration.endpoint_info.EndpointInfo]
         """
         self.__discriminator_value = None  # type: str
 
-        self.user_id = user_id
-        self.access_token = access_token
-        self.permissions = permissions
+        self.endpoints = endpoints
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -111,7 +97,7 @@ class User(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, User):
+        if not isinstance(other, EndpointEnumerationResponse):
             return False
 
         return self.__dict__ == other.__dict__

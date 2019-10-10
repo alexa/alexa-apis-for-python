@@ -23,50 +23,47 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_sdk_model.permissions import Permissions
 
 
-class User(object):
+class EndpointCapability(object):
     """
-    An object that describes the Amazon account for which the skill is enabled.
 
-
-    :param user_id: A string that represents a unique identifier for the user who made the request. The length of this identifier can vary, but is never more than 255 characters. The userId is automatically generated when a user enables the skill in the Alexa app. Note: Disabling and re-enabling a skill generates a new identifier.
-    :type user_id: (optional) str
-    :param access_token: A token identifying the user in another system. This is only provided if the user has successfully linked their skill account with their Amazon account.
-    :type access_token: (optional) str
-    :param permissions: 
-    :type permissions: (optional) ask_sdk_model.permissions.Permissions
+    :param interface: The name of the capability interface.
+    :type interface: (optional) str
+    :param object_type: The type of capability interface. This is usually AlexaInterface.
+    :type object_type: (optional) str
+    :param version: The version of the capability interface that the endpoint supports.
+    :type version: (optional) str
 
     """
     deserialized_types = {
-        'user_id': 'str',
-        'access_token': 'str',
-        'permissions': 'ask_sdk_model.permissions.Permissions'
+        'interface': 'str',
+        'object_type': 'str',
+        'version': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'user_id': 'userId',
-        'access_token': 'accessToken',
-        'permissions': 'permissions'
+        'interface': 'interface',
+        'object_type': 'type',
+        'version': 'version'
     }  # type: Dict
 
-    def __init__(self, user_id=None, access_token=None, permissions=None):
-        # type: (Optional[str], Optional[str], Optional[Permissions]) -> None
-        """An object that describes the Amazon account for which the skill is enabled.
+    def __init__(self, interface=None, object_type=None, version=None):
+        # type: (Optional[str], Optional[str], Optional[str]) -> None
+        """
 
-        :param user_id: A string that represents a unique identifier for the user who made the request. The length of this identifier can vary, but is never more than 255 characters. The userId is automatically generated when a user enables the skill in the Alexa app. Note: Disabling and re-enabling a skill generates a new identifier.
-        :type user_id: (optional) str
-        :param access_token: A token identifying the user in another system. This is only provided if the user has successfully linked their skill account with their Amazon account.
-        :type access_token: (optional) str
-        :param permissions: 
-        :type permissions: (optional) ask_sdk_model.permissions.Permissions
+        :param interface: The name of the capability interface.
+        :type interface: (optional) str
+        :param object_type: The type of capability interface. This is usually AlexaInterface.
+        :type object_type: (optional) str
+        :param version: The version of the capability interface that the endpoint supports.
+        :type version: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
-        self.user_id = user_id
-        self.access_token = access_token
-        self.permissions = permissions
+        self.interface = interface
+        self.object_type = object_type
+        self.version = version
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -111,7 +108,7 @@ class User(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, User):
+        if not isinstance(other, EndpointCapability):
             return False
 
         return self.__dict__ == other.__dict__

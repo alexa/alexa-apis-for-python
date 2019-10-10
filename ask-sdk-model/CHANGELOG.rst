@@ -207,3 +207,12 @@ This release contains the following changes :
 -  Models for [Custom interfaces](https://developer.amazon.com/docs/alexa-gadgets-toolkit-preview/custom-interface.html). The custom interfaces feature enables Alexa Skill Developers to implement interactions between skills and gadgets using developer-defined directives and events.
 
 -  Added BillingAgreementType and SubscriptionAmount in BillingAgreementAttributes. This change is mandatory for skills in EU, and optional for NA and JP. With this upgrade, skill developers in EU can enjoy full benefits of the Amazon Pay solution that supports PSD2.
+
+
+1.15.0
+~~~~~~~
+
+This release contains the following changes : 
+- A new `mode property <https://developer.amazon.com/docs/alexa-presentation-language/apl-viewport-property.html#viewport_mode_property>`__ in APL viewports
+- The `gadget endpoint enumeration service <https://developer.amazon.com/es/docs/alexa-gadgets-toolkit/send-gadget-custom-directive-from-skill.html#call-endpoint-enumeration-api>`__
+- Fixing a bug in base service client that leads to exceptions for a HTTP 204 response.

@@ -23,50 +23,50 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_sdk_model.permissions import Permissions
+    from ask_sdk_model.services.endpoint_enumeration.endpoint_capability import EndpointCapability
 
 
-class User(object):
+class EndpointInfo(object):
     """
-    An object that describes the Amazon account for which the skill is enabled.
+    Contains the list of connected endpoints and their declared capabilities.
 
 
-    :param user_id: A string that represents a unique identifier for the user who made the request. The length of this identifier can vary, but is never more than 255 characters. The userId is automatically generated when a user enables the skill in the Alexa app. Note: Disabling and re-enabling a skill generates a new identifier.
-    :type user_id: (optional) str
-    :param access_token: A token identifying the user in another system. This is only provided if the user has successfully linked their skill account with their Amazon account.
-    :type access_token: (optional) str
-    :param permissions: 
-    :type permissions: (optional) ask_sdk_model.permissions.Permissions
+    :param endpoint_id: A unique identifier for the endpoint.
+    :type endpoint_id: (optional) str
+    :param friendly_name: The name of the endpoint. Because this name might be changed by the user or the platform, it might be different than the Bluetooth friendly name.
+    :type friendly_name: (optional) str
+    :param capabilities: The list of endpoint capabilities.
+    :type capabilities: (optional) list[ask_sdk_model.services.endpoint_enumeration.endpoint_capability.EndpointCapability]
 
     """
     deserialized_types = {
-        'user_id': 'str',
-        'access_token': 'str',
-        'permissions': 'ask_sdk_model.permissions.Permissions'
+        'endpoint_id': 'str',
+        'friendly_name': 'str',
+        'capabilities': 'list[ask_sdk_model.services.endpoint_enumeration.endpoint_capability.EndpointCapability]'
     }  # type: Dict
 
     attribute_map = {
-        'user_id': 'userId',
-        'access_token': 'accessToken',
-        'permissions': 'permissions'
+        'endpoint_id': 'endpointId',
+        'friendly_name': 'friendlyName',
+        'capabilities': 'capabilities'
     }  # type: Dict
 
-    def __init__(self, user_id=None, access_token=None, permissions=None):
-        # type: (Optional[str], Optional[str], Optional[Permissions]) -> None
-        """An object that describes the Amazon account for which the skill is enabled.
+    def __init__(self, endpoint_id=None, friendly_name=None, capabilities=None):
+        # type: (Optional[str], Optional[str], Optional[List[EndpointCapability]]) -> None
+        """Contains the list of connected endpoints and their declared capabilities.
 
-        :param user_id: A string that represents a unique identifier for the user who made the request. The length of this identifier can vary, but is never more than 255 characters. The userId is automatically generated when a user enables the skill in the Alexa app. Note: Disabling and re-enabling a skill generates a new identifier.
-        :type user_id: (optional) str
-        :param access_token: A token identifying the user in another system. This is only provided if the user has successfully linked their skill account with their Amazon account.
-        :type access_token: (optional) str
-        :param permissions: 
-        :type permissions: (optional) ask_sdk_model.permissions.Permissions
+        :param endpoint_id: A unique identifier for the endpoint.
+        :type endpoint_id: (optional) str
+        :param friendly_name: The name of the endpoint. Because this name might be changed by the user or the platform, it might be different than the Bluetooth friendly name.
+        :type friendly_name: (optional) str
+        :param capabilities: The list of endpoint capabilities.
+        :type capabilities: (optional) list[ask_sdk_model.services.endpoint_enumeration.endpoint_capability.EndpointCapability]
         """
         self.__discriminator_value = None  # type: str
 
-        self.user_id = user_id
-        self.access_token = access_token
-        self.permissions = permissions
+        self.endpoint_id = endpoint_id
+        self.friendly_name = friendly_name
+        self.capabilities = capabilities
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -111,7 +111,7 @@ class User(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, User):
+        if not isinstance(other, EndpointInfo):
             return False
 
         return self.__dict__ == other.__dict__

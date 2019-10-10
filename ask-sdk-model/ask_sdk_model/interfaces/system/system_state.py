@@ -37,9 +37,9 @@ class SystemState(object):
     :type user: (optional) ask_sdk_model.user.User
     :param device: 
     :type device: (optional) ask_sdk_model.device.Device
-    :param api_endpoint: 
+    :param api_endpoint: A string that references the correct base URI to refer to by region, for use with APIs such as the Device Location API and Progressive Response API.
     :type api_endpoint: (optional) str
-    :param api_access_token: 
+    :param api_access_token: A bearer token string that can be used by the skill (during the skill session) to access Alexa APIs resources of the registered Alexa customer and/or person who is making the request. This token encapsulates the permissions authorized under the registered Alexa account and device, and (optionally) the recognized person. Some resources, such as name or email, require explicit customer consent.\&quot; 
     :type api_access_token: (optional) str
 
     """
@@ -69,9 +69,9 @@ class SystemState(object):
         :type user: (optional) ask_sdk_model.user.User
         :param device: 
         :type device: (optional) ask_sdk_model.device.Device
-        :param api_endpoint: 
+        :param api_endpoint: A string that references the correct base URI to refer to by region, for use with APIs such as the Device Location API and Progressive Response API.
         :type api_endpoint: (optional) str
-        :param api_access_token: 
+        :param api_access_token: A bearer token string that can be used by the skill (during the skill session) to access Alexa APIs resources of the registered Alexa customer and/or person who is making the request. This token encapsulates the permissions authorized under the registered Alexa account and device, and (optionally) the recognized person. Some resources, such as name or email, require explicit customer consent.\&quot; 
         :type api_access_token: (optional) str
         """
         self.__discriminator_value = None  # type: str

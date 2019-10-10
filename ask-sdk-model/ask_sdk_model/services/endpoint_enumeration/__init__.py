@@ -14,10 +14,8 @@
 #
 from __future__ import absolute_import
 
-from .touch import Touch
-from .shape import Shape
-from .mode import Mode
-from .keyboard import Keyboard
-from .viewport_state_video import Video
-from .viewport_state import ViewportState
-from .experience import Experience
+from .error import Error
+from .endpoint_capability import EndpointCapability
+from .endpoint_enumeration_response import EndpointEnumerationResponse
+from .endpoint_info import EndpointInfo
+from .endpoint_enumeration_service_client import EndpointEnumerationServiceClient

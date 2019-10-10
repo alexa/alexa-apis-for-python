@@ -108,6 +108,12 @@ class BaseServiceClient(object):
         if BaseServiceClient.__is_code_successful(response.status_code):
             if response_type is None:
                 return None
+
+            # Body of HTTP 204 (No Content) response should be empty
+            # Return None immediately, since body is not a valid json value to be deserialized
+            if response.status_code == 204 and not response.body:
+                return None
+            
             return self._serializer.deserialize(response.body, response_type)
 
         if response_definitions:

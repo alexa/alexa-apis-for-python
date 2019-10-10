@@ -28,6 +28,7 @@ if typing.TYPE_CHECKING:
     from ask_sdk_model.interfaces.viewport.keyboard import Keyboard
     from ask_sdk_model.interfaces.viewport.shape import Shape
     from ask_sdk_model.interfaces.viewport.viewport_state_video import Video
+    from ask_sdk_model.interfaces.viewport.mode import Mode
 
 
 class ViewportState(object):
@@ -37,6 +38,8 @@ class ViewportState(object):
 
     :param experiences: The experiences supported by the device, in descending order of arcMinuteWidth and arcMinuteHeight.
     :type experiences: (optional) list[ask_sdk_model.interfaces.viewport.experience.Experience]
+    :param mode: 
+    :type mode: (optional) ask_sdk_model.interfaces.viewport.mode.Mode
     :param shape: 
     :type shape: (optional) ask_sdk_model.interfaces.viewport.shape.Shape
     :param pixel_width: The number of pixels present in the viewport at its maximum width.
@@ -59,6 +62,7 @@ class ViewportState(object):
     """
     deserialized_types = {
         'experiences': 'list[ask_sdk_model.interfaces.viewport.experience.Experience]',
+        'mode': 'ask_sdk_model.interfaces.viewport.mode.Mode',
         'shape': 'ask_sdk_model.interfaces.viewport.shape.Shape',
         'pixel_width': 'float',
         'pixel_height': 'float',
@@ -72,6 +76,7 @@ class ViewportState(object):
 
     attribute_map = {
         'experiences': 'experiences',
+        'mode': 'mode',
         'shape': 'shape',
         'pixel_width': 'pixelWidth',
         'pixel_height': 'pixelHeight',
@@ -83,12 +88,14 @@ class ViewportState(object):
         'video': 'video'
     }  # type: Dict
 
-    def __init__(self, experiences=None, shape=None, pixel_width=None, pixel_height=None, dpi=None, current_pixel_width=None, current_pixel_height=None, touch=None, keyboard=None, video=None):
-        # type: (Optional[List[Experience]], Optional[Shape], Optional[float], Optional[float], Optional[float], Optional[float], Optional[float], Optional[List[Touch]], Optional[List[Keyboard]], Optional[Video]) -> None
+    def __init__(self, experiences=None, mode=None, shape=None, pixel_width=None, pixel_height=None, dpi=None, current_pixel_width=None, current_pixel_height=None, touch=None, keyboard=None, video=None):
+        # type: (Optional[List[Experience]], Optional[Mode], Optional[Shape], Optional[float], Optional[float], Optional[float], Optional[float], Optional[float], Optional[List[Touch]], Optional[List[Keyboard]], Optional[Video]) -> None
         """This object contains the characteristics related to the device&#39;s viewport.
 
         :param experiences: The experiences supported by the device, in descending order of arcMinuteWidth and arcMinuteHeight.
         :type experiences: (optional) list[ask_sdk_model.interfaces.viewport.experience.Experience]
+        :param mode: 
+        :type mode: (optional) ask_sdk_model.interfaces.viewport.mode.Mode
         :param shape: 
         :type shape: (optional) ask_sdk_model.interfaces.viewport.shape.Shape
         :param pixel_width: The number of pixels present in the viewport at its maximum width.
@@ -111,6 +118,7 @@ class ViewportState(object):
         self.__discriminator_value = None  # type: str
 
         self.experiences = experiences
+        self.mode = mode
         self.shape = shape
         self.pixel_width = pixel_width
         self.pixel_height = pixel_height

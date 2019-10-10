@@ -20,6 +20,7 @@ import six
 import typing
 from .device_address import DeviceAddressServiceClient
 from .directive import DirectiveServiceClient
+from .endpoint_enumeration import EndpointEnumerationServiceClient
 from .list_management import ListManagementServiceClient
 from .monetization import MonetizationServiceClient
 from .proactive_events import ProactiveEventsServiceClient
@@ -68,6 +69,20 @@ class ServiceClientFactory(object):
         except Exception as e:
             raise ValueError(
                 "ServiceClientFactory Error while initializing DirectiveServiceClient: " + str(e))
+
+    def get_endpoint_enumeration_service(self):
+        # type: () -> EndpointEnumerationServiceClient
+        """Get EndpointEnumerationServiceClient for endpoint_enumeration_service.
+
+        :return: Client for calling the service
+        :rtype: EndpointEnumerationServiceClient
+        :raises: :py:class:`ValueError`
+        """
+        try:
+            return EndpointEnumerationServiceClient(self.api_configuration)
+        except Exception as e:
+            raise ValueError(
+                "ServiceClientFactory Error while initializing EndpointEnumerationServiceClient: " + str(e))
 
     def get_list_management_service(self):
         # type: () -> ListManagementServiceClient
