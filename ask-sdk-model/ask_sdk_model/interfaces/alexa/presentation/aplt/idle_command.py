@@ -18,7 +18,7 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
-from abc import ABCMeta, abstractmethod
+from ask_sdk_model.interfaces.alexa.presentation.aplt.command import Command
 
 
 if typing.TYPE_CHECKING:
@@ -26,62 +26,54 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class Recognizer(object):
+class IdleCommand(Command):
     """
-    Recognizers are conditions that, at any moment, are either true or false, based on all the raw button events that the Input Handler has received in the time elapsed since the Input Handler session started.
+    The idle command does nothing. It may be a placeholder or used to insert a calculated delay in a longer series of commands.
 
 
-    :param object_type: 
-    :type object_type: (optional) str
-
-    .. note::
-
-        This is an abstract class. Use the following mapping, to figure out
-        the model class to be instantiated, that sets ``type`` variable.
-
-        | match: :py:class:`ask_sdk_model.services.game_engine.pattern_recognizer.PatternRecognizer`,
-        |
-        | deviation: :py:class:`ask_sdk_model.services.game_engine.deviation_recognizer.DeviationRecognizer`,
-        |
-        | progress: :py:class:`ask_sdk_model.services.game_engine.progress_recognizer.ProgressRecognizer`
+    :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
+    :type delay: (optional) int
+    :param description: A user-provided description of this command.
+    :type description: (optional) str
+    :param screen_lock: If true, disable the Interaction Timer.
+    :type screen_lock: (optional) bool
+    :param when: A conditional expression to be evaluated in device. If false, the execution of the command is skipped. Defaults to true.
+    :type when: (optional) bool
 
     """
     deserialized_types = {
-        'object_type': 'str'
+        'object_type': 'str',
+        'delay': 'int',
+        'description': 'str',
+        'screen_lock': 'bool',
+        'when': 'bool'
     }  # type: Dict
 
     attribute_map = {
-        'object_type': 'type'
+        'object_type': 'type',
+        'delay': 'delay',
+        'description': 'description',
+        'screen_lock': 'screenLock',
+        'when': 'when'
     }  # type: Dict
 
-    discriminator_value_class_map = {
-        'match': 'ask_sdk_model.services.game_engine.pattern_recognizer.PatternRecognizer',
-        'deviation': 'ask_sdk_model.services.game_engine.deviation_recognizer.DeviationRecognizer',
-        'progress': 'ask_sdk_model.services.game_engine.progress_recognizer.ProgressRecognizer'
-    }
+    def __init__(self, delay=None, description=None, screen_lock=None, when=None):
+        # type: (Optional[int], Optional[str], Optional[bool], Union[bool, str, None]) -> None
+        """The idle command does nothing. It may be a placeholder or used to insert a calculated delay in a longer series of commands.
 
-    json_discriminator_key = "type"
-
-    __metaclass__ = ABCMeta
-
-    @abstractmethod
-    def __init__(self, object_type=None):
-        # type: (Optional[str]) -> None
-        """Recognizers are conditions that, at any moment, are either true or false, based on all the raw button events that the Input Handler has received in the time elapsed since the Input Handler session started.
-
-        :param object_type: 
-        :type object_type: (optional) str
+        :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
+        :type delay: (optional) int
+        :param description: A user-provided description of this command.
+        :type description: (optional) str
+        :param screen_lock: If true, disable the Interaction Timer.
+        :type screen_lock: (optional) bool
+        :param when: A conditional expression to be evaluated in device. If false, the execution of the command is skipped. Defaults to true.
+        :type when: (optional) bool
         """
-        self.__discriminator_value = None  # type: str
+        self.__discriminator_value = "Idle"  # type: str
 
-        self.object_type = object_type
-
-    @classmethod
-    def get_real_child_model(cls, data):
-        # type: (Dict[str, str]) -> Optional[str]
-        """Returns the real base class specified by the discriminator"""
-        discriminator_value = data[cls.json_discriminator_key]
-        return cls.discriminator_value_class_map.get(discriminator_value)
+        self.object_type = self.__discriminator_value
+        super(IdleCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, screen_lock=screen_lock, when=when)
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -126,7 +118,7 @@ class Recognizer(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Recognizer):
+        if not isinstance(other, IdleCommand):
             return False
 
         return self.__dict__ == other.__dict__

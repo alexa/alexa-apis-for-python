@@ -37,7 +37,9 @@ class Command(object):
     :type delay: (optional) int
     :param description: A user-provided description of this command.
     :type description: (optional) str
-    :param when: If false, the execution of the command is skipped. Defaults to true.
+    :param screen_lock: If true, disable the Interaction Timer.
+    :type screen_lock: (optional) bool
+    :param when: A conditional expression to be evaluated in device. If false, the execution of the command is skipped. Defaults to true.
     :type when: (optional) bool
 
     .. note::
@@ -45,47 +47,28 @@ class Command(object):
         This is an abstract class. Use the following mapping, to figure out
         the model class to be instantiated, that sets ``type`` variable.
 
-        | SetPage: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.set_page_command.SetPageCommand`,
+        | SetValue: :py:class:`ask_sdk_model.interfaces.alexa.presentation.aplt.set_value_command.SetValueCommand`,
         |
-        | ControlMedia: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.control_media_command.ControlMediaCommand`,
+        | Idle: :py:class:`ask_sdk_model.interfaces.alexa.presentation.aplt.idle_command.IdleCommand`,
         |
-        | AutoPage: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.auto_page_command.AutoPageCommand`,
+        | AutoPage: :py:class:`ask_sdk_model.interfaces.alexa.presentation.aplt.auto_page_command.AutoPageCommand`,
         |
-        | PlayMedia: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.play_media_command.PlayMediaCommand`,
+        | Scroll: :py:class:`ask_sdk_model.interfaces.alexa.presentation.aplt.scroll_command.ScrollCommand`,
         |
-        | Scroll: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.scroll_command.ScrollCommand`,
+        | SendEvent: :py:class:`ask_sdk_model.interfaces.alexa.presentation.aplt.send_event_command.SendEventCommand`,
         |
-        | Idle: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.idle_command.IdleCommand`,
+        | Parallel: :py:class:`ask_sdk_model.interfaces.alexa.presentation.aplt.parallel_command.ParallelCommand`,
         |
-        | AnimateItem: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.animate_item_command.AnimateItemCommand`,
+        | SetPage: :py:class:`ask_sdk_model.interfaces.alexa.presentation.aplt.set_page_command.SetPageCommand`,
         |
-        | SendEvent: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.send_event_command.SendEventCommand`,
-        |
-        | SpeakList: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.speak_list_command.SpeakListCommand`,
-        |
-        | Sequential: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.sequential_command.SequentialCommand`,
-        |
-        | SetState: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.set_state_command.SetStateCommand`,
-        |
-        | SpeakItem: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.speak_item_command.SpeakItemCommand`,
-        |
-        | Parallel: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.parallel_command.ParallelCommand`,
-        |
-        | OpenURL: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.open_url_command.OpenUrlCommand`,
-        |
-        | ClearFocus: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.clear_focus_command.ClearFocusCommand`,
-        |
-        | ScrollToIndex: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.scroll_to_index_command.ScrollToIndexCommand`,
-        |
-        | SetValue: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.set_value_command.SetValueCommand`,
-        |
-        | SetFocus: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.set_focus_command.SetFocusCommand`
+        | Sequential: :py:class:`ask_sdk_model.interfaces.alexa.presentation.aplt.sequential_command.SequentialCommand`
 
     """
     deserialized_types = {
         'object_type': 'str',
         'delay': 'int',
         'description': 'str',
+        'screen_lock': 'bool',
         'when': 'bool'
     }  # type: Dict
 
@@ -93,28 +76,19 @@ class Command(object):
         'object_type': 'type',
         'delay': 'delay',
         'description': 'description',
+        'screen_lock': 'screenLock',
         'when': 'when'
     }  # type: Dict
 
     discriminator_value_class_map = {
-        'SetPage': 'ask_sdk_model.interfaces.alexa.presentation.apl.set_page_command.SetPageCommand',
-        'ControlMedia': 'ask_sdk_model.interfaces.alexa.presentation.apl.control_media_command.ControlMediaCommand',
-        'AutoPage': 'ask_sdk_model.interfaces.alexa.presentation.apl.auto_page_command.AutoPageCommand',
-        'PlayMedia': 'ask_sdk_model.interfaces.alexa.presentation.apl.play_media_command.PlayMediaCommand',
-        'Scroll': 'ask_sdk_model.interfaces.alexa.presentation.apl.scroll_command.ScrollCommand',
-        'Idle': 'ask_sdk_model.interfaces.alexa.presentation.apl.idle_command.IdleCommand',
-        'AnimateItem': 'ask_sdk_model.interfaces.alexa.presentation.apl.animate_item_command.AnimateItemCommand',
-        'SendEvent': 'ask_sdk_model.interfaces.alexa.presentation.apl.send_event_command.SendEventCommand',
-        'SpeakList': 'ask_sdk_model.interfaces.alexa.presentation.apl.speak_list_command.SpeakListCommand',
-        'Sequential': 'ask_sdk_model.interfaces.alexa.presentation.apl.sequential_command.SequentialCommand',
-        'SetState': 'ask_sdk_model.interfaces.alexa.presentation.apl.set_state_command.SetStateCommand',
-        'SpeakItem': 'ask_sdk_model.interfaces.alexa.presentation.apl.speak_item_command.SpeakItemCommand',
-        'Parallel': 'ask_sdk_model.interfaces.alexa.presentation.apl.parallel_command.ParallelCommand',
-        'OpenURL': 'ask_sdk_model.interfaces.alexa.presentation.apl.open_url_command.OpenUrlCommand',
-        'ClearFocus': 'ask_sdk_model.interfaces.alexa.presentation.apl.clear_focus_command.ClearFocusCommand',
-        'ScrollToIndex': 'ask_sdk_model.interfaces.alexa.presentation.apl.scroll_to_index_command.ScrollToIndexCommand',
-        'SetValue': 'ask_sdk_model.interfaces.alexa.presentation.apl.set_value_command.SetValueCommand',
-        'SetFocus': 'ask_sdk_model.interfaces.alexa.presentation.apl.set_focus_command.SetFocusCommand'
+        'SetValue': 'ask_sdk_model.interfaces.alexa.presentation.aplt.set_value_command.SetValueCommand',
+        'Idle': 'ask_sdk_model.interfaces.alexa.presentation.aplt.idle_command.IdleCommand',
+        'AutoPage': 'ask_sdk_model.interfaces.alexa.presentation.aplt.auto_page_command.AutoPageCommand',
+        'Scroll': 'ask_sdk_model.interfaces.alexa.presentation.aplt.scroll_command.ScrollCommand',
+        'SendEvent': 'ask_sdk_model.interfaces.alexa.presentation.aplt.send_event_command.SendEventCommand',
+        'Parallel': 'ask_sdk_model.interfaces.alexa.presentation.aplt.parallel_command.ParallelCommand',
+        'SetPage': 'ask_sdk_model.interfaces.alexa.presentation.aplt.set_page_command.SetPageCommand',
+        'Sequential': 'ask_sdk_model.interfaces.alexa.presentation.aplt.sequential_command.SequentialCommand'
     }
 
     json_discriminator_key = "type"
@@ -122,8 +96,8 @@ class Command(object):
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def __init__(self, object_type=None, delay=None, description=None, when=None):
-        # type: (Optional[str], Union[int, str, None], Optional[str], Optional[bool]) -> None
+    def __init__(self, object_type=None, delay=None, description=None, screen_lock=None, when=None):
+        # type: (Optional[str], Optional[int], Optional[str], Optional[bool], Union[bool, str, None]) -> None
         """A message that can change the visual or audio presentation of the content on the screen.
 
         :param object_type: Defines the command type and dictates which properties must/can be included.
@@ -132,7 +106,9 @@ class Command(object):
         :type delay: (optional) int
         :param description: A user-provided description of this command.
         :type description: (optional) str
-        :param when: If false, the execution of the command is skipped. Defaults to true.
+        :param screen_lock: If true, disable the Interaction Timer.
+        :type screen_lock: (optional) bool
+        :param when: A conditional expression to be evaluated in device. If false, the execution of the command is skipped. Defaults to true.
         :type when: (optional) bool
         """
         self.__discriminator_value = None  # type: str
@@ -140,6 +116,7 @@ class Command(object):
         self.object_type = object_type
         self.delay = delay
         self.description = description
+        self.screen_lock = screen_lock
         self.when = when
 
     @classmethod

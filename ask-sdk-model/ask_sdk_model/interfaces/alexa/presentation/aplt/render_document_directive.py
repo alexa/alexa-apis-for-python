@@ -18,70 +18,65 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
-from abc import ABCMeta, abstractmethod
+from ask_sdk_model.directive import Directive
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
+    from ask_sdk_model.interfaces.alexa.presentation.aplt.target_profile import TargetProfile
 
 
-class Recognizer(object):
+class RenderDocumentDirective(Directive):
     """
-    Recognizers are conditions that, at any moment, are either true or false, based on all the raw button events that the Input Handler has received in the time elapsed since the Input Handler session started.
 
-
-    :param object_type: 
-    :type object_type: (optional) str
-
-    .. note::
-
-        This is an abstract class. Use the following mapping, to figure out
-        the model class to be instantiated, that sets ``type`` variable.
-
-        | match: :py:class:`ask_sdk_model.services.game_engine.pattern_recognizer.PatternRecognizer`,
-        |
-        | deviation: :py:class:`ask_sdk_model.services.game_engine.deviation_recognizer.DeviationRecognizer`,
-        |
-        | progress: :py:class:`ask_sdk_model.services.game_engine.progress_recognizer.ProgressRecognizer`
+    :param token: A unique identifier for the presentation.
+    :type token: (optional) str
+    :param target_profile: One of supported profiles in character display. Default value is NONE.
+    :type target_profile: (optional) ask_sdk_model.interfaces.alexa.presentation.aplt.target_profile.TargetProfile
+    :param document: The APL document that the devices need to render a presentation.
+    :type document: (optional) dict(str, object)
+    :param datasources: Data sources to bind to the document when rendering.
+    :type datasources: (optional) dict(str, object)
 
     """
     deserialized_types = {
-        'object_type': 'str'
+        'object_type': 'str',
+        'token': 'str',
+        'target_profile': 'ask_sdk_model.interfaces.alexa.presentation.aplt.target_profile.TargetProfile',
+        'document': 'dict(str, object)',
+        'datasources': 'dict(str, object)'
     }  # type: Dict
 
     attribute_map = {
-        'object_type': 'type'
+        'object_type': 'type',
+        'token': 'token',
+        'target_profile': 'targetProfile',
+        'document': 'document',
+        'datasources': 'datasources'
     }  # type: Dict
 
-    discriminator_value_class_map = {
-        'match': 'ask_sdk_model.services.game_engine.pattern_recognizer.PatternRecognizer',
-        'deviation': 'ask_sdk_model.services.game_engine.deviation_recognizer.DeviationRecognizer',
-        'progress': 'ask_sdk_model.services.game_engine.progress_recognizer.ProgressRecognizer'
-    }
-
-    json_discriminator_key = "type"
-
-    __metaclass__ = ABCMeta
-
-    @abstractmethod
-    def __init__(self, object_type=None):
-        # type: (Optional[str]) -> None
-        """Recognizers are conditions that, at any moment, are either true or false, based on all the raw button events that the Input Handler has received in the time elapsed since the Input Handler session started.
-
-        :param object_type: 
-        :type object_type: (optional) str
+    def __init__(self, token=None, target_profile=None, document=None, datasources=None):
+        # type: (Optional[str], Optional[TargetProfile], Optional[Dict[str, object]], Optional[Dict[str, object]]) -> None
         """
-        self.__discriminator_value = None  # type: str
 
-        self.object_type = object_type
+        :param token: A unique identifier for the presentation.
+        :type token: (optional) str
+        :param target_profile: One of supported profiles in character display. Default value is NONE.
+        :type target_profile: (optional) ask_sdk_model.interfaces.alexa.presentation.aplt.target_profile.TargetProfile
+        :param document: The APL document that the devices need to render a presentation.
+        :type document: (optional) dict(str, object)
+        :param datasources: Data sources to bind to the document when rendering.
+        :type datasources: (optional) dict(str, object)
+        """
+        self.__discriminator_value = "Alexa.Presentation.APLT.RenderDocument"  # type: str
 
-    @classmethod
-    def get_real_child_model(cls, data):
-        # type: (Dict[str, str]) -> Optional[str]
-        """Returns the real base class specified by the discriminator"""
-        discriminator_value = data[cls.json_discriminator_key]
-        return cls.discriminator_value_class_map.get(discriminator_value)
+        self.object_type = self.__discriminator_value
+        super(RenderDocumentDirective, self).__init__(object_type=self.__discriminator_value)
+        self.token = token
+        self.target_profile = target_profile
+        self.document = document
+        self.datasources = datasources
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -126,7 +121,7 @@ class Recognizer(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Recognizer):
+        if not isinstance(other, RenderDocumentDirective):
             return False
 
         return self.__dict__ == other.__dict__

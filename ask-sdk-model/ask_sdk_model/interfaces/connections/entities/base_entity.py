@@ -39,9 +39,9 @@ class BaseEntity(object):
         This is an abstract class. Use the following mapping, to figure out
         the model class to be instantiated, that sets ``@type`` variable.
 
-        | Restaurant: :py:class:`ask_sdk_model.interfaces.connections.entities.restaurant.Restaurant`,
+        | PostalAddress: :py:class:`ask_sdk_model.interfaces.connections.entities.postal_address.PostalAddress`,
         |
-        | PostalAddress: :py:class:`ask_sdk_model.interfaces.connections.entities.postal_address.PostalAddress`
+        | Restaurant: :py:class:`ask_sdk_model.interfaces.connections.entities.restaurant.Restaurant`
 
     """
     deserialized_types = {
@@ -55,8 +55,8 @@ class BaseEntity(object):
     }  # type: Dict
 
     discriminator_value_class_map = {
-        'Restaurant': 'ask_sdk_model.interfaces.connections.entities.restaurant.Restaurant',
-        'PostalAddress': 'ask_sdk_model.interfaces.connections.entities.postal_address.PostalAddress'
+        'PostalAddress': 'ask_sdk_model.interfaces.connections.entities.postal_address.PostalAddress',
+        'Restaurant': 'ask_sdk_model.interfaces.connections.entities.restaurant.Restaurant'
     }
 
     json_discriminator_key = "@type"

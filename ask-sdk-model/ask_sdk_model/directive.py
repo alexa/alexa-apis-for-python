@@ -37,15 +37,7 @@ class Directive(object):
         This is an abstract class. Use the following mapping, to figure out
         the model class to be instantiated, that sets ``type`` variable.
 
-        | AudioPlayer.Stop: :py:class:`ask_sdk_model.interfaces.audioplayer.stop_directive.StopDirective`,
-        |
         | CustomInterfaceController.StopEventHandler: :py:class:`ask_sdk_model.interfaces.custom_interface_controller.stop_event_handler_directive.StopEventHandlerDirective`,
-        |
-        | Dialog.ConfirmSlot: :py:class:`ask_sdk_model.dialog.confirm_slot_directive.ConfirmSlotDirective`,
-        |
-        | AudioPlayer.Play: :py:class:`ask_sdk_model.interfaces.audioplayer.play_directive.PlayDirective`,
-        |
-        | Alexa.Presentation.APL.ExecuteCommands: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.execute_commands_directive.ExecuteCommandsDirective`,
         |
         | Connections.SendRequest: :py:class:`ask_sdk_model.interfaces.connections.send_request_directive.SendRequestDirective`,
         |
@@ -53,23 +45,37 @@ class Directive(object):
         |
         | CustomInterfaceController.StartEventHandler: :py:class:`ask_sdk_model.interfaces.custom_interface_controller.start_event_handler_directive.StartEventHandlerDirective`,
         |
-        | Display.RenderTemplate: :py:class:`ask_sdk_model.interfaces.display.render_template_directive.RenderTemplateDirective`,
-        |
         | GadgetController.SetLight: :py:class:`ask_sdk_model.interfaces.gadget_controller.set_light_directive.SetLightDirective`,
         |
         | Dialog.Delegate: :py:class:`ask_sdk_model.dialog.delegate_directive.DelegateDirective`,
         |
-        | Hint: :py:class:`ask_sdk_model.interfaces.display.hint_directive.HintDirective`,
-        |
         | Dialog.ConfirmIntent: :py:class:`ask_sdk_model.dialog.confirm_intent_directive.ConfirmIntentDirective`,
-        |
-        | Connections.StartConnection: :py:class:`ask_sdk_model.interfaces.connections.v1.start_connection_directive.StartConnectionDirective`,
-        |
-        | GameEngine.StartInputHandler: :py:class:`ask_sdk_model.interfaces.game_engine.start_input_handler_directive.StartInputHandlerDirective`,
         |
         | CustomInterfaceController.SendDirective: :py:class:`ask_sdk_model.interfaces.custom_interface_controller.send_directive_directive.SendDirectiveDirective`,
         |
+        | Dialog.ElicitSlot: :py:class:`ask_sdk_model.dialog.elicit_slot_directive.ElicitSlotDirective`,
+        |
+        | AudioPlayer.Stop: :py:class:`ask_sdk_model.interfaces.audioplayer.stop_directive.StopDirective`,
+        |
+        | Dialog.ConfirmSlot: :py:class:`ask_sdk_model.dialog.confirm_slot_directive.ConfirmSlotDirective`,
+        |
+        | AudioPlayer.Play: :py:class:`ask_sdk_model.interfaces.audioplayer.play_directive.PlayDirective`,
+        |
+        | Alexa.Presentation.APL.ExecuteCommands: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.execute_commands_directive.ExecuteCommandsDirective`,
+        |
+        | Display.RenderTemplate: :py:class:`ask_sdk_model.interfaces.display.render_template_directive.RenderTemplateDirective`,
+        |
+        | Hint: :py:class:`ask_sdk_model.interfaces.display.hint_directive.HintDirective`,
+        |
+        | Connections.StartConnection: :py:class:`ask_sdk_model.interfaces.connections.v1.start_connection_directive.StartConnectionDirective`,
+        |
+        | Alexa.Presentation.APLT.RenderDocument: :py:class:`ask_sdk_model.interfaces.alexa.presentation.aplt.render_document_directive.RenderDocumentDirective`,
+        |
+        | GameEngine.StartInputHandler: :py:class:`ask_sdk_model.interfaces.game_engine.start_input_handler_directive.StartInputHandlerDirective`,
+        |
         | VideoApp.Launch: :py:class:`ask_sdk_model.interfaces.videoapp.launch_directive.LaunchDirective`,
+        |
+        | Alexa.Presentation.APLT.ExecuteCommands: :py:class:`ask_sdk_model.interfaces.alexa.presentation.aplt.execute_commands_directive.ExecuteCommandsDirective`,
         |
         | GameEngine.StopInputHandler: :py:class:`ask_sdk_model.interfaces.game_engine.stop_input_handler_directive.StopInputHandlerDirective`,
         |
@@ -78,8 +84,6 @@ class Directive(object):
         | Alexa.Presentation.APL.RenderDocument: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.render_document_directive.RenderDocumentDirective`,
         |
         | Connections.SendResponse: :py:class:`ask_sdk_model.interfaces.connections.send_response_directive.SendResponseDirective`,
-        |
-        | Dialog.ElicitSlot: :py:class:`ask_sdk_model.dialog.elicit_slot_directive.ElicitSlotDirective`,
         |
         | AudioPlayer.ClearQueue: :py:class:`ask_sdk_model.interfaces.audioplayer.clear_queue_directive.ClearQueueDirective`
 
@@ -93,28 +97,30 @@ class Directive(object):
     }  # type: Dict
 
     discriminator_value_class_map = {
-        'AudioPlayer.Stop': 'ask_sdk_model.interfaces.audioplayer.stop_directive.StopDirective',
         'CustomInterfaceController.StopEventHandler': 'ask_sdk_model.interfaces.custom_interface_controller.stop_event_handler_directive.StopEventHandlerDirective',
-        'Dialog.ConfirmSlot': 'ask_sdk_model.dialog.confirm_slot_directive.ConfirmSlotDirective',
-        'AudioPlayer.Play': 'ask_sdk_model.interfaces.audioplayer.play_directive.PlayDirective',
-        'Alexa.Presentation.APL.ExecuteCommands': 'ask_sdk_model.interfaces.alexa.presentation.apl.execute_commands_directive.ExecuteCommandsDirective',
         'Connections.SendRequest': 'ask_sdk_model.interfaces.connections.send_request_directive.SendRequestDirective',
         'Dialog.UpdateDynamicEntities': 'ask_sdk_model.dialog.dynamic_entities_directive.DynamicEntitiesDirective',
         'CustomInterfaceController.StartEventHandler': 'ask_sdk_model.interfaces.custom_interface_controller.start_event_handler_directive.StartEventHandlerDirective',
-        'Display.RenderTemplate': 'ask_sdk_model.interfaces.display.render_template_directive.RenderTemplateDirective',
         'GadgetController.SetLight': 'ask_sdk_model.interfaces.gadget_controller.set_light_directive.SetLightDirective',
         'Dialog.Delegate': 'ask_sdk_model.dialog.delegate_directive.DelegateDirective',
-        'Hint': 'ask_sdk_model.interfaces.display.hint_directive.HintDirective',
         'Dialog.ConfirmIntent': 'ask_sdk_model.dialog.confirm_intent_directive.ConfirmIntentDirective',
-        'Connections.StartConnection': 'ask_sdk_model.interfaces.connections.v1.start_connection_directive.StartConnectionDirective',
-        'GameEngine.StartInputHandler': 'ask_sdk_model.interfaces.game_engine.start_input_handler_directive.StartInputHandlerDirective',
         'CustomInterfaceController.SendDirective': 'ask_sdk_model.interfaces.custom_interface_controller.send_directive_directive.SendDirectiveDirective',
+        'Dialog.ElicitSlot': 'ask_sdk_model.dialog.elicit_slot_directive.ElicitSlotDirective',
+        'AudioPlayer.Stop': 'ask_sdk_model.interfaces.audioplayer.stop_directive.StopDirective',
+        'Dialog.ConfirmSlot': 'ask_sdk_model.dialog.confirm_slot_directive.ConfirmSlotDirective',
+        'AudioPlayer.Play': 'ask_sdk_model.interfaces.audioplayer.play_directive.PlayDirective',
+        'Alexa.Presentation.APL.ExecuteCommands': 'ask_sdk_model.interfaces.alexa.presentation.apl.execute_commands_directive.ExecuteCommandsDirective',
+        'Display.RenderTemplate': 'ask_sdk_model.interfaces.display.render_template_directive.RenderTemplateDirective',
+        'Hint': 'ask_sdk_model.interfaces.display.hint_directive.HintDirective',
+        'Connections.StartConnection': 'ask_sdk_model.interfaces.connections.v1.start_connection_directive.StartConnectionDirective',
+        'Alexa.Presentation.APLT.RenderDocument': 'ask_sdk_model.interfaces.alexa.presentation.aplt.render_document_directive.RenderDocumentDirective',
+        'GameEngine.StartInputHandler': 'ask_sdk_model.interfaces.game_engine.start_input_handler_directive.StartInputHandlerDirective',
         'VideoApp.Launch': 'ask_sdk_model.interfaces.videoapp.launch_directive.LaunchDirective',
+        'Alexa.Presentation.APLT.ExecuteCommands': 'ask_sdk_model.interfaces.alexa.presentation.aplt.execute_commands_directive.ExecuteCommandsDirective',
         'GameEngine.StopInputHandler': 'ask_sdk_model.interfaces.game_engine.stop_input_handler_directive.StopInputHandlerDirective',
         'Tasks.CompleteTask': 'ask_sdk_model.interfaces.tasks.complete_task_directive.CompleteTaskDirective',
         'Alexa.Presentation.APL.RenderDocument': 'ask_sdk_model.interfaces.alexa.presentation.apl.render_document_directive.RenderDocumentDirective',
         'Connections.SendResponse': 'ask_sdk_model.interfaces.connections.send_response_directive.SendResponseDirective',
-        'Dialog.ElicitSlot': 'ask_sdk_model.dialog.elicit_slot_directive.ElicitSlotDirective',
         'AudioPlayer.ClearQueue': 'ask_sdk_model.interfaces.audioplayer.clear_queue_directive.ClearQueueDirective'
     }
 

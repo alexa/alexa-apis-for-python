@@ -14,15 +14,6 @@
 #
 from __future__ import absolute_import
 
-from .presentation_type import PresentationType
-from .apl_viewport_state import APLViewportState
-from .typed_viewport_state import TypedViewportState
-from .touch import Touch
-from .shape import Shape
-from .mode import Mode
-from .keyboard import Keyboard
-from .aplt_viewport_state import APLTViewportState
-from .viewport_state_video import Video
-from .viewport_state import ViewportState
-from .experience import Experience
-from .viewport_video import ViewportVideo
+from .character_format import CharacterFormat
+from .viewport_profile import ViewportProfile
+from .inter_segment import InterSegment

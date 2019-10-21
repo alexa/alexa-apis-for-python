@@ -45,37 +45,23 @@ class Request(object):
         This is an abstract class. Use the following mapping, to figure out
         the model class to be instantiated, that sets ``type`` variable.
 
-        | AudioPlayer.PlaybackFinished: :py:class:`ask_sdk_model.interfaces.audioplayer.playback_finished_request.PlaybackFinishedRequest`,
-        |
         | AlexaSkillEvent.SkillEnabled: :py:class:`ask_sdk_model.events.skillevents.skill_enabled_request.SkillEnabledRequest`,
         |
         | AlexaHouseholdListEvent.ListUpdated: :py:class:`ask_sdk_model.services.list_management.list_updated_event_request.ListUpdatedEventRequest`,
-        |
-        | AlexaSkillEvent.ProactiveSubscriptionChanged: :py:class:`ask_sdk_model.events.skillevents.proactive_subscription_changed_request.ProactiveSubscriptionChangedRequest`,
         |
         | Alexa.Presentation.APL.UserEvent: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.user_event.UserEvent`,
         |
         | AlexaSkillEvent.SkillDisabled: :py:class:`ask_sdk_model.events.skillevents.skill_disabled_request.SkillDisabledRequest`,
         |
-        | Display.ElementSelected: :py:class:`ask_sdk_model.interfaces.display.element_selected_request.ElementSelectedRequest`,
-        |
-        | AlexaSkillEvent.SkillPermissionChanged: :py:class:`ask_sdk_model.events.skillevents.permission_changed_request.PermissionChangedRequest`,
-        |
         | AlexaHouseholdListEvent.ItemsCreated: :py:class:`ask_sdk_model.services.list_management.list_items_created_event_request.ListItemsCreatedEventRequest`,
-        |
-        | Reminders.ReminderUpdated: :py:class:`ask_sdk_model.services.reminder_management.reminder_updated_event_request.ReminderUpdatedEventRequest`,
         |
         | SessionResumedRequest: :py:class:`ask_sdk_model.session_resumed_request.SessionResumedRequest`,
         |
         | SessionEndedRequest: :py:class:`ask_sdk_model.session_ended_request.SessionEndedRequest`,
         |
-        | IntentRequest: :py:class:`ask_sdk_model.intent_request.IntentRequest`,
-        |
         | AudioPlayer.PlaybackFailed: :py:class:`ask_sdk_model.interfaces.audioplayer.playback_failed_request.PlaybackFailedRequest`,
         |
         | CanFulfillIntentRequest: :py:class:`ask_sdk_model.canfulfill.can_fulfill_intent_request.CanFulfillIntentRequest`,
-        |
-        | Reminders.ReminderStarted: :py:class:`ask_sdk_model.services.reminder_management.reminder_started_event_request.ReminderStartedEventRequest`,
         |
         | CustomInterfaceController.Expired: :py:class:`ask_sdk_model.interfaces.custom_interface_controller.expired_request.ExpiredRequest`,
         |
@@ -83,13 +69,9 @@ class Request(object):
         |
         | Reminders.ReminderCreated: :py:class:`ask_sdk_model.services.reminder_management.reminder_created_event_request.ReminderCreatedEventRequest`,
         |
-        | AudioPlayer.PlaybackStopped: :py:class:`ask_sdk_model.interfaces.audioplayer.playback_stopped_request.PlaybackStoppedRequest`,
-        |
-        | PlaybackController.PreviousCommandIssued: :py:class:`ask_sdk_model.interfaces.playbackcontroller.previous_command_issued_request.PreviousCommandIssuedRequest`,
+        | Alexa.Presentation.APLT.UserEvent: :py:class:`ask_sdk_model.interfaces.alexa.presentation.aplt.user_event.UserEvent`,
         |
         | AlexaHouseholdListEvent.ItemsUpdated: :py:class:`ask_sdk_model.services.list_management.list_items_updated_event_request.ListItemsUpdatedEventRequest`,
-        |
-        | AlexaSkillEvent.SkillAccountLinked: :py:class:`ask_sdk_model.events.skillevents.account_linked_request.AccountLinkedRequest`,
         |
         | AlexaHouseholdListEvent.ListCreated: :py:class:`ask_sdk_model.services.list_management.list_created_event_request.ListCreatedEventRequest`,
         |
@@ -107,6 +89,34 @@ class Request(object):
         |
         | Connections.Response: :py:class:`ask_sdk_model.interfaces.connections.connections_response.ConnectionsResponse`,
         |
+        | AlexaHouseholdListEvent.ListDeleted: :py:class:`ask_sdk_model.services.list_management.list_deleted_event_request.ListDeletedEventRequest`,
+        |
+        | GameEngine.InputHandlerEvent: :py:class:`ask_sdk_model.interfaces.game_engine.input_handler_event_request.InputHandlerEventRequest`,
+        |
+        | PlaybackController.PauseCommandIssued: :py:class:`ask_sdk_model.interfaces.playbackcontroller.pause_command_issued_request.PauseCommandIssuedRequest`,
+        |
+        | PlaybackController.PlayCommandIssued: :py:class:`ask_sdk_model.interfaces.playbackcontroller.play_command_issued_request.PlayCommandIssuedRequest`,
+        |
+        | AudioPlayer.PlaybackFinished: :py:class:`ask_sdk_model.interfaces.audioplayer.playback_finished_request.PlaybackFinishedRequest`,
+        |
+        | AlexaSkillEvent.ProactiveSubscriptionChanged: :py:class:`ask_sdk_model.events.skillevents.proactive_subscription_changed_request.ProactiveSubscriptionChangedRequest`,
+        |
+        | Display.ElementSelected: :py:class:`ask_sdk_model.interfaces.display.element_selected_request.ElementSelectedRequest`,
+        |
+        | AlexaSkillEvent.SkillPermissionChanged: :py:class:`ask_sdk_model.events.skillevents.permission_changed_request.PermissionChangedRequest`,
+        |
+        | Reminders.ReminderUpdated: :py:class:`ask_sdk_model.services.reminder_management.reminder_updated_event_request.ReminderUpdatedEventRequest`,
+        |
+        | IntentRequest: :py:class:`ask_sdk_model.intent_request.IntentRequest`,
+        |
+        | Reminders.ReminderStarted: :py:class:`ask_sdk_model.services.reminder_management.reminder_started_event_request.ReminderStartedEventRequest`,
+        |
+        | AudioPlayer.PlaybackStopped: :py:class:`ask_sdk_model.interfaces.audioplayer.playback_stopped_request.PlaybackStoppedRequest`,
+        |
+        | PlaybackController.PreviousCommandIssued: :py:class:`ask_sdk_model.interfaces.playbackcontroller.previous_command_issued_request.PreviousCommandIssuedRequest`,
+        |
+        | AlexaSkillEvent.SkillAccountLinked: :py:class:`ask_sdk_model.events.skillevents.account_linked_request.AccountLinkedRequest`,
+        |
         | Messaging.MessageReceived: :py:class:`ask_sdk_model.interfaces.messaging.message_received_request.MessageReceivedRequest`,
         |
         | Connections.Request: :py:class:`ask_sdk_model.interfaces.connections.connections_request.ConnectionsRequest`,
@@ -115,15 +125,7 @@ class Request(object):
         |
         | AlexaSkillEvent.SkillPermissionAccepted: :py:class:`ask_sdk_model.events.skillevents.permission_accepted_request.PermissionAcceptedRequest`,
         |
-        | AlexaHouseholdListEvent.ListDeleted: :py:class:`ask_sdk_model.services.list_management.list_deleted_event_request.ListDeletedEventRequest`,
-        |
-        | GameEngine.InputHandlerEvent: :py:class:`ask_sdk_model.interfaces.game_engine.input_handler_event_request.InputHandlerEventRequest`,
-        |
-        | PlaybackController.NextCommandIssued: :py:class:`ask_sdk_model.interfaces.playbackcontroller.next_command_issued_request.NextCommandIssuedRequest`,
-        |
-        | PlaybackController.PauseCommandIssued: :py:class:`ask_sdk_model.interfaces.playbackcontroller.pause_command_issued_request.PauseCommandIssuedRequest`,
-        |
-        | PlaybackController.PlayCommandIssued: :py:class:`ask_sdk_model.interfaces.playbackcontroller.play_command_issued_request.PlayCommandIssuedRequest`
+        | PlaybackController.NextCommandIssued: :py:class:`ask_sdk_model.interfaces.playbackcontroller.next_command_issued_request.NextCommandIssuedRequest`
 
     """
     deserialized_types = {
@@ -141,29 +143,20 @@ class Request(object):
     }  # type: Dict
 
     discriminator_value_class_map = {
-        'AudioPlayer.PlaybackFinished': 'ask_sdk_model.interfaces.audioplayer.playback_finished_request.PlaybackFinishedRequest',
         'AlexaSkillEvent.SkillEnabled': 'ask_sdk_model.events.skillevents.skill_enabled_request.SkillEnabledRequest',
         'AlexaHouseholdListEvent.ListUpdated': 'ask_sdk_model.services.list_management.list_updated_event_request.ListUpdatedEventRequest',
-        'AlexaSkillEvent.ProactiveSubscriptionChanged': 'ask_sdk_model.events.skillevents.proactive_subscription_changed_request.ProactiveSubscriptionChangedRequest',
         'Alexa.Presentation.APL.UserEvent': 'ask_sdk_model.interfaces.alexa.presentation.apl.user_event.UserEvent',
         'AlexaSkillEvent.SkillDisabled': 'ask_sdk_model.events.skillevents.skill_disabled_request.SkillDisabledRequest',
-        'Display.ElementSelected': 'ask_sdk_model.interfaces.display.element_selected_request.ElementSelectedRequest',
-        'AlexaSkillEvent.SkillPermissionChanged': 'ask_sdk_model.events.skillevents.permission_changed_request.PermissionChangedRequest',
         'AlexaHouseholdListEvent.ItemsCreated': 'ask_sdk_model.services.list_management.list_items_created_event_request.ListItemsCreatedEventRequest',
-        'Reminders.ReminderUpdated': 'ask_sdk_model.services.reminder_management.reminder_updated_event_request.ReminderUpdatedEventRequest',
         'SessionResumedRequest': 'ask_sdk_model.session_resumed_request.SessionResumedRequest',
         'SessionEndedRequest': 'ask_sdk_model.session_ended_request.SessionEndedRequest',
-        'IntentRequest': 'ask_sdk_model.intent_request.IntentRequest',
         'AudioPlayer.PlaybackFailed': 'ask_sdk_model.interfaces.audioplayer.playback_failed_request.PlaybackFailedRequest',
         'CanFulfillIntentRequest': 'ask_sdk_model.canfulfill.can_fulfill_intent_request.CanFulfillIntentRequest',
-        'Reminders.ReminderStarted': 'ask_sdk_model.services.reminder_management.reminder_started_event_request.ReminderStartedEventRequest',
         'CustomInterfaceController.Expired': 'ask_sdk_model.interfaces.custom_interface_controller.expired_request.ExpiredRequest',
         'LaunchRequest': 'ask_sdk_model.launch_request.LaunchRequest',
         'Reminders.ReminderCreated': 'ask_sdk_model.services.reminder_management.reminder_created_event_request.ReminderCreatedEventRequest',
-        'AudioPlayer.PlaybackStopped': 'ask_sdk_model.interfaces.audioplayer.playback_stopped_request.PlaybackStoppedRequest',
-        'PlaybackController.PreviousCommandIssued': 'ask_sdk_model.interfaces.playbackcontroller.previous_command_issued_request.PreviousCommandIssuedRequest',
+        'Alexa.Presentation.APLT.UserEvent': 'ask_sdk_model.interfaces.alexa.presentation.aplt.user_event.UserEvent',
         'AlexaHouseholdListEvent.ItemsUpdated': 'ask_sdk_model.services.list_management.list_items_updated_event_request.ListItemsUpdatedEventRequest',
-        'AlexaSkillEvent.SkillAccountLinked': 'ask_sdk_model.events.skillevents.account_linked_request.AccountLinkedRequest',
         'AlexaHouseholdListEvent.ListCreated': 'ask_sdk_model.services.list_management.list_created_event_request.ListCreatedEventRequest',
         'AudioPlayer.PlaybackStarted': 'ask_sdk_model.interfaces.audioplayer.playback_started_request.PlaybackStartedRequest',
         'AudioPlayer.PlaybackNearlyFinished': 'ask_sdk_model.interfaces.audioplayer.playback_nearly_finished_request.PlaybackNearlyFinishedRequest',
@@ -172,15 +165,25 @@ class Request(object):
         'AlexaHouseholdListEvent.ItemsDeleted': 'ask_sdk_model.services.list_management.list_items_deleted_event_request.ListItemsDeletedEventRequest',
         'Reminders.ReminderDeleted': 'ask_sdk_model.services.reminder_management.reminder_deleted_event_request.ReminderDeletedEventRequest',
         'Connections.Response': 'ask_sdk_model.interfaces.connections.connections_response.ConnectionsResponse',
+        'AlexaHouseholdListEvent.ListDeleted': 'ask_sdk_model.services.list_management.list_deleted_event_request.ListDeletedEventRequest',
+        'GameEngine.InputHandlerEvent': 'ask_sdk_model.interfaces.game_engine.input_handler_event_request.InputHandlerEventRequest',
+        'PlaybackController.PauseCommandIssued': 'ask_sdk_model.interfaces.playbackcontroller.pause_command_issued_request.PauseCommandIssuedRequest',
+        'PlaybackController.PlayCommandIssued': 'ask_sdk_model.interfaces.playbackcontroller.play_command_issued_request.PlayCommandIssuedRequest',
+        'AudioPlayer.PlaybackFinished': 'ask_sdk_model.interfaces.audioplayer.playback_finished_request.PlaybackFinishedRequest',
+        'AlexaSkillEvent.ProactiveSubscriptionChanged': 'ask_sdk_model.events.skillevents.proactive_subscription_changed_request.ProactiveSubscriptionChangedRequest',
+        'Display.ElementSelected': 'ask_sdk_model.interfaces.display.element_selected_request.ElementSelectedRequest',
+        'AlexaSkillEvent.SkillPermissionChanged': 'ask_sdk_model.events.skillevents.permission_changed_request.PermissionChangedRequest',
+        'Reminders.ReminderUpdated': 'ask_sdk_model.services.reminder_management.reminder_updated_event_request.ReminderUpdatedEventRequest',
+        'IntentRequest': 'ask_sdk_model.intent_request.IntentRequest',
+        'Reminders.ReminderStarted': 'ask_sdk_model.services.reminder_management.reminder_started_event_request.ReminderStartedEventRequest',
+        'AudioPlayer.PlaybackStopped': 'ask_sdk_model.interfaces.audioplayer.playback_stopped_request.PlaybackStoppedRequest',
+        'PlaybackController.PreviousCommandIssued': 'ask_sdk_model.interfaces.playbackcontroller.previous_command_issued_request.PreviousCommandIssuedRequest',
+        'AlexaSkillEvent.SkillAccountLinked': 'ask_sdk_model.events.skillevents.account_linked_request.AccountLinkedRequest',
         'Messaging.MessageReceived': 'ask_sdk_model.interfaces.messaging.message_received_request.MessageReceivedRequest',
         'Connections.Request': 'ask_sdk_model.interfaces.connections.connections_request.ConnectionsRequest',
         'System.ExceptionEncountered': 'ask_sdk_model.interfaces.system.exception_encountered_request.ExceptionEncounteredRequest',
         'AlexaSkillEvent.SkillPermissionAccepted': 'ask_sdk_model.events.skillevents.permission_accepted_request.PermissionAcceptedRequest',
-        'AlexaHouseholdListEvent.ListDeleted': 'ask_sdk_model.services.list_management.list_deleted_event_request.ListDeletedEventRequest',
-        'GameEngine.InputHandlerEvent': 'ask_sdk_model.interfaces.game_engine.input_handler_event_request.InputHandlerEventRequest',
-        'PlaybackController.NextCommandIssued': 'ask_sdk_model.interfaces.playbackcontroller.next_command_issued_request.NextCommandIssuedRequest',
-        'PlaybackController.PauseCommandIssued': 'ask_sdk_model.interfaces.playbackcontroller.pause_command_issued_request.PauseCommandIssuedRequest',
-        'PlaybackController.PlayCommandIssued': 'ask_sdk_model.interfaces.playbackcontroller.play_command_issued_request.PlayCommandIssuedRequest'
+        'PlaybackController.NextCommandIssued': 'ask_sdk_model.interfaces.playbackcontroller.next_command_issued_request.NextCommandIssuedRequest'
     }
 
     json_discriminator_key = "type"

@@ -41,13 +41,13 @@ class BaseRequest(object):
 
         | ScheduleFoodEstablishmentReservationRequest: :py:class:`ask_sdk_model.interfaces.connections.requests.schedule_food_establishment_reservation_request.ScheduleFoodEstablishmentReservationRequest`,
         |
-        | PrintPDFRequest: :py:class:`ask_sdk_model.interfaces.connections.requests.print_pdf_request.PrintPDFRequest`,
-        |
         | PrintImageRequest: :py:class:`ask_sdk_model.interfaces.connections.requests.print_image_request.PrintImageRequest`,
         |
-        | ScheduleTaxiReservationRequest: :py:class:`ask_sdk_model.interfaces.connections.requests.schedule_taxi_reservation_request.ScheduleTaxiReservationRequest`,
+        | PrintWebPageRequest: :py:class:`ask_sdk_model.interfaces.connections.requests.print_web_page_request.PrintWebPageRequest`,
         |
-        | PrintWebPageRequest: :py:class:`ask_sdk_model.interfaces.connections.requests.print_web_page_request.PrintWebPageRequest`
+        | PrintPDFRequest: :py:class:`ask_sdk_model.interfaces.connections.requests.print_pdf_request.PrintPDFRequest`,
+        |
+        | ScheduleTaxiReservationRequest: :py:class:`ask_sdk_model.interfaces.connections.requests.schedule_taxi_reservation_request.ScheduleTaxiReservationRequest`
 
     """
     deserialized_types = {
@@ -62,10 +62,10 @@ class BaseRequest(object):
 
     discriminator_value_class_map = {
         'ScheduleFoodEstablishmentReservationRequest': 'ask_sdk_model.interfaces.connections.requests.schedule_food_establishment_reservation_request.ScheduleFoodEstablishmentReservationRequest',
-        'PrintPDFRequest': 'ask_sdk_model.interfaces.connections.requests.print_pdf_request.PrintPDFRequest',
         'PrintImageRequest': 'ask_sdk_model.interfaces.connections.requests.print_image_request.PrintImageRequest',
-        'ScheduleTaxiReservationRequest': 'ask_sdk_model.interfaces.connections.requests.schedule_taxi_reservation_request.ScheduleTaxiReservationRequest',
-        'PrintWebPageRequest': 'ask_sdk_model.interfaces.connections.requests.print_web_page_request.PrintWebPageRequest'
+        'PrintWebPageRequest': 'ask_sdk_model.interfaces.connections.requests.print_web_page_request.PrintWebPageRequest',
+        'PrintPDFRequest': 'ask_sdk_model.interfaces.connections.requests.print_pdf_request.PrintPDFRequest',
+        'ScheduleTaxiReservationRequest': 'ask_sdk_model.interfaces.connections.requests.schedule_taxi_reservation_request.ScheduleTaxiReservationRequest'
     }
 
     json_discriminator_key = "@type"

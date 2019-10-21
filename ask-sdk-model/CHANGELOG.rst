@@ -216,3 +216,11 @@ This release contains the following changes :
 - A new `mode property <https://developer.amazon.com/docs/alexa-presentation-language/apl-viewport-property.html#viewport_mode_property>`__ in APL viewports
 - The `gadget endpoint enumeration service <https://developer.amazon.com/es/docs/alexa-gadgets-toolkit/send-gadget-custom-directive-from-skill.html#call-endpoint-enumeration-api>`__
 - Fixing a bug in base service client that leads to exceptions for a HTTP 204 response.
+
+
+1.16.0
+~~~~~~~
+
+This release has the following changes : 
+
+- Support for building APL-T Documents (APL Character displays).

@@ -18,70 +18,41 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
-from abc import ABCMeta, abstractmethod
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
+    from ask_sdk_model.interfaces.viewport.video.codecs import Codecs
 
 
-class Recognizer(object):
+class ViewportVideo(object):
     """
-    Recognizers are conditions that, at any moment, are either true or false, based on all the raw button events that the Input Handler has received in the time elapsed since the Input Handler session started.
+    Details of the technologies which are available for playing video on the device.
 
 
-    :param object_type: 
-    :type object_type: (optional) str
-
-    .. note::
-
-        This is an abstract class. Use the following mapping, to figure out
-        the model class to be instantiated, that sets ``type`` variable.
-
-        | match: :py:class:`ask_sdk_model.services.game_engine.pattern_recognizer.PatternRecognizer`,
-        |
-        | deviation: :py:class:`ask_sdk_model.services.game_engine.deviation_recognizer.DeviationRecognizer`,
-        |
-        | progress: :py:class:`ask_sdk_model.services.game_engine.progress_recognizer.ProgressRecognizer`
+    :param codecs: Codecs which are available for playing video on the device.
+    :type codecs: (optional) list[ask_sdk_model.interfaces.viewport.video.codecs.Codecs]
 
     """
     deserialized_types = {
-        'object_type': 'str'
+        'codecs': 'list[ask_sdk_model.interfaces.viewport.video.codecs.Codecs]'
     }  # type: Dict
 
     attribute_map = {
-        'object_type': 'type'
+        'codecs': 'codecs'
     }  # type: Dict
 
-    discriminator_value_class_map = {
-        'match': 'ask_sdk_model.services.game_engine.pattern_recognizer.PatternRecognizer',
-        'deviation': 'ask_sdk_model.services.game_engine.deviation_recognizer.DeviationRecognizer',
-        'progress': 'ask_sdk_model.services.game_engine.progress_recognizer.ProgressRecognizer'
-    }
+    def __init__(self, codecs=None):
+        # type: (Optional[List[Codecs]]) -> None
+        """Details of the technologies which are available for playing video on the device.
 
-    json_discriminator_key = "type"
-
-    __metaclass__ = ABCMeta
-
-    @abstractmethod
-    def __init__(self, object_type=None):
-        # type: (Optional[str]) -> None
-        """Recognizers are conditions that, at any moment, are either true or false, based on all the raw button events that the Input Handler has received in the time elapsed since the Input Handler session started.
-
-        :param object_type: 
-        :type object_type: (optional) str
+        :param codecs: Codecs which are available for playing video on the device.
+        :type codecs: (optional) list[ask_sdk_model.interfaces.viewport.video.codecs.Codecs]
         """
         self.__discriminator_value = None  # type: str
 
-        self.object_type = object_type
-
-    @classmethod
-    def get_real_child_model(cls, data):
-        # type: (Dict[str, str]) -> Optional[str]
-        """Returns the real base class specified by the discriminator"""
-        discriminator_value = data[cls.json_discriminator_key]
-        return cls.discriminator_value_class_map.get(discriminator_value)
+        self.codecs = codecs
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -126,7 +97,7 @@ class Recognizer(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Recognizer):
+        if not isinstance(other, ViewportVideo):
             return False
 
         return self.__dict__ == other.__dict__

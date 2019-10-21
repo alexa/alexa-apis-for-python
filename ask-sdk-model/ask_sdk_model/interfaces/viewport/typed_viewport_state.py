@@ -26,78 +26,57 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class BaseAmazonPayEntity(object):
+class TypedViewportState(object):
     """
 
-    :param object_type: 
+    :param id: unique identifier of a viewport object
+    :type id: (optional) str
+    :param object_type: name of the type of a viewport object
     :type object_type: (optional) str
-    :param version: Version of the Amazon Pay Entity. Can be 1 or greater.
-    :type version: (optional) str
 
     .. note::
 
         This is an abstract class. Use the following mapping, to figure out
-        the model class to be instantiated, that sets ``@type`` variable.
+        the model class to be instantiated, that sets ``type`` variable.
 
-        | SellerBillingAgreementAttributes: :py:class:`ask_sdk_model.interfaces.amazonpay.model.request.seller_billing_agreement_attributes.SellerBillingAgreementAttributes`,
+        | APL: :py:class:`ask_sdk_model.interfaces.viewport.apl_viewport_state.APLViewportState`,
         |
-        | Price: :py:class:`ask_sdk_model.interfaces.amazonpay.model.request.price.Price`,
-        |
-        | ChargeAmazonPayRequest: :py:class:`ask_sdk_model.interfaces.amazonpay.request.charge_amazon_pay_request.ChargeAmazonPayRequest`,
-        |
-        | BillingAgreementAttributes: :py:class:`ask_sdk_model.interfaces.amazonpay.model.request.billing_agreement_attributes.BillingAgreementAttributes`,
-        |
-        | SellerOrderAttributes: :py:class:`ask_sdk_model.interfaces.amazonpay.model.request.seller_order_attributes.SellerOrderAttributes`,
-        |
-        | ProviderAttributes: :py:class:`ask_sdk_model.interfaces.amazonpay.model.request.provider_attributes.ProviderAttributes`,
-        |
-        | AuthorizeAttributes: :py:class:`ask_sdk_model.interfaces.amazonpay.model.request.authorize_attributes.AuthorizeAttributes`,
-        |
-        | SetupAmazonPayRequest: :py:class:`ask_sdk_model.interfaces.amazonpay.request.setup_amazon_pay_request.SetupAmazonPayRequest`,
-        |
-        | ProviderCredit: :py:class:`ask_sdk_model.interfaces.amazonpay.model.request.provider_credit.ProviderCredit`
+        | APLT: :py:class:`ask_sdk_model.interfaces.viewport.aplt_viewport_state.APLTViewportState`
 
     """
     deserialized_types = {
-        'object_type': 'str',
-        'version': 'str'
+        'id': 'str',
+        'object_type': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'object_type': '@type',
-        'version': '@version'
+        'id': 'id',
+        'object_type': 'type'
     }  # type: Dict
 
     discriminator_value_class_map = {
-        'SellerBillingAgreementAttributes': 'ask_sdk_model.interfaces.amazonpay.model.request.seller_billing_agreement_attributes.SellerBillingAgreementAttributes',
-        'Price': 'ask_sdk_model.interfaces.amazonpay.model.request.price.Price',
-        'ChargeAmazonPayRequest': 'ask_sdk_model.interfaces.amazonpay.request.charge_amazon_pay_request.ChargeAmazonPayRequest',
-        'BillingAgreementAttributes': 'ask_sdk_model.interfaces.amazonpay.model.request.billing_agreement_attributes.BillingAgreementAttributes',
-        'SellerOrderAttributes': 'ask_sdk_model.interfaces.amazonpay.model.request.seller_order_attributes.SellerOrderAttributes',
-        'ProviderAttributes': 'ask_sdk_model.interfaces.amazonpay.model.request.provider_attributes.ProviderAttributes',
-        'AuthorizeAttributes': 'ask_sdk_model.interfaces.amazonpay.model.request.authorize_attributes.AuthorizeAttributes',
-        'SetupAmazonPayRequest': 'ask_sdk_model.interfaces.amazonpay.request.setup_amazon_pay_request.SetupAmazonPayRequest',
-        'ProviderCredit': 'ask_sdk_model.interfaces.amazonpay.model.request.provider_credit.ProviderCredit'
+        'APL': 'ask_sdk_model.interfaces.viewport.apl_viewport_state.APLViewportState',
+        'APLT': 'ask_sdk_model.interfaces.viewport.aplt_viewport_state.APLTViewportState'
     }
 
-    json_discriminator_key = "@type"
+    json_discriminator_key = "type"
 
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def __init__(self, object_type=None, version=None):
+    def __init__(self, id=None, object_type=None):
         # type: (Optional[str], Optional[str]) -> None
         """
 
-        :param object_type: 
+        :param id: unique identifier of a viewport object
+        :type id: (optional) str
+        :param object_type: name of the type of a viewport object
         :type object_type: (optional) str
-        :param version: Version of the Amazon Pay Entity. Can be 1 or greater.
-        :type version: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
+        self.id = id
         self.object_type = object_type
-        self.version = version
 
     @classmethod
     def get_real_child_model(cls, data):
@@ -149,7 +128,7 @@ class BaseAmazonPayEntity(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, BaseAmazonPayEntity):
+        if not isinstance(other, TypedViewportState):
             return False
 
         return self.__dict__ == other.__dict__

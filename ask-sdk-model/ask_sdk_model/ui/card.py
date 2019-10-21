@@ -37,11 +37,11 @@ class Card(object):
         This is an abstract class. Use the following mapping, to figure out
         the model class to be instantiated, that sets ``type`` variable.
 
+        | AskForPermissionsConsent: :py:class:`ask_sdk_model.ui.ask_for_permissions_consent_card.AskForPermissionsConsentCard`,
+        |
         | LinkAccount: :py:class:`ask_sdk_model.ui.link_account_card.LinkAccountCard`,
         |
         | Standard: :py:class:`ask_sdk_model.ui.standard_card.StandardCard`,
-        |
-        | AskForPermissionsConsent: :py:class:`ask_sdk_model.ui.ask_for_permissions_consent_card.AskForPermissionsConsentCard`,
         |
         | Simple: :py:class:`ask_sdk_model.ui.simple_card.SimpleCard`
 
@@ -55,9 +55,9 @@ class Card(object):
     }  # type: Dict
 
     discriminator_value_class_map = {
+        'AskForPermissionsConsent': 'ask_sdk_model.ui.ask_for_permissions_consent_card.AskForPermissionsConsentCard',
         'LinkAccount': 'ask_sdk_model.ui.link_account_card.LinkAccountCard',
         'Standard': 'ask_sdk_model.ui.standard_card.StandardCard',
-        'AskForPermissionsConsent': 'ask_sdk_model.ui.ask_for_permissions_consent_card.AskForPermissionsConsentCard',
         'Simple': 'ask_sdk_model.ui.simple_card.SimpleCard'
     }
 

@@ -28,6 +28,7 @@ if typing.TYPE_CHECKING:
     from ask_sdk_model.interfaces.geolocation.geolocation_state import GeolocationState
     from ask_sdk_model.interfaces.audioplayer.audio_player_state import AudioPlayerState
     from ask_sdk_model.interfaces.viewport.viewport_state import ViewportState
+    from ask_sdk_model.interfaces.viewport.typed_viewport_state import TypedViewportState
     from ask_sdk_model.interfaces.display.display_state import DisplayState
 
 
@@ -46,6 +47,8 @@ class Context(object):
     :type geolocation: (optional) ask_sdk_model.interfaces.geolocation.geolocation_state.GeolocationState
     :param viewport: Provides the characteristics of a device&#39;s viewport.
     :type viewport: (optional) ask_sdk_model.interfaces.viewport.viewport_state.ViewportState
+    :param viewports: This object contains a list of viewports characteristics related to the device&#39;s viewports.
+    :type viewports: (optional) list[ask_sdk_model.interfaces.viewport.typed_viewport_state.TypedViewportState]
 
     """
     deserialized_types = {
@@ -54,7 +57,8 @@ class Context(object):
         'automotive': 'ask_sdk_model.interfaces.automotive.automotive_state.AutomotiveState',
         'display': 'ask_sdk_model.interfaces.display.display_state.DisplayState',
         'geolocation': 'ask_sdk_model.interfaces.geolocation.geolocation_state.GeolocationState',
-        'viewport': 'ask_sdk_model.interfaces.viewport.viewport_state.ViewportState'
+        'viewport': 'ask_sdk_model.interfaces.viewport.viewport_state.ViewportState',
+        'viewports': 'list[ask_sdk_model.interfaces.viewport.typed_viewport_state.TypedViewportState]'
     }  # type: Dict
 
     attribute_map = {
@@ -63,11 +67,12 @@ class Context(object):
         'automotive': 'Automotive',
         'display': 'Display',
         'geolocation': 'Geolocation',
-        'viewport': 'Viewport'
+        'viewport': 'Viewport',
+        'viewports': 'Viewports'
     }  # type: Dict
 
-    def __init__(self, system=None, audio_player=None, automotive=None, display=None, geolocation=None, viewport=None):
-        # type: (Optional[SystemState], Optional[AudioPlayerState], Optional[AutomotiveState], Optional[DisplayState], Optional[GeolocationState], Optional[ViewportState]) -> None
+    def __init__(self, system=None, audio_player=None, automotive=None, display=None, geolocation=None, viewport=None, viewports=None):
+        # type: (Optional[SystemState], Optional[AudioPlayerState], Optional[AutomotiveState], Optional[DisplayState], Optional[GeolocationState], Optional[ViewportState], Optional[List[TypedViewportState]]) -> None
         """
 
         :param system: Provides information about the current state of the Alexa service and the device interacting with your skill.
@@ -82,6 +87,8 @@ class Context(object):
         :type geolocation: (optional) ask_sdk_model.interfaces.geolocation.geolocation_state.GeolocationState
         :param viewport: Provides the characteristics of a device&#39;s viewport.
         :type viewport: (optional) ask_sdk_model.interfaces.viewport.viewport_state.ViewportState
+        :param viewports: This object contains a list of viewports characteristics related to the device&#39;s viewports.
+        :type viewports: (optional) list[ask_sdk_model.interfaces.viewport.typed_viewport_state.TypedViewportState]
         """
         self.__discriminator_value = None  # type: str
 
@@ -91,6 +98,7 @@ class Context(object):
         self.display = display
         self.geolocation = geolocation
         self.viewport = viewport
+        self.viewports = viewports
 
     def to_dict(self):
         # type: () -> Dict[str, object]
