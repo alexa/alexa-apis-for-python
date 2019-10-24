@@ -224,3 +224,11 @@ This release contains the following changes :
 This release has the following changes : 
 
 - Support for building APL-T Documents (APL Character displays).
+
+
+1.17.0
+~~~~~~~
+
+This release contains the following changes : 
+
+- APIs for `ISP support in kid skills <https://developer.amazon.com/docs/in-skill-purchase/isp-kid-skills.html>`__.
