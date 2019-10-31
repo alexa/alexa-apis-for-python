@@ -24,6 +24,7 @@ if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
     from ask_sdk_model.device import Device
+    from ask_sdk_model.person import Person
     from ask_sdk_model.application import Application
     from ask_sdk_model.user import User
 
@@ -37,6 +38,8 @@ class SystemState(object):
     :type user: (optional) ask_sdk_model.user.User
     :param device: 
     :type device: (optional) ask_sdk_model.device.Device
+    :param person: 
+    :type person: (optional) ask_sdk_model.person.Person
     :param api_endpoint: A string that references the correct base URI to refer to by region, for use with APIs such as the Device Location API and Progressive Response API.
     :type api_endpoint: (optional) str
     :param api_access_token: A bearer token string that can be used by the skill (during the skill session) to access Alexa APIs resources of the registered Alexa customer and/or person who is making the request. This token encapsulates the permissions authorized under the registered Alexa account and device, and (optionally) the recognized person. Some resources, such as name or email, require explicit customer consent.\&quot; 
@@ -47,6 +50,7 @@ class SystemState(object):
         'application': 'ask_sdk_model.application.Application',
         'user': 'ask_sdk_model.user.User',
         'device': 'ask_sdk_model.device.Device',
+        'person': 'ask_sdk_model.person.Person',
         'api_endpoint': 'str',
         'api_access_token': 'str'
     }  # type: Dict
@@ -55,12 +59,13 @@ class SystemState(object):
         'application': 'application',
         'user': 'user',
         'device': 'device',
+        'person': 'person',
         'api_endpoint': 'apiEndpoint',
         'api_access_token': 'apiAccessToken'
     }  # type: Dict
 
-    def __init__(self, application=None, user=None, device=None, api_endpoint=None, api_access_token=None):
-        # type: (Optional[Application], Optional[User], Optional[Device], Optional[str], Optional[str]) -> None
+    def __init__(self, application=None, user=None, device=None, person=None, api_endpoint=None, api_access_token=None):
+        # type: (Optional[Application], Optional[User], Optional[Device], Optional[Person], Optional[str], Optional[str]) -> None
         """
 
         :param application: 
@@ -69,6 +74,8 @@ class SystemState(object):
         :type user: (optional) ask_sdk_model.user.User
         :param device: 
         :type device: (optional) ask_sdk_model.device.Device
+        :param person: 
+        :type person: (optional) ask_sdk_model.person.Person
         :param api_endpoint: A string that references the correct base URI to refer to by region, for use with APIs such as the Device Location API and Progressive Response API.
         :type api_endpoint: (optional) str
         :param api_access_token: A bearer token string that can be used by the skill (during the skill session) to access Alexa APIs resources of the registered Alexa customer and/or person who is making the request. This token encapsulates the permissions authorized under the registered Alexa account and device, and (optionally) the recognized person. Some resources, such as name or email, require explicit customer consent.\&quot; 
@@ -79,6 +86,7 @@ class SystemState(object):
         self.application = application
         self.user = user
         self.device = device
+        self.person = person
         self.api_endpoint = api_endpoint
         self.api_access_token = api_access_token
 

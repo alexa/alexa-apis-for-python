@@ -20,7 +20,6 @@ import six
 import typing
 from enum import Enum
 
-
 if typing.TYPE_CHECKING:
     from typing import Dict, Optional
 
@@ -35,21 +34,25 @@ class AccessTokenRequest(object):
     :param scope: The required scope for which the access token is
         requested for
     :type scope: str
+    :param refresh_token: Client refresh_token required to get access token for API calls.
+    :type refresh_token: str
     """
     deserialized_types = {
         'client_id': 'str',
         'client_secret': 'str',
+        'refresh_token': 'str',
         'scope': 'str'
     }
 
     attribute_map = {
         'client_id': 'client_id',
         'client_secret': 'client_secret',
+        'refresh_token': 'refresh_token',
         'scope': 'scope'
     }
 
-    def __init__(self, client_id=None, client_secret=None, scope=None):
-        # type: (Optional[str], Optional[str], Optional[str]) -> None
+    def __init__(self, client_id=None, client_secret=None, scope=None, refresh_token=None):
+        # type: (Optional[str], Optional[str], Optional[str], Optional[str]) -> None
         """Request for retrieving an access token from LWA.
 
         :param client_id: The ClientId value from developer console
@@ -59,12 +62,15 @@ class AccessTokenRequest(object):
         :param scope: The required scope for which the access token is
             requested for
         :type scope: str
+        :param refresh_token: Client refresh_token required to get access token for API calls.
+        :type refresh_token: str
         """
         self.__discriminator_value = None
 
         self.client_id = client_id
         self.client_secret = client_secret
         self.scope = scope
+        self.refresh_token = refresh_token
 
     def to_dict(self):
         # type: () -> Dict

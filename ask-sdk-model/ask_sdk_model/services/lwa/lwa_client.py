@@ -31,6 +31,7 @@ if typing.TYPE_CHECKING:
     from ..authentication_configuration import AuthenticationConfiguration
     from typing import Any, Dict, List, Optional
 
+
 class LwaClient(BaseServiceClient):
     """Client to call Login with Amazon (LWA) to retrieve access tokens.
 
@@ -43,14 +44,20 @@ class LwaClient(BaseServiceClient):
         instance with valid client id and client secret, for making LWA
         calls.
     :type authentication_configuration:
-        ask_sdk_model.services.authentication_configuration.AuthenticationConfiguration
+    ask_sdk_model.services.authentication_configuration.AuthenticationConfiguration
+    :param grant_type: The grant type which is used to make the HTTP request.
+    :type grant_type: (optional) str
     :raises: :py:class:`ValueError` if authentication configuration is not
         provided.
     """
     EXPIRY_OFFSET_IN_MILLIS = 60000
+    DEFAULT_LWA_ENDPOINT = "https://api.amazon.com"
+    REFRESH_ACCESS_TOKEN = "refresh_access_token"
+    CLIENT_CREDENTIALS_GRANT_TYPE = "client_credentials"
+    LWA_CREDENTIALS_GRANT_TYPE = "refresh_token"
 
-    def __init__(self, api_configuration, authentication_configuration):
-        # type: (ApiConfiguration, AuthenticationConfiguration) -> None
+    def __init__(self, api_configuration, authentication_configuration, grant_type=None):
+        # type: (ApiConfiguration, AuthenticationConfiguration, str) -> None
         """Client to call Login with Amazon (LWA) to retrieve access tokens.
 
         :param api_configuration: ApiConfiguration instance with valid
@@ -63,6 +70,8 @@ class LwaClient(BaseServiceClient):
             calls.
         :type authentication_configuration:
             ask_sdk_model.services.authentication_configuration.AuthenticationConfiguration
+        :param grant_type: The grant type which is used to make the HTTP request.
+        :type grant_type: (optional) str
         :raises: :py:class:`ValueError` if authentication configuration is not
             provided.
         """
@@ -71,30 +80,60 @@ class LwaClient(BaseServiceClient):
         if authentication_configuration is None:
             raise ValueError("authentication_configuration must be provided")
         self._authentication_configuration = authentication_configuration
+        if grant_type is None:
+            self._grant_type = self.CLIENT_CREDENTIALS_GRANT_TYPE
+        else:
+            self._grant_type = grant_type
         self._scoped_token_cache = dict()  # type: Dict
+
+    def get_access_token_from_refresh_token(self):
+        # type: () -> str
+        """Retrieve access token for Skill Management API calls.
+
+        :return: Retrieved access token for the given refresh_token and
+            configured client id, client secret
+        :rtype: str
+        """
+        return self._get_access_token()
 
     def get_access_token_for_scope(self, scope):
         # type: (str) -> str
         """Retrieve access token for given scope.
-
-        Return the scoped access token from the ``scoped_token_cache``
-        if the token is unexpired. If it is expired or is not present,
-        then retrieve a new access token for the given scope, using the
-        client id and client secret in the input
-        :py:class:`ask_sdk_model.services.authentication_configuration.AuthenticationConfiguration`
-        instance.
 
         :param scope: Target scope for the access token
         :type scope: str
         :return: Retrieved access token for the given scope and
             configured client id, client secret
         :rtype: str
-        :raises: :py:class:`ValueError` is no scope is passed and :py:class:`ValueError` if LWA AccessTokenResponse is None.
+        :raises: :py:class:`ValueError` is no scope is passed.
         """
         if scope is None:
             raise ValueError("scope must be provided")
+        return self._get_access_token(scope)
 
-        access_token = self._scoped_token_cache.get(scope, None)
+    def _get_access_token(self, scope=None):
+        # type: (str) -> str
+        """Retrieve access token.
+
+        Return the access token from the ``scoped_token_cache``
+        if the token is unexpired. If it is expired or is not present,
+        then retrieve a new access token using the client id, client secret
+        and refresh_token or scope based on API request in the input
+        :py:class:`ask_sdk_model.services.authentication_configuration.AuthenticationConfiguration`
+        instance.
+
+        :param scope: Target scope for the access token
+        :type scope: str
+        :return: Retrieved access token for configured client id, client secret
+        :rtype: str
+        :raises: :py:class:`ValueError` is no scope is passed and :py:class:`ValueError` if LWA AccessTokenResponse is None.
+        """
+        if scope is None:
+            cache_key = self.REFRESH_ACCESS_TOKEN
+        else:
+            cache_key = scope
+
+        access_token = self._scoped_token_cache.get(cache_key, None)
         local_now = datetime.now(tz.tzutc())
 
         if (access_token is not None and
@@ -105,21 +144,26 @@ class LwaClient(BaseServiceClient):
 
         access_token_request = AccessTokenRequest(
             client_id=self._authentication_configuration.client_id,
-            client_secret=self._authentication_configuration.client_secret,
-            scope=scope)
+            client_secret=self._authentication_configuration.client_secret)
+
+        if self._authentication_configuration.refresh_token is None:
+            access_token_request.scope = scope
+        else:
+            access_token_request.refresh_token = self._authentication_configuration.refresh_token
 
         lwa_response = self._generate_access_token(
             access_token_request=access_token_request)
 
         if lwa_response is None or lwa_response.expires_in is None:
-            raise ValueError("Invalid response from LWA Client generate access token call")
+            raise ValueError("Invalid response from LWA Client generate "
+                             "access token call")
 
         access_token = AccessToken(
             token=lwa_response.access_token,
             expiry=local_now + timedelta(seconds=lwa_response.expires_in)
         )
 
-        self._scoped_token_cache[scope] = access_token
+        self._scoped_token_cache[cache_key] = access_token
         return access_token.token
 
     def _generate_access_token(self, access_token_request, **kwargs):
@@ -140,23 +184,27 @@ class LwaClient(BaseServiceClient):
             params[key] = val
         del params['kwargs']
 
-        endpoint = "https://api.amazon.com"
+        endpoint = self._api_endpoint if self._api_endpoint else self.DEFAULT_LWA_ENDPOINT
         resource_path = '/auth/O2/token'.replace('{format}', 'json')
         path_params = {}  # type: Dict
         query_params = []  # type: List
         header_params = [
             ('Content-type', 'application/x-www-form-urlencoded')]
 
-        grant_type_param = "grant_type={}".format("client_credentials")
+        grant_type_param = "grant_type={}".format(self._grant_type)
         client_id_param = "client_id={}".format(access_token_request.client_id)
         client_secret_param = "client_secret={}".format(
             access_token_request.client_secret)
-        scope_param = "scope={}".format(access_token_request.scope)
-        body_params = "&".join(
-            [grant_type_param, client_id_param, client_secret_param,
-             scope_param])
 
-        error_definitions = []  # type: List
+        body_params = "&".join(
+            [grant_type_param, client_id_param, client_secret_param])
+        if self._grant_type == self.LWA_CREDENTIALS_GRANT_TYPE:
+            param_info = "refresh_token={}".format(
+                access_token_request.refresh_token)
+        else:
+            param_info = "scope={}".format(access_token_request.scope)
+        body_params += "&{}".format(param_info)
+        error_definitions = list()  # type: List
         error_definitions.append(ServiceClientResponse(
             response_type=(
                 "ask_sdk_model.services.lwa.access_token_response."

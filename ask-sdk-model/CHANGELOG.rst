@@ -232,3 +232,11 @@ This release has the following changes :
 This release contains the following changes : 
 
 - APIs for `ISP support in kid skills <https://developer.amazon.com/docs/in-skill-purchase/isp-kid-skills.html>`__.
+
+
+1.18.0
+~~~~~~~
+
+This release contains the following changes: 
+
+- support for `personalization <https://developer.amazon.com/docs/custom-skills/add-personalization-to-your-skill.html#invocation-request-examples>`__ in the skill.

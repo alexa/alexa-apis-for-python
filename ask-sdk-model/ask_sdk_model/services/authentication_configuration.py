@@ -24,9 +24,11 @@ class AuthenticationConfiguration(object):
     :type client_id: str
     :param client_secret: Client Secret required for authentication.
     :type client_secret: str
+    :param refresh_token: Client refresh_token required to get access token for API calls.
+    :type refresh_token: str
     """
 
-    def __init__(self, client_id=None, client_secret=None):
+    def __init__(self, client_id=None, client_secret=None, refresh_token=None):
         # type: (str, str) -> None
         """Represents a class that provides authentication configuration.
 
@@ -34,6 +36,9 @@ class AuthenticationConfiguration(object):
         :type client_id: str
         :param client_secret: Client Secret required for authentication.
         :type client_secret: str
+        :param refresh_token: Client refresh_token required to get access token for API calls.
+        :type refresh_token: str
         """
         self.client_id = client_id
         self.client_secret = client_secret
+        self.refresh_token = refresh_token

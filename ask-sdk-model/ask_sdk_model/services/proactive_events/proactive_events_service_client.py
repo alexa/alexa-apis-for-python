@@ -40,18 +40,28 @@ class ProactiveEventsServiceClient(BaseServiceClient):
     :param api_configuration: Instance of :py:class:`ask_sdk_model.services.api_configuration.ApiConfiguration`
     :type api_configuration: ask_sdk_model.services.api_configuration.ApiConfiguration
     """
-    def __init__(self, api_configuration, authentication_configuration):
-        # type: (ApiConfiguration, AuthenticationConfiguration) -> None
+    def __init__(self, api_configuration, authentication_configuration, lwa_client=None):
+        # type: (ApiConfiguration, AuthenticationConfiguration, LwaClient) -> None
         """
         :param api_configuration: Instance of :py:class:`ask_sdk_model.services.api_configuration.ApiConfiguration`
         :type api_configuration: ask_sdk_model.services.api_configuration.ApiConfiguration
         :param authentication_configuration: Instance of :py:class:`ask_sdk_model.services.authentication_configuration.AuthenticationConfiguration`
         :type api_configuration: ask_sdk_model.services.authentication_configuration.AuthenticationConfiguration
+        :param lwa_client: (Optional) Instance of :py:class:`ask_sdk_model.services.lwa.LwaClient`, 
+            can be passed when the LwaClient configuration is different from the authentication 
+            and api configuration passed
+        :type lwa_client: ask_sdk_model.services.lwa.LwaClient
         """
         super(ProactiveEventsServiceClient, self).__init__(api_configuration)
-        self._lwa_service_client = LwaClient(
-            api_configuration=api_configuration,
-            authentication_configuration=authentication_configuration)
+        if lwa_client is None:
+            self._lwa_service_client = LwaClient(
+                api_configuration=ApiConfiguration(
+                    serializer=api_configuration.serializer, 
+                    api_client=api_configuration.api_client),
+                authentication_configuration=authentication_configuration,
+                grant_type=None)
+        else:
+            self._lwa_service_client = lwa_client
 
     def create_proactive_event(self, create_proactive_event_request, stage, **kwargs):
         # type: (CreateProactiveEventRequest, SkillStage, **Any) -> Union[Error]

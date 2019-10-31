@@ -40,6 +40,7 @@ from .response_envelope import ResponseEnvelope
 from .request import Request
 from .session_ended_request import SessionEndedRequest
 from .context import Context
+from .person import Person
 from .cause import Cause
 from .request_envelope import RequestEnvelope
 from .session_ended_error_type import SessionEndedErrorType
