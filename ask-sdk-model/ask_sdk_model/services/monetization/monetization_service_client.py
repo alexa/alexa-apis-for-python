@@ -22,6 +22,8 @@ import typing
 from ask_sdk_model.services.base_service_client import BaseServiceClient
 from ask_sdk_model.services.api_configuration import ApiConfiguration
 from ask_sdk_model.services.service_client_response import ServiceClientResponse
+from ask_sdk_model.services.api_response import ApiResponse
+
 
 
 if typing.TYPE_CHECKING:
@@ -49,7 +51,7 @@ class MonetizationServiceClient(BaseServiceClient):
         super(MonetizationServiceClient, self).__init__(api_configuration)
 
     def get_in_skill_products(self, accept_language, **kwargs):
-        # type: (str, **Any) -> Union[Error, InSkillProductsResponse]
+        # type: (str, **Any) -> Union[ApiResponse, Error, InSkillProductsResponse]
         """
         Gets In-Skill Products based on user's context for the Skill.
 
@@ -65,7 +67,10 @@ class MonetizationServiceClient(BaseServiceClient):
         :type next_token: str
         :param max_results: sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 100 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned because maxResults was exceeded, the response contains isTruncated = true.
         :type max_results: float
-        :rtype: Union[Error, InSkillProductsResponse]
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, Error, InSkillProductsResponse]
         """
         operation_name = "get_in_skill_products"
         params = locals()
@@ -101,6 +106,11 @@ class MonetizationServiceClient(BaseServiceClient):
         body_params = None
         header_params.append(('Content-type', 'application/json'))
 
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
         # Authentication setting
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
@@ -111,7 +121,7 @@ class MonetizationServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.monetization.error.Error", status_code=401, message="The authentication token is invalid or doesn&#39;t have access to make this request"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.monetization.error.Error", status_code=500, message="Internal Server Error"))
 
-        return self.invoke(
+        api_response = self.invoke(
             method="GET",
             endpoint=self._api_endpoint,
             path=resource_path,
@@ -122,8 +132,12 @@ class MonetizationServiceClient(BaseServiceClient):
             response_definitions=error_definitions,
             response_type="ask_sdk_model.services.monetization.in_skill_products_response.InSkillProductsResponse")
 
+        if full_response:
+            return api_response
+        return api_response.body
+
     def get_in_skill_product(self, accept_language, product_id, **kwargs):
-        # type: (str, str, **Any) -> Union[Error, InSkillProduct]
+        # type: (str, str, **Any) -> Union[ApiResponse, Error, InSkillProduct]
         """
         Get In-Skill Product information based on user context for the Skill.
 
@@ -131,7 +145,10 @@ class MonetizationServiceClient(BaseServiceClient):
         :type accept_language: str
         :param product_id: (required) Product Id.
         :type product_id: str
-        :rtype: Union[Error, InSkillProduct]
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, Error, InSkillProduct]
         """
         operation_name = "get_in_skill_product"
         params = locals()
@@ -163,6 +180,11 @@ class MonetizationServiceClient(BaseServiceClient):
         body_params = None
         header_params.append(('Content-type', 'application/json'))
 
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
         # Authentication setting
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
@@ -174,7 +196,7 @@ class MonetizationServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.monetization.error.Error", status_code=404, message="Requested resource not found."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.monetization.error.Error", status_code=500, message="Internal Server Error."))
 
-        return self.invoke(
+        api_response = self.invoke(
             method="GET",
             endpoint=self._api_endpoint,
             path=resource_path,
@@ -185,8 +207,12 @@ class MonetizationServiceClient(BaseServiceClient):
             response_definitions=error_definitions,
             response_type="ask_sdk_model.services.monetization.in_skill_product.InSkillProduct")
 
+        if full_response:
+            return api_response
+        return api_response.body
+
     def get_in_skill_products_transactions(self, accept_language, **kwargs):
-        # type: (str, **Any) -> Union[Error, InSkillProductTransactionsResponse]
+        # type: (str, **Any) -> Union[ApiResponse, Error, InSkillProductTransactionsResponse]
         """
         Returns transactions of all in skill products purchases of the customer
 
@@ -204,7 +230,10 @@ class MonetizationServiceClient(BaseServiceClient):
         :type next_token: str
         :param max_results: sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 100 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned because maxResults was exceeded, the response contains nextToken which can be used to fetch next set of result.
         :type max_results: float
-        :rtype: Union[Error, InSkillProductTransactionsResponse]
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, Error, InSkillProductTransactionsResponse]
         """
         operation_name = "get_in_skill_products_transactions"
         params = locals()
@@ -242,6 +271,11 @@ class MonetizationServiceClient(BaseServiceClient):
         body_params = None
         header_params.append(('Content-type', 'application/json'))
 
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
         # Authentication setting
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
@@ -256,7 +290,7 @@ class MonetizationServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.monetization.error.Error", status_code=429, message="The request is throttled."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.monetization.error.Error", status_code=500, message="Internal Server Error"))
 
-        return self.invoke(
+        api_response = self.invoke(
             method="GET",
             endpoint=self._api_endpoint,
             path=resource_path,
@@ -267,12 +301,19 @@ class MonetizationServiceClient(BaseServiceClient):
             response_definitions=error_definitions,
             response_type="ask_sdk_model.services.monetization.in_skill_product_transactions_response.InSkillProductTransactionsResponse")
 
+        if full_response:
+            return api_response
+        return api_response.body
+
     def get_voice_purchase_setting(self, **kwargs):
-        # type: (**Any) -> Union[bool, Error]
+        # type: (**Any) -> Union[ApiResponse, bool, Error]
         """
         Returns whether or not voice purchasing is enabled for the skill
 
-        :rtype: Union[bool, Error]
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, bool, Error]
         """
         operation_name = "get_voice_purchase_setting"
         params = locals()
@@ -292,6 +333,11 @@ class MonetizationServiceClient(BaseServiceClient):
         body_params = None
         header_params.append(('Content-type', 'application/json'))
 
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
         # Authentication setting
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
@@ -302,7 +348,7 @@ class MonetizationServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.monetization.error.Error", status_code=401, message="The authentication token is invalid or doesn&#39;t have access to make this request"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.monetization.error.Error", status_code=500, message="Internal Server Error."))
 
-        return self.invoke(
+        api_response = self.invoke(
             method="GET",
             endpoint=self._api_endpoint,
             path=resource_path,
@@ -312,3 +358,7 @@ class MonetizationServiceClient(BaseServiceClient):
             body=body_params,
             response_definitions=error_definitions,
             response_type="bool")
+
+        if full_response:
+            return api_response
+        return api_response.body

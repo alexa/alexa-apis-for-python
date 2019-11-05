@@ -22,6 +22,8 @@ import typing
 from ask_sdk_model.services.base_service_client import BaseServiceClient
 from ask_sdk_model.services.api_configuration import ApiConfiguration
 from ask_sdk_model.services.service_client_response import ServiceClientResponse
+from ask_sdk_model.services.api_response import ApiResponse
+
 from ask_sdk_model.services.authentication_configuration import AuthenticationConfiguration
 from ask_sdk_model.services.lwa.lwa_client import LwaClient
 
@@ -63,7 +65,7 @@ class SkillMessagingServiceClient(BaseServiceClient):
             self._lwa_service_client = lwa_client
 
     def send_skill_message(self, user_id, send_skill_messaging_request, **kwargs):
-        # type: (str, SendSkillMessagingRequest, **Any) -> Union[Error]
+        # type: (str, SendSkillMessagingRequest, **Any) -> Union[ApiResponse, Error]
         """
         Send a message request to a skill for a specified user.
 
@@ -71,7 +73,10 @@ class SkillMessagingServiceClient(BaseServiceClient):
         :type user_id: str
         :param send_skill_messaging_request: (required) Message Request to be sent to the skill.
         :type send_skill_messaging_request: ask_sdk_model.services.skill_messaging.send_skill_messaging_request.SendSkillMessagingRequest
-        :rtype: None
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, Error]
         """
         operation_name = "send_skill_message"
         params = locals()
@@ -103,6 +108,11 @@ class SkillMessagingServiceClient(BaseServiceClient):
             body_params = params['send_skill_messaging_request']
         header_params.append(('Content-type', 'application/json'))
 
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
         # Authentication setting
         access_token = self._lwa_service_client.get_access_token_for_scope(
             "alexa:skill_messaging")
@@ -118,7 +128,7 @@ class SkillMessagingServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.skill_messaging.error.Error", status_code=500, message="The SkillMessaging service encountered an internal error for a valid request. "))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.skill_messaging.error.Error", status_code=0, message="Unexpected error"))
 
-        self.invoke(
+        api_response = self.invoke(
             method="POST",
             endpoint=self._api_endpoint,
             path=resource_path,
@@ -128,3 +138,7 @@ class SkillMessagingServiceClient(BaseServiceClient):
             body=body_params,
             response_definitions=error_definitions,
             response_type=None)
+
+        if full_response:
+            return api_response
+        

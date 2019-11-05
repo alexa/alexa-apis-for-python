@@ -22,6 +22,8 @@ import typing
 from ask_sdk_model.services.base_service_client import BaseServiceClient
 from ask_sdk_model.services.api_configuration import ApiConfiguration
 from ask_sdk_model.services.service_client_response import ServiceClientResponse
+from ask_sdk_model.services.api_response import ApiResponse
+
 
 
 if typing.TYPE_CHECKING:
@@ -46,11 +48,14 @@ class EndpointEnumerationServiceClient(BaseServiceClient):
         super(EndpointEnumerationServiceClient, self).__init__(api_configuration)
 
     def get_endpoints(self, **kwargs):
-        # type: (**Any) -> Union[EndpointEnumerationResponse, Error]
+        # type: (**Any) -> Union[ApiResponse, EndpointEnumerationResponse, Error]
         """
         This API is invoked by the skill to retrieve endpoints connected to the Echo device. 
 
-        :rtype: Union[EndpointEnumerationResponse, Error]
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, EndpointEnumerationResponse, Error]
         """
         operation_name = "get_endpoints"
         params = locals()
@@ -70,6 +75,11 @@ class EndpointEnumerationServiceClient(BaseServiceClient):
         body_params = None
         header_params.append(('Content-type', 'application/json'))
 
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
         # Authentication setting
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
@@ -83,7 +93,7 @@ class EndpointEnumerationServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.endpoint_enumeration.error.Error", status_code=503, message="Service Unavailable. Returned when the server is not ready to handle the request."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.endpoint_enumeration.error.Error", status_code=0, message="Unexpected error"))
 
-        return self.invoke(
+        api_response = self.invoke(
             method="GET",
             endpoint=self._api_endpoint,
             path=resource_path,
@@ -93,3 +103,7 @@ class EndpointEnumerationServiceClient(BaseServiceClient):
             body=body_params,
             response_definitions=error_definitions,
             response_type="ask_sdk_model.services.endpoint_enumeration.endpoint_enumeration_response.EndpointEnumerationResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body

@@ -39,6 +39,8 @@ class Directive(object):
 
         | CustomInterfaceController.StopEventHandler: :py:class:`ask_sdk_model.interfaces.custom_interface_controller.stop_event_handler_directive.StopEventHandlerDirective`,
         |
+        | Navigation.Assistance.AnnounceRoadRegulation: :py:class:`ask_sdk_model.interfaces.navigation.assistance.announce_road_regulation.AnnounceRoadRegulation`,
+        |
         | Connections.SendRequest: :py:class:`ask_sdk_model.interfaces.connections.send_request_directive.SendRequestDirective`,
         |
         | Dialog.UpdateDynamicEntities: :py:class:`ask_sdk_model.dialog.dynamic_entities_directive.DynamicEntitiesDirective`,
@@ -98,6 +100,7 @@ class Directive(object):
 
     discriminator_value_class_map = {
         'CustomInterfaceController.StopEventHandler': 'ask_sdk_model.interfaces.custom_interface_controller.stop_event_handler_directive.StopEventHandlerDirective',
+        'Navigation.Assistance.AnnounceRoadRegulation': 'ask_sdk_model.interfaces.navigation.assistance.announce_road_regulation.AnnounceRoadRegulation',
         'Connections.SendRequest': 'ask_sdk_model.interfaces.connections.send_request_directive.SendRequestDirective',
         'Dialog.UpdateDynamicEntities': 'ask_sdk_model.dialog.dynamic_entities_directive.DynamicEntitiesDirective',
         'CustomInterfaceController.StartEventHandler': 'ask_sdk_model.interfaces.custom_interface_controller.start_event_handler_directive.StartEventHandlerDirective',

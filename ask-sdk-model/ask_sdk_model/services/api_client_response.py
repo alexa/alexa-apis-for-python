@@ -20,7 +20,7 @@ if typing.TYPE_CHECKING:
 
 
 class ApiClientResponse(ApiClientMessage):
-    """Represents a request sent from Service Clients to an :py:class:`ask_sdk_model.services.api_client.ApiClient` class. implementation.
+    """Represents a response returned by :py:class:`ask_sdk_model.services.api_client.ApiClient` implementation to a Service Client.
 
     :param headers: List of header tuples
     :type headers: list[tuple[str, str]]
@@ -32,7 +32,7 @@ class ApiClientResponse(ApiClientMessage):
 
     def __init__(self, headers=None, body=None, status_code=None):
         # type: (List[Tuple[str, str]], str, int) -> None
-        """Represents a request sent from Service Clients to an :py:class:`ask_sdk_model.services.api_client.ApiClient` class. implementation.
+        """Represents a response returned by :py:class:`ask_sdk_model.services.api_client.ApiClient` implementation to a Service Client.
 
         :param headers: List of header tuples
         :type headers: list[tuple[str, str]]

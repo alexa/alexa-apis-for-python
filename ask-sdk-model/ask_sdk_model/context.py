@@ -23,6 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
+    from ask_sdk_model.interfaces.alexa.presentation.apl.rendered_document_state import RenderedDocumentState
     from ask_sdk_model.interfaces.system.system_state import SystemState
     from ask_sdk_model.interfaces.automotive.automotive_state import AutomotiveState
     from ask_sdk_model.interfaces.geolocation.geolocation_state import GeolocationState
@@ -37,6 +38,8 @@ class Context(object):
 
     :param system: Provides information about the current state of the Alexa service and the device interacting with your skill.
     :type system: (optional) ask_sdk_model.interfaces.system.system_state.SystemState
+    :param alexa_presentation_apl: Provides the current state for the Alexa.Presentation.APL interface.
+    :type alexa_presentation_apl: (optional) ask_sdk_model.interfaces.alexa.presentation.apl.rendered_document_state.RenderedDocumentState
     :param audio_player: Provides the current state for the AudioPlayer interface.
     :type audio_player: (optional) ask_sdk_model.interfaces.audioplayer.audio_player_state.AudioPlayerState
     :param automotive: Provides the automotive specific information of the device.
@@ -53,6 +56,7 @@ class Context(object):
     """
     deserialized_types = {
         'system': 'ask_sdk_model.interfaces.system.system_state.SystemState',
+        'alexa_presentation_apl': 'ask_sdk_model.interfaces.alexa.presentation.apl.rendered_document_state.RenderedDocumentState',
         'audio_player': 'ask_sdk_model.interfaces.audioplayer.audio_player_state.AudioPlayerState',
         'automotive': 'ask_sdk_model.interfaces.automotive.automotive_state.AutomotiveState',
         'display': 'ask_sdk_model.interfaces.display.display_state.DisplayState',
@@ -63,6 +67,7 @@ class Context(object):
 
     attribute_map = {
         'system': 'System',
+        'alexa_presentation_apl': 'Alexa.Presentation.APL',
         'audio_player': 'AudioPlayer',
         'automotive': 'Automotive',
         'display': 'Display',
@@ -71,12 +76,14 @@ class Context(object):
         'viewports': 'Viewports'
     }  # type: Dict
 
-    def __init__(self, system=None, audio_player=None, automotive=None, display=None, geolocation=None, viewport=None, viewports=None):
-        # type: (Optional[SystemState], Optional[AudioPlayerState], Optional[AutomotiveState], Optional[DisplayState], Optional[GeolocationState], Optional[ViewportState], Optional[List[TypedViewportState]]) -> None
+    def __init__(self, system=None, alexa_presentation_apl=None, audio_player=None, automotive=None, display=None, geolocation=None, viewport=None, viewports=None):
+        # type: (Optional[SystemState], Optional[RenderedDocumentState], Optional[AudioPlayerState], Optional[AutomotiveState], Optional[DisplayState], Optional[GeolocationState], Optional[ViewportState], Optional[List[TypedViewportState]]) -> None
         """
 
         :param system: Provides information about the current state of the Alexa service and the device interacting with your skill.
         :type system: (optional) ask_sdk_model.interfaces.system.system_state.SystemState
+        :param alexa_presentation_apl: Provides the current state for the Alexa.Presentation.APL interface.
+        :type alexa_presentation_apl: (optional) ask_sdk_model.interfaces.alexa.presentation.apl.rendered_document_state.RenderedDocumentState
         :param audio_player: Provides the current state for the AudioPlayer interface.
         :type audio_player: (optional) ask_sdk_model.interfaces.audioplayer.audio_player_state.AudioPlayerState
         :param automotive: Provides the automotive specific information of the device.
@@ -93,6 +100,7 @@ class Context(object):
         self.__discriminator_value = None  # type: str
 
         self.system = system
+        self.alexa_presentation_apl = alexa_presentation_apl
         self.audio_player = audio_player
         self.automotive = automotive
         self.display = display

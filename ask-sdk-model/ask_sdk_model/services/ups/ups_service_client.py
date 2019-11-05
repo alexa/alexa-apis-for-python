@@ -22,6 +22,8 @@ import typing
 from ask_sdk_model.services.base_service_client import BaseServiceClient
 from ask_sdk_model.services.api_configuration import ApiConfiguration
 from ask_sdk_model.services.service_client_response import ServiceClientResponse
+from ask_sdk_model.services.api_response import ApiResponse
+
 
 
 if typing.TYPE_CHECKING:
@@ -49,11 +51,14 @@ class UpsServiceClient(BaseServiceClient):
         super(UpsServiceClient, self).__init__(api_configuration)
 
     def get_profile_email(self, **kwargs):
-        # type: (**Any) -> Union[str, Error]
+        # type: (**Any) -> Union[ApiResponse, str, Error]
         """
         Gets the email address of the customer associated with the current enablement. Requires customer consent for scopes: [alexa::profile:email:read] 
 
-        :rtype: Union[str, Error]
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, str, Error]
         """
         operation_name = "get_profile_email"
         params = locals()
@@ -73,6 +78,11 @@ class UpsServiceClient(BaseServiceClient):
         body_params = None
         header_params.append(('Content-type', 'application/json'))
 
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
         # Authentication setting
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
@@ -85,7 +95,7 @@ class UpsServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=429, message="The skill has been throttled due to an excessive number of requests."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=0, message="An unexpected error occurred."))
 
-        return self.invoke(
+        api_response = self.invoke(
             method="GET",
             endpoint=self._api_endpoint,
             path=resource_path,
@@ -96,12 +106,19 @@ class UpsServiceClient(BaseServiceClient):
             response_definitions=error_definitions,
             response_type="str")
 
+        if full_response:
+            return api_response
+        return api_response.body
+
     def get_profile_given_name(self, **kwargs):
-        # type: (**Any) -> Union[str, Error]
+        # type: (**Any) -> Union[ApiResponse, str, Error]
         """
         Gets the given name (first name) of the customer associated with the current enablement. Requires customer consent for scopes: [alexa::profile:given_name:read] 
 
-        :rtype: Union[str, Error]
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, str, Error]
         """
         operation_name = "get_profile_given_name"
         params = locals()
@@ -121,6 +138,11 @@ class UpsServiceClient(BaseServiceClient):
         body_params = None
         header_params.append(('Content-type', 'application/json'))
 
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
         # Authentication setting
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
@@ -133,7 +155,7 @@ class UpsServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=429, message="The skill has been throttled due to an excessive number of requests."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=0, message="An unexpected error occurred."))
 
-        return self.invoke(
+        api_response = self.invoke(
             method="GET",
             endpoint=self._api_endpoint,
             path=resource_path,
@@ -144,12 +166,19 @@ class UpsServiceClient(BaseServiceClient):
             response_definitions=error_definitions,
             response_type="str")
 
+        if full_response:
+            return api_response
+        return api_response.body
+
     def get_profile_mobile_number(self, **kwargs):
-        # type: (**Any) -> Union[PhoneNumber, Error]
+        # type: (**Any) -> Union[ApiResponse, PhoneNumber, Error]
         """
         Gets the mobile phone number of the customer associated with the current enablement. Requires customer consent for scopes: [alexa::profile:mobile_number:read] 
 
-        :rtype: Union[PhoneNumber, Error]
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, PhoneNumber, Error]
         """
         operation_name = "get_profile_mobile_number"
         params = locals()
@@ -169,6 +198,11 @@ class UpsServiceClient(BaseServiceClient):
         body_params = None
         header_params.append(('Content-type', 'application/json'))
 
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
         # Authentication setting
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
@@ -181,7 +215,7 @@ class UpsServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=429, message="The skill has been throttled due to an excessive number of requests."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=0, message="An unexpected error occurred."))
 
-        return self.invoke(
+        api_response = self.invoke(
             method="GET",
             endpoint=self._api_endpoint,
             path=resource_path,
@@ -192,12 +226,19 @@ class UpsServiceClient(BaseServiceClient):
             response_definitions=error_definitions,
             response_type="ask_sdk_model.services.ups.phone_number.PhoneNumber")
 
+        if full_response:
+            return api_response
+        return api_response.body
+
     def get_profile_name(self, **kwargs):
-        # type: (**Any) -> Union[str, Error]
+        # type: (**Any) -> Union[ApiResponse, str, Error]
         """
         Gets the full name of the customer associated with the current enablement. Requires customer consent for scopes: [alexa::profile:name:read] 
 
-        :rtype: Union[str, Error]
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, str, Error]
         """
         operation_name = "get_profile_name"
         params = locals()
@@ -217,6 +258,11 @@ class UpsServiceClient(BaseServiceClient):
         body_params = None
         header_params.append(('Content-type', 'application/json'))
 
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
         # Authentication setting
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
@@ -229,7 +275,7 @@ class UpsServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=429, message="The skill has been throttled due to an excessive number of requests."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=0, message="An unexpected error occurred."))
 
-        return self.invoke(
+        api_response = self.invoke(
             method="GET",
             endpoint=self._api_endpoint,
             path=resource_path,
@@ -240,14 +286,21 @@ class UpsServiceClient(BaseServiceClient):
             response_definitions=error_definitions,
             response_type="str")
 
+        if full_response:
+            return api_response
+        return api_response.body
+
     def get_system_distance_units(self, device_id, **kwargs):
-        # type: (str, **Any) -> Union[Error, DistanceUnits]
+        # type: (str, **Any) -> Union[ApiResponse, Error, DistanceUnits]
         """
         Gets the distance measurement unit of the device. Does not require explict customer consent. 
 
         :param device_id: (required) The device Id
         :type device_id: str
-        :rtype: Union[Error, DistanceUnits]
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, Error, DistanceUnits]
         """
         operation_name = "get_system_distance_units"
         params = locals()
@@ -273,6 +326,11 @@ class UpsServiceClient(BaseServiceClient):
         body_params = None
         header_params.append(('Content-type', 'application/json'))
 
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
         # Authentication setting
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
@@ -285,7 +343,7 @@ class UpsServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=429, message="The skill has been throttled due to an excessive number of requests."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=0, message="An unexpected error occurred."))
 
-        return self.invoke(
+        api_response = self.invoke(
             method="GET",
             endpoint=self._api_endpoint,
             path=resource_path,
@@ -296,14 +354,21 @@ class UpsServiceClient(BaseServiceClient):
             response_definitions=error_definitions,
             response_type="ask_sdk_model.services.ups.distance_units.DistanceUnits")
 
+        if full_response:
+            return api_response
+        return api_response.body
+
     def get_system_temperature_unit(self, device_id, **kwargs):
-        # type: (str, **Any) -> Union[TemperatureUnit, Error]
+        # type: (str, **Any) -> Union[ApiResponse, TemperatureUnit, Error]
         """
         Gets the temperature measurement units of the device. Does not require explict customer consent. 
 
         :param device_id: (required) The device Id
         :type device_id: str
-        :rtype: Union[TemperatureUnit, Error]
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, TemperatureUnit, Error]
         """
         operation_name = "get_system_temperature_unit"
         params = locals()
@@ -329,6 +394,11 @@ class UpsServiceClient(BaseServiceClient):
         body_params = None
         header_params.append(('Content-type', 'application/json'))
 
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
         # Authentication setting
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
@@ -341,7 +411,7 @@ class UpsServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=429, message="The skill has been throttled due to an excessive number of requests."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=0, message="An unexpected error occurred."))
 
-        return self.invoke(
+        api_response = self.invoke(
             method="GET",
             endpoint=self._api_endpoint,
             path=resource_path,
@@ -352,14 +422,21 @@ class UpsServiceClient(BaseServiceClient):
             response_definitions=error_definitions,
             response_type="ask_sdk_model.services.ups.temperature_unit.TemperatureUnit")
 
+        if full_response:
+            return api_response
+        return api_response.body
+
     def get_system_time_zone(self, device_id, **kwargs):
-        # type: (str, **Any) -> Union[str, Error]
+        # type: (str, **Any) -> Union[ApiResponse, str, Error]
         """
         Gets the time zone of the device. Does not require explict customer consent. 
 
         :param device_id: (required) The device Id
         :type device_id: str
-        :rtype: Union[str, Error]
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, str, Error]
         """
         operation_name = "get_system_time_zone"
         params = locals()
@@ -385,6 +462,11 @@ class UpsServiceClient(BaseServiceClient):
         body_params = None
         header_params.append(('Content-type', 'application/json'))
 
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
         # Authentication setting
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
@@ -397,7 +479,7 @@ class UpsServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=429, message="The skill has been throttled due to an excessive number of requests."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.ups.error.Error", status_code=0, message="An unexpected error occurred."))
 
-        return self.invoke(
+        api_response = self.invoke(
             method="GET",
             endpoint=self._api_endpoint,
             path=resource_path,
@@ -407,3 +489,7 @@ class UpsServiceClient(BaseServiceClient):
             body=body_params,
             response_definitions=error_definitions,
             response_type="str")
+
+        if full_response:
+            return api_response
+        return api_response.body

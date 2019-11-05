@@ -22,6 +22,8 @@ import typing
 from ask_sdk_model.services.base_service_client import BaseServiceClient
 from ask_sdk_model.services.api_configuration import ApiConfiguration
 from ask_sdk_model.services.service_client_response import ServiceClientResponse
+from ask_sdk_model.services.api_response import ApiResponse
+
 from ask_sdk_model.services.authentication_configuration import AuthenticationConfiguration
 from ask_sdk_model.services.lwa.lwa_client import LwaClient
 from ask_sdk_model.services.proactive_events.skill_stage import SkillStage
@@ -64,13 +66,16 @@ class ProactiveEventsServiceClient(BaseServiceClient):
             self._lwa_service_client = lwa_client
 
     def create_proactive_event(self, create_proactive_event_request, stage, **kwargs):
-        # type: (CreateProactiveEventRequest, SkillStage, **Any) -> Union[Error]
+        # type: (CreateProactiveEventRequest, SkillStage, **Any) -> Union[ApiResponse, Error]
         """
         Create a new proactive event in live stage.
 
         :param create_proactive_event_request: (required) Request to create a new proactive event.
         :type create_proactive_event_request: ask_sdk_model.services.proactive_events.create_proactive_event_request.CreateProactiveEventRequest
-        :rtype: None
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, Error]
         """
         operation_name = "create_proactive_event"
         params = locals()
@@ -98,6 +103,11 @@ class ProactiveEventsServiceClient(BaseServiceClient):
             body_params = params['create_proactive_event_request']
         header_params.append(('Content-type', 'application/json'))
 
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
         # Authentication setting
         access_token = self._lwa_service_client.get_access_token_for_scope(
             "alexa::proactive_events")
@@ -113,7 +123,7 @@ class ProactiveEventsServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.proactive_events.error.Error", status_code=500, message="The ProactiveEvents service encounters an internal error for a valid request."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.proactive_events.error.Error", status_code=0, message="Unexpected error"))
 
-        self.invoke(
+        api_response = self.invoke(
             method="POST",
             endpoint=self._api_endpoint,
             path=resource_path,
@@ -123,3 +133,7 @@ class ProactiveEventsServiceClient(BaseServiceClient):
             body=body_params,
             response_definitions=error_definitions,
             response_type=None)
+
+        if full_response:
+            return api_response
+        

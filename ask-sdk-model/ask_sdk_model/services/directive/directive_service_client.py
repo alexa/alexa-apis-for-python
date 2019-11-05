@@ -22,6 +22,8 @@ import typing
 from ask_sdk_model.services.base_service_client import BaseServiceClient
 from ask_sdk_model.services.api_configuration import ApiConfiguration
 from ask_sdk_model.services.service_client_response import ServiceClientResponse
+from ask_sdk_model.services.api_response import ApiResponse
+
 
 
 if typing.TYPE_CHECKING:
@@ -46,13 +48,16 @@ class DirectiveServiceClient(BaseServiceClient):
         super(DirectiveServiceClient, self).__init__(api_configuration)
 
     def enqueue(self, send_directive_request, **kwargs):
-        # type: (SendDirectiveRequest, **Any) -> Union[Error]
+        # type: (SendDirectiveRequest, **Any) -> Union[ApiResponse, Error]
         """
         Send directives to Alexa.
 
         :param send_directive_request: (required) Represents the request object to send in the payload.
         :type send_directive_request: ask_sdk_model.services.directive.send_directive_request.SendDirectiveRequest
-        :rtype: None
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, Error]
         """
         operation_name = "enqueue"
         params = locals()
@@ -78,6 +83,11 @@ class DirectiveServiceClient(BaseServiceClient):
             body_params = params['send_directive_request']
         header_params.append(('Content-type', 'application/json'))
 
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
         # Authentication setting
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
@@ -89,7 +99,7 @@ class DirectiveServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.directive.error.Error", status_code=403, message="The skill is not allowed to send directives at the moment."))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.directive.error.Error", status_code=0, message="Unexpected error."))
 
-        self.invoke(
+        api_response = self.invoke(
             method="POST",
             endpoint=self._api_endpoint,
             path=resource_path,
@@ -99,3 +109,7 @@ class DirectiveServiceClient(BaseServiceClient):
             body=body_params,
             response_definitions=error_definitions,
             response_type=None)
+
+        if full_response:
+            return api_response
+        

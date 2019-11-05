@@ -43,8 +43,7 @@ class LwaClient(BaseServiceClient):
     :param authentication_configuration: AuthenticationConfiguration
         instance with valid client id and client secret, for making LWA
         calls.
-    :type authentication_configuration:
-    ask_sdk_model.services.authentication_configuration.AuthenticationConfiguration
+    :type authentication_configuration: ask_sdk_model.services.authentication_configuration.AuthenticationConfiguration
     :param grant_type: The grant type which is used to make the HTTP request.
     :type grant_type: (optional) str
     :raises: :py:class:`ValueError` if authentication configuration is not
@@ -56,7 +55,8 @@ class LwaClient(BaseServiceClient):
     CLIENT_CREDENTIALS_GRANT_TYPE = "client_credentials"
     LWA_CREDENTIALS_GRANT_TYPE = "refresh_token"
 
-    def __init__(self, api_configuration, authentication_configuration, grant_type=None):
+    def __init__(self, api_configuration, authentication_configuration,
+                 grant_type=None):
         # type: (ApiConfiguration, AuthenticationConfiguration, str) -> None
         """Client to call Login with Amazon (LWA) to retrieve access tokens.
 
@@ -68,8 +68,7 @@ class LwaClient(BaseServiceClient):
         :param authentication_configuration: AuthenticationConfiguration
             instance with valid client id and client secret, for making LWA
             calls.
-        :type authentication_configuration:
-            ask_sdk_model.services.authentication_configuration.AuthenticationConfiguration
+        :type authentication_configuration: ask_sdk_model.services.authentication_configuration.AuthenticationConfiguration
         :param grant_type: The grant type which is used to make the HTTP request.
         :type grant_type: (optional) str
         :raises: :py:class:`ValueError` if authentication configuration is not
@@ -126,7 +125,8 @@ class LwaClient(BaseServiceClient):
         :type scope: str
         :return: Retrieved access token for configured client id, client secret
         :rtype: str
-        :raises: :py:class:`ValueError` is no scope is passed and :py:class:`ValueError` if LWA AccessTokenResponse is None.
+        :raises: :py:class:`ValueError` is no scope is passed and
+            :py:class:`ValueError` if LWA AccessTokenResponse is None.
         """
         if scope is None:
             cache_key = self.REFRESH_ACCESS_TOKEN
@@ -149,7 +149,8 @@ class LwaClient(BaseServiceClient):
         if self._authentication_configuration.refresh_token is None:
             access_token_request.scope = scope
         else:
-            access_token_request.refresh_token = self._authentication_configuration.refresh_token
+            access_token_request.refresh_token = (
+                self._authentication_configuration.refresh_token)
 
         lwa_response = self._generate_access_token(
             access_token_request=access_token_request)
@@ -184,7 +185,10 @@ class LwaClient(BaseServiceClient):
             params[key] = val
         del params['kwargs']
 
-        endpoint = self._api_endpoint if self._api_endpoint else self.DEFAULT_LWA_ENDPOINT
+        if self._api_endpoint:
+            endpoint = self._api_endpoint
+        else:
+            endpoint = self.DEFAULT_LWA_ENDPOINT
         resource_path = '/auth/O2/token'.replace('{format}', 'json')
         path_params = {}  # type: Dict
         query_params = []  # type: List
@@ -227,15 +231,13 @@ class LwaClient(BaseServiceClient):
             status_code=503,
             message="Service Unavailable"))
 
-        return self.invoke(  # type: ignore
-            method="POST",
-            endpoint=endpoint,
-            path=resource_path,
-            path_params=path_params,
-            query_params=query_params,
-            header_params=header_params,
-            body=body_params,
-            response_definitions=error_definitions,
-            response_type=(
-                "ask_sdk_model.services.lwa.access_token_response."
-                "AccessTokenResponse"))
+        api_response = self.invoke(method="POST", endpoint=endpoint,
+                                   path=resource_path, path_params=path_params,
+                                   query_params=query_params,
+                                   header_params=header_params,
+                                   body=body_params,
+                                   response_definitions=error_definitions,
+                                   response_type=("ask_sdk_model.services.lwa."
+                                                  "access_token_response."
+                                                  "AccessTokenResponse"))
+        return api_response.body  # type: ignore

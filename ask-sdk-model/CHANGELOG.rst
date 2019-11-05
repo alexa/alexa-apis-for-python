@@ -240,3 +240,11 @@ This release contains the following changes :
 This release contains the following changes: 
 
 - support for `personalization <https://developer.amazon.com/docs/custom-skills/add-personalization-to-your-skill.html#invocation-request-examples>`__ in the skill.
+
+
+1.18.1
+^^^^^^^
+
+This release contains the following changes : 
+
+- Models for APL visual context.

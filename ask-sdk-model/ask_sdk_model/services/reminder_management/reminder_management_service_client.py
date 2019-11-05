@@ -22,6 +22,8 @@ import typing
 from ask_sdk_model.services.base_service_client import BaseServiceClient
 from ask_sdk_model.services.api_configuration import ApiConfiguration
 from ask_sdk_model.services.service_client_response import ServiceClientResponse
+from ask_sdk_model.services.api_response import ApiResponse
+
 
 
 if typing.TYPE_CHECKING:
@@ -49,13 +51,16 @@ class ReminderManagementServiceClient(BaseServiceClient):
         super(ReminderManagementServiceClient, self).__init__(api_configuration)
 
     def delete_reminder(self, alert_token, **kwargs):
-        # type: (str, **Any) -> Union[Error]
+        # type: (str, **Any) -> Union[ApiResponse, Error]
         """
         This API is invoked by the skill to delete a single reminder. 
 
         :param alert_token: (required) 
         :type alert_token: str
-        :rtype: None
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, Error]
         """
         operation_name = "delete_reminder"
         params = locals()
@@ -81,6 +86,11 @@ class ReminderManagementServiceClient(BaseServiceClient):
         body_params = None
         header_params.append(('Content-type', 'application/json'))
 
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
         # Authentication setting
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
@@ -91,7 +101,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=429, message="RateExceededException e.g. When the skill is throttled for exceeding the max rate"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=500, message="Internal Server Error"))
 
-        self.invoke(
+        api_response = self.invoke(
             method="DELETE",
             endpoint=self._api_endpoint,
             path=resource_path,
@@ -102,14 +112,21 @@ class ReminderManagementServiceClient(BaseServiceClient):
             response_definitions=error_definitions,
             response_type=None)
 
+        if full_response:
+            return api_response
+        
+
     def get_reminder(self, alert_token, **kwargs):
-        # type: (str, **Any) -> Union[GetReminderResponse, Error]
+        # type: (str, **Any) -> Union[ApiResponse, GetReminderResponse, Error]
         """
         This API is invoked by the skill to get a single reminder. 
 
         :param alert_token: (required) 
         :type alert_token: str
-        :rtype: Union[GetReminderResponse, Error]
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, GetReminderResponse, Error]
         """
         operation_name = "get_reminder"
         params = locals()
@@ -135,6 +152,11 @@ class ReminderManagementServiceClient(BaseServiceClient):
         body_params = None
         header_params.append(('Content-type', 'application/json'))
 
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
         # Authentication setting
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
@@ -145,7 +167,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=429, message="RateExceededException e.g. When the skill is throttled for exceeding the max rate"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=500, message="Internal Server Error"))
 
-        return self.invoke(
+        api_response = self.invoke(
             method="GET",
             endpoint=self._api_endpoint,
             path=resource_path,
@@ -156,8 +178,12 @@ class ReminderManagementServiceClient(BaseServiceClient):
             response_definitions=error_definitions,
             response_type="ask_sdk_model.services.reminder_management.get_reminder_response.GetReminderResponse")
 
+        if full_response:
+            return api_response
+        return api_response.body
+
     def update_reminder(self, alert_token, reminder_request, **kwargs):
-        # type: (str, ReminderRequest, **Any) -> Union[ReminderResponse, Error]
+        # type: (str, ReminderRequest, **Any) -> Union[ApiResponse, ReminderResponse, Error]
         """
         This API is invoked by the skill to update a reminder. 
 
@@ -165,7 +191,10 @@ class ReminderManagementServiceClient(BaseServiceClient):
         :type alert_token: str
         :param reminder_request: (required) 
         :type reminder_request: ask_sdk_model.services.reminder_management.reminder_request.ReminderRequest
-        :rtype: Union[ReminderResponse, Error]
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ReminderResponse, Error]
         """
         operation_name = "update_reminder"
         params = locals()
@@ -197,6 +226,11 @@ class ReminderManagementServiceClient(BaseServiceClient):
             body_params = params['reminder_request']
         header_params.append(('Content-type', 'application/json'))
 
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
         # Authentication setting
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
@@ -209,7 +243,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=429, message="RateExceededException e.g. When the skill is throttled for exceeding the max rate"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=500, message="Internal Server Error"))
 
-        return self.invoke(
+        api_response = self.invoke(
             method="PUT",
             endpoint=self._api_endpoint,
             path=resource_path,
@@ -220,12 +254,19 @@ class ReminderManagementServiceClient(BaseServiceClient):
             response_definitions=error_definitions,
             response_type="ask_sdk_model.services.reminder_management.reminder_response.ReminderResponse")
 
+        if full_response:
+            return api_response
+        return api_response.body
+
     def get_reminders(self, **kwargs):
-        # type: (**Any) -> Union[GetRemindersResponse, Error]
+        # type: (**Any) -> Union[ApiResponse, GetRemindersResponse, Error]
         """
         This API is invoked by the skill to get a all reminders created by the caller. 
 
-        :rtype: Union[GetRemindersResponse, Error]
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, GetRemindersResponse, Error]
         """
         operation_name = "get_reminders"
         params = locals()
@@ -245,6 +286,11 @@ class ReminderManagementServiceClient(BaseServiceClient):
         body_params = None
         header_params.append(('Content-type', 'application/json'))
 
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
         # Authentication setting
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
@@ -255,7 +301,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=429, message="RateExceededException e.g. When the skill is throttled for exceeding the max rate"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=500, message="Internal Server Error"))
 
-        return self.invoke(
+        api_response = self.invoke(
             method="GET",
             endpoint=self._api_endpoint,
             path=resource_path,
@@ -266,14 +312,21 @@ class ReminderManagementServiceClient(BaseServiceClient):
             response_definitions=error_definitions,
             response_type="ask_sdk_model.services.reminder_management.get_reminders_response.GetRemindersResponse")
 
+        if full_response:
+            return api_response
+        return api_response.body
+
     def create_reminder(self, reminder_request, **kwargs):
-        # type: (ReminderRequest, **Any) -> Union[ReminderResponse, Error]
+        # type: (ReminderRequest, **Any) -> Union[ApiResponse, ReminderResponse, Error]
         """
         This API is invoked by the skill to create a new reminder. 
 
         :param reminder_request: (required) 
         :type reminder_request: ask_sdk_model.services.reminder_management.reminder_request.ReminderRequest
-        :rtype: Union[ReminderResponse, Error]
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ReminderResponse, Error]
         """
         operation_name = "create_reminder"
         params = locals()
@@ -299,6 +352,11 @@ class ReminderManagementServiceClient(BaseServiceClient):
             body_params = params['reminder_request']
         header_params.append(('Content-type', 'application/json'))
 
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
         # Authentication setting
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
@@ -312,7 +370,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=503, message="Service Unavailable"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.reminder_management.error.Error", status_code=504, message="Gateway Timeout"))
 
-        return self.invoke(
+        api_response = self.invoke(
             method="POST",
             endpoint=self._api_endpoint,
             path=resource_path,
@@ -322,3 +380,7 @@ class ReminderManagementServiceClient(BaseServiceClient):
             body=body_params,
             response_definitions=error_definitions,
             response_type="ask_sdk_model.services.reminder_management.reminder_response.ReminderResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body

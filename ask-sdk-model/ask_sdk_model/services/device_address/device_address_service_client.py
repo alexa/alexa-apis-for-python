@@ -22,6 +22,8 @@ import typing
 from ask_sdk_model.services.base_service_client import BaseServiceClient
 from ask_sdk_model.services.api_configuration import ApiConfiguration
 from ask_sdk_model.services.service_client_response import ServiceClientResponse
+from ask_sdk_model.services.api_response import ApiResponse
+
 
 
 if typing.TYPE_CHECKING:
@@ -47,13 +49,16 @@ class DeviceAddressServiceClient(BaseServiceClient):
         super(DeviceAddressServiceClient, self).__init__(api_configuration)
 
     def get_country_and_postal_code(self, device_id, **kwargs):
-        # type: (str, **Any) -> Union[ShortAddress, Error]
+        # type: (str, **Any) -> Union[ApiResponse, ShortAddress, Error]
         """
         Gets the country and postal code of a device 
 
         :param device_id: (required) The device Id for which to get the country and postal code
         :type device_id: str
-        :rtype: Union[ShortAddress, Error]
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ShortAddress, Error]
         """
         operation_name = "get_country_and_postal_code"
         params = locals()
@@ -79,6 +84,11 @@ class DeviceAddressServiceClient(BaseServiceClient):
         body_params = None
         header_params.append(('Content-type', 'application/json'))
 
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
         # Authentication setting
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
@@ -91,7 +101,7 @@ class DeviceAddressServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.device_address.error.Error", status_code=429, message="The request is throttled"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.device_address.error.Error", status_code=0, message="Unexpected error"))
 
-        return self.invoke(
+        api_response = self.invoke(
             method="GET",
             endpoint=self._api_endpoint,
             path=resource_path,
@@ -102,14 +112,21 @@ class DeviceAddressServiceClient(BaseServiceClient):
             response_definitions=error_definitions,
             response_type="ask_sdk_model.services.device_address.short_address.ShortAddress")
 
+        if full_response:
+            return api_response
+        return api_response.body
+
     def get_full_address(self, device_id, **kwargs):
-        # type: (str, **Any) -> Union[Address, Error]
+        # type: (str, **Any) -> Union[ApiResponse, Address, Error]
         """
         Gets the address of a device 
 
         :param device_id: (required) The device Id for which to get the address
         :type device_id: str
-        :rtype: Union[Address, Error]
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, Address, Error]
         """
         operation_name = "get_full_address"
         params = locals()
@@ -135,6 +152,11 @@ class DeviceAddressServiceClient(BaseServiceClient):
         body_params = None
         header_params.append(('Content-type', 'application/json'))
 
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
         # Authentication setting
         authorization_value = "Bearer " + self._authorization_value
         header_params.append(("Authorization", authorization_value))
@@ -147,7 +169,7 @@ class DeviceAddressServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.device_address.error.Error", status_code=429, message="The request is throttled"))
         error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.device_address.error.Error", status_code=0, message="Unexpected error"))
 
-        return self.invoke(
+        api_response = self.invoke(
             method="GET",
             endpoint=self._api_endpoint,
             path=resource_path,
@@ -157,3 +179,7 @@ class DeviceAddressServiceClient(BaseServiceClient):
             body=body_params,
             response_definitions=error_definitions,
             response_type="ask_sdk_model.services.device_address.address.Address")
+
+        if full_response:
+            return api_response
+        return api_response.body
