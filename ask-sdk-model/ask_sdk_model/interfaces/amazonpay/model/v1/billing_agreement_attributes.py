@@ -60,6 +60,7 @@ class BillingAgreementAttributes(object):
         'billing_agreement_type': 'billingAgreementType',
         'subscription_amount': 'subscriptionAmount'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, platform_id=None, seller_note=None, seller_billing_agreement_attributes=None, billing_agreement_type=None, subscription_amount=None):
         # type: (Optional[str], Optional[str], Optional[SellerBillingAgreementAttributes], Optional[BillingAgreementType], Optional[Price]) -> None

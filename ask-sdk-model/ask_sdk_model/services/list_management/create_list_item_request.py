@@ -44,6 +44,7 @@ class CreateListItemRequest(object):
         'value': 'value',
         'status': 'status'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, value=None, status=None):
         # type: (Optional[str], Optional[ListItemState]) -> None

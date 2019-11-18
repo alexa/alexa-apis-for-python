@@ -63,6 +63,7 @@ class SystemState(object):
         'api_endpoint': 'apiEndpoint',
         'api_access_token': 'apiAccessToken'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, application=None, user=None, device=None, person=None, api_endpoint=None, api_access_token=None):
         # type: (Optional[Application], Optional[User], Optional[Device], Optional[Person], Optional[str], Optional[str]) -> None

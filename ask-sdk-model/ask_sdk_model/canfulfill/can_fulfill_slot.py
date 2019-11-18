@@ -47,6 +47,7 @@ class CanFulfillSlot(object):
         'can_understand': 'canUnderstand',
         'can_fulfill': 'canFulfill'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, can_understand=None, can_fulfill=None):
         # type: (Optional[CanUnderstandSlotValues], Optional[CanFulfillSlotValues]) -> None

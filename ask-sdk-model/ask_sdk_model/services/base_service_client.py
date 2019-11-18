@@ -215,7 +215,7 @@ class BaseServiceClient(object):
             encoded_query_params.append(
                 (param_name_encoded, param_value_encoded))
 
-        return query_string + urlencode(encoded_query_params)
+        return query_string + urlencode(encoded_query_params, doseq=True)
 
     @staticmethod
     def __build_url(endpoint, path, query_params, path_params):

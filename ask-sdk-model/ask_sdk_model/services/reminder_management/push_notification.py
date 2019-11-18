@@ -42,6 +42,7 @@ class PushNotification(object):
     attribute_map = {
         'status': 'status'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, status=None):
         # type: (Optional[PushNotificationStatus]) -> None

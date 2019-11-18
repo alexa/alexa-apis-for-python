@@ -46,6 +46,7 @@ class SimpleCard(Card):
         'title': 'title',
         'content': 'content'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, title=None, content=None):
         # type: (Optional[str], Optional[str]) -> None

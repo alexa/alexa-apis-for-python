@@ -45,6 +45,7 @@ class Price(object):
         'amount': 'amount',
         'currency_code': 'currencyCode'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, amount=None, currency_code=None):
         # type: (Optional[str], Optional[str]) -> None

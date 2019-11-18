@@ -44,6 +44,7 @@ class Event(object):
         'status': 'status',
         'alert_token': 'alertToken'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, status=None, alert_token=None):
         # type: (Optional[Status], Optional[str]) -> None

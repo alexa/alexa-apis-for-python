@@ -48,6 +48,7 @@ class PlayDirective(Directive):
         'play_behavior': 'playBehavior',
         'audio_item': 'audioItem'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, play_behavior=None, audio_item=None):
         # type: (Optional[PlayBehavior], Optional[AudioItem]) -> None

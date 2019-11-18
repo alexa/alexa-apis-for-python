@@ -43,6 +43,7 @@ class ConfirmIntentDirective(Directive):
         'object_type': 'type',
         'updated_intent': 'updatedIntent'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, updated_intent=None):
         # type: (Optional[Intent]) -> None

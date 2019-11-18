@@ -61,6 +61,7 @@ class CreateProactiveEventRequest(object):
         'localized_attributes': 'localizedAttributes',
         'relevant_audience': 'relevantAudience'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, timestamp=None, reference_id=None, expiry_time=None, event=None, localized_attributes=None, relevant_audience=None):
         # type: (Optional[datetime], Optional[str], Optional[datetime], Optional[Event], Optional[List[object]], Optional[RelevantAudience]) -> None

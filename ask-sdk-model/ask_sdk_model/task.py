@@ -49,6 +49,7 @@ class Task(object):
         'version': 'version',
         'input': 'input'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, name=None, version=None, input=None):
         # type: (Optional[str], Optional[str], Optional[object]) -> None

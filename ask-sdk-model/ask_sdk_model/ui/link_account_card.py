@@ -38,6 +38,7 @@ class LinkAccountCard(Card):
     attribute_map = {
         'object_type': 'type'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self):
         # type: () -> None

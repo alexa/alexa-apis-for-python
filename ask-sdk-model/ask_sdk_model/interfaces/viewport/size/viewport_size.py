@@ -51,6 +51,7 @@ class ViewportSize(object):
     attribute_map = {
         'object_type': 'type'
     }  # type: Dict
+    supports_multiple_types = False
 
     discriminator_value_class_map = {
         'CONTINUOUS': 'ask_sdk_model.interfaces.viewport.size.continuous_viewport_size.ContinuousViewportSize',

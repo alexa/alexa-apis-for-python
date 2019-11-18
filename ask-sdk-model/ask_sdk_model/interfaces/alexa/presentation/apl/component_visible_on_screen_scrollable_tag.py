@@ -50,6 +50,7 @@ class ComponentVisibleOnScreenScrollableTag(object):
         'allow_forward': 'allowForward',
         'allow_backward': 'allowBackward'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, direction=None, allow_forward=None, allow_backward=None):
         # type: (Optional[ComponentVisibleOnScreenScrollableTagDirectionEnum], Optional[bool], Optional[bool]) -> None

@@ -54,6 +54,7 @@ class ElementSelectedRequest(Request):
         'locale': 'locale',
         'token': 'token'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, token=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[str]) -> None

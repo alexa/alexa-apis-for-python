@@ -78,6 +78,7 @@ class AnimateItemCommand(Command):
         'repeat_mode': 'repeatMode',
         'value': 'value'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, delay=None, description=None, when=None, component_id=None, duration=None, easing='linear', repeat_count=None, repeat_mode=None, value=None):
         # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Union[int, str, None], Optional[str], Union[int, str, None], Optional[AnimateItemRepeatMode], Optional[List[AnimatedProperty]]) -> None

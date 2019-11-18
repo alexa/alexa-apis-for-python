@@ -47,6 +47,7 @@ class SendDirectiveRequest(object):
         'header': 'header',
         'directive': 'directive'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, header=None, directive=None):
         # type: (Optional[Header], Optional[Directive]) -> None

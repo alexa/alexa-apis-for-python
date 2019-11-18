@@ -51,6 +51,7 @@ class Stream(object):
         'url': 'url',
         'offset_in_milliseconds': 'offsetInMilliseconds'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, expected_previous_token=None, token=None, url=None, offset_in_milliseconds=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[int]) -> None

@@ -63,6 +63,7 @@ class ListItemsCreatedEventRequest(Request):
         'event_creation_time': 'eventCreationTime',
         'event_publishing_time': 'eventPublishingTime'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, body=None, event_creation_time=None, event_publishing_time=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[ListItemBody], Optional[datetime], Optional[datetime]) -> None

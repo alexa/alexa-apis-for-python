@@ -44,6 +44,7 @@ class Error(object):
         'code': 'code',
         'message': 'message'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, code=None, message=None):
         # type: (Optional[ErrorCode], Optional[str]) -> None

@@ -52,6 +52,7 @@ class ClearFocusCommand(Command):
         'description': 'description',
         'when': 'when'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, delay=None, description=None, when=None):
         # type: (Union[int, str, None], Optional[str], Optional[bool]) -> None

@@ -42,6 +42,7 @@ class RichText(TextField):
         'object_type': 'type',
         'text': 'text'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, text=None):
         # type: (Optional[str]) -> None

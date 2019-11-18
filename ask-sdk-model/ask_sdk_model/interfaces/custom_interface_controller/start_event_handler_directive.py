@@ -54,6 +54,7 @@ class StartEventHandlerDirective(Directive):
         'event_filter': 'eventFilter',
         'expiration': 'expiration'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, token=None, event_filter=None, expiration=None):
         # type: (Optional[str], Optional[EventFilter], Optional[Expiration]) -> None

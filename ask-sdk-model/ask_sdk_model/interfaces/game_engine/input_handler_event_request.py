@@ -61,6 +61,7 @@ class InputHandlerEventRequest(Request):
         'originating_request_id': 'originatingRequestId',
         'events': 'events'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, originating_request_id=None, events=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[str], Optional[List[InputHandlerEvent]]) -> None

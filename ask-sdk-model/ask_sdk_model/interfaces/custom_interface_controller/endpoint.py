@@ -41,6 +41,7 @@ class Endpoint(object):
     attribute_map = {
         'endpoint_id': 'endpointId'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, endpoint_id=None):
         # type: (Optional[str]) -> None

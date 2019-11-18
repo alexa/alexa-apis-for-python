@@ -60,6 +60,7 @@ class SellerOrderAttributes(BaseAmazonPayEntity):
         'object_type': '@type',
         'version': '@version'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, seller_order_id=None, store_name=None, custom_information=None, seller_note=None, version=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[str]) -> None

@@ -52,6 +52,7 @@ class ImageInstance(object):
         'width_pixels': 'widthPixels',
         'height_pixels': 'heightPixels'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, url=None, size=None, width_pixels=None, height_pixels=None):
         # type: (Optional[str], Optional[ImageSize], Optional[int], Optional[int]) -> None

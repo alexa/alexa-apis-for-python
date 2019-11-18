@@ -46,6 +46,7 @@ class ChargeAmazonPayResult(object):
         'amazon_order_reference_id': 'amazonOrderReferenceId',
         'authorization_details': 'authorizationDetails'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, amazon_order_reference_id=None, authorization_details=None):
         # type: (Optional[str], Optional[AuthorizationDetails]) -> None

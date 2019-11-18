@@ -44,6 +44,7 @@ class StopEventHandlerDirective(Directive):
         'object_type': 'type',
         'token': 'token'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, token=None):
         # type: (Optional[str]) -> None

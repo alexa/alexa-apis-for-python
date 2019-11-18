@@ -48,6 +48,7 @@ class TextContent(object):
         'secondary_text': 'secondaryText',
         'tertiary_text': 'tertiaryText'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, primary_text=None, secondary_text=None, tertiary_text=None):
         # type: (Optional[TextField], Optional[TextField], Optional[TextField]) -> None

@@ -45,6 +45,7 @@ class Value(object):
         'name': 'name',
         'id': 'id'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, name=None, id=None):
         # type: (Optional[str], Optional[str]) -> None

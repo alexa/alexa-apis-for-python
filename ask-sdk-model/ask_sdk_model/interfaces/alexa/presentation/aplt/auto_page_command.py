@@ -68,6 +68,7 @@ class AutoPageCommand(Command):
         'count': 'count',
         'duration': 'duration'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, delay=None, description=None, screen_lock=None, when=None, component_id=None, count=None, duration=None):
         # type: (Optional[int], Optional[str], Optional[bool], Union[bool, str, None], Optional[str], Union[int, str, None], Union[int, str, None]) -> None

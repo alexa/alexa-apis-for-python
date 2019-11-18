@@ -62,6 +62,7 @@ class SessionEndedRequest(Request):
         'reason': 'reason',
         'error': 'error'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, reason=None, error=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[SessionEndedReason], Optional[SessionEndedError]) -> None

@@ -67,6 +67,7 @@ class BillingAgreementAttributes(BaseAmazonPayEntity):
         'object_type': '@type',
         'version': '@version'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, platform_id=None, seller_note=None, seller_billing_agreement_attributes=None, billing_agreement_type=None, subscription_amount=None, version=None):
         # type: (Optional[str], Optional[str], Optional[SellerBillingAgreementAttributes], Optional[BillingAgreementType], Optional[Price], Optional[str]) -> None

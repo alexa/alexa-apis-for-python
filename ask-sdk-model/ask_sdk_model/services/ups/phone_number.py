@@ -43,6 +43,7 @@ class PhoneNumber(object):
         'country_code': 'countryCode',
         'phone_number': 'phoneNumber'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, country_code=None, phone_number=None):
         # type: (Optional[str], Optional[str]) -> None

@@ -46,6 +46,7 @@ class Entity(object):
         'id': 'id',
         'name': 'name'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, id=None, name=None):
         # type: (Optional[str], Optional[EntityValueAndSynonyms]) -> None

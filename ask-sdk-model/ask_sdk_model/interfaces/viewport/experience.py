@@ -53,6 +53,7 @@ class Experience(object):
         'can_rotate': 'canRotate',
         'can_resize': 'canResize'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, arc_minute_width=None, arc_minute_height=None, can_rotate=None, can_resize=None):
         # type: (Optional[float], Optional[float], Optional[bool], Optional[bool]) -> None

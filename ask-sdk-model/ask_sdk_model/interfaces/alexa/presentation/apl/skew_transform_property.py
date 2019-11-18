@@ -44,6 +44,7 @@ class SkewTransformProperty(TransformProperty):
         'skew_x': 'skewX',
         'skew_y': 'skewY'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, skew_x=1.0, skew_y=1.0):
         # type: (Union[float, str, None], Union[float, str, None]) -> None

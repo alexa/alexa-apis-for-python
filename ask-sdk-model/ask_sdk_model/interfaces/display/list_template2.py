@@ -61,6 +61,7 @@ class ListTemplate2(Template):
         'title': 'title',
         'list_items': 'listItems'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, token=None, back_button=None, background_image=None, title=None, list_items=None):
         # type: (Optional[str], Optional[BackButtonBehavior], Optional[Image], Optional[str], Optional[List[ListItem]]) -> None

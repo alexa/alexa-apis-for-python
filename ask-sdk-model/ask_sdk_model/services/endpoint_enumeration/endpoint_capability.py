@@ -47,6 +47,7 @@ class EndpointCapability(object):
         'object_type': 'type',
         'version': 'version'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, interface=None, object_type=None, version=None):
         # type: (Optional[str], Optional[str], Optional[str]) -> None

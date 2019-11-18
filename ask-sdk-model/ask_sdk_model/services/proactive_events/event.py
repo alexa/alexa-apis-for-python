@@ -45,6 +45,7 @@ class Event(object):
         'name': 'name',
         'payload': 'payload'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, name=None, payload=None):
         # type: (Optional[str], Optional[object]) -> None

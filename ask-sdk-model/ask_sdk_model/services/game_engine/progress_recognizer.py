@@ -48,6 +48,7 @@ class ProgressRecognizer(Recognizer):
         'recognizer': 'recognizer',
         'completion': 'completion'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, recognizer=None, completion=None):
         # type: (Optional[str], Optional[float]) -> None

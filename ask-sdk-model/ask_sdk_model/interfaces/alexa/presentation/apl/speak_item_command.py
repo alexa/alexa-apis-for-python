@@ -70,6 +70,7 @@ class SpeakItemCommand(Command):
         'highlight_mode': 'highlightMode',
         'minimum_dwell_time': 'minimumDwellTime'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, delay=None, description=None, when=None, align=None, component_id=None, highlight_mode=None, minimum_dwell_time=None):
         # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[Align], Optional[str], Optional[HighlightMode], Union[int, str, None]) -> None

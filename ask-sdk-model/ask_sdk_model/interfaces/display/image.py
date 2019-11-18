@@ -44,6 +44,7 @@ class Image(object):
         'content_description': 'contentDescription',
         'sources': 'sources'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, content_description=None, sources=None):
         # type: (Optional[str], Optional[List[ImageInstance]]) -> None

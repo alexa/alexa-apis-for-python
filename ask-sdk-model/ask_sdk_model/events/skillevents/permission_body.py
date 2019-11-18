@@ -40,6 +40,7 @@ class PermissionBody(object):
     attribute_map = {
         'accepted_permissions': 'acceptedPermissions'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, accepted_permissions=None):
         # type: (Optional[List[Permission]]) -> None

@@ -47,6 +47,7 @@ class LocationServices(object):
         'status': 'status',
         'access': 'access'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, status=None, access=None):
         # type: (Optional[Status], Optional[Access]) -> None

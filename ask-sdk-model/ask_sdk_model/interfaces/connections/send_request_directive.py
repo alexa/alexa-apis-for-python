@@ -52,6 +52,7 @@ class SendRequestDirective(Directive):
         'payload': 'payload',
         'token': 'token'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, name=None, payload=None, token=None):
         # type: (Optional[str], Optional[Dict[str, object]], Optional[str]) -> None

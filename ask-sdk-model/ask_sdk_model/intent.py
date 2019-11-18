@@ -51,6 +51,7 @@ class Intent(object):
         'slots': 'slots',
         'confirmation_status': 'confirmationStatus'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, name=None, slots=None, confirmation_status=None):
         # type: (Optional[str], Optional[Dict[str, Slot]], Optional[IntentConfirmationStatus]) -> None

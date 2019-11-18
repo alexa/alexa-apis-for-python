@@ -41,6 +41,7 @@ class ComponentVisibleOnScreenListItemTag(object):
     attribute_map = {
         'index': 'index'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, index=None):
         # type: (Optional[int]) -> None

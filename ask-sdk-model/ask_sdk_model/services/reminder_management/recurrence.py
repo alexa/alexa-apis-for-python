@@ -51,6 +51,7 @@ class Recurrence(object):
         'by_day': 'byDay',
         'interval': 'interval'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, freq=None, by_day=None, interval=None):
         # type: (Optional[RecurrenceFreq], Optional[List[RecurrenceDay]], Optional[int]) -> None

@@ -40,6 +40,7 @@ class Status(object):
     attribute_map = {
         'code': 'code'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, code=None):
         # type: (Optional[StatusCode]) -> None

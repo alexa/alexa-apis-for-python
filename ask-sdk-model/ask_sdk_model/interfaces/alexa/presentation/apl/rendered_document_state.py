@@ -50,6 +50,7 @@ class RenderedDocumentState(object):
         'version': 'version',
         'components_visible_on_screen': 'componentsVisibleOnScreen'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, token=None, version=None, components_visible_on_screen=None):
         # type: (Optional[str], Optional[str], Optional[List[ComponentVisibleOnScreen]]) -> None

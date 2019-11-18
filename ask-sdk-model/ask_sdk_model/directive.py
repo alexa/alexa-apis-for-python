@@ -55,7 +55,11 @@ class Directive(object):
         |
         | CustomInterfaceController.SendDirective: :py:class:`ask_sdk_model.interfaces.custom_interface_controller.send_directive_directive.SendDirectiveDirective`,
         |
+        | Alexa.Presentation.HTML.HandleMessage: :py:class:`ask_sdk_model.interfaces.alexa.presentation.html.handle_message_directive.HandleMessageDirective`,
+        |
         | Dialog.ElicitSlot: :py:class:`ask_sdk_model.dialog.elicit_slot_directive.ElicitSlotDirective`,
+        |
+        | Alexa.Presentation.HTML.Start: :py:class:`ask_sdk_model.interfaces.alexa.presentation.html.start_directive.StartDirective`,
         |
         | AudioPlayer.Stop: :py:class:`ask_sdk_model.interfaces.audioplayer.stop_directive.StopDirective`,
         |
@@ -97,6 +101,7 @@ class Directive(object):
     attribute_map = {
         'object_type': 'type'
     }  # type: Dict
+    supports_multiple_types = False
 
     discriminator_value_class_map = {
         'CustomInterfaceController.StopEventHandler': 'ask_sdk_model.interfaces.custom_interface_controller.stop_event_handler_directive.StopEventHandlerDirective',
@@ -108,7 +113,9 @@ class Directive(object):
         'Dialog.Delegate': 'ask_sdk_model.dialog.delegate_directive.DelegateDirective',
         'Dialog.ConfirmIntent': 'ask_sdk_model.dialog.confirm_intent_directive.ConfirmIntentDirective',
         'CustomInterfaceController.SendDirective': 'ask_sdk_model.interfaces.custom_interface_controller.send_directive_directive.SendDirectiveDirective',
+        'Alexa.Presentation.HTML.HandleMessage': 'ask_sdk_model.interfaces.alexa.presentation.html.handle_message_directive.HandleMessageDirective',
         'Dialog.ElicitSlot': 'ask_sdk_model.dialog.elicit_slot_directive.ElicitSlotDirective',
+        'Alexa.Presentation.HTML.Start': 'ask_sdk_model.interfaces.alexa.presentation.html.start_directive.StartDirective',
         'AudioPlayer.Stop': 'ask_sdk_model.interfaces.audioplayer.stop_directive.StopDirective',
         'Dialog.ConfirmSlot': 'ask_sdk_model.dialog.confirm_slot_directive.ConfirmSlotDirective',
         'AudioPlayer.Play': 'ask_sdk_model.interfaces.audioplayer.play_directive.PlayDirective',

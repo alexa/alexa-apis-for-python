@@ -46,6 +46,7 @@ class EventFilter(object):
         'filter_expression': 'filterExpression',
         'filter_match_action': 'filterMatchAction'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, filter_expression=None, filter_match_action=None):
         # type: (Optional[object], Optional[FilterMatchAction]) -> None

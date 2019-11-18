@@ -52,6 +52,7 @@ class Price(BaseAmazonPayEntity):
         'object_type': '@type',
         'version': '@version'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, amount=None, currency_code=None, version=None):
         # type: (Optional[str], Optional[str], Optional[str]) -> None

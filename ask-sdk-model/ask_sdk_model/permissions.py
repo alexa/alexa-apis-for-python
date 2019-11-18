@@ -46,6 +46,7 @@ class Permissions(object):
         'consent_token': 'consentToken',
         'scopes': 'scopes'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, consent_token=None, scopes=None):
         # type: (Optional[str], Optional[Dict[str, Scope]]) -> None

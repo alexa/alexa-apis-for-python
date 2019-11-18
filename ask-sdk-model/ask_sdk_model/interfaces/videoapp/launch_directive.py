@@ -43,6 +43,7 @@ class LaunchDirective(Directive):
         'object_type': 'type',
         'video_item': 'videoItem'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, video_item=None):
         # type: (Optional[VideoItem]) -> None

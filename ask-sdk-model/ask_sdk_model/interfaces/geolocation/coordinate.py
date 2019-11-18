@@ -49,6 +49,7 @@ class Coordinate(object):
         'longitude_in_degrees': 'longitudeInDegrees',
         'accuracy_in_meters': 'accuracyInMeters'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, latitude_in_degrees=None, longitude_in_degrees=None, accuracy_in_meters=None):
         # type: (Optional[float], Optional[float], Optional[float]) -> None

@@ -39,6 +39,7 @@ class DisplayState(object):
     attribute_map = {
         'token': 'token'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, token=None):
         # type: (Optional[str]) -> None

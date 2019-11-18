@@ -61,6 +61,7 @@ class ScheduleTaxiReservationRequest(BaseRequest):
         'pickup_location': 'pickupLocation',
         'drop_off_location': 'dropOffLocation'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, version=None, pickup_time=None, party_size=None, pickup_location=None, drop_off_location=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[PostalAddress], Optional[PostalAddress]) -> None

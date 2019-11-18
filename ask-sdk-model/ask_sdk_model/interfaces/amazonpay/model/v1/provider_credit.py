@@ -44,6 +44,7 @@ class ProviderCredit(object):
         'provider_id': 'providerId',
         'credit': 'credit'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, provider_id=None, credit=None):
         # type: (Optional[str], Optional[Price]) -> None

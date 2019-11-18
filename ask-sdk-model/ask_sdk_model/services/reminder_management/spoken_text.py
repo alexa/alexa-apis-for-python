@@ -47,6 +47,7 @@ class SpokenText(object):
         'ssml': 'ssml',
         'text': 'text'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, locale=None, ssml=None, text=None):
         # type: (Optional[str], Optional[str], Optional[str]) -> None

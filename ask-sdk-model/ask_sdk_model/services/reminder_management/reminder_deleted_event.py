@@ -39,6 +39,7 @@ class ReminderDeletedEvent(object):
     attribute_map = {
         'alert_tokens': 'alertTokens'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, alert_tokens=None):
         # type: (Optional[List[object]]) -> None

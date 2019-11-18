@@ -48,6 +48,7 @@ class DiscreteViewportSize(ViewportSize):
         'pixel_width': 'pixelWidth',
         'pixel_height': 'pixelHeight'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, pixel_width=None, pixel_height=None):
         # type: (Optional[int], Optional[int]) -> None

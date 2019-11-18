@@ -49,6 +49,7 @@ class AnimatedProperty(object):
     attribute_map = {
         'object_property': 'property'
     }  # type: Dict
+    supports_multiple_types = False
 
     discriminator_value_class_map = {
         'opacity': 'ask_sdk_model.interfaces.alexa.presentation.apl.animated_opacity_property.AnimatedOpacityProperty',

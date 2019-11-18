@@ -43,6 +43,7 @@ class HintDirective(Directive):
         'object_type': 'type',
         'hint': 'hint'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, hint=None):
         # type: (Optional[Hint]) -> None

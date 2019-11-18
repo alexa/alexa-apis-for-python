@@ -57,6 +57,7 @@ class SessionResumedRequest(Request):
         'locale': 'locale',
         'cause': 'cause'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, cause=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[Cause]) -> None

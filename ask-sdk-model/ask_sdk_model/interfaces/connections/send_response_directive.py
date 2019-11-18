@@ -49,6 +49,7 @@ class SendResponseDirective(Directive):
         'status': 'status',
         'payload': 'payload'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, status=None, payload=None):
         # type: (Optional[ConnectionsStatus], Optional[Dict[str, object]]) -> None

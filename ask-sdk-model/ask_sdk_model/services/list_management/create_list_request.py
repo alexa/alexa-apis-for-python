@@ -44,6 +44,7 @@ class CreateListRequest(object):
         'name': 'name',
         'state': 'state'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, name=None, state=None):
         # type: (Optional[str], Optional[ListState]) -> None

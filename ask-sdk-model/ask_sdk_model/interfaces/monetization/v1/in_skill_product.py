@@ -41,6 +41,7 @@ class InSkillProduct(object):
     attribute_map = {
         'product_id': 'productId'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, product_id=None):
         # type: (Optional[str]) -> None

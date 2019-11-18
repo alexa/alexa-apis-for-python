@@ -51,6 +51,7 @@ class Resolution(object):
         'status': 'status',
         'values': 'values'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, authority=None, status=None, values=None):
         # type: (Optional[str], Optional[Status], Optional[List[ValueWrapper]]) -> None

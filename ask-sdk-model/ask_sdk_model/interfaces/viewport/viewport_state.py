@@ -87,6 +87,7 @@ class ViewportState(object):
         'keyboard': 'keyboard',
         'video': 'video'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, experiences=None, mode=None, shape=None, pixel_width=None, pixel_height=None, dpi=None, current_pixel_width=None, current_pixel_height=None, touch=None, keyboard=None, video=None):
         # type: (Optional[List[Experience]], Optional[Mode], Optional[Shape], Optional[float], Optional[float], Optional[float], Optional[float], Optional[float], Optional[List[Touch]], Optional[List[Keyboard]], Optional[Video]) -> None

@@ -49,6 +49,7 @@ class CompleteTaskDirective(Directive):
         'status': 'status',
         'result': 'result'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, status=None, result=None):
         # type: (Optional[Status], Optional[Dict[str, object]]) -> None

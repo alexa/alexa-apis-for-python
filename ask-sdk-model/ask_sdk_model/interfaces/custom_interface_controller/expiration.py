@@ -45,6 +45,7 @@ class Expiration(object):
         'duration_in_milliseconds': 'durationInMilliseconds',
         'expiration_payload': 'expirationPayload'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, duration_in_milliseconds=None, expiration_payload=None):
         # type: (Optional[int], Optional[object]) -> None

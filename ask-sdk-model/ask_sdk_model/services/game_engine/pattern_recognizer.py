@@ -62,6 +62,7 @@ class PatternRecognizer(Recognizer):
         'actions': 'actions',
         'pattern': 'pattern'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, anchor=None, fuzzy=None, gadget_ids=None, actions=None, pattern=None):
         # type: (Optional[PatternRecognizerAnchorType], Optional[bool], Optional[List[object]], Optional[List[object]], Optional[List[Pattern]]) -> None

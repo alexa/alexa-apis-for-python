@@ -56,6 +56,7 @@ class RequestEnvelope(object):
         'context': 'context',
         'request': 'request'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, version=None, session=None, context=None, request=None):
         # type: (Optional[str], Optional[Session], Optional[Context], Optional[Request]) -> None

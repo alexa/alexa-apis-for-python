@@ -62,6 +62,7 @@ class UserEvent(Request):
         'arguments': 'arguments',
         'source': 'source'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, token=None, arguments=None, source=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[str], Optional[List[object]], Optional[object]) -> None

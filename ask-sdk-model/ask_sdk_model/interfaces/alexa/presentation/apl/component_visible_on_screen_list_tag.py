@@ -57,6 +57,7 @@ class ComponentVisibleOnScreenListTag(object):
         'lowest_ordinal_seen': 'lowestOrdinalSeen',
         'highest_ordinal_seen': 'highestOrdinalSeen'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, item_count=None, lowest_index_seen=None, highest_index_seen=None, lowest_ordinal_seen=None, highest_ordinal_seen=None):
         # type: (Optional[int], Optional[int], Optional[int], Optional[int], Optional[int]) -> None

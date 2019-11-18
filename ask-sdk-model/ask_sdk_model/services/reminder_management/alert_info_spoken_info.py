@@ -42,6 +42,7 @@ class SpokenInfo(object):
     attribute_map = {
         'content': 'content'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, content=None):
         # type: (Optional[List[SpokenText]]) -> None

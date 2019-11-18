@@ -43,6 +43,7 @@ class ListItemBody(object):
         'list_id': 'listId',
         'list_item_ids': 'listItemIds'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, list_id=None, list_item_ids=None):
         # type: (Optional[str], Optional[List[object]]) -> None

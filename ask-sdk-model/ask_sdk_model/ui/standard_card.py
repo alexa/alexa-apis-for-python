@@ -51,6 +51,7 @@ class StandardCard(Card):
         'text': 'text',
         'image': 'image'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, title=None, text=None, image=None):
         # type: (Optional[str], Optional[str], Optional[Image]) -> None

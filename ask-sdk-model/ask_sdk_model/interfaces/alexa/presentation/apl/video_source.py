@@ -57,6 +57,7 @@ class VideoSource(object):
         'repeat_count': 'repeatCount',
         'offset': 'offset'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, description=None, duration=None, url=None, repeat_count=None, offset=None):
         # type: (Optional[str], Union[int, str, None], Optional[str], Union[int, str, None], Union[int, str, None]) -> None

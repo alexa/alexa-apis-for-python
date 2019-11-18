@@ -53,6 +53,7 @@ class Recognizer(object):
     attribute_map = {
         'object_type': 'type'
     }  # type: Dict
+    supports_multiple_types = False
 
     discriminator_value_class_map = {
         'match': 'ask_sdk_model.services.game_engine.pattern_recognizer.PatternRecognizer',

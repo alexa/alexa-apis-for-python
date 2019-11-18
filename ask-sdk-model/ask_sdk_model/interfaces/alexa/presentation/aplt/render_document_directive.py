@@ -55,6 +55,7 @@ class RenderDocumentDirective(Directive):
         'document': 'document',
         'datasources': 'datasources'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, token=None, target_profile=None, document=None, datasources=None):
         # type: (Optional[str], Optional[TargetProfile], Optional[Dict[str, object]], Optional[Dict[str, object]]) -> None

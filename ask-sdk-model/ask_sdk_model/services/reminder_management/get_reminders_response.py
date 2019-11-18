@@ -50,6 +50,7 @@ class GetRemindersResponse(object):
         'alerts': 'alerts',
         'links': 'links'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, total_count=None, alerts=None, links=None):
         # type: (Optional[str], Optional[List[Reminder]], Optional[str]) -> None

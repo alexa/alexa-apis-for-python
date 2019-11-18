@@ -69,6 +69,7 @@ class SequentialCommand(Command):
         'object_finally': 'finally',
         'repeat_count': 'repeatCount'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, delay=None, description=None, when=None, catch=None, commands=None, object_finally=None, repeat_count=None):
         # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[List[Command]], Optional[List[Command]], Optional[List[Command]], Union[int, str, None]) -> None

@@ -42,6 +42,7 @@ class AlertInfo(object):
     attribute_map = {
         'spoken_info': 'spokenInfo'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, spoken_info=None):
         # type: (Optional[SpokenInfo]) -> None

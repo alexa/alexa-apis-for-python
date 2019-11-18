@@ -53,6 +53,7 @@ class ConnectionCompleted(Cause):
         'status': 'status',
         'result': 'result'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, token=None, status=None, result=None):
         # type: (Optional[str], Optional[Status], Optional[object]) -> None

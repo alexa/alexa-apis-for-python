@@ -52,6 +52,7 @@ class CurrentConfiguration(object):
         'video': 'video',
         'size': 'size'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, mode=None, video=None, size=None):
         # type: (Optional[Mode], Optional[ViewportVideo], Optional[ViewportSize]) -> None

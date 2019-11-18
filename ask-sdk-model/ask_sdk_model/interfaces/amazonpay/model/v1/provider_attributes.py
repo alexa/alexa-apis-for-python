@@ -46,6 +46,7 @@ class ProviderAttributes(object):
         'provider_id': 'providerId',
         'provider_credit_list': 'providerCreditList'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, provider_id=None, provider_credit_list=None):
         # type: (Optional[str], Optional[List[ProviderCredit]]) -> None

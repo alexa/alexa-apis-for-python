@@ -60,6 +60,7 @@ class ConnectionsRequest(Request):
         'name': 'name',
         'payload': 'payload'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, name=None, payload=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[str], Optional[Dict[str, object]]) -> None

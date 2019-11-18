@@ -39,6 +39,7 @@ class AccountLinkedBody(object):
     attribute_map = {
         'access_token': 'accessToken'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, access_token=None):
         # type: (Optional[str]) -> None

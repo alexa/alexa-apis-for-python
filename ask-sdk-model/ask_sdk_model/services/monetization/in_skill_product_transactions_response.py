@@ -45,6 +45,7 @@ class InSkillProductTransactionsResponse(object):
         'results': 'results',
         'metadata': 'metadata'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, results=None, metadata=None):
         # type: (Optional[List[Transactions]], Optional[Metadata]) -> None

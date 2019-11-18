@@ -248,3 +248,13 @@ This release contains the following changes:
 This release contains the following changes : 
 
 - Models for APL visual context.
+
+
+1.19.0
+~~~~~~~
+
+This release contains the following changes : 
+
+- Alexa Presentation Language HTML Interface support. Apply for preview request `here <https://build.amazonalexadev.com/AlexaWebAPIforGamesDeveloperPreview_AlexaWebAPIforGames.html>`__.
+- Update service client methods to return an `ApiResponse` instance, in case a full response is required instead of just the response body. 
+- mypy fix for `AuthenticationConfiguration` class.

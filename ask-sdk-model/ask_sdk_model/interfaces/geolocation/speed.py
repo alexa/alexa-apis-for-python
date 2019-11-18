@@ -45,6 +45,7 @@ class Speed(object):
         'speed_in_meters_per_second': 'speedInMetersPerSecond',
         'accuracy_in_meters_per_second': 'accuracyInMetersPerSecond'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, speed_in_meters_per_second=None, accuracy_in_meters_per_second=None):
         # type: (Optional[float], Optional[float]) -> None

@@ -48,6 +48,7 @@ class InSkillProductsResponse(object):
         'is_truncated': 'isTruncated',
         'next_token': 'nextToken'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, in_skill_products=None, is_truncated=None, next_token=None):
         # type: (Optional[List[InSkillProduct]], Optional[bool], Optional[str]) -> None

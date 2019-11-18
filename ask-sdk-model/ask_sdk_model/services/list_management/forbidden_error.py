@@ -39,6 +39,7 @@ class ForbiddenError(object):
     attribute_map = {
         'message': 'Message'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, message=None):
         # type: (Optional[str]) -> None

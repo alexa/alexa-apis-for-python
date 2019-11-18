@@ -48,6 +48,7 @@ class ScaleTransformProperty(TransformProperty):
         'scale_x': 'scaleX',
         'scale_y': 'scaleY'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, scale=1.0, scale_x=1.0, scale_y=1.0):
         # type: (Union[float, str, None], Union[float, str, None], Union[float, str, None]) -> None

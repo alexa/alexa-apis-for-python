@@ -55,6 +55,7 @@ class ReminderStatusChangedEventRequest(Request):
         'locale': 'locale',
         'body': 'body'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, body=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[Event]) -> None

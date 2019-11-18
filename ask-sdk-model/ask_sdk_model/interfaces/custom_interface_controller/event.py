@@ -51,6 +51,7 @@ class Event(object):
         'payload': 'payload',
         'endpoint': 'endpoint'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, header=None, payload=None, endpoint=None):
         # type: (Optional[Header], Optional[object], Optional[Endpoint]) -> None

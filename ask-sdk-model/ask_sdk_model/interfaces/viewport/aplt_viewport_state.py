@@ -67,6 +67,7 @@ class APLTViewportState(TypedViewportState):
         'character_format': 'characterFormat',
         'inter_segments': 'interSegments'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, id=None, supported_profiles=None, line_length=None, line_count=None, character_format=None, inter_segments=None):
         # type: (Optional[str], Optional[List[ViewportProfile]], Optional[int], Optional[int], Optional[CharacterFormat], Optional[List[InterSegment]]) -> None

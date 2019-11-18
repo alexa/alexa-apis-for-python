@@ -47,6 +47,7 @@ class CanFulfillIntent(object):
         'can_fulfill': 'canFulfill',
         'slots': 'slots'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, can_fulfill=None, slots=None):
         # type: (Optional[CanFulfillIntentValues], Optional[Dict[str, CanFulfillSlot]]) -> None

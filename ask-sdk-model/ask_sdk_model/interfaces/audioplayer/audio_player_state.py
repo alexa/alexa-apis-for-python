@@ -48,6 +48,7 @@ class AudioPlayerState(object):
         'token': 'token',
         'player_activity': 'playerActivity'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, offset_in_milliseconds=None, token=None, player_activity=None):
         # type: (Optional[int], Optional[str], Optional[PlayerActivity]) -> None

@@ -45,6 +45,7 @@ class Altitude(object):
         'altitude_in_meters': 'altitudeInMeters',
         'accuracy_in_meters': 'accuracyInMeters'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, altitude_in_meters=None, accuracy_in_meters=None):
         # type: (Optional[float], Optional[float]) -> None

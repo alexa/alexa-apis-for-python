@@ -64,6 +64,7 @@ class GeolocationState(object):
         'speed': 'speed',
         'location_services': 'locationServices'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, timestamp=None, coordinate=None, altitude=None, heading=None, speed=None, location_services=None):
         # type: (Optional[str], Optional[Coordinate], Optional[Altitude], Optional[Heading], Optional[Speed], Optional[LocationServices]) -> None

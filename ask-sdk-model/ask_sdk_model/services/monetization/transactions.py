@@ -52,6 +52,7 @@ class Transactions(object):
         'created_time': 'createdTime',
         'last_modified_time': 'lastModifiedTime'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, status=None, product_id=None, created_time=None, last_modified_time=None):
         # type: (Optional[Status], Optional[str], Optional[datetime], Optional[datetime]) -> None

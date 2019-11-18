@@ -51,6 +51,7 @@ class SetLightParameters(object):
         'trigger_event_time_ms': 'triggerEventTimeMs',
         'animations': 'animations'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, trigger_event=None, trigger_event_time_ms=None, animations=None):
         # type: (Optional[TriggerEventType], Optional[int], Optional[List[LightAnimation]]) -> None

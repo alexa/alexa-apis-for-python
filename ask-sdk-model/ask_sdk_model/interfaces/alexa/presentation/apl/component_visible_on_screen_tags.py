@@ -91,6 +91,7 @@ class ComponentVisibleOnScreenTags(object):
         'spoken': 'spoken',
         'viewport': 'viewport'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, checked=None, clickable=None, disabled=None, focused=None, list=None, list_item=None, media=None, ordinal=None, pager=None, scrollable=None, spoken=None, viewport=None):
         # type: (Optional[bool], Optional[bool], Optional[bool], Optional[bool], Optional[ComponentVisibleOnScreenListTag], Optional[ComponentVisibleOnScreenListItemTag], Optional[ComponentVisibleOnScreenMediaTag], Optional[int], Optional[ComponentVisibleOnScreenPagerTag], Optional[ComponentVisibleOnScreenScrollableTag], Optional[bool], Optional[ComponentVisibleOnScreenViewportTag]) -> None

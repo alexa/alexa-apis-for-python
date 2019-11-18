@@ -50,6 +50,7 @@ class PlayCommandIssuedRequest(Request):
         'timestamp': 'timestamp',
         'locale': 'locale'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None):
         # type: (Optional[str], Optional[datetime], Optional[str]) -> None

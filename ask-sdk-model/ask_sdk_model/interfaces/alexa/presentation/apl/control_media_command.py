@@ -65,6 +65,7 @@ class ControlMediaCommand(Command):
         'component_id': 'componentId',
         'value': 'value'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, delay=None, description=None, when=None, command=None, component_id=None, value=None):
         # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[MediaCommandType], Optional[str], Union[int, str, None]) -> None

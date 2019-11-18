@@ -45,6 +45,7 @@ class SendSkillMessagingRequest(object):
         'data': 'data',
         'expires_after_seconds': 'expiresAfterSeconds'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, data=None, expires_after_seconds=None):
         # type: (Optional[object], Optional[int]) -> None

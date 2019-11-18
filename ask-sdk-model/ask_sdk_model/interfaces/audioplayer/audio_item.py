@@ -45,6 +45,7 @@ class AudioItem(object):
         'stream': 'stream',
         'metadata': 'metadata'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, stream=None, metadata=None):
         # type: (Optional[Stream], Optional[AudioItemMetadata]) -> None

@@ -43,6 +43,7 @@ class DisplayInterface(object):
         'template_version': 'templateVersion',
         'markup_version': 'markupVersion'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, template_version=None, markup_version=None):
         # type: (Optional[str], Optional[str]) -> None

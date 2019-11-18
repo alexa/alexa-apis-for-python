@@ -67,6 +67,7 @@ class APLViewportState(TypedViewportState):
         'can_rotate': 'canRotate',
         'configuration': 'configuration'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, id=None, shape=None, dpi=None, presentation_type=None, can_rotate=None, configuration=None):
         # type: (Optional[str], Optional[Shape], Optional[float], Optional[PresentationType], Optional[bool], Optional[ViewportConfiguration]) -> None

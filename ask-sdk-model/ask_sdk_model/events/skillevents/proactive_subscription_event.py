@@ -39,6 +39,7 @@ class ProactiveSubscriptionEvent(object):
     attribute_map = {
         'event_name': 'eventName'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, event_name=None):
         # type: (Optional[str]) -> None

@@ -39,6 +39,7 @@ class Links(object):
     attribute_map = {
         'next': 'next'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, next=None):
         # type: (Optional[str]) -> None

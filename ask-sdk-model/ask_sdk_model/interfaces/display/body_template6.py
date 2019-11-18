@@ -61,6 +61,7 @@ class BodyTemplate6(Template):
         'text_content': 'textContent',
         'image': 'image'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, token=None, back_button=None, background_image=None, text_content=None, image=None):
         # type: (Optional[str], Optional[BackButtonBehavior], Optional[Image], Optional[TextContent], Optional[Image]) -> None

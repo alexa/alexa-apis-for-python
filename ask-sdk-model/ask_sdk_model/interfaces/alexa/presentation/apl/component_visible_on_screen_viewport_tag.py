@@ -37,6 +37,7 @@ class ComponentVisibleOnScreenViewportTag(object):
 
     attribute_map = {
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self):
         # type: () -> None

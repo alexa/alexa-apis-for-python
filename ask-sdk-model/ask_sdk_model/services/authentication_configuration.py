@@ -29,7 +29,7 @@ class AuthenticationConfiguration(object):
     """
 
     def __init__(self, client_id=None, client_secret=None, refresh_token=None):
-        # type: (str, str) -> None
+        # type: (str, str, str) -> None
         """Represents a class that provides authentication configuration.
 
         :param client_id: Client ID required for authentication.

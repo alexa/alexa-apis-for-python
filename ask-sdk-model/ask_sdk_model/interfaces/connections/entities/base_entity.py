@@ -53,6 +53,7 @@ class BaseEntity(object):
         'object_type': '@type',
         'version': '@version'
     }  # type: Dict
+    supports_multiple_types = False
 
     discriminator_value_class_map = {
         'PostalAddress': 'ask_sdk_model.interfaces.connections.entities.postal_address.PostalAddress',

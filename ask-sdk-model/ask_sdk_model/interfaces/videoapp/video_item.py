@@ -44,6 +44,7 @@ class VideoItem(object):
         'source': 'source',
         'metadata': 'metadata'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, source=None, metadata=None):
         # type: (Optional[str], Optional[Metadata]) -> None

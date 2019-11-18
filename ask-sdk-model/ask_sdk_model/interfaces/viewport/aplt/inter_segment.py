@@ -47,6 +47,7 @@ class InterSegment(object):
         'y': 'y',
         'characters': 'characters'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, x=None, y=None, characters=None):
         # type: (Optional[int], Optional[int], Optional[str]) -> None

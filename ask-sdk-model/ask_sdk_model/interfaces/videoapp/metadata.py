@@ -43,6 +43,7 @@ class Metadata(object):
         'title': 'title',
         'subtitle': 'subtitle'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, title=None, subtitle=None):
         # type: (Optional[str], Optional[str]) -> None

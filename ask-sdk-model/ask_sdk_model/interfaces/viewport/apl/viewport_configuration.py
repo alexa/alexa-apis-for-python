@@ -40,6 +40,7 @@ class ViewportConfiguration(object):
     attribute_map = {
         'current': 'current'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, current=None):
         # type: (Optional[CurrentConfiguration]) -> None

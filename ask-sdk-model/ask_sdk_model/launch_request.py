@@ -57,6 +57,7 @@ class LaunchRequest(Request):
         'locale': 'locale',
         'task': 'task'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, task=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[Task]) -> None

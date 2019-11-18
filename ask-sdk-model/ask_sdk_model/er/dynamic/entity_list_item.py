@@ -46,6 +46,7 @@ class EntityListItem(object):
         'name': 'name',
         'values': 'values'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, name=None, values=None):
         # type: (Optional[str], Optional[List[Entity]]) -> None

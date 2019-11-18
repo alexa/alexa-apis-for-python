@@ -50,6 +50,7 @@ class User(object):
         'access_token': 'accessToken',
         'permissions': 'permissions'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, user_id=None, access_token=None, permissions=None):
         # type: (Optional[str], Optional[str], Optional[Permissions]) -> None

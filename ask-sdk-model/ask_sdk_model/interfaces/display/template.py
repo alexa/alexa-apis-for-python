@@ -68,6 +68,7 @@ class Template(object):
         'token': 'token',
         'back_button': 'backButton'
     }  # type: Dict
+    supports_multiple_types = False
 
     discriminator_value_class_map = {
         'ListTemplate2': 'ask_sdk_model.interfaces.display.list_template2.ListTemplate2',

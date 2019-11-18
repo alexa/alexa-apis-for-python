@@ -39,6 +39,7 @@ class ResultSet(object):
     attribute_map = {
         'next_token': 'nextToken'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, next_token=None):
         # type: (Optional[str]) -> None

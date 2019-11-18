@@ -38,6 +38,7 @@ class TransformProperty(object):
 
     attribute_map = {
     }  # type: Dict
+    supports_multiple_types = False
     __metaclass__ = ABCMeta
 
     @abstractmethod

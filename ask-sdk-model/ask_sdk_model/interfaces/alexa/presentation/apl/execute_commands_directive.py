@@ -49,6 +49,7 @@ class ExecuteCommandsDirective(Directive):
         'commands': 'commands',
         'token': 'token'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, commands=None, token=None):
         # type: (Optional[List[Command]], Optional[str]) -> None

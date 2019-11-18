@@ -44,6 +44,7 @@ class DeviationRecognizer(Recognizer):
         'object_type': 'type',
         'recognizer': 'recognizer'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, recognizer=None):
         # type: (Optional[str]) -> None

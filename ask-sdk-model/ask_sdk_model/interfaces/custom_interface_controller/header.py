@@ -45,6 +45,7 @@ class Header(object):
         'namespace': 'namespace',
         'name': 'name'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, namespace=None, name=None):
         # type: (Optional[str], Optional[str]) -> None

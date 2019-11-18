@@ -64,6 +64,7 @@ class BillingAgreementDetails(object):
         'release_environment': 'releaseEnvironment',
         'billing_agreement_status': 'billingAgreementStatus'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, billing_agreement_id=None, creation_timestamp=None, destination=None, checkout_language=None, release_environment=None, billing_agreement_status=None):
         # type: (Optional[str], Optional[datetime], Optional[Destination], Optional[str], Optional[ReleaseEnvironment], Optional[BillingAgreementStatus]) -> None

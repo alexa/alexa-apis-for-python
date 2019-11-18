@@ -45,6 +45,7 @@ class EntityValueAndSynonyms(object):
         'value': 'value',
         'synonyms': 'synonyms'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, value=None, synonyms=None):
         # type: (Optional[str], Optional[List[object]]) -> None

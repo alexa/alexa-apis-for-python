@@ -60,6 +60,7 @@ class BodyTemplate7(Template):
         'image': 'image',
         'background_image': 'backgroundImage'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, token=None, back_button=None, title=None, image=None, background_image=None):
         # type: (Optional[str], Optional[BackButtonBehavior], Optional[str], Optional[Image], Optional[Image]) -> None

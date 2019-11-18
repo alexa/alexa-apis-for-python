@@ -39,6 +39,7 @@ class Header(object):
     attribute_map = {
         'request_id': 'requestId'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, request_id=None):
         # type: (Optional[str]) -> None

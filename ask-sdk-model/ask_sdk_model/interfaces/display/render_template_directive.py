@@ -43,6 +43,7 @@ class RenderTemplateDirective(Directive):
         'object_type': 'type',
         'template': 'template'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, template=None):
         # type: (Optional[Template]) -> None

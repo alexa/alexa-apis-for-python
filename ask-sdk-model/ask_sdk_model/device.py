@@ -46,6 +46,7 @@ class Device(object):
         'device_id': 'deviceId',
         'supported_interfaces': 'supportedInterfaces'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, device_id=None, supported_interfaces=None):
         # type: (Optional[str], Optional[SupportedInterfaces]) -> None

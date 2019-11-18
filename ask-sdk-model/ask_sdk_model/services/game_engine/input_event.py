@@ -56,6 +56,7 @@ class InputEvent(object):
         'color': 'color',
         'feature': 'feature'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, gadget_id=None, timestamp=None, action=None, color=None, feature=None):
         # type: (Optional[str], Optional[str], Optional[InputEventActionType], Optional[str], Optional[str]) -> None

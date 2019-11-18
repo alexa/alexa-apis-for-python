@@ -60,6 +60,7 @@ class SendEventCommand(Command):
         'arguments': 'arguments',
         'components': 'components'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, delay=None, description=None, when=None, arguments=None, components=None):
         # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[List[object]], Optional[List[object]]) -> None

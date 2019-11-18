@@ -65,6 +65,7 @@ class ScrollToIndexCommand(Command):
         'component_id': 'componentId',
         'index': 'index'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, delay=None, description=None, when=None, align=None, component_id=None, index=None):
         # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[Align], Optional[str], Union[int, str, None]) -> None

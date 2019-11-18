@@ -65,6 +65,8 @@ class Request(object):
         |
         | CustomInterfaceController.Expired: :py:class:`ask_sdk_model.interfaces.custom_interface_controller.expired_request.ExpiredRequest`,
         |
+        | Alexa.Presentation.html.Message: :py:class:`ask_sdk_model.interfaces.alexa.presentation.html.message_request.MessageRequest`,
+        |
         | LaunchRequest: :py:class:`ask_sdk_model.launch_request.LaunchRequest`,
         |
         | Reminders.ReminderCreated: :py:class:`ask_sdk_model.services.reminder_management.reminder_created_event_request.ReminderCreatedEventRequest`,
@@ -141,6 +143,7 @@ class Request(object):
         'timestamp': 'timestamp',
         'locale': 'locale'
     }  # type: Dict
+    supports_multiple_types = False
 
     discriminator_value_class_map = {
         'AlexaSkillEvent.SkillEnabled': 'ask_sdk_model.events.skillevents.skill_enabled_request.SkillEnabledRequest',
@@ -153,6 +156,7 @@ class Request(object):
         'AudioPlayer.PlaybackFailed': 'ask_sdk_model.interfaces.audioplayer.playback_failed_request.PlaybackFailedRequest',
         'CanFulfillIntentRequest': 'ask_sdk_model.canfulfill.can_fulfill_intent_request.CanFulfillIntentRequest',
         'CustomInterfaceController.Expired': 'ask_sdk_model.interfaces.custom_interface_controller.expired_request.ExpiredRequest',
+        'Alexa.Presentation.html.Message': 'ask_sdk_model.interfaces.alexa.presentation.html.message_request.MessageRequest',
         'LaunchRequest': 'ask_sdk_model.launch_request.LaunchRequest',
         'Reminders.ReminderCreated': 'ask_sdk_model.services.reminder_management.reminder_created_event_request.ReminderCreatedEventRequest',
         'Alexa.Presentation.APLT.UserEvent': 'ask_sdk_model.interfaces.alexa.presentation.aplt.user_event.UserEvent',

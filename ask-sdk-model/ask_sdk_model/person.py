@@ -45,6 +45,7 @@ class Person(object):
         'person_id': 'personId',
         'access_token': 'accessToken'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, person_id=None, access_token=None):
         # type: (Optional[str], Optional[str]) -> None

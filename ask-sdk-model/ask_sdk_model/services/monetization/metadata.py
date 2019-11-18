@@ -40,6 +40,7 @@ class Metadata(object):
     attribute_map = {
         'result_set': 'resultSet'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, result_set=None):
         # type: (Optional[ResultSet]) -> None

@@ -66,6 +66,7 @@ class PlayMediaCommand(Command):
         'component_id': 'componentId',
         'source': 'source'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, delay=None, description=None, when=None, audio_track=None, component_id=None, source=None):
         # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[AudioTrack], Optional[str], Optional[List[VideoSource]]) -> None

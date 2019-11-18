@@ -95,6 +95,7 @@ class Command(object):
         'description': 'description',
         'when': 'when'
     }  # type: Dict
+    supports_multiple_types = False
 
     discriminator_value_class_map = {
         'SetPage': 'ask_sdk_model.interfaces.alexa.presentation.apl.set_page_command.SetPageCommand',

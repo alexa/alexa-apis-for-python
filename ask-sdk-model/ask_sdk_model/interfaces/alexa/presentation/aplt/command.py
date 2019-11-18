@@ -79,6 +79,7 @@ class Command(object):
         'screen_lock': 'screenLock',
         'when': 'when'
     }  # type: Dict
+    supports_multiple_types = False
 
     discriminator_value_class_map = {
         'SetValue': 'ask_sdk_model.interfaces.alexa.presentation.aplt.set_value_command.SetValueCommand',

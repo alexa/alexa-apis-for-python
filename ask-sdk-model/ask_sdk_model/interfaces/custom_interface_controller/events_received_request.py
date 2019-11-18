@@ -61,6 +61,7 @@ class EventsReceivedRequest(Request):
         'token': 'token',
         'events': 'events'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, token=None, events=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[str], Optional[List[Event]]) -> None

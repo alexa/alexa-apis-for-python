@@ -47,6 +47,7 @@ class AnimationStep(object):
         'color': 'color',
         'blend': 'blend'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, duration_ms=None, color=None, blend=None):
         # type: (Optional[int], Optional[str], Optional[bool]) -> None

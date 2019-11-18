@@ -44,6 +44,7 @@ class Status(object):
         'url': 'url',
         'status': 'status'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, url=None, status=None):
         # type: (Optional[str], Optional[ListItemState]) -> None

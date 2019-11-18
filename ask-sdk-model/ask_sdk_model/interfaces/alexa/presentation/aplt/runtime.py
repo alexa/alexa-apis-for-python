@@ -41,6 +41,7 @@ class Runtime(object):
     attribute_map = {
         'max_version': 'maxVersion'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, max_version=None):
         # type: (Optional[str]) -> None

@@ -44,6 +44,7 @@ class MoveTransformProperty(TransformProperty):
         'translate_x': 'translateX',
         'translate_y': 'translateY'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, translate_x=None, translate_y=None):
         # type: (Optional[str], Optional[str]) -> None

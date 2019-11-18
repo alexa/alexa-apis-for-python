@@ -42,6 +42,7 @@ class SetupAmazonPayResult(object):
     attribute_map = {
         'billing_agreement_details': 'billingAgreementDetails'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, billing_agreement_details=None):
         # type: (Optional[BillingAgreementDetails]) -> None

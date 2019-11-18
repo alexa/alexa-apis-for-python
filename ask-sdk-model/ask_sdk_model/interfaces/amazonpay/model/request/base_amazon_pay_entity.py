@@ -67,6 +67,7 @@ class BaseAmazonPayEntity(object):
         'object_type': '@type',
         'version': '@version'
     }  # type: Dict
+    supports_multiple_types = False
 
     discriminator_value_class_map = {
         'SellerBillingAgreementAttributes': 'ask_sdk_model.interfaces.amazonpay.model.request.seller_billing_agreement_attributes.SellerBillingAgreementAttributes',

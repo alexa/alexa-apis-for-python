@@ -41,6 +41,7 @@ class Application(object):
     attribute_map = {
         'application_id': 'applicationId'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, application_id=None):
         # type: (Optional[str]) -> None

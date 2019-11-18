@@ -42,6 +42,7 @@ class AskForPermissionsConsentCard(Card):
         'object_type': 'type',
         'permissions': 'permissions'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, permissions=None):
         # type: (Optional[List[object]]) -> None

@@ -50,6 +50,7 @@ class EndpointInfo(object):
         'friendly_name': 'friendlyName',
         'capabilities': 'capabilities'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, endpoint_id=None, friendly_name=None, capabilities=None):
         # type: (Optional[str], Optional[str], Optional[List[EndpointCapability]]) -> None

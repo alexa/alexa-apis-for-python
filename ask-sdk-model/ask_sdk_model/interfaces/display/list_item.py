@@ -49,6 +49,7 @@ class ListItem(object):
         'image': 'image',
         'text_content': 'textContent'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, token=None, image=None, text_content=None):
         # type: (Optional[str], Optional[Image], Optional[TextContent]) -> None

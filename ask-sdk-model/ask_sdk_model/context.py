@@ -75,6 +75,7 @@ class Context(object):
         'viewport': 'Viewport',
         'viewports': 'Viewports'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, system=None, alexa_presentation_apl=None, audio_player=None, automotive=None, display=None, geolocation=None, viewport=None, viewports=None):
         # type: (Optional[SystemState], Optional[RenderedDocumentState], Optional[AudioPlayerState], Optional[AutomotiveState], Optional[DisplayState], Optional[GeolocationState], Optional[ViewportState], Optional[List[TypedViewportState]]) -> None

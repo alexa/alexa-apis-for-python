@@ -46,6 +46,7 @@ class RelevantAudience(object):
         'object_type': 'type',
         'payload': 'payload'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, object_type=None, payload=None):
         # type: (Optional[RelevantAudienceType], Optional[object]) -> None

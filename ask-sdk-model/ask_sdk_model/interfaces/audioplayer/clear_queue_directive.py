@@ -43,6 +43,7 @@ class ClearQueueDirective(Directive):
         'object_type': 'type',
         'clear_behavior': 'clearBehavior'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, clear_behavior=None):
         # type: (Optional[ClearBehavior]) -> None

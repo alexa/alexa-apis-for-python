@@ -47,6 +47,7 @@ class AnimatedTransformProperty(AnimatedProperty):
         'object_from': 'from',
         'to': 'to'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, object_from=None, to=None):
         # type: (Optional[List[TransformProperty]], Optional[List[TransformProperty]]) -> None

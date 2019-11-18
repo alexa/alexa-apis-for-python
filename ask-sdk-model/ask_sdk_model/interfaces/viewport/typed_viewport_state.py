@@ -53,6 +53,7 @@ class TypedViewportState(object):
         'id': 'id',
         'object_type': 'type'
     }  # type: Dict
+    supports_multiple_types = False
 
     discriminator_value_class_map = {
         'APL': 'ask_sdk_model.interfaces.viewport.apl_viewport_state.APLViewportState',

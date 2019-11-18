@@ -76,6 +76,7 @@ class ComponentVisibleOnScreen(object):
         'uid': 'uid',
         'visibility': 'visibility'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, children=None, entities=None, id=None, position=None, tags=None, transform=None, object_type=None, uid=None, visibility=None):
         # type: (Optional[List[ComponentVisibleOnScreen]], Optional[List[ComponentEntity]], Optional[str], Optional[str], Optional[ComponentVisibleOnScreenTags], Optional[List[object]], Optional[str], Optional[str], Optional[float]) -> None

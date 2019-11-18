@@ -71,6 +71,7 @@ class ComponentVisibleOnScreenMediaTag(object):
         'entities': 'entities',
         'url': 'url'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, position_in_milliseconds=None, state=None, allow_adjust_seek_position_forward=None, allow_adjust_seek_position_backwards=None, allow_next=None, allow_previous=None, entities=None, url=None):
         # type: (Optional[int], Optional[ComponentVisibleOnScreenMediaTagStateEnum], Optional[bool], Optional[bool], Optional[bool], Optional[bool], Optional[List[ComponentEntity]], Optional[str]) -> None

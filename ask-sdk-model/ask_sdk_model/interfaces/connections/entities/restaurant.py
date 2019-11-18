@@ -53,6 +53,7 @@ class Restaurant(BaseEntity):
         'name': 'name',
         'location': 'location'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, version=None, name=None, location=None):
         # type: (Optional[str], Optional[str], Optional[PostalAddress]) -> None

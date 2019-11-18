@@ -44,6 +44,7 @@ class InputHandlerEvent(object):
         'name': 'name',
         'input_events': 'inputEvents'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, name=None, input_events=None):
         # type: (Optional[str], Optional[List[InputEvent]]) -> None

@@ -40,6 +40,7 @@ class ProactiveSubscriptionChangedBody(object):
     attribute_map = {
         'subscriptions': 'subscriptions'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, subscriptions=None):
         # type: (Optional[List[ProactiveSubscriptionEvent]]) -> None

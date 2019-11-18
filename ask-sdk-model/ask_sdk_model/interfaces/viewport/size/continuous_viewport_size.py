@@ -56,6 +56,7 @@ class ContinuousViewportSize(ViewportSize):
         'max_pixel_width': 'maxPixelWidth',
         'max_pixel_height': 'maxPixelHeight'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, min_pixel_width=None, min_pixel_height=None, max_pixel_width=None, max_pixel_height=None):
         # type: (Optional[int], Optional[int], Optional[int], Optional[int]) -> None

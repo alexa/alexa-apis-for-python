@@ -45,6 +45,7 @@ class AmazonPayErrorResponse(object):
         'error_code': 'errorCode',
         'error_message': 'errorMessage'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, error_code=None, error_message=None):
         # type: (Optional[str], Optional[str]) -> None

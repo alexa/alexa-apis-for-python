@@ -42,6 +42,7 @@ class ViewportVideo(object):
     attribute_map = {
         'codecs': 'codecs'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, codecs=None):
         # type: (Optional[List[Codecs]]) -> None

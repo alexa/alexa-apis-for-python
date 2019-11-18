@@ -40,6 +40,7 @@ class RotateTransformProperty(TransformProperty):
     attribute_map = {
         'rotate': 'rotate'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, rotate=0.0):
         # type: (Union[float, str, None]) -> None

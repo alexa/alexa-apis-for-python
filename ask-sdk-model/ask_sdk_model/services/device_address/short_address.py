@@ -43,6 +43,7 @@ class ShortAddress(object):
         'country_code': 'countryCode',
         'postal_code': 'postalCode'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, country_code=None, postal_code=None):
         # type: (Optional[str], Optional[str]) -> None

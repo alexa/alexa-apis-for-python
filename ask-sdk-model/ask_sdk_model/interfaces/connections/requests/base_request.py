@@ -59,6 +59,7 @@ class BaseRequest(object):
         'object_type': '@type',
         'version': '@version'
     }  # type: Dict
+    supports_multiple_types = False
 
     discriminator_value_class_map = {
         'ScheduleFoodEstablishmentReservationRequest': 'ask_sdk_model.interfaces.connections.requests.schedule_food_establishment_reservation_request.ScheduleFoodEstablishmentReservationRequest',

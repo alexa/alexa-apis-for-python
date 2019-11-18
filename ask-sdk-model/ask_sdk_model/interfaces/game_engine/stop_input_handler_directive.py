@@ -42,6 +42,7 @@ class StopInputHandlerDirective(Directive):
         'object_type': 'type',
         'originating_request_id': 'originatingRequestId'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, originating_request_id=None):
         # type: (Optional[str]) -> None

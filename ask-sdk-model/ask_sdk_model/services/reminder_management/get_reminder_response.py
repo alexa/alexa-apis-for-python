@@ -74,6 +74,7 @@ class GetReminderResponse(Reminder):
         'push_notification': 'pushNotification',
         'version': 'version'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, alert_token=None, created_time=None, updated_time=None, status=None, trigger=None, alert_info=None, push_notification=None, version=None):
         # type: (Optional[str], Optional[datetime], Optional[datetime], Optional[Status], Optional[Trigger], Optional[AlertInfo], Optional[PushNotification], Optional[str]) -> None

@@ -40,6 +40,7 @@ class AlexaPresentationApltInterface(object):
     attribute_map = {
         'runtime': 'runtime'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, runtime=None):
         # type: (Optional[Runtime]) -> None

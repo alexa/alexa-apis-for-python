@@ -52,6 +52,7 @@ class StartConnectionDirective(Directive):
         'input': 'input',
         'token': 'token'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, uri=None, input=None, token=None):
         # type: (Optional[str], Optional[Dict[str, object]], Optional[str]) -> None

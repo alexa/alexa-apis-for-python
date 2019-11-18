@@ -49,6 +49,7 @@ class ComponentEntity(object):
         'value': 'value',
         'id': 'id'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, object_type=None, value=None, id=None):
         # type: (Optional[str], Optional[str], Optional[str]) -> None

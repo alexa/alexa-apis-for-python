@@ -39,6 +39,7 @@ class ListBody(object):
     attribute_map = {
         'list_id': 'listId'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, list_id=None):
         # type: (Optional[str]) -> None

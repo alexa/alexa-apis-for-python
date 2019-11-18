@@ -53,6 +53,7 @@ class Card(object):
     attribute_map = {
         'object_type': 'type'
     }  # type: Dict
+    supports_multiple_types = False
 
     discriminator_value_class_map = {
         'AskForPermissionsConsent': 'ask_sdk_model.ui.ask_for_permissions_consent_card.AskForPermissionsConsentCard',

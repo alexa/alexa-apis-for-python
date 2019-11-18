@@ -56,6 +56,7 @@ class IdleCommand(Command):
         'screen_lock': 'screenLock',
         'when': 'when'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, delay=None, description=None, screen_lock=None, when=None):
         # type: (Optional[int], Optional[str], Optional[bool], Union[bool, str, None]) -> None

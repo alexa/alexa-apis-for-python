@@ -47,6 +47,7 @@ class ConfirmSlotDirective(Directive):
         'updated_intent': 'updatedIntent',
         'slot_to_confirm': 'slotToConfirm'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, updated_intent=None, slot_to_confirm=None):
         # type: (Optional[Intent], Optional[str]) -> None

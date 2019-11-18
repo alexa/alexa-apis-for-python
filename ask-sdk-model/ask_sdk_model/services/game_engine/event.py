@@ -62,6 +62,7 @@ class Event(object):
         'maximum_invocations': 'maximumInvocations',
         'trigger_time_milliseconds': 'triggerTimeMilliseconds'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, should_end_input_handler=None, meets=None, fails=None, reports=None, maximum_invocations=None, trigger_time_milliseconds=None):
         # type: (Optional[bool], Optional[List[object]], Optional[List[object]], Optional[EventReportingType], Optional[int], Optional[int]) -> None

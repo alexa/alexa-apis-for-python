@@ -53,6 +53,7 @@ class ComponentVisibleOnScreenPagerTag(object):
         'allow_forward': 'allowForward',
         'allow_backwards': 'allowBackwards'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, index=None, page_count=None, allow_forward=None, allow_backwards=None):
         # type: (Optional[int], Optional[int], Optional[bool], Optional[bool]) -> None

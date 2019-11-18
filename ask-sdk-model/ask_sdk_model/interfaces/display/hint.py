@@ -47,6 +47,7 @@ class Hint(object):
     attribute_map = {
         'object_type': 'type'
     }  # type: Dict
+    supports_multiple_types = False
 
     discriminator_value_class_map = {
         'PlainText': 'ask_sdk_model.interfaces.display.plain_text_hint.PlainTextHint'

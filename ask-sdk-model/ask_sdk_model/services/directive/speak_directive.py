@@ -42,6 +42,7 @@ class SpeakDirective(Directive):
         'object_type': 'type',
         'speech': 'speech'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, speech=None):
         # type: (Optional[str]) -> None

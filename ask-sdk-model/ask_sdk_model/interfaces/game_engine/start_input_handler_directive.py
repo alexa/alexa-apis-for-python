@@ -56,6 +56,7 @@ class StartInputHandlerDirective(Directive):
         'recognizers': 'recognizers',
         'events': 'events'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, timeout=None, proxies=None, recognizers=None, events=None):
         # type: (Optional[int], Optional[List[object]], Optional[Dict[str, Recognizer]], Optional[Dict[str, Event]]) -> None

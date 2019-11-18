@@ -61,6 +61,7 @@ class ParallelCommand(Command):
         'when': 'when',
         'commands': 'commands'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, delay=None, description=None, screen_lock=None, when=None, commands=None):
         # type: (Optional[int], Optional[str], Optional[bool], Union[bool, str, None], Optional[List[Command]]) -> None

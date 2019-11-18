@@ -69,6 +69,7 @@ class ChargeAmazonPay(object):
         'seller_order_attributes': 'sellerOrderAttributes',
         'provider_attributes': 'providerAttributes'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, consent_token=None, seller_id=None, billing_agreement_id=None, payment_action=None, authorize_attributes=None, seller_order_attributes=None, provider_attributes=None):
         # type: (Optional[str], Optional[str], Optional[str], Optional[PaymentAction], Optional[AuthorizeAttributes], Optional[SellerOrderAttributes], Optional[ProviderAttributes]) -> None

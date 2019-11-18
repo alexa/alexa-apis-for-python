@@ -53,6 +53,7 @@ class Slot(object):
         'confirmation_status': 'confirmationStatus',
         'resolutions': 'resolutions'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, name=None, value=None, confirmation_status=None, resolutions=None):
         # type: (Optional[str], Optional[str], Optional[SlotConfirmationStatus], Optional[Resolutions]) -> None

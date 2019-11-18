@@ -51,6 +51,7 @@ class ProviderCredit(BaseAmazonPayEntity):
         'object_type': '@type',
         'version': '@version'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, provider_id=None, credit=None, version=None):
         # type: (Optional[str], Optional[Price], Optional[str]) -> None

@@ -61,6 +61,7 @@ class OpenUrlCommand(Command):
         'source': 'source',
         'on_fail': 'onFail'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, delay=None, description=None, when=None, source=None, on_fail=None):
         # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Optional[List[Command]]) -> None

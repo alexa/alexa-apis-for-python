@@ -42,6 +42,7 @@ class EndpointEnumerationResponse(object):
     attribute_map = {
         'endpoints': 'endpoints'
     }  # type: Dict
+    supports_multiple_types = False
 
     def __init__(self, endpoints=None):
         # type: (Optional[List[EndpointInfo]]) -> None
