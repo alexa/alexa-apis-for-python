@@ -1,2 +1,5 @@
 requests
 python_dateutil
+six >= 1.10
+setuptools >= 21.0.0
+typing; python_version == '2.7'
