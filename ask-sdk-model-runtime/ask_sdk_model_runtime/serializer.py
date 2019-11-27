@@ -40,7 +40,7 @@ except NameError:
     long = int
 
 if typing.TYPE_CHECKING:
-    from typing import TypeVar, Dict, List, Tuple, Union, Any
+    from typing import TypeVar, Dict, List, Tuple, Union, Optional, Any
     T = TypeVar('T')
 
 

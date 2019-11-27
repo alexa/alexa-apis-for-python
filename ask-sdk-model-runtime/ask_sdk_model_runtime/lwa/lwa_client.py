@@ -64,7 +64,7 @@ class LwaClient(BaseServiceClient):
             Serializer and ApiClient. The authorization value and api endpoint
             is not used by the LWA Client.
         :type api_configuration:
-            ask_sdk_model_runtime.services.api_configuration.ApiConfiguration
+            ask_sdk_model_runtime.api_configuration.ApiConfiguration
         :param authentication_configuration: AuthenticationConfiguration
             instance with valid client id and client secret, for making LWA
             calls.
@@ -205,20 +205,20 @@ class LwaClient(BaseServiceClient):
         body_params += "&{}".format(param_info)
         error_definitions = list()  # type: List
         error_definitions.append(ServiceClientResponse(
-            response_type=("ask_sdk_model_runtime.services.lwa.access_token_response."
+            response_type=("ask_sdk_model_runtime.lwa.access_token_response."
                            "AccessTokenResponse"), status_code=200,
             message="Success"))
         error_definitions.append(ServiceClientResponse(
-            response_type="ask_sdk_model_runtime.services.lwa.error.Error",
+            response_type="ask_sdk_model_runtime.lwa.error.Error",
             status_code=400, message="Bad Request"))
         error_definitions.append(ServiceClientResponse(
-            response_type="ask_sdk_model_runtime.services.lwa.error.Error",
+            response_type="ask_sdk_model_runtime.lwa.error.Error",
             status_code=401, message="Authentication failed"))
         error_definitions.append(ServiceClientResponse(
-            response_type="ask_sdk_model_runtime.services.lwa.error.Error",
+            response_type="ask_sdk_model_runtime.lwa.error.Error",
             status_code=500, message="Internal Server Error"))
         error_definitions.append(ServiceClientResponse(
-            response_type="ask_sdk_model_runtime.services.lwa.error.Error",
+            response_type="ask_sdk_model_runtime.lwa.error.Error",
             status_code=503, message="Service Unavailable"))
 
         api_response = self.invoke(method="POST", endpoint=endpoint,
