@@ -1,36 +1,35 @@
-# -*- coding: utf-8 -*-
+# coding: utf-8
+
 #
-# Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights
-# Reserved.
+# Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
 #
-# Licensed under the Apache License, Version 2.0 (the "License").
-# You may not use this file except in compliance with the License.
-# A copy of the License is located at
+# Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file
+# except in compliance with the License. A copy of the License is located at
 #
 # http://aws.amazon.com/apache2.0/
 #
-# or in the "license" file accompanying this file. This file is
-# distributed on an "AS IS" BASIS, WITHOUT WARRANTIES OR CONDITIONS
-# OF ANY KIND, either express or implied. See the License for the
-# specific language governing permissions and limitations under the
-# License.
+# or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for
+# the specific language governing permissions and limitations under the License.
 #
 
 import pprint
+import re  # noqa: F401
+import six
 import typing
 from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict
+    from typing import Dict, List, Optional, Union
+    from datetime import datetime
 
 
 class SkillStage(Enum):
-    """Stage for creating Proactive events.
+    """
+    Stage for creating Proactive events. Since proactive events can be created on the DEVELOPMENT and LIVE stages of the skill, this enum provides the stage values that can be used to pass to the service call. 
 
-    Since proactive events can be created on the DEVELOPMENT and LIVE
-    stages of the skill, this enum provides the stage values that can
-    be used to pass to the service call.
+
 
     Allowed enum values: [DEVELOPMENT, LIVE]
     """

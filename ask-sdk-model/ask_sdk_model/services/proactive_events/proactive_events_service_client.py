@@ -39,7 +39,7 @@ if typing.TYPE_CHECKING:
 class ProactiveEventsServiceClient(BaseServiceClient):
     """ServiceClient for calling the ProactiveEventsService APIs.
 
-    :param api_configuration: Instance of :py:class:`ask_sdk_model.services.api_configuration.ApiConfiguration`
+    :param api_configuration: Instance of ApiConfiguration
     :type api_configuration: ask_sdk_model.services.api_configuration.ApiConfiguration
     """
     def __init__(self, api_configuration, authentication_configuration, lwa_client=None):
@@ -49,7 +49,7 @@ class ProactiveEventsServiceClient(BaseServiceClient):
         :type api_configuration: ask_sdk_model.services.api_configuration.ApiConfiguration
         :param authentication_configuration: Instance of :py:class:`ask_sdk_model.services.authentication_configuration.AuthenticationConfiguration`
         :type api_configuration: ask_sdk_model.services.authentication_configuration.AuthenticationConfiguration
-        :param lwa_client: (Optional) Instance of :py:class:`ask_sdk_model.services.lwa.LwaClient`, 
+        :param lwa_client: (Optional) Instance of :py:class:`ask_sdk_model.services.lwa.LwaClient`,
             can be passed when the LwaClient configuration is different from the authentication 
             and api configuration passed
         :type lwa_client: ask_sdk_model.services.lwa.LwaClient

@@ -258,3 +258,11 @@ This release contains the following changes :
 - Alexa Presentation Language HTML Interface support. Apply for preview request `here <https://build.amazonalexadev.com/AlexaWebAPIforGamesDeveloperPreview_AlexaWebAPIforGames.html>`__.
 - Update service client methods to return an `ApiResponse` instance, in case a full response is required instead of just the response body. 
 - mypy fix for `AuthenticationConfiguration` class.
+
+
+1.20.0
+~~~~~~
+
+This release contains the following changes : 
+
+ - captions support in `audioplayer play directive <https://developer.amazon.com/docs/custom-skills/audioplayer-interface-reference.html#play>`__.

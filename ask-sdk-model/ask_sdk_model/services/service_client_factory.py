@@ -29,14 +29,14 @@ from .skill_messaging import SkillMessagingServiceClient
 from .ups import UpsServiceClient
 
 if typing.TYPE_CHECKING:
-    from .api_configuration import ApiConfiguration
+    from ask_sdk_model.services.api_configuration import ApiConfiguration
 
 
 class ServiceClientFactory(object):
     """ServiceClientFactory class to help build service clients.
 
     :param api_configuration: API Configuration for calling services
-    :type api_configuration: ApiConfiguration
+    :type api_configuration: ask_sdk_model.services.api_configuration.ApiConfiguration
     """
     def __init__(self, api_configuration):
         # type: (ApiConfiguration) -> None

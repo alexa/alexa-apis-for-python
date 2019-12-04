@@ -36,7 +36,7 @@ if typing.TYPE_CHECKING:
 class EndpointEnumerationServiceClient(BaseServiceClient):
     """ServiceClient for calling the EndpointEnumerationService APIs.
 
-    :param api_configuration: Instance of :py:class:`ask_sdk_model.services.api_configuration.ApiConfiguration`
+    :param api_configuration: Instance of ApiConfiguration
     :type api_configuration: ask_sdk_model.services.api_configuration.ApiConfiguration
     """
     def __init__(self, api_configuration):
