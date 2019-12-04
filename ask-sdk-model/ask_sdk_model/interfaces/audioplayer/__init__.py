@@ -26,9 +26,11 @@ from .clear_behavior import ClearBehavior
 from .playback_failed_request import PlaybackFailedRequest
 from .playback_stopped_request import PlaybackStoppedRequest
 from .current_playback_state import CurrentPlaybackState
+from .caption_data import CaptionData
 from .play_directive import PlayDirective
 from .error_type import ErrorType
 from .audio_item import AudioItem
+from .caption_type import CaptionType
 from .audio_item_metadata import AudioItemMetadata
 from .play_behavior import PlayBehavior
 from .playback_started_request import PlaybackStartedRequest

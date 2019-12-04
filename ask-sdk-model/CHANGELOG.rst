@@ -266,3 +266,11 @@ This release contains the following changes :
 This release contains the following changes : 
 
  - captions support in `audioplayer play directive <https://developer.amazon.com/docs/custom-skills/audioplayer-interface-reference.html#play>`__.
+
+
+1.20.1
+^^^^^^
+
+This release contains the following changes : 
+
+ - Missing objects added back from earlier minor release for caption data. 

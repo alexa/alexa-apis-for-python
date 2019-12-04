@@ -23,63 +23,42 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_sdk_model.interfaces.audioplayer.caption_data import CaptionData
+    from ask_sdk_model.interfaces.audioplayer.caption_type import CaptionType
 
 
-class Stream(object):
+class CaptionData(object):
     """
 
-    :param expected_previous_token: 
-    :type expected_previous_token: (optional) str
-    :param token: 
-    :type token: (optional) str
-    :param url: 
-    :type url: (optional) str
-    :param offset_in_milliseconds: 
-    :type offset_in_milliseconds: (optional) int
-    :param caption_data: 
-    :type caption_data: (optional) ask_sdk_model.interfaces.audioplayer.caption_data.CaptionData
+    :param content: This contains the caption text.
+    :type content: (optional) str
+    :param object_type: Type of the caption source.
+    :type object_type: (optional) ask_sdk_model.interfaces.audioplayer.caption_type.CaptionType
 
     """
     deserialized_types = {
-        'expected_previous_token': 'str',
-        'token': 'str',
-        'url': 'str',
-        'offset_in_milliseconds': 'int',
-        'caption_data': 'ask_sdk_model.interfaces.audioplayer.caption_data.CaptionData'
+        'content': 'str',
+        'object_type': 'ask_sdk_model.interfaces.audioplayer.caption_type.CaptionType'
     }  # type: Dict
 
     attribute_map = {
-        'expected_previous_token': 'expectedPreviousToken',
-        'token': 'token',
-        'url': 'url',
-        'offset_in_milliseconds': 'offsetInMilliseconds',
-        'caption_data': 'captionData'
+        'content': 'content',
+        'object_type': 'type'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, expected_previous_token=None, token=None, url=None, offset_in_milliseconds=None, caption_data=None):
-        # type: (Optional[str], Optional[str], Optional[str], Optional[int], Optional[CaptionData]) -> None
+    def __init__(self, content=None, object_type=None):
+        # type: (Optional[str], Optional[CaptionType]) -> None
         """
 
-        :param expected_previous_token: 
-        :type expected_previous_token: (optional) str
-        :param token: 
-        :type token: (optional) str
-        :param url: 
-        :type url: (optional) str
-        :param offset_in_milliseconds: 
-        :type offset_in_milliseconds: (optional) int
-        :param caption_data: 
-        :type caption_data: (optional) ask_sdk_model.interfaces.audioplayer.caption_data.CaptionData
+        :param content: This contains the caption text.
+        :type content: (optional) str
+        :param object_type: Type of the caption source.
+        :type object_type: (optional) ask_sdk_model.interfaces.audioplayer.caption_type.CaptionType
         """
         self.__discriminator_value = None  # type: str
 
-        self.expected_previous_token = expected_previous_token
-        self.token = token
-        self.url = url
-        self.offset_in_milliseconds = offset_in_milliseconds
-        self.caption_data = caption_data
+        self.content = content
+        self.object_type = object_type
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -124,7 +103,7 @@ class Stream(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Stream):
+        if not isinstance(other, CaptionData):
             return False
 
         return self.__dict__ == other.__dict__
