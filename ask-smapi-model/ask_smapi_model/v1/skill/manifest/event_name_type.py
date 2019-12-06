@@ -1,0 +1,290 @@
+# coding: utf-8
+
+#
+# Copyright 2019 Amazon.com, Inc. or its affiliates. All Rights Reserved.
+#
+# Licensed under the Apache License, Version 2.0 (the "License"). You may not use this file
+# except in compliance with the License. A copy of the License is located at
+#
+# http://aws.amazon.com/apache2.0/
+#
+# or in the "license" file accompanying this file. This file is distributed on an "AS IS" BASIS,
+# WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the License for
+# the specific language governing permissions and limitations under the License.
+#
+
+import pprint
+import re  # noqa: F401
+import six
+import typing
+from enum import Enum
+
+
+if typing.TYPE_CHECKING:
+    from typing import Dict, List, Optional, Union
+    from datetime import datetime
+
+
+class EventNameType(Enum):
+    """
+    Name of the event to be subscribed to.
+
+
+
+    Allowed enum values: [SKILL_ENABLED, SKILL_DISABLED, SKILL_PERMISSION_ACCEPTED, SKILL_PERMISSION_CHANGED, SKILL_ACCOUNT_LINKED, ITEMS_CREATED, ITEMS_UPDATED, ITEMS_DELETED, LIST_CREATED, LIST_UPDATED, LIST_DELETED, ALL_LISTS_CHANGED, REMINDER_STARTED, REMINDER_CREATED, REMINDER_UPDATED, REMINDER_DELETED, REMINDER_STATUS_CHANGED, AUDIO_ITEM_PLAYBACK_STARTED, AUDIO_ITEM_PLAYBACK_FINISHED, AUDIO_ITEM_PLAYBACK_STOPPED, AUDIO_ITEM_PLAYBACK_FAILED, SKILL_PROACTIVE_SUBSCRIPTION_CHANGED, IN_SKILL_PRODUCT_SUBSCRIPTION_STARTED, IN_SKILL_PRODUCT_SUBSCRIPTION_RENEWED, IN_SKILL_PRODUCT_SUBSCRIPTION_ENDED, Legacy_ActivityManager_ActivityContextRemovedEvent, Legacy_ActivityManager_ActivityInterrupted, Legacy_ActivityManager_FocusChanged, Legacy_AlertsController_DismissCommand, Legacy_AlertsController_SnoozeCommand, Legacy_AudioPlayer_AudioStutter, Legacy_AudioPlayer_InitialPlaybackProgressReport, Legacy_AudioPlayer_Metadata, Legacy_AudioPlayer_PeriodicPlaybackProgressReport, Legacy_AudioPlayer_PlaybackError, Legacy_AudioPlayer_PlaybackFinished, Legacy_AudioPlayer_PlaybackIdle, Legacy_AudioPlayer_PlaybackInterrupted, Legacy_AudioPlayer_PlaybackNearlyFinished, Legacy_AudioPlayer_PlaybackPaused, Legacy_AudioPlayer_PlaybackResumed, Legacy_AudioPlayer_PlaybackStarted, Legacy_AudioPlayer_PlaybackStutterFinished, Legacy_AudioPlayer_PlaybackStutterStarted, Legacy_AudioPlayerGui_ButtonClickedEvent, Legacy_AudioPlayerGui_LyricsViewedEvent, Legacy_AuxController_DirectionChanged, Legacy_AuxController_EnabledStateChanged, Legacy_AuxController_InputActivityStateChanged, Legacy_AuxController_PluggedStateChanged, Legacy_BluetoothNetwork_CancelPairingMode, Legacy_BluetoothNetwork_DeviceConnectedFailure, Legacy_BluetoothNetwork_DeviceConnectedSuccess, Legacy_BluetoothNetwork_DeviceDisconnectedFailure, Legacy_BluetoothNetwork_DeviceDisconnectedSuccess, Legacy_BluetoothNetwork_DevicePairFailure, Legacy_BluetoothNetwork_DevicePairSuccess, Legacy_BluetoothNetwork_DeviceUnpairFailure, Legacy_BluetoothNetwork_DeviceUnpairSuccess, Legacy_BluetoothNetwork_EnterPairingModeFailure, Legacy_BluetoothNetwork_EnterPairingModeSuccess, Legacy_BluetoothNetwork_MediaControlFailure, Legacy_BluetoothNetwork_MediaControlSuccess, Legacy_BluetoothNetwork_ScanDevicesReport, Legacy_BluetoothNetwork_SetDeviceCategoriesFailed, Legacy_BluetoothNetwork_SetDeviceCategoriesSucceeded, Legacy_ContentManager_ContentPlaybackTerminated, Legacy_DeviceNotification_DeleteNotificationFailed, Legacy_DeviceNotification_DeleteNotificationSucceeded, Legacy_DeviceNotification_NotificationEnteredBackground, Legacy_DeviceNotification_NotificationEnteredForground, Legacy_DeviceNotification_NotificationStarted, Legacy_DeviceNotification_NotificationStopped, Legacy_DeviceNotification_NotificationSync, Legacy_DeviceNotification_SetNotificationFailed, Legacy_DeviceNotification_SetNotificationSucceeded, Legacy_EqualizerController_EqualizerChanged, Legacy_ExternalMediaPlayer_AuthorizationComplete, Legacy_ExternalMediaPlayer_Error, Legacy_ExternalMediaPlayer_Event, Legacy_ExternalMediaPlayer_Login, Legacy_ExternalMediaPlayer_Logout, Legacy_ExternalMediaPlayer_ReportDiscoveredPlayers, Legacy_ExternalMediaPlayer_RequestToken, Legacy_FavoritesController_Error, Legacy_FavoritesController_Response, Legacy_GameEngine_GameInputEvent, Legacy_HomeAutoWifiController_DeviceReconnected, Legacy_HomeAutoWifiController_HttpNotified, Legacy_HomeAutoWifiController_SsdpDiscoveryFinished, Legacy_HomeAutoWifiController_SsdpServiceDiscovered, Legacy_HomeAutoWifiController_SsdpServiceTerminated, Legacy_ListModel_AddItemRequest, Legacy_ListModel_DeleteItemRequest, Legacy_ListModel_GetPageByOrdinalRequest, Legacy_ListModel_GetPageByTokenRequest, Legacy_ListModel_ListStateUpdateRequest, Legacy_ListModel_UpdateItemRequest, Legacy_ListRenderer_GetListPageByOrdinal, Legacy_ListRenderer_GetListPageByToken, Legacy_ListRenderer_ListItemEvent, Legacy_MediaGrouping_GroupChangeNotificationEvent, Legacy_MediaGrouping_GroupChangeResponseEvent, Legacy_MediaGrouping_GroupSyncEvent, Legacy_MediaPlayer_PlaybackError, Legacy_MediaPlayer_PlaybackFinished, Legacy_MediaPlayer_PlaybackIdle, Legacy_MediaPlayer_PlaybackNearlyFinished, Legacy_MediaPlayer_PlaybackPaused, Legacy_MediaPlayer_PlaybackResumed, Legacy_MediaPlayer_PlaybackStarted, Legacy_MediaPlayer_PlaybackStopped, Legacy_MediaPlayer_SequenceItemsRequested, Legacy_MediaPlayer_SequenceModified, Legacy_MeetingClientController_Event, Legacy_Microphone_AudioRecording, Legacy_PhoneCallController_Event, Legacy_PlaybackController_ButtonCommand, Legacy_PlaybackController_LyricsViewedEvent, Legacy_PlaybackController_NextCommand, Legacy_PlaybackController_PauseCommand, Legacy_PlaybackController_PlayCommand, Legacy_PlaybackController_PreviousCommand, Legacy_PlaybackController_ToggleCommand, Legacy_PlaylistController_ErrorResponse, Legacy_PlaylistController_Response, Legacy_Presentation_PresentationDismissedEvent, Legacy_Presentation_PresentationUserEvent, Legacy_SconeRemoteControl_Next, Legacy_SconeRemoteControl_PlayPause, Legacy_SconeRemoteControl_Previous, Legacy_SconeRemoteControl_VolumeDown, Legacy_SconeRemoteControl_VolumeUp, Legacy_SipClient_Event, Legacy_SoftwareUpdate_CheckSoftwareUpdateReport, Legacy_SoftwareUpdate_InitiateSoftwareUpdateReport, Legacy_Speaker_MuteChanged, Legacy_Speaker_VolumeChanged, Legacy_SpeechRecognizer_WakeWordChanged, Legacy_SpeechSynthesizer_SpeechFinished, Legacy_SpeechSynthesizer_SpeechInterrupted, Legacy_SpeechSynthesizer_SpeechStarted, Legacy_SpeechSynthesizer_SpeechSynthesizerError, Legacy_Spotify_Event, Legacy_System_UserInactivity, Legacy_UDPController_BroadcastResponse, LocalApplication_Alexa_Translation_LiveTranslation_Event, LocalApplication_AlexaNotifications_Event, LocalApplication_AlexaPlatformTestSpeechlet_Event, LocalApplication_AlexaVision_Event, LocalApplication_AlexaVoiceLayer_Event, LocalApplication_AvaPhysicalShopping_Event, LocalApplication_Calendar_Event, LocalApplication_Closet_Event, LocalApplication_Communications_Event, LocalApplication_DeviceMessaging_Event, LocalApplication_DigitalDash_Event, LocalApplication_FireflyShopping_Event, LocalApplication_Gallery_Event, LocalApplication_HHOPhotos_Event, LocalApplication_HomeAutomationMedia_Event, LocalApplication_KnightContacts_Event, LocalApplication_KnightHome_Event, LocalApplication_KnightHomeThingsToTry_Event, LocalApplication_LocalMediaPlayer_Event, LocalApplication_LocalVoiceUI_Event, LocalApplication_MShop_Event, LocalApplication_MShopPurchasing_Event, LocalApplication_NotificationsApp_Event, LocalApplication_Photos_Event, LocalApplication_Sentry_Event, LocalApplication_SipClient_Event, LocalApplication_SipUserAgent_Event, LocalApplication_todoRenderer_Event, LocalApplication_VideoExperienceService_Event, LocalApplication_WebVideoPlayer_Event, Alexa_Camera_PhotoCaptureController_CancelCaptureFailed, Alexa_Camera_PhotoCaptureController_CancelCaptureFinished, Alexa_Camera_PhotoCaptureController_CaptureFailed, Alexa_Camera_PhotoCaptureController_CaptureFinished, Alexa_Camera_VideoCaptureController_CancelCaptureFailed, Alexa_Camera_VideoCaptureController_CancelCaptureFinished, Alexa_Camera_VideoCaptureController_CaptureFailed, Alexa_Camera_VideoCaptureController_CaptureFinished, Alexa_Camera_VideoCaptureController_CaptureStarted, Alexa_FileManager_UploadController_CancelUploadFailed, Alexa_FileManager_UploadController_CancelUploadFinished, Alexa_FileManager_UploadController_UploadFailed, Alexa_FileManager_UploadController_UploadFinished, Alexa_FileManager_UploadController_UploadStarted, Alexa_Presentation_APL_UserEvent, Alexa_Presentation_HTML_Event, Alexa_Presentation_HTML_LifecycleStateChanged, Alexa_Presentation_PresentationDismissed, AudioPlayer_PlaybackFailed, AudioPlayer_PlaybackFinished, AudioPlayer_PlaybackNearlyFinished, AudioPlayer_PlaybackStarted, AudioPlayer_PlaybackStopped, CardRenderer_DisplayContentFinished, CardRenderer_DisplayContentStarted, CardRenderer_ReadContentFinished, CardRenderer_ReadContentStarted, CustomInterfaceController_EventsReceived, CustomInterfaceController_Expired, DeviceSetup_SetupCompleted, Display_ElementSelected, Display_UserEvent, FitnessSessionController_FitnessSessionEnded, FitnessSessionController_FitnessSessionError, FitnessSessionController_FitnessSessionPaused, FitnessSessionController_FitnessSessionResumed, FitnessSessionController_FitnessSessionStarted, GameEngine_InputHandlerEvent, Messaging_MessageReceived, MessagingController_UpdateConversationsStatus, MessagingController_UpdateMessagesStatusRequest, MessagingController_UpdateSendMessageStatusRequest, MessagingController_UploadConversations, PlaybackController_NextCommandIssued, PlaybackController_PauseCommandIssued, PlaybackController_PlayCommandIssued, PlaybackController_PreviousCommandIssued, EffectsController_RequestEffectChangeRequest, EffectsController_RequestGuiChangeRequest, EffectsController_StateReceiptChangeRequest]
+    """
+    SKILL_ENABLED = "SKILL_ENABLED"
+    SKILL_DISABLED = "SKILL_DISABLED"
+    SKILL_PERMISSION_ACCEPTED = "SKILL_PERMISSION_ACCEPTED"
+    SKILL_PERMISSION_CHANGED = "SKILL_PERMISSION_CHANGED"
+    SKILL_ACCOUNT_LINKED = "SKILL_ACCOUNT_LINKED"
+    ITEMS_CREATED = "ITEMS_CREATED"
+    ITEMS_UPDATED = "ITEMS_UPDATED"
+    ITEMS_DELETED = "ITEMS_DELETED"
+    LIST_CREATED = "LIST_CREATED"
+    LIST_UPDATED = "LIST_UPDATED"
+    LIST_DELETED = "LIST_DELETED"
+    ALL_LISTS_CHANGED = "ALL_LISTS_CHANGED"
+    REMINDER_STARTED = "REMINDER_STARTED"
+    REMINDER_CREATED = "REMINDER_CREATED"
+    REMINDER_UPDATED = "REMINDER_UPDATED"
+    REMINDER_DELETED = "REMINDER_DELETED"
+    REMINDER_STATUS_CHANGED = "REMINDER_STATUS_CHANGED"
+    AUDIO_ITEM_PLAYBACK_STARTED = "AUDIO_ITEM_PLAYBACK_STARTED"
+    AUDIO_ITEM_PLAYBACK_FINISHED = "AUDIO_ITEM_PLAYBACK_FINISHED"
+    AUDIO_ITEM_PLAYBACK_STOPPED = "AUDIO_ITEM_PLAYBACK_STOPPED"
+    AUDIO_ITEM_PLAYBACK_FAILED = "AUDIO_ITEM_PLAYBACK_FAILED"
+    SKILL_PROACTIVE_SUBSCRIPTION_CHANGED = "SKILL_PROACTIVE_SUBSCRIPTION_CHANGED"
+    IN_SKILL_PRODUCT_SUBSCRIPTION_STARTED = "IN_SKILL_PRODUCT_SUBSCRIPTION_STARTED"
+    IN_SKILL_PRODUCT_SUBSCRIPTION_RENEWED = "IN_SKILL_PRODUCT_SUBSCRIPTION_RENEWED"
+    IN_SKILL_PRODUCT_SUBSCRIPTION_ENDED = "IN_SKILL_PRODUCT_SUBSCRIPTION_ENDED"
+    Legacy_ActivityManager_ActivityContextRemovedEvent = "Legacy.ActivityManager.ActivityContextRemovedEvent"
+    Legacy_ActivityManager_ActivityInterrupted = "Legacy.ActivityManager.ActivityInterrupted"
+    Legacy_ActivityManager_FocusChanged = "Legacy.ActivityManager.FocusChanged"
+    Legacy_AlertsController_DismissCommand = "Legacy.AlertsController.DismissCommand"
+    Legacy_AlertsController_SnoozeCommand = "Legacy.AlertsController.SnoozeCommand"
+    Legacy_AudioPlayer_AudioStutter = "Legacy.AudioPlayer.AudioStutter"
+    Legacy_AudioPlayer_InitialPlaybackProgressReport = "Legacy.AudioPlayer.InitialPlaybackProgressReport"
+    Legacy_AudioPlayer_Metadata = "Legacy.AudioPlayer.Metadata"
+    Legacy_AudioPlayer_PeriodicPlaybackProgressReport = "Legacy.AudioPlayer.PeriodicPlaybackProgressReport"
+    Legacy_AudioPlayer_PlaybackError = "Legacy.AudioPlayer.PlaybackError"
+    Legacy_AudioPlayer_PlaybackFinished = "Legacy.AudioPlayer.PlaybackFinished"
+    Legacy_AudioPlayer_PlaybackIdle = "Legacy.AudioPlayer.PlaybackIdle"
+    Legacy_AudioPlayer_PlaybackInterrupted = "Legacy.AudioPlayer.PlaybackInterrupted"
+    Legacy_AudioPlayer_PlaybackNearlyFinished = "Legacy.AudioPlayer.PlaybackNearlyFinished"
+    Legacy_AudioPlayer_PlaybackPaused = "Legacy.AudioPlayer.PlaybackPaused"
+    Legacy_AudioPlayer_PlaybackResumed = "Legacy.AudioPlayer.PlaybackResumed"
+    Legacy_AudioPlayer_PlaybackStarted = "Legacy.AudioPlayer.PlaybackStarted"
+    Legacy_AudioPlayer_PlaybackStutterFinished = "Legacy.AudioPlayer.PlaybackStutterFinished"
+    Legacy_AudioPlayer_PlaybackStutterStarted = "Legacy.AudioPlayer.PlaybackStutterStarted"
+    Legacy_AudioPlayerGui_ButtonClickedEvent = "Legacy.AudioPlayerGui.ButtonClickedEvent"
+    Legacy_AudioPlayerGui_LyricsViewedEvent = "Legacy.AudioPlayerGui.LyricsViewedEvent"
+    Legacy_AuxController_DirectionChanged = "Legacy.AuxController.DirectionChanged"
+    Legacy_AuxController_EnabledStateChanged = "Legacy.AuxController.EnabledStateChanged"
+    Legacy_AuxController_InputActivityStateChanged = "Legacy.AuxController.InputActivityStateChanged"
+    Legacy_AuxController_PluggedStateChanged = "Legacy.AuxController.PluggedStateChanged"
+    Legacy_BluetoothNetwork_CancelPairingMode = "Legacy.BluetoothNetwork.CancelPairingMode"
+    Legacy_BluetoothNetwork_DeviceConnectedFailure = "Legacy.BluetoothNetwork.DeviceConnectedFailure"
+    Legacy_BluetoothNetwork_DeviceConnectedSuccess = "Legacy.BluetoothNetwork.DeviceConnectedSuccess"
+    Legacy_BluetoothNetwork_DeviceDisconnectedFailure = "Legacy.BluetoothNetwork.DeviceDisconnectedFailure"
+    Legacy_BluetoothNetwork_DeviceDisconnectedSuccess = "Legacy.BluetoothNetwork.DeviceDisconnectedSuccess"
+    Legacy_BluetoothNetwork_DevicePairFailure = "Legacy.BluetoothNetwork.DevicePairFailure"
+    Legacy_BluetoothNetwork_DevicePairSuccess = "Legacy.BluetoothNetwork.DevicePairSuccess"
+    Legacy_BluetoothNetwork_DeviceUnpairFailure = "Legacy.BluetoothNetwork.DeviceUnpairFailure"
+    Legacy_BluetoothNetwork_DeviceUnpairSuccess = "Legacy.BluetoothNetwork.DeviceUnpairSuccess"
+    Legacy_BluetoothNetwork_EnterPairingModeFailure = "Legacy.BluetoothNetwork.EnterPairingModeFailure"
+    Legacy_BluetoothNetwork_EnterPairingModeSuccess = "Legacy.BluetoothNetwork.EnterPairingModeSuccess"
+    Legacy_BluetoothNetwork_MediaControlFailure = "Legacy.BluetoothNetwork.MediaControlFailure"
+    Legacy_BluetoothNetwork_MediaControlSuccess = "Legacy.BluetoothNetwork.MediaControlSuccess"
+    Legacy_BluetoothNetwork_ScanDevicesReport = "Legacy.BluetoothNetwork.ScanDevicesReport"
+    Legacy_BluetoothNetwork_SetDeviceCategoriesFailed = "Legacy.BluetoothNetwork.SetDeviceCategoriesFailed"
+    Legacy_BluetoothNetwork_SetDeviceCategoriesSucceeded = "Legacy.BluetoothNetwork.SetDeviceCategoriesSucceeded"
+    Legacy_ContentManager_ContentPlaybackTerminated = "Legacy.ContentManager.ContentPlaybackTerminated"
+    Legacy_DeviceNotification_DeleteNotificationFailed = "Legacy.DeviceNotification.DeleteNotificationFailed"
+    Legacy_DeviceNotification_DeleteNotificationSucceeded = "Legacy.DeviceNotification.DeleteNotificationSucceeded"
+    Legacy_DeviceNotification_NotificationEnteredBackground = "Legacy.DeviceNotification.NotificationEnteredBackground"
+    Legacy_DeviceNotification_NotificationEnteredForground = "Legacy.DeviceNotification.NotificationEnteredForground"
+    Legacy_DeviceNotification_NotificationStarted = "Legacy.DeviceNotification.NotificationStarted"
+    Legacy_DeviceNotification_NotificationStopped = "Legacy.DeviceNotification.NotificationStopped"
+    Legacy_DeviceNotification_NotificationSync = "Legacy.DeviceNotification.NotificationSync"
+    Legacy_DeviceNotification_SetNotificationFailed = "Legacy.DeviceNotification.SetNotificationFailed"
+    Legacy_DeviceNotification_SetNotificationSucceeded = "Legacy.DeviceNotification.SetNotificationSucceeded"
+    Legacy_EqualizerController_EqualizerChanged = "Legacy.EqualizerController.EqualizerChanged"
+    Legacy_ExternalMediaPlayer_AuthorizationComplete = "Legacy.ExternalMediaPlayer.AuthorizationComplete"
+    Legacy_ExternalMediaPlayer_Error = "Legacy.ExternalMediaPlayer.Error"
+    Legacy_ExternalMediaPlayer_Event = "Legacy.ExternalMediaPlayer.Event"
+    Legacy_ExternalMediaPlayer_Login = "Legacy.ExternalMediaPlayer.Login"
+    Legacy_ExternalMediaPlayer_Logout = "Legacy.ExternalMediaPlayer.Logout"
+    Legacy_ExternalMediaPlayer_ReportDiscoveredPlayers = "Legacy.ExternalMediaPlayer.ReportDiscoveredPlayers"
+    Legacy_ExternalMediaPlayer_RequestToken = "Legacy.ExternalMediaPlayer.RequestToken"
+    Legacy_FavoritesController_Error = "Legacy.FavoritesController.Error"
+    Legacy_FavoritesController_Response = "Legacy.FavoritesController.Response"
+    Legacy_GameEngine_GameInputEvent = "Legacy.GameEngine.GameInputEvent"
+    Legacy_HomeAutoWifiController_DeviceReconnected = "Legacy.HomeAutoWifiController.DeviceReconnected"
+    Legacy_HomeAutoWifiController_HttpNotified = "Legacy.HomeAutoWifiController.HttpNotified"
+    Legacy_HomeAutoWifiController_SsdpDiscoveryFinished = "Legacy.HomeAutoWifiController.SsdpDiscoveryFinished"
+    Legacy_HomeAutoWifiController_SsdpServiceDiscovered = "Legacy.HomeAutoWifiController.SsdpServiceDiscovered"
+    Legacy_HomeAutoWifiController_SsdpServiceTerminated = "Legacy.HomeAutoWifiController.SsdpServiceTerminated"
+    Legacy_ListModel_AddItemRequest = "Legacy.ListModel.AddItemRequest"
+    Legacy_ListModel_DeleteItemRequest = "Legacy.ListModel.DeleteItemRequest"
+    Legacy_ListModel_GetPageByOrdinalRequest = "Legacy.ListModel.GetPageByOrdinalRequest"
+    Legacy_ListModel_GetPageByTokenRequest = "Legacy.ListModel.GetPageByTokenRequest"
+    Legacy_ListModel_ListStateUpdateRequest = "Legacy.ListModel.ListStateUpdateRequest"
+    Legacy_ListModel_UpdateItemRequest = "Legacy.ListModel.UpdateItemRequest"
+    Legacy_ListRenderer_GetListPageByOrdinal = "Legacy.ListRenderer.GetListPageByOrdinal"
+    Legacy_ListRenderer_GetListPageByToken = "Legacy.ListRenderer.GetListPageByToken"
+    Legacy_ListRenderer_ListItemEvent = "Legacy.ListRenderer.ListItemEvent"
+    Legacy_MediaGrouping_GroupChangeNotificationEvent = "Legacy.MediaGrouping.GroupChangeNotificationEvent"
+    Legacy_MediaGrouping_GroupChangeResponseEvent = "Legacy.MediaGrouping.GroupChangeResponseEvent"
+    Legacy_MediaGrouping_GroupSyncEvent = "Legacy.MediaGrouping.GroupSyncEvent"
+    Legacy_MediaPlayer_PlaybackError = "Legacy.MediaPlayer.PlaybackError"
+    Legacy_MediaPlayer_PlaybackFinished = "Legacy.MediaPlayer.PlaybackFinished"
+    Legacy_MediaPlayer_PlaybackIdle = "Legacy.MediaPlayer.PlaybackIdle"
+    Legacy_MediaPlayer_PlaybackNearlyFinished = "Legacy.MediaPlayer.PlaybackNearlyFinished"
+    Legacy_MediaPlayer_PlaybackPaused = "Legacy.MediaPlayer.PlaybackPaused"
+    Legacy_MediaPlayer_PlaybackResumed = "Legacy.MediaPlayer.PlaybackResumed"
+    Legacy_MediaPlayer_PlaybackStarted = "Legacy.MediaPlayer.PlaybackStarted"
+    Legacy_MediaPlayer_PlaybackStopped = "Legacy.MediaPlayer.PlaybackStopped"
+    Legacy_MediaPlayer_SequenceItemsRequested = "Legacy.MediaPlayer.SequenceItemsRequested"
+    Legacy_MediaPlayer_SequenceModified = "Legacy.MediaPlayer.SequenceModified"
+    Legacy_MeetingClientController_Event = "Legacy.MeetingClientController.Event"
+    Legacy_Microphone_AudioRecording = "Legacy.Microphone.AudioRecording"
+    Legacy_PhoneCallController_Event = "Legacy.PhoneCallController.Event"
+    Legacy_PlaybackController_ButtonCommand = "Legacy.PlaybackController.ButtonCommand"
+    Legacy_PlaybackController_LyricsViewedEvent = "Legacy.PlaybackController.LyricsViewedEvent"
+    Legacy_PlaybackController_NextCommand = "Legacy.PlaybackController.NextCommand"
+    Legacy_PlaybackController_PauseCommand = "Legacy.PlaybackController.PauseCommand"
+    Legacy_PlaybackController_PlayCommand = "Legacy.PlaybackController.PlayCommand"
+    Legacy_PlaybackController_PreviousCommand = "Legacy.PlaybackController.PreviousCommand"
+    Legacy_PlaybackController_ToggleCommand = "Legacy.PlaybackController.ToggleCommand"
+    Legacy_PlaylistController_ErrorResponse = "Legacy.PlaylistController.ErrorResponse"
+    Legacy_PlaylistController_Response = "Legacy.PlaylistController.Response"
+    Legacy_Presentation_PresentationDismissedEvent = "Legacy.Presentation.PresentationDismissedEvent"
+    Legacy_Presentation_PresentationUserEvent = "Legacy.Presentation.PresentationUserEvent"
+    Legacy_SconeRemoteControl_Next = "Legacy.SconeRemoteControl.Next"
+    Legacy_SconeRemoteControl_PlayPause = "Legacy.SconeRemoteControl.PlayPause"
+    Legacy_SconeRemoteControl_Previous = "Legacy.SconeRemoteControl.Previous"
+    Legacy_SconeRemoteControl_VolumeDown = "Legacy.SconeRemoteControl.VolumeDown"
+    Legacy_SconeRemoteControl_VolumeUp = "Legacy.SconeRemoteControl.VolumeUp"
+    Legacy_SipClient_Event = "Legacy.SipClient.Event"
+    Legacy_SoftwareUpdate_CheckSoftwareUpdateReport = "Legacy.SoftwareUpdate.CheckSoftwareUpdateReport"
+    Legacy_SoftwareUpdate_InitiateSoftwareUpdateReport = "Legacy.SoftwareUpdate.InitiateSoftwareUpdateReport"
+    Legacy_Speaker_MuteChanged = "Legacy.Speaker.MuteChanged"
+    Legacy_Speaker_VolumeChanged = "Legacy.Speaker.VolumeChanged"
+    Legacy_SpeechRecognizer_WakeWordChanged = "Legacy.SpeechRecognizer.WakeWordChanged"
+    Legacy_SpeechSynthesizer_SpeechFinished = "Legacy.SpeechSynthesizer.SpeechFinished"
+    Legacy_SpeechSynthesizer_SpeechInterrupted = "Legacy.SpeechSynthesizer.SpeechInterrupted"
+    Legacy_SpeechSynthesizer_SpeechStarted = "Legacy.SpeechSynthesizer.SpeechStarted"
+    Legacy_SpeechSynthesizer_SpeechSynthesizerError = "Legacy.SpeechSynthesizer.SpeechSynthesizerError"
+    Legacy_Spotify_Event = "Legacy.Spotify.Event"
+    Legacy_System_UserInactivity = "Legacy.System.UserInactivity"
+    Legacy_UDPController_BroadcastResponse = "Legacy.UDPController.BroadcastResponse"
+    LocalApplication_Alexa_Translation_LiveTranslation_Event = "LocalApplication.Alexa.Translation.LiveTranslation.Event"
+    LocalApplication_AlexaNotifications_Event = "LocalApplication.AlexaNotifications.Event"
+    LocalApplication_AlexaPlatformTestSpeechlet_Event = "LocalApplication.AlexaPlatformTestSpeechlet.Event"
+    LocalApplication_AlexaVision_Event = "LocalApplication.AlexaVision.Event"
+    LocalApplication_AlexaVoiceLayer_Event = "LocalApplication.AlexaVoiceLayer.Event"
+    LocalApplication_AvaPhysicalShopping_Event = "LocalApplication.AvaPhysicalShopping.Event"
+    LocalApplication_Calendar_Event = "LocalApplication.Calendar.Event"
+    LocalApplication_Closet_Event = "LocalApplication.Closet.Event"
+    LocalApplication_Communications_Event = "LocalApplication.Communications.Event"
+    LocalApplication_DeviceMessaging_Event = "LocalApplication.DeviceMessaging.Event"
+    LocalApplication_DigitalDash_Event = "LocalApplication.DigitalDash.Event"
+    LocalApplication_FireflyShopping_Event = "LocalApplication.FireflyShopping.Event"
+    LocalApplication_Gallery_Event = "LocalApplication.Gallery.Event"
+    LocalApplication_HHOPhotos_Event = "LocalApplication.HHOPhotos.Event"
+    LocalApplication_HomeAutomationMedia_Event = "LocalApplication.HomeAutomationMedia.Event"
+    LocalApplication_KnightContacts_Event = "LocalApplication.KnightContacts.Event"
+    LocalApplication_KnightHome_Event = "LocalApplication.KnightHome.Event"
+    LocalApplication_KnightHomeThingsToTry_Event = "LocalApplication.KnightHomeThingsToTry.Event"
+    LocalApplication_LocalMediaPlayer_Event = "LocalApplication.LocalMediaPlayer.Event"
+    LocalApplication_LocalVoiceUI_Event = "LocalApplication.LocalVoiceUI.Event"
+    LocalApplication_MShop_Event = "LocalApplication.MShop.Event"
+    LocalApplication_MShopPurchasing_Event = "LocalApplication.MShopPurchasing.Event"
+    LocalApplication_NotificationsApp_Event = "LocalApplication.NotificationsApp.Event"
+    LocalApplication_Photos_Event = "LocalApplication.Photos.Event"
+    LocalApplication_Sentry_Event = "LocalApplication.Sentry.Event"
+    LocalApplication_SipClient_Event = "LocalApplication.SipClient.Event"
+    LocalApplication_SipUserAgent_Event = "LocalApplication.SipUserAgent.Event"
+    LocalApplication_todoRenderer_Event = "LocalApplication.todoRenderer.Event"
+    LocalApplication_VideoExperienceService_Event = "LocalApplication.VideoExperienceService.Event"
+    LocalApplication_WebVideoPlayer_Event = "LocalApplication.WebVideoPlayer.Event"
+    Alexa_Camera_PhotoCaptureController_CancelCaptureFailed = "Alexa.Camera.PhotoCaptureController.CancelCaptureFailed"
+    Alexa_Camera_PhotoCaptureController_CancelCaptureFinished = "Alexa.Camera.PhotoCaptureController.CancelCaptureFinished"
+    Alexa_Camera_PhotoCaptureController_CaptureFailed = "Alexa.Camera.PhotoCaptureController.CaptureFailed"
+    Alexa_Camera_PhotoCaptureController_CaptureFinished = "Alexa.Camera.PhotoCaptureController.CaptureFinished"
+    Alexa_Camera_VideoCaptureController_CancelCaptureFailed = "Alexa.Camera.VideoCaptureController.CancelCaptureFailed"
+    Alexa_Camera_VideoCaptureController_CancelCaptureFinished = "Alexa.Camera.VideoCaptureController.CancelCaptureFinished"
+    Alexa_Camera_VideoCaptureController_CaptureFailed = "Alexa.Camera.VideoCaptureController.CaptureFailed"
+    Alexa_Camera_VideoCaptureController_CaptureFinished = "Alexa.Camera.VideoCaptureController.CaptureFinished"
+    Alexa_Camera_VideoCaptureController_CaptureStarted = "Alexa.Camera.VideoCaptureController.CaptureStarted"
+    Alexa_FileManager_UploadController_CancelUploadFailed = "Alexa.FileManager.UploadController.CancelUploadFailed"
+    Alexa_FileManager_UploadController_CancelUploadFinished = "Alexa.FileManager.UploadController.CancelUploadFinished"
+    Alexa_FileManager_UploadController_UploadFailed = "Alexa.FileManager.UploadController.UploadFailed"
+    Alexa_FileManager_UploadController_UploadFinished = "Alexa.FileManager.UploadController.UploadFinished"
+    Alexa_FileManager_UploadController_UploadStarted = "Alexa.FileManager.UploadController.UploadStarted"
+    Alexa_Presentation_APL_UserEvent = "Alexa.Presentation.APL.UserEvent"
+    Alexa_Presentation_HTML_Event = "Alexa.Presentation.HTML.Event"
+    Alexa_Presentation_HTML_LifecycleStateChanged = "Alexa.Presentation.HTML.LifecycleStateChanged"
+    Alexa_Presentation_PresentationDismissed = "Alexa.Presentation.PresentationDismissed"
+    AudioPlayer_PlaybackFailed = "AudioPlayer.PlaybackFailed"
+    AudioPlayer_PlaybackFinished = "AudioPlayer.PlaybackFinished"
+    AudioPlayer_PlaybackNearlyFinished = "AudioPlayer.PlaybackNearlyFinished"
+    AudioPlayer_PlaybackStarted = "AudioPlayer.PlaybackStarted"
+    AudioPlayer_PlaybackStopped = "AudioPlayer.PlaybackStopped"
+    CardRenderer_DisplayContentFinished = "CardRenderer.DisplayContentFinished"
+    CardRenderer_DisplayContentStarted = "CardRenderer.DisplayContentStarted"
+    CardRenderer_ReadContentFinished = "CardRenderer.ReadContentFinished"
+    CardRenderer_ReadContentStarted = "CardRenderer.ReadContentStarted"
+    CustomInterfaceController_EventsReceived = "CustomInterfaceController.EventsReceived"
+    CustomInterfaceController_Expired = "CustomInterfaceController.Expired"
+    DeviceSetup_SetupCompleted = "DeviceSetup.SetupCompleted"
+    Display_ElementSelected = "Display.ElementSelected"
+    Display_UserEvent = "Display.UserEvent"
+    FitnessSessionController_FitnessSessionEnded = "FitnessSessionController.FitnessSessionEnded"
+    FitnessSessionController_FitnessSessionError = "FitnessSessionController.FitnessSessionError"
+    FitnessSessionController_FitnessSessionPaused = "FitnessSessionController.FitnessSessionPaused"
+    FitnessSessionController_FitnessSessionResumed = "FitnessSessionController.FitnessSessionResumed"
+    FitnessSessionController_FitnessSessionStarted = "FitnessSessionController.FitnessSessionStarted"
+    GameEngine_InputHandlerEvent = "GameEngine.InputHandlerEvent"
+    Messaging_MessageReceived = "Messaging.MessageReceived"
+    MessagingController_UpdateConversationsStatus = "MessagingController.UpdateConversationsStatus"
+    MessagingController_UpdateMessagesStatusRequest = "MessagingController.UpdateMessagesStatusRequest"
+    MessagingController_UpdateSendMessageStatusRequest = "MessagingController.UpdateSendMessageStatusRequest"
+    MessagingController_UploadConversations = "MessagingController.UploadConversations"
+    PlaybackController_NextCommandIssued = "PlaybackController.NextCommandIssued"
+    PlaybackController_PauseCommandIssued = "PlaybackController.PauseCommandIssued"
+    PlaybackController_PlayCommandIssued = "PlaybackController.PlayCommandIssued"
+    PlaybackController_PreviousCommandIssued = "PlaybackController.PreviousCommandIssued"
+    EffectsController_RequestEffectChangeRequest = "EffectsController.RequestEffectChangeRequest"
+    EffectsController_RequestGuiChangeRequest = "EffectsController.RequestGuiChangeRequest"
+    EffectsController_StateReceiptChangeRequest = "EffectsController.StateReceiptChangeRequest"
+
+    def to_dict(self):
+        # type: () -> Dict[str, object]
+        """Returns the model properties as a dict"""
+        result = {self.name: self.value}
+        return result
+
+    def to_str(self):
+        # type: () -> str
+        """Returns the string representation of the model"""
+        return pprint.pformat(self.value)
+
+    def __repr__(self):
+        # type: () -> str
+        """For `print` and `pprint`"""
+        return self.to_str()
+
+    def __eq__(self, other):
+        # type: (object) -> bool
+        """Returns true if both objects are equal"""
+        if not isinstance(other, EventNameType):
+            return False
+
+        return self.__dict__ == other.__dict__
+
+    def __ne__(self, other):
+        # type: (object) -> bool
+        """Returns true if both objects are not equal"""
+        return not self == other

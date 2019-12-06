@@ -1,0 +1,7 @@
+include README.rst
+include CHANGELOG.rst
+include LICENSE
+include requirements.txt
+include THIRD-PARTY.txt
+include NOTICE.txt
+recursive-include ask_smapi_model py.typed

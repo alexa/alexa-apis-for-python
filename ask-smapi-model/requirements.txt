@@ -1,0 +1,6 @@
+six >= 1.10
+setuptools >= 21.0.0
+python_dateutil
+enum34; python_version == '2.7'
+typing; python_version == '2.7'
+ask-sdk-model-runtime >= 1.0
