@@ -45,7 +45,7 @@ class VideoAppInterface(Interface):
         """
 
         """
-        self.__discriminator_value = "VIDEO"  # type: str
+        self.__discriminator_value = "VIDEO_APP"  # type: str
 
         self.object_type = self.__discriminator_value
         super(VideoAppInterface, self).__init__(object_type=self.__discriminator_value)

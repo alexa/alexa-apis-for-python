@@ -41,10 +41,10 @@ class TestDefaultApiClient(unittest.TestCase):
         test_headers_list = None
         expected_headers_dict = {}
 
-        assert self.test_api_client._convert_list_tuples_to_dict(
-            test_headers_list) == expected_headers_dict, (
+        self.assertEqual(self.test_api_client._convert_list_tuples_to_dict(
+            test_headers_list), expected_headers_dict, (
             "DefaultApiClient failed to convert null headers list to empty "
-            "dict object")
+            "dict object"))
 
     def test_convert_header_tuples_to_dict(self):
         test_headers_list = [
@@ -53,20 +53,20 @@ class TestDefaultApiClient(unittest.TestCase):
         expected_headers_dict = {
             "header_1": "test_1, test_3", "header_2": "test_2"}
 
-        assert self.test_api_client._convert_list_tuples_to_dict(
-            test_headers_list) == expected_headers_dict, (
+        self.assertEqual(self.test_api_client._convert_list_tuples_to_dict(
+            test_headers_list), expected_headers_dict, (
             "DefaultApiClient failed to convert header list of tuples to "
             "dictionary format needed for http "
-            "request call")
+            "request call"))
 
     def test_convert_null_header_dict_to_tuples(self):
         test_headers_dict = None
         expected_headers_list = []
 
-        assert self.test_api_client._convert_dict_to_list_tuples(
-            test_headers_dict) == expected_headers_list, (
+        self.assertEqual(self.test_api_client._convert_dict_to_list_tuples(
+            test_headers_dict), expected_headers_list, (
             "DefaultApiClient failed to convert null headers dict to empty "
-            "list object")
+            "list object"))
 
     def test_convert_header_dict_to_tuples(self):
         test_headers_dict = {
@@ -76,11 +76,11 @@ class TestDefaultApiClient(unittest.TestCase):
             ("header_1", "test_1"), ("header_1", "test_3"),
             ("header_2", "test_2"), ("header_3", "test_4")]
 
-        assert set(self.test_api_client._convert_dict_to_list_tuples(
-            test_headers_dict)) == set(
+        self.assertEqual(set(self.test_api_client._convert_dict_to_list_tuples(
+            test_headers_dict)), set(
             expected_headers_list), (
             "DefaultApiClient failed to convert headers dict to list of "
-            "tuples format for ApiClientResponse")
+            "tuples format for ApiClientResponse"))
 
     def test_resolve_valid_http_method(self):
         with mock.patch("requests.get",
@@ -104,7 +104,7 @@ class TestDefaultApiClient(unittest.TestCase):
             with self.assertRaises(ApiClientException) as exc:
                 self.test_api_client.invoke(test_invalid_method_request)
 
-            assert "Invalid request method: GET_TEST" in str(exc.exception)
+            self.assertIn("Invalid request method: GET_TEST", str(exc.exception))
 
     def test_invoke_http_method_throw_exception(self):
         with mock.patch("requests.get",
@@ -112,7 +112,7 @@ class TestDefaultApiClient(unittest.TestCase):
             with self.assertRaises(ApiClientException) as exc:
                 self.test_api_client.invoke(self.valid_request)
 
-            assert "Error executing the request: test exception" in str(exc.exception)
+            self.assertIn("Error executing the request: test exception", str(exc.exception))
 
     def test_api_client_invoke_with_method_headers_processed(self):
         self.valid_request.headers = [
@@ -131,21 +131,21 @@ class TestDefaultApiClient(unittest.TestCase):
                         side_effect=lambda *args, **kwargs: test_response):
             actual_response = self.test_api_client.invoke(self.valid_request)
 
-            assert set(actual_response.headers) == set([
+            self.assertEqual(set(actual_response.headers), set([
                 ("response_header_1", "test_1"),
                 ("response_header_1", "test_3"),
                 ("response_header_2", "test_2"),
                 ("response_header_3", "test_4")]), (
                 "Response headers from client doesn't match with the "
-                "expected headers")
+                "expected headers"))
 
-            assert actual_response.status_code == 400, (
+            self.assertEqual(actual_response.status_code, 400, (
                 "Status code from client response doesn't match with the "
-                "expected response status code")
+                "expected response status code"))
 
-            assert actual_response.body == "test response body", (
+            self.assertEqual(actual_response.body, "test response body", (
                 "Body from client response doesn't match with the expected "
-                "response body")
+                "response body"))
 
     def test_api_client_invoke_with_http_url_throw_error(self):
         test_invalid_url_scheme_request = ApiClientRequest(
@@ -157,7 +157,7 @@ class TestDefaultApiClient(unittest.TestCase):
             with self.assertRaises(ApiClientException) as exc:
                 self.test_api_client.invoke(test_invalid_url_scheme_request)
 
-            assert "Requests against non-HTTPS endpoints are not allowed." in str(exc.exception)
+            self.assertIn("Requests against non-HTTPS endpoints are not allowed.", str(exc.exception))
 
     def test_api_client_invoke_with_http_case_sensitive_url_throw_error(self):
         test_invalid_url_scheme_request = ApiClientRequest(
@@ -169,7 +169,7 @@ class TestDefaultApiClient(unittest.TestCase):
             with self.assertRaises(ApiClientException) as exc:
                 self.test_api_client.invoke(test_invalid_url_scheme_request)
 
-            assert "Requests against non-HTTPS endpoints are not allowed." in str(exc.exception)
+            self.assertIn("Requests against non-HTTPS endpoints are not allowed.", str(exc.exception))
 
     def test_api_client_invoke_with_no_url_schema_throw_error(self):
         test_invalid_url_scheme_request = ApiClientRequest(
@@ -181,7 +181,7 @@ class TestDefaultApiClient(unittest.TestCase):
             with self.assertRaises(ApiClientException) as exc:
                 self.test_api_client.invoke(test_invalid_url_scheme_request)
 
-            assert "Requests against non-HTTPS endpoints are not allowed." in str(exc.exception)
+            self.assertIn("Requests against non-HTTPS endpoints are not allowed.", str(exc.exception))
 
     def test_api_client_send_request_with_raw_data_serialized_for_json_content(
             self):

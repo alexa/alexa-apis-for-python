@@ -53,6 +53,7 @@ from .skill_manifest_localized_privacy_and_compliance import SkillManifestLocali
 from .localized_music_info import LocalizedMusicInfo
 from .alexa_presentation_apl_interface import AlexaPresentationAplInterface
 from .flash_briefing_genre import FlashBriefingGenre
+from .alexa_presentation_html_interface import AlexaPresentationHtmlInterface
 from .video_apis_locale import VideoApisLocale
 from .ssl_certificate_type import SSLCertificateType
 from .music_request import MusicRequest

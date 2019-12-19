@@ -24,8 +24,8 @@ if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
     from ask_smapi_model.v1.error import Error
-    from ask_smapi_model.v1.skill.simulations.invocations import Invocations
     from ask_smapi_model.v1.skill.simulations.alexa_execution_info import AlexaExecutionInfo
+    from ask_smapi_model.v1.skill.simulations.invocation import Invocation
 
 
 class SimulationResult(object):
@@ -34,14 +34,14 @@ class SimulationResult(object):
     :param alexa_execution_info: 
     :type alexa_execution_info: (optional) ask_smapi_model.v1.skill.simulations.alexa_execution_info.AlexaExecutionInfo
     :param skill_execution_info: 
-    :type skill_execution_info: (optional) list[ask_smapi_model.v1.skill.simulations.invocations.Invocations]
+    :type skill_execution_info: (optional) ask_smapi_model.v1.skill.simulations.invocation.Invocation
     :param error: 
     :type error: (optional) ask_smapi_model.v1.error.Error
 
     """
     deserialized_types = {
         'alexa_execution_info': 'ask_smapi_model.v1.skill.simulations.alexa_execution_info.AlexaExecutionInfo',
-        'skill_execution_info': 'list[ask_smapi_model.v1.skill.simulations.invocations.Invocations]',
+        'skill_execution_info': 'ask_smapi_model.v1.skill.simulations.invocation.Invocation',
         'error': 'ask_smapi_model.v1.error.Error'
     }  # type: Dict
 
@@ -53,13 +53,13 @@ class SimulationResult(object):
     supports_multiple_types = False
 
     def __init__(self, alexa_execution_info=None, skill_execution_info=None, error=None):
-        # type: (Optional[AlexaExecutionInfo], Optional[List[Invocations]], Optional[Error]) -> None
+        # type: (Optional[AlexaExecutionInfo], Optional[Invocation], Optional[Error]) -> None
         """
 
         :param alexa_execution_info: 
         :type alexa_execution_info: (optional) ask_smapi_model.v1.skill.simulations.alexa_execution_info.AlexaExecutionInfo
         :param skill_execution_info: 
-        :type skill_execution_info: (optional) list[ask_smapi_model.v1.skill.simulations.invocations.Invocations]
+        :type skill_execution_info: (optional) ask_smapi_model.v1.skill.simulations.invocation.Invocation
         :param error: 
         :type error: (optional) ask_smapi_model.v1.error.Error
         """
