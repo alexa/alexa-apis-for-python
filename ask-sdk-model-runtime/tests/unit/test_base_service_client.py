@@ -12,10 +12,12 @@
 # the specific language governing permissions and limitations under the License.
 #
 import six
+import unittest
 from pytest import raises
 
-from ask_sdk_model_runtime import (ApiClient, ApiClientResponse, ApiConfiguration,
- BaseServiceClient, Serializer, ServiceException, ServiceClientResponse)
+from ask_sdk_model_runtime import (
+    ApiClient, ApiClientResponse, ApiConfiguration,
+    BaseServiceClient, Serializer, ServiceException, ServiceClientResponse)
 
 if six.PY3:
     from unittest import mock
@@ -61,7 +63,7 @@ class MockedBaseServiceClient(object):
         return BaseServiceClient(api_configuration=api_configuration)
 
 
-class TestBaseServiceClient(object):
+class TestBaseServiceClient(unittest.TestCase):
     def test_invoke_build_url_with_path_when_endpoint_path_passed(
             self):
         mocked_api_client = MockedApiClient()
@@ -76,8 +78,8 @@ class TestBaseServiceClient(object):
             header_params=[], path_params={},response_definitions=[],
             body=None, response_type=None)
 
-        assert mocked_base_service_client_api_client_empty_response._api_client.request.url == expected,\
-            "Build URL failed when endpoint and path passed"
+        self.assertEqual(mocked_base_service_client_api_client_empty_response._api_client.request.url, expected,\
+            "Build URL failed when endpoint and path passed")
 
     def test_invoke_build_url_with_no_duplicate_slash_path_when_endpoint_path_has_slash(self):
         endpoint = "http://test.com/"
@@ -90,8 +92,8 @@ class TestBaseServiceClient(object):
             header_params=[], path_params={}, response_definitions=[],
             body=None, response_type=None)
 
-        assert mocked_base_service_client_api_client_empty_response._api_client.request.url == expected,\
-            "Build URL failed when endpoint and path with duplicate slash passed"
+        self.assertEqual(mocked_base_service_client_api_client_empty_response._api_client.request.url, expected,\
+            "Build URL failed when endpoint and path with duplicate slash passed")
 
     def test_invoke_build_url_with_query_params(
             self):
@@ -107,8 +109,22 @@ class TestBaseServiceClient(object):
             query_params=query_params, header_params=[], path_params={},
             response_definitions=[], body=None, response_type=None)
 
-        assert mocked_base_service_client_api_client_empty_response._api_client.request.url == expected,\
-            "Build URL failed when endpoint, path and query parameters passed"
+        self.assertEqual(mocked_base_service_client_api_client_empty_response._api_client.request.url, expected,\
+            "Build URL failed when endpoint, path and query parameters passed")
+
+    def test_invoke_build_url_with_query_params_list_container(self):
+        endpoint = "http://test.com/"
+        path = "/v1/x/y/"
+        query_params = [("filter", ["test_filter_1", "test_filter_2"])]
+        expected = "http://test.com/v1/x/y/?filter=test_filter_1&filter=test_filter_2"
+
+        mocked_base_service_client_api_client_empty_response = MockedBaseServiceClient.empty_response()
+        mocked_base_service_client_api_client_empty_response.invoke(
+            method="GET", endpoint=endpoint, path=path, query_params=query_params, header_params=[], path_params={},
+            response_definitions=[], body=None, response_type=None)
+
+        self.assertEqual(mocked_base_service_client_api_client_empty_response._api_client.request.url, expected, \
+            "Build URL failed when endpoint, path and query parameters containing list of values passed")
 
     def test_invoke_build_url_with_query_params_special_chars(
             self):
@@ -124,8 +140,8 @@ class TestBaseServiceClient(object):
             query_params=query_params, header_params=[], path_params={},
             response_definitions=[], body=None, response_type=None)
 
-        assert mocked_base_service_client_api_client_empty_response._api_client.request.url == expected,\
-            "Build URL failed when endpoint, path and query parameters containing special characters passed"
+        self.assertEqual(mocked_base_service_client_api_client_empty_response._api_client.request.url, expected,\
+            "Build URL failed when endpoint, path and query parameters containing special characters passed")
 
     def test_invoke_build_url_with_query_params_static_content(
             self):
@@ -140,8 +156,8 @@ class TestBaseServiceClient(object):
             query_params=query_params, header_params=[], path_params={},
             response_definitions=[], body=None, response_type=None)
 
-        assert mocked_base_service_client_api_client_empty_response._api_client.request.url == expected,\
-            "Build URL failed when endpoint, path and query parameters containing static content passed"
+        self.assertEqual(mocked_base_service_client_api_client_empty_response._api_client.request.url, expected,\
+            "Build URL failed when endpoint, path and query parameters containing static content passed")
 
     def test_invoke_build_url_with_path_params_interpolated(
             self):
@@ -159,8 +175,8 @@ class TestBaseServiceClient(object):
             header_params=[], path_params=path_params, response_definitions=[],
             body=None, response_type=None)
 
-        assert mocked_base_service_client_api_client_empty_response._api_client.request.url == expected,\
-            "Build URL failed when endpoint, path and path parameters passed"
+        self.assertEqual(mocked_base_service_client_api_client_empty_response._api_client.request.url, expected,\
+            "Build URL failed when endpoint, path and path parameters passed")
 
     def test_invoke_build_url_with_path_params_containing_special_chars_interpolated(
             self):
@@ -178,8 +194,8 @@ class TestBaseServiceClient(object):
             header_params=[], path_params=path_params, response_definitions=[],
             body=None, response_type=None)
 
-        assert mocked_base_service_client_api_client_empty_response._api_client.request.url == expected,\
-            "Build URL failed when endpoint, path and path parameters containing special characters passed"
+        self.assertEqual(mocked_base_service_client_api_client_empty_response._api_client.request.url, expected,\
+            "Build URL failed when endpoint, path and path parameters containing special characters passed")
 
     def test_invoke_build_url_with_path_params_with_path_ending_in_slash(
             self):
@@ -193,8 +209,8 @@ class TestBaseServiceClient(object):
             header_params=[], path_params={}, response_definitions=[],
             body=None, response_type=None)
 
-        assert mocked_base_service_client_api_client_empty_response._api_client.request.url == expected,\
-            "Build URL failed when endpoint, path with ending slash passed"
+        self.assertEqual(mocked_base_service_client_api_client_empty_response._api_client.request.url, expected,\
+            "Build URL failed when endpoint, path with ending slash passed")
 
     def test_invoke_serializes_body_when_passed(self):
         mocked_api_client = MockedApiClient()
@@ -226,7 +242,7 @@ class TestBaseServiceClient(object):
             header_params=[], path_params={}, response_definitions=[],
             body=None, response_type=None)
 
-        assert not mocked_serializer.serialize.called, "Invoke called serializer for null body"
+        self.assertNotEqual(mocked_serializer.serialize.called, "Invoke called serializer for null body")
 
     def test_invoke_api_client_throws_exception(self):
         mocked_serializer = mock.MagicMock(spec=Serializer)
@@ -244,11 +260,11 @@ class TestBaseServiceClient(object):
                 query_params=[], header_params=[], path_params={},
                 response_definitions=[], body=None, response_type=None)
 
-        assert str(exc.value) == "Call to service failed: test exception", \
-            "Service exception not raised during base service client invoke when api client invoke raises"
-        assert exc.value.status_code == 500, (
+        self.assertEqual(str(exc.value), "Call to service failed: test exception", \
+            "Service exception not raised during base service client invoke when api client invoke raises")
+        self.assertEqual(exc.value.status_code, 500, (
             "Service exception raised during base service client invoke has different status code than expected, "
-            "when api client invoke raises")
+            "when api client invoke raises"))
 
     def test_invoke_serializes_response_if_present(self):
         mocked_serializer = mock.MagicMock(spec=Serializer)
@@ -273,7 +289,7 @@ class TestBaseServiceClient(object):
             header_params=[], path_params={}, response_definitions=[],
             body=None, response_type=fake_response_type)
 
-        assert response.body == "deserialized_payload", "Response from api client not deserialized by base service client"
+        self.assertEqual(response.body, "deserialized_payload", "Response from api client not deserialized by base service client")
         mocked_serializer.deserialize.assert_called_with(payload=fake_response.body, obj_type=fake_response_type), \
             "Base service client called deserialize on Response from api client with wrong values"
 
@@ -298,10 +314,10 @@ class TestBaseServiceClient(object):
             header_params=[], path_params={}, response_definitions=[],
             body=None, response_type=fake_response_type)
 
-        assert response.body is None, "Base service client returns invalid response when status code is 204"
-        assert response.status_code == 204, "Base service client returns invalid status code"
-        assert not mocked_serializer.deserialize.called, (
-            "Base service client invoke method deserialized no content response body")
+        self.assertIsNone(response.body, "Base service client returns invalid response when status code is 204")
+        self.assertEqual(response.status_code, 204, "Base service client returns invalid status code")
+        self.assertIsNot(mocked_serializer.deserialize.called, (
+            "Base service client invoke method deserialized no content response body"))
 
     def test_invoke_return_full_api_response(self):
         mocked_serializer = mock.MagicMock(spec=Serializer)
@@ -327,9 +343,9 @@ class TestBaseServiceClient(object):
             header_params=[], path_params={}, response_definitions=[],
             body=None, response_type=fake_response_type)
 
-        assert response.body == "deserialized_payload", ("Base service client returns invalid api response when status code is 204")
-        assert response.headers == "test_headers", ("Base service client return invalid api response with null headers")
-        assert response.status_code == 200, ("Base service client return invalid api response with null status_code")
+        self.assertEqual(response.body, "deserialized_payload", ("Base service client returns invalid api response when status code is 204"))
+        self.assertEqual(response.headers, "test_headers", ("Base service client return invalid api response with null headers"))
+        self.assertEqual(response.status_code, 200, ("Base service client return invalid api response with null status_code"))
 
     def test_invoke_return_api_response_with_none_body(self):
         mocked_serializer = mock.MagicMock(spec=Serializer)
@@ -353,12 +369,12 @@ class TestBaseServiceClient(object):
             header_params=[], path_params={}, response_definitions=[],
             body=None, response_type=fake_response_type)
 
-        assert response.body is None, ("Base service client returns invalid api response when status code is 204")
-        assert response.headers == "test_headers", ("Base service client return invalid api response with null headers")
-        assert response.status_code == 204, ("Base service client return invalid api response with null status_code")
+        self.assertIsNone(response.body, ("Base service client returns invalid api response when status code is 204"))
+        self.assertEqual(response.headers, "test_headers", ("Base service client return invalid api response with null headers"))
+        self.assertEqual(response.status_code, 204, ("Base service client return invalid api response with null status_code"))
 
-        assert not mocked_serializer.deserialize.called, (
-            "Base service client invoke method deserialized no content response body")
+        self.assertIsNot(mocked_serializer.deserialize.called, (
+            "Base service client invoke method deserialized no content response body"))
 
     def test_invoke_throw_exception_if_no_definitions_provided_for_unsuccessful_response(self):
         mocked_serializer = mock.MagicMock(spec=Serializer)
@@ -379,12 +395,12 @@ class TestBaseServiceClient(object):
                 query_params=[], header_params=[], path_params={},
                 response_definitions=[], body=None, response_type=None)
 
-        assert str(exc.value) == "Unknown error", (
+        self.assertEqual(str(exc.value), "Unknown error", (
             "Service exception not raised during base service client invoke when response is unsuccessful and "
-            "no response definitions provided")
-        assert exc.value.status_code == 450, (
+            "no response definitions provided"))
+        self.assertEqual(exc.value.status_code, 450, (
             "Service exception raised during base service client invoke has different status code than expected, "
-            "when response is unsuccessful and no response definitions provided")
+            "when response is unsuccessful and no response definitions provided"))
 
     def test_invoke_throw_exception_with_matched_definition_for_unsuccessful_response(self):
         mocked_serializer = mock.MagicMock(spec=Serializer)
@@ -418,14 +434,14 @@ class TestBaseServiceClient(object):
                 response_definitions=fake_response_definitions,
                 body=None, response_type=None)
 
-        assert str(exc.value) == "test exception with definition 1", (
+        self.assertEqual(str(exc.value), "test exception with definition 1", (
             "Incorrect service exception raised during base service client invoke when response is unsuccessful and "
-            "matching response definitions provided")
+            "matching response definitions provided"))
         mocked_serializer.deserialize.assert_called_with(
             payload=fake_response.body, obj_type="test_definition_1")
-        assert str(exc.value.body) == "deserialized_error_body", (
+        self.assertEqual(str(exc.value.body), "deserialized_error_body", (
             "Service exception raised during base service client invoke, when response is unsuccessful, "
-            "has different body that expected response")
+            "has different body that expected response"))
 
     def test_invoke_throw_exception_with_no_matched_definition_for_unsuccessful_response(self):
         mocked_serializer = mock.MagicMock(spec=Serializer)
@@ -457,15 +473,15 @@ class TestBaseServiceClient(object):
                 response_definitions=fake_response_definitions,
                 body=None, response_type=None)
 
-        assert str(exc.value) == "Unknown error", (
+        self.assertEqual(str(exc.value), "Unknown error", (
             "Incorrect service exception raised during base service client invoke when response is unsuccessful and "
-            "no matching response definitions found")
-        assert str(exc.value.body) == "test_body", (
+            "no matching response definitions found"))
+        self.assertEqual(str(exc.value.body), "test_body", (
             "Service exception raised during base service client invoke, when response is unsuccessful, "
-            "has different body that expected response")
-        assert exc.value.status_code == 485, (
+            "has different body that expected response"))
+        self.assertEqual(exc.value.status_code, 485, (
             "Service exception raised during base service client invoke, when response is unsuccessful, "
-            "has different status code that expected response")
+            "has different status code that expected response"))
 
     def test_invoke_raises_value_error_with_none_api_client(self):
         endpoint = "http://test.com"
@@ -478,9 +494,9 @@ class TestBaseServiceClient(object):
                 header_params=[], path_params={}, response_definitions=[],
                 body=None, response_type=None)
 
-        assert str(exc.value) == 'API client is None', (
+        self.assertEqual(str(exc.value), 'API client is None', (
             "Base Service Client was initialized with no api client"
-        )
+        ))
 
     def test_invoke_raises_value_error_with_none_serializer(
             self):
@@ -494,9 +510,9 @@ class TestBaseServiceClient(object):
                 header_params=[], path_params={}, response_definitions=[],
                 body=None, response_type=None)
 
-        assert str(exc.value) == 'Serializer is None', (
+        self.assertEqual(str(exc.value), 'Serializer is None', (
             "Base Service Client was initialized with no serializer"
-        )
+        ))
 
     def test_invoke_throw_exception_if_no_response_status_code(self):
         mocked_serializer = mock.MagicMock(spec=Serializer)
@@ -518,6 +534,6 @@ class TestBaseServiceClient(object):
                 query_params=[], header_params=[], path_params={},
                 response_definitions=[], body=None, response_type=None)
 
-        assert str(exc.value) == "Invalid Response, no status code", (
+        self.assertEqual(str(exc.value), "Invalid Response, no status code", (
             "Service exception raised during base service client invoke, when response is unsuccessful, "
-            "has no status code")
+            "has no status code"))

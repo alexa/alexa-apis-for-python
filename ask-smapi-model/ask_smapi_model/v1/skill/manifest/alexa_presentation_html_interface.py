@@ -26,8 +26,10 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class AudioInterface(Interface):
+class AlexaPresentationHtmlInterface(Interface):
     """
+    Used to declare that the skill uses the Alexa.Presentation.HTML interface.
+
 
 
     """
@@ -42,13 +44,13 @@ class AudioInterface(Interface):
 
     def __init__(self):
         # type: () -> None
-        """
+        """Used to declare that the skill uses the Alexa.Presentation.HTML interface.
 
         """
-        self.__discriminator_value = "AUDIO_PLAYER"  # type: str
+        self.__discriminator_value = "ALEXA_PRESENTATION_HTML"  # type: str
 
         self.object_type = self.__discriminator_value
-        super(AudioInterface, self).__init__(object_type=self.__discriminator_value)
+        super(AlexaPresentationHtmlInterface, self).__init__(object_type=self.__discriminator_value)
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -93,7 +95,7 @@ class AudioInterface(Interface):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, AudioInterface):
+        if not isinstance(other, AlexaPresentationHtmlInterface):
             return False
 
         return self.__dict__ == other.__dict__

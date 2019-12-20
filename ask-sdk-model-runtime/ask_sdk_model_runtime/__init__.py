@@ -29,3 +29,4 @@ from .serializer import DefaultSerializer, Serializer
 from .exceptions import (
     ServiceException, SerializationException, ApiClientException)
 from .service_client_response import ServiceClientResponse
+from .utils import user_agent_info

@@ -16,7 +16,6 @@ from __future__ import absolute_import
 
 from .simulations_api_response import SimulationsApiResponse
 from .session_mode import SessionMode
-from .invocations import Invocations
 from .metrics import Metrics
 from .alexa_execution_info import AlexaExecutionInfo
 from .simulations_api_request import SimulationsApiRequest
@@ -28,4 +27,5 @@ from .input import Input
 from .alexa_response_content import AlexaResponseContent
 from .alexa_response import AlexaResponse
 from .simulation_result import SimulationResult
+from .invocation import Invocation
 from .simulations_api_response_status import SimulationsApiResponseStatus

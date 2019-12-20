@@ -28,7 +28,7 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.simulations.metrics import Metrics
 
 
-class Invocations(object):
+class Invocation(object):
     """
 
     :param invocation_request: 
@@ -112,7 +112,7 @@ class Invocations(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Invocations):
+        if not isinstance(other, Invocation):
             return False
 
         return self.__dict__ == other.__dict__

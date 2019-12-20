@@ -23,6 +23,7 @@ from ask_sdk_model_runtime.base_service_client import BaseServiceClient
 from ask_sdk_model_runtime.api_configuration import ApiConfiguration
 from ask_sdk_model_runtime.service_client_response import ServiceClientResponse
 from ask_sdk_model_runtime.api_response import ApiResponse
+from ask_sdk_model_runtime.utils import user_agent_info
 
 from ask_sdk_model_runtime.authentication_configuration import AuthenticationConfiguration
 from ask_sdk_model_runtime.lwa.lwa_client import LwaClient
@@ -107,8 +108,8 @@ class SkillManagementServiceClient(BaseServiceClient):
     :param api_configuration: Instance of ApiConfiguration
     :type api_configuration: ask_sdk_model_runtime.api_configuration.ApiConfiguration
     """
-    def __init__(self, api_configuration, authentication_configuration, lwa_client=None):
-        # type: (ApiConfiguration, AuthenticationConfiguration, LwaClient) -> None
+    def __init__(self, api_configuration, authentication_configuration, lwa_client=None, custom_user_agent=None):
+        # type: (ApiConfiguration, AuthenticationConfiguration, LwaClient, str) -> None
         """
         :param api_configuration: Instance of :py:class:`ask_sdk_model_runtime.api_configuration.ApiConfiguration`
         :type api_configuration: ask_sdk_model_runtime.api_configuration.ApiConfiguration
@@ -118,8 +119,12 @@ class SkillManagementServiceClient(BaseServiceClient):
         can be passed when the LwaClient configuration is different from the authentication
         and api configuration passed
         :type lwa_client: ask_sdk_model_runtime.lwa.LwaClient
+        :param custom_user_agent: Custom User Agent string provided by the developer.
+        :type custom_user_agent: str
         """
         super(SkillManagementServiceClient, self).__init__(api_configuration)
+        self.user_agent = user_agent_info(sdk_version="1.0.1", custom_user_agent=custom_user_agent)
+
         if lwa_client is None:
             self._lwa_service_client = LwaClient(
                 api_configuration=ApiConfiguration(
@@ -174,6 +179,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'catalog_upload_request_body' in params:
             body_params = params['catalog_upload_request_body']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -254,6 +260,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -332,6 +339,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'generate_catalog_upload_url_request_body' in params:
             body_params = params['generate_catalog_upload_url_request_body']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -435,6 +443,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -503,6 +512,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'create_in_skill_product_request' in params:
             body_params = params['create_in_skill_product_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -579,6 +589,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -657,6 +668,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -739,6 +751,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -818,6 +831,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -897,6 +911,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -986,6 +1001,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'update_in_skill_product_request' in params:
             body_params = params['update_in_skill_product_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -1073,6 +1089,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -1149,6 +1166,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -1217,6 +1235,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -1288,6 +1307,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -1367,6 +1387,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'update_request' in params:
             body_params = params['update_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -1446,6 +1467,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -1525,6 +1547,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'catalog' in params:
             body_params = params['catalog']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -1604,6 +1627,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -1683,6 +1707,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -1766,6 +1791,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'catalog_update' in params:
             body_params = params['catalog_update']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -1853,6 +1879,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -1936,6 +1963,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -2007,6 +2035,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'catalog' in params:
             body_params = params['catalog']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -2078,6 +2107,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -2159,6 +2189,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -2228,6 +2259,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -2297,6 +2329,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'create_skill_with_package_request' in params:
             body_params = params['create_skill_with_package_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -2367,6 +2400,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'create_skill_request' in params:
             body_params = params['create_skill_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -2437,6 +2471,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -2515,6 +2550,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'hosted_skill_repository_credentials_request' in params:
             body_params = params['hosted_skill_repository_credentials_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -2586,6 +2622,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -2657,6 +2694,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -2731,6 +2769,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'create_test_body' in params:
             body_params = params['create_test_body']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -2806,6 +2845,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'create_test_body' in params:
             body_params = params['create_test_body']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -2876,6 +2916,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -2955,6 +2996,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'testers_request' in params:
             body_params = params['testers_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -3033,6 +3075,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -3111,6 +3154,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'testers_request' in params:
             body_params = params['testers_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -3189,6 +3233,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'testers_request' in params:
             body_params = params['testers_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -3268,6 +3313,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'testers_request' in params:
             body_params = params['testers_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -3350,6 +3396,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -3426,6 +3473,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -3495,6 +3543,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -3617,6 +3666,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -3699,6 +3749,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'update_skill_with_package_request' in params:
             body_params = params['update_skill_with_package_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -3835,6 +3886,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -3915,6 +3967,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'simulations_api_request' in params:
             body_params = params['simulations_api_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -3996,6 +4049,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -4066,6 +4120,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -4143,6 +4198,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'ssl_certificate_payload' in params:
             body_params = params['ssl_certificate_payload']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -4221,6 +4277,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -4300,6 +4357,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -4379,6 +4437,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -4459,6 +4518,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -4545,6 +4605,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -4639,6 +4700,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'profile_nlu_request' in params:
             body_params = params['profile_nlu_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -4725,6 +4787,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -4812,6 +4875,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -4899,6 +4963,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -4978,6 +5043,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -5056,6 +5122,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -5146,6 +5213,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'account_linking_request' in params:
             body_params = params['account_linking_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -5234,6 +5302,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -5321,6 +5390,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -5420,6 +5490,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'interaction_model' in params:
             body_params = params['interaction_model']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -5524,6 +5595,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -5619,6 +5691,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -5698,6 +5771,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -5790,6 +5864,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'update_skill_request' in params:
             body_params = params['update_skill_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -5880,6 +5955,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'validations_api_request' in params:
             body_params = params['validations_api_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -5972,6 +6048,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -6045,6 +6122,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -6120,6 +6198,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'submit_skill_for_certification_request' in params:
             body_params = params['submit_skill_for_certification_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -6199,6 +6278,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         if 'withdraw_request' in params:
             body_params = params['withdraw_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -6262,6 +6342,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -6322,6 +6403,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -6398,6 +6480,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False

@@ -16,6 +16,7 @@
 # License.
 #
 import six
+import unittest
 
 from dateutil import tz
 import datetime
@@ -47,17 +48,17 @@ class MockedApiClient(ApiClient):
         return fake_response
 
 
-class TestBaseServiceClient(object):
+class TestBaseServiceClient(unittest.TestCase):
     def test_lwa_client_init_no_auth_config_throw_exception(self):
         with raises(ValueError) as exc:
             lwa_client = LwaClient(
                 api_configuration=ApiConfiguration(),
                 authentication_configuration=None)
 
-        assert str(exc.value) == (
+        self.assertEqual(str(exc.value), (
             "authentication_configuration must be provided"), (
             "LwaClient Initialization didn't throw exception if a null "
-            "Authentication Configuration is passed")
+            "Authentication Configuration is passed"))
 
     def test_get_access_token_for_null_scope_throw_exception(self):
         test_lwa_client = LwaClient(
@@ -67,9 +68,9 @@ class TestBaseServiceClient(object):
         with raises(ValueError) as exc:
             test_lwa_client.get_access_token_for_scope(scope=None)
 
-        assert str(exc.value) == "scope must be provided", (
+        self.assertEqual(str(exc.value), "scope must be provided", (
             "LWA Client get access token call didn't throw exception if a "
-            "null scope is passed")
+            "null scope is passed"))
 
     def test_get_access_token_retrieve_from_cache(self):
         test_lwa_client = LwaClient(
@@ -88,9 +89,9 @@ class TestBaseServiceClient(object):
         actual_token_value = test_lwa_client.get_access_token_for_scope(
             scope=test_scope)
 
-        assert expected_token_value == actual_token_value, (
+        self.assertEqual(expected_token_value, actual_token_value, (
             "LWA Client get access token call didn't retrieve unexpired "
-            "scoped access token from cache when available")
+            "scoped access token from cache when available"))
 
     def test_get_access_token_cache_miss_api_call_success(self):
         mocked_api_client = MockedApiClient()
@@ -127,23 +128,23 @@ class TestBaseServiceClient(object):
             actual_token_value = test_lwa_client.get_access_token_for_scope(
                 scope=test_scope)
 
-        assert expected_token_value == actual_token_value, (
-            "LWA Client get access token call didn't retrieve scoped access token")
+        self.assertEqual(expected_token_value, actual_token_value, (
+            "LWA Client get access token call didn't retrieve scoped access token"))
 
         actual_token_expiry = test_lwa_client._scoped_token_cache[
             test_scope].expiry
 
-        assert (local_now + datetime.timedelta(
-            seconds=10)) == actual_token_expiry, (
+        self.assertEqual((local_now + datetime.timedelta(
+            seconds=10)), actual_token_expiry, (
             "LWA Client get access token call cached wrong access token "
-            "expiry date")
+            "expiry date"))
 
-        assert mocked_api_client.request.headers == expected_headers, (
-            "LWA Client get access token called API with wrong headers")
-        assert mocked_api_client.request.method == expected_request_method, (
-            "LWA Client get access token called API with wrong HTTP method")
-        assert mocked_api_client.request.url == expected_request_url, (
-            "LWA Client get access token called API with wrong HTTP URL")
+        self.assertEqual(mocked_api_client.request.headers, expected_headers, (
+            "LWA Client get access token called API with wrong headers"))
+        self.assertEqual(mocked_api_client.request.method, expected_request_method, (
+            "LWA Client get access token called API with wrong HTTP method"))
+        self.assertEqual(mocked_api_client.request.url, expected_request_url, (
+            "LWA Client get access token called API with wrong HTTP URL"))
         mocked_serializer.serialize.assert_called_with(expected_request_body)
 
     def test_get_access_token_for_smapi_cache_miss_api_call_success(
@@ -187,25 +188,24 @@ class TestBaseServiceClient(object):
             mock_date.now.return_value = local_now
             actual_token_value = test_lwa_client.get_access_token_from_refresh_token()
 
-        assert expected_token_value == actual_token_value, (
+        self.assertEqual(expected_token_value, actual_token_value, (
             "LWA Client get access token call didn't retrieve unexpired "
-            "scoped access token from cache when available")
+            "scoped access token from cache when available"))
 
         actual_token_expiry = test_lwa_client._scoped_token_cache[
             refresh_access_token].expiry
 
-        assert (local_now + datetime.timedelta(
-            seconds=10)) == actual_token_expiry, (
+        self.assertEqual((local_now + datetime.timedelta(
+            seconds=10)), actual_token_expiry, (
             "LWA Client get access token call cached wrong access token "
-            "expiry date")
+            "expiry date"))
 
-        assert mocked_api_client.request.headers == expected_headers, (
-            "LWA Client get access token called API with wrong headers")
-        assert mocked_api_client.request.method == expected_request_method, (
-            "LWA Client get access token called API with wrong HTTP method")
-        assert mocked_api_client.request.url == expected_request_url, (
-            "LWA Client get access tokbbr"
-            "en called API with wrong HTTP URL")
+        self.assertEqual(mocked_api_client.request.headers, expected_headers, (
+            "LWA Client get access token called API with wrong headers"))
+        self.assertEqual(mocked_api_client.request.method, expected_request_method, (
+            "LWA Client get access token called API with wrong HTTP method"))
+        self.assertEqual(mocked_api_client.request.url, expected_request_url, (
+            "LWA Client get access token called API with wrong HTTP URL"))
         mocked_serializer.serialize.assert_called_with(expected_request_body)
 
 
@@ -241,13 +241,13 @@ class TestBaseServiceClient(object):
             actual_token_value = test_lwa_client.get_access_token_for_scope(
                 scope=test_scope)
 
-        assert expected_token_value == actual_token_value, (
+        self.assertEqual(expected_token_value, actual_token_value, (
             "LWA Client get access token call didn't retrieve scoped access "
-            "token when a custom endpoint is passed")
+            "token when a custom endpoint is passed"))
 
-        assert mocked_api_client.request.url == expected_request_url, (
+        self.assertEqual(mocked_api_client.request.url, expected_request_url, (
             "LWA Client get access token called API with wrong HTTP URL, "
-            "when a custom endpoint is passed")
+            "when a custom endpoint is passed"))
 
     def test_get_access_token_api_call_fails_throws_exception(
             self):
@@ -274,9 +274,9 @@ class TestBaseServiceClient(object):
             _actual_token_value = test_lwa_client.get_access_token_for_scope(
                 scope=test_scope)
 
-        assert "Bad Request" in str(exc.value), (
+        self.assertIn("Bad Request", str(exc.value), (
             "LWA Client get access token threw unknown exception when "
-            "the LWA API call failed with an known exception")
+            "the LWA API call failed with an known exception"))
 
 
     def test_get_access_token_for_null_lwa_response_throw_exception(
@@ -297,7 +297,7 @@ class TestBaseServiceClient(object):
             with raises(ValueError) as exc:
                 test_lwa_client.get_access_token_for_scope(scope=test_scope)
 
-            assert str(exc.value) == "Invalid response from LWA Client " \
+            self.assertEqual(str(exc.value), "Invalid response from LWA Client " \
                                      "generate access token call", (
                 "LWA Client get access token call didn't throw exception if a "
-                "generate access token returns None ")
+                "generate access token returns None "))

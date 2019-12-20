@@ -21,7 +21,7 @@ __description__ = ('The ASK SDK Model Runtime package provides common provides '
                    'Authentication Configuration etc that is used by the SDK '
                    'models.')
 __url__ = 'https://github.com/alexa/alexa-apis-for-python'
-__version__ = '1.0.0'
+__version__ = '1.0.1'
 __author__ = 'Alexa Skills Kit'
 __author_email__ = 'ask-sdk-dynamic@amazon.com'
 __license__ = 'Apache 2.0'
