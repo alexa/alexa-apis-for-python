@@ -33,6 +33,7 @@ if typing.TYPE_CHECKING:
     from typing import Dict, List, Union, Any
     from datetime import datetime
     from ask_smapi_model.v1.catalog.create_content_upload_url_response import CreateContentUploadUrlResponse
+    from ask_smapi_model.v1.skill.interaction_model.type_version.version_data import VersionData
     from ask_smapi_model.v1.skill.history.intent_requests import IntentRequests
     from ask_smapi_model.v1.skill.history.dialog_act_name import DialogActName
     from ask_smapi_model.v1.skill.validations.validations_api_response import ValidationsApiResponse
@@ -41,22 +42,27 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.simulations.simulations_api_request import SimulationsApiRequest
     from ask_smapi_model.v1.skill.interaction_model.version.catalog_values import CatalogValues
     from ask_smapi_model.v1.skill.certification.certification_response import CertificationResponse
+    from ask_smapi_model.v1.skill.interaction_model.type_version.list_slot_type_version_response import ListSlotTypeVersionResponse
+    from ask_smapi_model.v1.skill.interaction_model.model_type.list_slot_type_response import ListSlotTypeResponse
     from ask_smapi_model.v1.skill.history.intent_confidence_bin import IntentConfidenceBin
     from ask_smapi_model.v1.skill.create_skill_request import CreateSkillRequest
     from ask_smapi_model.v1.skill.manifest.skill_manifest_envelope import SkillManifestEnvelope
     from ask_smapi_model.v1.catalog.upload.get_content_upload_response import GetContentUploadResponse
+    from ask_smapi_model.v1.skill.interaction_model.model_type.update_request import UpdateRequest
     from ask_smapi_model.v1.skill.evaluations.profile_nlu_request import ProfileNluRequest
     from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_permission import HostedSkillPermission
     from ask_smapi_model.v1.isp.update_in_skill_product_request import UpdateInSkillProductRequest
-    from ask_smapi_model.v1.skill.interaction_model.catalog.update_request import UpdateRequest
     from ask_smapi_model.v1.skill.interaction_model.catalog.definition_data import DefinitionData
+    from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_status import SlotTypeStatus
     import str
     from ask_smapi_model.v1.skill.interaction_model.catalog.list_catalog_response import ListCatalogResponse
     from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_metadata import HostedSkillMetadata
     from ask_smapi_model.v1.error import Error
     from ask_smapi_model.v1.skill.list_skill_response import ListSkillResponse
+    from ask_smapi_model.v1.skill.interaction_model.model_type.bad_request import BadRequest
     from ask_smapi_model.v1.skill.beta_test.testers.list_testers_response import ListTestersResponse
     from ask_smapi_model.v1.stage_type import StageType
+    from ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_update import SlotTypeUpdate
     from ask_smapi_model.v1.skill.history.locale_in_query import LocaleInQuery
     from ask_smapi_model.v1.skill.simulations.simulations_api_response import SimulationsApiResponse
     from ask_smapi_model.v1.bad_request_error import BadRequestError
@@ -82,6 +88,7 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.private.list_private_distribution_accounts_response import ListPrivateDistributionAccountsResponse
     from ask_smapi_model.v1.skill.account_linking.account_linking_request import AccountLinkingRequest
     from ask_smapi_model.v1.skill.withdraw_request import WithdrawRequest
+    from ask_smapi_model.v1.skill.interaction_model.model_type.definition_data import DefinitionData
     from ask_smapi_model.v1.vendor_management.vendors import Vendors
     from ask_smapi_model.v1.skill.interaction_model.version.catalog_version_data import CatalogVersionData
     from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_repository_credentials_request import HostedSkillRepositoryCredentialsRequest
@@ -92,6 +99,9 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.standardized_error import StandardizedError
     from ask_smapi_model.v1.skill.history.publication_status import PublicationStatus
     from ask_smapi_model.v1.skill.submit_skill_for_certification_request import SubmitSkillForCertificationRequest
+    from ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_version_data import SlotTypeVersionData
+    from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_response import SlotTypeResponse
+    from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_definition_output import SlotTypeDefinitionOutput
     from ask_smapi_model.v1.skill.skill_status import SkillStatus
     from ask_smapi_model.v1.skill.account_linking.account_linking_response import AccountLinkingResponse
     from ask_smapi_model.v1.isp.in_skill_product_definition_response import InSkillProductDefinitionResponse
@@ -123,7 +133,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :type custom_user_agent: str
         """
         super(SkillManagementServiceClient, self).__init__(api_configuration)
-        self.user_agent = user_agent_info(sdk_version="1.0.1", custom_user_agent=custom_user_agent)
+        self.user_agent = user_agent_info(sdk_version="1.0.0", custom_user_agent=custom_user_agent)
 
         if lwa_client is None:
             self._lwa_service_client = LwaClient(
@@ -1352,7 +1362,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param catalog_id: (required) Unique identifier of the catalog
         :type catalog_id: str
         :param update_request: (required) 
-        :type update_request: ask_smapi_model.v1.skill.interaction_model.catalog.update_request.UpdateRequest
+        :type update_request: ask_smapi_model.v1.skill.interaction_model.model_type.update_request.UpdateRequest
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
@@ -1431,7 +1441,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         :param catalog_id: (required) Unique identifier of the catalog
         :type catalog_id: str
-        :param update_request_id: (required) The identifier for catalog version creation process
+        :param update_request_id: (required) The identifier for slotType version creation process
         :type update_request_id: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
@@ -2071,6 +2081,874 @@ class SkillManagementServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+
+    def list_interaction_model_slot_types_v1(self, vendor_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, BadRequest, StandardizedError, ListSlotTypeResponse]
+        """
+        List all slot types for the vendor. 
+
+        :param vendor_id: (required) The vendor ID.
+        :type vendor_id: str
+        :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
+        :type max_results: float
+        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :type next_token: str
+        :param sort_direction: Sets the sorting direction of the result items. When set to 'asc' these items are returned in ascending order of sortField value and when set to 'desc' these items are returned in descending order of sortField value.
+        :type sort_direction: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, BadRequest, StandardizedError, ListSlotTypeResponse]
+        """
+        operation_name = "list_interaction_model_slot_types_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'vendor_id' is set
+        if ('vendor_id' not in params) or (params['vendor_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `vendor_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/api/custom/interactionModel/slotTypes'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+
+        query_params = []  # type: List
+        if 'vendor_id' in params:
+            query_params.append(('vendorId', params['vendor_id']))
+        if 'max_results' in params:
+            query_params.append(('maxResults', params['max_results']))
+        if 'next_token' in params:
+            query_params.append(('nextToken', params['next_token']))
+        if 'sort_direction' in params:
+            query_params.append(('sortDirection', params['sort_direction']))
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.list_slot_type_response.ListSlotTypeResponse", status_code=200, message="Returns list of slot types for the vendor."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.interaction_model.model_type.list_slot_type_response.ListSlotTypeResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def create_interaction_model_slot_type_v1(self, slot_type, **kwargs):
+        # type: (DefinitionData, **Any) -> Union[ApiResponse, BadRequest, SlotTypeResponse, StandardizedError]
+        """
+        Create a new version of slot type within the given slotTypeId. 
+
+        :param slot_type: (required) 
+        :type slot_type: ask_smapi_model.v1.skill.interaction_model.model_type.definition_data.DefinitionData
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, BadRequest, SlotTypeResponse, StandardizedError]
+        """
+        operation_name = "create_interaction_model_slot_type_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'slot_type' is set
+        if ('slot_type' not in params) or (params['slot_type'] is None):
+            raise ValueError(
+                "Missing the required parameter `slot_type` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/api/custom/interactionModel/slotTypes'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'slot_type' in params:
+            body_params = params['slot_type']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_response.SlotTypeResponse", status_code=200, message="Returns the generated slotTypeId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="Server cannot process the request due to a client error e.g. the slot type definition is invalid."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="POST",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_response.SlotTypeResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def delete_interaction_model_slot_type_v1(self, slot_type_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, BadRequest, StandardizedError]
+        """
+        Delete the slot type. 
+
+        :param slot_type_id: (required) The identitfier for a slot type
+        :type slot_type_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, BadRequest, StandardizedError]
+        """
+        operation_name = "delete_interaction_model_slot_type_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'slot_type_id' is set
+        if ('slot_type_id' not in params) or (params['slot_type_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `slot_type_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'slot_type_id' in params:
+            path_params['slotTypeId'] = params['slot_type_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="No content; just confirm the slot type is deleted."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="The slot type cannot be deleted from reasons due to in-use by other entities."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="There is no slot type defined for the slotTypeId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="DELETE",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+
+    def get_interaction_model_slot_type_definition_v1(self, slot_type_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, BadRequest, StandardizedError, SlotTypeDefinitionOutput]
+        """
+        get the slot type definition 
+
+        :param slot_type_id: (required) The identitfier for a slot type
+        :type slot_type_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, BadRequest, StandardizedError, SlotTypeDefinitionOutput]
+        """
+        operation_name = "get_interaction_model_slot_type_definition_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'slot_type_id' is set
+        if ('slot_type_id' not in params) or (params['slot_type_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `slot_type_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'slot_type_id' in params:
+            path_params['slotTypeId'] = params['slot_type_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_definition_output.SlotTypeDefinitionOutput", status_code=200, message="the slot type definition"))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="The slot type cannot be retrieved due to errors listed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="There is no slot type defined for the slotTypeId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_definition_output.SlotTypeDefinitionOutput")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def update_interaction_model_slot_type_v1(self, slot_type_id, update_request, **kwargs):
+        # type: (str, UpdateRequest, **Any) -> Union[ApiResponse, BadRequest, StandardizedError]
+        """
+        update description and vendorGuidance string for certain version of a slot type. 
+
+        :param slot_type_id: (required) The identitfier for a slot type
+        :type slot_type_id: str
+        :param update_request: (required) 
+        :type update_request: ask_smapi_model.v1.skill.interaction_model.model_type.update_request.UpdateRequest
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, BadRequest, StandardizedError]
+        """
+        operation_name = "update_interaction_model_slot_type_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'slot_type_id' is set
+        if ('slot_type_id' not in params) or (params['slot_type_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `slot_type_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'update_request' is set
+        if ('update_request' not in params) or (params['update_request'] is None):
+            raise ValueError(
+                "Missing the required parameter `update_request` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}/update'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'slot_type_id' in params:
+            path_params['slotTypeId'] = params['slot_type_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'update_request' in params:
+            body_params = params['update_request']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="No content, indicates the fields were successfully updated."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="There is no slot type defined for the slotTypeId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="POST",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+
+    def get_interaction_model_slot_type_build_status_v1(self, slot_type_id, update_request_id, **kwargs):
+        # type: (str, str, **Any) -> Union[ApiResponse, BadRequest, StandardizedError, SlotTypeStatus]
+        """
+        Get the status of slot type resource and its sub-resources for a given slotTypeId. 
+
+        :param slot_type_id: (required) The identitfier for a slot type
+        :type slot_type_id: str
+        :param update_request_id: (required) The identifier for slotType version creation process
+        :type update_request_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, BadRequest, StandardizedError, SlotTypeStatus]
+        """
+        operation_name = "get_interaction_model_slot_type_build_status_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'slot_type_id' is set
+        if ('slot_type_id' not in params) or (params['slot_type_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `slot_type_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'update_request_id' is set
+        if ('update_request_id' not in params) or (params['update_request_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `update_request_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}/updateRequest/{updateRequestId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'slot_type_id' in params:
+            path_params['slotTypeId'] = params['slot_type_id']
+        if 'update_request_id' in params:
+            path_params['updateRequestId'] = params['update_request_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_status.SlotTypeStatus", status_code=200, message="Returns the build status and error codes for the given slotTypeId"))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="There is no slot type defined for the slotTypeId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_status.SlotTypeStatus")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def list_interaction_model_slot_type_versions_v1(self, slot_type_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, BadRequest, ListSlotTypeVersionResponse, StandardizedError]
+        """
+        List all slot type versions for the slot type id. 
+
+        :param slot_type_id: (required) The identitfier for a slot type
+        :type slot_type_id: str
+        :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
+        :type max_results: float
+        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :type next_token: str
+        :param sort_direction: Sets the sorting direction of the result items. When set to 'asc' these items are returned in ascending order of sortField value and when set to 'desc' these items are returned in descending order of sortField value.
+        :type sort_direction: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, BadRequest, ListSlotTypeVersionResponse, StandardizedError]
+        """
+        operation_name = "list_interaction_model_slot_type_versions_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'slot_type_id' is set
+        if ('slot_type_id' not in params) or (params['slot_type_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `slot_type_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}/versions'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'slot_type_id' in params:
+            path_params['slotTypeId'] = params['slot_type_id']
+
+        query_params = []  # type: List
+        if 'max_results' in params:
+            query_params.append(('maxResults', params['max_results']))
+        if 'next_token' in params:
+            query_params.append(('nextToken', params['next_token']))
+        if 'sort_direction' in params:
+            query_params.append(('sortDirection', params['sort_direction']))
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.type_version.list_slot_type_version_response.ListSlotTypeVersionResponse", status_code=200, message="Returns list of slot type version for the slot type id."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.interaction_model.type_version.list_slot_type_version_response.ListSlotTypeVersionResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def create_interaction_model_slot_type_version_v1(self, slot_type_id, slot_type, **kwargs):
+        # type: (str, VersionData, **Any) -> Union[ApiResponse, BadRequest, StandardizedError]
+        """
+        Create a new version of slot type entity for the given slotTypeId. 
+
+        :param slot_type_id: (required) The identitfier for a slot type
+        :type slot_type_id: str
+        :param slot_type: (required) 
+        :type slot_type: ask_smapi_model.v1.skill.interaction_model.type_version.version_data.VersionData
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, BadRequest, StandardizedError]
+        """
+        operation_name = "create_interaction_model_slot_type_version_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'slot_type_id' is set
+        if ('slot_type_id' not in params) or (params['slot_type_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `slot_type_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'slot_type' is set
+        if ('slot_type' not in params) or (params['slot_type'] is None):
+            raise ValueError(
+                "Missing the required parameter `slot_type` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}/versions'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'slot_type_id' in params:
+            path_params['slotTypeId'] = params['slot_type_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'slot_type' in params:
+            body_params = params['slot_type']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=202, message="Returns update status location link on success."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="Server cannot process the request due to a client error e.g. the slot type definition is invalid."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The specified slot type does not exist."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="POST",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+
+    def delete_interaction_model_slot_type_version_v1(self, slot_type_id, version, **kwargs):
+        # type: (str, str, **Any) -> Union[ApiResponse, BadRequest, StandardizedError]
+        """
+        Delete slot type version. 
+
+        :param slot_type_id: (required) The identitfier for a slot type
+        :type slot_type_id: str
+        :param version: (required) Version for interaction model.
+        :type version: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, BadRequest, StandardizedError]
+        """
+        operation_name = "delete_interaction_model_slot_type_version_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'slot_type_id' is set
+        if ('slot_type_id' not in params) or (params['slot_type_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `slot_type_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'version' is set
+        if ('version' not in params) or (params['version'] is None):
+            raise ValueError(
+                "Missing the required parameter `version` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}/versions/{version}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'slot_type_id' in params:
+            path_params['slotTypeId'] = params['slot_type_id']
+        if 'version' in params:
+            path_params['version'] = params['version']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="No Content; Confirms that version is successfully deleted."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="There is no slot type version for this slotTypeId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="DELETE",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+
+    def get_interaction_model_slot_type_version_v1(self, slot_type_id, version, **kwargs):
+        # type: (str, str, **Any) -> Union[ApiResponse, SlotTypeVersionData, BadRequest, StandardizedError]
+        """
+        Get slot type version data of given slot type version. 
+
+        :param slot_type_id: (required) The identitfier for a slot type
+        :type slot_type_id: str
+        :param version: (required) Version for interaction model.
+        :type version: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, SlotTypeVersionData, BadRequest, StandardizedError]
+        """
+        operation_name = "get_interaction_model_slot_type_version_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'slot_type_id' is set
+        if ('slot_type_id' not in params) or (params['slot_type_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `slot_type_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'version' is set
+        if ('version' not in params) or (params['version'] is None):
+            raise ValueError(
+                "Missing the required parameter `version` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}/versions/{version}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'slot_type_id' in params:
+            path_params['slotTypeId'] = params['slot_type_id']
+        if 'version' in params:
+            path_params['version'] = params['version']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_version_data.SlotTypeVersionData", status_code=200, message="Returns the slot type version metadata for the given slotTypeId and version."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="There is no slot type defined for the slotTypeId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_version_data.SlotTypeVersionData")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def update_interaction_model_slot_type_version_v1(self, slot_type_id, version, slot_type_update, **kwargs):
+        # type: (str, str, SlotTypeUpdate, **Any) -> Union[ApiResponse, BadRequest, StandardizedError]
+        """
+        Update description and vendorGuidance string for certain version of a slot type. 
+
+        :param slot_type_id: (required) The identitfier for a slot type
+        :type slot_type_id: str
+        :param version: (required) Version for interaction model.
+        :type version: str
+        :param slot_type_update: (required) 
+        :type slot_type_update: ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_update.SlotTypeUpdate
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, BadRequest, StandardizedError]
+        """
+        operation_name = "update_interaction_model_slot_type_version_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'slot_type_id' is set
+        if ('slot_type_id' not in params) or (params['slot_type_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `slot_type_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'version' is set
+        if ('version' not in params) or (params['version'] is None):
+            raise ValueError(
+                "Missing the required parameter `version` when calling `" + operation_name + "`")
+        # verify the required parameter 'slot_type_update' is set
+        if ('slot_type_update' not in params) or (params['slot_type_update'] is None):
+            raise ValueError(
+                "Missing the required parameter `slot_type_update` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/api/custom/interactionModel/slotTypes/{slotTypeId}/versions/{version}/update'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'slot_type_id' in params:
+            path_params['slotTypeId'] = params['slot_type_id']
+        if 'version' in params:
+            path_params['version'] = params['version']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'slot_type_update' in params:
+            body_params = params['slot_type_update']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="No Content; Confirms that version is successfully updated."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="There is no slot type defined for the slotTypeId"))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="POST",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
 
     def get_status_of_export_request_v1(self, export_id, **kwargs):
         # type: (str, **Any) -> Union[ApiResponse, StandardizedError, ExportResponse]

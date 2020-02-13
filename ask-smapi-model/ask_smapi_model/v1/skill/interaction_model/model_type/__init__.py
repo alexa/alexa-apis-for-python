@@ -14,14 +14,19 @@
 #
 from __future__ import absolute_import
 
-from .catalog_response import CatalogResponse
-from .catalog_input import CatalogInput
-from .catalog_definition_output import CatalogDefinitionOutput
-from .list_catalog_response import ListCatalogResponse
+from .slot_type_entity import SlotTypeEntity
+from .slot_type_response import SlotTypeResponse
+from .error import Error
+from .warning import Warning
+from .slot_type_item import SlotTypeItem
+from .slot_type_status import SlotTypeStatus
+from .slot_type_update_definition import SlotTypeUpdateDefinition
+from .slot_type_definition_output import SlotTypeDefinitionOutput
+from .bad_request import BadRequest
 from .update_request import UpdateRequest
-from .catalog_status_type import CatalogStatusType
 from .last_update_request import LastUpdateRequest
-from .catalog_entity import CatalogEntity
-from .catalog_item import CatalogItem
-from .catalog_status import CatalogStatus
+from .slot_type_status_type import SlotTypeStatusType
+from .slot_type_input import SlotTypeInput
+from .list_slot_type_response import ListSlotTypeResponse
+from .slot_type_response_entity import SlotTypeResponseEntity
 from .definition_data import DefinitionData

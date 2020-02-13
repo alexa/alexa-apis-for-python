@@ -14,8 +14,8 @@
 #
 from __future__ import absolute_import
 
-from .tester import Tester
-from .testers_list import TestersList
-from .invitation_status import InvitationStatus
-from .list_testers_response import ListTestersResponse
 from .tester_with_details import TesterWithDetails
+from .list_testers_response import ListTestersResponse
+from .tester import Tester
+from .invitation_status import InvitationStatus
+from .testers_list import TestersList

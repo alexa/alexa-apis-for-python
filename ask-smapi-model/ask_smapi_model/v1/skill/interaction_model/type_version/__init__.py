@@ -14,8 +14,11 @@
 #
 from __future__ import absolute_import
 
-from .skill_type import SkillType
-from .stage_for_metric import StageForMetric
-from .metric import Metric
-from .period import Period
-from .get_metric_data_response import GetMetricDataResponse
+from .version_data_object import VersionDataObject
+from .version_data import VersionData
+from .list_slot_type_version_response import ListSlotTypeVersionResponse
+from .slot_type_update import SlotTypeUpdate
+from .slot_type_update_object import SlotTypeUpdateObject
+from .value_supplier_object import ValueSupplierObject
+from .slot_type_version_item import SlotTypeVersionItem
+from .slot_type_version_data import SlotTypeVersionData

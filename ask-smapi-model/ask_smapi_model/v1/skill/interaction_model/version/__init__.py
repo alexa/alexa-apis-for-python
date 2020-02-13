@@ -14,13 +14,14 @@
 #
 from __future__ import absolute_import
 
-from .version_data import VersionData
 from .list_response import ListResponse
-from .catalog_update import CatalogUpdate
-from .catalog_version_data import CatalogVersionData
+from .version_data import VersionData
 from .value_schema_name import ValueSchemaName
-from .links import Links
-from .catalog_values import CatalogValues
-from .version_items import VersionItems
 from .value_schema import ValueSchema
+from .catalog_values import CatalogValues
+from .links import Links
+from .catalog_update import CatalogUpdate
+from .slot_type_version_data_object import SlotTypeVersionDataObject
+from .catalog_version_data import CatalogVersionData
+from .version_items import VersionItems
 from .input_source import InputSource

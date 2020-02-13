@@ -7,8 +7,10 @@ CHANGELOG
 
 * Initial release of ask smapi models.
 
-1.0.1
------
+1.1.0
+~~~~~
 
-* Adding User-Agent functionality support to set custom user agent values.
-* Updating Model definitions.
+This release contains the following changes : 
+
+- Add model definitions for new `APIS related to slot type management <https://developer.amazon.com/en-US/docs/alexa/smapi/create-a-slot-type-to-use-in-multiple-skills.html>`__. Skill developers can create slot types outside the context of a skill and use it across multiple skills.
+
