@@ -23,61 +23,49 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_sdk_model.interfaces.viewport.dialog import Dialog
-    from ask_sdk_model.interfaces.viewport.viewport_video import ViewportVideo
-    from ask_sdk_model.interfaces.viewport.mode import Mode
-    from ask_sdk_model.interfaces.viewport.size.viewport_size import ViewportSize
+    from ask_sdk_model.interfaces.alexa.presentation.html.runtime_error_reason import RuntimeErrorReason
 
 
-class CurrentConfiguration(object):
+class RuntimeError(object):
     """
-    The viewport configuration at the time of the request.
 
-
-    :param mode: 
-    :type mode: (optional) ask_sdk_model.interfaces.viewport.mode.Mode
-    :param video: 
-    :type video: (optional) ask_sdk_model.interfaces.viewport.viewport_video.ViewportVideo
-    :param size: 
-    :type size: (optional) ask_sdk_model.interfaces.viewport.size.viewport_size.ViewportSize
-    :param dialog: 
-    :type dialog: (optional) ask_sdk_model.interfaces.viewport.dialog.Dialog
+    :param reason: 
+    :type reason: (optional) ask_sdk_model.interfaces.alexa.presentation.html.runtime_error_reason.RuntimeErrorReason
+    :param message: Details about why the error occurred
+    :type message: (optional) str
+    :param code: Error code
+    :type code: (optional) str
 
     """
     deserialized_types = {
-        'mode': 'ask_sdk_model.interfaces.viewport.mode.Mode',
-        'video': 'ask_sdk_model.interfaces.viewport.viewport_video.ViewportVideo',
-        'size': 'ask_sdk_model.interfaces.viewport.size.viewport_size.ViewportSize',
-        'dialog': 'ask_sdk_model.interfaces.viewport.dialog.Dialog'
+        'reason': 'ask_sdk_model.interfaces.alexa.presentation.html.runtime_error_reason.RuntimeErrorReason',
+        'message': 'str',
+        'code': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'mode': 'mode',
-        'video': 'video',
-        'size': 'size',
-        'dialog': 'dialog'
+        'reason': 'reason',
+        'message': 'message',
+        'code': 'code'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, mode=None, video=None, size=None, dialog=None):
-        # type: (Optional[Mode], Optional[ViewportVideo], Optional[ViewportSize], Optional[Dialog]) -> None
-        """The viewport configuration at the time of the request.
+    def __init__(self, reason=None, message=None, code=None):
+        # type: (Optional[RuntimeErrorReason], Optional[str], Optional[str]) -> None
+        """
 
-        :param mode: 
-        :type mode: (optional) ask_sdk_model.interfaces.viewport.mode.Mode
-        :param video: 
-        :type video: (optional) ask_sdk_model.interfaces.viewport.viewport_video.ViewportVideo
-        :param size: 
-        :type size: (optional) ask_sdk_model.interfaces.viewport.size.viewport_size.ViewportSize
-        :param dialog: 
-        :type dialog: (optional) ask_sdk_model.interfaces.viewport.dialog.Dialog
+        :param reason: 
+        :type reason: (optional) ask_sdk_model.interfaces.alexa.presentation.html.runtime_error_reason.RuntimeErrorReason
+        :param message: Details about why the error occurred
+        :type message: (optional) str
+        :param code: Error code
+        :type code: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
-        self.mode = mode
-        self.video = video
-        self.size = size
-        self.dialog = dialog
+        self.reason = reason
+        self.message = message
+        self.code = code
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -122,7 +110,7 @@ class CurrentConfiguration(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, CurrentConfiguration):
+        if not isinstance(other, RuntimeError):
             return False
 
         return self.__dict__ == other.__dict__

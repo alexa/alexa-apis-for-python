@@ -15,6 +15,7 @@
 from __future__ import absolute_import
 
 from .transformer_type import TransformerType
+from .runtime_error import RuntimeError
 from .handle_message_directive import HandleMessageDirective
 from .transformer import Transformer
 from .runtime import Runtime
@@ -23,4 +24,6 @@ from .start_request import StartRequest
 from .message_request import MessageRequest
 from .configuration import Configuration
 from .start_directive import StartDirective
+from .runtime_error_reason import RuntimeErrorReason
+from .runtime_error_request import RuntimeErrorRequest
 from .alexa_presentation_html_interface import AlexaPresentationHtmlInterface

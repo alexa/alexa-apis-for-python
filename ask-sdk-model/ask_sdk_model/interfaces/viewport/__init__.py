@@ -25,4 +25,5 @@ from .aplt_viewport_state import APLTViewportState
 from .viewport_state_video import Video
 from .viewport_state import ViewportState
 from .experience import Experience
+from .dialog import Dialog
 from .viewport_video import ViewportVideo

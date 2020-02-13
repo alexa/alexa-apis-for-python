@@ -23,6 +23,7 @@ from ask_sdk_model.services.base_service_client import BaseServiceClient
 from ask_sdk_model.services.api_configuration import ApiConfiguration
 from ask_sdk_model.services.service_client_response import ServiceClientResponse
 from ask_sdk_model.services.api_response import ApiResponse
+from ask_sdk_model.services.utils import user_agent_info
 
 from ask_sdk_model.services.authentication_configuration import AuthenticationConfiguration
 from ask_sdk_model.services.lwa.lwa_client import LwaClient
@@ -41,8 +42,8 @@ class SkillMessagingServiceClient(BaseServiceClient):
     :param api_configuration: Instance of ApiConfiguration
     :type api_configuration: ask_sdk_model.services.api_configuration.ApiConfiguration
     """
-    def __init__(self, api_configuration, authentication_configuration, lwa_client=None):
-        # type: (ApiConfiguration, AuthenticationConfiguration, LwaClient) -> None
+    def __init__(self, api_configuration, authentication_configuration, lwa_client=None, custom_user_agent=None):
+        # type: (ApiConfiguration, AuthenticationConfiguration, LwaClient, str) -> None
         """
         :param api_configuration: Instance of :py:class:`ask_sdk_model.services.api_configuration.ApiConfiguration`
         :type api_configuration: ask_sdk_model.services.api_configuration.ApiConfiguration
@@ -52,8 +53,12 @@ class SkillMessagingServiceClient(BaseServiceClient):
             can be passed when the LwaClient configuration is different from the authentication 
             and api configuration passed
         :type lwa_client: ask_sdk_model.services.lwa.LwaClient
+        :param custom_user_agent: Custom User Agent string provided by the developer.
+        :type custom_user_agent: str
         """
         super(SkillMessagingServiceClient, self).__init__(api_configuration)
+        self.user_agent = user_agent_info(sdk_version="1.0.0", custom_user_agent=custom_user_agent)
+
         if lwa_client is None:
             self._lwa_service_client = LwaClient(
                 api_configuration=ApiConfiguration(
@@ -107,6 +112,7 @@ class SkillMessagingServiceClient(BaseServiceClient):
         if 'send_skill_messaging_request' in params:
             body_params = params['send_skill_messaging_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False

@@ -31,7 +31,7 @@ class RenderDocumentDirective(Directive):
 
     :param token: A unique identifier for the presentation.
     :type token: (optional) str
-    :param document: The APL document that the devices need to render a presentation.
+    :param document: Depending on the document type, it represents either an entire APL document or a reference Link to the document. In a Link object, the value of the &#39;src&#39; should follow a URI format defined like &#39;doc://alexa/apl/documents/&lt;document_id&gt;&#39;. The &#39;document_id&#39; is a reference to the APL document that the developer stores through APL Authoring Tool.
     :type document: (optional) dict(str, object)
     :param datasources: Data sources to bind to the document when rendering.
     :type datasources: (optional) dict(str, object)
@@ -62,7 +62,7 @@ class RenderDocumentDirective(Directive):
 
         :param token: A unique identifier for the presentation.
         :type token: (optional) str
-        :param document: The APL document that the devices need to render a presentation.
+        :param document: Depending on the document type, it represents either an entire APL document or a reference Link to the document. In a Link object, the value of the &#39;src&#39; should follow a URI format defined like &#39;doc://alexa/apl/documents/&lt;document_id&gt;&#39;. The &#39;document_id&#39; is a reference to the APL document that the developer stores through APL Authoring Tool.
         :type document: (optional) dict(str, object)
         :param datasources: Data sources to bind to the document when rendering.
         :type datasources: (optional) dict(str, object)

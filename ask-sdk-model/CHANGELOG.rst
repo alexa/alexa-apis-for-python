@@ -274,3 +274,12 @@ This release contains the following changes :
 This release contains the following changes : 
 
  - Missing objects added back from earlier minor release for caption data. 
+
+
+1.20.2
+^^^^^^
+
+This release contains the following changes : 
+
+- Fix the discriminator value for Alexa HTML message request object.
+- Add Alexa HTML Runtime Error definitions.

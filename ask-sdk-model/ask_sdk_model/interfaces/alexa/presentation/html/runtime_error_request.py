@@ -24,11 +24,12 @@ from ask_sdk_model.request import Request
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
+    from ask_sdk_model.interfaces.alexa.presentation.html.runtime_error import RuntimeError
 
 
-class MessageRequest(Request):
+class RuntimeErrorRequest(Request):
     """
-    The Message request sends a message to the skill lambda. To use this request, [apply to participate](https://build.amazonalexadev.com/AlexaWebAPIforGamesDeveloperPreview_AlexaWebAPIforGames.html) in the Alexa Web API for Games developer preview. 
+    The RuntimeError request occurs when the device software encounters an error with loading a skill&#39;s web application. To use this request, [apply to participate](https://build.amazonalexadev.com/AlexaWebAPIforGamesDeveloperPreview_AlexaWebAPIforGames.html) in the Alexa Web API for Games developer preview. 
 
 
     :param request_id: Represents the unique identifier for the specific request.
@@ -37,8 +38,8 @@ class MessageRequest(Request):
     :type timestamp: (optional) datetime
     :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
     :type locale: (optional) str
-    :param message: A free-form object containing data from a skill&#39;s HTML application to deliver to the Alexa cloud. Maximum size 18 KB. 
-    :type message: (optional) object
+    :param error: 
+    :type error: (optional) ask_sdk_model.interfaces.alexa.presentation.html.runtime_error.RuntimeError
 
     """
     deserialized_types = {
@@ -46,7 +47,7 @@ class MessageRequest(Request):
         'request_id': 'str',
         'timestamp': 'datetime',
         'locale': 'str',
-        'message': 'object'
+        'error': 'ask_sdk_model.interfaces.alexa.presentation.html.runtime_error.RuntimeError'
     }  # type: Dict
 
     attribute_map = {
@@ -54,13 +55,13 @@ class MessageRequest(Request):
         'request_id': 'requestId',
         'timestamp': 'timestamp',
         'locale': 'locale',
-        'message': 'message'
+        'error': 'error'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, request_id=None, timestamp=None, locale=None, message=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[object]) -> None
-        """The Message request sends a message to the skill lambda. To use this request, [apply to participate](https://build.amazonalexadev.com/AlexaWebAPIforGamesDeveloperPreview_AlexaWebAPIforGames.html) in the Alexa Web API for Games developer preview. 
+    def __init__(self, request_id=None, timestamp=None, locale=None, error=None):
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[RuntimeError]) -> None
+        """The RuntimeError request occurs when the device software encounters an error with loading a skill&#39;s web application. To use this request, [apply to participate](https://build.amazonalexadev.com/AlexaWebAPIforGamesDeveloperPreview_AlexaWebAPIforGames.html) in the Alexa Web API for Games developer preview. 
 
         :param request_id: Represents the unique identifier for the specific request.
         :type request_id: (optional) str
@@ -68,14 +69,14 @@ class MessageRequest(Request):
         :type timestamp: (optional) datetime
         :param locale: A string indicating the user’s locale. For example: en-US. This value is only provided with certain request types.
         :type locale: (optional) str
-        :param message: A free-form object containing data from a skill&#39;s HTML application to deliver to the Alexa cloud. Maximum size 18 KB. 
-        :type message: (optional) object
+        :param error: 
+        :type error: (optional) ask_sdk_model.interfaces.alexa.presentation.html.runtime_error.RuntimeError
         """
-        self.__discriminator_value = "Alexa.Presentation.HTML.Message"  # type: str
+        self.__discriminator_value = "Alexa.Presentation.HTML.RuntimeError"  # type: str
 
         self.object_type = self.__discriminator_value
-        super(MessageRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
-        self.message = message
+        super(RuntimeErrorRequest, self).__init__(object_type=self.__discriminator_value, request_id=request_id, timestamp=timestamp, locale=locale)
+        self.error = error
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -120,7 +121,7 @@ class MessageRequest(Request):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, MessageRequest):
+        if not isinstance(other, RuntimeErrorRequest):
             return False
 
         return self.__dict__ == other.__dict__

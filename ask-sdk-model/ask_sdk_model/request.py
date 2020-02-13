@@ -65,7 +65,7 @@ class Request(object):
         |
         | CustomInterfaceController.Expired: :py:class:`ask_sdk_model.interfaces.custom_interface_controller.expired_request.ExpiredRequest`,
         |
-        | Alexa.Presentation.html.Message: :py:class:`ask_sdk_model.interfaces.alexa.presentation.html.message_request.MessageRequest`,
+        | Alexa.Presentation.HTML.Message: :py:class:`ask_sdk_model.interfaces.alexa.presentation.html.message_request.MessageRequest`,
         |
         | LaunchRequest: :py:class:`ask_sdk_model.launch_request.LaunchRequest`,
         |
@@ -108,6 +108,8 @@ class Request(object):
         | AlexaSkillEvent.SkillPermissionChanged: :py:class:`ask_sdk_model.events.skillevents.permission_changed_request.PermissionChangedRequest`,
         |
         | Reminders.ReminderUpdated: :py:class:`ask_sdk_model.services.reminder_management.reminder_updated_event_request.ReminderUpdatedEventRequest`,
+        |
+        | Alexa.Presentation.HTML.RuntimeError: :py:class:`ask_sdk_model.interfaces.alexa.presentation.html.runtime_error_request.RuntimeErrorRequest`,
         |
         | IntentRequest: :py:class:`ask_sdk_model.intent_request.IntentRequest`,
         |
@@ -156,7 +158,7 @@ class Request(object):
         'AudioPlayer.PlaybackFailed': 'ask_sdk_model.interfaces.audioplayer.playback_failed_request.PlaybackFailedRequest',
         'CanFulfillIntentRequest': 'ask_sdk_model.canfulfill.can_fulfill_intent_request.CanFulfillIntentRequest',
         'CustomInterfaceController.Expired': 'ask_sdk_model.interfaces.custom_interface_controller.expired_request.ExpiredRequest',
-        'Alexa.Presentation.html.Message': 'ask_sdk_model.interfaces.alexa.presentation.html.message_request.MessageRequest',
+        'Alexa.Presentation.HTML.Message': 'ask_sdk_model.interfaces.alexa.presentation.html.message_request.MessageRequest',
         'LaunchRequest': 'ask_sdk_model.launch_request.LaunchRequest',
         'Reminders.ReminderCreated': 'ask_sdk_model.services.reminder_management.reminder_created_event_request.ReminderCreatedEventRequest',
         'Alexa.Presentation.APLT.UserEvent': 'ask_sdk_model.interfaces.alexa.presentation.aplt.user_event.UserEvent',
@@ -178,6 +180,7 @@ class Request(object):
         'Display.ElementSelected': 'ask_sdk_model.interfaces.display.element_selected_request.ElementSelectedRequest',
         'AlexaSkillEvent.SkillPermissionChanged': 'ask_sdk_model.events.skillevents.permission_changed_request.PermissionChangedRequest',
         'Reminders.ReminderUpdated': 'ask_sdk_model.services.reminder_management.reminder_updated_event_request.ReminderUpdatedEventRequest',
+        'Alexa.Presentation.HTML.RuntimeError': 'ask_sdk_model.interfaces.alexa.presentation.html.runtime_error_request.RuntimeErrorRequest',
         'IntentRequest': 'ask_sdk_model.intent_request.IntentRequest',
         'Reminders.ReminderStarted': 'ask_sdk_model.services.reminder_management.reminder_started_event_request.ReminderStartedEventRequest',
         'AudioPlayer.PlaybackStopped': 'ask_sdk_model.interfaces.audioplayer.playback_stopped_request.PlaybackStoppedRequest',

@@ -23,6 +23,7 @@ from ask_sdk_model.services.base_service_client import BaseServiceClient
 from ask_sdk_model.services.api_configuration import ApiConfiguration
 from ask_sdk_model.services.service_client_response import ServiceClientResponse
 from ask_sdk_model.services.api_response import ApiResponse
+from ask_sdk_model.services.utils import user_agent_info
 
 
 
@@ -47,13 +48,16 @@ class ListManagementServiceClient(BaseServiceClient):
     :param api_configuration: Instance of ApiConfiguration
     :type api_configuration: ask_sdk_model.services.api_configuration.ApiConfiguration
     """
-    def __init__(self, api_configuration):
-        # type: (ApiConfiguration) -> None
+    def __init__(self, api_configuration, custom_user_agent=None):
+        # type: (ApiConfiguration, str) -> None
         """
         :param api_configuration: Instance of :py:class:`ask_sdk_model.services.api_configuration.ApiConfiguration`
         :type api_configuration: ask_sdk_model.services.api_configuration.ApiConfiguration
+        :param custom_user_agent: Custom User Agent string provided by the developer.
+        :type custom_user_agent: str
         """
         super(ListManagementServiceClient, self).__init__(api_configuration)
+        self.user_agent = user_agent_info(sdk_version="1.0.0", custom_user_agent=custom_user_agent)
 
     def get_lists_metadata(self, **kwargs):
         # type: (**Any) -> Union[ApiResponse, ForbiddenError, Error, AlexaListsMetadata]
@@ -82,6 +86,7 @@ class ListManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -147,6 +152,7 @@ class ListManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -222,6 +228,7 @@ class ListManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -297,6 +304,7 @@ class ListManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -380,6 +388,7 @@ class ListManagementServiceClient(BaseServiceClient):
         if 'update_list_item_request' in params:
             body_params = params['update_list_item_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -456,6 +465,7 @@ class ListManagementServiceClient(BaseServiceClient):
         if 'create_list_item_request' in params:
             body_params = params['create_list_item_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -532,6 +542,7 @@ class ListManagementServiceClient(BaseServiceClient):
         if 'update_list_request' in params:
             body_params = params['update_list_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -609,6 +620,7 @@ class ListManagementServiceClient(BaseServiceClient):
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
@@ -677,6 +689,7 @@ class ListManagementServiceClient(BaseServiceClient):
         if 'create_list_request' in params:
             body_params = params['create_list_request']
         header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
 
         # Response Type
         full_response = False
