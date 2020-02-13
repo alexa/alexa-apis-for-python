@@ -25,7 +25,7 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
     from ask_smapi_model.v1.skill.interaction_model.dialog_slot_items import DialogSlotItems
     from ask_smapi_model.v1.skill.interaction_model.delegation_strategy_type import DelegationStrategyType
-    from ask_smapi_model.v1.skill.interaction_model.prompts import Prompts
+    from ask_smapi_model.v1.skill.interaction_model import Prompts
 
 
 class DialogIntents(object):
@@ -40,7 +40,7 @@ class DialogIntents(object):
     :param confirmation_required: Describes whether confirmation of the intent is required.
     :type confirmation_required: (optional) bool
     :param prompts: 
-    :type prompts: (optional) ask_smapi_model.v1.skill.interaction_model.prompts.Prompts
+    :type prompts: (optional) ask_smapi_model.v1.skill.interaction_model.Prompts
 
     """
     deserialized_types = {
@@ -48,7 +48,7 @@ class DialogIntents(object):
         'delegation_strategy': 'ask_smapi_model.v1.skill.interaction_model.delegation_strategy_type.DelegationStrategyType',
         'slots': 'list[ask_smapi_model.v1.skill.interaction_model.dialog_slot_items.DialogSlotItems]',
         'confirmation_required': 'bool',
-        'prompts': 'ask_smapi_model.v1.skill.interaction_model.prompts.Prompts'
+        'prompts': 'ask_smapi_model.v1.skill.interaction_model.Prompts'
     }  # type: Dict
 
     attribute_map = {
@@ -73,7 +73,7 @@ class DialogIntents(object):
         :param confirmation_required: Describes whether confirmation of the intent is required.
         :type confirmation_required: (optional) bool
         :param prompts: 
-        :type prompts: (optional) ask_smapi_model.v1.skill.interaction_model.prompts.Prompts
+        :type prompts: (optional) ask_smapi_model.v1.skill.interaction_model.Prompts
         """
         self.__discriminator_value = None  # type: str
 
