@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.value_supplier_slot import ValueSupplierSlot
+    from ask_smapi_model.v1.skill.interaction_model.value_supplier import ValueSupplier
 
 
 class ValueSupplierObject(object):
@@ -32,11 +32,11 @@ class ValueSupplierObject(object):
 
 
     :param value_supplier: 
-    :type value_supplier: (optional) ask_smapi_model.v1.skill.interaction_model.value_supplier_slot.ValueSupplierSlot
+    :type value_supplier: (optional) ask_smapi_model.v1.skill.interaction_model.value_supplier.ValueSupplier
 
     """
     deserialized_types = {
-        'value_supplier': 'ask_smapi_model.v1.skill.interaction_model.value_supplier_slot.ValueSupplierSlot'
+        'value_supplier': 'ask_smapi_model.v1.skill.interaction_model.value_supplier.ValueSupplier'
     }  # type: Dict
 
     attribute_map = {
@@ -45,11 +45,11 @@ class ValueSupplierObject(object):
     supports_multiple_types = False
 
     def __init__(self, value_supplier=None):
-        # type: (Optional[ValueSupplierSlot]) -> None
+        # type: (Optional[ValueSupplier]) -> None
         """Value supplier object for slot definition.
 
         :param value_supplier: 
-        :type value_supplier: (optional) ask_smapi_model.v1.skill.interaction_model.value_supplier_slot.ValueSupplierSlot
+        :type value_supplier: (optional) ask_smapi_model.v1.skill.interaction_model.value_supplier.ValueSupplier
         """
         self.__discriminator_value = None  # type: str
 

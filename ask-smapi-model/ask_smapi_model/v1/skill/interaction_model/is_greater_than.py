@@ -59,7 +59,7 @@ class IsGreaterThan(SlotValidation):
         :param value: Value to compare to.
         :type value: (optional) str
         """
-        self.__discriminator_value = "IsGreaterThan"  # type: str
+        self.__discriminator_value = "isGreaterThan"  # type: str
 
         self.object_type = self.__discriminator_value
         super(IsGreaterThan, self).__init__(object_type=self.__discriminator_value, prompt=prompt)

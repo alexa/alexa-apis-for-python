@@ -29,7 +29,7 @@ if typing.TYPE_CHECKING:
 
 class BadRequest(object):
     """
-    The body of the bad request exception
+    The body of the bad request exception.
 
 
     :param errors: 
@@ -51,7 +51,7 @@ class BadRequest(object):
 
     def __init__(self, errors=None, warnings=None):
         # type: (Optional[List[Error]], Optional[List[Warning]]) -> None
-        """The body of the bad request exception
+        """The body of the bad request exception.
 
         :param errors: 
         :type errors: (optional) list[ask_smapi_model.v1.skill.interaction_model.model_type.error.Error]

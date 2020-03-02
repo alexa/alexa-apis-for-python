@@ -59,7 +59,7 @@ class IsNotInSet(SlotValidation):
         :param values: List of values to check.
         :type values: (optional) list[str]
         """
-        self.__discriminator_value = "IsNotInSet"  # type: str
+        self.__discriminator_value = "isNotInSet"  # type: str
 
         self.object_type = self.__discriminator_value
         super(IsNotInSet, self).__init__(object_type=self.__discriminator_value, prompt=prompt)

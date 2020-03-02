@@ -17,14 +17,12 @@ from __future__ import absolute_import
 from .dialog_prompts import DialogPrompts
 from .prompt_items import PromptItems
 from .has_entity_resolution_match import HasEntityResolutionMatch
-from .value_catalog_slot import ValueCatalogSlot
 from .is_less_than import IsLessThan
 from .is_not_in_set import IsNotInSet
 from .dialog_intents import DialogIntents
 from .interaction_model_schema import InteractionModelSchema
 from .value_catalog import ValueCatalog
 from .is_greater_than import IsGreaterThan
-from .catalog_value_supplier_slot import CatalogValueSupplierSlot
 from .is_greater_than_or_equal_to import IsGreaterThanOrEqualTo
 from .slot_definition import SlotDefinition
 from .interaction_model_data import InteractionModelData
@@ -40,7 +38,6 @@ from .is_not_in_duration import IsNotInDuration
 from .value_supplier import ValueSupplier
 from .prompt_items_type import PromptItemsType
 from .language_model import LanguageModel
-from .value_supplier_slot import ValueSupplierSlot
 from .dialog_slot_items import DialogSlotItems
 from .dialog import Dialog
 from .prompt import Prompt

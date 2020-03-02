@@ -31,7 +31,7 @@ class SlotTypeVersionItem(object):
     Definition for slot type entity.
 
 
-    :param version: version number of slot type
+    :param version: Version number of slot type.
     :type version: (optional) str
     :param description: Description string about the slot type version.
     :type description: (optional) str
@@ -56,7 +56,7 @@ class SlotTypeVersionItem(object):
         # type: (Optional[str], Optional[str], Optional[Links]) -> None
         """Definition for slot type entity.
 
-        :param version: version number of slot type
+        :param version: Version number of slot type.
         :type version: (optional) str
         :param description: Description string about the slot type version.
         :type description: (optional) str

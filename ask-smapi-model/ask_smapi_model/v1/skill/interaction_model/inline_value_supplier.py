@@ -18,7 +18,7 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
-from ask_smapi_model.v1.skill.interaction_model.value_supplier_slot import ValueSupplierSlot
+from ask_smapi_model.v1.skill.interaction_model.value_supplier import ValueSupplier
 
 
 if typing.TYPE_CHECKING:
@@ -27,7 +27,7 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.interaction_model.type_value import TypeValue
 
 
-class InlineValueSupplier(ValueSupplierSlot):
+class InlineValueSupplier(ValueSupplier):
     """
     Supplies inline slot type values.
 

@@ -23,6 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
+    from ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_version_data_object import SlotTypeVersionDataObject
 
 
 class SlotTypeVersionData(object):
@@ -30,21 +31,29 @@ class SlotTypeVersionData(object):
     Slot Type version data with metadata.
 
 
+    :param slot_type: 
+    :type slot_type: (optional) ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_version_data_object.SlotTypeVersionDataObject
 
     """
     deserialized_types = {
+        'slot_type': 'ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_version_data_object.SlotTypeVersionDataObject'
     }  # type: Dict
 
     attribute_map = {
+        'slot_type': 'slotType'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self):
-        # type: () -> None
+    def __init__(self, slot_type=None):
+        # type: (Optional[SlotTypeVersionDataObject]) -> None
         """Slot Type version data with metadata.
 
+        :param slot_type: 
+        :type slot_type: (optional) ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_version_data_object.SlotTypeVersionDataObject
         """
         self.__discriminator_value = None  # type: str
+
+        self.slot_type = slot_type
 
     def to_dict(self):
         # type: () -> Dict[str, object]

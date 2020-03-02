@@ -27,12 +27,12 @@ if typing.TYPE_CHECKING:
 
 class Error(object):
     """
-    The Error which would fail requests
+    The error which would fail requests.
 
 
-    :param code: The error code
+    :param code: The error code.
     :type code: (optional) str
-    :param message: The error message
+    :param message: The error message.
     :type message: (optional) str
 
     """
@@ -49,11 +49,11 @@ class Error(object):
 
     def __init__(self, code=None, message=None):
         # type: (Optional[str], Optional[str]) -> None
-        """The Error which would fail requests
+        """The error which would fail requests.
 
-        :param code: The error code
+        :param code: The error code.
         :type code: (optional) str
-        :param message: The error message
+        :param message: The error message.
         :type message: (optional) str
         """
         self.__discriminator_value = None  # type: str

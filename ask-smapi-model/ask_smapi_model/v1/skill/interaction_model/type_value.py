@@ -28,7 +28,7 @@ if typing.TYPE_CHECKING:
 
 class TypeValue(object):
     """
-    the value schema in type object of interaction model
+    The value schema in type object of interaction model.
 
 
     :param id: 
@@ -50,7 +50,7 @@ class TypeValue(object):
 
     def __init__(self, id=None, name=None):
         # type: (Optional[str], Optional[TypeValueObject]) -> None
-        """the value schema in type object of interaction model
+        """The value schema in type object of interaction model.
 
         :param id: 
         :type id: (optional) str

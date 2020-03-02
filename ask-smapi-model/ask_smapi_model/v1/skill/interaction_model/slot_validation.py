@@ -31,7 +31,7 @@ class SlotValidation(object):
     Validation on a slot with support for prompt and confirmation.
 
 
-    :param object_type: The exact type of validation e.g. IsLessThan,IsGreaterThan etc.
+    :param object_type: The exact type of validation e.g. isLessThan,isGreaterThan etc.
     :type object_type: (optional) str
     :param prompt: The prompt id that should be used if validation fails.
     :type prompt: (optional) str
@@ -41,23 +41,23 @@ class SlotValidation(object):
         This is an abstract class. Use the following mapping, to figure out
         the model class to be instantiated, that sets ``type`` variable.
 
-        | HasEntityResolutionMatch: :py:class:`ask_smapi_model.v1.skill.interaction_model.has_entity_resolution_match.HasEntityResolutionMatch`,
+        | hasEntityResolutionMatch: :py:class:`ask_smapi_model.v1.skill.interaction_model.has_entity_resolution_match.HasEntityResolutionMatch`,
         |
-        | IsLessThanOrEqualTo: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_less_than_or_equal_to.IsLessThanOrEqualTo`,
+        | isLessThanOrEqualTo: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_less_than_or_equal_to.IsLessThanOrEqualTo`,
         |
-        | IsInDuration: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_in_duration.IsInDuration`,
+        | isInDuration: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_in_duration.IsInDuration`,
         |
-        | IsLessThan: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_less_than.IsLessThan`,
+        | isLessThan: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_less_than.IsLessThan`,
         |
-        | IsGreaterThan: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_greater_than.IsGreaterThan`,
+        | isGreaterThan: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_greater_than.IsGreaterThan`,
         |
-        | IsNotInSet: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_not_in_set.IsNotInSet`,
+        | isNotInSet: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_not_in_set.IsNotInSet`,
         |
-        | IsNotInDuration: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_not_in_duration.IsNotInDuration`,
+        | isNotInDuration: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_not_in_duration.IsNotInDuration`,
         |
-        | IsGreaterThanOrEqualTo: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_greater_than_or_equal_to.IsGreaterThanOrEqualTo`,
+        | isGreaterThanOrEqualTo: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_greater_than_or_equal_to.IsGreaterThanOrEqualTo`,
         |
-        | IsInSet: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_in_set.IsInSet`
+        | isInSet: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_in_set.IsInSet`
 
     """
     deserialized_types = {
@@ -72,15 +72,15 @@ class SlotValidation(object):
     supports_multiple_types = False
 
     discriminator_value_class_map = {
-        'HasEntityResolutionMatch': 'ask_smapi_model.v1.skill.interaction_model.has_entity_resolution_match.HasEntityResolutionMatch',
-        'IsLessThanOrEqualTo': 'ask_smapi_model.v1.skill.interaction_model.is_less_than_or_equal_to.IsLessThanOrEqualTo',
-        'IsInDuration': 'ask_smapi_model.v1.skill.interaction_model.is_in_duration.IsInDuration',
-        'IsLessThan': 'ask_smapi_model.v1.skill.interaction_model.is_less_than.IsLessThan',
-        'IsGreaterThan': 'ask_smapi_model.v1.skill.interaction_model.is_greater_than.IsGreaterThan',
-        'IsNotInSet': 'ask_smapi_model.v1.skill.interaction_model.is_not_in_set.IsNotInSet',
-        'IsNotInDuration': 'ask_smapi_model.v1.skill.interaction_model.is_not_in_duration.IsNotInDuration',
-        'IsGreaterThanOrEqualTo': 'ask_smapi_model.v1.skill.interaction_model.is_greater_than_or_equal_to.IsGreaterThanOrEqualTo',
-        'IsInSet': 'ask_smapi_model.v1.skill.interaction_model.is_in_set.IsInSet'
+        'hasEntityResolutionMatch': 'ask_smapi_model.v1.skill.interaction_model.has_entity_resolution_match.HasEntityResolutionMatch',
+        'isLessThanOrEqualTo': 'ask_smapi_model.v1.skill.interaction_model.is_less_than_or_equal_to.IsLessThanOrEqualTo',
+        'isInDuration': 'ask_smapi_model.v1.skill.interaction_model.is_in_duration.IsInDuration',
+        'isLessThan': 'ask_smapi_model.v1.skill.interaction_model.is_less_than.IsLessThan',
+        'isGreaterThan': 'ask_smapi_model.v1.skill.interaction_model.is_greater_than.IsGreaterThan',
+        'isNotInSet': 'ask_smapi_model.v1.skill.interaction_model.is_not_in_set.IsNotInSet',
+        'isNotInDuration': 'ask_smapi_model.v1.skill.interaction_model.is_not_in_duration.IsNotInDuration',
+        'isGreaterThanOrEqualTo': 'ask_smapi_model.v1.skill.interaction_model.is_greater_than_or_equal_to.IsGreaterThanOrEqualTo',
+        'isInSet': 'ask_smapi_model.v1.skill.interaction_model.is_in_set.IsInSet'
     }
 
     json_discriminator_key = "type"
@@ -92,7 +92,7 @@ class SlotValidation(object):
         # type: (Optional[str], Optional[str]) -> None
         """Validation on a slot with support for prompt and confirmation.
 
-        :param object_type: The exact type of validation e.g. IsLessThan,IsGreaterThan etc.
+        :param object_type: The exact type of validation e.g. isLessThan,isGreaterThan etc.
         :type object_type: (optional) str
         :param prompt: The prompt id that should be used if validation fails.
         :type prompt: (optional) str

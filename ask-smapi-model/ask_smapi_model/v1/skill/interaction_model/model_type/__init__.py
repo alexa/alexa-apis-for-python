@@ -14,7 +14,6 @@
 #
 from __future__ import absolute_import
 
-from .slot_type_entity import SlotTypeEntity
 from .slot_type_response import SlotTypeResponse
 from .error import Error
 from .warning import Warning

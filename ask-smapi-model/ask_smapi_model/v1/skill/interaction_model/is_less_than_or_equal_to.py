@@ -59,7 +59,7 @@ class IsLessThanOrEqualTo(SlotValidation):
         :param value: Value to compare to.
         :type value: (optional) str
         """
-        self.__discriminator_value = "IsLessThanOrEqualTo"  # type: str
+        self.__discriminator_value = "isLessThanOrEqualTo"  # type: str
 
         self.object_type = self.__discriminator_value
         super(IsLessThanOrEqualTo, self).__init__(object_type=self.__discriminator_value, prompt=prompt)

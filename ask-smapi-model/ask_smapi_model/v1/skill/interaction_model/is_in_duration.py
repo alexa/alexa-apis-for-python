@@ -65,7 +65,7 @@ class IsInDuration(SlotValidation):
         :param end: * &#x60;AMAZON.DATE&#x60;: ISO 8601 Duration using Y, M or D components or ISO 8601 Calendar Date in YYYY-MM-DD format. * &#x60;AMAZON.TIME&#x60;: ISO 8601 Duration using H or M component or ISO 8601 24-Hour Clock Time in hh:mm format. 
         :type end: (optional) str
         """
-        self.__discriminator_value = "IsInDuration"  # type: str
+        self.__discriminator_value = "isInDuration"  # type: str
 
         self.object_type = self.__discriminator_value
         super(IsInDuration, self).__init__(object_type=self.__discriminator_value, prompt=prompt)

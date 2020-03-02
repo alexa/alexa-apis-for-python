@@ -23,6 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
+    from ask_smapi_model.v1.skill.interaction_model.type_value import TypeValue
     from ask_smapi_model.v1.skill.interaction_model.value_supplier import ValueSupplier
 
 
@@ -34,14 +35,14 @@ class SlotType(object):
     :param name: The name of the custom slot type.
     :type name: (optional) str
     :param values: List of expected values. Values outside the list are still returned.
-    :type values: (optional) list[str]
+    :type values: (optional) list[ask_smapi_model.v1.skill.interaction_model.type_value.TypeValue]
     :param value_supplier: 
     :type value_supplier: (optional) ask_smapi_model.v1.skill.interaction_model.value_supplier.ValueSupplier
 
     """
     deserialized_types = {
         'name': 'str',
-        'values': 'list[str]',
+        'values': 'list[ask_smapi_model.v1.skill.interaction_model.type_value.TypeValue]',
         'value_supplier': 'ask_smapi_model.v1.skill.interaction_model.value_supplier.ValueSupplier'
     }  # type: Dict
 
@@ -53,13 +54,13 @@ class SlotType(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, values=None, value_supplier=None):
-        # type: (Optional[str], Optional[List[object]], Optional[ValueSupplier]) -> None
+        # type: (Optional[str], Optional[List[TypeValue]], Optional[ValueSupplier]) -> None
         """Custom slot type to define a list of possible values for a slot. Used for items that are not covered by Amazon&#39;s built-in slot types.
 
         :param name: The name of the custom slot type.
         :type name: (optional) str
         :param values: List of expected values. Values outside the list are still returned.
-        :type values: (optional) list[str]
+        :type values: (optional) list[ask_smapi_model.v1.skill.interaction_model.type_value.TypeValue]
         :param value_supplier: 
         :type value_supplier: (optional) ask_smapi_model.v1.skill.interaction_model.value_supplier.ValueSupplier
         """

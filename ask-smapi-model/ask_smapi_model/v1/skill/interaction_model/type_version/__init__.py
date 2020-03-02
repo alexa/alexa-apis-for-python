@@ -20,5 +20,6 @@ from .list_slot_type_version_response import ListSlotTypeVersionResponse
 from .slot_type_update import SlotTypeUpdate
 from .slot_type_update_object import SlotTypeUpdateObject
 from .value_supplier_object import ValueSupplierObject
+from .slot_type_version_data_object import SlotTypeVersionDataObject
 from .slot_type_version_item import SlotTypeVersionItem
 from .slot_type_version_data import SlotTypeVersionData

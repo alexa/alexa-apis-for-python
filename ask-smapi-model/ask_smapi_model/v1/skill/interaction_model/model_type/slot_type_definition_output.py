@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_entity import SlotTypeEntity
+    from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_input import SlotTypeInput
 
 
 class SlotTypeDefinitionOutput(object):
@@ -32,13 +32,13 @@ class SlotTypeDefinitionOutput(object):
 
 
     :param slot_type: 
-    :type slot_type: (optional) ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_entity.SlotTypeEntity
+    :type slot_type: (optional) ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_input.SlotTypeInput
     :param total_versions: Total number of versions.
     :type total_versions: (optional) str
 
     """
     deserialized_types = {
-        'slot_type': 'ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_entity.SlotTypeEntity',
+        'slot_type': 'ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_input.SlotTypeInput',
         'total_versions': 'str'
     }  # type: Dict
 
@@ -49,11 +49,11 @@ class SlotTypeDefinitionOutput(object):
     supports_multiple_types = False
 
     def __init__(self, slot_type=None, total_versions=None):
-        # type: (Optional[SlotTypeEntity], Optional[str]) -> None
+        # type: (Optional[SlotTypeInput], Optional[str]) -> None
         """Slot Type request definitions.
 
         :param slot_type: 
-        :type slot_type: (optional) ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_entity.SlotTypeEntity
+        :type slot_type: (optional) ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_input.SlotTypeInput
         :param total_versions: Total number of versions.
         :type total_versions: (optional) str
         """

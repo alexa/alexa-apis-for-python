@@ -27,7 +27,7 @@ if typing.TYPE_CHECKING:
 
 class TypeValueObject(object):
     """
-    The object that contains individual type values
+    The object that contains individual type values.
 
 
     :param value: 
@@ -49,7 +49,7 @@ class TypeValueObject(object):
 
     def __init__(self, value=None, synonyms=None):
         # type: (Optional[str], Optional[List[object]]) -> None
-        """The object that contains individual type values
+        """The object that contains individual type values.
 
         :param value: 
         :type value: (optional) str

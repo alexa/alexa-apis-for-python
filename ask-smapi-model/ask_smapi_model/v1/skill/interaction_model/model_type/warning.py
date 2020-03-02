@@ -27,12 +27,12 @@ if typing.TYPE_CHECKING:
 
 class Warning(object):
     """
-    The warning which would not fail requests
+    The warning which would not fail requests.
 
 
-    :param code: The warning code
+    :param code: The warning code.
     :type code: (optional) str
-    :param message: The warning message
+    :param message: The warning message.
     :type message: (optional) str
 
     """
@@ -49,11 +49,11 @@ class Warning(object):
 
     def __init__(self, code=None, message=None):
         # type: (Optional[str], Optional[str]) -> None
-        """The warning which would not fail requests
+        """The warning which would not fail requests.
 
-        :param code: The warning code
+        :param code: The warning code.
         :type code: (optional) str
-        :param message: The warning message
+        :param message: The warning message.
         :type message: (optional) str
         """
         self.__discriminator_value = None  # type: str

@@ -30,35 +30,35 @@ class ValueCatalog(object):
     Catalog reference to provide values.
 
 
-    :param id: CatalogId
-    :type id: (optional) str
-    :param version: Catalog version
+    :param catalog_id: CatalogId.
+    :type catalog_id: (optional) str
+    :param version: Catalog version.
     :type version: (optional) str
 
     """
     deserialized_types = {
-        'id': 'str',
+        'catalog_id': 'str',
         'version': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'id': 'id',
+        'catalog_id': 'catalogId',
         'version': 'version'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, id=None, version=None):
+    def __init__(self, catalog_id=None, version=None):
         # type: (Optional[str], Optional[str]) -> None
         """Catalog reference to provide values.
 
-        :param id: CatalogId
-        :type id: (optional) str
-        :param version: Catalog version
+        :param catalog_id: CatalogId.
+        :type catalog_id: (optional) str
+        :param version: Catalog version.
         :type version: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
-        self.id = id
+        self.catalog_id = catalog_id
         self.version = version
 
     def to_dict(self):

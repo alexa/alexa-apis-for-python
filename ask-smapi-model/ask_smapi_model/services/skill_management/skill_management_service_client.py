@@ -2216,7 +2216,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_response.SlotTypeResponse", status_code=200, message="Returns the generated slotTypeId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="Server cannot process the request due to a client error e.g. the slot type definition is invalid."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
 
@@ -2240,7 +2240,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Delete the slot type. 
 
-        :param slot_type_id: (required) The identitfier for a slot type
+        :param slot_type_id: (required) The identifier for a slot type.
         :type slot_type_id: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
@@ -2310,9 +2310,9 @@ class SkillManagementServiceClient(BaseServiceClient):
     def get_interaction_model_slot_type_definition_v1(self, slot_type_id, **kwargs):
         # type: (str, **Any) -> Union[ApiResponse, BadRequest, StandardizedError, SlotTypeDefinitionOutput]
         """
-        get the slot type definition 
+        Get the slot type definition. 
 
-        :param slot_type_id: (required) The identitfier for a slot type
+        :param slot_type_id: (required) The identifier for a slot type.
         :type slot_type_id: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
@@ -2355,7 +2355,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         header_params.append(('Authorization', authorization_value))
 
         error_definitions = []  # type: List
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_definition_output.SlotTypeDefinitionOutput", status_code=200, message="the slot type definition"))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_definition_output.SlotTypeDefinitionOutput", status_code=200, message="The slot type definition."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="The slot type cannot be retrieved due to errors listed."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
@@ -2382,9 +2382,9 @@ class SkillManagementServiceClient(BaseServiceClient):
     def update_interaction_model_slot_type_v1(self, slot_type_id, update_request, **kwargs):
         # type: (str, UpdateRequest, **Any) -> Union[ApiResponse, BadRequest, StandardizedError]
         """
-        update description and vendorGuidance string for certain version of a slot type. 
+        Update description and vendorGuidance string for certain version of a slot type. 
 
-        :param slot_type_id: (required) The identitfier for a slot type
+        :param slot_type_id: (required) The identifier for a slot type.
         :type slot_type_id: str
         :param update_request: (required) 
         :type update_request: ask_smapi_model.v1.skill.interaction_model.model_type.update_request.UpdateRequest
@@ -2464,7 +2464,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Get the status of slot type resource and its sub-resources for a given slotTypeId. 
 
-        :param slot_type_id: (required) The identitfier for a slot type
+        :param slot_type_id: (required) The identifier for a slot type.
         :type slot_type_id: str
         :param update_request_id: (required) The identifier for slotType version creation process
         :type update_request_id: str
@@ -2515,12 +2515,12 @@ class SkillManagementServiceClient(BaseServiceClient):
         header_params.append(('Authorization', authorization_value))
 
         error_definitions = []  # type: List
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_status.SlotTypeStatus", status_code=200, message="Returns the build status and error codes for the given slotTypeId"))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_status.SlotTypeStatus", status_code=200, message="Returns the build status and error codes for the given slotTypeId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="There is no slot type defined for the slotTypeId."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
 
@@ -2544,7 +2544,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         List all slot type versions for the slot type id. 
 
-        :param slot_type_id: (required) The identitfier for a slot type
+        :param slot_type_id: (required) The identifier for a slot type.
         :type slot_type_id: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
         :type max_results: float
@@ -2627,7 +2627,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Create a new version of slot type entity for the given slotTypeId. 
 
-        :param slot_type_id: (required) The identitfier for a slot type
+        :param slot_type_id: (required) The identifier for a slot type.
         :type slot_type_id: str
         :param slot_type: (required) 
         :type slot_type: ask_smapi_model.v1.skill.interaction_model.type_version.version_data.VersionData
@@ -2707,7 +2707,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Delete slot type version. 
 
-        :param slot_type_id: (required) The identitfier for a slot type
+        :param slot_type_id: (required) The identifier for a slot type.
         :type slot_type_id: str
         :param version: (required) Version for interaction model.
         :type version: str
@@ -2787,7 +2787,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Get slot type version data of given slot type version. 
 
-        :param slot_type_id: (required) The identitfier for a slot type
+        :param slot_type_id: (required) The identifier for a slot type.
         :type slot_type_id: str
         :param version: (required) Version for interaction model.
         :type version: str
@@ -2867,7 +2867,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Update description and vendorGuidance string for certain version of a slot type. 
 
-        :param slot_type_id: (required) The identitfier for a slot type
+        :param slot_type_id: (required) The identifier for a slot type.
         :type slot_type_id: str
         :param version: (required) Version for interaction model.
         :type version: str
@@ -2930,7 +2930,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="There is no slot type defined for the slotTypeId"))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="There is no slot type defined for the slotTypeId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
@@ -6193,7 +6193,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         header_params.append(('Authorization', authorization_value))
 
         error_definitions = []  # type: List
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.interaction_model_data.InteractionModelData", status_code=200, message="Returns interaction model object on success"))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.interaction_model_data.InteractionModelData", status_code=200, message="Returns interaction model object on success."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
@@ -6220,7 +6220,7 @@ class SkillManagementServiceClient(BaseServiceClient):
     def get_interaction_model_metadata_v1(self, skill_id, stage_v2, locale, **kwargs):
         # type: (str, str, str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError]
         """
-        Get the latest metadata for the interaction model resource for the given stage 
+        Get the latest metadata for the interaction model resource for the given stage. 
 
         :param skill_id: (required) The skill ID.
         :type skill_id: str
@@ -6281,7 +6281,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         header_params.append(('Authorization', authorization_value))
 
         error_definitions = []  # type: List
-        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="success. There is no content but returns etag"))
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="Success. There is no content but returns etag."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
@@ -6382,10 +6382,10 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=202, message="Returns build status location link on success."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error e.g. the input interaction model is invalid"))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error e.g. the input interaction model is invalid."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The specified skill or stage or locale does not exist"))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The specified skill or stage or locale does not exist."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=412, message="Precondition failed."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))

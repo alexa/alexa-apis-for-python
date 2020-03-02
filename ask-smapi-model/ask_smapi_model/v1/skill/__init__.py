@@ -24,6 +24,7 @@ from .skill_interaction_model import SkillInteractionModel
 from .ssl_certificate_payload import SSLCertificatePayload
 from .build_step import BuildStep
 from .interface_intent import InterfaceIntent
+from .publication_status import PublicationStatus
 from .interface_definition import InterfaceDefinition
 from .standardized_error import StandardizedError
 from .validation_details import ValidationDetails

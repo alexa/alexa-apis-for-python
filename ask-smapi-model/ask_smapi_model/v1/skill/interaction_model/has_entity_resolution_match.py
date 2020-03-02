@@ -53,7 +53,7 @@ class HasEntityResolutionMatch(SlotValidation):
         :param prompt: The prompt id that should be used if validation fails.
         :type prompt: (optional) str
         """
-        self.__discriminator_value = "HasEntityResolutionMatch"  # type: str
+        self.__discriminator_value = "hasEntityResolutionMatch"  # type: str
 
         self.object_type = self.__discriminator_value
         super(HasEntityResolutionMatch, self).__init__(object_type=self.__discriminator_value, prompt=prompt)

@@ -28,7 +28,7 @@ if typing.TYPE_CHECKING:
 
 class SlotTypeResponse(object):
     """
-    SlotTypeId information.
+    Slot Type information.
 
 
     :param slot_type: 
@@ -46,7 +46,7 @@ class SlotTypeResponse(object):
 
     def __init__(self, slot_type=None):
         # type: (Optional[SlotTypeResponseEntity]) -> None
-        """SlotTypeId information.
+        """Slot Type information.
 
         :param slot_type: 
         :type slot_type: (optional) ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_response_entity.SlotTypeResponseEntity

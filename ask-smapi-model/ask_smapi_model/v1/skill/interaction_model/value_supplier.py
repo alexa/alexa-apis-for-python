@@ -39,7 +39,9 @@ class ValueSupplier(object):
         This is an abstract class. Use the following mapping, to figure out
         the model class to be instantiated, that sets ``type`` variable.
 
-        | CatalogValueSupplier: :py:class:`ask_smapi_model.v1.skill.interaction_model.catalog_value_supplier.CatalogValueSupplier`
+        | CatalogValueSupplier: :py:class:`ask_smapi_model.v1.skill.interaction_model.catalog_value_supplier.CatalogValueSupplier`,
+        |
+        | InlineValueSupplier: :py:class:`ask_smapi_model.v1.skill.interaction_model.inline_value_supplier.InlineValueSupplier`
 
     """
     deserialized_types = {
@@ -52,7 +54,8 @@ class ValueSupplier(object):
     supports_multiple_types = False
 
     discriminator_value_class_map = {
-        'CatalogValueSupplier': 'ask_smapi_model.v1.skill.interaction_model.catalog_value_supplier.CatalogValueSupplier'
+        'CatalogValueSupplier': 'ask_smapi_model.v1.skill.interaction_model.catalog_value_supplier.CatalogValueSupplier',
+        'InlineValueSupplier': 'ask_smapi_model.v1.skill.interaction_model.inline_value_supplier.InlineValueSupplier'
     }
 
     json_discriminator_key = "type"

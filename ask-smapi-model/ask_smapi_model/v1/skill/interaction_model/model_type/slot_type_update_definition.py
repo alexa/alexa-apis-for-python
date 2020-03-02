@@ -27,7 +27,7 @@ if typing.TYPE_CHECKING:
 
 class SlotTypeUpdateDefinition(object):
     """
-    Slot type update request object.
+    Slot type update definition object.
 
 
     :param description: The slot type description with a 255 character maximum.
@@ -45,7 +45,7 @@ class SlotTypeUpdateDefinition(object):
 
     def __init__(self, description=None):
         # type: (Optional[str]) -> None
-        """Slot type update request object.
+        """Slot type update definition object.
 
         :param description: The slot type description with a 255 character maximum.
         :type description: (optional) str

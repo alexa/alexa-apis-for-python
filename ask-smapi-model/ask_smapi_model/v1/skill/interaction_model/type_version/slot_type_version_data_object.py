@@ -18,68 +18,63 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
-from abc import ABCMeta, abstractmethod
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
+    from ask_smapi_model.v1.skill.interaction_model.type_version.value_supplier_object import ValueSupplierObject
 
 
-class ValueSupplierSlot(object):
+class SlotTypeVersionDataObject(object):
     """
-    Supplier object to provide slot values.
+    Slot Type version fields with metadata.
 
 
-    :param object_type: The exact type of validation e.g.CatalogValueSupplier etc.
-    :type object_type: (optional) str
-
-    .. note::
-
-        This is an abstract class. Use the following mapping, to figure out
-        the model class to be instantiated, that sets ``type`` variable.
-
-        | CatalogValueSupplier: :py:class:`ask_smapi_model.v1.skill.interaction_model.catalog_value_supplier_slot.CatalogValueSupplierSlot`,
-        |
-        | InlineValueSupplier: :py:class:`ask_smapi_model.v1.skill.interaction_model.inline_value_supplier.InlineValueSupplier`
+    :param id: Slot type id associated with the slot type version.
+    :type id: (optional) str
+    :param definition: 
+    :type definition: (optional) ask_smapi_model.v1.skill.interaction_model.type_version.value_supplier_object.ValueSupplierObject
+    :param description: Description string for specific slot type version.
+    :type description: (optional) str
+    :param version: Specific slot type version.
+    :type version: (optional) str
 
     """
     deserialized_types = {
-        'object_type': 'str'
+        'id': 'str',
+        'definition': 'ask_smapi_model.v1.skill.interaction_model.type_version.value_supplier_object.ValueSupplierObject',
+        'description': 'str',
+        'version': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'object_type': 'type'
+        'id': 'id',
+        'definition': 'definition',
+        'description': 'description',
+        'version': 'version'
     }  # type: Dict
     supports_multiple_types = False
 
-    discriminator_value_class_map = {
-        'CatalogValueSupplier': 'ask_smapi_model.v1.skill.interaction_model.catalog_value_supplier_slot.CatalogValueSupplierSlot',
-        'InlineValueSupplier': 'ask_smapi_model.v1.skill.interaction_model.inline_value_supplier.InlineValueSupplier'
-    }
+    def __init__(self, id=None, definition=None, description=None, version=None):
+        # type: (Optional[str], Optional[ValueSupplierObject], Optional[str], Optional[str]) -> None
+        """Slot Type version fields with metadata.
 
-    json_discriminator_key = "type"
-
-    __metaclass__ = ABCMeta
-
-    @abstractmethod
-    def __init__(self, object_type=None):
-        # type: (Optional[str]) -> None
-        """Supplier object to provide slot values.
-
-        :param object_type: The exact type of validation e.g.CatalogValueSupplier etc.
-        :type object_type: (optional) str
+        :param id: Slot type id associated with the slot type version.
+        :type id: (optional) str
+        :param definition: 
+        :type definition: (optional) ask_smapi_model.v1.skill.interaction_model.type_version.value_supplier_object.ValueSupplierObject
+        :param description: Description string for specific slot type version.
+        :type description: (optional) str
+        :param version: Specific slot type version.
+        :type version: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
-        self.object_type = object_type
-
-    @classmethod
-    def get_real_child_model(cls, data):
-        # type: (Dict[str, str]) -> Optional[str]
-        """Returns the real base class specified by the discriminator"""
-        discriminator_value = data[cls.json_discriminator_key]
-        return cls.discriminator_value_class_map.get(discriminator_value)
+        self.id = id
+        self.definition = definition
+        self.description = description
+        self.version = version
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -124,7 +119,7 @@ class ValueSupplierSlot(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, ValueSupplierSlot):
+        if not isinstance(other, SlotTypeVersionDataObject):
             return False
 
         return self.__dict__ == other.__dict__
