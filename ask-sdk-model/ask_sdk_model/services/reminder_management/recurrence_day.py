@@ -27,7 +27,7 @@ if typing.TYPE_CHECKING:
 
 class RecurrenceDay(Enum):
     """
-    Day of recurrence
+    Day of recurrence. Deprecated.
 
 
 

@@ -27,7 +27,7 @@ if typing.TYPE_CHECKING:
 
 class RecurrenceFreq(Enum):
     """
-    Frequency of recurrence
+    Frequency of recurrence. Deprecated.
 
 
 

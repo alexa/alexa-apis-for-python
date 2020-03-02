@@ -283,3 +283,11 @@ This release contains the following changes :
 
 - Fix the discriminator value for Alexa HTML message request object.
 - Add Alexa HTML Runtime Error definitions.
+
+
+1.21.0
+~~~~~~
+
+This release contains the following changes : 
+
+- Updated `rules for recurrence creation <https://developer.amazon.com/en-US/docs/alexa/smapi/alexa-reminders-api-reference.html#in-session-and-out-of-session-behavior-for-alexa-reminders-api>`__ in reminders. 

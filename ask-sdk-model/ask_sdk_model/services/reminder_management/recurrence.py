@@ -38,23 +38,35 @@ class Recurrence(object):
     :type by_day: (optional) list[ask_sdk_model.services.reminder_management.recurrence_day.RecurrenceDay]
     :param interval: contains a positive integer representing at which intervals the recurrence rule repeats
     :type interval: (optional) int
+    :param start_date_time: Valid ISO 8601 format - optional start DateTime of recurrence.
+    :type start_date_time: (optional) datetime
+    :param end_date_time: Valid ISO 8601 format - optional end DateTime of recurrence
+    :type end_date_time: (optional) datetime
+    :param recurrence_rules: 
+    :type recurrence_rules: (optional) list[str]
 
     """
     deserialized_types = {
         'freq': 'ask_sdk_model.services.reminder_management.recurrence_freq.RecurrenceFreq',
         'by_day': 'list[ask_sdk_model.services.reminder_management.recurrence_day.RecurrenceDay]',
-        'interval': 'int'
+        'interval': 'int',
+        'start_date_time': 'datetime',
+        'end_date_time': 'datetime',
+        'recurrence_rules': 'list[str]'
     }  # type: Dict
 
     attribute_map = {
         'freq': 'freq',
         'by_day': 'byDay',
-        'interval': 'interval'
+        'interval': 'interval',
+        'start_date_time': 'startDateTime',
+        'end_date_time': 'endDateTime',
+        'recurrence_rules': 'recurrenceRules'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, freq=None, by_day=None, interval=None):
-        # type: (Optional[RecurrenceFreq], Optional[List[RecurrenceDay]], Optional[int]) -> None
+    def __init__(self, freq=None, by_day=None, interval=None, start_date_time=None, end_date_time=None, recurrence_rules=None):
+        # type: (Optional[RecurrenceFreq], Optional[List[RecurrenceDay]], Optional[int], Optional[datetime], Optional[datetime], Optional[List[object]]) -> None
         """Recurring date/time using the RFC 5545 standard in JSON object form
 
         :param freq: 
@@ -63,12 +75,21 @@ class Recurrence(object):
         :type by_day: (optional) list[ask_sdk_model.services.reminder_management.recurrence_day.RecurrenceDay]
         :param interval: contains a positive integer representing at which intervals the recurrence rule repeats
         :type interval: (optional) int
+        :param start_date_time: Valid ISO 8601 format - optional start DateTime of recurrence.
+        :type start_date_time: (optional) datetime
+        :param end_date_time: Valid ISO 8601 format - optional end DateTime of recurrence
+        :type end_date_time: (optional) datetime
+        :param recurrence_rules: 
+        :type recurrence_rules: (optional) list[str]
         """
         self.__discriminator_value = None  # type: str
 
         self.freq = freq
         self.by_day = by_day
         self.interval = interval
+        self.start_date_time = start_date_time
+        self.end_date_time = end_date_time
+        self.recurrence_rules = recurrence_rules
 
     def to_dict(self):
         # type: () -> Dict[str, object]
