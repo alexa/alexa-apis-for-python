@@ -26,6 +26,7 @@ from .monetization import MonetizationServiceClient
 from .proactive_events import ProactiveEventsServiceClient
 from .reminder_management import ReminderManagementServiceClient
 from .skill_messaging import SkillMessagingServiceClient
+from .timer_management import TimerManagementServiceClient
 from .ups import UpsServiceClient
 
 if typing.TYPE_CHECKING:
@@ -125,6 +126,20 @@ class ServiceClientFactory(object):
         except Exception as e:
             raise ValueError(
                 "ServiceClientFactory Error while initializing ReminderManagementServiceClient: " + str(e))
+
+    def get_timer_management_service(self):
+        # type: () -> TimerManagementServiceClient
+        """Get TimerManagementServiceClient for timer_management_service.
+
+        :return: Client for calling the service
+        :rtype: TimerManagementServiceClient
+        :raises: :py:class:`ValueError`
+        """
+        try:
+            return TimerManagementServiceClient(self.api_configuration)
+        except Exception as e:
+            raise ValueError(
+                "ServiceClientFactory Error while initializing TimerManagementServiceClient: " + str(e))
 
     def get_ups_service(self):
         # type: () -> UpsServiceClient
