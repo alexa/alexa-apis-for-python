@@ -24,8 +24,8 @@ from ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_details impor
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_status import BillingAgreementStatus
-    from ask_sdk_model.interfaces.amazonpay.model.v1.destination import Destination
+    from ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_status import BillingAgreementStatusV1
+    from ask_sdk_model.interfaces.amazonpay.model.v1.destination import DestinationV1
     from ask_sdk_model.interfaces.amazonpay.model.response.destination import Destination
     from ask_sdk_model.interfaces.amazonpay.model.response.release_environment import ReleaseEnvironment
 
@@ -73,7 +73,7 @@ class BillingAgreementDetails(BillingAgreementDetails):
     supports_multiple_types = False
 
     def __init__(self, billing_agreement_id=None, creation_timestamp=None, destination=None, checkout_language=None, release_environment=None, billing_agreement_status=None, billing_address=None):
-        # type: (Optional[str], Optional[datetime], Optional[Destination], Optional[str], Optional[ReleaseEnvironment], Optional[BillingAgreementStatus], Optional[Destination]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[DestinationV1], Optional[str], Optional[ReleaseEnvironment], Optional[BillingAgreementStatusV1], Optional[Destination]) -> None
         """The result attributes from successful SetupAmazonPay call.
 
         :param billing_agreement_id: Billing agreement id which can be used for one time and recurring purchases

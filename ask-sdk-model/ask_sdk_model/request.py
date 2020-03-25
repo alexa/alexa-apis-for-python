@@ -59,6 +59,8 @@ class Request(object):
         |
         | SessionEndedRequest: :py:class:`ask_sdk_model.session_ended_request.SessionEndedRequest`,
         |
+        | Alexa.Presentation.APL.LoadIndexListData: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.load_index_list_data_event.LoadIndexListDataEvent`,
+        |
         | AudioPlayer.PlaybackFailed: :py:class:`ask_sdk_model.interfaces.audioplayer.playback_failed_request.PlaybackFailedRequest`,
         |
         | CanFulfillIntentRequest: :py:class:`ask_sdk_model.canfulfill.can_fulfill_intent_request.CanFulfillIntentRequest`,
@@ -109,6 +111,8 @@ class Request(object):
         |
         | Reminders.ReminderUpdated: :py:class:`ask_sdk_model.services.reminder_management.reminder_updated_event_request.ReminderUpdatedEventRequest`,
         |
+        | Alexa.Presentation.APL.RuntimeError: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.runtime_error_event.RuntimeErrorEvent`,
+        |
         | Alexa.Presentation.HTML.RuntimeError: :py:class:`ask_sdk_model.interfaces.alexa.presentation.html.runtime_error_request.RuntimeErrorRequest`,
         |
         | IntentRequest: :py:class:`ask_sdk_model.intent_request.IntentRequest`,
@@ -155,6 +159,7 @@ class Request(object):
         'AlexaHouseholdListEvent.ItemsCreated': 'ask_sdk_model.services.list_management.list_items_created_event_request.ListItemsCreatedEventRequest',
         'SessionResumedRequest': 'ask_sdk_model.session_resumed_request.SessionResumedRequest',
         'SessionEndedRequest': 'ask_sdk_model.session_ended_request.SessionEndedRequest',
+        'Alexa.Presentation.APL.LoadIndexListData': 'ask_sdk_model.interfaces.alexa.presentation.apl.load_index_list_data_event.LoadIndexListDataEvent',
         'AudioPlayer.PlaybackFailed': 'ask_sdk_model.interfaces.audioplayer.playback_failed_request.PlaybackFailedRequest',
         'CanFulfillIntentRequest': 'ask_sdk_model.canfulfill.can_fulfill_intent_request.CanFulfillIntentRequest',
         'CustomInterfaceController.Expired': 'ask_sdk_model.interfaces.custom_interface_controller.expired_request.ExpiredRequest',
@@ -180,6 +185,7 @@ class Request(object):
         'Display.ElementSelected': 'ask_sdk_model.interfaces.display.element_selected_request.ElementSelectedRequest',
         'AlexaSkillEvent.SkillPermissionChanged': 'ask_sdk_model.events.skillevents.permission_changed_request.PermissionChangedRequest',
         'Reminders.ReminderUpdated': 'ask_sdk_model.services.reminder_management.reminder_updated_event_request.ReminderUpdatedEventRequest',
+        'Alexa.Presentation.APL.RuntimeError': 'ask_sdk_model.interfaces.alexa.presentation.apl.runtime_error_event.RuntimeErrorEvent',
         'Alexa.Presentation.HTML.RuntimeError': 'ask_sdk_model.interfaces.alexa.presentation.html.runtime_error_request.RuntimeErrorRequest',
         'IntentRequest': 'ask_sdk_model.intent_request.IntentRequest',
         'Reminders.ReminderStarted': 'ask_sdk_model.services.reminder_management.reminder_started_event_request.ReminderStartedEventRequest',

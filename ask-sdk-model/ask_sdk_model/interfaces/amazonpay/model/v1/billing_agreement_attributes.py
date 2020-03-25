@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_sdk_model.interfaces.amazonpay.model.v1.seller_billing_agreement_attributes import SellerBillingAgreementAttributes
-    from ask_sdk_model.interfaces.amazonpay.model.v1.price import Price
-    from ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_type import BillingAgreementType
+    from ask_sdk_model.interfaces.amazonpay.model.v1.price import PriceV1
+    from ask_sdk_model.interfaces.amazonpay.model.v1.seller_billing_agreement_attributes import SellerBillingAgreementAttributesV1
+    from ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_type import BillingAgreementTypeV1
 
 
 class BillingAgreementAttributes(object):
@@ -63,7 +63,7 @@ class BillingAgreementAttributes(object):
     supports_multiple_types = False
 
     def __init__(self, platform_id=None, seller_note=None, seller_billing_agreement_attributes=None, billing_agreement_type=None, subscription_amount=None):
-        # type: (Optional[str], Optional[str], Optional[SellerBillingAgreementAttributes], Optional[BillingAgreementType], Optional[Price]) -> None
+        # type: (Optional[str], Optional[str], Optional[SellerBillingAgreementAttributesV1], Optional[BillingAgreementTypeV1], Optional[PriceV1]) -> None
         """The merchant can choose to set the attributes specified in the BillingAgreementAttributes.
 
         :param platform_id: Represents the SellerId of the Solution Provider that developed the eCommerce platform. This value is only used by Solution Providers, for whom it is required. It should not be provided by merchants creating their own custom integration. Do not specify the SellerId of the merchant for this request parameter. If you are a merchant, do not enter a PlatformId.

@@ -18,63 +18,72 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
+from abc import ABCMeta, abstractmethod
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_sdk_model.interfaces.amazonpay.model.v1.state import StateV1
 
 
-class AuthorizationStatus(object):
+class RuntimeError(object):
     """
-    Indicates the current status of an Authorization object, a Capture object, or a Refund object.
+    A description of an error in APL functionality.
 
 
-    :param state: 
-    :type state: (optional) ask_sdk_model.interfaces.amazonpay.model.v1.state.State
-    :param reason_code: The reason that the Authorization object, Capture object, or Refund object is in the current state. For more information, see - https://pay.amazon.com/us/developer/documentation/apireference/201752950
-    :type reason_code: (optional) str
-    :param reason_description: Reason desciption corresponding to the reason code
-    :type reason_description: (optional) str
-    :param last_update_timestamp: A timestamp that indicates the time when the authorization, capture, or refund state was last updated. In ISO 8601 format
-    :type last_update_timestamp: (optional) datetime
+    :param object_type: Defines the error type and dictates which properties must/can be included.
+    :type object_type: (optional) str
+    :param message: A human-readable description of the error.
+    :type message: (optional) str
+
+    .. note::
+
+        This is an abstract class. Use the following mapping, to figure out
+        the model class to be instantiated, that sets ``type`` variable.
+
+        | LIST_ERROR: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.list_runtime_error.ListRuntimeError`
 
     """
     deserialized_types = {
-        'state': 'ask_sdk_model.interfaces.amazonpay.model.v1.state.State',
-        'reason_code': 'str',
-        'reason_description': 'str',
-        'last_update_timestamp': 'datetime'
+        'object_type': 'str',
+        'message': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'state': 'state',
-        'reason_code': 'reasonCode',
-        'reason_description': 'reasonDescription',
-        'last_update_timestamp': 'lastUpdateTimestamp'
+        'object_type': 'type',
+        'message': 'message'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, state=None, reason_code=None, reason_description=None, last_update_timestamp=None):
-        # type: (Optional[StateV1], Optional[str], Optional[str], Optional[datetime]) -> None
-        """Indicates the current status of an Authorization object, a Capture object, or a Refund object.
+    discriminator_value_class_map = {
+        'LIST_ERROR': 'ask_sdk_model.interfaces.alexa.presentation.apl.list_runtime_error.ListRuntimeError'
+    }
 
-        :param state: 
-        :type state: (optional) ask_sdk_model.interfaces.amazonpay.model.v1.state.State
-        :param reason_code: The reason that the Authorization object, Capture object, or Refund object is in the current state. For more information, see - https://pay.amazon.com/us/developer/documentation/apireference/201752950
-        :type reason_code: (optional) str
-        :param reason_description: Reason desciption corresponding to the reason code
-        :type reason_description: (optional) str
-        :param last_update_timestamp: A timestamp that indicates the time when the authorization, capture, or refund state was last updated. In ISO 8601 format
-        :type last_update_timestamp: (optional) datetime
+    json_discriminator_key = "type"
+
+    __metaclass__ = ABCMeta
+
+    @abstractmethod
+    def __init__(self, object_type=None, message=None):
+        # type: (Optional[str], Optional[str]) -> None
+        """A description of an error in APL functionality.
+
+        :param object_type: Defines the error type and dictates which properties must/can be included.
+        :type object_type: (optional) str
+        :param message: A human-readable description of the error.
+        :type message: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
-        self.state = state
-        self.reason_code = reason_code
-        self.reason_description = reason_description
-        self.last_update_timestamp = last_update_timestamp
+        self.object_type = object_type
+        self.message = message
+
+    @classmethod
+    def get_real_child_model(cls, data):
+        # type: (Dict[str, str]) -> Optional[str]
+        """Returns the real base class specified by the discriminator"""
+        discriminator_value = data[cls.json_discriminator_key]
+        return cls.discriminator_value_class_map.get(discriminator_value)
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -119,7 +128,7 @@ class AuthorizationStatus(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, AuthorizationStatus):
+        if not isinstance(other, RuntimeError):
             return False
 
         return self.__dict__ == other.__dict__

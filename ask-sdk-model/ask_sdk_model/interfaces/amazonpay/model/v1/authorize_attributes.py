@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_sdk_model.interfaces.amazonpay.model.v1.price import Price
+    from ask_sdk_model.interfaces.amazonpay.model.v1.price import PriceV1
 
 
 class AuthorizeAttributes(object):
@@ -61,7 +61,7 @@ class AuthorizeAttributes(object):
     supports_multiple_types = False
 
     def __init__(self, authorization_reference_id=None, authorization_amount=None, transaction_timeout=None, seller_authorization_note=None, soft_descriptor=None):
-        # type: (Optional[str], Optional[Price], Optional[int], Optional[str], Optional[str]) -> None
+        # type: (Optional[str], Optional[PriceV1], Optional[int], Optional[str], Optional[str]) -> None
         """This is an object to set the attributes specified in the AuthorizeAttributes table. See the “AuthorizationDetails” section of the Amazon Pay API reference guide for details about this object.
 
         :param authorization_reference_id: This is 3P seller&#39;s identifier for this authorization transaction. This identifier must be unique for all of your authorization transactions.

@@ -49,6 +49,8 @@ class Directive(object):
         |
         | GadgetController.SetLight: :py:class:`ask_sdk_model.interfaces.gadget_controller.set_light_directive.SetLightDirective`,
         |
+        | Alexa.Presentation.APL.SendIndexListData: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.send_index_list_data_directive.SendIndexListDataDirective`,
+        |
         | Dialog.Delegate: :py:class:`ask_sdk_model.dialog.delegate_directive.DelegateDirective`,
         |
         | Dialog.ConfirmIntent: :py:class:`ask_sdk_model.dialog.confirm_intent_directive.ConfirmIntentDirective`,
@@ -91,7 +93,9 @@ class Directive(object):
         |
         | Connections.SendResponse: :py:class:`ask_sdk_model.interfaces.connections.send_response_directive.SendResponseDirective`,
         |
-        | AudioPlayer.ClearQueue: :py:class:`ask_sdk_model.interfaces.audioplayer.clear_queue_directive.ClearQueueDirective`
+        | AudioPlayer.ClearQueue: :py:class:`ask_sdk_model.interfaces.audioplayer.clear_queue_directive.ClearQueueDirective`,
+        |
+        | Alexa.Presentation.APL.UpdateIndexListData: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.update_index_list_data_directive.UpdateIndexListDataDirective`
 
     """
     deserialized_types = {
@@ -110,6 +114,7 @@ class Directive(object):
         'Dialog.UpdateDynamicEntities': 'ask_sdk_model.dialog.dynamic_entities_directive.DynamicEntitiesDirective',
         'CustomInterfaceController.StartEventHandler': 'ask_sdk_model.interfaces.custom_interface_controller.start_event_handler_directive.StartEventHandlerDirective',
         'GadgetController.SetLight': 'ask_sdk_model.interfaces.gadget_controller.set_light_directive.SetLightDirective',
+        'Alexa.Presentation.APL.SendIndexListData': 'ask_sdk_model.interfaces.alexa.presentation.apl.send_index_list_data_directive.SendIndexListDataDirective',
         'Dialog.Delegate': 'ask_sdk_model.dialog.delegate_directive.DelegateDirective',
         'Dialog.ConfirmIntent': 'ask_sdk_model.dialog.confirm_intent_directive.ConfirmIntentDirective',
         'CustomInterfaceController.SendDirective': 'ask_sdk_model.interfaces.custom_interface_controller.send_directive_directive.SendDirectiveDirective',
@@ -131,7 +136,8 @@ class Directive(object):
         'Tasks.CompleteTask': 'ask_sdk_model.interfaces.tasks.complete_task_directive.CompleteTaskDirective',
         'Alexa.Presentation.APL.RenderDocument': 'ask_sdk_model.interfaces.alexa.presentation.apl.render_document_directive.RenderDocumentDirective',
         'Connections.SendResponse': 'ask_sdk_model.interfaces.connections.send_response_directive.SendResponseDirective',
-        'AudioPlayer.ClearQueue': 'ask_sdk_model.interfaces.audioplayer.clear_queue_directive.ClearQueueDirective'
+        'AudioPlayer.ClearQueue': 'ask_sdk_model.interfaces.audioplayer.clear_queue_directive.ClearQueueDirective',
+        'Alexa.Presentation.APL.UpdateIndexListData': 'ask_sdk_model.interfaces.alexa.presentation.apl.update_index_list_data_directive.UpdateIndexListDataDirective'
     }
 
     json_discriminator_key = "type"

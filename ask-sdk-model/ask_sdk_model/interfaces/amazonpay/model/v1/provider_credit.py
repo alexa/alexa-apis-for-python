@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_sdk_model.interfaces.amazonpay.model.v1.price import Price
+    from ask_sdk_model.interfaces.amazonpay.model.v1.price import PriceV1
 
 
 class ProviderCredit(object):
@@ -47,7 +47,7 @@ class ProviderCredit(object):
     supports_multiple_types = False
 
     def __init__(self, provider_id=None, credit=None):
-        # type: (Optional[str], Optional[Price]) -> None
+        # type: (Optional[str], Optional[PriceV1]) -> None
         """
 
         :param provider_id: This is required only for Ecommerce provider (Solution provider) use cases.

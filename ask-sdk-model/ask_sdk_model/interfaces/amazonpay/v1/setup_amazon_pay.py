@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_attributes import BillingAgreementAttributes
+    from ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_attributes import BillingAgreementAttributesV1
 
 
 class SetupAmazonPay(object):
@@ -77,7 +77,7 @@ class SetupAmazonPay(object):
     supports_multiple_types = False
 
     def __init__(self, consent_token=None, seller_id=None, country_of_establishment=None, ledger_currency=None, checkout_language=None, billing_agreement_attributes=None, need_amazon_shipping_address=False, sandbox_mode=False, sandbox_customer_email_id=None):
-        # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[BillingAgreementAttributes], Optional[bool], Optional[bool], Optional[str]) -> None
+        # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[BillingAgreementAttributesV1], Optional[bool], Optional[bool], Optional[str]) -> None
         """Setup Amazon Pay Request Object
 
         :param consent_token: Authorization token that contains the permissions consented to by the user.

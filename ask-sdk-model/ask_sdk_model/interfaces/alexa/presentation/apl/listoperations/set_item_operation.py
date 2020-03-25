@@ -18,63 +18,52 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
+from ask_sdk_model.interfaces.alexa.presentation.apl.listoperations.operation import Operation
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_sdk_model.interfaces.amazonpay.model.v1.state import StateV1
 
 
-class AuthorizationStatus(object):
+class SetItemOperation(Operation):
     """
-    Indicates the current status of an Authorization object, a Capture object, or a Refund object.
+    Sets an item at a specified index in a dynamicIndexList.
 
 
-    :param state: 
-    :type state: (optional) ask_sdk_model.interfaces.amazonpay.model.v1.state.State
-    :param reason_code: The reason that the Authorization object, Capture object, or Refund object is in the current state. For more information, see - https://pay.amazon.com/us/developer/documentation/apireference/201752950
-    :type reason_code: (optional) str
-    :param reason_description: Reason desciption corresponding to the reason code
-    :type reason_description: (optional) str
-    :param last_update_timestamp: A timestamp that indicates the time when the authorization, capture, or refund state was last updated. In ISO 8601 format
-    :type last_update_timestamp: (optional) datetime
+    :param index: The position of the item in the dynamicIndexList to which the operation is to be applied. For inserts and deletes that operate on multiple items, this value represents the starting index, with onward inserts/deletes applying to consecutively increasing positions.
+    :type index: (optional) int
+    :param item: The replacement item.
+    :type item: (optional) object
 
     """
     deserialized_types = {
-        'state': 'ask_sdk_model.interfaces.amazonpay.model.v1.state.State',
-        'reason_code': 'str',
-        'reason_description': 'str',
-        'last_update_timestamp': 'datetime'
+        'object_type': 'str',
+        'index': 'int',
+        'item': 'object'
     }  # type: Dict
 
     attribute_map = {
-        'state': 'state',
-        'reason_code': 'reasonCode',
-        'reason_description': 'reasonDescription',
-        'last_update_timestamp': 'lastUpdateTimestamp'
+        'object_type': 'type',
+        'index': 'index',
+        'item': 'item'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, state=None, reason_code=None, reason_description=None, last_update_timestamp=None):
-        # type: (Optional[StateV1], Optional[str], Optional[str], Optional[datetime]) -> None
-        """Indicates the current status of an Authorization object, a Capture object, or a Refund object.
+    def __init__(self, index=None, item=None):
+        # type: (Optional[int], Optional[object]) -> None
+        """Sets an item at a specified index in a dynamicIndexList.
 
-        :param state: 
-        :type state: (optional) ask_sdk_model.interfaces.amazonpay.model.v1.state.State
-        :param reason_code: The reason that the Authorization object, Capture object, or Refund object is in the current state. For more information, see - https://pay.amazon.com/us/developer/documentation/apireference/201752950
-        :type reason_code: (optional) str
-        :param reason_description: Reason desciption corresponding to the reason code
-        :type reason_description: (optional) str
-        :param last_update_timestamp: A timestamp that indicates the time when the authorization, capture, or refund state was last updated. In ISO 8601 format
-        :type last_update_timestamp: (optional) datetime
+        :param index: The position of the item in the dynamicIndexList to which the operation is to be applied. For inserts and deletes that operate on multiple items, this value represents the starting index, with onward inserts/deletes applying to consecutively increasing positions.
+        :type index: (optional) int
+        :param item: The replacement item.
+        :type item: (optional) object
         """
-        self.__discriminator_value = None  # type: str
+        self.__discriminator_value = "SetItem"  # type: str
 
-        self.state = state
-        self.reason_code = reason_code
-        self.reason_description = reason_description
-        self.last_update_timestamp = last_update_timestamp
+        self.object_type = self.__discriminator_value
+        super(SetItemOperation, self).__init__(object_type=self.__discriminator_value, index=index)
+        self.item = item
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -119,7 +108,7 @@ class AuthorizationStatus(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, AuthorizationStatus):
+        if not isinstance(other, SetItemOperation):
             return False
 
         return self.__dict__ == other.__dict__
