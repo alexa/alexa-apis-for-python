@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.type_value_object import TypeValueObject
+    from ask_smapi_model.v1.skill.interaction_model.type_value_object import TypeValueObjectV1
 
 
 class TypeValue(object):
@@ -49,7 +49,7 @@ class TypeValue(object):
     supports_multiple_types = False
 
     def __init__(self, id=None, name=None):
-        # type: (Optional[str], Optional[TypeValueObject]) -> None
+        # type: (Optional[str], Optional[TypeValueObjectV1]) -> None
         """The value schema in type object of interaction model.
 
         :param id: 

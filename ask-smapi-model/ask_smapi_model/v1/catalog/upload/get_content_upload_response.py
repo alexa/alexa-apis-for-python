@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.catalog.upload.upload_ingestion_step import UploadIngestionStep
-    from ask_smapi_model.v1.catalog.upload.upload_status import UploadStatus
-    from ask_smapi_model.v1.catalog.upload.content_upload_file_summary import ContentUploadFileSummary
+    from ask_smapi_model.v1.catalog.upload.upload_status import UploadStatusV1
+    from ask_smapi_model.v1.catalog.upload.content_upload_file_summary import ContentUploadFileSummaryV1
+    from ask_smapi_model.v1.catalog.upload.upload_ingestion_step import UploadIngestionStepV1
 
 
 class GetContentUploadResponse(object):
@@ -69,7 +69,7 @@ class GetContentUploadResponse(object):
     supports_multiple_types = False
 
     def __init__(self, id=None, catalog_id=None, status=None, created_date=None, last_updated_date=None, file=None, ingestion_steps=None):
-        # type: (Optional[str], Optional[str], Optional[UploadStatus], Optional[datetime], Optional[datetime], Optional[ContentUploadFileSummary], Optional[List[UploadIngestionStep]]) -> None
+        # type: (Optional[str], Optional[str], Optional[UploadStatusV1], Optional[datetime], Optional[datetime], Optional[ContentUploadFileSummaryV1], Optional[List[UploadIngestionStepV1]]) -> None
         """
 
         :param id: Unique identifier of the upload

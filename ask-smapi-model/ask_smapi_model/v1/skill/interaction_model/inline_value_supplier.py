@@ -24,7 +24,7 @@ from ask_smapi_model.v1.skill.interaction_model.value_supplier import ValueSuppl
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.type_value import TypeValue
+    from ask_smapi_model.v1.skill.interaction_model.type_value import TypeValueV1
 
 
 class InlineValueSupplier(ValueSupplier):
@@ -48,7 +48,7 @@ class InlineValueSupplier(ValueSupplier):
     supports_multiple_types = False
 
     def __init__(self, values=None):
-        # type: (Optional[List[TypeValue]]) -> None
+        # type: (Optional[List[TypeValueV1]]) -> None
         """Supplies inline slot type values.
 
         :param values: The list of slot type values.

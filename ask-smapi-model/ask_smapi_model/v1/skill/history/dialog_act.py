@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.history.dialog_act_name import DialogActName
+    from ask_smapi_model.v1.skill.history.dialog_act_name import DialogActNameV1
 
 
 class DialogAct(object):
@@ -45,7 +45,7 @@ class DialogAct(object):
     supports_multiple_types = False
 
     def __init__(self, name=None):
-        # type: (Optional[DialogActName]) -> None
+        # type: (Optional[DialogActNameV1]) -> None
         """The dialog act used in the interaction.
 
         :param name: 

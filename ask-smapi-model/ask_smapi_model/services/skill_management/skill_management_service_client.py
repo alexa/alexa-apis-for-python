@@ -32,84 +32,92 @@ from ask_sdk_model_runtime.lwa.lwa_client import LwaClient
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.catalog.create_content_upload_url_response import CreateContentUploadUrlResponse
-    from ask_smapi_model.v1.skill.interaction_model.type_version.version_data import VersionData
-    from ask_smapi_model.v1.skill.history.intent_requests import IntentRequests
-    from ask_smapi_model.v1.skill.history.dialog_act_name import DialogActName
-    from ask_smapi_model.v1.skill.validations.validations_api_response import ValidationsApiResponse
-    from ask_smapi_model.v1.skill.upload_response import UploadResponse
-    from ask_smapi_model.v1.skill.interaction_model.catalog.catalog_status import CatalogStatus
-    from ask_smapi_model.v1.skill.simulations.simulations_api_request import SimulationsApiRequest
-    from ask_smapi_model.v1.skill.interaction_model.version.catalog_values import CatalogValues
-    from ask_smapi_model.v1.skill.certification.certification_response import CertificationResponse
-    from ask_smapi_model.v1.skill.interaction_model.type_version.list_slot_type_version_response import ListSlotTypeVersionResponse
-    from ask_smapi_model.v1.skill.interaction_model.model_type.list_slot_type_response import ListSlotTypeResponse
-    from ask_smapi_model.v1.skill.history.intent_confidence_bin import IntentConfidenceBin
-    from ask_smapi_model.v1.skill.create_skill_request import CreateSkillRequest
-    from ask_smapi_model.v1.skill.manifest.skill_manifest_envelope import SkillManifestEnvelope
-    from ask_smapi_model.v1.catalog.upload.get_content_upload_response import GetContentUploadResponse
-    from ask_smapi_model.v1.skill.interaction_model.model_type.update_request import UpdateRequest
-    from ask_smapi_model.v1.skill.evaluations.profile_nlu_request import ProfileNluRequest
-    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_permission import HostedSkillPermission
-    from ask_smapi_model.v1.isp.update_in_skill_product_request import UpdateInSkillProductRequest
-    from ask_smapi_model.v1.skill.interaction_model.catalog.definition_data import DefinitionData
-    from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_status import SlotTypeStatus
+    from ask_smapi_model.v1.skill.interaction_model.catalog.catalog_response import CatalogResponseV1
+    from ask_smapi_model.v1.skill.interaction_model.type_version.list_slot_type_version_response import ListSlotTypeVersionResponseV1
+    from ask_smapi_model.v1.skill.beta_test.test_body import TestBodyV1
+    from ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_version_data import SlotTypeVersionDataV1
+    from ask_smapi_model.v1.skill.interaction_model.catalog.definition_data import DefinitionDataV1
+    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_metadata import HostedSkillMetadataV1
+    from ask_smapi_model.v1.audit_logs.audit_logs_response import AuditLogsResponseV1
+    from ask_smapi_model.v1.skill.update_skill_with_package_request import UpdateSkillWithPackageRequestV1
+    from ask_smapi_model.v1.skill.metrics.get_metric_data_response import GetMetricDataResponseV1
+    from ask_smapi_model.v1.isp.list_in_skill_product_response import ListInSkillProductResponseV1
+    from ask_smapi_model.v1.isp.update_in_skill_product_request import UpdateInSkillProductRequestV1
+    from ask_smapi_model.v1.skill.evaluations.profile_nlu_response import ProfileNluResponseV1
+    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_repository_credentials_request import HostedSkillRepositoryCredentialsRequestV1
+    from ask_smapi_model.v2.skill.invocations.invocations_api_response import InvocationsApiResponseV2
+    from ask_smapi_model.v1.skill.beta_test.testers.list_testers_response import ListTestersResponseV1
+    from ask_smapi_model.v1.skill.interaction_model.version.catalog_update import CatalogUpdateV1
+    from ask_smapi_model.v1.skill.interaction_model.model_type.list_slot_type_response import ListSlotTypeResponseV1
+    from ask_smapi_model.v1.skill.create_skill_response import CreateSkillResponseV1
+    from ask_smapi_model.v1.skill.validations.validations_api_response import ValidationsApiResponseV1
     import str
-    from ask_smapi_model.v1.skill.interaction_model.catalog.list_catalog_response import ListCatalogResponse
-    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_metadata import HostedSkillMetadata
-    from ask_smapi_model.v1.error import Error
-    from ask_smapi_model.v1.skill.list_skill_response import ListSkillResponse
-    from ask_smapi_model.v1.skill.interaction_model.model_type.bad_request import BadRequest
-    from ask_smapi_model.v1.skill.beta_test.testers.list_testers_response import ListTestersResponse
-    from ask_smapi_model.v1.stage_type import StageType
-    from ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_update import SlotTypeUpdate
-    from ask_smapi_model.v1.skill.history.locale_in_query import LocaleInQuery
-    from ask_smapi_model.v1.skill.simulations.simulations_api_response import SimulationsApiResponse
-    from ask_smapi_model.v1.bad_request_error import BadRequestError
-    from ask_smapi_model.v1.skill.evaluations.profile_nlu_response import ProfileNluResponse
-    from ask_smapi_model.v1.skill.interaction_model.interaction_model_data import InteractionModelData
-    from ask_smapi_model.v1.skill.interaction_model.version.version_data import VersionData
-    from ask_smapi_model.v1.isp.create_in_skill_product_request import CreateInSkillProductRequest
-    from ask_smapi_model.v1.skill.beta_test.testers.testers_list import TestersList
-    from ask_smapi_model.v1.skill.history.interaction_type import InteractionType
-    from ask_smapi_model.v1.skill.create_skill_response import CreateSkillResponse
-    from ask_smapi_model.v1.skill.update_skill_with_package_request import UpdateSkillWithPackageRequest
-    from ask_smapi_model.v1.catalog.upload.catalog_upload_base import CatalogUploadBase
-    from ask_smapi_model.v1.catalog.create_content_upload_url_request import CreateContentUploadUrlRequest
-    from ask_smapi_model.v1.skill.export_response import ExportResponse
-    from ask_smapi_model.v1.skill.beta_test.test_body import TestBody
-    from ask_smapi_model.v1.isp.product_response import ProductResponse
-    from ask_smapi_model.v1.skill.validations.validations_api_request import ValidationsApiRequest
-    from ask_smapi_model.v1.isp.associated_skill_response import AssociatedSkillResponse
-    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_repository_credentials_list import HostedSkillRepositoryCredentialsList
-    from ask_smapi_model.v1.skill.metrics.get_metric_data_response import GetMetricDataResponse
-    from ask_smapi_model.v1.skill.beta_test.beta_test import BetaTest
-    from ask_smapi_model.v1.isp.in_skill_product_summary_response import InSkillProductSummaryResponse
-    from ask_smapi_model.v1.skill.private.list_private_distribution_accounts_response import ListPrivateDistributionAccountsResponse
-    from ask_smapi_model.v1.skill.account_linking.account_linking_request import AccountLinkingRequest
-    from ask_smapi_model.v1.skill.withdraw_request import WithdrawRequest
-    from ask_smapi_model.v1.skill.interaction_model.model_type.definition_data import DefinitionData
-    from ask_smapi_model.v1.vendor_management.vendors import Vendors
-    from ask_smapi_model.v1.skill.interaction_model.version.catalog_version_data import CatalogVersionData
-    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_repository_credentials_request import HostedSkillRepositoryCredentialsRequest
-    from ask_smapi_model.v1.skill.interaction_model.catalog.catalog_definition_output import CatalogDefinitionOutput
-    from ask_smapi_model.v1.skill.interaction_model.catalog.catalog_response import CatalogResponse
-    from ask_smapi_model.v1.skill.import_response import ImportResponse
-    from ask_smapi_model.v1.skill.interaction_model.version.catalog_update import CatalogUpdate
-    from ask_smapi_model.v1.skill.standardized_error import StandardizedError
-    from ask_smapi_model.v1.skill.history.publication_status import PublicationStatus
-    from ask_smapi_model.v1.skill.submit_skill_for_certification_request import SubmitSkillForCertificationRequest
-    from ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_version_data import SlotTypeVersionData
-    from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_response import SlotTypeResponse
-    from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_definition_output import SlotTypeDefinitionOutput
-    from ask_smapi_model.v1.skill.skill_status import SkillStatus
-    from ask_smapi_model.v1.skill.account_linking.account_linking_response import AccountLinkingResponse
-    from ask_smapi_model.v1.isp.in_skill_product_definition_response import InSkillProductDefinitionResponse
-    from ask_smapi_model.v1.skill.ssl_certificate_payload import SSLCertificatePayload
-    from ask_smapi_model.v1.isp.list_in_skill_product_response import ListInSkillProductResponse
-    from ask_smapi_model.v1.skill.interaction_model.version.list_response import ListResponse
-    from ask_smapi_model.v1.skill.certification.list_certifications_response import ListCertificationsResponse
-    from ask_smapi_model.v1.skill.create_skill_with_package_request import CreateSkillWithPackageRequest
+    from ask_smapi_model.v1.skill.interaction_model.model_type.update_request import UpdateRequestV1
+    from ask_smapi_model.v1.skill.export_response import ExportResponseV1
+    from ask_smapi_model.v1.skill.evaluations.profile_nlu_request import ProfileNluRequestV1
+    from ask_smapi_model.v1.skill.withdraw_request import WithdrawRequestV1
+    from ask_smapi_model.v1.isp.associated_skill_response import AssociatedSkillResponseV1
+    from ask_smapi_model.v1.stage_type import StageTypeV1
+    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_permission import HostedSkillPermissionV1
+    from ask_smapi_model.v2.skill.simulations.simulations_api_request import SimulationsApiRequestV2
+    from ask_smapi_model.v1.skill.simulations.simulations_api_response import SimulationsApiResponseV1
+    from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_definition_output import SlotTypeDefinitionOutputV1
+    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_repository_credentials_list import HostedSkillRepositoryCredentialsListV1
+    from ask_smapi_model.v1.skill.upload_response import UploadResponseV1
+    from ask_smapi_model.v1.isp.in_skill_product_summary_response import InSkillProductSummaryResponseV1
+    from ask_smapi_model.v1.catalog.create_content_upload_url_response import CreateContentUploadUrlResponseV1
+    from ask_smapi_model.v1.skill.interaction_model.model_type.bad_request import BadRequestV1
+    from ask_smapi_model.v1.skill.simulations.simulations_api_request import SimulationsApiRequestV1
+    from ask_smapi_model.v1.skill.ssl_certificate_payload import SSLCertificatePayloadV1
+    from ask_smapi_model.v1.catalog.create_content_upload_url_request import CreateContentUploadUrlRequestV1
+    from ask_smapi_model.v1.skill.certification.list_certifications_response import ListCertificationsResponseV1
+    from ask_smapi_model.v1.audit_logs.audit_logs_request import AuditLogsRequestV1
+    from ask_smapi_model.v2.skill.simulations.simulations_api_response import SimulationsApiResponseV2
+    from ask_smapi_model.v1.skill.standardized_error import StandardizedErrorV1
+    from ask_smapi_model.v1.catalog.upload.catalog_upload_base import CatalogUploadBaseV1
+    from ask_smapi_model.v1.skill.interaction_model.version.catalog_values import CatalogValuesV1
+    from ask_smapi_model.v1.isp.in_skill_product_definition_response import InSkillProductDefinitionResponseV1
+    from ask_smapi_model.v1.error import ErrorV1
+    from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_status import SlotTypeStatusV1
+    from ask_smapi_model.v1.skill.interaction_model.model_type.definition_data import DefinitionDataV1
+    from ask_smapi_model.v1.skill.account_linking.account_linking_request import AccountLinkingRequestV1
+    from ask_smapi_model.v1.skill.manifest.skill_manifest_envelope import SkillManifestEnvelopeV1
+    from ask_smapi_model.v2.error import ErrorV2
+    from ask_smapi_model.v1.skill.list_skill_response import ListSkillResponseV1
+    from ask_smapi_model.v1.skill.history.intent_requests import IntentRequestsV1
+    from ask_smapi_model.v1.skill.interaction_model.interaction_model_data import InteractionModelDataV1
+    from ask_smapi_model.v1.skill.validations.validations_api_request import ValidationsApiRequestV1
+    from ask_smapi_model.v1.skill.submit_skill_for_certification_request import SubmitSkillForCertificationRequestV1
+    from ask_smapi_model.v2.bad_request_error import BadRequestErrorV2
+    from ask_smapi_model.v1.catalog.upload.get_content_upload_response import GetContentUploadResponseV1
+    from ask_smapi_model.v1.skill.history.dialog_act_name import DialogActNameV1
+    from ask_smapi_model.v1.skill.interaction_model.type_version.version_data import VersionDataV1
+    from ask_smapi_model.v1.skill.import_response import ImportResponseV1
+    from ask_smapi_model.v1.skill.skill_status import SkillStatusV1
+    from ask_smapi_model.v1.skill.beta_test.beta_test import BetaTestV1
+    from ask_smapi_model.v1.skill.history.locale_in_query import LocaleInQueryV1
+    from ask_smapi_model.v1.skill.history.publication_status import PublicationStatusV1
+    from ask_smapi_model.v2.skill.invocations.invocations_api_request import InvocationsApiRequestV2
+    from ask_smapi_model.v1.skill.interaction_model.catalog.list_catalog_response import ListCatalogResponseV1
+    from ask_smapi_model.v1.isp.create_in_skill_product_request import CreateInSkillProductRequestV1
+    from ask_smapi_model.v1.skill.interaction_model.catalog.catalog_definition_output import CatalogDefinitionOutputV1
+    from ask_smapi_model.v1.skill.account_linking.account_linking_response import AccountLinkingResponseV1
+    from ask_smapi_model.v1.skill.interaction_model.version.version_data import VersionDataV1
+    from ask_smapi_model.v1.skill.history.intent_confidence_bin import IntentConfidenceBinV1
+    from ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_update import SlotTypeUpdateV1
+    from ask_smapi_model.v1.skill.beta_test.testers.testers_list import TestersListV1
+    from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_response import SlotTypeResponseV1
+    from ask_smapi_model.v1.bad_request_error import BadRequestErrorV1
+    from ask_smapi_model.v1.isp.product_response import ProductResponseV1
+    from ask_smapi_model.v1.skill.create_skill_request import CreateSkillRequestV1
+    from ask_smapi_model.v1.vendor_management.vendors import VendorsV1
+    from ask_smapi_model.v1.skill.certification.certification_response import CertificationResponseV1
+    from ask_smapi_model.v1.skill.private.list_private_distribution_accounts_response import ListPrivateDistributionAccountsResponseV1
+    from ask_smapi_model.v1.skill.interaction_model.version.catalog_version_data import CatalogVersionDataV1
+    from ask_smapi_model.v1.skill.create_skill_with_package_request import CreateSkillWithPackageRequestV1
+    from ask_smapi_model.v1.skill.history.interaction_type import InteractionTypeV1
+    from ask_smapi_model.v1.skill.interaction_model.catalog.catalog_status import CatalogStatusV1
+    from ask_smapi_model.v1.skill.interaction_model.version.list_response import ListResponseV1
 
 
 class SkillManagementServiceClient(BaseServiceClient):
@@ -146,7 +154,7 @@ class SkillManagementServiceClient(BaseServiceClient):
             self._lwa_service_client = lwa_client
 
     def create_catalog_upload_v1(self, catalog_id, catalog_upload_request_body, **kwargs):
-        # type: (str, CatalogUploadBase, **Any) -> Union[ApiResponse, Error, BadRequestError]
+        # type: (str, CatalogUploadBaseV1, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         Create new upload
         Create a new upload for a catalog and returns location to track the upload process.
@@ -158,7 +166,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "create_catalog_upload_v1"
         params = locals()
@@ -227,7 +235,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_content_upload_by_id_v1(self, catalog_id, upload_id, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, Error, GetContentUploadResponse, BadRequestError]
+        # type: (str, str, **Any) -> Union[ApiResponse, ErrorV1, GetContentUploadResponseV1, BadRequestErrorV1]
         """
         Get upload
         Gets detailed information about an upload which was created for a specific catalog. Includes the upload's ingestion steps and a url for downloading the file.
@@ -239,7 +247,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, GetContentUploadResponse, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, GetContentUploadResponseV1, BadRequestErrorV1]
         """
         operation_name = "get_content_upload_by_id_v1"
         params = locals()
@@ -307,7 +315,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def generate_catalog_upload_url_v1(self, catalog_id, generate_catalog_upload_url_request_body, **kwargs):
-        # type: (str, CreateContentUploadUrlRequest, **Any) -> Union[ApiResponse, CreateContentUploadUrlResponse, Error, BadRequestError]
+        # type: (str, CreateContentUploadUrlRequestV1, **Any) -> Union[ApiResponse, ErrorV1, CreateContentUploadUrlResponseV1, BadRequestErrorV1]
         """
         Generate preSigned urls to upload data
 
@@ -318,7 +326,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, CreateContentUploadUrlResponse, Error, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, CreateContentUploadUrlResponseV1, BadRequestErrorV1]
         """
         operation_name = "generate_catalog_upload_url_v1"
         params = locals()
@@ -386,8 +394,80 @@ class SkillManagementServiceClient(BaseServiceClient):
             return api_response
         return api_response.body
 
+    def query_development_audit_logs_v1(self, get_audit_logs_request, **kwargs):
+        # type: (AuditLogsRequestV1, **Any) -> Union[ApiResponse, ErrorV1, AuditLogsResponseV1, BadRequestErrorV1]
+        """
+        The SMAPI Audit Logs API provides customers with an audit history of all SMAPI calls made by a developer or developers with permissions on that account.
+
+        :param get_audit_logs_request: (required) Request object encompassing vendorId, optional request filters and optional pagination context.
+        :type get_audit_logs_request: ask_smapi_model.v1.audit_logs.audit_logs_request.AuditLogsRequest
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV1, AuditLogsResponseV1, BadRequestErrorV1]
+        """
+        operation_name = "query_development_audit_logs_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'get_audit_logs_request' is set
+        if ('get_audit_logs_request' not in params) or (params['get_audit_logs_request'] is None):
+            raise ValueError(
+                "Missing the required parameter `get_audit_logs_request` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/developmentAuditLogs/query'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'get_audit_logs_request' in params:
+            body_params = params['get_audit_logs_request']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.audit_logs.audit_logs_response.AuditLogsResponse", status_code=200, message="Returns a list of audit logs for the given vendor."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Invalid request"))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="Unauthorized"))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=403, message="Forbidden"))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="Not Found"))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Too Many Requests"))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="POST",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.audit_logs.audit_logs_response.AuditLogsResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
     def get_isp_list_for_vendor_v1(self, vendor_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, Error, ListInSkillProductResponse, BadRequestError]
+        # type: (str, **Any) -> Union[ApiResponse, ErrorV1, ListInSkillProductResponseV1, BadRequestErrorV1]
         """
         Get the list of in-skill products for the vendor.
 
@@ -412,7 +492,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, ListInSkillProductResponse, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, ListInSkillProductResponseV1, BadRequestErrorV1]
         """
         operation_name = "get_isp_list_for_vendor_v1"
         params = locals()
@@ -488,7 +568,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def create_isp_for_vendor_v1(self, create_in_skill_product_request, **kwargs):
-        # type: (CreateInSkillProductRequest, **Any) -> Union[ApiResponse, ProductResponse, Error, BadRequestError]
+        # type: (CreateInSkillProductRequestV1, **Any) -> Union[ApiResponse, ProductResponseV1, ErrorV1, BadRequestErrorV1]
         """
         Creates a new in-skill product for given vendorId.
 
@@ -497,7 +577,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, ProductResponse, Error, BadRequestError]
+        :rtype: Union[ApiResponse, ProductResponseV1, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "create_isp_for_vendor_v1"
         params = locals()
@@ -557,7 +637,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def disassociate_isp_with_skill_v1(self, product_id, skill_id, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, Error, BadRequestError]
+        # type: (str, str, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         Disassociates an in-skill product from a skill.
 
@@ -568,7 +648,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "disassociate_isp_with_skill_v1"
         params = locals()
@@ -636,7 +716,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def associate_isp_with_skill_v1(self, product_id, skill_id, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, Error, BadRequestError]
+        # type: (str, str, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         Associates an in-skill product with a skill.
 
@@ -647,7 +727,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "associate_isp_with_skill_v1"
         params = locals()
@@ -715,7 +795,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def delete_isp_for_product_v1(self, product_id, stage, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, Error, BadRequestError]
+        # type: (str, str, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         Deletes the in-skill product for given productId. Only development stage supported. Live in-skill products or in-skill products associated with a skill cannot be deleted by this API.
 
@@ -728,7 +808,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "delete_isp_for_product_v1"
         params = locals()
@@ -799,7 +879,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def reset_entitlement_for_product_v1(self, product_id, stage, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, Error, BadRequestError]
+        # type: (str, str, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         Resets the entitlement(s) of the Product for the current user.
 
@@ -810,7 +890,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "reset_entitlement_for_product_v1"
         params = locals()
@@ -879,7 +959,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_isp_definition_v1(self, product_id, stage, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, Error, InSkillProductDefinitionResponse, BadRequestError]
+        # type: (str, str, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1, InSkillProductDefinitionResponseV1]
         """
         Returns the in-skill product definition for given productId.
 
@@ -890,7 +970,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, InSkillProductDefinitionResponse, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1, InSkillProductDefinitionResponseV1]
         """
         operation_name = "get_isp_definition_v1"
         params = locals()
@@ -957,7 +1037,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def update_isp_for_product_v1(self, product_id, stage, update_in_skill_product_request, **kwargs):
-        # type: (str, str, UpdateInSkillProductRequest, **Any) -> Union[ApiResponse, Error, BadRequestError]
+        # type: (str, str, UpdateInSkillProductRequestV1, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         Updates in-skill product definition for given productId. Only development stage supported.
 
@@ -972,7 +1052,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "update_isp_for_product_v1"
         params = locals()
@@ -1049,7 +1129,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_isp_associated_skills_v1(self, product_id, stage, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, AssociatedSkillResponse, Error]
+        # type: (str, str, **Any) -> Union[ApiResponse, ErrorV1, AssociatedSkillResponseV1]
         """
         Get the associated skills for the in-skill product.
 
@@ -1064,7 +1144,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, AssociatedSkillResponse, Error]
+        :rtype: Union[ApiResponse, ErrorV1, AssociatedSkillResponseV1]
         """
         operation_name = "get_isp_associated_skills_v1"
         params = locals()
@@ -1134,7 +1214,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def get_isp_summary_v1(self, product_id, stage, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, InSkillProductSummaryResponse, Error]
+        # type: (str, str, **Any) -> Union[ApiResponse, ErrorV1, InSkillProductSummaryResponseV1]
         """
         Get the summary information for an in-skill product.
 
@@ -1145,7 +1225,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, InSkillProductSummaryResponse, Error]
+        :rtype: Union[ApiResponse, ErrorV1, InSkillProductSummaryResponseV1]
         """
         operation_name = "get_isp_summary_v1"
         params = locals()
@@ -1211,7 +1291,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def delete_interaction_model_catalog_v1(self, catalog_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError]
+        # type: (str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Delete the catalog. 
 
@@ -1220,7 +1300,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "delete_interaction_model_catalog_v1"
         params = locals()
@@ -1283,7 +1363,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_interaction_model_catalog_definition_v1(self, catalog_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, CatalogDefinitionOutput, StandardizedError, BadRequestError]
+        # type: (str, **Any) -> Union[ApiResponse, StandardizedErrorV1, CatalogDefinitionOutputV1, BadRequestErrorV1]
         """
         get the catalog definition 
 
@@ -1292,7 +1372,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, CatalogDefinitionOutput, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, CatalogDefinitionOutputV1, BadRequestErrorV1]
         """
         operation_name = "get_interaction_model_catalog_definition_v1"
         params = locals()
@@ -1355,7 +1435,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def update_interaction_model_catalog_v1(self, catalog_id, update_request, **kwargs):
-        # type: (str, UpdateRequest, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError]
+        # type: (str, UpdateRequestV1, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         update description and vendorGuidance string for certain version of a catalog. 
 
@@ -1366,7 +1446,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "update_interaction_model_catalog_v1"
         params = locals()
@@ -1435,7 +1515,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_interaction_model_catalog_update_status_v1(self, catalog_id, update_request_id, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError, CatalogStatus]
+        # type: (str, str, **Any) -> Union[ApiResponse, CatalogStatusV1, StandardizedErrorV1, BadRequestErrorV1]
         """
         Get the status of catalog resource and its sub-resources for a given catalogId. 
 
@@ -1446,7 +1526,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError, CatalogStatus]
+        :rtype: Union[ApiResponse, CatalogStatusV1, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "get_interaction_model_catalog_update_status_v1"
         params = locals()
@@ -1515,7 +1595,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def create_interaction_model_catalog_version_v1(self, catalog_id, catalog, **kwargs):
-        # type: (str, VersionData, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError]
+        # type: (str, VersionDataV1, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Create a new version of catalog entity for the given catalogId. 
 
@@ -1526,7 +1606,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "create_interaction_model_catalog_version_v1"
         params = locals()
@@ -1595,7 +1675,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def delete_interaction_model_catalog_version_v1(self, catalog_id, version, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError]
+        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Delete catalog version. 
 
@@ -1606,7 +1686,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "delete_interaction_model_catalog_version_v1"
         params = locals()
@@ -1675,7 +1755,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_interaction_model_catalog_version_v1(self, catalog_id, version, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError, CatalogVersionData]
+        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, CatalogVersionDataV1, BadRequestErrorV1]
         """
         Get catalog version data of given catalog version. 
 
@@ -1686,7 +1766,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError, CatalogVersionData]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, CatalogVersionDataV1, BadRequestErrorV1]
         """
         operation_name = "get_interaction_model_catalog_version_v1"
         params = locals()
@@ -1755,7 +1835,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def update_interaction_model_catalog_version_v1(self, catalog_id, version, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError]
+        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Update description and vendorGuidance string for certain version of a catalog. 
 
@@ -1768,7 +1848,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "update_interaction_model_catalog_version_v1"
         params = locals()
@@ -1839,7 +1919,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_interaction_model_catalog_values_v1(self, catalog_id, version, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedError, CatalogValues, BadRequestError]
+        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, CatalogValuesV1, BadRequestErrorV1]
         """
         Get catalog values from the given catalogId & version. 
 
@@ -1854,7 +1934,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, CatalogValues, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, CatalogValuesV1, BadRequestErrorV1]
         """
         operation_name = "get_interaction_model_catalog_values_v1"
         params = locals()
@@ -1927,7 +2007,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def list_interaction_model_catalogs_v1(self, vendor_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, StandardizedError, ListCatalogResponse, BadRequestError]
+        # type: (str, **Any) -> Union[ApiResponse, ListCatalogResponseV1, StandardizedErrorV1, BadRequestErrorV1]
         """
         List all catalogs for the vendor. 
 
@@ -1942,7 +2022,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, ListCatalogResponse, BadRequestError]
+        :rtype: Union[ApiResponse, ListCatalogResponseV1, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "list_interaction_model_catalogs_v1"
         params = locals()
@@ -2011,7 +2091,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def create_interaction_model_catalog_v1(self, catalog, **kwargs):
-        # type: (DefinitionData, **Any) -> Union[ApiResponse, StandardizedError, CatalogResponse, BadRequestError]
+        # type: (DefinitionDataV1, **Any) -> Union[ApiResponse, CatalogResponseV1, StandardizedErrorV1, BadRequestErrorV1]
         """
         Create a new version of catalog within the given catalogId. 
 
@@ -2020,7 +2100,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, CatalogResponse, BadRequestError]
+        :rtype: Union[ApiResponse, CatalogResponseV1, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "create_interaction_model_catalog_v1"
         params = locals()
@@ -2083,7 +2163,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def list_interaction_model_slot_types_v1(self, vendor_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, BadRequest, StandardizedError, ListSlotTypeResponse]
+        # type: (str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestV1, ListSlotTypeResponseV1]
         """
         List all slot types for the vendor. 
 
@@ -2098,7 +2178,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, BadRequest, StandardizedError, ListSlotTypeResponse]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestV1, ListSlotTypeResponseV1]
         """
         operation_name = "list_interaction_model_slot_types_v1"
         params = locals()
@@ -2166,7 +2246,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def create_interaction_model_slot_type_v1(self, slot_type, **kwargs):
-        # type: (DefinitionData, **Any) -> Union[ApiResponse, BadRequest, SlotTypeResponse, StandardizedError]
+        # type: (DefinitionDataV1, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestV1, SlotTypeResponseV1]
         """
         Create a new version of slot type within the given slotTypeId. 
 
@@ -2175,7 +2255,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, BadRequest, SlotTypeResponse, StandardizedError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestV1, SlotTypeResponseV1]
         """
         operation_name = "create_interaction_model_slot_type_v1"
         params = locals()
@@ -2236,7 +2316,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def delete_interaction_model_slot_type_v1(self, slot_type_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, BadRequest, StandardizedError]
+        # type: (str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestV1]
         """
         Delete the slot type. 
 
@@ -2245,7 +2325,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, BadRequest, StandardizedError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestV1]
         """
         operation_name = "delete_interaction_model_slot_type_v1"
         params = locals()
@@ -2308,7 +2388,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_interaction_model_slot_type_definition_v1(self, slot_type_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, BadRequest, StandardizedError, SlotTypeDefinitionOutput]
+        # type: (str, **Any) -> Union[ApiResponse, StandardizedErrorV1, SlotTypeDefinitionOutputV1, BadRequestV1]
         """
         Get the slot type definition. 
 
@@ -2317,7 +2397,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, BadRequest, StandardizedError, SlotTypeDefinitionOutput]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, SlotTypeDefinitionOutputV1, BadRequestV1]
         """
         operation_name = "get_interaction_model_slot_type_definition_v1"
         params = locals()
@@ -2380,7 +2460,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def update_interaction_model_slot_type_v1(self, slot_type_id, update_request, **kwargs):
-        # type: (str, UpdateRequest, **Any) -> Union[ApiResponse, BadRequest, StandardizedError]
+        # type: (str, UpdateRequestV1, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestV1]
         """
         Update description and vendorGuidance string for certain version of a slot type. 
 
@@ -2391,7 +2471,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, BadRequest, StandardizedError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestV1]
         """
         operation_name = "update_interaction_model_slot_type_v1"
         params = locals()
@@ -2460,7 +2540,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_interaction_model_slot_type_build_status_v1(self, slot_type_id, update_request_id, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, BadRequest, StandardizedError, SlotTypeStatus]
+        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestV1, SlotTypeStatusV1]
         """
         Get the status of slot type resource and its sub-resources for a given slotTypeId. 
 
@@ -2471,7 +2551,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, BadRequest, StandardizedError, SlotTypeStatus]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestV1, SlotTypeStatusV1]
         """
         operation_name = "get_interaction_model_slot_type_build_status_v1"
         params = locals()
@@ -2540,7 +2620,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def list_interaction_model_slot_type_versions_v1(self, slot_type_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, BadRequest, ListSlotTypeVersionResponse, StandardizedError]
+        # type: (str, **Any) -> Union[ApiResponse, ListSlotTypeVersionResponseV1, StandardizedErrorV1, BadRequestV1]
         """
         List all slot type versions for the slot type id. 
 
@@ -2555,7 +2635,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, BadRequest, ListSlotTypeVersionResponse, StandardizedError]
+        :rtype: Union[ApiResponse, ListSlotTypeVersionResponseV1, StandardizedErrorV1, BadRequestV1]
         """
         operation_name = "list_interaction_model_slot_type_versions_v1"
         params = locals()
@@ -2623,7 +2703,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def create_interaction_model_slot_type_version_v1(self, slot_type_id, slot_type, **kwargs):
-        # type: (str, VersionData, **Any) -> Union[ApiResponse, BadRequest, StandardizedError]
+        # type: (str, VersionDataV1, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestV1]
         """
         Create a new version of slot type entity for the given slotTypeId. 
 
@@ -2634,7 +2714,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, BadRequest, StandardizedError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestV1]
         """
         operation_name = "create_interaction_model_slot_type_version_v1"
         params = locals()
@@ -2703,7 +2783,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def delete_interaction_model_slot_type_version_v1(self, slot_type_id, version, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, BadRequest, StandardizedError]
+        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestV1]
         """
         Delete slot type version. 
 
@@ -2714,7 +2794,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, BadRequest, StandardizedError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestV1]
         """
         operation_name = "delete_interaction_model_slot_type_version_v1"
         params = locals()
@@ -2783,7 +2863,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_interaction_model_slot_type_version_v1(self, slot_type_id, version, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, SlotTypeVersionData, BadRequest, StandardizedError]
+        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestV1, SlotTypeVersionDataV1]
         """
         Get slot type version data of given slot type version. 
 
@@ -2794,7 +2874,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, SlotTypeVersionData, BadRequest, StandardizedError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestV1, SlotTypeVersionDataV1]
         """
         operation_name = "get_interaction_model_slot_type_version_v1"
         params = locals()
@@ -2863,7 +2943,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def update_interaction_model_slot_type_version_v1(self, slot_type_id, version, slot_type_update, **kwargs):
-        # type: (str, str, SlotTypeUpdate, **Any) -> Union[ApiResponse, BadRequest, StandardizedError]
+        # type: (str, str, SlotTypeUpdateV1, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestV1]
         """
         Update description and vendorGuidance string for certain version of a slot type. 
 
@@ -2876,7 +2956,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, BadRequest, StandardizedError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestV1]
         """
         operation_name = "update_interaction_model_slot_type_version_v1"
         params = locals()
@@ -2951,7 +3031,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_status_of_export_request_v1(self, export_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, StandardizedError, ExportResponse]
+        # type: (str, **Any) -> Union[ApiResponse, ExportResponseV1, StandardizedErrorV1]
         """
         Get status for given exportId 
 
@@ -2960,7 +3040,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, ExportResponse]
+        :rtype: Union[ApiResponse, ExportResponseV1, StandardizedErrorV1]
         """
         operation_name = "get_status_of_export_request_v1"
         params = locals()
@@ -3021,7 +3101,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def list_skills_for_vendor_v1(self, vendor_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, ListSkillResponse, StandardizedError, BadRequestError]
+        # type: (str, **Any) -> Union[ApiResponse, StandardizedErrorV1, ListSkillResponseV1, BadRequestErrorV1]
         """
         Get the list of skills for the vendor.
 
@@ -3036,7 +3116,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, ListSkillResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, ListSkillResponseV1, BadRequestErrorV1]
         """
         operation_name = "list_skills_for_vendor_v1"
         params = locals()
@@ -3103,7 +3183,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def get_import_status_v1(self, import_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, ImportResponse, StandardizedError]
+        # type: (str, **Any) -> Union[ApiResponse, StandardizedErrorV1, ImportResponseV1]
         """
         Get status for given importId. 
 
@@ -3112,7 +3192,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, ImportResponse, StandardizedError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, ImportResponseV1]
         """
         operation_name = "get_import_status_v1"
         params = locals()
@@ -3173,7 +3253,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def create_skill_package_v1(self, create_skill_with_package_request, **kwargs):
-        # type: (CreateSkillWithPackageRequest, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError]
+        # type: (CreateSkillWithPackageRequestV1, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Creates a new import for a skill. 
 
@@ -3182,7 +3262,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "create_skill_package_v1"
         params = locals()
@@ -3244,7 +3324,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def create_skill_for_vendor_v1(self, create_skill_request, **kwargs):
-        # type: (CreateSkillRequest, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError, CreateSkillResponse]
+        # type: (CreateSkillRequestV1, **Any) -> Union[ApiResponse, StandardizedErrorV1, CreateSkillResponseV1, BadRequestErrorV1]
         """
         Creates a new skill for given vendorId.
 
@@ -3253,7 +3333,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError, CreateSkillResponse]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, CreateSkillResponseV1, BadRequestErrorV1]
         """
         operation_name = "create_skill_for_vendor_v1"
         params = locals()
@@ -3315,7 +3395,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def get_alexa_hosted_skill_metadata_v1(self, skill_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, StandardizedError, HostedSkillMetadata, BadRequestError]
+        # type: (str, **Any) -> Union[ApiResponse, StandardizedErrorV1, HostedSkillMetadataV1, BadRequestErrorV1]
         """
         Get Alexa hosted skill's metadata
 
@@ -3324,7 +3404,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, HostedSkillMetadata, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, HostedSkillMetadataV1, BadRequestErrorV1]
         """
         operation_name = "get_alexa_hosted_skill_metadata_v1"
         params = locals()
@@ -3386,7 +3466,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def generate_credentials_for_alexa_hosted_skill_v1(self, skill_id, hosted_skill_repository_credentials_request, **kwargs):
-        # type: (str, HostedSkillRepositoryCredentialsRequest, **Any) -> Union[ApiResponse, HostedSkillRepositoryCredentialsList, StandardizedError, BadRequestError]
+        # type: (str, HostedSkillRepositoryCredentialsRequestV1, **Any) -> Union[ApiResponse, HostedSkillRepositoryCredentialsListV1, StandardizedErrorV1, BadRequestErrorV1]
         """
         Generates hosted skill repository credentials to access the hosted skill repository.
 
@@ -3397,7 +3477,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, HostedSkillRepositoryCredentialsList, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, HostedSkillRepositoryCredentialsListV1, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "generate_credentials_for_alexa_hosted_skill_v1"
         params = locals()
@@ -3465,7 +3545,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def end_beta_test_v1(self, skill_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, Error, BadRequestError]
+        # type: (str, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         End beta test.
         End a beta test for a given Alexa skill. System will revoke the entitlement of each tester and send access-end notification email to them. 
@@ -3475,7 +3555,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "end_beta_test_v1"
         params = locals()
@@ -3537,7 +3617,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_beta_test_v1(self, skill_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, BetaTest, Error, BadRequestError]
+        # type: (str, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1, BetaTestV1]
         """
         Get beta test.
         Get beta test for a given Alexa skill.
@@ -3547,7 +3627,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, BetaTest, Error, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1, BetaTestV1]
         """
         operation_name = "get_beta_test_v1"
         params = locals()
@@ -3608,7 +3688,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def create_beta_test_v1(self, skill_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, Error]
+        # type: (str, **Any) -> Union[ApiResponse, ErrorV1]
         """
         Create beta test.
         Create a beta test for a given Alexa skill.
@@ -3620,7 +3700,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error]
+        :rtype: Union[ApiResponse, ErrorV1]
         """
         operation_name = "create_beta_test_v1"
         params = locals()
@@ -3684,7 +3764,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def update_beta_test_v1(self, skill_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, Error, BadRequestError]
+        # type: (str, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         Update beta test.
         Update a beta test for a given Alexa skill.
@@ -3696,7 +3776,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "update_beta_test_v1"
         params = locals()
@@ -3759,7 +3839,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def start_beta_test_v1(self, skill_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, Error, BadRequestError]
+        # type: (str, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         Start beta test
         Start a beta test for a given Alexa skill. System will send invitation emails to each tester in the test, and add entitlement on the acceptance. 
@@ -3769,7 +3849,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "start_beta_test_v1"
         params = locals()
@@ -3831,7 +3911,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def add_testers_to_beta_test_v1(self, skill_id, testers_request, **kwargs):
-        # type: (str, TestersList, **Any) -> Union[ApiResponse, Error, BadRequestError]
+        # type: (str, TestersListV1, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         Add testers to an existing beta test.
         Add testers to a beta test for the given Alexa skill.  System will send invitation email to each tester and add entitlement on the acceptance. 
@@ -3843,7 +3923,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "add_testers_to_beta_test_v1"
         params = locals()
@@ -3910,7 +3990,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_list_of_testers_v1(self, skill_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, Error, ListTestersResponse, BadRequestError]
+        # type: (str, **Any) -> Union[ApiResponse, ErrorV1, ListTestersResponseV1, BadRequestErrorV1]
         """
         List testers.
         List all testers in a beta test for the given Alexa skill.
@@ -3924,7 +4004,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, ListTestersResponse, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, ListTestersResponseV1, BadRequestErrorV1]
         """
         operation_name = "get_list_of_testers_v1"
         params = locals()
@@ -3989,7 +4069,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def remove_testers_from_beta_test_v1(self, skill_id, testers_request, **kwargs):
-        # type: (str, TestersList, **Any) -> Union[ApiResponse, Error, BadRequestError]
+        # type: (str, TestersListV1, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         Remove testers from an existing beta test.
         Remove testers from a beta test for the given Alexa skill.  System will send access end email to each tester and remove entitlement for them. 
@@ -4001,7 +4081,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "remove_testers_from_beta_test_v1"
         params = locals()
@@ -4068,7 +4148,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def request_feedback_from_testers_v1(self, skill_id, testers_request, **kwargs):
-        # type: (str, TestersList, **Any) -> Union[ApiResponse, Error, BadRequestError]
+        # type: (str, TestersListV1, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         Request feedback from testers.
         Request feedback from the testers in a beta test for the given Alexa skill.  System will send notification emails to testers to request feedback. 
@@ -4080,7 +4160,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "request_feedback_from_testers_v1"
         params = locals()
@@ -4148,7 +4228,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def send_reminder_to_testers_v1(self, skill_id, testers_request, **kwargs):
-        # type: (str, TestersList, **Any) -> Union[ApiResponse, Error, BadRequestError]
+        # type: (str, TestersListV1, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         Send reminder to testers in a beta test.
         Send reminder to the testers in a beta test for the given Alexa skill.  System will send invitation email to each tester and add entitlement on the acceptance. 
@@ -4160,7 +4240,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "send_reminder_to_testers_v1"
         params = locals()
@@ -4228,7 +4308,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_certification_review_v1(self, skill_id, certification_id, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, CertificationResponse, Error]
+        # type: (str, str, **Any) -> Union[ApiResponse, CertificationResponseV1, ErrorV1]
         """
         Gets a specific certification resource. The response contains the review tracking information for a skill to show how much time the skill is expected to remain under review by Amazon. Once the review is complete, the response also contains the outcome of the review. Old certifications may not be available, however any ongoing certification would always give a response. If the certification is unavailable the result will return a 404 HTTP status code. 
 
@@ -4241,7 +4321,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, CertificationResponse, Error]
+        :rtype: Union[ApiResponse, CertificationResponseV1, ErrorV1]
         """
         operation_name = "get_certification_review_v1"
         params = locals()
@@ -4309,7 +4389,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def get_certifications_list_v1(self, skill_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, ListCertificationsResponse, Error]
+        # type: (str, **Any) -> Union[ApiResponse, ErrorV1, ListCertificationsResponseV1]
         """
         Get list of all certifications available for a skill, including information about past certifications and any ongoing certification. The default sort order is descending on skillSubmissionTimestamp for Certifications. 
 
@@ -4322,7 +4402,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, ListCertificationsResponse, Error]
+        :rtype: Union[ApiResponse, ErrorV1, ListCertificationsResponseV1]
         """
         operation_name = "get_certifications_list_v1"
         params = locals()
@@ -4387,7 +4467,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def delete_skill_v1(self, skill_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError]
+        # type: (str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Delete the skill and model for given skillId.
 
@@ -4396,7 +4476,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "delete_skill_v1"
         params = locals()
@@ -4458,7 +4538,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_utterance_data_v1(self, skill_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError, IntentRequests]
+        # type: (str, **Any) -> Union[ApiResponse, IntentRequestsV1, StandardizedErrorV1, BadRequestErrorV1]
         """
         The Intent Request History API provides customers with the aggregated and anonymized transcription of user speech data and intent request details for their skills.
 
@@ -4493,7 +4573,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError, IntentRequests]
+        :rtype: Union[ApiResponse, IntentRequestsV1, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "get_utterance_data_v1"
         params = locals()
@@ -4581,7 +4661,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def import_skill_package_v1(self, update_skill_with_package_request, skill_id, **kwargs):
-        # type: (UpdateSkillWithPackageRequest, str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError]
+        # type: (UpdateSkillWithPackageRequestV1, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Creates a new import for a skill with given skillId. 
 
@@ -4594,7 +4674,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "import_skill_package_v1"
         params = locals()
@@ -4666,7 +4746,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_skill_metrics_v1(self, skill_id, start_time, end_time, period, metric, stage, skill_type, **kwargs):
-        # type: (str, datetime, datetime, str, str, str, str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError, GetMetricDataResponse]
+        # type: (str, datetime, datetime, str, str, str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1, GetMetricDataResponseV1]
         """
         Get analytic metrics report of skill usage.
 
@@ -4695,7 +4775,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError, GetMetricDataResponse]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1, GetMetricDataResponseV1]
         """
         operation_name = "get_skill_metrics_v1"
         params = locals()
@@ -4802,7 +4882,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def simulate_skill_v1(self, skill_id, simulations_api_request, **kwargs):
-        # type: (str, SimulationsApiRequest, **Any) -> Union[ApiResponse, SimulationsApiResponse, Error, BadRequestError]
+        # type: (str, SimulationsApiRequestV1, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1, SimulationsApiResponseV1]
         """
         Simulate executing a skill with the given id.
         This is an asynchronous API that simulates a skill execution in the Alexa eco-system given an utterance text of what a customer would say to Alexa. A successful response will contain a header with the location of the simulation resource. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. The skill being simulated must be in development stage, and it must also belong to and be enabled by the user of this API. Concurrent requests per user is currently not supported. 
@@ -4814,7 +4894,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, SimulationsApiResponse, Error, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1, SimulationsApiResponseV1]
         """
         operation_name = "simulate_skill_v1"
         params = locals()
@@ -4884,19 +4964,19 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def get_skill_simulation_v1(self, skill_id, simulation_id, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, SimulationsApiResponse, Error, BadRequestError]
+        # type: (str, str, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1, SimulationsApiResponseV1]
         """
         Get the result of a previously executed simulation.
         This API gets the result of a previously executed simulation. A successful response will contain the status of the executed simulation. If the simulation successfully completed, the response will also contain information related to skill invocation. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. In cases where the simulation failed, the response will contain a status attribute indicating that a failure occurred and details about what was sent to the skill endpoint. Note that simulation results are stored for 10 minutes. A request for an expired simulation result will return a 404 HTTP status code. 
 
         :param skill_id: (required) The skill ID.
         :type skill_id: str
-        :param simulation_id: (required) Id of the simulation. 
+        :param simulation_id: (required) Id of the simulation.
         :type simulation_id: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, SimulationsApiResponse, Error, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1, SimulationsApiResponseV1]
         """
         operation_name = "get_skill_simulation_v1"
         params = locals()
@@ -4964,7 +5044,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def get_ssl_certificates_v1(self, skill_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, StandardizedError, SSLCertificatePayload]
+        # type: (str, **Any) -> Union[ApiResponse, StandardizedErrorV1, SSLCertificatePayloadV1]
         """
         Returns the ssl certificate sets currently associated with this skill. Sets consist of one ssl certificate blob associated with a region as well as the default certificate for the skill.
 
@@ -4973,7 +5053,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, SSLCertificatePayload]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, SSLCertificatePayloadV1]
         """
         operation_name = "get_ssl_certificates_v1"
         params = locals()
@@ -5034,7 +5114,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def set_ssl_certificates_v1(self, skill_id, ssl_certificate_payload, **kwargs):
-        # type: (str, SSLCertificatePayload, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError]
+        # type: (str, SSLCertificatePayloadV1, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Updates the ssl certificates associated with this skill.
 
@@ -5045,7 +5125,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "set_ssl_certificates_v1"
         params = locals()
@@ -5113,7 +5193,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def delete_skill_enablement_v1(self, skill_id, stage, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError]
+        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Deletes the enablement for given skillId/stage and customerId (retrieved from Auth token).
 
@@ -5124,7 +5204,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "delete_skill_enablement_v1"
         params = locals()
@@ -5193,7 +5273,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_skill_enablement_status_v1(self, skill_id, stage, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError]
+        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Checks whether an enablement exist for given skillId/stage and customerId (retrieved from Auth token)
 
@@ -5204,7 +5284,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "get_skill_enablement_status_v1"
         params = locals()
@@ -5273,7 +5353,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def set_skill_enablement_v1(self, skill_id, stage, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError]
+        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Creates/Updates the enablement for given skillId/stage and customerId (retrieved from Auth token)
 
@@ -5284,7 +5364,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "set_skill_enablement_v1"
         params = locals()
@@ -5354,7 +5434,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def create_export_request_for_skill_v1(self, skill_id, stage, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedError]
+        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1]
         """
         Creates a new export for a skill with given skillId and stage. 
 
@@ -5365,7 +5445,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1]
         """
         operation_name = "create_export_request_for_skill_v1"
         params = locals()
@@ -5433,7 +5513,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_isp_list_for_skill_id_v1(self, skill_id, stage, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, Error, ListInSkillProductResponse, BadRequestError]
+        # type: (str, str, **Any) -> Union[ApiResponse, ErrorV1, ListInSkillProductResponseV1, BadRequestErrorV1]
         """
         Get the list of in-skill products for the skillId.
 
@@ -5448,7 +5528,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, ListInSkillProductResponse, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, ListInSkillProductResponseV1, BadRequestErrorV1]
         """
         operation_name = "get_isp_list_for_skill_id_v1"
         params = locals()
@@ -5519,7 +5599,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def profile_nlu_v1(self, profile_nlu_request, skill_id, stage, locale, **kwargs):
-        # type: (ProfileNluRequest, str, str, str, **Any) -> Union[ApiResponse, ProfileNluResponse, Error, BadRequestError]
+        # type: (ProfileNluRequestV1, str, str, str, **Any) -> Union[ApiResponse, ErrorV1, ProfileNluResponseV1, BadRequestErrorV1]
         """
         Profile a test utterance.
         This is a synchronous API that profiles an utterance against interaction model.
@@ -5535,7 +5615,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, ProfileNluResponse, Error, BadRequestError]
+        :rtype: Union[ApiResponse, ErrorV1, ProfileNluResponseV1, BadRequestErrorV1]
         """
         operation_name = "profile_nlu_v1"
         params = locals()
@@ -5615,7 +5695,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def list_private_distribution_accounts_v1(self, skill_id, stage, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedError, ListPrivateDistributionAccountsResponse, BadRequestError]
+        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, ListPrivateDistributionAccountsResponseV1, BadRequestErrorV1]
         """
         List private distribution accounts. 
 
@@ -5630,7 +5710,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, ListPrivateDistributionAccountsResponse, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, ListPrivateDistributionAccountsResponseV1, BadRequestErrorV1]
         """
         operation_name = "list_private_distribution_accounts_v1"
         params = locals()
@@ -5703,7 +5783,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def delete_private_distribution_account_id_v1(self, skill_id, stage, id, **kwargs):
-        # type: (str, str, str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError]
+        # type: (str, str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Remove an id from the private distribution accounts. 
 
@@ -5716,7 +5796,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "delete_private_distribution_account_id_v1"
         params = locals()
@@ -5791,7 +5871,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def set_private_distribution_account_id_v1(self, skill_id, stage, id, **kwargs):
-        # type: (str, str, str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError]
+        # type: (str, str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Add an id to the private distribution accounts. 
 
@@ -5804,7 +5884,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "set_private_distribution_account_id_v1"
         params = locals()
@@ -5879,7 +5959,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def delete_account_linking_info_v1(self, skill_id, stage_v2, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError]
+        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Delete AccountLinking information of a skill for the given stage. 
 
@@ -5890,7 +5970,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "delete_account_linking_info_v1"
         params = locals()
@@ -5958,7 +6038,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_account_linking_info_v1(self, skill_id, stage_v2, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError, AccountLinkingResponse]
+        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, AccountLinkingResponseV1, BadRequestErrorV1]
         """
         Get AccountLinking information for the skill. 
 
@@ -5969,7 +6049,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError, AccountLinkingResponse]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, AccountLinkingResponseV1, BadRequestErrorV1]
         """
         operation_name = "get_account_linking_info_v1"
         params = locals()
@@ -6037,7 +6117,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def update_account_linking_info_v1(self, skill_id, stage_v2, account_linking_request, **kwargs):
-        # type: (str, str, AccountLinkingRequest, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError]
+        # type: (str, str, AccountLinkingRequestV1, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Create AccountLinking information for the skill. 
 
@@ -6052,7 +6132,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "update_account_linking_info_v1"
         params = locals()
@@ -6130,7 +6210,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_interaction_model_v1(self, skill_id, stage_v2, locale, **kwargs):
-        # type: (str, str, str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError, InteractionModelData]
+        # type: (str, str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, InteractionModelDataV1, BadRequestErrorV1]
         """
         Gets the `InteractionModel` for the skill in the given stage. The path params **skillId**, **stage** and **locale** are required. 
 
@@ -6143,7 +6223,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError, InteractionModelData]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, InteractionModelDataV1, BadRequestErrorV1]
         """
         operation_name = "get_interaction_model_v1"
         params = locals()
@@ -6218,7 +6298,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def get_interaction_model_metadata_v1(self, skill_id, stage_v2, locale, **kwargs):
-        # type: (str, str, str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError]
+        # type: (str, str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Get the latest metadata for the interaction model resource for the given stage. 
 
@@ -6231,7 +6311,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "get_interaction_model_metadata_v1"
         params = locals()
@@ -6306,7 +6386,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def set_interaction_model_v1(self, skill_id, stage_v2, locale, interaction_model, **kwargs):
-        # type: (str, str, str, InteractionModelData, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError]
+        # type: (str, str, str, InteractionModelDataV1, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Creates an `InteractionModel` for the skill. 
 
@@ -6323,7 +6403,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "set_interaction_model_v1"
         params = locals()
@@ -6407,7 +6487,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def list_interaction_model_versions_v1(self, skill_id, stage_v2, locale, **kwargs):
-        # type: (str, str, str, **Any) -> Union[ApiResponse, ListResponse, StandardizedError, BadRequestError]
+        # type: (str, str, str, **Any) -> Union[ApiResponse, ListResponseV1, StandardizedErrorV1, BadRequestErrorV1]
         """
         Get the list of interactionModel versions of a skill for the vendor.
 
@@ -6428,7 +6508,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, ListResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, ListResponseV1, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "list_interaction_model_versions_v1"
         params = locals()
@@ -6511,7 +6591,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def get_interaction_model_version_v1(self, skill_id, stage_v2, locale, version, **kwargs):
-        # type: (str, str, str, str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError, InteractionModelData]
+        # type: (str, str, str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, InteractionModelDataV1, BadRequestErrorV1]
         """
         Gets the specified version `InteractionModel` of a skill for the vendor. Use `~current` as version parameter to get the current version model. 
 
@@ -6526,7 +6606,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError, InteractionModelData]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, InteractionModelDataV1, BadRequestErrorV1]
         """
         operation_name = "get_interaction_model_version_v1"
         params = locals()
@@ -6607,7 +6687,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def get_skill_manifest_v1(self, skill_id, stage_v2, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError, SkillManifestEnvelope]
+        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1, SkillManifestEnvelopeV1]
         """
         Returns the skill manifest for given skillId and stage.
 
@@ -6618,7 +6698,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError, SkillManifestEnvelope]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1, SkillManifestEnvelopeV1]
         """
         operation_name = "get_skill_manifest_v1"
         params = locals()
@@ -6688,7 +6768,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def update_skill_manifest_v1(self, skill_id, stage_v2, update_skill_request, **kwargs):
-        # type: (str, str, SkillManifestEnvelope, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError]
+        # type: (str, str, SkillManifestEnvelopeV1, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Updates skill manifest for given skillId and stage.
 
@@ -6703,7 +6783,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "update_skill_manifest_v1"
         params = locals()
@@ -6782,7 +6862,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def submit_skill_validation_v1(self, validations_api_request, skill_id, stage, **kwargs):
-        # type: (ValidationsApiRequest, str, str, **Any) -> Union[ApiResponse, ValidationsApiResponse, Error, BadRequestError]
+        # type: (ValidationsApiRequestV1, str, str, **Any) -> Union[ApiResponse, ValidationsApiResponseV1, ErrorV1, BadRequestErrorV1]
         """
         Validate a skill.
         This is an asynchronous API which allows a skill developer to execute various validations against their skill. 
@@ -6796,7 +6876,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, ValidationsApiResponse, Error, BadRequestError]
+        :rtype: Union[ApiResponse, ValidationsApiResponseV1, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "submit_skill_validation_v1"
         params = locals()
@@ -6871,7 +6951,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def get_skill_validations_v1(self, skill_id, validation_id, stage, **kwargs):
-        # type: (str, str, str, **Any) -> Union[ApiResponse, ValidationsApiResponse, Error, BadRequestError]
+        # type: (str, str, str, **Any) -> Union[ApiResponse, ValidationsApiResponseV1, ErrorV1, BadRequestErrorV1]
         """
         Get the result of a previously executed validation.
         This API gets the result of a previously executed validation. A successful response will contain the status of the executed validation. If the validation successfully completed, the response will also contain information related to executed validations. In cases where requests to this API results in an error, the response will contain a description of the problem. In cases where the validation failed, the response will contain a status attribute indicating that a failure occurred. Note that validation results are stored for 60 minutes. A request for an expired validation result will return a 404 HTTP status code. 
@@ -6887,7 +6967,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, ValidationsApiResponse, Error, BadRequestError]
+        :rtype: Union[ApiResponse, ValidationsApiResponseV1, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "get_skill_validations_v1"
         params = locals()
@@ -6962,7 +7042,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def get_skill_status_v1(self, skill_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError, SkillStatus]
+        # type: (str, **Any) -> Union[ApiResponse, StandardizedErrorV1, SkillStatusV1, BadRequestErrorV1]
         """
         Get the status of skill resource and its sub-resources for a given skillId.
 
@@ -6973,7 +7053,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError, SkillStatus]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, SkillStatusV1, BadRequestErrorV1]
         """
         operation_name = "get_skill_status_v1"
         params = locals()
@@ -7038,7 +7118,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def submit_skill_for_certification_v1(self, skill_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError]
+        # type: (str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Submit the skill for certification. 
 
@@ -7049,7 +7129,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "submit_skill_for_certification_v1"
         params = locals()
@@ -7114,7 +7194,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def withdraw_skill_from_certification_v1(self, skill_id, withdraw_request, **kwargs):
-        # type: (str, WithdrawRequest, **Any) -> Union[ApiResponse, StandardizedError, BadRequestError]
+        # type: (str, WithdrawRequestV1, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Withdraws the skill from certification. 
 
@@ -7125,7 +7205,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "withdraw_skill_from_certification_v1"
         params = locals()
@@ -7194,14 +7274,14 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def create_upload_url_v1(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, UploadResponse, StandardizedError]
+        # type: (**Any) -> Union[ApiResponse, StandardizedErrorV1, UploadResponseV1]
         """
         Creates a new uploadUrl. 
 
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, UploadResponse, StandardizedError]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, UploadResponseV1]
         """
         operation_name = "create_upload_url_v1"
         params = locals()
@@ -7255,14 +7335,14 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def get_vendor_list_v1(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, Vendors, Error]
+        # type: (**Any) -> Union[ApiResponse, VendorsV1, ErrorV1]
         """
         Get the list of Vendor information. 
 
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Vendors, Error]
+        :rtype: Union[ApiResponse, VendorsV1, ErrorV1]
         """
         operation_name = "get_vendor_list_v1"
         params = locals()
@@ -7316,7 +7396,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def get_alexa_hosted_skill_user_permissions_v1(self, vendor_id, permission, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, HostedSkillPermission, StandardizedError, BadRequestError]
+        # type: (str, str, **Any) -> Union[ApiResponse, HostedSkillPermissionV1, StandardizedErrorV1, BadRequestErrorV1]
         """
         Get the current user permissions about Alexa hosted skill features.
 
@@ -7327,7 +7407,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, HostedSkillPermission, StandardizedError, BadRequestError]
+        :rtype: Union[ApiResponse, HostedSkillPermissionV1, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "get_alexa_hosted_skill_user_permissions_v1"
         params = locals()
@@ -7388,6 +7468,273 @@ class SkillManagementServiceClient(BaseServiceClient):
             body=body_params,
             response_definitions=error_definitions,
             response_type="ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_permission.HostedSkillPermission")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def invoke_skill_end_point_v2(self, skill_id, stage, invocations_api_request, **kwargs):
+        # type: (str, str, InvocationsApiRequestV2, **Any) -> Union[ApiResponse, ErrorV2, BadRequestErrorV2, InvocationsApiResponseV2]
+        """
+        Invokes the Lambda or third party HTTPS endpoint for the given skill against a given stage.
+        This is a synchronous API that invokes the Lambda or third party HTTPS endpoint for a given skill. A successful response will contain information related to what endpoint was called, payload sent to and received from the endpoint. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. In cases where invoking the skill endpoint specifically fails, the response will contain a status attribute indicating that a failure occurred and details about what was sent to the endpoint. The skill must belong to and be enabled by the user of this API. Also,  note that calls to the skill endpoint will timeout after 10 seconds. This  API is currently designed in a way that allows extension to an asynchronous  API if a significantly bigger timeout is required. 
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param stage: (required) Stage for skill.
+        :type stage: str
+        :param invocations_api_request: (required) Payload sent to the skill invocation API.
+        :type invocations_api_request: ask_smapi_model.v2.skill.invocations.invocations_api_request.InvocationsApiRequest
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV2, BadRequestErrorV2, InvocationsApiResponseV2]
+        """
+        operation_name = "invoke_skill_end_point_v2"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'stage' is set
+        if ('stage' not in params) or (params['stage'] is None):
+            raise ValueError(
+                "Missing the required parameter `stage` when calling `" + operation_name + "`")
+        # verify the required parameter 'invocations_api_request' is set
+        if ('invocations_api_request' not in params) or (params['invocations_api_request'] is None):
+            raise ValueError(
+                "Missing the required parameter `invocations_api_request` when calling `" + operation_name + "`")
+
+        resource_path = '/v2/skills/{skillId}/stages/{stage}/invocations'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+        if 'stage' in params:
+            path_params['stage'] = params['stage']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'invocations_api_request' in params:
+            body_params = params['invocations_api_request']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.skill.invocations.invocations_api_response.InvocationsApiResponse", status_code=200, message="Skill was invoked."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.bad_request_error.BadRequestError", status_code=400, message="Bad request due to invalid or missing data."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.bad_request_error.BadRequestError", status_code=403, message="API user does not have permission to call this API or is currently in a state that does not allow invocation of this skill. "))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.error.Error", status_code=404, message="The specified skill does not exist."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.error.Error", status_code=429, message="API user has exceeded the permitted request rate."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.error.Error", status_code=500, message="Internal service error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="POST",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v2.skill.invocations.invocations_api_response.InvocationsApiResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def simulate_skill_v2(self, skill_id, stage, simulations_api_request, **kwargs):
+        # type: (str, str, SimulationsApiRequestV2, **Any) -> Union[ApiResponse, ErrorV2, BadRequestErrorV2, SimulationsApiResponseV2]
+        """
+        Simulate executing a skill with the given id against a given stage.
+        This is an asynchronous API that simulates a skill execution in the Alexa eco-system given an utterance text of what a customer would say to Alexa. A successful response will contain a header with the location of the simulation resource. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. The skill being simulated must belong to and be enabled  by the user of this API. Concurrent requests per user is currently not supported. 
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param stage: (required) Stage for skill.
+        :type stage: str
+        :param simulations_api_request: (required) Payload sent to the skill simulation API.
+        :type simulations_api_request: ask_smapi_model.v2.skill.simulations.simulations_api_request.SimulationsApiRequest
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV2, BadRequestErrorV2, SimulationsApiResponseV2]
+        """
+        operation_name = "simulate_skill_v2"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'stage' is set
+        if ('stage' not in params) or (params['stage'] is None):
+            raise ValueError(
+                "Missing the required parameter `stage` when calling `" + operation_name + "`")
+        # verify the required parameter 'simulations_api_request' is set
+        if ('simulations_api_request' not in params) or (params['simulations_api_request'] is None):
+            raise ValueError(
+                "Missing the required parameter `simulations_api_request` when calling `" + operation_name + "`")
+
+        resource_path = '/v2/skills/{skillId}/stages/{stage}/simulations'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+        if 'stage' in params:
+            path_params['stage'] = params['stage']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'simulations_api_request' in params:
+            body_params = params['simulations_api_request']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.skill.simulations.simulations_api_response.SimulationsApiResponse", status_code=200, message="Skill simulation has successfully began."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.bad_request_error.BadRequestError", status_code=400, message="Bad request due to invalid or missing data."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.bad_request_error.BadRequestError", status_code=403, message="API user does not have permission to call this API or is currently in a state that does not allow simulation of this skill. "))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.error.Error", status_code=404, message="The specified skill does not exist."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.error.Error", status_code=409, message="This requests conflicts with another one currently being processed. "))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.error.Error", status_code=429, message="API user has exceeded the permitted request rate."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.error.Error", status_code=500, message="Internal service error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="POST",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v2.skill.simulations.simulations_api_response.SimulationsApiResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def get_skill_simulation_v2(self, skill_id, stage, simulation_id, **kwargs):
+        # type: (str, str, str, **Any) -> Union[ApiResponse, ErrorV2, BadRequestErrorV2, SimulationsApiResponseV2]
+        """
+        Get the result of a previously executed simulation.
+        This API gets the result of a previously executed simulation. A successful response will contain the status of the executed simulation. If the simulation successfully completed, the response will also contain information related to skill invocation. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. In cases where the simulation failed, the response will contain a status attribute indicating that a failure occurred and details about what was sent to the skill endpoint. Note that simulation results are stored for 10 minutes. A request for an expired simulation result will return a 404 HTTP status code. 
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param stage: (required) Stage for skill.
+        :type stage: str
+        :param simulation_id: (required) Id of the simulation.
+        :type simulation_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV2, BadRequestErrorV2, SimulationsApiResponseV2]
+        """
+        operation_name = "get_skill_simulation_v2"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'stage' is set
+        if ('stage' not in params) or (params['stage'] is None):
+            raise ValueError(
+                "Missing the required parameter `stage` when calling `" + operation_name + "`")
+        # verify the required parameter 'simulation_id' is set
+        if ('simulation_id' not in params) or (params['simulation_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `simulation_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v2/skills/{skillId}/stages/{stage}/simulations/{simulationId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+        if 'stage' in params:
+            path_params['stage'] = params['stage']
+        if 'simulation_id' in params:
+            path_params['simulationId'] = params['simulation_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.skill.simulations.simulations_api_response.SimulationsApiResponse", status_code=200, message="Successfully retrieved skill simulation information."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.bad_request_error.BadRequestError", status_code=403, message="API user does not have permission or is currently in a state that does not allow calls to this API. "))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.error.Error", status_code=404, message="The specified skill or simulation does not exist. The error response will contain a description that indicates the specific resource type that was not found. "))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.error.Error", status_code=429, message="API user has exceeded the permitted request rate."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.error.Error", status_code=500, message="Internal service error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v2.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v2.skill.simulations.simulations_api_response.SimulationsApiResponse")
 
         if full_response:
             return api_response

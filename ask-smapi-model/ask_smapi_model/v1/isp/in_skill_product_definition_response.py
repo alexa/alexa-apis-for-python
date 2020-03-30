@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.isp.in_skill_product_definition import InSkillProductDefinition
+    from ask_smapi_model.v1.isp.in_skill_product_definition import InSkillProductDefinitionV1
 
 
 class InSkillProductDefinitionResponse(object):
@@ -45,7 +45,7 @@ class InSkillProductDefinitionResponse(object):
     supports_multiple_types = False
 
     def __init__(self, in_skill_product_definition=None):
-        # type: (Optional[InSkillProductDefinition]) -> None
+        # type: (Optional[InSkillProductDefinitionV1]) -> None
         """Defines In-skill product response.
 
         :param in_skill_product_definition: 

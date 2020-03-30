@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.smart_home_protocol import SmartHomeProtocol
-    from ask_smapi_model.v1.skill.manifest.lambda_region import LambdaRegion
-    from ask_smapi_model.v1.skill.manifest.lambda_endpoint import LambdaEndpoint
+    from ask_smapi_model.v1.skill.manifest.lambda_region import LambdaRegionV1
+    from ask_smapi_model.v1.skill.manifest.smart_home_protocol import SmartHomeProtocolV1
+    from ask_smapi_model.v1.skill.manifest.lambda_endpoint import LambdaEndpointV1
 
 
 class SmartHomeApis(object):
@@ -55,7 +55,7 @@ class SmartHomeApis(object):
     supports_multiple_types = False
 
     def __init__(self, regions=None, endpoint=None, protocol_version=None):
-        # type: (Optional[Dict[str, LambdaRegion]], Optional[LambdaEndpoint], Optional[SmartHomeProtocol]) -> None
+        # type: (Optional[Dict[str, LambdaRegionV1]], Optional[LambdaEndpointV1], Optional[SmartHomeProtocolV1]) -> None
         """Defines the structure for smart home api of the skill.
 
         :param regions: Contains an array of the supported &lt;region&gt; Objects.

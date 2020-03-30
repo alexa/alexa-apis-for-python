@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_update_definition import SlotTypeUpdateDefinition
+    from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_update_definition import SlotTypeUpdateDefinitionV1
 
 
 class UpdateRequest(object):
@@ -45,7 +45,7 @@ class UpdateRequest(object):
     supports_multiple_types = False
 
     def __init__(self, slot_type=None):
-        # type: (Optional[SlotTypeUpdateDefinition]) -> None
+        # type: (Optional[SlotTypeUpdateDefinitionV1]) -> None
         """Slot type update request object.
 
         :param slot_type: 

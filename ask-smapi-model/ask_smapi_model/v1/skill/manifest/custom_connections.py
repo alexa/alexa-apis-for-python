@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.connections import Connections
+    from ask_smapi_model.v1.skill.manifest.connections import ConnectionsV1
 
 
 class CustomConnections(object):
@@ -49,7 +49,7 @@ class CustomConnections(object):
     supports_multiple_types = False
 
     def __init__(self, requires=None, provides=None):
-        # type: (Optional[List[Connections]], Optional[List[Connections]]) -> None
+        # type: (Optional[List[ConnectionsV1]], Optional[List[ConnectionsV1]]) -> None
         """Supported connections.
 
         :param requires: List of required connections.

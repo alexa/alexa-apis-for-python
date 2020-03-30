@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.skill_manifest_endpoint import SkillManifestEndpoint
+    from ask_smapi_model.v1.skill.manifest.skill_manifest_endpoint import SkillManifestEndpointV1
 
 
 class Region(object):
@@ -45,7 +45,7 @@ class Region(object):
     supports_multiple_types = False
 
     def __init__(self, endpoint=None):
-        # type: (Optional[SkillManifestEndpoint]) -> None
+        # type: (Optional[SkillManifestEndpointV1]) -> None
         """Defines the structure for regional information.
 
         :param endpoint: 

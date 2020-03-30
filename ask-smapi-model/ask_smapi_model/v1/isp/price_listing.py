@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.isp.currency import Currency
+    from ask_smapi_model.v1.isp.currency import CurrencyV1
 
 
 class PriceListing(object):
@@ -49,7 +49,7 @@ class PriceListing(object):
     supports_multiple_types = False
 
     def __init__(self, price=None, currency=None):
-        # type: (Optional[float], Optional[Currency]) -> None
+        # type: (Optional[float], Optional[CurrencyV1]) -> None
         """Price listing information for in-skill product.
 
         :param price: Defines the price of an in-skill product. The list price should be your suggested price, not including any VAT or similar taxes. Taxes are included in the final price to end users.

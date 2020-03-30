@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.version.input_source import InputSource
+    from ask_smapi_model.v1.skill.interaction_model.version.input_source import InputSourceV1
 
 
 class VersionData(object):
@@ -49,7 +49,7 @@ class VersionData(object):
     supports_multiple_types = False
 
     def __init__(self, source=None, description=None):
-        # type: (Optional[InputSource], Optional[str]) -> None
+        # type: (Optional[InputSourceV1], Optional[str]) -> None
         """Catalog version specific data.
 
         :param source: 

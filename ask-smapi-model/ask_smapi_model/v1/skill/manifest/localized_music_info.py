@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.music_wordmark import MusicWordmark
-    from ask_smapi_model.v1.skill.manifest.music_alias import MusicAlias
-    from ask_smapi_model.v1.skill.manifest.music_feature import MusicFeature
+    from ask_smapi_model.v1.skill.manifest.music_alias import MusicAliasV1
+    from ask_smapi_model.v1.skill.manifest.music_wordmark import MusicWordmarkV1
+    from ask_smapi_model.v1.skill.manifest.music_feature import MusicFeatureV1
 
 
 class LocalizedMusicInfo(object):
@@ -59,7 +59,7 @@ class LocalizedMusicInfo(object):
     supports_multiple_types = False
 
     def __init__(self, prompt_name=None, aliases=None, features=None, wordmark_logos=None):
-        # type: (Optional[str], Optional[List[MusicAlias]], Optional[List[MusicFeature]], Optional[List[MusicWordmark]]) -> None
+        # type: (Optional[str], Optional[List[MusicAliasV1]], Optional[List[MusicFeatureV1]], Optional[List[MusicWordmarkV1]]) -> None
         """Defines the structure of localized music information in the skill manifest.
 
         :param prompt_name: Name to be used when Alexa renders the music skill name.

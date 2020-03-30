@@ -23,11 +23,11 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.skill_manifest_publishing_information import SkillManifestPublishingInformation
-    from ask_smapi_model.v1.skill.manifest.skill_manifest_apis import SkillManifestApis
-    from ask_smapi_model.v1.skill.manifest.permission_items import PermissionItems
-    from ask_smapi_model.v1.skill.manifest.skill_manifest_events import SkillManifestEvents
-    from ask_smapi_model.v1.skill.manifest.skill_manifest_privacy_and_compliance import SkillManifestPrivacyAndCompliance
+    from ask_smapi_model.v1.skill.manifest.skill_manifest_apis import SkillManifestApisV1
+    from ask_smapi_model.v1.skill.manifest.permission_items import PermissionItemsV1
+    from ask_smapi_model.v1.skill.manifest.skill_manifest_publishing_information import SkillManifestPublishingInformationV1
+    from ask_smapi_model.v1.skill.manifest.skill_manifest_events import SkillManifestEventsV1
+    from ask_smapi_model.v1.skill.manifest.skill_manifest_privacy_and_compliance import SkillManifestPrivacyAndComplianceV1
 
 
 class SkillManifest(object):
@@ -69,7 +69,7 @@ class SkillManifest(object):
     supports_multiple_types = False
 
     def __init__(self, manifest_version=None, publishing_information=None, privacy_and_compliance=None, events=None, permissions=None, apis=None):
-        # type: (Optional[str], Optional[SkillManifestPublishingInformation], Optional[SkillManifestPrivacyAndCompliance], Optional[SkillManifestEvents], Optional[List[PermissionItems]], Optional[SkillManifestApis]) -> None
+        # type: (Optional[str], Optional[SkillManifestPublishingInformationV1], Optional[SkillManifestPrivacyAndComplianceV1], Optional[SkillManifestEventsV1], Optional[List[PermissionItemsV1]], Optional[SkillManifestApisV1]) -> None
         """Defines the structure for a skill&#39;s metadata.
 
         :param manifest_version: Version of the skill manifest.

@@ -23,3 +23,12 @@ This release contains the following changes :
 
 - Updated properties for `skill response <https://developer.amazon.com/en-US/docs/alexa/smapi/skill-operations.html#response-4>`__ in `ListSkills` API.
 - Updated interaction model values for `validation rules <https://developer.amazon.com/en-US/docs/alexa/custom-skills/validate-slot-values.html#validation-rules>`__.
+
+
+1.2.0
+~~~~~
+
+This release contains the following changes : 
+
+- APIs and model definitions for new `Audit Logs API <https://developer.amazon.com/en-US/docs/alexa/smapi/audit-logs-api.html>`__. Skill developers can use the Audit Logs API to get logs that show history of calls made to the Skill Management API(SMAPI). The logs include information about each operation including the timestamp, response code, and source.
+- APIs and model definitions for new `Skill Simulations V2 API <https://developer.amazon.com/en-US/docs/alexa/smapi/skill-simulation-api.html>`__. The Skill Simulation API enables skill developers to simulate skill execution. You can test your skill and see the intent that a simulated device returns from your interaction model.

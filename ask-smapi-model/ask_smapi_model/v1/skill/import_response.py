@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.standardized_error import StandardizedError
-    from ask_smapi_model.v1.skill.response_status import ResponseStatus
-    from ask_smapi_model.v1.skill.import_response_skill import ImportResponseSkill
+    from ask_smapi_model.v1.skill.response_status import ResponseStatusV1
+    from ask_smapi_model.v1.skill.standardized_error import StandardizedErrorV1
+    from ask_smapi_model.v1.skill.import_response_skill import ImportResponseSkillV1
 
 
 class ImportResponse(object):
@@ -57,7 +57,7 @@ class ImportResponse(object):
     supports_multiple_types = False
 
     def __init__(self, status=None, errors=None, warnings=None, skill=None):
-        # type: (Optional[ResponseStatus], Optional[List[StandardizedError]], Optional[List[StandardizedError]], Optional[ImportResponseSkill]) -> None
+        # type: (Optional[ResponseStatusV1], Optional[List[StandardizedErrorV1]], Optional[List[StandardizedErrorV1]], Optional[ImportResponseSkillV1]) -> None
         """
 
         :param status: 

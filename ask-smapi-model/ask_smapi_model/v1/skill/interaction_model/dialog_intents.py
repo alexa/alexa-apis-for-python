@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.dialog_slot_items import DialogSlotItems
-    from ask_smapi_model.v1.skill.interaction_model.delegation_strategy_type import DelegationStrategyType
-    from ask_smapi_model.v1.skill.interaction_model.prompts import Prompts
+    from ask_smapi_model.v1.skill.interaction_model.prompts import PromptsV1
+    from ask_smapi_model.v1.skill.interaction_model.delegation_strategy_type import DelegationStrategyTypeV1
+    from ask_smapi_model.v1.skill.interaction_model.dialog_slot_items import DialogSlotItemsV1
 
 
 class DialogIntents(object):
@@ -61,7 +61,7 @@ class DialogIntents(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, delegation_strategy=None, slots=None, confirmation_required=None, prompts=None):
-        # type: (Optional[str], Optional[DelegationStrategyType], Optional[List[DialogSlotItems]], Optional[bool], Optional[Prompts]) -> None
+        # type: (Optional[str], Optional[DelegationStrategyTypeV1], Optional[List[DialogSlotItemsV1]], Optional[bool], Optional[PromptsV1]) -> None
         """
 
         :param name: Name of the intent that has a dialog specification.

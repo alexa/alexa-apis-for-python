@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.resource_status import ResourceStatus
-    from ask_smapi_model.v1.skill.skill_interaction_model import SkillInteractionModel
+    from ask_smapi_model.v1.skill.resource_status import ResourceStatusV1
+    from ask_smapi_model.v1.skill.skill_interaction_model import SkillInteractionModelV1
 
 
 class SkillStatus(object):
@@ -50,7 +50,7 @@ class SkillStatus(object):
     supports_multiple_types = False
 
     def __init__(self, manifest=None, interaction_model=None):
-        # type: (Optional[ResourceStatus], Optional[SkillInteractionModel]) -> None
+        # type: (Optional[ResourceStatusV1], Optional[SkillInteractionModelV1]) -> None
         """Defines the structure for skill status response.
 
         :param manifest: 

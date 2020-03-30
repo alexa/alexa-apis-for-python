@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.skill_summary_apis import SkillSummaryApis
-    from ask_smapi_model.v1.links import Links
-    from ask_smapi_model.v1.skill.publication_status import PublicationStatus
+    from ask_smapi_model.v1.links import LinksV1
+    from ask_smapi_model.v1.skill.publication_status import PublicationStatusV1
+    from ask_smapi_model.v1.skill.skill_summary_apis import SkillSummaryApisV1
 
 
 class SkillSummary(object):
@@ -71,7 +71,7 @@ class SkillSummary(object):
     supports_multiple_types = False
 
     def __init__(self, skill_id=None, apis=None, publication_status=None, last_updated=None, name_by_locale=None, asin=None, links=None):
-        # type: (Optional[str], Optional[List[SkillSummaryApis]], Optional[PublicationStatus], Optional[datetime], Optional[Dict[str, object]], Optional[str], Optional[Links]) -> None
+        # type: (Optional[str], Optional[List[SkillSummaryApisV1]], Optional[PublicationStatusV1], Optional[datetime], Optional[Dict[str, object]], Optional[str], Optional[LinksV1]) -> None
         """Information about the skills.
 
         :param skill_id: 

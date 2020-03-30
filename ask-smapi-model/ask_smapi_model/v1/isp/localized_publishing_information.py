@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.isp.custom_product_prompts import CustomProductPrompts
+    from ask_smapi_model.v1.isp.custom_product_prompts import CustomProductPromptsV1
 
 
 class LocalizedPublishingInformation(object):
@@ -73,7 +73,7 @@ class LocalizedPublishingInformation(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, small_icon_uri=None, large_icon_uri=None, summary=None, description=None, example_phrases=None, keywords=None, custom_product_prompts=None):
-        # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[List[object]], Optional[List[object]], Optional[CustomProductPrompts]) -> None
+        # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[List[object]], Optional[List[object]], Optional[CustomProductPromptsV1]) -> None
         """Defines the structure for locale specific publishing information in the in-skill product definition.
 
         :param name: Name of the in-skill product that is heard by customers and displayed in the Alexa app.

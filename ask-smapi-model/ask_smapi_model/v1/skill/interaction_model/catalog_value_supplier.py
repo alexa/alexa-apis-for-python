@@ -24,7 +24,7 @@ from ask_smapi_model.v1.skill.interaction_model.value_supplier import ValueSuppl
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.value_catalog import ValueCatalog
+    from ask_smapi_model.v1.skill.interaction_model.value_catalog import ValueCatalogV1
 
 
 class CatalogValueSupplier(ValueSupplier):
@@ -48,7 +48,7 @@ class CatalogValueSupplier(ValueSupplier):
     supports_multiple_types = False
 
     def __init__(self, value_catalog=None):
-        # type: (Optional[ValueCatalog]) -> None
+        # type: (Optional[ValueCatalogV1]) -> None
         """Supply slot values from catalog(s).
 
         :param value_catalog: 

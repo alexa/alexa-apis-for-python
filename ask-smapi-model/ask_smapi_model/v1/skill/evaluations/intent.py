@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.evaluations.confirmation_status_type import ConfirmationStatusType
-    from ask_smapi_model.v1.skill.evaluations.slot import Slot
+    from ask_smapi_model.v1.skill.evaluations.slot import SlotV1
+    from ask_smapi_model.v1.skill.evaluations.confirmation_status_type import ConfirmationStatusTypeV1
 
 
 class Intent(object):
@@ -52,7 +52,7 @@ class Intent(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, confirmation_status=None, slots=None):
-        # type: (Optional[str], Optional[ConfirmationStatusType], Optional[Dict[str, Slot]]) -> None
+        # type: (Optional[str], Optional[ConfirmationStatusTypeV1], Optional[Dict[str, SlotV1]]) -> None
         """
 
         :param name: 

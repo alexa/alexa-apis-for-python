@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.validation_data_types import ValidationDataTypes
+    from ask_smapi_model.v1.skill.validation_data_types import ValidationDataTypesV1
 
 
 class Instance(object):
@@ -53,7 +53,7 @@ class Instance(object):
     supports_multiple_types = False
 
     def __init__(self, property_path=None, data_type=None, value=None):
-        # type: (Optional[str], Optional[ValidationDataTypes], Optional[str]) -> None
+        # type: (Optional[str], Optional[ValidationDataTypesV1], Optional[str]) -> None
         """Structure representing properties of an instance of data. Definition will be either one of a booleanInstance, stringInstance, integerInstance, or compoundInstance.
 
         :param property_path: Path that uniquely identifies the instance in the resource.

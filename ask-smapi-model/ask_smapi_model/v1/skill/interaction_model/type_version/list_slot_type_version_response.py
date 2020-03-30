@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_version_item import SlotTypeVersionItem
-    from ask_smapi_model.v1.links import Links
+    from ask_smapi_model.v1.links import LinksV1
+    from ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_version_item import SlotTypeVersionItemV1
 
 
 class ListSlotTypeVersionResponse(object):
@@ -54,7 +54,7 @@ class ListSlotTypeVersionResponse(object):
     supports_multiple_types = False
 
     def __init__(self, links=None, slot_type_versions=None, next_token=None):
-        # type: (Optional[Links], Optional[List[SlotTypeVersionItem]], Optional[str]) -> None
+        # type: (Optional[LinksV1], Optional[List[SlotTypeVersionItemV1]], Optional[str]) -> None
         """List of slot type versions of a skill for the vendor.
 
         :param links: 

@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.connections_payload import ConnectionsPayload
+    from ask_smapi_model.v1.skill.manifest.connections_payload import ConnectionsPayloadV1
 
 
 class Connections(object):
@@ -49,7 +49,7 @@ class Connections(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, payload=None):
-        # type: (Optional[str], Optional[ConnectionsPayload]) -> None
+        # type: (Optional[str], Optional[ConnectionsPayloadV1]) -> None
         """Skill connection object.
 
         :param name: Name of the connection.

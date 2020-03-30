@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.lambda_endpoint import LambdaEndpoint
+    from ask_smapi_model.v1.skill.manifest.lambda_endpoint import LambdaEndpointV1
 
 
 class LambdaRegion(object):
@@ -45,7 +45,7 @@ class LambdaRegion(object):
     supports_multiple_types = False
 
     def __init__(self, endpoint=None):
-        # type: (Optional[LambdaEndpoint]) -> None
+        # type: (Optional[LambdaEndpointV1]) -> None
         """Defines the structure of a regional information.
 
         :param endpoint: 

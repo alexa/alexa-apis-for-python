@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.history.confidence_bin import ConfidenceBin
+    from ask_smapi_model.v1.skill.history.confidence_bin import ConfidenceBinV1
 
 
 class Confidence(object):
@@ -45,7 +45,7 @@ class Confidence(object):
     supports_multiple_types = False
 
     def __init__(self, bin=None):
-        # type: (Optional[ConfidenceBin]) -> None
+        # type: (Optional[ConfidenceBinV1]) -> None
         """The hypothesized confidence for this interaction.
 
         :param bin: 

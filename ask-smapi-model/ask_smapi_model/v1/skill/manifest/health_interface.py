@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.health_request import HealthRequest
-    from ask_smapi_model.v1.skill.manifest.localized_health_info import LocalizedHealthInfo
-    from ask_smapi_model.v1.skill.manifest.version import Version
+    from ask_smapi_model.v1.skill.manifest.health_request import HealthRequestV1
+    from ask_smapi_model.v1.skill.manifest.version import VersionV1
+    from ask_smapi_model.v1.skill.manifest.localized_health_info import LocalizedHealthInfoV1
 
 
 class HealthInterface(object):
@@ -57,7 +57,7 @@ class HealthInterface(object):
     supports_multiple_types = False
 
     def __init__(self, namespace=None, version=None, requests=None, locales=None):
-        # type: (Optional[str], Optional[Version], Optional[List[HealthRequest]], Optional[Dict[str, LocalizedHealthInfo]]) -> None
+        # type: (Optional[str], Optional[VersionV1], Optional[List[HealthRequestV1]], Optional[Dict[str, LocalizedHealthInfoV1]]) -> None
         """
 
         :param namespace: Name of the interface.

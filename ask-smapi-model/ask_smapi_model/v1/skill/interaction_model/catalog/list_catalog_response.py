@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.catalog.catalog_item import CatalogItem
-    from ask_smapi_model.v1.links import Links
+    from ask_smapi_model.v1.links import LinksV1
+    from ask_smapi_model.v1.skill.interaction_model.catalog.catalog_item import CatalogItemV1
 
 
 class ListCatalogResponse(object):
@@ -62,7 +62,7 @@ class ListCatalogResponse(object):
     supports_multiple_types = False
 
     def __init__(self, links=None, catalogs=None, is_truncated=None, next_token=None, total_count=None):
-        # type: (Optional[Links], Optional[List[CatalogItem]], Optional[bool], Optional[str], Optional[int]) -> None
+        # type: (Optional[LinksV1], Optional[List[CatalogItemV1]], Optional[bool], Optional[str], Optional[int]) -> None
         """List of catalog versions of a skill for the vendor.
 
         :param links: 

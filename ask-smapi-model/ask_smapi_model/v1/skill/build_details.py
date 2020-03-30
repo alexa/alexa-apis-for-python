@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.build_step import BuildStep
+    from ask_smapi_model.v1.skill.build_step import BuildStepV1
 
 
 class BuildDetails(object):
@@ -45,7 +45,7 @@ class BuildDetails(object):
     supports_multiple_types = False
 
     def __init__(self, steps=None):
-        # type: (Optional[List[BuildStep]]) -> None
+        # type: (Optional[List[BuildStepV1]]) -> None
         """Contains array which describes steps involved in a build. Elements (or build steps) are added to this array as they become IN_PROGRESS. 
 
         :param steps: An array where each element represents a build step.

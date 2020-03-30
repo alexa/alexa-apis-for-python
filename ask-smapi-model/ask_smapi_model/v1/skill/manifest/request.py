@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.request_name import RequestName
+    from ask_smapi_model.v1.skill.manifest.request_name import RequestNameV1
 
 
 class Request(object):
@@ -43,7 +43,7 @@ class Request(object):
     supports_multiple_types = False
 
     def __init__(self, name=None):
-        # type: (Optional[RequestName]) -> None
+        # type: (Optional[RequestNameV1]) -> None
         """
 
         :param name: 

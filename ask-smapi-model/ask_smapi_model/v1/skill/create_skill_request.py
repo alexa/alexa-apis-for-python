@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.skill_manifest import SkillManifest
+    from ask_smapi_model.v1.skill.manifest.skill_manifest import SkillManifestV1
 
 
 class CreateSkillRequest(object):
@@ -47,7 +47,7 @@ class CreateSkillRequest(object):
     supports_multiple_types = False
 
     def __init__(self, vendor_id=None, manifest=None):
-        # type: (Optional[str], Optional[SkillManifest]) -> None
+        # type: (Optional[str], Optional[SkillManifestV1]) -> None
         """
 
         :param vendor_id: ID of the vendor owning the skill.

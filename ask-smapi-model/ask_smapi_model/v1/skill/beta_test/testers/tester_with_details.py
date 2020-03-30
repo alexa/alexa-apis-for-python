@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.beta_test.testers.invitation_status import InvitationStatus
+    from ask_smapi_model.v1.skill.beta_test.testers.invitation_status import InvitationStatusV1
 
 
 class TesterWithDetails(object):
@@ -57,7 +57,7 @@ class TesterWithDetails(object):
     supports_multiple_types = False
 
     def __init__(self, email_id=None, association_date=None, is_reminder_allowed=None, invitation_status=None):
-        # type: (Optional[str], Optional[datetime], Optional[bool], Optional[InvitationStatus]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[bool], Optional[InvitationStatusV1]) -> None
         """Tester information.
 
         :param email_id: Email address of the tester.

@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interface_intent import InterfaceIntent
+    from ask_smapi_model.v1.skill.interface_intent import InterfaceIntentV1
 
 
 class InterfaceDefinition(object):
@@ -53,7 +53,7 @@ class InterfaceDefinition(object):
     supports_multiple_types = False
 
     def __init__(self, is_global=None, locales=None, intents=None):
-        # type: (Optional[bool], Optional[List[object]], Optional[List[InterfaceIntent]]) -> None
+        # type: (Optional[bool], Optional[List[object]], Optional[List[InterfaceIntentV1]]) -> None
         """Interface related objects.
 
         :param is_global: Whether this interface is available in all supported locales.

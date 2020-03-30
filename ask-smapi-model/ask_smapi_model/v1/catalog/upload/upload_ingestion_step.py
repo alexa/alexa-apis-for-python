@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.catalog.upload.ingestion_step_name import IngestionStepName
-    from ask_smapi_model.v1.error import Error
-    from ask_smapi_model.v1.catalog.upload.ingestion_status import IngestionStatus
+    from ask_smapi_model.v1.catalog.upload.ingestion_status import IngestionStatusV1
+    from ask_smapi_model.v1.catalog.upload.ingestion_step_name import IngestionStepNameV1
+    from ask_smapi_model.v1.error import ErrorV1
 
 
 class UploadIngestionStep(object):
@@ -59,7 +59,7 @@ class UploadIngestionStep(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, status=None, log_url=None, violations=None):
-        # type: (Optional[IngestionStepName], Optional[IngestionStatus], Optional[str], Optional[List[Error]]) -> None
+        # type: (Optional[IngestionStepNameV1], Optional[IngestionStatusV1], Optional[str], Optional[List[ErrorV1]]) -> None
         """Represents a single step in the multi-step ingestion process of a new upload.
 
         :param name: 

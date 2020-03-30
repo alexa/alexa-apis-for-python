@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.flash_briefing_genre import FlashBriefingGenre
-    from ask_smapi_model.v1.skill.manifest.flash_briefing_content_type import FlashBriefingContentType
-    from ask_smapi_model.v1.skill.manifest.flash_briefing_update_frequency import FlashBriefingUpdateFrequency
+    from ask_smapi_model.v1.skill.manifest.flash_briefing_genre import FlashBriefingGenreV1
+    from ask_smapi_model.v1.skill.manifest.flash_briefing_content_type import FlashBriefingContentTypeV1
+    from ask_smapi_model.v1.skill.manifest.flash_briefing_update_frequency import FlashBriefingUpdateFrequencyV1
 
 
 class LocalizedFlashBriefingInfoItems(object):
@@ -77,7 +77,7 @@ class LocalizedFlashBriefingInfoItems(object):
     supports_multiple_types = False
 
     def __init__(self, logical_name=None, name=None, url=None, image_uri=None, content_type=None, genre=None, update_frequency=None, vui_preamble=None, is_default=None):
-        # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[FlashBriefingContentType], Optional[FlashBriefingGenre], Optional[FlashBriefingUpdateFrequency], Optional[str], Optional[bool]) -> None
+        # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[FlashBriefingContentTypeV1], Optional[FlashBriefingGenreV1], Optional[FlashBriefingUpdateFrequencyV1], Optional[str], Optional[bool]) -> None
         """
 
         :param logical_name: Logical name of the feed. This is used to signify relation among feeds across different locales. Example If you have \&quot;weather\&quot; feed in multiple locale then consider naming it \&quot;weather_update\&quot; and we will make sure to play the right feed if customer changes the language on device.

@@ -24,7 +24,7 @@ from ask_smapi_model.v1.skill.manifest.interface import Interface
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.viewport_specification import ViewportSpecification
+    from ask_smapi_model.v1.skill.manifest.viewport_specification import ViewportSpecificationV1
 
 
 class AlexaPresentationAplInterface(Interface):
@@ -48,7 +48,7 @@ class AlexaPresentationAplInterface(Interface):
     supports_multiple_types = False
 
     def __init__(self, supported_viewports=None):
-        # type: (Optional[List[ViewportSpecification]]) -> None
+        # type: (Optional[List[ViewportSpecificationV1]]) -> None
         """Used to declare that the skill uses the Alexa.Presentation.APL interface.
 
         :param supported_viewports: List of supported viewports.

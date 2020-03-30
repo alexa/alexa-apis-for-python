@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.reason import Reason
+    from ask_smapi_model.v1.skill.reason import ReasonV1
 
 
 class WithdrawRequest(object):
@@ -49,7 +49,7 @@ class WithdrawRequest(object):
     supports_multiple_types = False
 
     def __init__(self, reason=None, message=None):
-        # type: (Optional[Reason], Optional[str]) -> None
+        # type: (Optional[ReasonV1], Optional[str]) -> None
         """The payload for the withdraw operation.
 
         :param reason: 

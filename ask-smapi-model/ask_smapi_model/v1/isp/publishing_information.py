@@ -23,10 +23,10 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.isp.localized_publishing_information import LocalizedPublishingInformation
-    from ask_smapi_model.v1.isp.marketplace_pricing import MarketplacePricing
-    from ask_smapi_model.v1.isp.distribution_countries import DistributionCountries
-    from ask_smapi_model.v1.isp.tax_information import TaxInformation
+    from ask_smapi_model.v1.isp.localized_publishing_information import LocalizedPublishingInformationV1
+    from ask_smapi_model.v1.isp.marketplace_pricing import MarketplacePricingV1
+    from ask_smapi_model.v1.isp.distribution_countries import DistributionCountriesV1
+    from ask_smapi_model.v1.isp.tax_information import TaxInformationV1
 
 
 class PublishingInformation(object):
@@ -60,7 +60,7 @@ class PublishingInformation(object):
     supports_multiple_types = False
 
     def __init__(self, locales=None, distribution_countries=None, pricing=None, tax_information=None):
-        # type: (Optional[Dict[str, LocalizedPublishingInformation]], Optional[List[DistributionCountries]], Optional[Dict[str, MarketplacePricing]], Optional[TaxInformation]) -> None
+        # type: (Optional[Dict[str, LocalizedPublishingInformationV1]], Optional[List[DistributionCountriesV1]], Optional[Dict[str, MarketplacePricingV1]], Optional[TaxInformationV1]) -> None
         """Defines the structure for in-skill product publishing information.
 
         :param locales: Defines the structure for locale specific publishing information for an in-skill product.

@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.slot_type import SlotType
-    from ask_smapi_model.v1.skill.interaction_model.intent import Intent
+    from ask_smapi_model.v1.skill.interaction_model.slot_type import SlotTypeV1
+    from ask_smapi_model.v1.skill.interaction_model.intent import IntentV1
 
 
 class LanguageModel(object):
@@ -54,7 +54,7 @@ class LanguageModel(object):
     supports_multiple_types = False
 
     def __init__(self, invocation_name=None, types=None, intents=None):
-        # type: (Optional[str], Optional[List[SlotType]], Optional[List[Intent]]) -> None
+        # type: (Optional[str], Optional[List[SlotTypeV1]], Optional[List[IntentV1]]) -> None
         """Define the language model.
 
         :param invocation_name: Invocation name of the skill.

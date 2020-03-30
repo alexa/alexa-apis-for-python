@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.validations.validations_api_response_result import ValidationsApiResponseResult
-    from ask_smapi_model.v1.skill.validations.validations_api_response_status import ValidationsApiResponseStatus
+    from ask_smapi_model.v1.skill.validations.validations_api_response_result import ValidationsApiResponseResultV1
+    from ask_smapi_model.v1.skill.validations.validations_api_response_status import ValidationsApiResponseStatusV1
 
 
 class ValidationsApiResponse(object):
@@ -52,7 +52,7 @@ class ValidationsApiResponse(object):
     supports_multiple_types = False
 
     def __init__(self, id=None, status=None, result=None):
-        # type: (Optional[str], Optional[ValidationsApiResponseStatus], Optional[ValidationsApiResponseResult]) -> None
+        # type: (Optional[str], Optional[ValidationsApiResponseStatusV1], Optional[ValidationsApiResponseResultV1]) -> None
         """
 
         :param id: Id of the validation resource.

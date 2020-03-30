@@ -23,13 +23,13 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.isp.product_type import ProductType
-    from ask_smapi_model.v1.isp.status import Status
-    from ask_smapi_model.v1.isp.purchasable_state import PurchasableState
-    from ask_smapi_model.v1.isp.editable_state import EditableState
-    from ask_smapi_model.v1.isp.summary_marketplace_pricing import SummaryMarketplacePricing
-    from ask_smapi_model.v1.isp.stage import Stage
-    from ask_smapi_model.v1.isp.isp_summary_links import IspSummaryLinks
+    from ask_smapi_model.v1.isp.summary_marketplace_pricing import SummaryMarketplacePricingV1
+    from ask_smapi_model.v1.isp.stage import StageV1
+    from ask_smapi_model.v1.isp.isp_summary_links import IspSummaryLinksV1
+    from ask_smapi_model.v1.isp.product_type import ProductTypeV1
+    from ask_smapi_model.v1.isp.status import StatusV1
+    from ask_smapi_model.v1.isp.editable_state import EditableStateV1
+    from ask_smapi_model.v1.isp.purchasable_state import PurchasableStateV1
 
 
 class InSkillProductSummary(object):
@@ -91,7 +91,7 @@ class InSkillProductSummary(object):
     supports_multiple_types = False
 
     def __init__(self, object_type=None, product_id=None, reference_name=None, last_updated=None, name_by_locale=None, status=None, stage=None, editable_state=None, purchasable_state=None, links=None, pricing=None):
-        # type: (Optional[ProductType], Optional[str], Optional[str], Optional[datetime], Optional[Dict[str, object]], Optional[Status], Optional[Stage], Optional[EditableState], Optional[PurchasableState], Optional[IspSummaryLinks], Optional[Dict[str, SummaryMarketplacePricing]]) -> None
+        # type: (Optional[ProductTypeV1], Optional[str], Optional[str], Optional[datetime], Optional[Dict[str, object]], Optional[StatusV1], Optional[StageV1], Optional[EditableStateV1], Optional[PurchasableStateV1], Optional[IspSummaryLinksV1], Optional[Dict[str, SummaryMarketplacePricingV1]]) -> None
         """Information about the in-skill product that is not editable.
 
         :param object_type: 

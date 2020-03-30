@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.error import Error
-    from ask_smapi_model.v1.skill.validations.response_validation import ResponseValidation
+    from ask_smapi_model.v1.skill.validations.response_validation import ResponseValidationV1
+    from ask_smapi_model.v1.error import ErrorV1
 
 
 class ValidationsApiResponseResult(object):
@@ -48,7 +48,7 @@ class ValidationsApiResponseResult(object):
     supports_multiple_types = False
 
     def __init__(self, validations=None, error=None):
-        # type: (Optional[List[ResponseValidation]], Optional[Error]) -> None
+        # type: (Optional[List[ResponseValidationV1]], Optional[ErrorV1]) -> None
         """
 
         :param validations: 

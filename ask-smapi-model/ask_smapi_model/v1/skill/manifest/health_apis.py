@@ -23,10 +23,10 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.health_protocol_version import HealthProtocolVersion
-    from ask_smapi_model.v1.skill.manifest.skill_manifest_endpoint import SkillManifestEndpoint
-    from ask_smapi_model.v1.skill.manifest.region import Region
-    from ask_smapi_model.v1.skill.manifest.health_interface import HealthInterface
+    from ask_smapi_model.v1.skill.manifest.skill_manifest_endpoint import SkillManifestEndpointV1
+    from ask_smapi_model.v1.skill.manifest.region import RegionV1
+    from ask_smapi_model.v1.skill.manifest.health_protocol_version import HealthProtocolVersionV1
+    from ask_smapi_model.v1.skill.manifest.health_interface import HealthInterfaceV1
 
 
 class HealthApis(object):
@@ -60,7 +60,7 @@ class HealthApis(object):
     supports_multiple_types = False
 
     def __init__(self, regions=None, endpoint=None, protocol_version=None, interfaces=None):
-        # type: (Optional[Dict[str, Region]], Optional[SkillManifestEndpoint], Optional[HealthProtocolVersion], Optional[HealthInterface]) -> None
+        # type: (Optional[Dict[str, RegionV1]], Optional[SkillManifestEndpointV1], Optional[HealthProtocolVersionV1], Optional[HealthInterfaceV1]) -> None
         """Defines the structure of health api in the skill manifest.
 
         :param regions: Contains an array of the supported &lt;region&gt; Objects.

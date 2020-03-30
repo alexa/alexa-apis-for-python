@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.account_linking.access_token_scheme_type import AccessTokenSchemeType
-    from ask_smapi_model.v1.skill.account_linking.account_linking_type import AccountLinkingType
+    from ask_smapi_model.v1.skill.account_linking.account_linking_type import AccountLinkingTypeV1
+    from ask_smapi_model.v1.skill.account_linking.access_token_scheme_type import AccessTokenSchemeTypeV1
 
 
 class AccountLinkingRequest(object):
@@ -86,7 +86,7 @@ class AccountLinkingRequest(object):
     supports_multiple_types = False
 
     def __init__(self, object_type=None, authorization_url=None, domains=None, client_id=None, scopes=None, access_token_url=None, client_secret=None, access_token_scheme=None, default_token_expiration_in_seconds=None, reciprocal_access_token_url=None, redirect_urls=None):
-        # type: (Optional[AccountLinkingType], Optional[str], Optional[List[object]], Optional[str], Optional[List[object]], Optional[str], Optional[str], Optional[AccessTokenSchemeType], Optional[int], Optional[str], Optional[List[object]]) -> None
+        # type: (Optional[AccountLinkingTypeV1], Optional[str], Optional[List[object]], Optional[str], Optional[List[object]], Optional[str], Optional[str], Optional[AccessTokenSchemeTypeV1], Optional[int], Optional[str], Optional[List[object]]) -> None
         """The payload for creating the account linking partner.
 
         :param object_type: 

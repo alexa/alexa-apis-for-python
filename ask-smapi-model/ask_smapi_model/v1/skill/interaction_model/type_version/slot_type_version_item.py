@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.links import Links
+    from ask_smapi_model.v1.links import LinksV1
 
 
 class SlotTypeVersionItem(object):
@@ -53,7 +53,7 @@ class SlotTypeVersionItem(object):
     supports_multiple_types = False
 
     def __init__(self, version=None, description=None, links=None):
-        # type: (Optional[str], Optional[str], Optional[Links]) -> None
+        # type: (Optional[str], Optional[str], Optional[LinksV1]) -> None
         """Definition for slot type entity.
 
         :param version: Version number of slot type.

@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.links import Links
-    from ask_smapi_model.v1.skill.skill_summary import SkillSummary
+    from ask_smapi_model.v1.skill.skill_summary import SkillSummaryV1
+    from ask_smapi_model.v1.links import LinksV1
 
 
 class ListSkillResponse(object):
@@ -58,7 +58,7 @@ class ListSkillResponse(object):
     supports_multiple_types = False
 
     def __init__(self, links=None, skills=None, is_truncated=None, next_token=None):
-        # type: (Optional[Links], Optional[List[SkillSummary]], Optional[bool], Optional[str]) -> None
+        # type: (Optional[LinksV1], Optional[List[SkillSummaryV1]], Optional[bool], Optional[str]) -> None
         """List of skills for the vendor.
 
         :param links: 

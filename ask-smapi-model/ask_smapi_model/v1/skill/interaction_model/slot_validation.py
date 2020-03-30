@@ -45,13 +45,13 @@ class SlotValidation(object):
         |
         | isLessThanOrEqualTo: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_less_than_or_equal_to.IsLessThanOrEqualTo`,
         |
-        | isInDuration: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_in_duration.IsInDuration`,
-        |
-        | isLessThan: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_less_than.IsLessThan`,
-        |
         | isGreaterThan: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_greater_than.IsGreaterThan`,
         |
         | isNotInSet: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_not_in_set.IsNotInSet`,
+        |
+        | isInDuration: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_in_duration.IsInDuration`,
+        |
+        | isLessThan: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_less_than.IsLessThan`,
         |
         | isNotInDuration: :py:class:`ask_smapi_model.v1.skill.interaction_model.is_not_in_duration.IsNotInDuration`,
         |
@@ -74,10 +74,10 @@ class SlotValidation(object):
     discriminator_value_class_map = {
         'hasEntityResolutionMatch': 'ask_smapi_model.v1.skill.interaction_model.has_entity_resolution_match.HasEntityResolutionMatch',
         'isLessThanOrEqualTo': 'ask_smapi_model.v1.skill.interaction_model.is_less_than_or_equal_to.IsLessThanOrEqualTo',
-        'isInDuration': 'ask_smapi_model.v1.skill.interaction_model.is_in_duration.IsInDuration',
-        'isLessThan': 'ask_smapi_model.v1.skill.interaction_model.is_less_than.IsLessThan',
         'isGreaterThan': 'ask_smapi_model.v1.skill.interaction_model.is_greater_than.IsGreaterThan',
         'isNotInSet': 'ask_smapi_model.v1.skill.interaction_model.is_not_in_set.IsNotInSet',
+        'isInDuration': 'ask_smapi_model.v1.skill.interaction_model.is_in_duration.IsInDuration',
+        'isLessThan': 'ask_smapi_model.v1.skill.interaction_model.is_less_than.IsLessThan',
         'isNotInDuration': 'ask_smapi_model.v1.skill.interaction_model.is_not_in_duration.IsNotInDuration',
         'isGreaterThanOrEqualTo': 'ask_smapi_model.v1.skill.interaction_model.is_greater_than_or_equal_to.IsGreaterThanOrEqualTo',
         'isInSet': 'ask_smapi_model.v1.skill.interaction_model.is_in_set.IsInSet'

@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.private.accept_status import AcceptStatus
+    from ask_smapi_model.v1.skill.private.accept_status import AcceptStatusV1
 
 
 class PrivateDistributionAccount(object):
@@ -49,7 +49,7 @@ class PrivateDistributionAccount(object):
     supports_multiple_types = False
 
     def __init__(self, principal=None, accept_status=None):
-        # type: (Optional[str], Optional[AcceptStatus]) -> None
+        # type: (Optional[str], Optional[AcceptStatusV1]) -> None
         """Contains information of the private distribution account with given id.
 
         :param principal: 12-digit numerical account ID for AWS account holders.

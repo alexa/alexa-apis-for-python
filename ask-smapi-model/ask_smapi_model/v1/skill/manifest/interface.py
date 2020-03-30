@@ -39,8 +39,6 @@ class Interface(object):
 
         | ALEXA_PRESENTATION_APL: :py:class:`ask_smapi_model.v1.skill.manifest.alexa_presentation_apl_interface.AlexaPresentationAplInterface`,
         |
-        | VIDEO_APP: :py:class:`ask_smapi_model.v1.skill.manifest.video_app_interface.VideoAppInterface`,
-        |
         | CUSTOM_INTERFACE: :py:class:`ask_smapi_model.v1.skill.manifest.custom_interface.CustomInterface`,
         |
         | ALEXA_PRESENTATION_HTML: :py:class:`ask_smapi_model.v1.skill.manifest.alexa_presentation_html_interface.AlexaPresentationHtmlInterface`,
@@ -51,7 +49,9 @@ class Interface(object):
         |
         | RENDER_TEMPLATE: :py:class:`ask_smapi_model.v1.skill.manifest.display_interface.DisplayInterface`,
         |
-        | GADGET_CONTROLLER: :py:class:`ask_smapi_model.v1.skill.manifest.gadget_controller_interface.GadgetControllerInterface`
+        | GADGET_CONTROLLER: :py:class:`ask_smapi_model.v1.skill.manifest.gadget_controller_interface.GadgetControllerInterface`,
+        |
+        | VIDEO_APP: :py:class:`ask_smapi_model.v1.skill.manifest.video_app_interface.VideoAppInterface`
 
     """
     deserialized_types = {
@@ -65,13 +65,13 @@ class Interface(object):
 
     discriminator_value_class_map = {
         'ALEXA_PRESENTATION_APL': 'ask_smapi_model.v1.skill.manifest.alexa_presentation_apl_interface.AlexaPresentationAplInterface',
-        'VIDEO_APP': 'ask_smapi_model.v1.skill.manifest.video_app_interface.VideoAppInterface',
         'CUSTOM_INTERFACE': 'ask_smapi_model.v1.skill.manifest.custom_interface.CustomInterface',
         'ALEXA_PRESENTATION_HTML': 'ask_smapi_model.v1.skill.manifest.alexa_presentation_html_interface.AlexaPresentationHtmlInterface',
         'AUDIO_PLAYER': 'ask_smapi_model.v1.skill.manifest.audio_interface.AudioInterface',
         'GAME_ENGINE': 'ask_smapi_model.v1.skill.manifest.game_engine_interface.GameEngineInterface',
         'RENDER_TEMPLATE': 'ask_smapi_model.v1.skill.manifest.display_interface.DisplayInterface',
-        'GADGET_CONTROLLER': 'ask_smapi_model.v1.skill.manifest.gadget_controller_interface.GadgetControllerInterface'
+        'GADGET_CONTROLLER': 'ask_smapi_model.v1.skill.manifest.gadget_controller_interface.GadgetControllerInterface',
+        'VIDEO_APP': 'ask_smapi_model.v1.skill.manifest.video_app_interface.VideoAppInterface'
     }
 
     json_discriminator_key = "type"

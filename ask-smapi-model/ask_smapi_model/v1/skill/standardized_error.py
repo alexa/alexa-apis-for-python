@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.standardized_error_code import StandardizedErrorCode
-    from ask_smapi_model.v1.skill.validation_details import ValidationDetails
+    from ask_smapi_model.v1.skill.standardized_error_code import StandardizedErrorCodeV1
+    from ask_smapi_model.v1.skill.validation_details import ValidationDetailsV1
 
 
 class StandardizedError(object):
@@ -54,7 +54,7 @@ class StandardizedError(object):
     supports_multiple_types = False
 
     def __init__(self, code=None, message=None, validation_details=None):
-        # type: (Optional[StandardizedErrorCode], Optional[str], Optional[ValidationDetails]) -> None
+        # type: (Optional[StandardizedErrorCodeV1], Optional[str], Optional[ValidationDetailsV1]) -> None
         """Standardized structure which wraps machine parsable and human readable information about an error.
 
         :param code: Standardized structure which wraps machine parsable and human readable information about an error.

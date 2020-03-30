@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.standardized_error import StandardizedError
-    from ask_smapi_model.v1.skill.last_update_request import LastUpdateRequest
+    from ask_smapi_model.v1.skill.standardized_error import StandardizedErrorV1
+    from ask_smapi_model.v1.skill.last_update_request import LastUpdateRequestV1
 
 
 class SkillInteractionModelStatus(object):
@@ -62,7 +62,7 @@ class SkillInteractionModelStatus(object):
     supports_multiple_types = False
 
     def __init__(self, last_update_request=None, e_tag=None, version=None, errors=None, warnings=None):
-        # type: (Optional[LastUpdateRequest], Optional[str], Optional[str], Optional[List[StandardizedError]], Optional[List[StandardizedError]]) -> None
+        # type: (Optional[LastUpdateRequestV1], Optional[str], Optional[str], Optional[List[StandardizedErrorV1]], Optional[List[StandardizedErrorV1]]) -> None
         """Defines the structure for interaction model build status.
 
         :param last_update_request: 

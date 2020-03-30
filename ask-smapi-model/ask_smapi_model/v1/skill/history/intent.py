@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.history.confidence import Confidence
-    from ask_smapi_model.v1.skill.history.slot import Slot
+    from ask_smapi_model.v1.skill.history.slot import SlotV1
+    from ask_smapi_model.v1.skill.history.confidence import ConfidenceV1
 
 
 class Intent(object):
@@ -54,7 +54,7 @@ class Intent(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, confidence=None, slots=None):
-        # type: (Optional[str], Optional[Confidence], Optional[Dict[str, Slot]]) -> None
+        # type: (Optional[str], Optional[ConfidenceV1], Optional[Dict[str, SlotV1]]) -> None
         """Provides the intent name, slots and confidence of the intent used in this interaction.
 
         :param name: The hypothesized intent for this utterance.

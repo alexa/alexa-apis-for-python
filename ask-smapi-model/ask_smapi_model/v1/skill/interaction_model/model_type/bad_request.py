@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.model_type.warning import Warning
-    from ask_smapi_model.v1.skill.interaction_model.model_type.error import Error
+    from ask_smapi_model.v1.skill.interaction_model.model_type.error import ErrorV1
+    from ask_smapi_model.v1.skill.interaction_model.model_type.warning import WarningV1
 
 
 class BadRequest(object):
@@ -50,7 +50,7 @@ class BadRequest(object):
     supports_multiple_types = False
 
     def __init__(self, errors=None, warnings=None):
-        # type: (Optional[List[Error]], Optional[List[Warning]]) -> None
+        # type: (Optional[List[ErrorV1]], Optional[List[WarningV1]]) -> None
         """The body of the bad request exception.
 
         :param errors: 

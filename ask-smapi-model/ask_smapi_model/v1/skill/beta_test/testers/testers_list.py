@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.beta_test.testers.tester import Tester
+    from ask_smapi_model.v1.skill.beta_test.testers.tester import TesterV1
 
 
 class TestersList(object):
@@ -45,7 +45,7 @@ class TestersList(object):
     supports_multiple_types = False
 
     def __init__(self, testers=None):
-        # type: (Optional[List[Tester]]) -> None
+        # type: (Optional[List[TesterV1]]) -> None
         """List of testers.
 
         :param testers: List of the email address of testers.

@@ -23,10 +23,10 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.event_publications import EventPublications
-    from ask_smapi_model.v1.skill.manifest.skill_manifest_endpoint import SkillManifestEndpoint
-    from ask_smapi_model.v1.skill.manifest.region import Region
-    from ask_smapi_model.v1.skill.manifest.event_name import EventName
+    from ask_smapi_model.v1.skill.manifest.skill_manifest_endpoint import SkillManifestEndpointV1
+    from ask_smapi_model.v1.skill.manifest.event_name import EventNameV1
+    from ask_smapi_model.v1.skill.manifest.event_publications import EventPublicationsV1
+    from ask_smapi_model.v1.skill.manifest.region import RegionV1
 
 
 class SkillManifestEvents(object):
@@ -60,7 +60,7 @@ class SkillManifestEvents(object):
     supports_multiple_types = False
 
     def __init__(self, subscriptions=None, publications=None, regions=None, endpoint=None):
-        # type: (Optional[List[EventName]], Optional[List[EventPublications]], Optional[Dict[str, Region]], Optional[SkillManifestEndpoint]) -> None
+        # type: (Optional[List[EventNameV1]], Optional[List[EventPublicationsV1]], Optional[Dict[str, RegionV1]], Optional[SkillManifestEndpointV1]) -> None
         """Defines the structure for subscribed events information in the skill manifest.
 
         :param subscriptions: Contains an array of eventName object each of which contains the name of a skill event.

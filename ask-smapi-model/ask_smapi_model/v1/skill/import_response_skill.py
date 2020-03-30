@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.resource_import_status import ResourceImportStatus
+    from ask_smapi_model.v1.skill.resource_import_status import ResourceImportStatusV1
 
 
 class ImportResponseSkill(object):
@@ -51,7 +51,7 @@ class ImportResponseSkill(object):
     supports_multiple_types = False
 
     def __init__(self, skill_id=None, e_tag=None, resources=None):
-        # type: (Optional[str], Optional[str], Optional[List[ResourceImportStatus]]) -> None
+        # type: (Optional[str], Optional[str], Optional[List[ResourceImportStatusV1]]) -> None
         """
 
         :param skill_id: 

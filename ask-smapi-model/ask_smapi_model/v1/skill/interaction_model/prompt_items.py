@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.prompt_items_type import PromptItemsType
+    from ask_smapi_model.v1.skill.interaction_model.prompt_items_type import PromptItemsTypeV1
 
 
 class PromptItems(object):
@@ -47,7 +47,7 @@ class PromptItems(object):
     supports_multiple_types = False
 
     def __init__(self, object_type=None, value=None):
-        # type: (Optional[PromptItemsType], Optional[str]) -> None
+        # type: (Optional[PromptItemsTypeV1], Optional[str]) -> None
         """
 
         :param object_type: 
