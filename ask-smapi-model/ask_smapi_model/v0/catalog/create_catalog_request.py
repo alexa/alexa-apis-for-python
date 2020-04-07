@@ -23,60 +23,57 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.model_configuration import ModelConfigurationV1
-    from ask_smapi_model.v1.skill.interaction_model.slot_type import SlotTypeV1
-    from ask_smapi_model.v1.skill.interaction_model.intent import IntentV1
+    from ask_smapi_model.v0.catalog.catalog_type import CatalogTypeV0
+    from ask_smapi_model.v0.catalog.catalog_usage import CatalogUsageV0
 
 
-class LanguageModel(object):
+class CreateCatalogRequest(object):
     """
-    Define the language model.
 
-
-    :param invocation_name: Invocation name of the skill.
-    :type invocation_name: (optional) str
-    :param types: 
-    :type types: (optional) list[ask_smapi_model.v1.skill.interaction_model.slot_type.SlotType]
-    :param intents: 
-    :type intents: (optional) list[ask_smapi_model.v1.skill.interaction_model.intent.Intent]
-    :param model_configuration: 
-    :type model_configuration: (optional) ask_smapi_model.v1.skill.interaction_model.model_configuration.ModelConfiguration
+    :param title: Title of the catalog.
+    :type title: (optional) str
+    :param object_type: 
+    :type object_type: (optional) ask_smapi_model.v0.catalog.catalog_type.CatalogType
+    :param usage: 
+    :type usage: (optional) ask_smapi_model.v0.catalog.catalog_usage.CatalogUsage
+    :param vendor_id: ID of the vendor owning the catalog.
+    :type vendor_id: (optional) str
 
     """
     deserialized_types = {
-        'invocation_name': 'str',
-        'types': 'list[ask_smapi_model.v1.skill.interaction_model.slot_type.SlotType]',
-        'intents': 'list[ask_smapi_model.v1.skill.interaction_model.intent.Intent]',
-        'model_configuration': 'ask_smapi_model.v1.skill.interaction_model.model_configuration.ModelConfiguration'
+        'title': 'str',
+        'object_type': 'ask_smapi_model.v0.catalog.catalog_type.CatalogType',
+        'usage': 'ask_smapi_model.v0.catalog.catalog_usage.CatalogUsage',
+        'vendor_id': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'invocation_name': 'invocationName',
-        'types': 'types',
-        'intents': 'intents',
-        'model_configuration': 'modelConfiguration'
+        'title': 'title',
+        'object_type': 'type',
+        'usage': 'usage',
+        'vendor_id': 'vendorId'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, invocation_name=None, types=None, intents=None, model_configuration=None):
-        # type: (Optional[str], Optional[List[SlotTypeV1]], Optional[List[IntentV1]], Optional[ModelConfigurationV1]) -> None
-        """Define the language model.
+    def __init__(self, title=None, object_type=None, usage=None, vendor_id=None):
+        # type: (Optional[str], Optional[CatalogTypeV0], Optional[CatalogUsageV0], Optional[str]) -> None
+        """
 
-        :param invocation_name: Invocation name of the skill.
-        :type invocation_name: (optional) str
-        :param types: 
-        :type types: (optional) list[ask_smapi_model.v1.skill.interaction_model.slot_type.SlotType]
-        :param intents: 
-        :type intents: (optional) list[ask_smapi_model.v1.skill.interaction_model.intent.Intent]
-        :param model_configuration: 
-        :type model_configuration: (optional) ask_smapi_model.v1.skill.interaction_model.model_configuration.ModelConfiguration
+        :param title: Title of the catalog.
+        :type title: (optional) str
+        :param object_type: 
+        :type object_type: (optional) ask_smapi_model.v0.catalog.catalog_type.CatalogType
+        :param usage: 
+        :type usage: (optional) ask_smapi_model.v0.catalog.catalog_usage.CatalogUsage
+        :param vendor_id: ID of the vendor owning the catalog.
+        :type vendor_id: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
-        self.invocation_name = invocation_name
-        self.types = types
-        self.intents = intents
-        self.model_configuration = model_configuration
+        self.title = title
+        self.object_type = object_type
+        self.usage = usage
+        self.vendor_id = vendor_id
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -121,7 +118,7 @@ class LanguageModel(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, LanguageModel):
+        if not isinstance(other, CreateCatalogRequest):
             return False
 
         return self.__dict__ == other.__dict__

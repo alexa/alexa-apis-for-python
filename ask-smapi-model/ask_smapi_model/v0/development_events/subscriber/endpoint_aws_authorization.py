@@ -18,65 +18,46 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
+from ask_smapi_model.v0.development_events.subscriber.endpoint_authorization import EndpointAuthorization
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.model_configuration import ModelConfigurationV1
-    from ask_smapi_model.v1.skill.interaction_model.slot_type import SlotTypeV1
-    from ask_smapi_model.v1.skill.interaction_model.intent import IntentV1
 
 
-class LanguageModel(object):
+class EndpointAwsAuthorization(EndpointAuthorization):
     """
-    Define the language model.
+    Authorization for accessing AWS SNS endpoint.
 
 
-    :param invocation_name: Invocation name of the skill.
-    :type invocation_name: (optional) str
-    :param types: 
-    :type types: (optional) list[ask_smapi_model.v1.skill.interaction_model.slot_type.SlotType]
-    :param intents: 
-    :type intents: (optional) list[ask_smapi_model.v1.skill.interaction_model.intent.Intent]
-    :param model_configuration: 
-    :type model_configuration: (optional) ask_smapi_model.v1.skill.interaction_model.model_configuration.ModelConfiguration
+    :param arn: IAM Role arn to use/assumeRole for authorization.
+    :type arn: (optional) str
 
     """
     deserialized_types = {
-        'invocation_name': 'str',
-        'types': 'list[ask_smapi_model.v1.skill.interaction_model.slot_type.SlotType]',
-        'intents': 'list[ask_smapi_model.v1.skill.interaction_model.intent.Intent]',
-        'model_configuration': 'ask_smapi_model.v1.skill.interaction_model.model_configuration.ModelConfiguration'
+        'object_type': 'str',
+        'arn': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'invocation_name': 'invocationName',
-        'types': 'types',
-        'intents': 'intents',
-        'model_configuration': 'modelConfiguration'
+        'object_type': 'type',
+        'arn': 'arn'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, invocation_name=None, types=None, intents=None, model_configuration=None):
-        # type: (Optional[str], Optional[List[SlotTypeV1]], Optional[List[IntentV1]], Optional[ModelConfigurationV1]) -> None
-        """Define the language model.
+    def __init__(self, arn=None):
+        # type: (Optional[str]) -> None
+        """Authorization for accessing AWS SNS endpoint.
 
-        :param invocation_name: Invocation name of the skill.
-        :type invocation_name: (optional) str
-        :param types: 
-        :type types: (optional) list[ask_smapi_model.v1.skill.interaction_model.slot_type.SlotType]
-        :param intents: 
-        :type intents: (optional) list[ask_smapi_model.v1.skill.interaction_model.intent.Intent]
-        :param model_configuration: 
-        :type model_configuration: (optional) ask_smapi_model.v1.skill.interaction_model.model_configuration.ModelConfiguration
+        :param arn: IAM Role arn to use/assumeRole for authorization.
+        :type arn: (optional) str
         """
-        self.__discriminator_value = None  # type: str
+        self.__discriminator_value = "AWS_IAM"  # type: str
 
-        self.invocation_name = invocation_name
-        self.types = types
-        self.intents = intents
-        self.model_configuration = model_configuration
+        self.object_type = self.__discriminator_value
+        super(EndpointAwsAuthorization, self).__init__(object_type=self.__discriminator_value)
+        self.arn = arn
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -121,7 +102,7 @@ class LanguageModel(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, LanguageModel):
+        if not isinstance(other, EndpointAwsAuthorization):
             return False
 
         return self.__dict__ == other.__dict__

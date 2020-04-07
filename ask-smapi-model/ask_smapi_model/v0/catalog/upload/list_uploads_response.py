@@ -23,60 +23,57 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.model_configuration import ModelConfigurationV1
-    from ask_smapi_model.v1.skill.interaction_model.slot_type import SlotTypeV1
-    from ask_smapi_model.v1.skill.interaction_model.intent import IntentV1
+    from ask_smapi_model.v0.catalog.upload.content_upload_summary import ContentUploadSummaryV0
+    from ask_smapi_model.v0.links import LinksV0
 
 
-class LanguageModel(object):
+class ListUploadsResponse(object):
     """
-    Define the language model.
 
-
-    :param invocation_name: Invocation name of the skill.
-    :type invocation_name: (optional) str
-    :param types: 
-    :type types: (optional) list[ask_smapi_model.v1.skill.interaction_model.slot_type.SlotType]
-    :param intents: 
-    :type intents: (optional) list[ask_smapi_model.v1.skill.interaction_model.intent.Intent]
-    :param model_configuration: 
-    :type model_configuration: (optional) ask_smapi_model.v1.skill.interaction_model.model_configuration.ModelConfiguration
+    :param links: 
+    :type links: (optional) ask_smapi_model.v0.links.Links
+    :param is_truncated: 
+    :type is_truncated: (optional) bool
+    :param next_token: 
+    :type next_token: (optional) str
+    :param uploads: List of upload summaries.
+    :type uploads: (optional) list[ask_smapi_model.v0.catalog.upload.content_upload_summary.ContentUploadSummary]
 
     """
     deserialized_types = {
-        'invocation_name': 'str',
-        'types': 'list[ask_smapi_model.v1.skill.interaction_model.slot_type.SlotType]',
-        'intents': 'list[ask_smapi_model.v1.skill.interaction_model.intent.Intent]',
-        'model_configuration': 'ask_smapi_model.v1.skill.interaction_model.model_configuration.ModelConfiguration'
+        'links': 'ask_smapi_model.v0.links.Links',
+        'is_truncated': 'bool',
+        'next_token': 'str',
+        'uploads': 'list[ask_smapi_model.v0.catalog.upload.content_upload_summary.ContentUploadSummary]'
     }  # type: Dict
 
     attribute_map = {
-        'invocation_name': 'invocationName',
-        'types': 'types',
-        'intents': 'intents',
-        'model_configuration': 'modelConfiguration'
+        'links': '_links',
+        'is_truncated': 'isTruncated',
+        'next_token': 'nextToken',
+        'uploads': 'uploads'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, invocation_name=None, types=None, intents=None, model_configuration=None):
-        # type: (Optional[str], Optional[List[SlotTypeV1]], Optional[List[IntentV1]], Optional[ModelConfigurationV1]) -> None
-        """Define the language model.
+    def __init__(self, links=None, is_truncated=None, next_token=None, uploads=None):
+        # type: (Optional[LinksV0], Optional[bool], Optional[str], Optional[List[ContentUploadSummaryV0]]) -> None
+        """
 
-        :param invocation_name: Invocation name of the skill.
-        :type invocation_name: (optional) str
-        :param types: 
-        :type types: (optional) list[ask_smapi_model.v1.skill.interaction_model.slot_type.SlotType]
-        :param intents: 
-        :type intents: (optional) list[ask_smapi_model.v1.skill.interaction_model.intent.Intent]
-        :param model_configuration: 
-        :type model_configuration: (optional) ask_smapi_model.v1.skill.interaction_model.model_configuration.ModelConfiguration
+        :param links: 
+        :type links: (optional) ask_smapi_model.v0.links.Links
+        :param is_truncated: 
+        :type is_truncated: (optional) bool
+        :param next_token: 
+        :type next_token: (optional) str
+        :param uploads: List of upload summaries.
+        :type uploads: (optional) list[ask_smapi_model.v0.catalog.upload.content_upload_summary.ContentUploadSummary]
         """
         self.__discriminator_value = None  # type: str
 
-        self.invocation_name = invocation_name
-        self.types = types
-        self.intents = intents
-        self.model_configuration = model_configuration
+        self.links = links
+        self.is_truncated = is_truncated
+        self.next_token = next_token
+        self.uploads = uploads
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -121,7 +118,7 @@ class LanguageModel(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, LanguageModel):
+        if not isinstance(other, ListUploadsResponse):
             return False
 
         return self.__dict__ == other.__dict__

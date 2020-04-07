@@ -35,88 +35,106 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.interaction_model.catalog.catalog_response import CatalogResponseV1
     from ask_smapi_model.v1.skill.interaction_model.type_version.list_slot_type_version_response import ListSlotTypeVersionResponseV1
     from ask_smapi_model.v1.skill.beta_test.test_body import TestBodyV1
-    from ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_version_data import SlotTypeVersionDataV1
-    from ask_smapi_model.v1.skill.interaction_model.catalog.definition_data import DefinitionDataV1
-    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_metadata import HostedSkillMetadataV1
-    from ask_smapi_model.v1.audit_logs.audit_logs_response import AuditLogsResponseV1
     from ask_smapi_model.v1.skill.update_skill_with_package_request import UpdateSkillWithPackageRequestV1
     from ask_smapi_model.v1.skill.metrics.get_metric_data_response import GetMetricDataResponseV1
     from ask_smapi_model.v1.isp.list_in_skill_product_response import ListInSkillProductResponseV1
     from ask_smapi_model.v1.isp.update_in_skill_product_request import UpdateInSkillProductRequestV1
     from ask_smapi_model.v1.skill.evaluations.profile_nlu_response import ProfileNluResponseV1
+    from ask_smapi_model.v0.catalog.upload.create_content_upload_request import CreateContentUploadRequestV0
     from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_repository_credentials_request import HostedSkillRepositoryCredentialsRequestV1
     from ask_smapi_model.v2.skill.invocations.invocations_api_response import InvocationsApiResponseV2
     from ask_smapi_model.v1.skill.beta_test.testers.list_testers_response import ListTestersResponseV1
-    from ask_smapi_model.v1.skill.interaction_model.version.catalog_update import CatalogUpdateV1
+    from ask_smapi_model.v0.catalog.upload.create_content_upload_response import CreateContentUploadResponseV0
     from ask_smapi_model.v1.skill.interaction_model.model_type.list_slot_type_response import ListSlotTypeResponseV1
     from ask_smapi_model.v1.skill.create_skill_response import CreateSkillResponseV1
+    from ask_smapi_model.v0.catalog.create_catalog_request import CreateCatalogRequestV0
+    from ask_smapi_model.v1.isp.associated_skill_response import AssociatedSkillResponseV1
+    from ask_smapi_model.v1.stage_type import StageTypeV1
+    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_permission import HostedSkillPermissionV1
+    from ask_smapi_model.v2.skill.simulations.simulations_api_request import SimulationsApiRequestV2
+    from ask_smapi_model.v1.skill.simulations.simulations_api_response import SimulationsApiResponseV1
+    from ask_smapi_model.v0.development_events.subscription.subscription_info import SubscriptionInfoV0
+    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_repository_credentials_list import HostedSkillRepositoryCredentialsListV1
+    from ask_smapi_model.v1.skill.upload_response import UploadResponseV1
+    from ask_smapi_model.v0.bad_request_error import BadRequestErrorV0
+    from ask_smapi_model.v1.isp.in_skill_product_summary_response import InSkillProductSummaryResponseV1
+    from ask_smapi_model.v1.catalog.create_content_upload_url_response import CreateContentUploadUrlResponseV1
+    from ask_smapi_model.v1.skill.ssl_certificate_payload import SSLCertificatePayloadV1
+    from ask_smapi_model.v1.catalog.create_content_upload_url_request import CreateContentUploadUrlRequestV1
+    from ask_smapi_model.v1.skill.certification.list_certifications_response import ListCertificationsResponseV1
+    from ask_smapi_model.v2.skill.simulations.simulations_api_response import SimulationsApiResponseV2
+    from ask_smapi_model.v1.catalog.upload.catalog_upload_base import CatalogUploadBaseV1
+    from ask_smapi_model.v1.skill.interaction_model.version.catalog_values import CatalogValuesV1
+    from ask_smapi_model.v1.error import ErrorV1
+    from ask_smapi_model.v1.skill.account_linking.account_linking_request import AccountLinkingRequestV1
+    from ask_smapi_model.v0.catalog.catalog_details import CatalogDetailsV0
+    from ask_smapi_model.v1.skill.history.intent_requests import IntentRequestsV1
+    from ask_smapi_model.v1.skill.interaction_model.interaction_model_data import InteractionModelDataV1
+    from ask_smapi_model.v2.bad_request_error import BadRequestErrorV2
+    from ask_smapi_model.v1.skill.interaction_model.type_version.version_data import VersionDataV1
+    from ask_smapi_model.v0.development_events.subscriber.list_subscribers_response import ListSubscribersResponseV0
+    from ask_smapi_model.v1.skill.beta_test.beta_test import BetaTestV1
+    from ask_smapi_model.v1.skill.history.locale_in_query import LocaleInQueryV1
+    from ask_smapi_model.v1.isp.create_in_skill_product_request import CreateInSkillProductRequestV1
+    from ask_smapi_model.v1.skill.interaction_model.catalog.catalog_definition_output import CatalogDefinitionOutputV1
+    from ask_smapi_model.v1.skill.account_linking.account_linking_response import AccountLinkingResponseV1
+    from ask_smapi_model.v0.error import ErrorV0
+    from ask_smapi_model.v1.skill.interaction_model.version.version_data import VersionDataV1
+    from ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_update import SlotTypeUpdateV1
+    from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_response import SlotTypeResponseV1
+    from ask_smapi_model.v1.skill.certification.certification_response import CertificationResponseV1
+    from ask_smapi_model.v1.skill.private.list_private_distribution_accounts_response import ListPrivateDistributionAccountsResponseV1
+    from ask_smapi_model.v1.skill.history.interaction_type import InteractionTypeV1
+    from ask_smapi_model.v0.catalog.upload.get_content_upload_response import GetContentUploadResponseV0
+    from ask_smapi_model.v1.skill.interaction_model.catalog.catalog_status import CatalogStatusV1
+    from ask_smapi_model.v0.development_events.subscriber.create_subscriber_request import CreateSubscriberRequestV0
+    from ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_version_data import SlotTypeVersionDataV1
+    from ask_smapi_model.v1.skill.interaction_model.catalog.definition_data import DefinitionDataV1
+    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_metadata import HostedSkillMetadataV1
+    from ask_smapi_model.v1.audit_logs.audit_logs_response import AuditLogsResponseV1
+    from ask_smapi_model.v0.development_events.subscription.update_subscription_request import UpdateSubscriptionRequestV0
+    from ask_smapi_model.v0.catalog.upload.complete_upload_request import CompleteUploadRequestV0
+    from ask_smapi_model.v1.skill.interaction_model.version.catalog_update import CatalogUpdateV1
+    from ask_smapi_model.v0.development_events.subscriber.update_subscriber_request import UpdateSubscriberRequestV0
     from ask_smapi_model.v1.skill.validations.validations_api_response import ValidationsApiResponseV1
     import str
     from ask_smapi_model.v1.skill.interaction_model.model_type.update_request import UpdateRequestV1
     from ask_smapi_model.v1.skill.export_response import ExportResponseV1
     from ask_smapi_model.v1.skill.evaluations.profile_nlu_request import ProfileNluRequestV1
     from ask_smapi_model.v1.skill.withdraw_request import WithdrawRequestV1
-    from ask_smapi_model.v1.isp.associated_skill_response import AssociatedSkillResponseV1
-    from ask_smapi_model.v1.stage_type import StageTypeV1
-    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_permission import HostedSkillPermissionV1
-    from ask_smapi_model.v2.skill.simulations.simulations_api_request import SimulationsApiRequestV2
-    from ask_smapi_model.v1.skill.simulations.simulations_api_response import SimulationsApiResponseV1
     from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_definition_output import SlotTypeDefinitionOutputV1
-    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_repository_credentials_list import HostedSkillRepositoryCredentialsListV1
-    from ask_smapi_model.v1.skill.upload_response import UploadResponseV1
-    from ask_smapi_model.v1.isp.in_skill_product_summary_response import InSkillProductSummaryResponseV1
-    from ask_smapi_model.v1.catalog.create_content_upload_url_response import CreateContentUploadUrlResponseV1
+    from ask_smapi_model.v0.development_events.subscriber.subscriber_info import SubscriberInfoV0
+    from ask_smapi_model.v0.development_events.subscription.create_subscription_request import CreateSubscriptionRequestV0
+    from ask_smapi_model.v0.development_events.subscription.list_subscriptions_response import ListSubscriptionsResponseV0
     from ask_smapi_model.v1.skill.interaction_model.model_type.bad_request import BadRequestV1
     from ask_smapi_model.v1.skill.simulations.simulations_api_request import SimulationsApiRequestV1
-    from ask_smapi_model.v1.skill.ssl_certificate_payload import SSLCertificatePayloadV1
-    from ask_smapi_model.v1.catalog.create_content_upload_url_request import CreateContentUploadUrlRequestV1
-    from ask_smapi_model.v1.skill.certification.list_certifications_response import ListCertificationsResponseV1
     from ask_smapi_model.v1.audit_logs.audit_logs_request import AuditLogsRequestV1
-    from ask_smapi_model.v2.skill.simulations.simulations_api_response import SimulationsApiResponseV2
     from ask_smapi_model.v1.skill.standardized_error import StandardizedErrorV1
-    from ask_smapi_model.v1.catalog.upload.catalog_upload_base import CatalogUploadBaseV1
-    from ask_smapi_model.v1.skill.interaction_model.version.catalog_values import CatalogValuesV1
     from ask_smapi_model.v1.isp.in_skill_product_definition_response import InSkillProductDefinitionResponseV1
-    from ask_smapi_model.v1.error import ErrorV1
     from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_status import SlotTypeStatusV1
     from ask_smapi_model.v1.skill.interaction_model.model_type.definition_data import DefinitionDataV1
-    from ask_smapi_model.v1.skill.account_linking.account_linking_request import AccountLinkingRequestV1
     from ask_smapi_model.v1.skill.manifest.skill_manifest_envelope import SkillManifestEnvelopeV1
     from ask_smapi_model.v2.error import ErrorV2
     from ask_smapi_model.v1.skill.list_skill_response import ListSkillResponseV1
-    from ask_smapi_model.v1.skill.history.intent_requests import IntentRequestsV1
-    from ask_smapi_model.v1.skill.interaction_model.interaction_model_data import InteractionModelDataV1
+    from ask_smapi_model.v0.catalog.list_catalogs_response import ListCatalogsResponseV0
     from ask_smapi_model.v1.skill.validations.validations_api_request import ValidationsApiRequestV1
     from ask_smapi_model.v1.skill.submit_skill_for_certification_request import SubmitSkillForCertificationRequestV1
-    from ask_smapi_model.v2.bad_request_error import BadRequestErrorV2
+    from ask_smapi_model.v0.catalog.upload.list_uploads_response import ListUploadsResponseV0
     from ask_smapi_model.v1.catalog.upload.get_content_upload_response import GetContentUploadResponseV1
     from ask_smapi_model.v1.skill.history.dialog_act_name import DialogActNameV1
-    from ask_smapi_model.v1.skill.interaction_model.type_version.version_data import VersionDataV1
     from ask_smapi_model.v1.skill.import_response import ImportResponseV1
     from ask_smapi_model.v1.skill.skill_status import SkillStatusV1
-    from ask_smapi_model.v1.skill.beta_test.beta_test import BetaTestV1
-    from ask_smapi_model.v1.skill.history.locale_in_query import LocaleInQueryV1
     from ask_smapi_model.v1.skill.history.publication_status import PublicationStatusV1
     from ask_smapi_model.v2.skill.invocations.invocations_api_request import InvocationsApiRequestV2
     from ask_smapi_model.v1.skill.interaction_model.catalog.list_catalog_response import ListCatalogResponseV1
-    from ask_smapi_model.v1.isp.create_in_skill_product_request import CreateInSkillProductRequestV1
-    from ask_smapi_model.v1.skill.interaction_model.catalog.catalog_definition_output import CatalogDefinitionOutputV1
-    from ask_smapi_model.v1.skill.account_linking.account_linking_response import AccountLinkingResponseV1
-    from ask_smapi_model.v1.skill.interaction_model.version.version_data import VersionDataV1
     from ask_smapi_model.v1.skill.history.intent_confidence_bin import IntentConfidenceBinV1
-    from ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_update import SlotTypeUpdateV1
     from ask_smapi_model.v1.skill.beta_test.testers.testers_list import TestersListV1
-    from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_response import SlotTypeResponseV1
     from ask_smapi_model.v1.bad_request_error import BadRequestErrorV1
     from ask_smapi_model.v1.isp.product_response import ProductResponseV1
     from ask_smapi_model.v1.skill.create_skill_request import CreateSkillRequestV1
     from ask_smapi_model.v1.vendor_management.vendors import VendorsV1
-    from ask_smapi_model.v1.skill.certification.certification_response import CertificationResponseV1
-    from ask_smapi_model.v1.skill.private.list_private_distribution_accounts_response import ListPrivateDistributionAccountsResponseV1
     from ask_smapi_model.v1.skill.interaction_model.version.catalog_version_data import CatalogVersionDataV1
     from ask_smapi_model.v1.skill.create_skill_with_package_request import CreateSkillWithPackageRequestV1
-    from ask_smapi_model.v1.skill.history.interaction_type import InteractionTypeV1
-    from ask_smapi_model.v1.skill.interaction_model.catalog.catalog_status import CatalogStatusV1
     from ask_smapi_model.v1.skill.interaction_model.version.list_response import ListResponseV1
 
 
@@ -152,6 +170,1456 @@ class SkillManagementServiceClient(BaseServiceClient):
                 grant_type='refresh_token')
         else:
             self._lwa_service_client = lwa_client
+
+    def get_catalog_v0(self, catalog_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, ErrorV0, CatalogDetailsV0, BadRequestErrorV0]
+        """
+        Returns information about a particular catalog.
+
+        :param catalog_id: (required) Unique identifier of the catalog
+        :type catalog_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV0, CatalogDetailsV0, BadRequestErrorV0]
+        """
+        operation_name = "get_catalog_v0"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'catalog_id' is set
+        if ('catalog_id' not in params) or (params['catalog_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `catalog_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v0/catalogs/{catalogId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'catalog_id' in params:
+            path_params['catalogId'] = params['catalog_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.catalog.catalog_details.CatalogDetails", status_code=200, message="Successful operation."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v0.catalog.catalog_details.CatalogDetails")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def list_uploads_for_catalog_v0(self, catalog_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, ListUploadsResponseV0, ErrorV0, BadRequestErrorV0]
+        """
+        Lists all the uploads for a particular catalog.
+
+        :param catalog_id: (required) Unique identifier of the catalog
+        :type catalog_id: str
+        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :type next_token: str
+        :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
+        :type max_results: float
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ListUploadsResponseV0, ErrorV0, BadRequestErrorV0]
+        """
+        operation_name = "list_uploads_for_catalog_v0"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'catalog_id' is set
+        if ('catalog_id' not in params) or (params['catalog_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `catalog_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v0/catalogs/{catalogId}/uploads'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'catalog_id' in params:
+            path_params['catalogId'] = params['catalog_id']
+
+        query_params = []  # type: List
+        if 'next_token' in params:
+            query_params.append(('nextToken', params['next_token']))
+        if 'max_results' in params:
+            query_params.append(('maxResults', params['max_results']))
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.catalog.upload.list_uploads_response.ListUploadsResponse", status_code=200, message="Successful operation."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v0.catalog.upload.list_uploads_response.ListUploadsResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def create_content_upload_v0(self, catalog_id, create_content_upload_request, **kwargs):
+        # type: (str, CreateContentUploadRequestV0, **Any) -> Union[ApiResponse, ErrorV0, CreateContentUploadResponseV0, BadRequestErrorV0]
+        """
+        Creates a new upload for a catalog and returns presigned upload parts for uploading the file.
+
+        :param catalog_id: (required) Unique identifier of the catalog
+        :type catalog_id: str
+        :param create_content_upload_request: (required) Defines the request body for updateCatalog API.
+        :type create_content_upload_request: ask_smapi_model.v0.catalog.upload.create_content_upload_request.CreateContentUploadRequest
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV0, CreateContentUploadResponseV0, BadRequestErrorV0]
+        """
+        operation_name = "create_content_upload_v0"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'catalog_id' is set
+        if ('catalog_id' not in params) or (params['catalog_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `catalog_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'create_content_upload_request' is set
+        if ('create_content_upload_request' not in params) or (params['create_content_upload_request'] is None):
+            raise ValueError(
+                "Missing the required parameter `create_content_upload_request` when calling `" + operation_name + "`")
+
+        resource_path = '/v0/catalogs/{catalogId}/uploads'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'catalog_id' in params:
+            path_params['catalogId'] = params['catalog_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'create_content_upload_request' in params:
+            body_params = params['create_content_upload_request']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.catalog.upload.create_content_upload_response.CreateContentUploadResponse", status_code=201, message="Content upload created."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="POST",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v0.catalog.upload.create_content_upload_response.CreateContentUploadResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def get_content_upload_by_id_v0(self, catalog_id, upload_id, **kwargs):
+        # type: (str, str, **Any) -> Union[ApiResponse, ErrorV0, GetContentUploadResponseV0, BadRequestErrorV0]
+        """
+        Gets detailed information about an upload which was created for a specific catalog. Includes the upload's ingestion steps and a presigned url for downloading the file.
+
+        :param catalog_id: (required) Unique identifier of the catalog
+        :type catalog_id: str
+        :param upload_id: (required) Unique identifier of the upload
+        :type upload_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV0, GetContentUploadResponseV0, BadRequestErrorV0]
+        """
+        operation_name = "get_content_upload_by_id_v0"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'catalog_id' is set
+        if ('catalog_id' not in params) or (params['catalog_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `catalog_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'upload_id' is set
+        if ('upload_id' not in params) or (params['upload_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `upload_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v0/catalogs/{catalogId}/uploads/{uploadId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'catalog_id' in params:
+            path_params['catalogId'] = params['catalog_id']
+        if 'upload_id' in params:
+            path_params['uploadId'] = params['upload_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.catalog.upload.get_content_upload_response.GetContentUploadResponse", status_code=200, message="Successful operation."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v0.catalog.upload.get_content_upload_response.GetContentUploadResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def complete_catalog_upload_v0(self, catalog_id, upload_id, complete_upload_request_payload, **kwargs):
+        # type: (str, str, CompleteUploadRequestV0, **Any) -> Union[ApiResponse, ErrorV0, BadRequestErrorV0]
+        """
+        Completes an upload. To be called after the file is uploaded to the backend data store using presigned url(s).
+
+        :param catalog_id: (required) Unique identifier of the catalog
+        :type catalog_id: str
+        :param upload_id: (required) Unique identifier of the upload
+        :type upload_id: str
+        :param complete_upload_request_payload: (required) Request payload to complete an upload.
+        :type complete_upload_request_payload: ask_smapi_model.v0.catalog.upload.complete_upload_request.CompleteUploadRequest
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV0, BadRequestErrorV0]
+        """
+        operation_name = "complete_catalog_upload_v0"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'catalog_id' is set
+        if ('catalog_id' not in params) or (params['catalog_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `catalog_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'upload_id' is set
+        if ('upload_id' not in params) or (params['upload_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `upload_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'complete_upload_request_payload' is set
+        if ('complete_upload_request_payload' not in params) or (params['complete_upload_request_payload'] is None):
+            raise ValueError(
+                "Missing the required parameter `complete_upload_request_payload` when calling `" + operation_name + "`")
+
+        resource_path = '/v0/catalogs/{catalogId}/uploads/{uploadId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'catalog_id' in params:
+            path_params['catalogId'] = params['catalog_id']
+        if 'upload_id' in params:
+            path_params['uploadId'] = params['upload_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'complete_upload_request_payload' in params:
+            body_params = params['complete_upload_request_payload']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=202, message="Accepted."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="POST",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+
+    def list_catalogs_for_vendor_v0(self, vendor_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, ErrorV0, ListCatalogsResponseV0, BadRequestErrorV0]
+        """
+        Lists catalogs associated with a vendor.
+
+        :param vendor_id: (required) The vendor ID.
+        :type vendor_id: str
+        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :type next_token: str
+        :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
+        :type max_results: float
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV0, ListCatalogsResponseV0, BadRequestErrorV0]
+        """
+        operation_name = "list_catalogs_for_vendor_v0"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'vendor_id' is set
+        if ('vendor_id' not in params) or (params['vendor_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `vendor_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v0/catalogs'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+
+        query_params = []  # type: List
+        if 'next_token' in params:
+            query_params.append(('nextToken', params['next_token']))
+        if 'max_results' in params:
+            query_params.append(('maxResults', params['max_results']))
+        if 'vendor_id' in params:
+            query_params.append(('vendorId', params['vendor_id']))
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.catalog.list_catalogs_response.ListCatalogsResponse", status_code=200, message="Successful operation."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v0.catalog.list_catalogs_response.ListCatalogsResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def create_catalog_v0(self, create_catalog_request, **kwargs):
+        # type: (CreateCatalogRequestV0, **Any) -> Union[ApiResponse, ErrorV0, CatalogDetailsV0, BadRequestErrorV0]
+        """
+        Creates a new catalog based on information provided in the request.
+
+        :param create_catalog_request: (required) Defines the request body for createCatalog API.
+        :type create_catalog_request: ask_smapi_model.v0.catalog.create_catalog_request.CreateCatalogRequest
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV0, CatalogDetailsV0, BadRequestErrorV0]
+        """
+        operation_name = "create_catalog_v0"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'create_catalog_request' is set
+        if ('create_catalog_request' not in params) or (params['create_catalog_request'] is None):
+            raise ValueError(
+                "Missing the required parameter `create_catalog_request` when calling `" + operation_name + "`")
+
+        resource_path = '/v0/catalogs'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'create_catalog_request' in params:
+            body_params = params['create_catalog_request']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.catalog.catalog_details.CatalogDetails", status_code=201, message="Catalog created."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="POST",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v0.catalog.catalog_details.CatalogDetails")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def list_subscribers_for_development_events_v0(self, vendor_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, ErrorV0, BadRequestErrorV0, ListSubscribersResponseV0]
+        """
+        Lists the subscribers for a particular vendor.
+
+        :param vendor_id: (required) The vendor ID.
+        :type vendor_id: str
+        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :type next_token: str
+        :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
+        :type max_results: float
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV0, BadRequestErrorV0, ListSubscribersResponseV0]
+        """
+        operation_name = "list_subscribers_for_development_events_v0"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'vendor_id' is set
+        if ('vendor_id' not in params) or (params['vendor_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `vendor_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v0/developmentEvents/subscribers'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+
+        query_params = []  # type: List
+        if 'vendor_id' in params:
+            query_params.append(('vendorId', params['vendor_id']))
+        if 'next_token' in params:
+            query_params.append(('nextToken', params['next_token']))
+        if 'max_results' in params:
+            query_params.append(('maxResults', params['max_results']))
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.development_events.subscriber.list_subscribers_response.ListSubscribersResponse", status_code=200, message="Successful operation."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v0.development_events.subscriber.list_subscribers_response.ListSubscribersResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def create_subscriber_for_development_events_v0(self, **kwargs):
+        # type: (**Any) -> Union[ApiResponse, ErrorV0, BadRequestErrorV0]
+        """
+        Creates a new subscriber resource for a vendor.
+
+        :param create_subscriber_request: Defines the request body for createSubscriber API.
+        :type create_subscriber_request: ask_smapi_model.v0.development_events.subscriber.create_subscriber_request.CreateSubscriberRequest
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV0, BadRequestErrorV0]
+        """
+        operation_name = "create_subscriber_for_development_events_v0"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+
+        resource_path = '/v0/developmentEvents/subscribers'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'create_subscriber_request' in params:
+            body_params = params['create_subscriber_request']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=201, message="Created. Returns a URL to retrieve the subscriber in &#39;Location&#39; header."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="POST",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+
+    def delete_subscriber_for_development_events_v0(self, subscriber_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, ErrorV0, BadRequestErrorV0]
+        """
+        Deletes a specified subscriber.
+
+        :param subscriber_id: (required) Unique identifier of the subscriber.
+        :type subscriber_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV0, BadRequestErrorV0]
+        """
+        operation_name = "delete_subscriber_for_development_events_v0"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'subscriber_id' is set
+        if ('subscriber_id' not in params) or (params['subscriber_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `subscriber_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v0/developmentEvents/subscribers/{subscriberId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'subscriber_id' in params:
+            path_params['subscriberId'] = params['subscriber_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="Successful operation."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="DELETE",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+
+    def get_subscriber_for_development_events_v0(self, subscriber_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, ErrorV0, BadRequestErrorV0, SubscriberInfoV0]
+        """
+        Returns information about specified subscriber.
+
+        :param subscriber_id: (required) Unique identifier of the subscriber.
+        :type subscriber_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV0, BadRequestErrorV0, SubscriberInfoV0]
+        """
+        operation_name = "get_subscriber_for_development_events_v0"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'subscriber_id' is set
+        if ('subscriber_id' not in params) or (params['subscriber_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `subscriber_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v0/developmentEvents/subscribers/{subscriberId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'subscriber_id' in params:
+            path_params['subscriberId'] = params['subscriber_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.development_events.subscriber.subscriber_info.SubscriberInfo", status_code=200, message="Successful operation."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v0.development_events.subscriber.subscriber_info.SubscriberInfo")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def set_subscriber_for_development_events_v0(self, subscriber_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, ErrorV0, BadRequestErrorV0]
+        """
+        Updates the properties of a subscriber.
+
+        :param subscriber_id: (required) Unique identifier of the subscriber.
+        :type subscriber_id: str
+        :param update_subscriber_request: Defines the request body for updateSubscriber API.
+        :type update_subscriber_request: ask_smapi_model.v0.development_events.subscriber.update_subscriber_request.UpdateSubscriberRequest
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV0, BadRequestErrorV0]
+        """
+        operation_name = "set_subscriber_for_development_events_v0"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'subscriber_id' is set
+        if ('subscriber_id' not in params) or (params['subscriber_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `subscriber_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v0/developmentEvents/subscribers/{subscriberId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'subscriber_id' in params:
+            path_params['subscriberId'] = params['subscriber_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'update_subscriber_request' in params:
+            body_params = params['update_subscriber_request']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="Success."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="PUT",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+
+    def list_subscriptions_for_development_events_v0(self, vendor_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, ListSubscriptionsResponseV0, ErrorV0, BadRequestErrorV0]
+        """
+        Lists all the subscriptions for a vendor/subscriber depending on the query parameter.
+
+        :param vendor_id: (required) The vendor ID.
+        :type vendor_id: str
+        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :type next_token: str
+        :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
+        :type max_results: float
+        :param subscriber_id: Unique identifier of the subscriber. If this query parameter is provided, the list would be filtered by the owning subscriberId.
+        :type subscriber_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ListSubscriptionsResponseV0, ErrorV0, BadRequestErrorV0]
+        """
+        operation_name = "list_subscriptions_for_development_events_v0"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'vendor_id' is set
+        if ('vendor_id' not in params) or (params['vendor_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `vendor_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v0/developmentEvents/subscriptions'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+
+        query_params = []  # type: List
+        if 'vendor_id' in params:
+            query_params.append(('vendorId', params['vendor_id']))
+        if 'next_token' in params:
+            query_params.append(('nextToken', params['next_token']))
+        if 'max_results' in params:
+            query_params.append(('maxResults', params['max_results']))
+        if 'subscriber_id' in params:
+            query_params.append(('subscriberId', params['subscriber_id']))
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.development_events.subscription.list_subscriptions_response.ListSubscriptionsResponse", status_code=200, message="Successful operation."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v0.development_events.subscription.list_subscriptions_response.ListSubscriptionsResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def create_subscription_for_development_events_v0(self, **kwargs):
+        # type: (**Any) -> Union[ApiResponse, ErrorV0, BadRequestErrorV0]
+        """
+        Creates a new subscription for a subscriber. This needs to be authorized by the client/vendor who created the subscriber and the vendor who publishes the event.
+
+        :param create_subscription_request: Request body for createSubscription API.
+        :type create_subscription_request: ask_smapi_model.v0.development_events.subscription.create_subscription_request.CreateSubscriptionRequest
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV0, BadRequestErrorV0]
+        """
+        operation_name = "create_subscription_for_development_events_v0"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+
+        resource_path = '/v0/developmentEvents/subscriptions'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'create_subscription_request' in params:
+            body_params = params['create_subscription_request']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=201, message="Created; Returns a URL to retrieve the subscription in &#39;Location&#39; header."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="POST",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+
+    def delete_subscription_for_development_events_v0(self, subscription_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, ErrorV0, BadRequestErrorV0]
+        """
+        Deletes a particular subscription. Both, the vendor who created the subscriber and the vendor who publishes the event can delete this resource with appropriate authorization.
+
+        :param subscription_id: (required) Unique identifier of the subscription.
+        :type subscription_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV0, BadRequestErrorV0]
+        """
+        operation_name = "delete_subscription_for_development_events_v0"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'subscription_id' is set
+        if ('subscription_id' not in params) or (params['subscription_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `subscription_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v0/developmentEvents/subscriptions/{subscriptionId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'subscription_id' in params:
+            path_params['subscriptionId'] = params['subscription_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="Successful operation."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="DELETE",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+
+    def get_subscription_for_development_events_v0(self, subscription_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, SubscriptionInfoV0, ErrorV0, BadRequestErrorV0]
+        """
+        Returns information about a particular subscription. Both, the vendor who created the subscriber and the vendor who publishes the event can retrieve this resource with appropriate authorization.
+
+        :param subscription_id: (required) Unique identifier of the subscription.
+        :type subscription_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, SubscriptionInfoV0, ErrorV0, BadRequestErrorV0]
+        """
+        operation_name = "get_subscription_for_development_events_v0"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'subscription_id' is set
+        if ('subscription_id' not in params) or (params['subscription_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `subscription_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v0/developmentEvents/subscriptions/{subscriptionId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'subscription_id' in params:
+            path_params['subscriptionId'] = params['subscription_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.development_events.subscription.subscription_info.SubscriptionInfo", status_code=200, message="Successful operation."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v0.development_events.subscription.subscription_info.SubscriptionInfo")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def set_subscription_for_development_events_v0(self, subscription_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, ErrorV0, BadRequestErrorV0]
+        """
+        Updates the mutable properties of a subscription. This needs to be authorized by the client/vendor who created the subscriber and the vendor who publishes the event. The subscriberId cannot be updated.
+
+        :param subscription_id: (required) Unique identifier of the subscription.
+        :type subscription_id: str
+        :param update_subscription_request: Request body for updateSubscription API.
+        :type update_subscription_request: ask_smapi_model.v0.development_events.subscription.update_subscription_request.UpdateSubscriptionRequest
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV0, BadRequestErrorV0]
+        """
+        operation_name = "set_subscription_for_development_events_v0"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'subscription_id' is set
+        if ('subscription_id' not in params) or (params['subscription_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `subscription_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v0/developmentEvents/subscriptions/{subscriptionId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'subscription_id' in params:
+            path_params['subscriptionId'] = params['subscription_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'update_subscription_request' in params:
+            body_params = params['update_subscription_request']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="No content."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="PUT",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+
+    def associate_catalog_with_skill_v0(self, skill_id, catalog_id, **kwargs):
+        # type: (str, str, **Any) -> Union[ApiResponse, ErrorV0, BadRequestErrorV0]
+        """
+        Associate skill with catalog.
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param catalog_id: (required) Unique identifier of the catalog
+        :type catalog_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV0, BadRequestErrorV0]
+        """
+        operation_name = "associate_catalog_with_skill_v0"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'catalog_id' is set
+        if ('catalog_id' not in params) or (params['catalog_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `catalog_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v0/skills/{skillId}/catalogs/{catalogId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+        if 'catalog_id' in params:
+            path_params['catalogId'] = params['catalog_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=201, message="Successful operation."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="PUT",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+
+    def list_catalogs_for_skill_v0(self, skill_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, ErrorV0, ListCatalogsResponseV0, BadRequestErrorV0]
+        """
+        Lists all the catalogs associated with a skill.
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :type next_token: str
+        :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
+        :type max_results: float
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV0, ListCatalogsResponseV0, BadRequestErrorV0]
+        """
+        operation_name = "list_catalogs_for_skill_v0"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v0/skills/{skillId}/catalogs'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+
+        query_params = []  # type: List
+        if 'next_token' in params:
+            query_params.append(('nextToken', params['next_token']))
+        if 'max_results' in params:
+            query_params.append(('maxResults', params['max_results']))
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.catalog.list_catalogs_response.ListCatalogsResponse", status_code=200, message="Successful operation."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v0.catalog.list_catalogs_response.ListCatalogsResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
 
     def create_catalog_upload_v1(self, catalog_id, catalog_upload_request_body, **kwargs):
         # type: (str, CatalogUploadBaseV1, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
@@ -291,7 +1759,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         header_params.append(('Authorization', authorization_value))
 
         error_definitions = []  # type: List
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.catalog.upload.get_content_upload_response.GetContentUploadResponse", status_code=200, message="successful operation"))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.catalog.upload.get_content_upload_response.GetContentUploadResponse", status_code=200, message="Successful operation."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))

@@ -18,65 +18,65 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
+from abc import ABCMeta, abstractmethod
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.model_configuration import ModelConfigurationV1
-    from ask_smapi_model.v1.skill.interaction_model.slot_type import SlotTypeV1
-    from ask_smapi_model.v1.skill.interaction_model.intent import IntentV1
 
 
-class LanguageModel(object):
+class EndpointAuthorization(object):
     """
-    Define the language model.
+    Authorization information to be able to publish notification to specified endpoint.
 
 
-    :param invocation_name: Invocation name of the skill.
-    :type invocation_name: (optional) str
-    :param types: 
-    :type types: (optional) list[ask_smapi_model.v1.skill.interaction_model.slot_type.SlotType]
-    :param intents: 
-    :type intents: (optional) list[ask_smapi_model.v1.skill.interaction_model.intent.Intent]
-    :param model_configuration: 
-    :type model_configuration: (optional) ask_smapi_model.v1.skill.interaction_model.model_configuration.ModelConfiguration
+    :param object_type: 
+    :type object_type: (optional) str
+
+    .. note::
+
+        This is an abstract class. Use the following mapping, to figure out
+        the model class to be instantiated, that sets ``type`` variable.
+
+        | AWS_IAM: :py:class:`ask_smapi_model.v0.development_events.subscriber.endpoint_aws_authorization.EndpointAwsAuthorization`
 
     """
     deserialized_types = {
-        'invocation_name': 'str',
-        'types': 'list[ask_smapi_model.v1.skill.interaction_model.slot_type.SlotType]',
-        'intents': 'list[ask_smapi_model.v1.skill.interaction_model.intent.Intent]',
-        'model_configuration': 'ask_smapi_model.v1.skill.interaction_model.model_configuration.ModelConfiguration'
+        'object_type': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'invocation_name': 'invocationName',
-        'types': 'types',
-        'intents': 'intents',
-        'model_configuration': 'modelConfiguration'
+        'object_type': 'type'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, invocation_name=None, types=None, intents=None, model_configuration=None):
-        # type: (Optional[str], Optional[List[SlotTypeV1]], Optional[List[IntentV1]], Optional[ModelConfigurationV1]) -> None
-        """Define the language model.
+    discriminator_value_class_map = {
+        'AWS_IAM': 'ask_smapi_model.v0.development_events.subscriber.endpoint_aws_authorization.EndpointAwsAuthorization'
+    }
 
-        :param invocation_name: Invocation name of the skill.
-        :type invocation_name: (optional) str
-        :param types: 
-        :type types: (optional) list[ask_smapi_model.v1.skill.interaction_model.slot_type.SlotType]
-        :param intents: 
-        :type intents: (optional) list[ask_smapi_model.v1.skill.interaction_model.intent.Intent]
-        :param model_configuration: 
-        :type model_configuration: (optional) ask_smapi_model.v1.skill.interaction_model.model_configuration.ModelConfiguration
+    json_discriminator_key = "type"
+
+    __metaclass__ = ABCMeta
+
+    @abstractmethod
+    def __init__(self, object_type=None):
+        # type: (Optional[str]) -> None
+        """Authorization information to be able to publish notification to specified endpoint.
+
+        :param object_type: 
+        :type object_type: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
-        self.invocation_name = invocation_name
-        self.types = types
-        self.intents = intents
-        self.model_configuration = model_configuration
+        self.object_type = object_type
+
+    @classmethod
+    def get_real_child_model(cls, data):
+        # type: (Dict[str, str]) -> Optional[str]
+        """Returns the real base class specified by the discriminator"""
+        discriminator_value = data[cls.json_discriminator_key]
+        return cls.discriminator_value_class_map.get(discriminator_value)
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -121,7 +121,7 @@ class LanguageModel(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, LanguageModel):
+        if not isinstance(other, EndpointAuthorization):
             return False
 
         return self.__dict__ == other.__dict__

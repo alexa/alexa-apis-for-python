@@ -23,60 +23,64 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.model_configuration import ModelConfigurationV1
-    from ask_smapi_model.v1.skill.interaction_model.slot_type import SlotTypeV1
-    from ask_smapi_model.v1.skill.interaction_model.intent import IntentV1
+    from ask_smapi_model.v0.development_events.subscriber.endpoint import EndpointV0
+    from ask_smapi_model.v0.development_events.subscriber.subscriber_status import SubscriberStatusV0
 
 
-class LanguageModel(object):
+class SubscriberSummary(object):
     """
-    Define the language model.
 
-
-    :param invocation_name: Invocation name of the skill.
-    :type invocation_name: (optional) str
-    :param types: 
-    :type types: (optional) list[ask_smapi_model.v1.skill.interaction_model.slot_type.SlotType]
-    :param intents: 
-    :type intents: (optional) list[ask_smapi_model.v1.skill.interaction_model.intent.Intent]
-    :param model_configuration: 
-    :type model_configuration: (optional) ask_smapi_model.v1.skill.interaction_model.model_configuration.ModelConfiguration
+    :param subscriber_id: Unique identifier of the subscriber resource.
+    :type subscriber_id: (optional) str
+    :param name: Name of the subscriber.
+    :type name: (optional) str
+    :param status: 
+    :type status: (optional) ask_smapi_model.v0.development_events.subscriber.subscriber_status.SubscriberStatus
+    :param client_id: Client Id of the subscriber resource.
+    :type client_id: (optional) str
+    :param endpoint: 
+    :type endpoint: (optional) ask_smapi_model.v0.development_events.subscriber.endpoint.Endpoint
 
     """
     deserialized_types = {
-        'invocation_name': 'str',
-        'types': 'list[ask_smapi_model.v1.skill.interaction_model.slot_type.SlotType]',
-        'intents': 'list[ask_smapi_model.v1.skill.interaction_model.intent.Intent]',
-        'model_configuration': 'ask_smapi_model.v1.skill.interaction_model.model_configuration.ModelConfiguration'
+        'subscriber_id': 'str',
+        'name': 'str',
+        'status': 'ask_smapi_model.v0.development_events.subscriber.subscriber_status.SubscriberStatus',
+        'client_id': 'str',
+        'endpoint': 'ask_smapi_model.v0.development_events.subscriber.endpoint.Endpoint'
     }  # type: Dict
 
     attribute_map = {
-        'invocation_name': 'invocationName',
-        'types': 'types',
-        'intents': 'intents',
-        'model_configuration': 'modelConfiguration'
+        'subscriber_id': 'subscriberId',
+        'name': 'name',
+        'status': 'status',
+        'client_id': 'clientId',
+        'endpoint': 'endpoint'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, invocation_name=None, types=None, intents=None, model_configuration=None):
-        # type: (Optional[str], Optional[List[SlotTypeV1]], Optional[List[IntentV1]], Optional[ModelConfigurationV1]) -> None
-        """Define the language model.
+    def __init__(self, subscriber_id=None, name=None, status=None, client_id=None, endpoint=None):
+        # type: (Optional[str], Optional[str], Optional[SubscriberStatusV0], Optional[str], Optional[EndpointV0]) -> None
+        """
 
-        :param invocation_name: Invocation name of the skill.
-        :type invocation_name: (optional) str
-        :param types: 
-        :type types: (optional) list[ask_smapi_model.v1.skill.interaction_model.slot_type.SlotType]
-        :param intents: 
-        :type intents: (optional) list[ask_smapi_model.v1.skill.interaction_model.intent.Intent]
-        :param model_configuration: 
-        :type model_configuration: (optional) ask_smapi_model.v1.skill.interaction_model.model_configuration.ModelConfiguration
+        :param subscriber_id: Unique identifier of the subscriber resource.
+        :type subscriber_id: (optional) str
+        :param name: Name of the subscriber.
+        :type name: (optional) str
+        :param status: 
+        :type status: (optional) ask_smapi_model.v0.development_events.subscriber.subscriber_status.SubscriberStatus
+        :param client_id: Client Id of the subscriber resource.
+        :type client_id: (optional) str
+        :param endpoint: 
+        :type endpoint: (optional) ask_smapi_model.v0.development_events.subscriber.endpoint.Endpoint
         """
         self.__discriminator_value = None  # type: str
 
-        self.invocation_name = invocation_name
-        self.types = types
-        self.intents = intents
-        self.model_configuration = model_configuration
+        self.subscriber_id = subscriber_id
+        self.name = name
+        self.status = status
+        self.client_id = client_id
+        self.endpoint = endpoint
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -121,7 +125,7 @@ class LanguageModel(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, LanguageModel):
+        if not isinstance(other, SubscriberSummary):
             return False
 
         return self.__dict__ == other.__dict__

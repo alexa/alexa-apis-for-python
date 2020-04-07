@@ -18,65 +18,48 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
+from ask_smapi_model.v0.event_schema.skill_attributes import SkillAttributes
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.model_configuration import ModelConfigurationV1
-    from ask_smapi_model.v1.skill.interaction_model.slot_type import SlotTypeV1
-    from ask_smapi_model.v1.skill.interaction_model.intent import IntentV1
 
 
-class LanguageModel(object):
+class InteractionModelAttributes(SkillAttributes):
     """
-    Define the language model.
+    Represents a set of attributes specific to interaction model of an Alexa Skill. 
 
 
-    :param invocation_name: Invocation name of the skill.
-    :type invocation_name: (optional) str
-    :param types: 
-    :type types: (optional) list[ask_smapi_model.v1.skill.interaction_model.slot_type.SlotType]
-    :param intents: 
-    :type intents: (optional) list[ask_smapi_model.v1.skill.interaction_model.intent.Intent]
-    :param model_configuration: 
-    :type model_configuration: (optional) ask_smapi_model.v1.skill.interaction_model.model_configuration.ModelConfiguration
+    :param skill_id: Unique identifier of an Alexa skill. 
+    :type skill_id: (optional) str
+    :param vendor_id: Unique identifier of vendor account to which this skill belongs. 
+    :type vendor_id: (optional) str
 
     """
     deserialized_types = {
-        'invocation_name': 'str',
-        'types': 'list[ask_smapi_model.v1.skill.interaction_model.slot_type.SlotType]',
-        'intents': 'list[ask_smapi_model.v1.skill.interaction_model.intent.Intent]',
-        'model_configuration': 'ask_smapi_model.v1.skill.interaction_model.model_configuration.ModelConfiguration'
+        'skill_id': 'str',
+        'vendor_id': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'invocation_name': 'invocationName',
-        'types': 'types',
-        'intents': 'intents',
-        'model_configuration': 'modelConfiguration'
+        'skill_id': 'skillId',
+        'vendor_id': 'vendorId'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, invocation_name=None, types=None, intents=None, model_configuration=None):
-        # type: (Optional[str], Optional[List[SlotTypeV1]], Optional[List[IntentV1]], Optional[ModelConfigurationV1]) -> None
-        """Define the language model.
+    def __init__(self, skill_id=None, vendor_id=None):
+        # type: (Optional[str], Optional[str]) -> None
+        """Represents a set of attributes specific to interaction model of an Alexa Skill. 
 
-        :param invocation_name: Invocation name of the skill.
-        :type invocation_name: (optional) str
-        :param types: 
-        :type types: (optional) list[ask_smapi_model.v1.skill.interaction_model.slot_type.SlotType]
-        :param intents: 
-        :type intents: (optional) list[ask_smapi_model.v1.skill.interaction_model.intent.Intent]
-        :param model_configuration: 
-        :type model_configuration: (optional) ask_smapi_model.v1.skill.interaction_model.model_configuration.ModelConfiguration
+        :param skill_id: Unique identifier of an Alexa skill. 
+        :type skill_id: (optional) str
+        :param vendor_id: Unique identifier of vendor account to which this skill belongs. 
+        :type vendor_id: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
-        self.invocation_name = invocation_name
-        self.types = types
-        self.intents = intents
-        self.model_configuration = model_configuration
+        super(InteractionModelAttributes, self).__init__(skill_id=skill_id, vendor_id=vendor_id)
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -121,7 +104,7 @@ class LanguageModel(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, LanguageModel):
+        if not isinstance(other, InteractionModelAttributes):
             return False
 
         return self.__dict__ == other.__dict__

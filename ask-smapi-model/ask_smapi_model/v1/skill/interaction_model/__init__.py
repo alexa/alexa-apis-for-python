@@ -23,7 +23,9 @@ from .dialog_intents import DialogIntents
 from .interaction_model_schema import InteractionModelSchema
 from .value_catalog import ValueCatalog
 from .is_greater_than import IsGreaterThan
+from .fallback_intent_sensitivity import FallbackIntentSensitivity
 from .is_greater_than_or_equal_to import IsGreaterThanOrEqualTo
+from .fallback_intent_sensitivity_level import FallbackIntentSensitivityLevel
 from .slot_definition import SlotDefinition
 from .interaction_model_data import InteractionModelData
 from .inline_value_supplier import InlineValueSupplier
@@ -31,6 +33,7 @@ from .dialog_intents_prompts import Prompts
 from .is_less_than_or_equal_to import IsLessThanOrEqualTo
 from .catalog_value_supplier import CatalogValueSupplier
 from .slot_type import SlotType
+from .model_configuration import ModelConfiguration
 from .type_value import TypeValue
 from .is_in_set import IsInSet
 from .is_in_duration import IsInDuration

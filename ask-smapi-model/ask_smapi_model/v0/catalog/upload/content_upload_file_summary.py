@@ -23,60 +23,42 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.model_configuration import ModelConfigurationV1
-    from ask_smapi_model.v1.skill.interaction_model.slot_type import SlotTypeV1
-    from ask_smapi_model.v1.skill.interaction_model.intent import IntentV1
+    from ask_smapi_model.v0.catalog.upload.file_upload_status import FileUploadStatusV0
 
 
-class LanguageModel(object):
+class ContentUploadFileSummary(object):
     """
-    Define the language model.
 
-
-    :param invocation_name: Invocation name of the skill.
-    :type invocation_name: (optional) str
-    :param types: 
-    :type types: (optional) list[ask_smapi_model.v1.skill.interaction_model.slot_type.SlotType]
-    :param intents: 
-    :type intents: (optional) list[ask_smapi_model.v1.skill.interaction_model.intent.Intent]
-    :param model_configuration: 
-    :type model_configuration: (optional) ask_smapi_model.v1.skill.interaction_model.model_configuration.ModelConfiguration
+    :param presigned_download_url: If the file is available for download, presigned download URL can be used to download the file.
+    :type presigned_download_url: (optional) str
+    :param status: 
+    :type status: (optional) ask_smapi_model.v0.catalog.upload.file_upload_status.FileUploadStatus
 
     """
     deserialized_types = {
-        'invocation_name': 'str',
-        'types': 'list[ask_smapi_model.v1.skill.interaction_model.slot_type.SlotType]',
-        'intents': 'list[ask_smapi_model.v1.skill.interaction_model.intent.Intent]',
-        'model_configuration': 'ask_smapi_model.v1.skill.interaction_model.model_configuration.ModelConfiguration'
+        'presigned_download_url': 'str',
+        'status': 'ask_smapi_model.v0.catalog.upload.file_upload_status.FileUploadStatus'
     }  # type: Dict
 
     attribute_map = {
-        'invocation_name': 'invocationName',
-        'types': 'types',
-        'intents': 'intents',
-        'model_configuration': 'modelConfiguration'
+        'presigned_download_url': 'presignedDownloadUrl',
+        'status': 'status'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, invocation_name=None, types=None, intents=None, model_configuration=None):
-        # type: (Optional[str], Optional[List[SlotTypeV1]], Optional[List[IntentV1]], Optional[ModelConfigurationV1]) -> None
-        """Define the language model.
+    def __init__(self, presigned_download_url=None, status=None):
+        # type: (Optional[str], Optional[FileUploadStatusV0]) -> None
+        """
 
-        :param invocation_name: Invocation name of the skill.
-        :type invocation_name: (optional) str
-        :param types: 
-        :type types: (optional) list[ask_smapi_model.v1.skill.interaction_model.slot_type.SlotType]
-        :param intents: 
-        :type intents: (optional) list[ask_smapi_model.v1.skill.interaction_model.intent.Intent]
-        :param model_configuration: 
-        :type model_configuration: (optional) ask_smapi_model.v1.skill.interaction_model.model_configuration.ModelConfiguration
+        :param presigned_download_url: If the file is available for download, presigned download URL can be used to download the file.
+        :type presigned_download_url: (optional) str
+        :param status: 
+        :type status: (optional) ask_smapi_model.v0.catalog.upload.file_upload_status.FileUploadStatus
         """
         self.__discriminator_value = None  # type: str
 
-        self.invocation_name = invocation_name
-        self.types = types
-        self.intents = intents
-        self.model_configuration = model_configuration
+        self.presigned_download_url = presigned_download_url
+        self.status = status
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -121,7 +103,7 @@ class LanguageModel(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, LanguageModel):
+        if not isinstance(other, ContentUploadFileSummary):
             return False
 
         return self.__dict__ == other.__dict__
