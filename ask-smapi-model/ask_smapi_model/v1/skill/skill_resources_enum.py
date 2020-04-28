@@ -25,16 +25,16 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class DataProtectionProvider(Enum):
+class SkillResourcesEnum(Enum):
     """
-    The data protection provider.
 
 
-
-    Allowed enum values: [KEY_MASTER, AWS_KMS]
+    Allowed enum values: [manifest, interactionModel, hostedSkillDeployment, hostedSkillProvisioning]
     """
-    KEY_MASTER = "KEY_MASTER"
-    AWS_KMS = "AWS_KMS"
+    manifest = "manifest"
+    interactionModel = "interactionModel"
+    hostedSkillDeployment = "hostedSkillDeployment"
+    hostedSkillProvisioning = "hostedSkillProvisioning"
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -55,7 +55,7 @@ class DataProtectionProvider(Enum):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, DataProtectionProvider):
+        if not isinstance(other, SkillResourcesEnum):
             return False
 
         return self.__dict__ == other.__dict__

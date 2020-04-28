@@ -46,3 +46,12 @@ This release contains the following changes :
 - Model definitions for new `Skill Event Schema <https://developer.amazon.com/en-US/docs/alexa/sdns/skill-development-event-schemas.html>`__. It describes the schemas for the events, which include skill manifest updates, certification updates, publish-to-live updates, and interaction model updates.
 
 - Updated Interaction Model values with `Skill Model Sensitivity tuning <https://developer.amazon.com/en-US/docs/alexa/custom-skills/standard-built-in-intents.html#adjust-sensitivity>`__.
+
+
+1.3.1
+^^^^^
+
+- Updated `SkillManifestPrivacyAndCompliance <https://developer.amazon.com/en-US/docs/alexa/smapi/skill-manifest.html#privacyandcompliance>`__ and `SkillManifestEndpoint <https://developer.amazon.com/en-US/docs/alexa/smapi/skill-manifest.html#endpoint>`__ schema definitions.
+- Updated description field on catalog APIs and in Skill package APIs.
+- Updated create skill and get skill status APIs for Alexa Hosted Skills
+- Changed argument parameters of few models definitions from optional to required.

@@ -23,60 +23,37 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.build_details import BuildDetailsV1
-    from ask_smapi_model.v1.skill.status import StatusV1
-    from ask_smapi_model.v1.skill.standardized_error import StandardizedErrorV1
+    from ask_smapi_model.v1.skill.hosted_skill_deployment_status_last_update_request import HostedSkillDeploymentStatusLastUpdateRequestV1
 
 
-class LastUpdateRequest(object):
+class HostedSkillDeploymentStatus(object):
     """
-    Contains attributes related to last modification (create/update) request of a resource.
+    Defines the most recent deployment status for the Alexa hosted skill.
 
 
-    :param status: 
-    :type status: (optional) ask_smapi_model.v1.skill.status.Status
-    :param errors: 
-    :type errors: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
-    :param warnings: 
-    :type warnings: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
-    :param build_details: 
-    :type build_details: (optional) ask_smapi_model.v1.skill.build_details.BuildDetails
+    :param last_update_request: 
+    :type last_update_request: (optional) ask_smapi_model.v1.skill.hosted_skill_deployment_status_last_update_request.HostedSkillDeploymentStatusLastUpdateRequest
 
     """
     deserialized_types = {
-        'status': 'ask_smapi_model.v1.skill.status.Status',
-        'errors': 'list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]',
-        'warnings': 'list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]',
-        'build_details': 'ask_smapi_model.v1.skill.build_details.BuildDetails'
+        'last_update_request': 'ask_smapi_model.v1.skill.hosted_skill_deployment_status_last_update_request.HostedSkillDeploymentStatusLastUpdateRequest'
     }  # type: Dict
 
     attribute_map = {
-        'status': 'status',
-        'errors': 'errors',
-        'warnings': 'warnings',
-        'build_details': 'buildDetails'
+        'last_update_request': 'lastUpdateRequest'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, status=None, errors=None, warnings=None, build_details=None):
-        # type: (Optional[StatusV1], Optional[List[StandardizedErrorV1]], Optional[List[StandardizedErrorV1]], Optional[BuildDetailsV1]) -> None
-        """Contains attributes related to last modification (create/update) request of a resource.
+    def __init__(self, last_update_request=None):
+        # type: (Optional[HostedSkillDeploymentStatusLastUpdateRequestV1]) -> None
+        """Defines the most recent deployment status for the Alexa hosted skill.
 
-        :param status: 
-        :type status: (optional) ask_smapi_model.v1.skill.status.Status
-        :param errors: 
-        :type errors: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
-        :param warnings: 
-        :type warnings: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
-        :param build_details: 
-        :type build_details: (optional) ask_smapi_model.v1.skill.build_details.BuildDetails
+        :param last_update_request: 
+        :type last_update_request: (optional) ask_smapi_model.v1.skill.hosted_skill_deployment_status_last_update_request.HostedSkillDeploymentStatusLastUpdateRequest
         """
         self.__discriminator_value = None  # type: str
 
-        self.status = status
-        self.errors = errors
-        self.warnings = warnings
-        self.build_details = build_details
+        self.last_update_request = last_update_request
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -121,7 +98,7 @@ class LastUpdateRequest(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, LastUpdateRequest):
+        if not isinstance(other, HostedSkillDeploymentStatus):
             return False
 
         return self.__dict__ == other.__dict__

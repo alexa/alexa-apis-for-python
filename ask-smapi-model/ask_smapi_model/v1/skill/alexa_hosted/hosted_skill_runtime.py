@@ -31,9 +31,9 @@ class HostedSkillRuntime(Enum):
 
 
 
-    Allowed enum values: [nodejs8_10, python3_7]
+    Allowed enum values: [nodejs10_x, python3_7]
     """
-    nodejs8_10 = "nodejs8.10"
+    nodejs10_x = "nodejs10.x"
     python3_7 = "python3.7"
 
     def to_dict(self):

@@ -33,40 +33,33 @@ class SkillManifestEndpoint(object):
 
     :param uri: Amazon Resource Name (ARN) of the skill&#39;s Lambda function or HTTPS URL.
     :type uri: (optional) str
-    :param request_envelope_version_supported: Supported version of the requestEnvelope.
-    :type request_envelope_version_supported: (optional) str
     :param ssl_certificate_type: 
     :type ssl_certificate_type: (optional) ask_smapi_model.v1.skill.manifest.ssl_certificate_type.SSLCertificateType
 
     """
     deserialized_types = {
         'uri': 'str',
-        'request_envelope_version_supported': 'str',
         'ssl_certificate_type': 'ask_smapi_model.v1.skill.manifest.ssl_certificate_type.SSLCertificateType'
     }  # type: Dict
 
     attribute_map = {
         'uri': 'uri',
-        'request_envelope_version_supported': 'requestEnvelopeVersionSupported',
         'ssl_certificate_type': 'sslCertificateType'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, uri=None, request_envelope_version_supported=None, ssl_certificate_type=None):
-        # type: (Optional[str], Optional[str], Optional[SSLCertificateTypeV1]) -> None
+    def __init__(self, uri=None, ssl_certificate_type=None):
+        # type: (Optional[str], Optional[SSLCertificateTypeV1]) -> None
         """Defines the structure for endpoint information in the skill manifest.
 
         :param uri: Amazon Resource Name (ARN) of the skill&#39;s Lambda function or HTTPS URL.
         :type uri: (optional) str
-        :param request_envelope_version_supported: Supported version of the requestEnvelope.
-        :type request_envelope_version_supported: (optional) str
         :param ssl_certificate_type: 
         :type ssl_certificate_type: (optional) ask_smapi_model.v1.skill.manifest.ssl_certificate_type.SSLCertificateType
         """
         self.__discriminator_value = None  # type: str
 
         self.uri = uri
-        self.request_envelope_version_supported = request_envelope_version_supported
         self.ssl_certificate_type = ssl_certificate_type
 
     def to_dict(self):

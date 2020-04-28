@@ -176,7 +176,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Returns information about a particular catalog.
 
-        :param catalog_id: (required) Unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog
         :type catalog_id: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
@@ -248,7 +248,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Lists all the uploads for a particular catalog.
 
-        :param catalog_id: (required) Unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog
         :type catalog_id: str
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
@@ -328,7 +328,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Creates a new upload for a catalog and returns presigned upload parts for uploading the file.
 
-        :param catalog_id: (required) Unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog
         :type catalog_id: str
         :param create_content_upload_request: (required) Defines the request body for updateCatalog API.
         :type create_content_upload_request: ask_smapi_model.v0.catalog.upload.create_content_upload_request.CreateContentUploadRequest
@@ -408,7 +408,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Gets detailed information about an upload which was created for a specific catalog. Includes the upload's ingestion steps and a presigned url for downloading the file.
 
-        :param catalog_id: (required) Unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog
         :type catalog_id: str
         :param upload_id: (required) Unique identifier of the upload
         :type upload_id: str
@@ -488,7 +488,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Completes an upload. To be called after the file is uploaded to the backend data store using presigned url(s).
 
-        :param catalog_id: (required) Unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog
         :type catalog_id: str
         :param upload_id: (required) Unique identifier of the upload
         :type upload_id: str
@@ -803,12 +803,12 @@ class SkillManagementServiceClient(BaseServiceClient):
             return api_response
         return api_response.body
 
-    def create_subscriber_for_development_events_v0(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, ErrorV0, BadRequestErrorV0]
+    def create_subscriber_for_development_events_v0(self, create_subscriber_request, **kwargs):
+        # type: (CreateSubscriberRequestV0, **Any) -> Union[ApiResponse, ErrorV0, BadRequestErrorV0]
         """
         Creates a new subscriber resource for a vendor.
 
-        :param create_subscriber_request: Defines the request body for createSubscriber API.
+        :param create_subscriber_request: (required) Defines the request body for createSubscriber API.
         :type create_subscriber_request: ask_smapi_model.v0.development_events.subscriber.create_subscriber_request.CreateSubscriberRequest
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
@@ -820,6 +820,10 @@ class SkillManagementServiceClient(BaseServiceClient):
         for key, val in six.iteritems(params['kwargs']):
             params[key] = val
         del params['kwargs']
+        # verify the required parameter 'create_subscriber_request' is set
+        if ('create_subscriber_request' not in params) or (params['create_subscriber_request'] is None):
+            raise ValueError(
+                "Missing the required parameter `create_subscriber_request` when calling `" + operation_name + "`")
 
         resource_path = '/v0/developmentEvents/subscribers'
         resource_path = resource_path.replace('{format}', 'json')
@@ -1013,14 +1017,14 @@ class SkillManagementServiceClient(BaseServiceClient):
             return api_response
         return api_response.body
 
-    def set_subscriber_for_development_events_v0(self, subscriber_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, ErrorV0, BadRequestErrorV0]
+    def set_subscriber_for_development_events_v0(self, subscriber_id, update_subscriber_request, **kwargs):
+        # type: (str, UpdateSubscriberRequestV0, **Any) -> Union[ApiResponse, ErrorV0, BadRequestErrorV0]
         """
         Updates the properties of a subscriber.
 
         :param subscriber_id: (required) Unique identifier of the subscriber.
         :type subscriber_id: str
-        :param update_subscriber_request: Defines the request body for updateSubscriber API.
+        :param update_subscriber_request: (required) Defines the request body for updateSubscriber API.
         :type update_subscriber_request: ask_smapi_model.v0.development_events.subscriber.update_subscriber_request.UpdateSubscriberRequest
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
@@ -1036,6 +1040,10 @@ class SkillManagementServiceClient(BaseServiceClient):
         if ('subscriber_id' not in params) or (params['subscriber_id'] is None):
             raise ValueError(
                 "Missing the required parameter `subscriber_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'update_subscriber_request' is set
+        if ('update_subscriber_request' not in params) or (params['update_subscriber_request'] is None):
+            raise ValueError(
+                "Missing the required parameter `update_subscriber_request` when calling `" + operation_name + "`")
 
         resource_path = '/v0/developmentEvents/subscribers/{subscriberId}'
         resource_path = resource_path.replace('{format}', 'json')
@@ -1468,7 +1476,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         :param skill_id: (required) The skill ID.
         :type skill_id: str
-        :param catalog_id: (required) Unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog
         :type catalog_id: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
@@ -1625,11 +1633,11 @@ class SkillManagementServiceClient(BaseServiceClient):
         # type: (str, CatalogUploadBaseV1, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         Create new upload
-        Create a new upload for a catalog and returns location to track the upload process.
+        Creates a new upload for a catalog and returns location to track the upload process.
 
-        :param catalog_id: (required) Unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog
         :type catalog_id: str
-        :param catalog_upload_request_body: (required) Request body for create content upload
+        :param catalog_upload_request_body: (required) Provides the request body for create content upload
         :type catalog_upload_request_body: ask_smapi_model.v1.catalog.upload.catalog_upload_base.CatalogUploadBase
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
@@ -1708,7 +1716,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         Get upload
         Gets detailed information about an upload which was created for a specific catalog. Includes the upload's ingestion steps and a url for downloading the file.
 
-        :param catalog_id: (required) Unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog
         :type catalog_id: str
         :param upload_id: (required) Unique identifier of the upload
         :type upload_id: str
@@ -1785,9 +1793,9 @@ class SkillManagementServiceClient(BaseServiceClient):
     def generate_catalog_upload_url_v1(self, catalog_id, generate_catalog_upload_url_request_body, **kwargs):
         # type: (str, CreateContentUploadUrlRequestV1, **Any) -> Union[ApiResponse, ErrorV1, CreateContentUploadUrlResponseV1, BadRequestErrorV1]
         """
-        Generate preSigned urls to upload data
+        Generates preSigned urls to upload data
 
-        :param catalog_id: (required) Unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog
         :type catalog_id: str
         :param generate_catalog_upload_url_request_body: (required) Request body to generate catalog upload url
         :type generate_catalog_upload_url_request_body: ask_smapi_model.v1.catalog.create_content_upload_url_request.CreateContentUploadUrlRequest
@@ -2763,7 +2771,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Delete the catalog. 
 
-        :param catalog_id: (required) Unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog
         :type catalog_id: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
@@ -2835,7 +2843,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         get the catalog definition 
 
-        :param catalog_id: (required) Unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog
         :type catalog_id: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
@@ -2907,7 +2915,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         update description and vendorGuidance string for certain version of a catalog. 
 
-        :param catalog_id: (required) Unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog
         :type catalog_id: str
         :param update_request: (required) 
         :type update_request: ask_smapi_model.v1.skill.interaction_model.model_type.update_request.UpdateRequest
@@ -2987,7 +2995,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Get the status of catalog resource and its sub-resources for a given catalogId. 
 
-        :param catalog_id: (required) Unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog
         :type catalog_id: str
         :param update_request_id: (required) The identifier for slotType version creation process
         :type update_request_id: str
@@ -3067,7 +3075,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Create a new version of catalog entity for the given catalogId. 
 
-        :param catalog_id: (required) Unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog
         :type catalog_id: str
         :param catalog: (required) 
         :type catalog: ask_smapi_model.v1.skill.interaction_model.version.version_data.VersionData
@@ -3147,7 +3155,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Delete catalog version. 
 
-        :param catalog_id: (required) Unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog
         :type catalog_id: str
         :param version: (required) Version for interaction model.
         :type version: str
@@ -3227,7 +3235,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Get catalog version data of given catalog version. 
 
-        :param catalog_id: (required) Unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog
         :type catalog_id: str
         :param version: (required) Version for interaction model.
         :type version: str
@@ -3307,7 +3315,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Update description and vendorGuidance string for certain version of a catalog. 
 
-        :param catalog_id: (required) Unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog
         :type catalog_id: str
         :param version: (required) Version for interaction model.
         :type version: str
@@ -3391,7 +3399,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Get catalog values from the given catalogId & version. 
 
-        :param catalog_id: (required) Unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog
         :type catalog_id: str
         :param version: (required) Version for interaction model.
         :type version: str

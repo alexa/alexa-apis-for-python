@@ -23,37 +23,43 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.skill_interaction_model_status import SkillInteractionModelStatusV1
 
 
-class SkillInteractionModel(object):
+class HostedSkillDeploymentDetails(object):
     """
-    Status for available interaction models, keyed by locale.
+    Details about hosted skill deployment.
 
 
-    :param locale: 
-    :type locale: (optional) dict(str, ask_smapi_model.v1.skill.skill_interaction_model_status.SkillInteractionModelStatus)
+    :param commit_id: 
+    :type commit_id: (optional) str
+    :param log_url: 
+    :type log_url: (optional) str
 
     """
     deserialized_types = {
-        'locale': 'dict(str, ask_smapi_model.v1.skill.skill_interaction_model_status.SkillInteractionModelStatus)'
+        'commit_id': 'str',
+        'log_url': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'locale': 'locale'
+        'commit_id': 'commitId',
+        'log_url': 'logUrl'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, locale=None):
-        # type: (Optional[Dict[str, SkillInteractionModelStatusV1]]) -> None
-        """Status for available interaction models, keyed by locale.
+    def __init__(self, commit_id=None, log_url=None):
+        # type: (Optional[str], Optional[str]) -> None
+        """Details about hosted skill deployment.
 
-        :param locale: 
-        :type locale: (optional) dict(str, ask_smapi_model.v1.skill.skill_interaction_model_status.SkillInteractionModelStatus)
+        :param commit_id: 
+        :type commit_id: (optional) str
+        :param log_url: 
+        :type log_url: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
-        self.locale = locale
+        self.commit_id = commit_id
+        self.log_url = log_url
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -98,7 +104,7 @@ class SkillInteractionModel(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, SkillInteractionModel):
+        if not isinstance(other, HostedSkillDeploymentDetails):
             return False
 
         return self.__dict__ == other.__dict__

@@ -23,37 +23,59 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.skill_interaction_model_status import SkillInteractionModelStatusV1
+    from ask_smapi_model.v1.skill.status import StatusV1
+    from ask_smapi_model.v1.skill.standardized_error import StandardizedErrorV1
 
 
-class SkillInteractionModel(object):
+class ManifestLastUpdateRequest(object):
     """
-    Status for available interaction models, keyed by locale.
+    Contains attributes related to last modification (create/update) request of a resource.
 
 
-    :param locale: 
-    :type locale: (optional) dict(str, ask_smapi_model.v1.skill.skill_interaction_model_status.SkillInteractionModelStatus)
+    :param status: 
+    :type status: (optional) ask_smapi_model.v1.skill.status.Status
+    :param errors: 
+    :type errors: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
+    :param warnings: 
+    :type warnings: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
+    :param version: on success, this field indicates the created version.
+    :type version: (optional) str
 
     """
     deserialized_types = {
-        'locale': 'dict(str, ask_smapi_model.v1.skill.skill_interaction_model_status.SkillInteractionModelStatus)'
+        'status': 'ask_smapi_model.v1.skill.status.Status',
+        'errors': 'list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]',
+        'warnings': 'list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]',
+        'version': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'locale': 'locale'
+        'status': 'status',
+        'errors': 'errors',
+        'warnings': 'warnings',
+        'version': 'version'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, locale=None):
-        # type: (Optional[Dict[str, SkillInteractionModelStatusV1]]) -> None
-        """Status for available interaction models, keyed by locale.
+    def __init__(self, status=None, errors=None, warnings=None, version=None):
+        # type: (Optional[StatusV1], Optional[List[StandardizedErrorV1]], Optional[List[StandardizedErrorV1]], Optional[str]) -> None
+        """Contains attributes related to last modification (create/update) request of a resource.
 
-        :param locale: 
-        :type locale: (optional) dict(str, ask_smapi_model.v1.skill.skill_interaction_model_status.SkillInteractionModelStatus)
+        :param status: 
+        :type status: (optional) ask_smapi_model.v1.skill.status.Status
+        :param errors: 
+        :type errors: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
+        :param warnings: 
+        :type warnings: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
+        :param version: on success, this field indicates the created version.
+        :type version: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
-        self.locale = locale
+        self.status = status
+        self.errors = errors
+        self.warnings = warnings
+        self.version = version
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -98,7 +120,7 @@ class SkillInteractionModel(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, SkillInteractionModel):
+        if not isinstance(other, ManifestLastUpdateRequest):
             return False
 
         return self.__dict__ == other.__dict__

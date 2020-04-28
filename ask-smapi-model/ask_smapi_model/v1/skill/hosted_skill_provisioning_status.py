@@ -23,37 +23,37 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.data_protection_provider import DataProtectionProviderV1
+    from ask_smapi_model.v1.skill.hosted_skill_provisioning_last_update_request import HostedSkillProvisioningLastUpdateRequestV1
 
 
-class CriticalDataHandling(object):
+class HostedSkillProvisioningStatus(object):
     """
-    Contains the critical data related info.
+    Defines the provisioning status for hosted skill.
 
 
-    :param data_protection_provider: 
-    :type data_protection_provider: (optional) ask_smapi_model.v1.skill.manifest.data_protection_provider.DataProtectionProvider
+    :param last_update_request: 
+    :type last_update_request: (optional) ask_smapi_model.v1.skill.hosted_skill_provisioning_last_update_request.HostedSkillProvisioningLastUpdateRequest
 
     """
     deserialized_types = {
-        'data_protection_provider': 'ask_smapi_model.v1.skill.manifest.data_protection_provider.DataProtectionProvider'
+        'last_update_request': 'ask_smapi_model.v1.skill.hosted_skill_provisioning_last_update_request.HostedSkillProvisioningLastUpdateRequest'
     }  # type: Dict
 
     attribute_map = {
-        'data_protection_provider': 'dataProtectionProvider'
+        'last_update_request': 'lastUpdateRequest'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, data_protection_provider=None):
-        # type: (Optional[DataProtectionProviderV1]) -> None
-        """Contains the critical data related info.
+    def __init__(self, last_update_request=None):
+        # type: (Optional[HostedSkillProvisioningLastUpdateRequestV1]) -> None
+        """Defines the provisioning status for hosted skill.
 
-        :param data_protection_provider: 
-        :type data_protection_provider: (optional) ask_smapi_model.v1.skill.manifest.data_protection_provider.DataProtectionProvider
+        :param last_update_request: 
+        :type last_update_request: (optional) ask_smapi_model.v1.skill.hosted_skill_provisioning_last_update_request.HostedSkillProvisioningLastUpdateRequest
         """
         self.__discriminator_value = None  # type: str
 
-        self.data_protection_provider = data_protection_provider
+        self.last_update_request = last_update_request
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -98,7 +98,7 @@ class CriticalDataHandling(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, CriticalDataHandling):
+        if not isinstance(other, HostedSkillProvisioningStatus):
             return False
 
         return self.__dict__ == other.__dict__

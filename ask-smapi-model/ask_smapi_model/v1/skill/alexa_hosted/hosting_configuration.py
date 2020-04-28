@@ -23,37 +23,37 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.skill_interaction_model_status import SkillInteractionModelStatusV1
+    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_runtime import HostedSkillRuntimeV1
 
 
-class SkillInteractionModel(object):
+class HostingConfiguration(object):
     """
-    Status for available interaction models, keyed by locale.
+    Configurations for creating new hosted skill
 
 
-    :param locale: 
-    :type locale: (optional) dict(str, ask_smapi_model.v1.skill.skill_interaction_model_status.SkillInteractionModelStatus)
+    :param alexa_hosted: 
+    :type alexa_hosted: (optional) ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_runtime.HostedSkillRuntime
 
     """
     deserialized_types = {
-        'locale': 'dict(str, ask_smapi_model.v1.skill.skill_interaction_model_status.SkillInteractionModelStatus)'
+        'alexa_hosted': 'ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_runtime.HostedSkillRuntime'
     }  # type: Dict
 
     attribute_map = {
-        'locale': 'locale'
+        'alexa_hosted': 'alexaHosted'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, locale=None):
-        # type: (Optional[Dict[str, SkillInteractionModelStatusV1]]) -> None
-        """Status for available interaction models, keyed by locale.
+    def __init__(self, alexa_hosted=None):
+        # type: (Optional[HostedSkillRuntimeV1]) -> None
+        """Configurations for creating new hosted skill
 
-        :param locale: 
-        :type locale: (optional) dict(str, ask_smapi_model.v1.skill.skill_interaction_model_status.SkillInteractionModelStatus)
+        :param alexa_hosted: 
+        :type alexa_hosted: (optional) ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_runtime.HostedSkillRuntime
         """
         self.__discriminator_value = None  # type: str
 
-        self.locale = locale
+        self.alexa_hosted = alexa_hosted
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -98,7 +98,7 @@ class SkillInteractionModel(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, SkillInteractionModel):
+        if not isinstance(other, HostingConfiguration):
             return False
 
         return self.__dict__ == other.__dict__

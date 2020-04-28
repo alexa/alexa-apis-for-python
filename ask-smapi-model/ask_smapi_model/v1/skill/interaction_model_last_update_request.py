@@ -23,66 +23,60 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
+    from ask_smapi_model.v1.skill.build_details import BuildDetailsV1
+    from ask_smapi_model.v1.skill.status import StatusV1
     from ask_smapi_model.v1.skill.standardized_error import StandardizedErrorV1
-    from ask_smapi_model.v1.skill.last_update_request import LastUpdateRequestV1
 
 
-class ResourceStatus(object):
+class InteractionModelLastUpdateRequest(object):
     """
-    Defines the structure for a resource status.
+    Contains attributes related to last modification (create/update) request of a resource.
 
 
-    :param last_update_request: 
-    :type last_update_request: (optional) ask_smapi_model.v1.skill.last_update_request.LastUpdateRequest
-    :param e_tag: An opaque identifier for last successfully updated resource.
-    :type e_tag: (optional) str
-    :param version: Version for last successfully built model.
-    :type version: (optional) str
+    :param status: 
+    :type status: (optional) ask_smapi_model.v1.skill.status.Status
     :param errors: 
     :type errors: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
     :param warnings: 
     :type warnings: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
+    :param build_details: 
+    :type build_details: (optional) ask_smapi_model.v1.skill.build_details.BuildDetails
 
     """
     deserialized_types = {
-        'last_update_request': 'ask_smapi_model.v1.skill.last_update_request.LastUpdateRequest',
-        'e_tag': 'str',
-        'version': 'str',
+        'status': 'ask_smapi_model.v1.skill.status.Status',
         'errors': 'list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]',
-        'warnings': 'list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]'
+        'warnings': 'list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]',
+        'build_details': 'ask_smapi_model.v1.skill.build_details.BuildDetails'
     }  # type: Dict
 
     attribute_map = {
-        'last_update_request': 'lastUpdateRequest',
-        'e_tag': 'eTag',
-        'version': 'version',
+        'status': 'status',
         'errors': 'errors',
-        'warnings': 'warnings'
+        'warnings': 'warnings',
+        'build_details': 'buildDetails'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, last_update_request=None, e_tag=None, version=None, errors=None, warnings=None):
-        # type: (Optional[LastUpdateRequestV1], Optional[str], Optional[str], Optional[List[StandardizedErrorV1]], Optional[List[StandardizedErrorV1]]) -> None
-        """Defines the structure for a resource status.
+    def __init__(self, status=None, errors=None, warnings=None, build_details=None):
+        # type: (Optional[StatusV1], Optional[List[StandardizedErrorV1]], Optional[List[StandardizedErrorV1]], Optional[BuildDetailsV1]) -> None
+        """Contains attributes related to last modification (create/update) request of a resource.
 
-        :param last_update_request: 
-        :type last_update_request: (optional) ask_smapi_model.v1.skill.last_update_request.LastUpdateRequest
-        :param e_tag: An opaque identifier for last successfully updated resource.
-        :type e_tag: (optional) str
-        :param version: Version for last successfully built model.
-        :type version: (optional) str
+        :param status: 
+        :type status: (optional) ask_smapi_model.v1.skill.status.Status
         :param errors: 
         :type errors: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
         :param warnings: 
         :type warnings: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
+        :param build_details: 
+        :type build_details: (optional) ask_smapi_model.v1.skill.build_details.BuildDetails
         """
         self.__discriminator_value = None  # type: str
 
-        self.last_update_request = last_update_request
-        self.e_tag = e_tag
-        self.version = version
+        self.status = status
         self.errors = errors
         self.warnings = warnings
+        self.build_details = build_details
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -127,7 +121,7 @@ class ResourceStatus(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, ResourceStatus):
+        if not isinstance(other, InteractionModelLastUpdateRequest):
             return False
 
         return self.__dict__ == other.__dict__

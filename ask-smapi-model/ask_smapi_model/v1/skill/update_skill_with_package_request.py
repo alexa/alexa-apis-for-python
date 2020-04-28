@@ -28,7 +28,7 @@ if typing.TYPE_CHECKING:
 class UpdateSkillWithPackageRequest(object):
     """
 
-    :param location: Location of the package.
+    :param location: The URL for the skill package.
     :type location: (optional) str
 
     """
@@ -45,7 +45,7 @@ class UpdateSkillWithPackageRequest(object):
         # type: (Optional[str]) -> None
         """
 
-        :param location: Location of the package.
+        :param location: The URL for the skill package.
         :type location: (optional) str
         """
         self.__discriminator_value = None  # type: str

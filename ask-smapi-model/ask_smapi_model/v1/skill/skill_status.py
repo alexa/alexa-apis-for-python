@@ -23,8 +23,10 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.resource_status import ResourceStatusV1
+    from ask_smapi_model.v1.skill.manifest_status import ManifestStatusV1
     from ask_smapi_model.v1.skill.skill_interaction_model import SkillInteractionModelV1
+    from ask_smapi_model.v1.skill.hosted_skill_deployment_status import HostedSkillDeploymentStatusV1
+    from ask_smapi_model.v1.skill.hosted_skill_provisioning_status import HostedSkillProvisioningStatusV1
 
 
 class SkillStatus(object):
@@ -33,35 +35,49 @@ class SkillStatus(object):
 
 
     :param manifest: 
-    :type manifest: (optional) ask_smapi_model.v1.skill.resource_status.ResourceStatus
+    :type manifest: (optional) ask_smapi_model.v1.skill.manifest_status.ManifestStatus
     :param interaction_model: 
     :type interaction_model: (optional) ask_smapi_model.v1.skill.skill_interaction_model.SkillInteractionModel
+    :param hosted_skill_deployment: 
+    :type hosted_skill_deployment: (optional) ask_smapi_model.v1.skill.hosted_skill_deployment_status.HostedSkillDeploymentStatus
+    :param hosted_skill_provisioning: 
+    :type hosted_skill_provisioning: (optional) ask_smapi_model.v1.skill.hosted_skill_provisioning_status.HostedSkillProvisioningStatus
 
     """
     deserialized_types = {
-        'manifest': 'ask_smapi_model.v1.skill.resource_status.ResourceStatus',
-        'interaction_model': 'ask_smapi_model.v1.skill.skill_interaction_model.SkillInteractionModel'
+        'manifest': 'ask_smapi_model.v1.skill.manifest_status.ManifestStatus',
+        'interaction_model': 'ask_smapi_model.v1.skill.skill_interaction_model.SkillInteractionModel',
+        'hosted_skill_deployment': 'ask_smapi_model.v1.skill.hosted_skill_deployment_status.HostedSkillDeploymentStatus',
+        'hosted_skill_provisioning': 'ask_smapi_model.v1.skill.hosted_skill_provisioning_status.HostedSkillProvisioningStatus'
     }  # type: Dict
 
     attribute_map = {
         'manifest': 'manifest',
-        'interaction_model': 'interactionModel'
+        'interaction_model': 'interactionModel',
+        'hosted_skill_deployment': 'hostedSkillDeployment',
+        'hosted_skill_provisioning': 'hostedSkillProvisioning'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, manifest=None, interaction_model=None):
-        # type: (Optional[ResourceStatusV1], Optional[SkillInteractionModelV1]) -> None
+    def __init__(self, manifest=None, interaction_model=None, hosted_skill_deployment=None, hosted_skill_provisioning=None):
+        # type: (Optional[ManifestStatusV1], Optional[SkillInteractionModelV1], Optional[HostedSkillDeploymentStatusV1], Optional[HostedSkillProvisioningStatusV1]) -> None
         """Defines the structure for skill status response.
 
         :param manifest: 
-        :type manifest: (optional) ask_smapi_model.v1.skill.resource_status.ResourceStatus
+        :type manifest: (optional) ask_smapi_model.v1.skill.manifest_status.ManifestStatus
         :param interaction_model: 
         :type interaction_model: (optional) ask_smapi_model.v1.skill.skill_interaction_model.SkillInteractionModel
+        :param hosted_skill_deployment: 
+        :type hosted_skill_deployment: (optional) ask_smapi_model.v1.skill.hosted_skill_deployment_status.HostedSkillDeploymentStatus
+        :param hosted_skill_provisioning: 
+        :type hosted_skill_provisioning: (optional) ask_smapi_model.v1.skill.hosted_skill_provisioning_status.HostedSkillProvisioningStatus
         """
         self.__discriminator_value = None  # type: str
 
         self.manifest = manifest
         self.interaction_model = interaction_model
+        self.hosted_skill_deployment = hosted_skill_deployment
+        self.hosted_skill_provisioning = hosted_skill_provisioning
 
     def to_dict(self):
         # type: () -> Dict[str, object]

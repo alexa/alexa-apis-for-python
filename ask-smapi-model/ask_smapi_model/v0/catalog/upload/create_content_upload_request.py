@@ -28,7 +28,7 @@ if typing.TYPE_CHECKING:
 class CreateContentUploadRequest(object):
     """
 
-    :param number_of_upload_parts: The number of parts the file will be split into. An equal number of presigned upload urls will be generated in response to facilitate each part&#39;s upload.
+    :param number_of_upload_parts: Provides the number of parts the file will be split into. An equal number of presigned upload urls are generated in response to facilitate each part&#39;s upload.
     :type number_of_upload_parts: (optional) int
 
     """
@@ -45,7 +45,7 @@ class CreateContentUploadRequest(object):
         # type: (Optional[int]) -> None
         """
 
-        :param number_of_upload_parts: The number of parts the file will be split into. An equal number of presigned upload urls will be generated in response to facilitate each part&#39;s upload.
+        :param number_of_upload_parts: Provides the number of parts the file will be split into. An equal number of presigned upload urls are generated in response to facilitate each part&#39;s upload.
         :type number_of_upload_parts: (optional) int
         """
         self.__discriminator_value = None  # type: str

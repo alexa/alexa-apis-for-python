@@ -23,37 +23,44 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.skill_interaction_model_status import SkillInteractionModelStatusV1
+    from ask_smapi_model.v1.skill.manifest_last_update_request import ManifestLastUpdateRequestV1
 
 
-class SkillInteractionModel(object):
+class ManifestStatus(object):
     """
-    Status for available interaction models, keyed by locale.
+    Defines the structure for a resource status.
 
 
-    :param locale: 
-    :type locale: (optional) dict(str, ask_smapi_model.v1.skill.skill_interaction_model_status.SkillInteractionModelStatus)
+    :param last_update_request: 
+    :type last_update_request: (optional) ask_smapi_model.v1.skill.manifest_last_update_request.ManifestLastUpdateRequest
+    :param e_tag: An opaque identifier for last successfully updated resource.
+    :type e_tag: (optional) str
 
     """
     deserialized_types = {
-        'locale': 'dict(str, ask_smapi_model.v1.skill.skill_interaction_model_status.SkillInteractionModelStatus)'
+        'last_update_request': 'ask_smapi_model.v1.skill.manifest_last_update_request.ManifestLastUpdateRequest',
+        'e_tag': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'locale': 'locale'
+        'last_update_request': 'lastUpdateRequest',
+        'e_tag': 'eTag'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, locale=None):
-        # type: (Optional[Dict[str, SkillInteractionModelStatusV1]]) -> None
-        """Status for available interaction models, keyed by locale.
+    def __init__(self, last_update_request=None, e_tag=None):
+        # type: (Optional[ManifestLastUpdateRequestV1], Optional[str]) -> None
+        """Defines the structure for a resource status.
 
-        :param locale: 
-        :type locale: (optional) dict(str, ask_smapi_model.v1.skill.skill_interaction_model_status.SkillInteractionModelStatus)
+        :param last_update_request: 
+        :type last_update_request: (optional) ask_smapi_model.v1.skill.manifest_last_update_request.ManifestLastUpdateRequest
+        :param e_tag: An opaque identifier for last successfully updated resource.
+        :type e_tag: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
-        self.locale = locale
+        self.last_update_request = last_update_request
+        self.e_tag = e_tag
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -98,7 +105,7 @@ class SkillInteractionModel(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, SkillInteractionModel):
+        if not isinstance(other, ManifestStatus):
             return False
 
         return self.__dict__ == other.__dict__

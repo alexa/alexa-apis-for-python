@@ -52,8 +52,6 @@ from .custom_interface import CustomInterface
 from .distribution_countries import DistributionCountries
 from .skill_manifest_publishing_information import SkillManifestPublishingInformation
 from .health_protocol_version import HealthProtocolVersion
-from .critical_data_handling import CriticalDataHandling
-from .data_protection_provider import DataProtectionProvider
 from .video_app_interface import VideoAppInterface
 from .custom_apis import CustomApis
 from .flash_briefing_genre import FlashBriefingGenre

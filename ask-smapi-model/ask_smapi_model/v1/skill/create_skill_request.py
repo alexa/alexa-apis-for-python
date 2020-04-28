@@ -24,6 +24,7 @@ if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
     from ask_smapi_model.v1.skill.manifest.skill_manifest import SkillManifestV1
+    from ask_smapi_model.v1.skill.alexa_hosted.hosting_configuration import HostingConfigurationV1
 
 
 class CreateSkillRequest(object):
@@ -33,32 +34,39 @@ class CreateSkillRequest(object):
     :type vendor_id: (optional) str
     :param manifest: 
     :type manifest: (optional) ask_smapi_model.v1.skill.manifest.skill_manifest.SkillManifest
+    :param hosting: 
+    :type hosting: (optional) ask_smapi_model.v1.skill.alexa_hosted.hosting_configuration.HostingConfiguration
 
     """
     deserialized_types = {
         'vendor_id': 'str',
-        'manifest': 'ask_smapi_model.v1.skill.manifest.skill_manifest.SkillManifest'
+        'manifest': 'ask_smapi_model.v1.skill.manifest.skill_manifest.SkillManifest',
+        'hosting': 'ask_smapi_model.v1.skill.alexa_hosted.hosting_configuration.HostingConfiguration'
     }  # type: Dict
 
     attribute_map = {
         'vendor_id': 'vendorId',
-        'manifest': 'manifest'
+        'manifest': 'manifest',
+        'hosting': 'hosting'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, vendor_id=None, manifest=None):
-        # type: (Optional[str], Optional[SkillManifestV1]) -> None
+    def __init__(self, vendor_id=None, manifest=None, hosting=None):
+        # type: (Optional[str], Optional[SkillManifestV1], Optional[HostingConfigurationV1]) -> None
         """
 
         :param vendor_id: ID of the vendor owning the skill.
         :type vendor_id: (optional) str
         :param manifest: 
         :type manifest: (optional) ask_smapi_model.v1.skill.manifest.skill_manifest.SkillManifest
+        :param hosting: 
+        :type hosting: (optional) ask_smapi_model.v1.skill.alexa_hosted.hosting_configuration.HostingConfiguration
         """
         self.__discriminator_value = None  # type: str
 
         self.vendor_id = vendor_id
         self.manifest = manifest
+        self.hosting = hosting
 
     def to_dict(self):
         # type: () -> Dict[str, object]

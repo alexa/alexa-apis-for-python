@@ -31,7 +31,7 @@ class ContentUploadSummary(object):
 
     :param id: Unique identifier of the upload.
     :type id: (optional) str
-    :param catalog_id: Unique identifier of the catalog.
+    :param catalog_id: Provides a unique identifier of the catalog.
     :type catalog_id: (optional) str
     :param status: 
     :type status: (optional) ask_smapi_model.v0.catalog.upload.upload_status.UploadStatus
@@ -64,7 +64,7 @@ class ContentUploadSummary(object):
 
         :param id: Unique identifier of the upload.
         :type id: (optional) str
-        :param catalog_id: Unique identifier of the catalog.
+        :param catalog_id: Provides a unique identifier of the catalog.
         :type catalog_id: (optional) str
         :param status: 
         :type status: (optional) ask_smapi_model.v0.catalog.upload.upload_status.UploadStatus

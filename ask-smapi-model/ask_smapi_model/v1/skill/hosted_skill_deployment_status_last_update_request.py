@@ -23,37 +23,60 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.skill_interaction_model_status import SkillInteractionModelStatusV1
+    from ask_smapi_model.v1.skill.hosted_skill_deployment_details import HostedSkillDeploymentDetailsV1
+    from ask_smapi_model.v1.skill.status import StatusV1
+    from ask_smapi_model.v1.skill.standardized_error import StandardizedErrorV1
 
 
-class SkillInteractionModel(object):
+class HostedSkillDeploymentStatusLastUpdateRequest(object):
     """
-    Status for available interaction models, keyed by locale.
+    Contains attributes related to last modification request of a hosted skill deployment resource.
 
 
-    :param locale: 
-    :type locale: (optional) dict(str, ask_smapi_model.v1.skill.skill_interaction_model_status.SkillInteractionModelStatus)
+    :param status: 
+    :type status: (optional) ask_smapi_model.v1.skill.status.Status
+    :param errors: 
+    :type errors: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
+    :param warnings: 
+    :type warnings: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
+    :param deployment_details: 
+    :type deployment_details: (optional) ask_smapi_model.v1.skill.hosted_skill_deployment_details.HostedSkillDeploymentDetails
 
     """
     deserialized_types = {
-        'locale': 'dict(str, ask_smapi_model.v1.skill.skill_interaction_model_status.SkillInteractionModelStatus)'
+        'status': 'ask_smapi_model.v1.skill.status.Status',
+        'errors': 'list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]',
+        'warnings': 'list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]',
+        'deployment_details': 'ask_smapi_model.v1.skill.hosted_skill_deployment_details.HostedSkillDeploymentDetails'
     }  # type: Dict
 
     attribute_map = {
-        'locale': 'locale'
+        'status': 'status',
+        'errors': 'errors',
+        'warnings': 'warnings',
+        'deployment_details': 'deploymentDetails'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, locale=None):
-        # type: (Optional[Dict[str, SkillInteractionModelStatusV1]]) -> None
-        """Status for available interaction models, keyed by locale.
+    def __init__(self, status=None, errors=None, warnings=None, deployment_details=None):
+        # type: (Optional[StatusV1], Optional[List[StandardizedErrorV1]], Optional[List[StandardizedErrorV1]], Optional[HostedSkillDeploymentDetailsV1]) -> None
+        """Contains attributes related to last modification request of a hosted skill deployment resource.
 
-        :param locale: 
-        :type locale: (optional) dict(str, ask_smapi_model.v1.skill.skill_interaction_model_status.SkillInteractionModelStatus)
+        :param status: 
+        :type status: (optional) ask_smapi_model.v1.skill.status.Status
+        :param errors: 
+        :type errors: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
+        :param warnings: 
+        :type warnings: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
+        :param deployment_details: 
+        :type deployment_details: (optional) ask_smapi_model.v1.skill.hosted_skill_deployment_details.HostedSkillDeploymentDetails
         """
         self.__discriminator_value = None  # type: str
 
-        self.locale = locale
+        self.status = status
+        self.errors = errors
+        self.warnings = warnings
+        self.deployment_details = deployment_details
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -98,7 +121,7 @@ class SkillInteractionModel(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, SkillInteractionModel):
+        if not isinstance(other, HostedSkillDeploymentStatusLastUpdateRequest):
             return False
 
         return self.__dict__ == other.__dict__

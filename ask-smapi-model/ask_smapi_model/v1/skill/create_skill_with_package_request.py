@@ -30,7 +30,7 @@ class CreateSkillWithPackageRequest(object):
 
     :param vendor_id: ID of the vendor owning the skill.
     :type vendor_id: (optional) str
-    :param location: Location of the package.
+    :param location: The URL for the skill package.
     :type location: (optional) str
 
     """
@@ -51,7 +51,7 @@ class CreateSkillWithPackageRequest(object):
 
         :param vendor_id: ID of the vendor owning the skill.
         :type vendor_id: (optional) str
-        :param location: Location of the package.
+        :param location: The URL for the skill package.
         :type location: (optional) str
         """
         self.__discriminator_value = None  # type: str

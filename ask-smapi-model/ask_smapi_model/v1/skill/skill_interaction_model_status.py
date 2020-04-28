@@ -23,8 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.standardized_error import StandardizedErrorV1
-    from ask_smapi_model.v1.skill.last_update_request import LastUpdateRequestV1
+    from ask_smapi_model.v1.skill.interaction_model_last_update_request import InteractionModelLastUpdateRequestV1
 
 
 class SkillInteractionModelStatus(object):
@@ -33,56 +32,42 @@ class SkillInteractionModelStatus(object):
 
 
     :param last_update_request: 
-    :type last_update_request: (optional) ask_smapi_model.v1.skill.last_update_request.LastUpdateRequest
+    :type last_update_request: (optional) ask_smapi_model.v1.skill.interaction_model_last_update_request.InteractionModelLastUpdateRequest
     :param e_tag: An opaque identifier for last successfully updated resource.
     :type e_tag: (optional) str
     :param version: Version for last successfully built model.
     :type version: (optional) str
-    :param errors: 
-    :type errors: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
-    :param warnings: 
-    :type warnings: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
 
     """
     deserialized_types = {
-        'last_update_request': 'ask_smapi_model.v1.skill.last_update_request.LastUpdateRequest',
+        'last_update_request': 'ask_smapi_model.v1.skill.interaction_model_last_update_request.InteractionModelLastUpdateRequest',
         'e_tag': 'str',
-        'version': 'str',
-        'errors': 'list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]',
-        'warnings': 'list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]'
+        'version': 'str'
     }  # type: Dict
 
     attribute_map = {
         'last_update_request': 'lastUpdateRequest',
         'e_tag': 'eTag',
-        'version': 'version',
-        'errors': 'errors',
-        'warnings': 'warnings'
+        'version': 'version'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, last_update_request=None, e_tag=None, version=None, errors=None, warnings=None):
-        # type: (Optional[LastUpdateRequestV1], Optional[str], Optional[str], Optional[List[StandardizedErrorV1]], Optional[List[StandardizedErrorV1]]) -> None
+    def __init__(self, last_update_request=None, e_tag=None, version=None):
+        # type: (Optional[InteractionModelLastUpdateRequestV1], Optional[str], Optional[str]) -> None
         """Defines the structure for interaction model build status.
 
         :param last_update_request: 
-        :type last_update_request: (optional) ask_smapi_model.v1.skill.last_update_request.LastUpdateRequest
+        :type last_update_request: (optional) ask_smapi_model.v1.skill.interaction_model_last_update_request.InteractionModelLastUpdateRequest
         :param e_tag: An opaque identifier for last successfully updated resource.
         :type e_tag: (optional) str
         :param version: Version for last successfully built model.
         :type version: (optional) str
-        :param errors: 
-        :type errors: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
-        :param warnings: 
-        :type warnings: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
         """
         self.__discriminator_value = None  # type: str
 
         self.last_update_request = last_update_request
         self.e_tag = e_tag
         self.version = version
-        self.errors = errors
-        self.warnings = warnings
 
     def to_dict(self):
         # type: () -> Dict[str, object]
