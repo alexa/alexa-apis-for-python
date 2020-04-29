@@ -24,8 +24,8 @@ if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
     from ask_smapi_model.v1.skill.manifest_status import ManifestStatusV1
-    from ask_smapi_model.v1.skill.skill_interaction_model import SkillInteractionModelV1
     from ask_smapi_model.v1.skill.hosted_skill_deployment_status import HostedSkillDeploymentStatusV1
+    from ask_smapi_model.v1.skill.skill_interaction_model_status import SkillInteractionModelStatusV1
     from ask_smapi_model.v1.skill.hosted_skill_provisioning_status import HostedSkillProvisioningStatusV1
 
 
@@ -36,8 +36,8 @@ class SkillStatus(object):
 
     :param manifest: 
     :type manifest: (optional) ask_smapi_model.v1.skill.manifest_status.ManifestStatus
-    :param interaction_model: 
-    :type interaction_model: (optional) ask_smapi_model.v1.skill.skill_interaction_model.SkillInteractionModel
+    :param interaction_model: Status for available interaction models, keyed by locale.
+    :type interaction_model: (optional) dict(str, ask_smapi_model.v1.skill.skill_interaction_model_status.SkillInteractionModelStatus)
     :param hosted_skill_deployment: 
     :type hosted_skill_deployment: (optional) ask_smapi_model.v1.skill.hosted_skill_deployment_status.HostedSkillDeploymentStatus
     :param hosted_skill_provisioning: 
@@ -46,7 +46,7 @@ class SkillStatus(object):
     """
     deserialized_types = {
         'manifest': 'ask_smapi_model.v1.skill.manifest_status.ManifestStatus',
-        'interaction_model': 'ask_smapi_model.v1.skill.skill_interaction_model.SkillInteractionModel',
+        'interaction_model': 'dict(str, ask_smapi_model.v1.skill.skill_interaction_model_status.SkillInteractionModelStatus)',
         'hosted_skill_deployment': 'ask_smapi_model.v1.skill.hosted_skill_deployment_status.HostedSkillDeploymentStatus',
         'hosted_skill_provisioning': 'ask_smapi_model.v1.skill.hosted_skill_provisioning_status.HostedSkillProvisioningStatus'
     }  # type: Dict
@@ -60,13 +60,13 @@ class SkillStatus(object):
     supports_multiple_types = False
 
     def __init__(self, manifest=None, interaction_model=None, hosted_skill_deployment=None, hosted_skill_provisioning=None):
-        # type: (Optional[ManifestStatusV1], Optional[SkillInteractionModelV1], Optional[HostedSkillDeploymentStatusV1], Optional[HostedSkillProvisioningStatusV1]) -> None
+        # type: (Optional[ManifestStatusV1], Optional[Dict[str, SkillInteractionModelStatusV1]], Optional[HostedSkillDeploymentStatusV1], Optional[HostedSkillProvisioningStatusV1]) -> None
         """Defines the structure for skill status response.
 
         :param manifest: 
         :type manifest: (optional) ask_smapi_model.v1.skill.manifest_status.ManifestStatus
-        :param interaction_model: 
-        :type interaction_model: (optional) ask_smapi_model.v1.skill.skill_interaction_model.SkillInteractionModel
+        :param interaction_model: Status for available interaction models, keyed by locale.
+        :type interaction_model: (optional) dict(str, ask_smapi_model.v1.skill.skill_interaction_model_status.SkillInteractionModelStatus)
         :param hosted_skill_deployment: 
         :type hosted_skill_deployment: (optional) ask_smapi_model.v1.skill.hosted_skill_deployment_status.HostedSkillDeploymentStatus
         :param hosted_skill_provisioning: 

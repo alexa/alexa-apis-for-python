@@ -20,7 +20,6 @@ from .validation_feature import ValidationFeature
 from .skill_status import SkillStatus
 from .build_step_name import BuildStepName
 from .response_status import ResponseStatus
-from .skill_interaction_model import SkillInteractionModel
 from .ssl_certificate_payload import SSLCertificatePayload
 from .build_step import BuildStep
 from .interface_intent import InterfaceIntent

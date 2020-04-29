@@ -55,3 +55,11 @@ This release contains the following changes :
 - Updated description field on catalog APIs and in Skill package APIs.
 - Updated create skill and get skill status APIs for Alexa Hosted Skills
 - Changed argument parameters of few models definitions from optional to required.
+
+
+1.3.2
+^^^^^
+
+This release contains the following changes : 
+
+- Fixes the interaction model status structure in `GetSkillStatus` API.
