@@ -18,42 +18,58 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
+from ask_smapi_model.v1.nlu.annotation_sets.annotation_set_entity import AnnotationSetEntity
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config import AlexaHostedConfigV1
 
 
-class HostingConfiguration(object):
+class GetNLUAnnotationSetPropertiesResponse(AnnotationSetEntity):
     """
-    Configurations for creating new hosted skill
 
-
-    :param alexa_hosted: 
-    :type alexa_hosted: (optional) ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig
+    :param locale: 
+    :type locale: (optional) str
+    :param name: Name of the NLU annotation set
+    :type name: (optional) str
+    :param number_of_entries: Number of entries which represents number of utterances in each NLU annotation set content
+    :type number_of_entries: (optional) int
+    :param updated_timestamp: The lastest updated timestamp for the NLU annotation set
+    :type updated_timestamp: (optional) datetime
 
     """
     deserialized_types = {
-        'alexa_hosted': 'ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig'
+        'locale': 'str',
+        'name': 'str',
+        'number_of_entries': 'int',
+        'updated_timestamp': 'datetime'
     }  # type: Dict
 
     attribute_map = {
-        'alexa_hosted': 'alexaHosted'
+        'locale': 'locale',
+        'name': 'name',
+        'number_of_entries': 'numberOfEntries',
+        'updated_timestamp': 'updatedTimestamp'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, alexa_hosted=None):
-        # type: (Optional[AlexaHostedConfigV1]) -> None
-        """Configurations for creating new hosted skill
+    def __init__(self, locale=None, name=None, number_of_entries=None, updated_timestamp=None):
+        # type: (Optional[str], Optional[str], Optional[int], Optional[datetime]) -> None
+        """
 
-        :param alexa_hosted: 
-        :type alexa_hosted: (optional) ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig
+        :param locale: 
+        :type locale: (optional) str
+        :param name: Name of the NLU annotation set
+        :type name: (optional) str
+        :param number_of_entries: Number of entries which represents number of utterances in each NLU annotation set content
+        :type number_of_entries: (optional) int
+        :param updated_timestamp: The lastest updated timestamp for the NLU annotation set
+        :type updated_timestamp: (optional) datetime
         """
         self.__discriminator_value = None  # type: str
 
-        self.alexa_hosted = alexa_hosted
+        super(GetNLUAnnotationSetPropertiesResponse, self).__init__(locale=locale, name=name, number_of_entries=number_of_entries, updated_timestamp=updated_timestamp)
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -98,7 +114,7 @@ class HostingConfiguration(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, HostingConfiguration):
+        if not isinstance(other, GetNLUAnnotationSetPropertiesResponse):
             return False
 
         return self.__dict__ == other.__dict__

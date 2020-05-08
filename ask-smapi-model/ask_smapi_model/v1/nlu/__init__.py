@@ -14,5 +14,3 @@
 #
 from __future__ import absolute_import
 
-from .inline_response_401 import Model401
-from .inline_response_400 import Model400

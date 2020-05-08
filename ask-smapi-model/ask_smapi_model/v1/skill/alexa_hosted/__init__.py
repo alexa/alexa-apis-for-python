@@ -15,6 +15,7 @@
 from __future__ import absolute_import
 
 from .hosted_skill_permission import HostedSkillPermission
+from .alexa_hosted_config import AlexaHostedConfig
 from .hosted_skill_permission_type import HostedSkillPermissionType
 from .hosted_skill_repository_info import HostedSkillRepositoryInfo
 from .hosted_skill_runtime import HostedSkillRuntime

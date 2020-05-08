@@ -23,37 +23,44 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config import AlexaHostedConfigV1
+    from ask_smapi_model.v1.link import LinkV1
 
 
-class HostingConfiguration(object):
+class Links(object):
     """
-    Configurations for creating new hosted skill
+    Links for the API navigation.
 
 
-    :param alexa_hosted: 
-    :type alexa_hosted: (optional) ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig
+    :param object_self: 
+    :type object_self: (optional) ask_smapi_model.v1.link.Link
+    :param next: 
+    :type next: (optional) ask_smapi_model.v1.link.Link
 
     """
     deserialized_types = {
-        'alexa_hosted': 'ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig'
+        'object_self': 'ask_smapi_model.v1.link.Link',
+        'next': 'ask_smapi_model.v1.link.Link'
     }  # type: Dict
 
     attribute_map = {
-        'alexa_hosted': 'alexaHosted'
+        'object_self': 'self',
+        'next': 'next'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, alexa_hosted=None):
-        # type: (Optional[AlexaHostedConfigV1]) -> None
-        """Configurations for creating new hosted skill
+    def __init__(self, object_self=None, next=None):
+        # type: (Optional[LinkV1], Optional[LinkV1]) -> None
+        """Links for the API navigation.
 
-        :param alexa_hosted: 
-        :type alexa_hosted: (optional) ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig
+        :param object_self: 
+        :type object_self: (optional) ask_smapi_model.v1.link.Link
+        :param next: 
+        :type next: (optional) ask_smapi_model.v1.link.Link
         """
         self.__discriminator_value = None  # type: str
 
-        self.alexa_hosted = alexa_hosted
+        self.object_self = object_self
+        self.next = next
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -98,7 +105,7 @@ class HostingConfiguration(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, HostingConfiguration):
+        if not isinstance(other, Links):
             return False
 
         return self.__dict__ == other.__dict__

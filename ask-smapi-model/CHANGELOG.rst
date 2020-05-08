@@ -63,3 +63,11 @@ This release contains the following changes :
 This release contains the following changes : 
 
 - Fixes the interaction model status structure in `GetSkillStatus` API.
+
+
+1.4.0
+~~~~~
+
+This release contains the following changes : 
+
+- Added support for `NLU Evaluation APIs <https://developer.amazon.com/en-US/docs/alexa/smapi/nlu-evaluation-tool-api.html>`__.

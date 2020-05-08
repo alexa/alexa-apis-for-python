@@ -23,37 +23,59 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config import AlexaHostedConfigV1
+    from ask_smapi_model.v1.nlu.evaluations.actual import ActualV1
+    from ask_smapi_model.v1.nlu.evaluations.expected import ExpectedV1
+    from ask_smapi_model.v1.nlu.evaluations.results_status import ResultsStatusV1
+    from ask_smapi_model.v1.nlu.evaluations.inputs import InputsV1
 
 
-class HostingConfiguration(object):
+class TestCase(object):
     """
-    Configurations for creating new hosted skill
 
-
-    :param alexa_hosted: 
-    :type alexa_hosted: (optional) ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig
+    :param status: 
+    :type status: (optional) ask_smapi_model.v1.nlu.evaluations.results_status.ResultsStatus
+    :param inputs: 
+    :type inputs: (optional) ask_smapi_model.v1.nlu.evaluations.inputs.Inputs
+    :param actual: 
+    :type actual: (optional) ask_smapi_model.v1.nlu.evaluations.actual.Actual
+    :param expected: 
+    :type expected: (optional) list[ask_smapi_model.v1.nlu.evaluations.expected.Expected]
 
     """
     deserialized_types = {
-        'alexa_hosted': 'ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig'
+        'status': 'ask_smapi_model.v1.nlu.evaluations.results_status.ResultsStatus',
+        'inputs': 'ask_smapi_model.v1.nlu.evaluations.inputs.Inputs',
+        'actual': 'ask_smapi_model.v1.nlu.evaluations.actual.Actual',
+        'expected': 'list[ask_smapi_model.v1.nlu.evaluations.expected.Expected]'
     }  # type: Dict
 
     attribute_map = {
-        'alexa_hosted': 'alexaHosted'
+        'status': 'status',
+        'inputs': 'inputs',
+        'actual': 'actual',
+        'expected': 'expected'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, alexa_hosted=None):
-        # type: (Optional[AlexaHostedConfigV1]) -> None
-        """Configurations for creating new hosted skill
+    def __init__(self, status=None, inputs=None, actual=None, expected=None):
+        # type: (Optional[ResultsStatusV1], Optional[InputsV1], Optional[ActualV1], Optional[List[ExpectedV1]]) -> None
+        """
 
-        :param alexa_hosted: 
-        :type alexa_hosted: (optional) ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig
+        :param status: 
+        :type status: (optional) ask_smapi_model.v1.nlu.evaluations.results_status.ResultsStatus
+        :param inputs: 
+        :type inputs: (optional) ask_smapi_model.v1.nlu.evaluations.inputs.Inputs
+        :param actual: 
+        :type actual: (optional) ask_smapi_model.v1.nlu.evaluations.actual.Actual
+        :param expected: 
+        :type expected: (optional) list[ask_smapi_model.v1.nlu.evaluations.expected.Expected]
         """
         self.__discriminator_value = None  # type: str
 
-        self.alexa_hosted = alexa_hosted
+        self.status = status
+        self.inputs = inputs
+        self.actual = actual
+        self.expected = expected
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -98,7 +120,7 @@ class HostingConfiguration(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, HostingConfiguration):
+        if not isinstance(other, TestCase):
             return False
 
         return self.__dict__ == other.__dict__

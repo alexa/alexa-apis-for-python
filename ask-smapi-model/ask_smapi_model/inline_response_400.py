@@ -23,37 +23,42 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config import AlexaHostedConfigV1
+    from ask_smapi_model.v1.error import ErrorV1
 
 
-class HostingConfiguration(object):
+class Model400(object):
     """
-    Configurations for creating new hosted skill
 
-
-    :param alexa_hosted: 
-    :type alexa_hosted: (optional) ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig
+    :param message: Human readable description of error.
+    :type message: (optional) str
+    :param violations: An array of violation messages.
+    :type violations: (optional) list[ask_smapi_model.v1.error.Error]
 
     """
     deserialized_types = {
-        'alexa_hosted': 'ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig'
+        'message': 'str',
+        'violations': 'list[ask_smapi_model.v1.error.Error]'
     }  # type: Dict
 
     attribute_map = {
-        'alexa_hosted': 'alexaHosted'
+        'message': 'message',
+        'violations': 'violations'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, alexa_hosted=None):
-        # type: (Optional[AlexaHostedConfigV1]) -> None
-        """Configurations for creating new hosted skill
+    def __init__(self, message=None, violations=None):
+        # type: (Optional[str], Optional[List[ErrorV1]]) -> None
+        """
 
-        :param alexa_hosted: 
-        :type alexa_hosted: (optional) ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig
+        :param message: Human readable description of error.
+        :type message: (optional) str
+        :param violations: An array of violation messages.
+        :type violations: (optional) list[ask_smapi_model.v1.error.Error]
         """
         self.__discriminator_value = None  # type: str
 
-        self.alexa_hosted = alexa_hosted
+        self.message = message
+        self.violations = violations
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -98,7 +103,7 @@ class HostingConfiguration(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, HostingConfiguration):
+        if not isinstance(other, Model400):
             return False
 
         return self.__dict__ == other.__dict__

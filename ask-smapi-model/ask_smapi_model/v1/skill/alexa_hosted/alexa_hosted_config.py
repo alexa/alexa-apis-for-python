@@ -23,37 +23,37 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config import AlexaHostedConfigV1
+    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_runtime import HostedSkillRuntimeV1
 
 
-class HostingConfiguration(object):
+class AlexaHostedConfig(object):
     """
-    Configurations for creating new hosted skill
+    Alexa hosted skill create configuration
 
 
-    :param alexa_hosted: 
-    :type alexa_hosted: (optional) ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig
+    :param runtime: 
+    :type runtime: (optional) ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_runtime.HostedSkillRuntime
 
     """
     deserialized_types = {
-        'alexa_hosted': 'ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig'
+        'runtime': 'ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_runtime.HostedSkillRuntime'
     }  # type: Dict
 
     attribute_map = {
-        'alexa_hosted': 'alexaHosted'
+        'runtime': 'runtime'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, alexa_hosted=None):
-        # type: (Optional[AlexaHostedConfigV1]) -> None
-        """Configurations for creating new hosted skill
+    def __init__(self, runtime=None):
+        # type: (Optional[HostedSkillRuntimeV1]) -> None
+        """Alexa hosted skill create configuration
 
-        :param alexa_hosted: 
-        :type alexa_hosted: (optional) ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig
+        :param runtime: 
+        :type runtime: (optional) ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_runtime.HostedSkillRuntime
         """
         self.__discriminator_value = None  # type: str
 
-        self.alexa_hosted = alexa_hosted
+        self.runtime = runtime
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -98,7 +98,7 @@ class HostingConfiguration(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, HostingConfiguration):
+        if not isinstance(other, AlexaHostedConfig):
             return False
 
         return self.__dict__ == other.__dict__

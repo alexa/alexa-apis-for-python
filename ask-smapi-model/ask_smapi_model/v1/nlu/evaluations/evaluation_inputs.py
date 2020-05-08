@@ -23,37 +23,49 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config import AlexaHostedConfigV1
+    from ask_smapi_model.v1.nlu.evaluations.source import SourceV1
 
 
-class HostingConfiguration(object):
+class EvaluationInputs(object):
     """
-    Configurations for creating new hosted skill
 
-
-    :param alexa_hosted: 
-    :type alexa_hosted: (optional) ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig
+    :param locale: 
+    :type locale: (optional) str
+    :param stage: 
+    :type stage: (optional) str
+    :param source: 
+    :type source: (optional) ask_smapi_model.v1.nlu.evaluations.source.Source
 
     """
     deserialized_types = {
-        'alexa_hosted': 'ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig'
+        'locale': 'str',
+        'stage': 'str',
+        'source': 'ask_smapi_model.v1.nlu.evaluations.source.Source'
     }  # type: Dict
 
     attribute_map = {
-        'alexa_hosted': 'alexaHosted'
+        'locale': 'locale',
+        'stage': 'stage',
+        'source': 'source'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, alexa_hosted=None):
-        # type: (Optional[AlexaHostedConfigV1]) -> None
-        """Configurations for creating new hosted skill
+    def __init__(self, locale=None, stage=None, source=None):
+        # type: (Optional[str], Optional[str], Optional[SourceV1]) -> None
+        """
 
-        :param alexa_hosted: 
-        :type alexa_hosted: (optional) ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig
+        :param locale: 
+        :type locale: (optional) str
+        :param stage: 
+        :type stage: (optional) str
+        :param source: 
+        :type source: (optional) ask_smapi_model.v1.nlu.evaluations.source.Source
         """
         self.__discriminator_value = None  # type: str
 
-        self.alexa_hosted = alexa_hosted
+        self.locale = locale
+        self.stage = stage
+        self.source = source
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -98,7 +110,7 @@ class HostingConfiguration(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, HostingConfiguration):
+        if not isinstance(other, EvaluationInputs):
             return False
 
         return self.__dict__ == other.__dict__

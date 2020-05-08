@@ -23,37 +23,37 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config import AlexaHostedConfigV1
+    from ask_smapi_model.v1.nlu.evaluations.resolutions_per_authority import ResolutionsPerAuthorityV1
 
 
-class HostingConfiguration(object):
+class Resolutions(object):
     """
-    Configurations for creating new hosted skill
+    A resolutions object representing the results of resolving the words captured from the user&#39;s utterance. 
 
 
-    :param alexa_hosted: 
-    :type alexa_hosted: (optional) ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig
+    :param resolutions_per_authority: An array of objects representing each possible authority for entity resolution. An authority represents the source for the data provided for the slot. For a custom slot type, the authority is the slot type you defined. 
+    :type resolutions_per_authority: (optional) list[ask_smapi_model.v1.nlu.evaluations.resolutions_per_authority.ResolutionsPerAuthority]
 
     """
     deserialized_types = {
-        'alexa_hosted': 'ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig'
+        'resolutions_per_authority': 'list[ask_smapi_model.v1.nlu.evaluations.resolutions_per_authority.ResolutionsPerAuthority]'
     }  # type: Dict
 
     attribute_map = {
-        'alexa_hosted': 'alexaHosted'
+        'resolutions_per_authority': 'resolutionsPerAuthority'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, alexa_hosted=None):
-        # type: (Optional[AlexaHostedConfigV1]) -> None
-        """Configurations for creating new hosted skill
+    def __init__(self, resolutions_per_authority=None):
+        # type: (Optional[List[ResolutionsPerAuthorityV1]]) -> None
+        """A resolutions object representing the results of resolving the words captured from the user&#39;s utterance. 
 
-        :param alexa_hosted: 
-        :type alexa_hosted: (optional) ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig
+        :param resolutions_per_authority: An array of objects representing each possible authority for entity resolution. An authority represents the source for the data provided for the slot. For a custom slot type, the authority is the slot type you defined. 
+        :type resolutions_per_authority: (optional) list[ask_smapi_model.v1.nlu.evaluations.resolutions_per_authority.ResolutionsPerAuthority]
         """
         self.__discriminator_value = None  # type: str
 
-        self.alexa_hosted = alexa_hosted
+        self.resolutions_per_authority = resolutions_per_authority
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -98,7 +98,7 @@ class HostingConfiguration(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, HostingConfiguration):
+        if not isinstance(other, Resolutions):
             return False
 
         return self.__dict__ == other.__dict__

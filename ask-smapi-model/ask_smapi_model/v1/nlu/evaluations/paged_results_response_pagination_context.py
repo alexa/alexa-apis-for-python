@@ -23,37 +23,41 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config import AlexaHostedConfigV1
 
 
-class HostingConfiguration(object):
+class PagedResultsResponsePaginationContext(object):
     """
-    Configurations for creating new hosted skill
 
-
-    :param alexa_hosted: 
-    :type alexa_hosted: (optional) ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig
+    :param next_token: opaque token returned if there are more results for the given inputs than &#x60;maxResults&#x60; from the request.
+    :type next_token: (optional) str
+    :param total_count: Total available results for the given query.
+    :type total_count: (optional) str
 
     """
     deserialized_types = {
-        'alexa_hosted': 'ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig'
+        'next_token': 'str',
+        'total_count': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'alexa_hosted': 'alexaHosted'
+        'next_token': 'nextToken',
+        'total_count': 'totalCount'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, alexa_hosted=None):
-        # type: (Optional[AlexaHostedConfigV1]) -> None
-        """Configurations for creating new hosted skill
+    def __init__(self, next_token=None, total_count=None):
+        # type: (Optional[str], Optional[str]) -> None
+        """
 
-        :param alexa_hosted: 
-        :type alexa_hosted: (optional) ask_smapi_model.v1.skill.alexa_hosted.alexa_hosted_config.AlexaHostedConfig
+        :param next_token: opaque token returned if there are more results for the given inputs than &#x60;maxResults&#x60; from the request.
+        :type next_token: (optional) str
+        :param total_count: Total available results for the given query.
+        :type total_count: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
-        self.alexa_hosted = alexa_hosted
+        self.next_token = next_token
+        self.total_count = total_count
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -98,7 +102,7 @@ class HostingConfiguration(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, HostingConfiguration):
+        if not isinstance(other, PagedResultsResponsePaginationContext):
             return False
 
         return self.__dict__ == other.__dict__
