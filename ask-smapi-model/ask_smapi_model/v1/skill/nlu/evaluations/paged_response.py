@@ -18,73 +18,48 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
-from ask_smapi_model.v1.nlu.evaluations.evaluation_entity import EvaluationEntity
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.nlu.evaluations.evaluation_inputs import EvaluationInputsV1
-    from ask_smapi_model.v1.nlu.evaluations.status import StatusV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.pagination_context import PaginationContextV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.links import LinksV1
 
 
-class Evaluation(EvaluationEntity):
+class PagedResponse(object):
     """
 
-    :param start_timestamp: 
-    :type start_timestamp: (optional) datetime
-    :param end_timestamp: 
-    :type end_timestamp: (optional) datetime
-    :param status: 
-    :type status: (optional) ask_smapi_model.v1.nlu.evaluations.status.Status
-    :param error_message: Error message when evaluation job fails
-    :type error_message: (optional) str
-    :param inputs: 
-    :type inputs: (optional) ask_smapi_model.v1.nlu.evaluations.evaluation_inputs.EvaluationInputs
-    :param id: id of the job
-    :type id: (optional) str
+    :param pagination_context: 
+    :type pagination_context: (optional) ask_smapi_model.v1.skill.nlu.evaluations.pagination_context.PaginationContext
+    :param links: 
+    :type links: (optional) ask_smapi_model.v1.skill.nlu.evaluations.links.Links
 
     """
     deserialized_types = {
-        'start_timestamp': 'datetime',
-        'end_timestamp': 'datetime',
-        'status': 'ask_smapi_model.v1.nlu.evaluations.status.Status',
-        'error_message': 'str',
-        'inputs': 'ask_smapi_model.v1.nlu.evaluations.evaluation_inputs.EvaluationInputs',
-        'id': 'str'
+        'pagination_context': 'ask_smapi_model.v1.skill.nlu.evaluations.pagination_context.PaginationContext',
+        'links': 'ask_smapi_model.v1.skill.nlu.evaluations.links.Links'
     }  # type: Dict
 
     attribute_map = {
-        'start_timestamp': 'startTimestamp',
-        'end_timestamp': 'endTimestamp',
-        'status': 'status',
-        'error_message': 'errorMessage',
-        'inputs': 'inputs',
-        'id': 'id'
+        'pagination_context': 'paginationContext',
+        'links': '_links'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, start_timestamp=None, end_timestamp=None, status=None, error_message=None, inputs=None, id=None):
-        # type: (Optional[datetime], Optional[datetime], Optional[StatusV1], Optional[str], Optional[EvaluationInputsV1], Optional[str]) -> None
+    def __init__(self, pagination_context=None, links=None):
+        # type: (Optional[PaginationContextV1], Optional[LinksV1]) -> None
         """
 
-        :param start_timestamp: 
-        :type start_timestamp: (optional) datetime
-        :param end_timestamp: 
-        :type end_timestamp: (optional) datetime
-        :param status: 
-        :type status: (optional) ask_smapi_model.v1.nlu.evaluations.status.Status
-        :param error_message: Error message when evaluation job fails
-        :type error_message: (optional) str
-        :param inputs: 
-        :type inputs: (optional) ask_smapi_model.v1.nlu.evaluations.evaluation_inputs.EvaluationInputs
-        :param id: id of the job
-        :type id: (optional) str
+        :param pagination_context: 
+        :type pagination_context: (optional) ask_smapi_model.v1.skill.nlu.evaluations.pagination_context.PaginationContext
+        :param links: 
+        :type links: (optional) ask_smapi_model.v1.skill.nlu.evaluations.links.Links
         """
         self.__discriminator_value = None  # type: str
 
-        super(Evaluation, self).__init__(start_timestamp=start_timestamp, end_timestamp=end_timestamp, status=status, error_message=error_message, inputs=inputs)
-        self.id = id
+        self.pagination_context = pagination_context
+        self.links = links
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -129,7 +104,7 @@ class Evaluation(EvaluationEntity):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Evaluation):
+        if not isinstance(other, PagedResponse):
             return False
 
         return self.__dict__ == other.__dict__

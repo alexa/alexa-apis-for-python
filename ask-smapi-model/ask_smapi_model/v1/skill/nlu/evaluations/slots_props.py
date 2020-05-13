@@ -18,58 +18,62 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
-from ask_smapi_model.v1.nlu.annotation_sets.annotation_set_entity import AnnotationSetEntity
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
+    from ask_smapi_model.v1.skill.nlu.evaluations.confirmation_status import ConfirmationStatusV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.resolutions import ResolutionsV1
 
 
-class GetNLUAnnotationSetPropertiesResponse(AnnotationSetEntity):
+class SlotsProps(object):
     """
 
-    :param locale: 
-    :type locale: (optional) str
-    :param name: Name of the NLU annotation set
+    :param name: 
     :type name: (optional) str
-    :param number_of_entries: Number of entries which represents number of utterances in each NLU annotation set content
-    :type number_of_entries: (optional) int
-    :param updated_timestamp: The lastest updated timestamp for the NLU annotation set
-    :type updated_timestamp: (optional) datetime
+    :param value: 
+    :type value: (optional) str
+    :param confirmation_status: 
+    :type confirmation_status: (optional) ask_smapi_model.v1.skill.nlu.evaluations.confirmation_status.ConfirmationStatus
+    :param resolutions: 
+    :type resolutions: (optional) ask_smapi_model.v1.skill.nlu.evaluations.resolutions.Resolutions
 
     """
     deserialized_types = {
-        'locale': 'str',
         'name': 'str',
-        'number_of_entries': 'int',
-        'updated_timestamp': 'datetime'
+        'value': 'str',
+        'confirmation_status': 'ask_smapi_model.v1.skill.nlu.evaluations.confirmation_status.ConfirmationStatus',
+        'resolutions': 'ask_smapi_model.v1.skill.nlu.evaluations.resolutions.Resolutions'
     }  # type: Dict
 
     attribute_map = {
-        'locale': 'locale',
         'name': 'name',
-        'number_of_entries': 'numberOfEntries',
-        'updated_timestamp': 'updatedTimestamp'
+        'value': 'value',
+        'confirmation_status': 'confirmationStatus',
+        'resolutions': 'resolutions'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, locale=None, name=None, number_of_entries=None, updated_timestamp=None):
-        # type: (Optional[str], Optional[str], Optional[int], Optional[datetime]) -> None
+    def __init__(self, name=None, value=None, confirmation_status=None, resolutions=None):
+        # type: (Optional[str], Optional[str], Optional[ConfirmationStatusV1], Optional[ResolutionsV1]) -> None
         """
 
-        :param locale: 
-        :type locale: (optional) str
-        :param name: Name of the NLU annotation set
+        :param name: 
         :type name: (optional) str
-        :param number_of_entries: Number of entries which represents number of utterances in each NLU annotation set content
-        :type number_of_entries: (optional) int
-        :param updated_timestamp: The lastest updated timestamp for the NLU annotation set
-        :type updated_timestamp: (optional) datetime
+        :param value: 
+        :type value: (optional) str
+        :param confirmation_status: 
+        :type confirmation_status: (optional) ask_smapi_model.v1.skill.nlu.evaluations.confirmation_status.ConfirmationStatus
+        :param resolutions: 
+        :type resolutions: (optional) ask_smapi_model.v1.skill.nlu.evaluations.resolutions.Resolutions
         """
         self.__discriminator_value = None  # type: str
 
-        super(GetNLUAnnotationSetPropertiesResponse, self).__init__(locale=locale, name=name, number_of_entries=number_of_entries, updated_timestamp=updated_timestamp)
+        self.name = name
+        self.value = value
+        self.confirmation_status = confirmation_status
+        self.resolutions = resolutions
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -114,7 +118,7 @@ class GetNLUAnnotationSetPropertiesResponse(AnnotationSetEntity):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, GetNLUAnnotationSetPropertiesResponse):
+        if not isinstance(other, SlotsProps):
             return False
 
         return self.__dict__ == other.__dict__

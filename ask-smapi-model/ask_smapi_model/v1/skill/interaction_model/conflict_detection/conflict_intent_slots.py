@@ -18,47 +18,35 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
+from  import null&lt;String, ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot.ConflictIntentSlot&gt;
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.nlu.evaluations.expected_intent_slots_props import ExpectedIntentSlotsPropsV1
 
 
-class ExpectedIntent(object):
+class ConflictIntentSlots(null&lt;String, ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot.ConflictIntentSlot&gt;):
     """
+    List of conflict intent slots
 
-    :param name: 
-    :type name: (optional) str
-    :param slots: 
-    :type slots: (optional) dict(str, ask_smapi_model.v1.nlu.evaluations.expected_intent_slots_props.ExpectedIntentSlotsProps)
+
 
     """
     deserialized_types = {
-        'name': 'str',
-        'slots': 'dict(str, ask_smapi_model.v1.nlu.evaluations.expected_intent_slots_props.ExpectedIntentSlotsProps)'
     }  # type: Dict
 
     attribute_map = {
-        'name': 'name',
-        'slots': 'slots'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, name=None, slots=None):
-        # type: (Optional[str], Optional[Dict[str, ExpectedIntentSlotsPropsV1]]) -> None
-        """
+    def __init__(self):
+        # type: () -> None
+        """List of conflict intent slots
 
-        :param name: 
-        :type name: (optional) str
-        :param slots: 
-        :type slots: (optional) dict(str, ask_smapi_model.v1.nlu.evaluations.expected_intent_slots_props.ExpectedIntentSlotsProps)
         """
         self.__discriminator_value = None  # type: str
-
-        self.name = name
-        self.slots = slots
+        super(ConflictIntentSlots, self).__init__()
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -103,7 +91,7 @@ class ExpectedIntent(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, ExpectedIntent):
+        if not isinstance(other, ConflictIntentSlots):
             return False
 
         return self.__dict__ == other.__dict__

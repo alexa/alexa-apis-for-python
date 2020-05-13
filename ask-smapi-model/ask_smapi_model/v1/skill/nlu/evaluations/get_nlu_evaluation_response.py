@@ -18,16 +18,18 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
+from ask_smapi_model.v1.skill.nlu.evaluations.evaluation_entity import EvaluationEntity
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.nlu.evaluations.evaluation_inputs import EvaluationInputsV1
-    from ask_smapi_model.v1.nlu.evaluations.status import StatusV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.status import StatusV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.evaluation_inputs import EvaluationInputsV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.get_nlu_evaluation_response_links import GetNLUEvaluationResponseLinksV1
 
 
-class EvaluationEntity(object):
+class GetNLUEvaluationResponse(EvaluationEntity):
     """
 
     :param start_timestamp: 
@@ -35,19 +37,22 @@ class EvaluationEntity(object):
     :param end_timestamp: 
     :type end_timestamp: (optional) datetime
     :param status: 
-    :type status: (optional) ask_smapi_model.v1.nlu.evaluations.status.Status
+    :type status: (optional) ask_smapi_model.v1.skill.nlu.evaluations.status.Status
     :param error_message: Error message when evaluation job fails
     :type error_message: (optional) str
     :param inputs: 
-    :type inputs: (optional) ask_smapi_model.v1.nlu.evaluations.evaluation_inputs.EvaluationInputs
+    :type inputs: (optional) ask_smapi_model.v1.skill.nlu.evaluations.evaluation_inputs.EvaluationInputs
+    :param links: 
+    :type links: (optional) ask_smapi_model.v1.skill.nlu.evaluations.get_nlu_evaluation_response_links.GetNLUEvaluationResponseLinks
 
     """
     deserialized_types = {
         'start_timestamp': 'datetime',
         'end_timestamp': 'datetime',
-        'status': 'ask_smapi_model.v1.nlu.evaluations.status.Status',
+        'status': 'ask_smapi_model.v1.skill.nlu.evaluations.status.Status',
         'error_message': 'str',
-        'inputs': 'ask_smapi_model.v1.nlu.evaluations.evaluation_inputs.EvaluationInputs'
+        'inputs': 'ask_smapi_model.v1.skill.nlu.evaluations.evaluation_inputs.EvaluationInputs',
+        'links': 'ask_smapi_model.v1.skill.nlu.evaluations.get_nlu_evaluation_response_links.GetNLUEvaluationResponseLinks'
     }  # type: Dict
 
     attribute_map = {
@@ -55,12 +60,13 @@ class EvaluationEntity(object):
         'end_timestamp': 'endTimestamp',
         'status': 'status',
         'error_message': 'errorMessage',
-        'inputs': 'inputs'
+        'inputs': 'inputs',
+        'links': '_links'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, start_timestamp=None, end_timestamp=None, status=None, error_message=None, inputs=None):
-        # type: (Optional[datetime], Optional[datetime], Optional[StatusV1], Optional[str], Optional[EvaluationInputsV1]) -> None
+    def __init__(self, start_timestamp=None, end_timestamp=None, status=None, error_message=None, inputs=None, links=None):
+        # type: (Optional[datetime], Optional[datetime], Optional[StatusV1], Optional[str], Optional[EvaluationInputsV1], Optional[GetNLUEvaluationResponseLinksV1]) -> None
         """
 
         :param start_timestamp: 
@@ -68,19 +74,18 @@ class EvaluationEntity(object):
         :param end_timestamp: 
         :type end_timestamp: (optional) datetime
         :param status: 
-        :type status: (optional) ask_smapi_model.v1.nlu.evaluations.status.Status
+        :type status: (optional) ask_smapi_model.v1.skill.nlu.evaluations.status.Status
         :param error_message: Error message when evaluation job fails
         :type error_message: (optional) str
         :param inputs: 
-        :type inputs: (optional) ask_smapi_model.v1.nlu.evaluations.evaluation_inputs.EvaluationInputs
+        :type inputs: (optional) ask_smapi_model.v1.skill.nlu.evaluations.evaluation_inputs.EvaluationInputs
+        :param links: 
+        :type links: (optional) ask_smapi_model.v1.skill.nlu.evaluations.get_nlu_evaluation_response_links.GetNLUEvaluationResponseLinks
         """
         self.__discriminator_value = None  # type: str
 
-        self.start_timestamp = start_timestamp
-        self.end_timestamp = end_timestamp
-        self.status = status
-        self.error_message = error_message
-        self.inputs = inputs
+        super(GetNLUEvaluationResponse, self).__init__(start_timestamp=start_timestamp, end_timestamp=end_timestamp, status=status, error_message=error_message, inputs=inputs)
+        self.links = links
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -125,7 +130,7 @@ class EvaluationEntity(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, EvaluationEntity):
+        if not isinstance(other, GetNLUEvaluationResponse):
             return False
 
         return self.__dict__ == other.__dict__

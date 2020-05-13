@@ -71,3 +71,22 @@ This release contains the following changes :
 This release contains the following changes : 
 
 - Added support for `NLU Evaluation APIs <https://developer.amazon.com/en-US/docs/alexa/smapi/nlu-evaluation-tool-api.html>`__.
+
+
+1.5.0
+~~~~~
+
+This commit contains the following changes : 
+
+- `Conflict Detection API <https://developer.amazon.com/en-US/docs/alexa/smapi/utterance-conflict-detection-api.html>`__ support.
+- `Get skill credentials API <https://developer.amazon.com/en-US/docs/alexa/smapi/skill-credentials-api.html>`__ support.
+- `NLU Evaluation and Annotation Sets API <https://developer.amazon.com/en-US/docs/alexa/smapi/nlu-evaluation-tool-api.html>`__ support.
+- Enum fix for hosted skills.
+
+
+1.5.1
+^^^^^
+
+This release contains the following changes : 
+
+- Removed invalid objects from the models.

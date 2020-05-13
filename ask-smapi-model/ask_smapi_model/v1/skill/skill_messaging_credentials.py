@@ -18,58 +18,48 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
-from ask_smapi_model.v1.nlu.evaluations.paged_response import PagedResponse
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.nlu.evaluations.pagination_context import PaginationContextV1
-    from ask_smapi_model.v1.nlu.evaluations.links import LinksV1
-    from ask_smapi_model.v1.nlu.evaluations.evaluation import EvaluationV1
 
 
-class ListNLUEvaluationsResponse(PagedResponse):
+class SkillMessagingCredentials(object):
     """
-    response body for a list evaluation API
+    Defines the structure for skill messaging credentials.
 
 
-    :param pagination_context: 
-    :type pagination_context: (optional) ask_smapi_model.v1.nlu.evaluations.pagination_context.PaginationContext
-    :param links: 
-    :type links: (optional) ask_smapi_model.v1.nlu.evaluations.links.Links
-    :param evaluations: 
-    :type evaluations: (optional) list[ask_smapi_model.v1.nlu.evaluations.evaluation.Evaluation]
+    :param client_id: The client id for the security profile.
+    :type client_id: (optional) str
+    :param client_secret: The client secret for the security profile.
+    :type client_secret: (optional) str
 
     """
     deserialized_types = {
-        'pagination_context': 'ask_smapi_model.v1.nlu.evaluations.pagination_context.PaginationContext',
-        'links': 'ask_smapi_model.v1.nlu.evaluations.links.Links',
-        'evaluations': 'list[ask_smapi_model.v1.nlu.evaluations.evaluation.Evaluation]'
+        'client_id': 'str',
+        'client_secret': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'pagination_context': 'paginationContext',
-        'links': '_links',
-        'evaluations': 'evaluations'
+        'client_id': 'clientId',
+        'client_secret': 'clientSecret'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, pagination_context=None, links=None, evaluations=None):
-        # type: (Optional[PaginationContextV1], Optional[LinksV1], Optional[List[EvaluationV1]]) -> None
-        """response body for a list evaluation API
+    def __init__(self, client_id=None, client_secret=None):
+        # type: (Optional[str], Optional[str]) -> None
+        """Defines the structure for skill messaging credentials.
 
-        :param pagination_context: 
-        :type pagination_context: (optional) ask_smapi_model.v1.nlu.evaluations.pagination_context.PaginationContext
-        :param links: 
-        :type links: (optional) ask_smapi_model.v1.nlu.evaluations.links.Links
-        :param evaluations: 
-        :type evaluations: (optional) list[ask_smapi_model.v1.nlu.evaluations.evaluation.Evaluation]
+        :param client_id: The client id for the security profile.
+        :type client_id: (optional) str
+        :param client_secret: The client secret for the security profile.
+        :type client_secret: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
-        super(ListNLUEvaluationsResponse, self).__init__(pagination_context=pagination_context, links=links)
-        self.evaluations = evaluations
+        self.client_id = client_id
+        self.client_secret = client_secret
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -114,7 +104,7 @@ class ListNLUEvaluationsResponse(PagedResponse):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, ListNLUEvaluationsResponse):
+        if not isinstance(other, SkillMessagingCredentials):
             return False
 
         return self.__dict__ == other.__dict__

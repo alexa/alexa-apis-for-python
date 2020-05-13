@@ -23,43 +23,42 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.nlu.evaluations.links import LinksV1
-    from ask_smapi_model.v1.nlu.evaluations.paged_results_response_pagination_context import PagedResultsResponsePaginationContextV1
+    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_detection_job_status import ConflictDetectionJobStatusV1
 
 
-class PagedResultsResponse(object):
+class GetConflictDetectionJobStatusResponse(object):
     """
 
-    :param pagination_context: 
-    :type pagination_context: (optional) ask_smapi_model.v1.nlu.evaluations.paged_results_response_pagination_context.PagedResultsResponsePaginationContext
-    :param links: 
-    :type links: (optional) ask_smapi_model.v1.nlu.evaluations.links.Links
+    :param status: 
+    :type status: (optional) ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_detection_job_status.ConflictDetectionJobStatus
+    :param total_conflicts: The total number of conflicts within skill model.
+    :type total_conflicts: (optional) float
 
     """
     deserialized_types = {
-        'pagination_context': 'ask_smapi_model.v1.nlu.evaluations.paged_results_response_pagination_context.PagedResultsResponsePaginationContext',
-        'links': 'ask_smapi_model.v1.nlu.evaluations.links.Links'
+        'status': 'ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_detection_job_status.ConflictDetectionJobStatus',
+        'total_conflicts': 'float'
     }  # type: Dict
 
     attribute_map = {
-        'pagination_context': 'paginationContext',
-        'links': '_links'
+        'status': 'status',
+        'total_conflicts': 'totalConflicts'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, pagination_context=None, links=None):
-        # type: (Optional[PagedResultsResponsePaginationContextV1], Optional[LinksV1]) -> None
+    def __init__(self, status=None, total_conflicts=None):
+        # type: (Optional[ConflictDetectionJobStatusV1], Optional[float]) -> None
         """
 
-        :param pagination_context: 
-        :type pagination_context: (optional) ask_smapi_model.v1.nlu.evaluations.paged_results_response_pagination_context.PagedResultsResponsePaginationContext
-        :param links: 
-        :type links: (optional) ask_smapi_model.v1.nlu.evaluations.links.Links
+        :param status: 
+        :type status: (optional) ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_detection_job_status.ConflictDetectionJobStatus
+        :param total_conflicts: The total number of conflicts within skill model.
+        :type total_conflicts: (optional) float
         """
         self.__discriminator_value = None  # type: str
 
-        self.pagination_context = pagination_context
-        self.links = links
+        self.status = status
+        self.total_conflicts = total_conflicts
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -104,7 +103,7 @@ class PagedResultsResponse(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, PagedResultsResponse):
+        if not isinstance(other, GetConflictDetectionJobStatusResponse):
             return False
 
         return self.__dict__ == other.__dict__

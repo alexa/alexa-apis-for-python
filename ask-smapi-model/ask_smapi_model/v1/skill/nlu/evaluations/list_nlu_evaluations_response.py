@@ -18,47 +18,58 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
+from ask_smapi_model.v1.skill.nlu.evaluations.paged_response import PagedResponse
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.nlu.evaluations.expected_intent import ExpectedIntentV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.evaluation import EvaluationV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.pagination_context import PaginationContextV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.links import LinksV1
 
 
-class Expected(object):
+class ListNLUEvaluationsResponse(PagedResponse):
     """
+    response body for a list evaluation API
 
-    :param domain: 
-    :type domain: (optional) str
-    :param intent: 
-    :type intent: (optional) ask_smapi_model.v1.nlu.evaluations.expected_intent.ExpectedIntent
+
+    :param pagination_context: 
+    :type pagination_context: (optional) ask_smapi_model.v1.skill.nlu.evaluations.pagination_context.PaginationContext
+    :param links: 
+    :type links: (optional) ask_smapi_model.v1.skill.nlu.evaluations.links.Links
+    :param evaluations: 
+    :type evaluations: (optional) list[ask_smapi_model.v1.skill.nlu.evaluations.evaluation.Evaluation]
 
     """
     deserialized_types = {
-        'domain': 'str',
-        'intent': 'ask_smapi_model.v1.nlu.evaluations.expected_intent.ExpectedIntent'
+        'pagination_context': 'ask_smapi_model.v1.skill.nlu.evaluations.pagination_context.PaginationContext',
+        'links': 'ask_smapi_model.v1.skill.nlu.evaluations.links.Links',
+        'evaluations': 'list[ask_smapi_model.v1.skill.nlu.evaluations.evaluation.Evaluation]'
     }  # type: Dict
 
     attribute_map = {
-        'domain': 'domain',
-        'intent': 'intent'
+        'pagination_context': 'paginationContext',
+        'links': '_links',
+        'evaluations': 'evaluations'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, domain=None, intent=None):
-        # type: (Optional[str], Optional[ExpectedIntentV1]) -> None
-        """
+    def __init__(self, pagination_context=None, links=None, evaluations=None):
+        # type: (Optional[PaginationContextV1], Optional[LinksV1], Optional[List[EvaluationV1]]) -> None
+        """response body for a list evaluation API
 
-        :param domain: 
-        :type domain: (optional) str
-        :param intent: 
-        :type intent: (optional) ask_smapi_model.v1.nlu.evaluations.expected_intent.ExpectedIntent
+        :param pagination_context: 
+        :type pagination_context: (optional) ask_smapi_model.v1.skill.nlu.evaluations.pagination_context.PaginationContext
+        :param links: 
+        :type links: (optional) ask_smapi_model.v1.skill.nlu.evaluations.links.Links
+        :param evaluations: 
+        :type evaluations: (optional) list[ask_smapi_model.v1.skill.nlu.evaluations.evaluation.Evaluation]
         """
         self.__discriminator_value = None  # type: str
 
-        self.domain = domain
-        self.intent = intent
+        super(ListNLUEvaluationsResponse, self).__init__(pagination_context=pagination_context, links=links)
+        self.evaluations = evaluations
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -103,7 +114,7 @@ class Expected(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Expected):
+        if not isinstance(other, ListNLUEvaluationsResponse):
             return False
 
         return self.__dict__ == other.__dict__

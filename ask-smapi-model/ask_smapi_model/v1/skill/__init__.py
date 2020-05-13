@@ -42,6 +42,7 @@ from .standardized_error_code import StandardizedErrorCode
 from .hosted_skill_provisioning_status import HostedSkillProvisioningStatus
 from .import_response_skill import ImportResponseSkill
 from .instance import Instance
+from .skill_messaging_credentials import SkillMessagingCredentials
 from .hosted_skill_deployment_status import HostedSkillDeploymentStatus
 from .status import Status
 from .regional_ssl_certificate import RegionalSSLCertificate
@@ -53,6 +54,7 @@ from .skill_interaction_model_status import SkillInteractionModelStatus
 from .create_skill_with_package_request import CreateSkillWithPackageRequest
 from .create_skill_response import CreateSkillResponse
 from .upload_response import UploadResponse
+from .skill_credentials import SkillCredentials
 from .skill_summary_apis import SkillSummaryApis
 from .export_response import ExportResponse
 from .list_skill_response import ListSkillResponse

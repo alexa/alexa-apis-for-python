@@ -23,49 +23,42 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.nlu.evaluations.source import SourceV1
+    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slots import ConflictIntentSlotsV1
 
 
-class EvaluationInputs(object):
+class ConflictIntent(object):
     """
 
-    :param locale: 
-    :type locale: (optional) str
-    :param stage: 
-    :type stage: (optional) str
-    :param source: 
-    :type source: (optional) ask_smapi_model.v1.nlu.evaluations.source.Source
+    :param name: Conflict intent name
+    :type name: (optional) str
+    :param slots: 
+    :type slots: (optional) ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slots.ConflictIntentSlots
 
     """
     deserialized_types = {
-        'locale': 'str',
-        'stage': 'str',
-        'source': 'ask_smapi_model.v1.nlu.evaluations.source.Source'
+        'name': 'str',
+        'slots': 'ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slots.ConflictIntentSlots'
     }  # type: Dict
 
     attribute_map = {
-        'locale': 'locale',
-        'stage': 'stage',
-        'source': 'source'
+        'name': 'name',
+        'slots': 'slots'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, locale=None, stage=None, source=None):
-        # type: (Optional[str], Optional[str], Optional[SourceV1]) -> None
+    def __init__(self, name=None, slots=None):
+        # type: (Optional[str], Optional[ConflictIntentSlotsV1]) -> None
         """
 
-        :param locale: 
-        :type locale: (optional) str
-        :param stage: 
-        :type stage: (optional) str
-        :param source: 
-        :type source: (optional) ask_smapi_model.v1.nlu.evaluations.source.Source
+        :param name: Conflict intent name
+        :type name: (optional) str
+        :param slots: 
+        :type slots: (optional) ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slots.ConflictIntentSlots
         """
         self.__discriminator_value = None  # type: str
 
-        self.locale = locale
-        self.stage = stage
-        self.source = source
+        self.name = name
+        self.slots = slots
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -110,7 +103,7 @@ class EvaluationInputs(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, EvaluationInputs):
+        if not isinstance(other, ConflictIntent):
             return False
 
         return self.__dict__ == other.__dict__

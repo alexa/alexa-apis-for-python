@@ -23,59 +23,42 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.nlu.evaluations.actual import ActualV1
-    from ask_smapi_model.v1.nlu.evaluations.expected import ExpectedV1
-    from ask_smapi_model.v1.nlu.evaluations.results_status import ResultsStatusV1
-    from ask_smapi_model.v1.nlu.evaluations.inputs import InputsV1
+    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_result import ConflictResultV1
 
 
-class TestCase(object):
+class GetConflictsResponseResult(object):
     """
 
-    :param status: 
-    :type status: (optional) ask_smapi_model.v1.nlu.evaluations.results_status.ResultsStatus
-    :param inputs: 
-    :type inputs: (optional) ask_smapi_model.v1.nlu.evaluations.inputs.Inputs
-    :param actual: 
-    :type actual: (optional) ask_smapi_model.v1.nlu.evaluations.actual.Actual
-    :param expected: 
-    :type expected: (optional) list[ask_smapi_model.v1.nlu.evaluations.expected.Expected]
+    :param conflicting_utterance: Utterance resolved from sample utterance that causes conflicts among different intents.
+    :type conflicting_utterance: (optional) str
+    :param conflicts: 
+    :type conflicts: (optional) list[ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_result.ConflictResult]
 
     """
     deserialized_types = {
-        'status': 'ask_smapi_model.v1.nlu.evaluations.results_status.ResultsStatus',
-        'inputs': 'ask_smapi_model.v1.nlu.evaluations.inputs.Inputs',
-        'actual': 'ask_smapi_model.v1.nlu.evaluations.actual.Actual',
-        'expected': 'list[ask_smapi_model.v1.nlu.evaluations.expected.Expected]'
+        'conflicting_utterance': 'str',
+        'conflicts': 'list[ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_result.ConflictResult]'
     }  # type: Dict
 
     attribute_map = {
-        'status': 'status',
-        'inputs': 'inputs',
-        'actual': 'actual',
-        'expected': 'expected'
+        'conflicting_utterance': 'conflictingUtterance',
+        'conflicts': 'conflicts'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, status=None, inputs=None, actual=None, expected=None):
-        # type: (Optional[ResultsStatusV1], Optional[InputsV1], Optional[ActualV1], Optional[List[ExpectedV1]]) -> None
+    def __init__(self, conflicting_utterance=None, conflicts=None):
+        # type: (Optional[str], Optional[List[ConflictResultV1]]) -> None
         """
 
-        :param status: 
-        :type status: (optional) ask_smapi_model.v1.nlu.evaluations.results_status.ResultsStatus
-        :param inputs: 
-        :type inputs: (optional) ask_smapi_model.v1.nlu.evaluations.inputs.Inputs
-        :param actual: 
-        :type actual: (optional) ask_smapi_model.v1.nlu.evaluations.actual.Actual
-        :param expected: 
-        :type expected: (optional) list[ask_smapi_model.v1.nlu.evaluations.expected.Expected]
+        :param conflicting_utterance: Utterance resolved from sample utterance that causes conflicts among different intents.
+        :type conflicting_utterance: (optional) str
+        :param conflicts: 
+        :type conflicts: (optional) list[ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_result.ConflictResult]
         """
         self.__discriminator_value = None  # type: str
 
-        self.status = status
-        self.inputs = inputs
-        self.actual = actual
-        self.expected = expected
+        self.conflicting_utterance = conflicting_utterance
+        self.conflicts = conflicts
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -120,7 +103,7 @@ class TestCase(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, TestCase):
+        if not isinstance(other, GetConflictsResponseResult):
             return False
 
         return self.__dict__ == other.__dict__

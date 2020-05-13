@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.nlu.evaluations.resolutions_per_authority import ResolutionsPerAuthorityV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.resolutions_per_authority import ResolutionsPerAuthorityV1
 
 
 class Resolutions(object):
@@ -32,11 +32,11 @@ class Resolutions(object):
 
 
     :param resolutions_per_authority: An array of objects representing each possible authority for entity resolution. An authority represents the source for the data provided for the slot. For a custom slot type, the authority is the slot type you defined. 
-    :type resolutions_per_authority: (optional) list[ask_smapi_model.v1.nlu.evaluations.resolutions_per_authority.ResolutionsPerAuthority]
+    :type resolutions_per_authority: (optional) list[ask_smapi_model.v1.skill.nlu.evaluations.resolutions_per_authority.ResolutionsPerAuthority]
 
     """
     deserialized_types = {
-        'resolutions_per_authority': 'list[ask_smapi_model.v1.nlu.evaluations.resolutions_per_authority.ResolutionsPerAuthority]'
+        'resolutions_per_authority': 'list[ask_smapi_model.v1.skill.nlu.evaluations.resolutions_per_authority.ResolutionsPerAuthority]'
     }  # type: Dict
 
     attribute_map = {
@@ -49,7 +49,7 @@ class Resolutions(object):
         """A resolutions object representing the results of resolving the words captured from the user&#39;s utterance. 
 
         :param resolutions_per_authority: An array of objects representing each possible authority for entity resolution. An authority represents the source for the data provided for the slot. For a custom slot type, the authority is the slot type you defined. 
-        :type resolutions_per_authority: (optional) list[ask_smapi_model.v1.nlu.evaluations.resolutions_per_authority.ResolutionsPerAuthority]
+        :type resolutions_per_authority: (optional) list[ask_smapi_model.v1.skill.nlu.evaluations.resolutions_per_authority.ResolutionsPerAuthority]
         """
         self.__discriminator_value = None  # type: str
 

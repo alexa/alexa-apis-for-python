@@ -23,35 +23,42 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.nlu.evaluations.results import ResultsV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.expected_intent import ExpectedIntentV1
 
 
-class GetNLUEvaluationResponseLinks(object):
+class Expected(object):
     """
 
-    :param results: 
-    :type results: (optional) ask_smapi_model.v1.nlu.evaluations.results.Results
+    :param domain: 
+    :type domain: (optional) str
+    :param intent: 
+    :type intent: (optional) ask_smapi_model.v1.skill.nlu.evaluations.expected_intent.ExpectedIntent
 
     """
     deserialized_types = {
-        'results': 'ask_smapi_model.v1.nlu.evaluations.results.Results'
+        'domain': 'str',
+        'intent': 'ask_smapi_model.v1.skill.nlu.evaluations.expected_intent.ExpectedIntent'
     }  # type: Dict
 
     attribute_map = {
-        'results': 'results'
+        'domain': 'domain',
+        'intent': 'intent'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, results=None):
-        # type: (Optional[ResultsV1]) -> None
+    def __init__(self, domain=None, intent=None):
+        # type: (Optional[str], Optional[ExpectedIntentV1]) -> None
         """
 
-        :param results: 
-        :type results: (optional) ask_smapi_model.v1.nlu.evaluations.results.Results
+        :param domain: 
+        :type domain: (optional) str
+        :param intent: 
+        :type intent: (optional) ask_smapi_model.v1.skill.nlu.evaluations.expected_intent.ExpectedIntent
         """
         self.__discriminator_value = None  # type: str
 
-        self.results = results
+        self.domain = domain
+        self.intent = intent
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -96,7 +103,7 @@ class GetNLUEvaluationResponseLinks(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, GetNLUEvaluationResponseLinks):
+        if not isinstance(other, Expected):
             return False
 
         return self.__dict__ == other.__dict__

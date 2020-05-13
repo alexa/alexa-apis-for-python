@@ -18,63 +18,40 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
-from ask_smapi_model.v1.nlu.evaluations.paged_results_response import PagedResultsResponse
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.nlu.evaluations.links import LinksV1
-    from ask_smapi_model.v1.nlu.evaluations.test_case import TestCaseV1
-    from ask_smapi_model.v1.nlu.evaluations.paged_results_response_pagination_context import PagedResultsResponsePaginationContextV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.results import ResultsV1
 
 
-class GetNLUEvaluationResultsResponse(PagedResultsResponse):
+class GetNLUEvaluationResponseLinks(object):
     """
 
-    :param pagination_context: 
-    :type pagination_context: (optional) ask_smapi_model.v1.nlu.evaluations.paged_results_response_pagination_context.PagedResultsResponsePaginationContext
-    :param links: 
-    :type links: (optional) ask_smapi_model.v1.nlu.evaluations.links.Links
-    :param total_failed: count of tests failed. A test fails when the expected intent and expected slots are not identical. 
-    :type total_failed: (optional) float
-    :param test_cases: 
-    :type test_cases: (optional) list[ask_smapi_model.v1.nlu.evaluations.test_case.TestCase]
+    :param results: 
+    :type results: (optional) ask_smapi_model.v1.skill.nlu.evaluations.results.Results
 
     """
     deserialized_types = {
-        'pagination_context': 'ask_smapi_model.v1.nlu.evaluations.paged_results_response_pagination_context.PagedResultsResponsePaginationContext',
-        'links': 'ask_smapi_model.v1.nlu.evaluations.links.Links',
-        'total_failed': 'float',
-        'test_cases': 'list[ask_smapi_model.v1.nlu.evaluations.test_case.TestCase]'
+        'results': 'ask_smapi_model.v1.skill.nlu.evaluations.results.Results'
     }  # type: Dict
 
     attribute_map = {
-        'pagination_context': 'paginationContext',
-        'links': '_links',
-        'total_failed': 'totalFailed',
-        'test_cases': 'testCases'
+        'results': 'results'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, pagination_context=None, links=None, total_failed=None, test_cases=None):
-        # type: (Optional[PagedResultsResponsePaginationContextV1], Optional[LinksV1], Optional[float], Optional[List[TestCaseV1]]) -> None
+    def __init__(self, results=None):
+        # type: (Optional[ResultsV1]) -> None
         """
 
-        :param pagination_context: 
-        :type pagination_context: (optional) ask_smapi_model.v1.nlu.evaluations.paged_results_response_pagination_context.PagedResultsResponsePaginationContext
-        :param links: 
-        :type links: (optional) ask_smapi_model.v1.nlu.evaluations.links.Links
-        :param total_failed: count of tests failed. A test fails when the expected intent and expected slots are not identical. 
-        :type total_failed: (optional) float
-        :param test_cases: 
-        :type test_cases: (optional) list[ask_smapi_model.v1.nlu.evaluations.test_case.TestCase]
+        :param results: 
+        :type results: (optional) ask_smapi_model.v1.skill.nlu.evaluations.results.Results
         """
         self.__discriminator_value = None  # type: str
 
-        super(GetNLUEvaluationResultsResponse, self).__init__(pagination_context=pagination_context, links=links)
-        self.total_failed = total_failed
-        self.test_cases = test_cases
+        self.results = results
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -119,7 +96,7 @@ class GetNLUEvaluationResultsResponse(PagedResultsResponse):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, GetNLUEvaluationResultsResponse):
+        if not isinstance(other, GetNLUEvaluationResponseLinks):
             return False
 
         return self.__dict__ == other.__dict__

@@ -18,62 +18,73 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
+from ask_smapi_model.v1.skill.nlu.evaluations.evaluation_entity import EvaluationEntity
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.nlu.evaluations.resolutions import ResolutionsV1
-    from ask_smapi_model.v1.nlu.evaluations.confirmation_status import ConfirmationStatusV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.status import StatusV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.evaluation_inputs import EvaluationInputsV1
 
 
-class SlotsProps(object):
+class Evaluation(EvaluationEntity):
     """
 
-    :param name: 
-    :type name: (optional) str
-    :param value: 
-    :type value: (optional) str
-    :param confirmation_status: 
-    :type confirmation_status: (optional) ask_smapi_model.v1.nlu.evaluations.confirmation_status.ConfirmationStatus
-    :param resolutions: 
-    :type resolutions: (optional) ask_smapi_model.v1.nlu.evaluations.resolutions.Resolutions
+    :param start_timestamp: 
+    :type start_timestamp: (optional) datetime
+    :param end_timestamp: 
+    :type end_timestamp: (optional) datetime
+    :param status: 
+    :type status: (optional) ask_smapi_model.v1.skill.nlu.evaluations.status.Status
+    :param error_message: Error message when evaluation job fails
+    :type error_message: (optional) str
+    :param inputs: 
+    :type inputs: (optional) ask_smapi_model.v1.skill.nlu.evaluations.evaluation_inputs.EvaluationInputs
+    :param id: id of the job
+    :type id: (optional) str
 
     """
     deserialized_types = {
-        'name': 'str',
-        'value': 'str',
-        'confirmation_status': 'ask_smapi_model.v1.nlu.evaluations.confirmation_status.ConfirmationStatus',
-        'resolutions': 'ask_smapi_model.v1.nlu.evaluations.resolutions.Resolutions'
+        'start_timestamp': 'datetime',
+        'end_timestamp': 'datetime',
+        'status': 'ask_smapi_model.v1.skill.nlu.evaluations.status.Status',
+        'error_message': 'str',
+        'inputs': 'ask_smapi_model.v1.skill.nlu.evaluations.evaluation_inputs.EvaluationInputs',
+        'id': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'name': 'name',
-        'value': 'value',
-        'confirmation_status': 'confirmationStatus',
-        'resolutions': 'resolutions'
+        'start_timestamp': 'startTimestamp',
+        'end_timestamp': 'endTimestamp',
+        'status': 'status',
+        'error_message': 'errorMessage',
+        'inputs': 'inputs',
+        'id': 'id'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, name=None, value=None, confirmation_status=None, resolutions=None):
-        # type: (Optional[str], Optional[str], Optional[ConfirmationStatusV1], Optional[ResolutionsV1]) -> None
+    def __init__(self, start_timestamp=None, end_timestamp=None, status=None, error_message=None, inputs=None, id=None):
+        # type: (Optional[datetime], Optional[datetime], Optional[StatusV1], Optional[str], Optional[EvaluationInputsV1], Optional[str]) -> None
         """
 
-        :param name: 
-        :type name: (optional) str
-        :param value: 
-        :type value: (optional) str
-        :param confirmation_status: 
-        :type confirmation_status: (optional) ask_smapi_model.v1.nlu.evaluations.confirmation_status.ConfirmationStatus
-        :param resolutions: 
-        :type resolutions: (optional) ask_smapi_model.v1.nlu.evaluations.resolutions.Resolutions
+        :param start_timestamp: 
+        :type start_timestamp: (optional) datetime
+        :param end_timestamp: 
+        :type end_timestamp: (optional) datetime
+        :param status: 
+        :type status: (optional) ask_smapi_model.v1.skill.nlu.evaluations.status.Status
+        :param error_message: Error message when evaluation job fails
+        :type error_message: (optional) str
+        :param inputs: 
+        :type inputs: (optional) ask_smapi_model.v1.skill.nlu.evaluations.evaluation_inputs.EvaluationInputs
+        :param id: id of the job
+        :type id: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
-        self.name = name
-        self.value = value
-        self.confirmation_status = confirmation_status
-        self.resolutions = resolutions
+        super(Evaluation, self).__init__(start_timestamp=start_timestamp, end_timestamp=end_timestamp, status=status, error_message=error_message, inputs=inputs)
+        self.id = id
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -118,7 +129,7 @@ class SlotsProps(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, SlotsProps):
+        if not isinstance(other, Evaluation):
             return False
 
         return self.__dict__ == other.__dict__

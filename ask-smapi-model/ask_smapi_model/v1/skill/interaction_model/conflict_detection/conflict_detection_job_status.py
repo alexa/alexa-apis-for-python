@@ -25,16 +25,17 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class HostedSkillRuntime(Enum):
+class ConflictDetectionJobStatus(Enum):
     """
-    Hosted skill lambda runtime
+    The status of conflict detection job.
 
 
 
-    Allowed enum values: [NODE_10_X, PYTHON_3_7]
+    Allowed enum values: [IN_PROGRESS, COMPLETED, FAILED]
     """
-    NODE_10_X = "NODE_10_X"
-    PYTHON_3_7 = "PYTHON_3_7"
+    IN_PROGRESS = "IN_PROGRESS"
+    COMPLETED = "COMPLETED"
+    FAILED = "FAILED"
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -55,7 +56,7 @@ class HostedSkillRuntime(Enum):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, HostedSkillRuntime):
+        if not isinstance(other, ConflictDetectionJobStatus):
             return False
 
         return self.__dict__ == other.__dict__

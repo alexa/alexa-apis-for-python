@@ -23,49 +23,41 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.nlu.annotation_sets.pagination_context import PaginationContextV1
-    from ask_smapi_model.v1.nlu.annotation_sets.annotation_set import AnnotationSetV1
-    from ask_smapi_model.v1.nlu.annotation_sets.links import LinksV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.paged_results_response_pagination_context import PagedResultsResponsePaginationContextV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.links import LinksV1
 
 
-class ListNLUAnnotationSetsResponse(object):
+class PagedResultsResponse(object):
     """
 
-    :param annotation_sets: 
-    :type annotation_sets: (optional) list[ask_smapi_model.v1.nlu.annotation_sets.annotation_set.AnnotationSet]
     :param pagination_context: 
-    :type pagination_context: (optional) ask_smapi_model.v1.nlu.annotation_sets.pagination_context.PaginationContext
+    :type pagination_context: (optional) ask_smapi_model.v1.skill.nlu.evaluations.paged_results_response_pagination_context.PagedResultsResponsePaginationContext
     :param links: 
-    :type links: (optional) ask_smapi_model.v1.nlu.annotation_sets.links.Links
+    :type links: (optional) ask_smapi_model.v1.skill.nlu.evaluations.links.Links
 
     """
     deserialized_types = {
-        'annotation_sets': 'list[ask_smapi_model.v1.nlu.annotation_sets.annotation_set.AnnotationSet]',
-        'pagination_context': 'ask_smapi_model.v1.nlu.annotation_sets.pagination_context.PaginationContext',
-        'links': 'ask_smapi_model.v1.nlu.annotation_sets.links.Links'
+        'pagination_context': 'ask_smapi_model.v1.skill.nlu.evaluations.paged_results_response_pagination_context.PagedResultsResponsePaginationContext',
+        'links': 'ask_smapi_model.v1.skill.nlu.evaluations.links.Links'
     }  # type: Dict
 
     attribute_map = {
-        'annotation_sets': 'annotationSets',
         'pagination_context': 'paginationContext',
         'links': '_links'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, annotation_sets=None, pagination_context=None, links=None):
-        # type: (Optional[List[AnnotationSetV1]], Optional[PaginationContextV1], Optional[LinksV1]) -> None
+    def __init__(self, pagination_context=None, links=None):
+        # type: (Optional[PagedResultsResponsePaginationContextV1], Optional[LinksV1]) -> None
         """
 
-        :param annotation_sets: 
-        :type annotation_sets: (optional) list[ask_smapi_model.v1.nlu.annotation_sets.annotation_set.AnnotationSet]
         :param pagination_context: 
-        :type pagination_context: (optional) ask_smapi_model.v1.nlu.annotation_sets.pagination_context.PaginationContext
+        :type pagination_context: (optional) ask_smapi_model.v1.skill.nlu.evaluations.paged_results_response_pagination_context.PagedResultsResponsePaginationContext
         :param links: 
-        :type links: (optional) ask_smapi_model.v1.nlu.annotation_sets.links.Links
+        :type links: (optional) ask_smapi_model.v1.skill.nlu.evaluations.links.Links
         """
         self.__discriminator_value = None  # type: str
 
-        self.annotation_sets = annotation_sets
         self.pagination_context = pagination_context
         self.links = links
 
@@ -112,7 +104,7 @@ class ListNLUAnnotationSetsResponse(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, ListNLUAnnotationSetsResponse):
+        if not isinstance(other, PagedResultsResponse):
             return False
 
         return self.__dict__ == other.__dict__
