@@ -18,33 +18,55 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
-from  import null&lt;String, object&gt;
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
+    from ask_smapi_model.v1.skill.nlu.evaluations.resolutions_per_authority_status import ResolutionsPerAuthorityStatusV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.resolutions_per_authority_value import ResolutionsPerAuthorityValueV1
 
 
-class ResolutionsPerAuthority(null&lt;String, object&gt;):
+class ResolutionsPerAuthority(object):
     """
 
+    :param authority: The name of the authority for the slot values. For custom slot types, this authority label incorporates your skill ID and the slot type name. 
+    :type authority: (optional) str
+    :param status: 
+    :type status: (optional) ask_smapi_model.v1.skill.nlu.evaluations.resolutions_per_authority_status.ResolutionsPerAuthorityStatus
+    :param values: An array of resolved values for the slot.
+    :type values: (optional) list[ask_smapi_model.v1.skill.nlu.evaluations.resolutions_per_authority_value.ResolutionsPerAuthorityValue]
 
     """
     deserialized_types = {
+        'authority': 'str',
+        'status': 'ask_smapi_model.v1.skill.nlu.evaluations.resolutions_per_authority_status.ResolutionsPerAuthorityStatus',
+        'values': 'list[ask_smapi_model.v1.skill.nlu.evaluations.resolutions_per_authority_value.ResolutionsPerAuthorityValue]'
     }  # type: Dict
 
     attribute_map = {
+        'authority': 'authority',
+        'status': 'status',
+        'values': 'values'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self):
-        # type: () -> None
+    def __init__(self, authority=None, status=None, values=None):
+        # type: (Optional[str], Optional[ResolutionsPerAuthorityStatusV1], Optional[List[ResolutionsPerAuthorityValueV1]]) -> None
         """
 
+        :param authority: The name of the authority for the slot values. For custom slot types, this authority label incorporates your skill ID and the slot type name. 
+        :type authority: (optional) str
+        :param status: 
+        :type status: (optional) ask_smapi_model.v1.skill.nlu.evaluations.resolutions_per_authority_status.ResolutionsPerAuthorityStatus
+        :param values: An array of resolved values for the slot.
+        :type values: (optional) list[ask_smapi_model.v1.skill.nlu.evaluations.resolutions_per_authority_value.ResolutionsPerAuthorityValue]
         """
         self.__discriminator_value = None  # type: str
-        super(ResolutionsPerAuthority, self).__init__()
+
+        self.authority = authority
+        self.status = status
+        self.values = values
 
     def to_dict(self):
         # type: () -> Dict[str, object]

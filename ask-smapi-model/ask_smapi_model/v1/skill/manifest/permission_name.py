@@ -31,7 +31,7 @@ class PermissionName(Enum):
 
 
 
-    Allowed enum values: [payments_autopay_consent, alexa_async_event_write, avs_distributed_audio, alexa_devices_all_address_full_read, alexa_devices_all_address_country_and_postal_code_read, alexa_devices_all_geolocation_read, alexa_health_profile_write, alexa_household_lists_read, alexa_household_lists_write, alexa_personality_explicit_read, alexa_personality_explicit_write, alexa_profile_name_read, alexa_profile_email_read, alexa_profile_mobile_number_read, alexa_profile_given_name_read, alexa_customer_id_read, alexa_person_id_read, alexa_raw_person_id_read, alexa_devices_all_notifications_write, alexa_devices_all_notifications_urgent_write, alexa_alerts_reminders_skill_readwrite, alexa_alerts_timers_skill_readwrite, alexa_skill_cds_monetization, alexa_music_cast, alexa_skill_products_entitlements, alexa_skill_proactive_enablement, alexa_authenticate_2_mandatory, alexa_authenticate_2_optional, alexa_user_experience_guidance_read, alexa_device_id_read, alexa_device_type_read]
+    Allowed enum values: [payments_autopay_consent, alexa_async_event_write, avs_distributed_audio, alexa_devices_all_address_full_read, alexa_devices_all_address_country_and_postal_code_read, alexa_devices_all_geolocation_read, alexa_health_profile_write, alexa_household_lists_read, alexa_household_lists_write, alexa_personality_explicit_read, alexa_personality_explicit_write, alexa_profile_name_read, alexa_profile_email_read, alexa_profile_mobile_number_read, alexa_profile_given_name_read, alexa_customer_id_read, alexa_person_id_read, alexa_raw_person_id_read, alexa_utterance_id_read, alexa_devices_all_notifications_write, alexa_devices_all_notifications_urgent_write, alexa_alerts_reminders_skill_readwrite, alexa_alerts_timers_skill_readwrite, alexa_skill_cds_monetization, alexa_music_cast, alexa_skill_products_entitlements, alexa_skill_proactive_enablement, alexa_authenticate_2_mandatory, alexa_authenticate_2_optional, alexa_user_experience_guidance_read, alexa_device_id_read, alexa_device_type_read]
     """
     payments_autopay_consent = "payments:autopay_consent"
     alexa_async_event_write = "alexa::async_event:write"
@@ -51,6 +51,7 @@ class PermissionName(Enum):
     alexa_customer_id_read = "alexa::customer_id:read"
     alexa_person_id_read = "alexa::person_id:read"
     alexa_raw_person_id_read = "alexa::raw_person_id:read"
+    alexa_utterance_id_read = "alexa::utterance_id:read"
     alexa_devices_all_notifications_write = "alexa::devices:all:notifications:write"
     alexa_devices_all_notifications_urgent_write = "alexa::devices:all:notifications:urgent:write"
     alexa_alerts_reminders_skill_readwrite = "alexa::alerts:reminders:skill:readwrite"

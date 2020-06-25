@@ -23,51 +23,45 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interface_intent import InterfaceIntentV1
+    from ask_smapi_model.v1.skill.asr.evaluations.evaluation_result import EvaluationResultV1
+    from ask_smapi_model.v1.skill.asr.evaluations.pagination_context import PaginationContextV1
 
 
-class InterfaceDefinition(object):
+class GetAsrEvaluationsResultsResponse(object):
     """
-    Interface related objects.
+    response for GetAsrEvaluationsResults
 
 
-    :param is_global: Whether this interface is available in all supported locales.
-    :type is_global: (optional) bool
-    :param locales: The locales of the interface.
-    :type locales: (optional) list[str]
-    :param intents: The intents in the interface.
-    :type intents: (optional) list[ask_smapi_model.v1.skill.interface_intent.InterfaceIntent]
+    :param results: array containing all evaluation results.
+    :type results: (optional) list[ask_smapi_model.v1.skill.asr.evaluations.evaluation_result.EvaluationResult]
+    :param pagination_context: 
+    :type pagination_context: (optional) ask_smapi_model.v1.skill.asr.evaluations.pagination_context.PaginationContext
 
     """
     deserialized_types = {
-        'is_global': 'bool',
-        'locales': 'list[str]',
-        'intents': 'list[ask_smapi_model.v1.skill.interface_intent.InterfaceIntent]'
+        'results': 'list[ask_smapi_model.v1.skill.asr.evaluations.evaluation_result.EvaluationResult]',
+        'pagination_context': 'ask_smapi_model.v1.skill.asr.evaluations.pagination_context.PaginationContext'
     }  # type: Dict
 
     attribute_map = {
-        'is_global': 'isGlobal',
-        'locales': 'locales',
-        'intents': 'intents'
+        'results': 'results',
+        'pagination_context': 'paginationContext'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, is_global=None, locales=None, intents=None):
-        # type: (Optional[bool], Optional[List[object]], Optional[List[InterfaceIntentV1]]) -> None
-        """Interface related objects.
+    def __init__(self, results=None, pagination_context=None):
+        # type: (Optional[List[EvaluationResultV1]], Optional[PaginationContextV1]) -> None
+        """response for GetAsrEvaluationsResults
 
-        :param is_global: Whether this interface is available in all supported locales.
-        :type is_global: (optional) bool
-        :param locales: The locales of the interface.
-        :type locales: (optional) list[str]
-        :param intents: The intents in the interface.
-        :type intents: (optional) list[ask_smapi_model.v1.skill.interface_intent.InterfaceIntent]
+        :param results: array containing all evaluation results.
+        :type results: (optional) list[ask_smapi_model.v1.skill.asr.evaluations.evaluation_result.EvaluationResult]
+        :param pagination_context: 
+        :type pagination_context: (optional) ask_smapi_model.v1.skill.asr.evaluations.pagination_context.PaginationContext
         """
         self.__discriminator_value = None  # type: str
 
-        self.is_global = is_global
-        self.locales = locales
-        self.intents = intents
+        self.results = results
+        self.pagination_context = pagination_context
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -112,7 +106,7 @@ class InterfaceDefinition(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, InterfaceDefinition):
+        if not isinstance(other, GetAsrEvaluationsResultsResponse):
             return False
 
         return self.__dict__ == other.__dict__

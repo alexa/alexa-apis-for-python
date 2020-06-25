@@ -26,7 +26,9 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.image_attributes import ImageAttributesV1
     from ask_smapi_model.v1.skill.agreement_type import AgreementTypeV1
     from ask_smapi_model.v1.skill.instance import InstanceV1
+    from ask_smapi_model.v1.skill.format import FormatV1
     from ask_smapi_model.v1.skill.validation_feature import ValidationFeatureV1
+    from ask_smapi_model.v1.skill.validation_failure_reason import ValidationFailureReasonV1
     from ask_smapi_model.v1.skill.validation_data_types import ValidationDataTypesV1
     from ask_smapi_model.v1.skill.validation_endpoint import ValidationEndpointV1
 
@@ -50,6 +52,8 @@ class ValidationDetails(object):
     :type allowed_image_attributes: (optional) list[ask_smapi_model.v1.skill.image_attributes.ImageAttributes]
     :param conflicting_instance: Instance conflicting with another instance.
     :type conflicting_instance: (optional) ask_smapi_model.v1.skill.instance.Instance
+    :param expected_format: Format in which instance value is expected in.
+    :type expected_format: (optional) ask_smapi_model.v1.skill.format.Format
     :param expected_instance: Instance that is expected by a related instance.
     :type expected_instance: (optional) ask_smapi_model.v1.skill.instance.Instance
     :param expected_regex_pattern: Regular expression that a string instance is expected to match.
@@ -76,6 +80,8 @@ class ValidationDetails(object):
     :type original_endpoint: (optional) ask_smapi_model.v1.skill.validation_endpoint.ValidationEndpoint
     :param original_instance: An Instance
     :type original_instance: (optional) ask_smapi_model.v1.skill.instance.Instance
+    :param reason: Represents what is wrong in the request.
+    :type reason: (optional) ask_smapi_model.v1.skill.validation_failure_reason.ValidationFailureReason
     :param required_property: Property required but missing in the object.
     :type required_property: (optional) str
     :param unexpected_property: Property not expected but present in the object.
@@ -90,6 +96,7 @@ class ValidationDetails(object):
         'allowed_data_types': 'list[ask_smapi_model.v1.skill.validation_data_types.ValidationDataTypes]',
         'allowed_image_attributes': 'list[ask_smapi_model.v1.skill.image_attributes.ImageAttributes]',
         'conflicting_instance': 'ask_smapi_model.v1.skill.instance.Instance',
+        'expected_format': 'ask_smapi_model.v1.skill.format.Format',
         'expected_instance': 'ask_smapi_model.v1.skill.instance.Instance',
         'expected_regex_pattern': 'str',
         'agreement_type': 'ask_smapi_model.v1.skill.agreement_type.AgreementType',
@@ -103,6 +110,7 @@ class ValidationDetails(object):
         'maximum_string_length': 'int',
         'original_endpoint': 'ask_smapi_model.v1.skill.validation_endpoint.ValidationEndpoint',
         'original_instance': 'ask_smapi_model.v1.skill.instance.Instance',
+        'reason': 'ask_smapi_model.v1.skill.validation_failure_reason.ValidationFailureReason',
         'required_property': 'str',
         'unexpected_property': 'str'
     }  # type: Dict
@@ -115,6 +123,7 @@ class ValidationDetails(object):
         'allowed_data_types': 'allowedDataTypes',
         'allowed_image_attributes': 'allowedImageAttributes',
         'conflicting_instance': 'conflictingInstance',
+        'expected_format': 'expectedFormat',
         'expected_instance': 'expectedInstance',
         'expected_regex_pattern': 'expectedRegexPattern',
         'agreement_type': 'agreementType',
@@ -128,13 +137,14 @@ class ValidationDetails(object):
         'maximum_string_length': 'maximumStringLength',
         'original_endpoint': 'originalEndpoint',
         'original_instance': 'originalInstance',
+        'reason': 'reason',
         'required_property': 'requiredProperty',
         'unexpected_property': 'unexpectedProperty'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, actual_image_attributes=None, actual_number_of_items=None, actual_string_length=None, allowed_content_types=None, allowed_data_types=None, allowed_image_attributes=None, conflicting_instance=None, expected_instance=None, expected_regex_pattern=None, agreement_type=None, feature=None, inconsistent_endpoint=None, minimum_integer_value=None, minimum_number_of_items=None, minimum_string_length=None, maximum_integer_value=None, maximum_number_of_items=None, maximum_string_length=None, original_endpoint=None, original_instance=None, required_property=None, unexpected_property=None):
-        # type: (Optional[ImageAttributesV1], Optional[int], Optional[int], Optional[List[object]], Optional[List[ValidationDataTypesV1]], Optional[List[ImageAttributesV1]], Optional[InstanceV1], Optional[InstanceV1], Optional[str], Optional[AgreementTypeV1], Optional[ValidationFeatureV1], Optional[ValidationEndpointV1], Optional[int], Optional[int], Optional[int], Optional[int], Optional[int], Optional[int], Optional[ValidationEndpointV1], Optional[InstanceV1], Optional[str], Optional[str]) -> None
+    def __init__(self, actual_image_attributes=None, actual_number_of_items=None, actual_string_length=None, allowed_content_types=None, allowed_data_types=None, allowed_image_attributes=None, conflicting_instance=None, expected_format=None, expected_instance=None, expected_regex_pattern=None, agreement_type=None, feature=None, inconsistent_endpoint=None, minimum_integer_value=None, minimum_number_of_items=None, minimum_string_length=None, maximum_integer_value=None, maximum_number_of_items=None, maximum_string_length=None, original_endpoint=None, original_instance=None, reason=None, required_property=None, unexpected_property=None):
+        # type: (Optional[ImageAttributesV1], Optional[int], Optional[int], Optional[List[object]], Optional[List[ValidationDataTypesV1]], Optional[List[ImageAttributesV1]], Optional[InstanceV1], Optional[FormatV1], Optional[InstanceV1], Optional[str], Optional[AgreementTypeV1], Optional[ValidationFeatureV1], Optional[ValidationEndpointV1], Optional[int], Optional[int], Optional[int], Optional[int], Optional[int], Optional[int], Optional[ValidationEndpointV1], Optional[InstanceV1], Optional[ValidationFailureReasonV1], Optional[str], Optional[str]) -> None
         """Standardized, machine readable structure that wraps all the information about a specific occurrence of an error of the type specified by the code.
 
         :param actual_image_attributes: Set of properties of the image provided by the customer.
@@ -151,6 +161,8 @@ class ValidationDetails(object):
         :type allowed_image_attributes: (optional) list[ask_smapi_model.v1.skill.image_attributes.ImageAttributes]
         :param conflicting_instance: Instance conflicting with another instance.
         :type conflicting_instance: (optional) ask_smapi_model.v1.skill.instance.Instance
+        :param expected_format: Format in which instance value is expected in.
+        :type expected_format: (optional) ask_smapi_model.v1.skill.format.Format
         :param expected_instance: Instance that is expected by a related instance.
         :type expected_instance: (optional) ask_smapi_model.v1.skill.instance.Instance
         :param expected_regex_pattern: Regular expression that a string instance is expected to match.
@@ -177,6 +189,8 @@ class ValidationDetails(object):
         :type original_endpoint: (optional) ask_smapi_model.v1.skill.validation_endpoint.ValidationEndpoint
         :param original_instance: An Instance
         :type original_instance: (optional) ask_smapi_model.v1.skill.instance.Instance
+        :param reason: Represents what is wrong in the request.
+        :type reason: (optional) ask_smapi_model.v1.skill.validation_failure_reason.ValidationFailureReason
         :param required_property: Property required but missing in the object.
         :type required_property: (optional) str
         :param unexpected_property: Property not expected but present in the object.
@@ -191,6 +205,7 @@ class ValidationDetails(object):
         self.allowed_data_types = allowed_data_types
         self.allowed_image_attributes = allowed_image_attributes
         self.conflicting_instance = conflicting_instance
+        self.expected_format = expected_format
         self.expected_instance = expected_instance
         self.expected_regex_pattern = expected_regex_pattern
         self.agreement_type = agreement_type
@@ -204,6 +219,7 @@ class ValidationDetails(object):
         self.maximum_string_length = maximum_string_length
         self.original_endpoint = original_endpoint
         self.original_instance = original_instance
+        self.reason = reason
         self.required_property = required_property
         self.unexpected_property = unexpected_property
 

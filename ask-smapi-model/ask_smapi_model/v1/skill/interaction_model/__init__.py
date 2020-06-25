@@ -29,7 +29,7 @@ from .fallback_intent_sensitivity_level import FallbackIntentSensitivityLevel
 from .slot_definition import SlotDefinition
 from .interaction_model_data import InteractionModelData
 from .inline_value_supplier import InlineValueSupplier
-from .dialog_intents_prompts import Prompts
+from .dialog_intents_prompts import DialogIntentsPrompts
 from .is_less_than_or_equal_to import IsLessThanOrEqualTo
 from .catalog_value_supplier import CatalogValueSupplier
 from .slot_type import SlotType

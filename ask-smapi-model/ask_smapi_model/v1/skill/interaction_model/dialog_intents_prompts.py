@@ -25,7 +25,7 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class Prompts(object):
+class DialogIntentsPrompts(object):
     """
     Collection of prompts for this intent.
 
@@ -104,7 +104,7 @@ class Prompts(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Prompts):
+        if not isinstance(other, DialogIntentsPrompts):
             return False
 
         return self.__dict__ == other.__dict__

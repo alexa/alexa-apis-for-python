@@ -23,45 +23,34 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.model_type.error import ErrorV1
-    from ask_smapi_model.v1.skill.interaction_model.model_type.warning import WarningV1
 
 
-class BadRequest(object):
+class CreateAsrAnnotationSetResponse(object):
     """
-    The body of the bad request exception.
 
-
-    :param errors: 
-    :type errors: (optional) list[ask_smapi_model.v1.skill.interaction_model.model_type.error.Error]
-    :param warnings: 
-    :type warnings: (optional) list[ask_smapi_model.v1.skill.interaction_model.model_type.warning.Warning]
+    :param id: ID used to retrieve the ASR annotation set.
+    :type id: (optional) str
 
     """
     deserialized_types = {
-        'errors': 'list[ask_smapi_model.v1.skill.interaction_model.model_type.error.Error]',
-        'warnings': 'list[ask_smapi_model.v1.skill.interaction_model.model_type.warning.Warning]'
+        'id': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'errors': 'errors',
-        'warnings': 'warnings'
+        'id': 'id'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, errors=None, warnings=None):
-        # type: (Optional[List[ErrorV1]], Optional[List[WarningV1]]) -> None
-        """The body of the bad request exception.
+    def __init__(self, id=None):
+        # type: (Optional[str]) -> None
+        """
 
-        :param errors: 
-        :type errors: (optional) list[ask_smapi_model.v1.skill.interaction_model.model_type.error.Error]
-        :param warnings: 
-        :type warnings: (optional) list[ask_smapi_model.v1.skill.interaction_model.model_type.warning.Warning]
+        :param id: ID used to retrieve the ASR annotation set.
+        :type id: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
-        self.errors = errors
-        self.warnings = warnings
+        self.id = id
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -106,7 +95,7 @@ class BadRequest(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, BadRequest):
+        if not isinstance(other, CreateAsrAnnotationSetResponse):
             return False
 
         return self.__dict__ == other.__dict__

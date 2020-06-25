@@ -18,6 +18,7 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
+from abc import ABCMeta, abstractmethod
 
 
 if typing.TYPE_CHECKING:
@@ -30,7 +31,7 @@ class Error(object):
 
     :param code: Error code that maps to an error message. Developers with different locales should be able to lookup the error description based on this code. 
     :type code: (optional) str
-    :param message: Readable description of error.
+    :param message: Readable description of error. If standardized, this is generated from the error code and validation details.
     :type message: (optional) str
 
     """
@@ -44,15 +45,17 @@ class Error(object):
         'message': 'message'
     }  # type: Dict
     supports_multiple_types = False
+    __metaclass__ = ABCMeta
 
+    @abstractmethod
     def __init__(self, code=None, message=None):
         # type: (Optional[str], Optional[str]) -> None
         """
 
-        :param code: Error code that maps to an error message. Developers with different locales should be able to lookup the error description based on this code. 
-        :type code: (optional) str
-        :param message: Readable description of error.
-        :type message: (optional) str
+            :param code: Error code that maps to an error message. Developers with different locales should be able to lookup the error description based on this code. 
+            :type code: (optional) str
+            :param message: Readable description of error. If standardized, this is generated from the error code and validation details.
+            :type message: (optional) str
         """
         self.__discriminator_value = None  # type: str
 

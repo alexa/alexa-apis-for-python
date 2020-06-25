@@ -25,39 +25,32 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class Model401(object):
+class Metrics(object):
     """
 
-    :param code: Error code that maps to an error message. Developers with different locales should be able to lookup the error description based on this code. 
-    :type code: (optional) str
-    :param message: Readable description of error.
-    :type message: (optional) str
+    :param overall_error_rate: overall error rate for the ASR evaluation run
+    :type overall_error_rate: (optional) float
 
     """
     deserialized_types = {
-        'code': 'str',
-        'message': 'str'
+        'overall_error_rate': 'float'
     }  # type: Dict
 
     attribute_map = {
-        'code': 'code',
-        'message': 'message'
+        'overall_error_rate': 'overallErrorRate'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, code=None, message=None):
-        # type: (Optional[str], Optional[str]) -> None
+    def __init__(self, overall_error_rate=None):
+        # type: (Optional[float]) -> None
         """
 
-        :param code: Error code that maps to an error message. Developers with different locales should be able to lookup the error description based on this code. 
-        :type code: (optional) str
-        :param message: Readable description of error.
-        :type message: (optional) str
+        :param overall_error_rate: overall error rate for the ASR evaluation run
+        :type overall_error_rate: (optional) float
         """
         self.__discriminator_value = None  # type: str
 
-        self.code = code
-        self.message = message
+        self.overall_error_rate = overall_error_rate
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -102,7 +95,7 @@ class Model401(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Model401):
+        if not isinstance(other, Metrics):
             return False
 
         return self.__dict__ == other.__dict__

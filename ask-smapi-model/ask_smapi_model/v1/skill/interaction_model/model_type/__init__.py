@@ -21,7 +21,6 @@ from .slot_type_item import SlotTypeItem
 from .slot_type_status import SlotTypeStatus
 from .slot_type_update_definition import SlotTypeUpdateDefinition
 from .slot_type_definition_output import SlotTypeDefinitionOutput
-from .bad_request import BadRequest
 from .update_request import UpdateRequest
 from .last_update_request import LastUpdateRequest
 from .slot_type_status_type import SlotTypeStatusType

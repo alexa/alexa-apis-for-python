@@ -31,11 +31,12 @@ class EndPointRegions(Enum):
 
 
 
-    Allowed enum values: [NA, EU, FE]
+    Allowed enum values: [NA, EU, FE, default]
     """
     NA = "NA"
     EU = "EU"
     FE = "FE"
+    default = "default"
 
     def to_dict(self):
         # type: () -> Dict[str, object]

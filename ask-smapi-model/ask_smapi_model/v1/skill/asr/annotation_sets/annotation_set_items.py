@@ -18,47 +18,59 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
+from ask_smapi_model.v1.skill.asr.annotation_sets.annotation_set_metadata import AnnotationSetMetadata
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.error import ErrorV1
 
 
-class Model400(object):
+class AnnotationSetItems(AnnotationSetMetadata):
     """
 
-    :param message: Human readable description of error.
-    :type message: (optional) str
-    :param violations: An array of violation messages.
-    :type violations: (optional) list[ask_smapi_model.v1.error.Error]
+    :param name: Name of the ASR annotation set
+    :type name: (optional) str
+    :param annotation_count: Number of annotations within an annotation set
+    :type annotation_count: (optional) int
+    :param last_updated_timestamp: The timestamp for the most recent update of ASR annotation set
+    :type last_updated_timestamp: (optional) datetime
+    :param id: annotation set id
+    :type id: (optional) str
 
     """
     deserialized_types = {
-        'message': 'str',
-        'violations': 'list[ask_smapi_model.v1.error.Error]'
+        'name': 'str',
+        'annotation_count': 'int',
+        'last_updated_timestamp': 'datetime',
+        'id': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'message': 'message',
-        'violations': 'violations'
+        'name': 'name',
+        'annotation_count': 'annotationCount',
+        'last_updated_timestamp': 'lastUpdatedTimestamp',
+        'id': 'id'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, message=None, violations=None):
-        # type: (Optional[str], Optional[List[ErrorV1]]) -> None
+    def __init__(self, name=None, annotation_count=None, last_updated_timestamp=None, id=None):
+        # type: (Optional[str], Optional[int], Optional[datetime], Optional[str]) -> None
         """
 
-        :param message: Human readable description of error.
-        :type message: (optional) str
-        :param violations: An array of violation messages.
-        :type violations: (optional) list[ask_smapi_model.v1.error.Error]
+        :param name: Name of the ASR annotation set
+        :type name: (optional) str
+        :param annotation_count: Number of annotations within an annotation set
+        :type annotation_count: (optional) int
+        :param last_updated_timestamp: The timestamp for the most recent update of ASR annotation set
+        :type last_updated_timestamp: (optional) datetime
+        :param id: annotation set id
+        :type id: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
-        self.message = message
-        self.violations = violations
+        super(AnnotationSetItems, self).__init__(name=name, annotation_count=annotation_count, last_updated_timestamp=last_updated_timestamp)
+        self.id = id
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -103,7 +115,7 @@ class Model400(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Model400):
+        if not isinstance(other, AnnotationSetItems):
             return False
 
         return self.__dict__ == other.__dict__

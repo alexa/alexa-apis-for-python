@@ -18,6 +18,7 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
+from ask_smapi_model.v1.skill.asr.annotation_sets.annotation_set_metadata import AnnotationSetMetadata
 
 
 if typing.TYPE_CHECKING:
@@ -25,46 +26,44 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class InterfaceIntent(object):
+class GetASRAnnotationSetsPropertiesResponse(AnnotationSetMetadata):
     """
 
-    :param is_extensible: Whether the intent is extensible.
-    :type is_extensible: (optional) bool
-    :param name: Name of the intent.
+    :param name: Name of the ASR annotation set
     :type name: (optional) str
-    :param is_required: Whether the intent is required in the interface.
-    :type is_required: (optional) bool
+    :param annotation_count: Number of annotations within an annotation set
+    :type annotation_count: (optional) int
+    :param last_updated_timestamp: The timestamp for the most recent update of ASR annotation set
+    :type last_updated_timestamp: (optional) datetime
 
     """
     deserialized_types = {
-        'is_extensible': 'bool',
         'name': 'str',
-        'is_required': 'bool'
+        'annotation_count': 'int',
+        'last_updated_timestamp': 'datetime'
     }  # type: Dict
 
     attribute_map = {
-        'is_extensible': 'isExtensible',
         'name': 'name',
-        'is_required': 'isRequired'
+        'annotation_count': 'annotationCount',
+        'last_updated_timestamp': 'lastUpdatedTimestamp'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, is_extensible=None, name=None, is_required=None):
-        # type: (Optional[bool], Optional[str], Optional[bool]) -> None
+    def __init__(self, name=None, annotation_count=None, last_updated_timestamp=None):
+        # type: (Optional[str], Optional[int], Optional[datetime]) -> None
         """
 
-        :param is_extensible: Whether the intent is extensible.
-        :type is_extensible: (optional) bool
-        :param name: Name of the intent.
+        :param name: Name of the ASR annotation set
         :type name: (optional) str
-        :param is_required: Whether the intent is required in the interface.
-        :type is_required: (optional) bool
+        :param annotation_count: Number of annotations within an annotation set
+        :type annotation_count: (optional) int
+        :param last_updated_timestamp: The timestamp for the most recent update of ASR annotation set
+        :type last_updated_timestamp: (optional) datetime
         """
         self.__discriminator_value = None  # type: str
 
-        self.is_extensible = is_extensible
-        self.name = name
-        self.is_required = is_required
+        super(GetASRAnnotationSetsPropertiesResponse, self).__init__(name=name, annotation_count=annotation_count, last_updated_timestamp=last_updated_timestamp)
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -109,7 +108,7 @@ class InterfaceIntent(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, InterfaceIntent):
+        if not isinstance(other, GetASRAnnotationSetsPropertiesResponse):
             return False
 
         return self.__dict__ == other.__dict__

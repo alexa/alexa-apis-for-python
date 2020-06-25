@@ -23,6 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
+    from ask_smapi_model.v1.skill.skill_messaging_credentials import SkillMessagingCredentialsV1
 
 
 class SkillCredentials(object):
@@ -30,21 +31,29 @@ class SkillCredentials(object):
     Structure for skill credentials response.
 
 
+    :param skill_messaging_credentials: 
+    :type skill_messaging_credentials: (optional) ask_smapi_model.v1.skill.skill_messaging_credentials.SkillMessagingCredentials
 
     """
     deserialized_types = {
+        'skill_messaging_credentials': 'ask_smapi_model.v1.skill.skill_messaging_credentials.SkillMessagingCredentials'
     }  # type: Dict
 
     attribute_map = {
+        'skill_messaging_credentials': 'skillMessagingCredentials'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self):
-        # type: () -> None
+    def __init__(self, skill_messaging_credentials=None):
+        # type: (Optional[SkillMessagingCredentialsV1]) -> None
         """Structure for skill credentials response.
 
+        :param skill_messaging_credentials: 
+        :type skill_messaging_credentials: (optional) ask_smapi_model.v1.skill.skill_messaging_credentials.SkillMessagingCredentials
         """
         self.__discriminator_value = None  # type: str
+
+        self.skill_messaging_credentials = skill_messaging_credentials
 
     def to_dict(self):
         # type: () -> Dict[str, object]

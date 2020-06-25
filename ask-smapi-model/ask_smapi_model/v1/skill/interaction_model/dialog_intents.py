@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.prompts import PromptsV1
+    from ask_smapi_model.v1.skill.interaction_model.dialog_intents_prompts import DialogIntentsPromptsV1
     from ask_smapi_model.v1.skill.interaction_model.delegation_strategy_type import DelegationStrategyTypeV1
     from ask_smapi_model.v1.skill.interaction_model.dialog_slot_items import DialogSlotItemsV1
 
@@ -40,7 +40,7 @@ class DialogIntents(object):
     :param confirmation_required: Describes whether confirmation of the intent is required.
     :type confirmation_required: (optional) bool
     :param prompts: 
-    :type prompts: (optional) ask_smapi_model.v1.skill.interaction_model.prompts.Prompts
+    :type prompts: (optional) ask_smapi_model.v1.skill.interaction_model.dialog_intents_prompts.DialogIntentsPrompts
 
     """
     deserialized_types = {
@@ -48,7 +48,7 @@ class DialogIntents(object):
         'delegation_strategy': 'ask_smapi_model.v1.skill.interaction_model.delegation_strategy_type.DelegationStrategyType',
         'slots': 'list[ask_smapi_model.v1.skill.interaction_model.dialog_slot_items.DialogSlotItems]',
         'confirmation_required': 'bool',
-        'prompts': 'ask_smapi_model.v1.skill.interaction_model.prompts.Prompts'
+        'prompts': 'ask_smapi_model.v1.skill.interaction_model.dialog_intents_prompts.DialogIntentsPrompts'
     }  # type: Dict
 
     attribute_map = {
@@ -61,7 +61,7 @@ class DialogIntents(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, delegation_strategy=None, slots=None, confirmation_required=None, prompts=None):
-        # type: (Optional[str], Optional[DelegationStrategyTypeV1], Optional[List[DialogSlotItemsV1]], Optional[bool], Optional[PromptsV1]) -> None
+        # type: (Optional[str], Optional[DelegationStrategyTypeV1], Optional[List[DialogSlotItemsV1]], Optional[bool], Optional[DialogIntentsPromptsV1]) -> None
         """
 
         :param name: Name of the intent that has a dialog specification.
@@ -73,7 +73,7 @@ class DialogIntents(object):
         :param confirmation_required: Describes whether confirmation of the intent is required.
         :type confirmation_required: (optional) bool
         :param prompts: 
-        :type prompts: (optional) ask_smapi_model.v1.skill.interaction_model.prompts.Prompts
+        :type prompts: (optional) ask_smapi_model.v1.skill.interaction_model.dialog_intents_prompts.DialogIntentsPrompts
         """
         self.__discriminator_value = None  # type: str
 

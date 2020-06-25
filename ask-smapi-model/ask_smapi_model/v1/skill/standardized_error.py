@@ -18,57 +18,57 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
+from ask_smapi_model.v1.error import Error
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.standardized_error_code import StandardizedErrorCodeV1
     from ask_smapi_model.v1.skill.validation_details import ValidationDetailsV1
 
 
-class StandardizedError(object):
+class StandardizedError(Error):
     """
     Standardized structure which wraps machine parsable and human readable information about an error.
 
 
-    :param code: Standardized structure which wraps machine parsable and human readable information about an error.
-    :type code: (optional) ask_smapi_model.v1.skill.standardized_error_code.StandardizedErrorCode
-    :param message: A standardized, human readable message generated from the error code and validation details in ViolationStructure by the AskStandardizedErrorUtil library.
-    :type message: (optional) str
-    :param validation_details: 
+    :param validation_details: Standardized, machine readable structure that wraps all the information about a specific occurrence of an error of the type specified by the code.
     :type validation_details: (optional) ask_smapi_model.v1.skill.validation_details.ValidationDetails
+    :param code: Error code that maps to an error message. Developers with different locales should be able to lookup the error description based on this code. 
+    :type code: (optional) str
+    :param message: Readable description of error. If standardized, this is generated from the error code and validation details.
+    :type message: (optional) str
 
     """
     deserialized_types = {
-        'code': 'ask_smapi_model.v1.skill.standardized_error_code.StandardizedErrorCode',
-        'message': 'str',
-        'validation_details': 'ask_smapi_model.v1.skill.validation_details.ValidationDetails'
+        'validation_details': 'ask_smapi_model.v1.skill.validation_details.ValidationDetails',
+        'code': 'str',
+        'message': 'str'
     }  # type: Dict
 
     attribute_map = {
+        'validation_details': 'validationDetails',
         'code': 'code',
-        'message': 'message',
-        'validation_details': 'validationDetails'
+        'message': 'message'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, code=None, message=None, validation_details=None):
-        # type: (Optional[StandardizedErrorCodeV1], Optional[str], Optional[ValidationDetailsV1]) -> None
+    def __init__(self, validation_details=None, code=None, message=None):
+        # type: (Optional[ValidationDetailsV1], Optional[str], Optional[str]) -> None
         """Standardized structure which wraps machine parsable and human readable information about an error.
 
-        :param code: Standardized structure which wraps machine parsable and human readable information about an error.
-        :type code: (optional) ask_smapi_model.v1.skill.standardized_error_code.StandardizedErrorCode
-        :param message: A standardized, human readable message generated from the error code and validation details in ViolationStructure by the AskStandardizedErrorUtil library.
-        :type message: (optional) str
-        :param validation_details: 
+        :param validation_details: Standardized, machine readable structure that wraps all the information about a specific occurrence of an error of the type specified by the code.
         :type validation_details: (optional) ask_smapi_model.v1.skill.validation_details.ValidationDetails
+        :param code: Error code that maps to an error message. Developers with different locales should be able to lookup the error description based on this code. 
+        :type code: (optional) str
+        :param message: Readable description of error. If standardized, this is generated from the error code and validation details.
+        :type message: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
+        self.validation_details = validation_details
         self.code = code
         self.message = message
-        self.validation_details = validation_details
 
     def to_dict(self):
         # type: () -> Dict[str, object]

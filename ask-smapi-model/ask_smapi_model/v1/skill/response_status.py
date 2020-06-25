@@ -31,13 +31,14 @@ class ResponseStatus(Enum):
 
 
 
-    Allowed enum values: [FAILED, IN_PROGRESS, SUCCEEDED, ROLLBACK_SUCCEEDED, ROLLBACK_FAILED]
+    Allowed enum values: [FAILED, IN_PROGRESS, SUCCEEDED, ROLLBACK_SUCCEEDED, ROLLBACK_FAILED, SKIPPED]
     """
     FAILED = "FAILED"
     IN_PROGRESS = "IN_PROGRESS"
     SUCCEEDED = "SUCCEEDED"
     ROLLBACK_SUCCEEDED = "ROLLBACK_SUCCEEDED"
     ROLLBACK_FAILED = "ROLLBACK_FAILED"
+    SKIPPED = "SKIPPED"
 
     def to_dict(self):
         # type: () -> Dict[str, object]

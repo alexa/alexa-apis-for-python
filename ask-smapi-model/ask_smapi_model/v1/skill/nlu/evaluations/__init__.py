@@ -19,6 +19,7 @@ from .pagination_context import PaginationContext
 from .get_nlu_evaluation_results_response import GetNLUEvaluationResultsResponse
 from .results_status import ResultsStatus
 from .results import Results
+from .resolutions_per_authority_status_code import ResolutionsPerAuthorityStatusCode
 from .paged_results_response import PagedResultsResponse
 from .expected_intent_slots_props import ExpectedIntentSlotsProps
 from .evaluate_nlu_request import EvaluateNLURequest
@@ -37,9 +38,11 @@ from .confirmation_status import ConfirmationStatus
 from .evaluation_inputs import EvaluationInputs
 from .paged_response import PagedResponse
 from .evaluate_response import EvaluateResponse
+from .resolutions_per_authority_status import ResolutionsPerAuthorityStatus
 from .expected_intent import ExpectedIntent
 from .resolutions import Resolutions
 from .slots_props import SlotsProps
 from .get_nlu_evaluation_response import GetNLUEvaluationResponse
+from .resolutions_per_authority_value import ResolutionsPerAuthorityValue
 from .source import Source
 from .intent import Intent

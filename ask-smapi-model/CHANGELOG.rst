@@ -90,3 +90,12 @@ This commit contains the following changes :
 This release contains the following changes : 
 
 - Removed invalid objects from the models.
+
+
+1.6.0
+~~~~~
+
+This release contains the following changes : 
+
+- New models for `ASR evaluations API <https://developer.amazon.com/en-US/docs/alexa/asr/about-asr.html>`__
+- minor bug fixes in existing models.

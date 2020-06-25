@@ -22,15 +22,14 @@ from .build_step_name import BuildStepName
 from .response_status import ResponseStatus
 from .ssl_certificate_payload import SSLCertificatePayload
 from .build_step import BuildStep
-from .interface_intent import InterfaceIntent
 from .publication_status import PublicationStatus
-from .interface_definition import InterfaceDefinition
 from .standardized_error import StandardizedError
 from .manifest_last_update_request import ManifestLastUpdateRequest
 from .validation_details import ValidationDetails
 from .submit_skill_for_certification_request import SubmitSkillForCertificationRequest
 from .interaction_model_last_update_request import InteractionModelLastUpdateRequest
 from .image_attributes import ImageAttributes
+from .validation_failure_type import ValidationFailureType
 from .reason import Reason
 from .hosted_skill_deployment_status_last_update_request import HostedSkillDeploymentStatusLastUpdateRequest
 from .skill_summary import SkillSummary
@@ -38,7 +37,6 @@ from .publication_method import PublicationMethod
 from .image_dimension import ImageDimension
 from .create_skill_request import CreateSkillRequest
 from .image_size import ImageSize
-from .standardized_error_code import StandardizedErrorCode
 from .hosted_skill_provisioning_status import HostedSkillProvisioningStatus
 from .import_response_skill import ImportResponseSkill
 from .instance import Instance
@@ -53,9 +51,11 @@ from .build_details import BuildDetails
 from .skill_interaction_model_status import SkillInteractionModelStatus
 from .create_skill_with_package_request import CreateSkillWithPackageRequest
 from .create_skill_response import CreateSkillResponse
+from .format import Format
 from .upload_response import UploadResponse
 from .skill_credentials import SkillCredentials
 from .skill_summary_apis import SkillSummaryApis
+from .validation_failure_reason import ValidationFailureReason
 from .export_response import ExportResponse
 from .list_skill_response import ListSkillResponse
 from .hosted_skill_deployment_details import HostedSkillDeploymentDetails

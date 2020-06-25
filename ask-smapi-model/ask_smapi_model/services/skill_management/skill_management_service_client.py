@@ -36,7 +36,9 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.interaction_model.type_version.list_slot_type_version_response import ListSlotTypeVersionResponseV1
     from ask_smapi_model.v1.skill.beta_test.test_body import TestBodyV1
     from ask_smapi_model.v1.skill.update_skill_with_package_request import UpdateSkillWithPackageRequestV1
+    from ask_smapi_model.v1.skill.asr.annotation_sets.get_asr_annotation_set_annotations_response import GetAsrAnnotationSetAnnotationsResponseV1
     from ask_smapi_model.v1.skill.nlu.annotation_sets.list_nlu_annotation_sets_response import ListNLUAnnotationSetsResponseV1
+    from ask_smapi_model.v1.skill.asr.evaluations.list_asr_evaluations_response import ListAsrEvaluationsResponseV1
     from ask_smapi_model.v1.skill.metrics.get_metric_data_response import GetMetricDataResponseV1
     from ask_smapi_model.v1.isp.list_in_skill_product_response import ListInSkillProductResponseV1
     from ask_smapi_model.v1.isp.update_in_skill_product_request import UpdateInSkillProductRequestV1
@@ -48,7 +50,7 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v0.catalog.upload.create_content_upload_response import CreateContentUploadResponseV0
     from ask_smapi_model.v1.skill.interaction_model.model_type.list_slot_type_response import ListSlotTypeResponseV1
     from ask_smapi_model.v1.skill.create_skill_response import CreateSkillResponseV1
-    from ask_smapi_model.model400 import Model400
+    from ask_smapi_model.v1.skill.asr.evaluations.post_asr_evaluations_request_object import PostAsrEvaluationsRequestObjectV1
     from ask_smapi_model.v1.skill.nlu.annotation_sets.update_nlu_annotation_set_annotations_request import UpdateNLUAnnotationSetAnnotationsRequestV1
     from ask_smapi_model.v0.catalog.create_catalog_request import CreateCatalogRequestV0
     from ask_smapi_model.v1.isp.associated_skill_response import AssociatedSkillResponseV1
@@ -64,11 +66,13 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.isp.in_skill_product_summary_response import InSkillProductSummaryResponseV1
     from ask_smapi_model.v1.catalog.create_content_upload_url_response import CreateContentUploadUrlResponseV1
     from ask_smapi_model.v1.skill.ssl_certificate_payload import SSLCertificatePayloadV1
+    from ask_smapi_model.v1.skill.asr.annotation_sets.list_asr_annotation_sets_response import ListASRAnnotationSetsResponseV1
     from ask_smapi_model.v1.catalog.create_content_upload_url_request import CreateContentUploadUrlRequestV1
     from ask_smapi_model.v1.skill.certification.list_certifications_response import ListCertificationsResponseV1
     from ask_smapi_model.v2.skill.simulations.simulations_api_response import SimulationsApiResponseV2
     from ask_smapi_model.v1.catalog.upload.catalog_upload_base import CatalogUploadBaseV1
     from ask_smapi_model.v1.skill.interaction_model.version.catalog_values import CatalogValuesV1
+    from ask_smapi_model.v1.skill.asr.evaluations.post_asr_evaluations_response_object import PostAsrEvaluationsResponseObjectV1
     from ask_smapi_model.v1.error import ErrorV1
     from ask_smapi_model.v1.skill.interaction_model.conflict_detection.get_conflict_detection_job_status_response import GetConflictDetectionJobStatusResponseV1
     from ask_smapi_model.v1.skill.account_linking.account_linking_request import AccountLinkingRequestV1
@@ -89,15 +93,19 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_update import SlotTypeUpdateV1
     from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_response import SlotTypeResponseV1
     from ask_smapi_model.v1.skill.nlu.annotation_sets.create_nlu_annotation_set_request import CreateNLUAnnotationSetRequestV1
+    from ask_smapi_model.v1.skill.interaction_model.catalog.update_request import UpdateRequestV1
     from ask_smapi_model.v1.skill.certification.certification_response import CertificationResponseV1
     from ask_smapi_model.v1.skill.private.list_private_distribution_accounts_response import ListPrivateDistributionAccountsResponseV1
     from ask_smapi_model.v1.skill.history.interaction_type import InteractionTypeV1
     from ask_smapi_model.v0.catalog.upload.get_content_upload_response import GetContentUploadResponseV0
+    from ask_smapi_model.v1.skill.asr.evaluations.get_asr_evaluation_status_response_object import GetAsrEvaluationStatusResponseObjectV1
     from ask_smapi_model.v1.skill.interaction_model.catalog.catalog_status import CatalogStatusV1
+    from ask_smapi_model.v1.skill.asr.annotation_sets.get_asr_annotation_sets_properties_response import GetASRAnnotationSetsPropertiesResponseV1
+    from ask_smapi_model.v1.skill.invocations.invoke_skill_response import InvokeSkillResponseV1
+    from ask_smapi_model.v1.skill.asr.annotation_sets.create_asr_annotation_set_response import CreateAsrAnnotationSetResponseV1
     from ask_smapi_model.v0.development_events.subscriber.create_subscriber_request import CreateSubscriberRequestV0
     from ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_version_data import SlotTypeVersionDataV1
     from ask_smapi_model.v1.skill.interaction_model.catalog.definition_data import DefinitionDataV1
-    from ask_smapi_model.model401 import Model401
     from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_metadata import HostedSkillMetadataV1
     from ask_smapi_model.v1.audit_logs.audit_logs_response import AuditLogsResponseV1
     from ask_smapi_model.v1.skill.nlu.annotation_sets.create_nlu_annotation_set_response import CreateNLUAnnotationSetResponseV1
@@ -119,16 +127,18 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v0.development_events.subscriber.subscriber_info import SubscriberInfoV0
     from ask_smapi_model.v0.development_events.subscription.create_subscription_request import CreateSubscriptionRequestV0
     from ask_smapi_model.v0.development_events.subscription.list_subscriptions_response import ListSubscriptionsResponseV0
-    from ask_smapi_model.v1.skill.interaction_model.model_type.bad_request import BadRequestV1
+    from ask_smapi_model.v1.skill.asr.evaluations.get_asr_evaluations_results_response import GetAsrEvaluationsResultsResponseV1
     from ask_smapi_model.v1.skill.simulations.simulations_api_request import SimulationsApiRequestV1
     from ask_smapi_model.v1.skill.skill_credentials import SkillCredentialsV1
     from ask_smapi_model.v1.skill.interaction_model.conflict_detection.get_conflicts_response import GetConflictsResponseV1
     from ask_smapi_model.v1.audit_logs.audit_logs_request import AuditLogsRequestV1
     from ask_smapi_model.v1.skill.standardized_error import StandardizedErrorV1
     from ask_smapi_model.v1.isp.in_skill_product_definition_response import InSkillProductDefinitionResponseV1
+    from ask_smapi_model.v1.skill.asr.annotation_sets.update_asr_annotation_set_properties_request_object import UpdateAsrAnnotationSetPropertiesRequestObjectV1
     from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_status import SlotTypeStatusV1
     from ask_smapi_model.v1.skill.interaction_model.model_type.definition_data import DefinitionDataV1
     from ask_smapi_model.v1.skill.manifest.skill_manifest_envelope import SkillManifestEnvelopeV1
+    from ask_smapi_model.v1.skill.interaction_model.version.list_catalog_entity_versions_response import ListCatalogEntityVersionsResponseV1
     from ask_smapi_model.v2.error import ErrorV2
     from ask_smapi_model.v1.skill.list_skill_response import ListSkillResponseV1
     from ask_smapi_model.v0.catalog.list_catalogs_response import ListCatalogsResponseV0
@@ -140,8 +150,10 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.import_response import ImportResponseV1
     from ask_smapi_model.v1.skill.skill_status import SkillStatusV1
     from ask_smapi_model.v1.skill.history.publication_status import PublicationStatusV1
+    from ask_smapi_model.v1.skill.asr.annotation_sets.create_asr_annotation_set_request_object import CreateAsrAnnotationSetRequestObjectV1
     from ask_smapi_model.v2.skill.invocations.invocations_api_request import InvocationsApiRequestV2
     from ask_smapi_model.v1.skill.interaction_model.catalog.list_catalog_response import ListCatalogResponseV1
+    from ask_smapi_model.v1.skill.invocations.invoke_skill_request import InvokeSkillRequestV1
     from ask_smapi_model.v1.skill.history.intent_confidence_bin import IntentConfidenceBinV1
     from ask_smapi_model.v1.skill.beta_test.testers.testers_list import TestersListV1
     from ask_smapi_model.v1.bad_request_error import BadRequestErrorV1
@@ -149,6 +161,7 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.create_skill_request import CreateSkillRequestV1
     from ask_smapi_model.v1.vendor_management.vendors import VendorsV1
     from ask_smapi_model.v1.skill.nlu.evaluations.evaluate_response import EvaluateResponseV1
+    from ask_smapi_model.v1.skill.asr.annotation_sets.update_asr_annotation_set_contents_payload import UpdateAsrAnnotationSetContentsPayloadV1
     from ask_smapi_model.v1.skill.interaction_model.version.catalog_version_data import CatalogVersionDataV1
     from ask_smapi_model.v1.skill.create_skill_with_package_request import CreateSkillWithPackageRequestV1
     from ask_smapi_model.v1.skill.interaction_model.version.list_response import ListResponseV1
@@ -266,7 +279,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         :param catalog_id: (required) Provides a unique identifier of the catalog
         :type catalog_id: str
-        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
         :type max_results: float
@@ -594,7 +607,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         :param vendor_id: (required) The vendor ID.
         :type vendor_id: str
-        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
         :type max_results: float
@@ -746,7 +759,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         :param vendor_id: (required) The vendor ID.
         :type vendor_id: str
-        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
         :type max_results: float
@@ -1120,7 +1133,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         :param vendor_id: (required) The vendor ID.
         :type vendor_id: str
-        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
         :type max_results: float
@@ -1572,7 +1585,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         :param skill_id: (required) The skill ID.
         :type skill_id: str
-        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
         :type max_results: float
@@ -1965,7 +1978,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         :param vendor_id: (required) The vendor ID.
         :type vendor_id: str
-        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
         :type max_results: float
@@ -2629,7 +2642,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :type product_id: str
         :param stage: (required) Stage for skill.
         :type stage: str
-        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
         :type max_results: float
@@ -2934,7 +2947,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param catalog_id: (required) Provides a unique identifier of the catalog
         :type catalog_id: str
         :param update_request: (required) 
-        :type update_request: ask_smapi_model.v1.skill.interaction_model.model_type.update_request.UpdateRequest
+        :type update_request: ask_smapi_model.v1.skill.interaction_model.catalog.update_request.UpdateRequest
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
@@ -3081,6 +3094,94 @@ class SkillManagementServiceClient(BaseServiceClient):
             body=body_params,
             response_definitions=error_definitions,
             response_type="ask_smapi_model.v1.skill.interaction_model.catalog.catalog_status.CatalogStatus")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def list_interaction_model_catalog_versions_v1(self, catalog_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, StandardizedErrorV1, ListCatalogEntityVersionsResponseV1, BadRequestErrorV1]
+        """
+        List all the historical versions of the given catalogId.
+
+        :param catalog_id: (required) Provides a unique identifier of the catalog
+        :type catalog_id: str
+        :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
+        :type max_results: float
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
+        :type next_token: str
+        :param sort_direction: Sets the sorting direction of the result items. When set to 'asc' these items are returned in ascending order of sortField value and when set to 'desc' these items are returned in descending order of sortField value.
+        :type sort_direction: str
+        :param sort_field: Sets the field on which the sorting would be applied.
+        :type sort_field: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, StandardizedErrorV1, ListCatalogEntityVersionsResponseV1, BadRequestErrorV1]
+        """
+        operation_name = "list_interaction_model_catalog_versions_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'catalog_id' is set
+        if ('catalog_id' not in params) or (params['catalog_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `catalog_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/api/custom/interactionModel/catalogs/{catalogId}/versions'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'catalog_id' in params:
+            path_params['catalogId'] = params['catalog_id']
+
+        query_params = []  # type: List
+        if 'max_results' in params:
+            query_params.append(('maxResults', params['max_results']))
+        if 'next_token' in params:
+            query_params.append(('nextToken', params['next_token']))
+        if 'sort_direction' in params:
+            query_params.append(('sortDirection', params['sort_direction']))
+        if 'sort_field' in params:
+            query_params.append(('sortField', params['sort_field']))
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.version.list_catalog_entity_versions_response.ListCatalogEntityVersionsResponse", status_code=200, message="Returns list of catalogs for the vendor."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error e.g. the catalog definition is invalid."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The specified catalog does not exist."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.interaction_model.version.list_catalog_entity_versions_response.ListCatalogEntityVersionsResponse")
 
         if full_response:
             return api_response
@@ -3421,7 +3522,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :type version: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
         :type max_results: float
-        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
         :type next_token: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
@@ -3507,7 +3608,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :type vendor_id: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
         :type max_results: float
-        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
         :type next_token: str
         :param sort_direction: Sets the sorting direction of the result items. When set to 'asc' these items are returned in ascending order of sortField value and when set to 'desc' these items are returned in descending order of sortField value.
         :type sort_direction: str
@@ -3655,7 +3756,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def list_interaction_model_slot_types_v1(self, vendor_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestV1, ListSlotTypeResponseV1]
+        # type: (str, **Any) -> Union[ApiResponse, StandardizedErrorV1, ListSlotTypeResponseV1, BadRequestErrorV1]
         """
         List all slot types for the vendor. 
 
@@ -3663,14 +3764,14 @@ class SkillManagementServiceClient(BaseServiceClient):
         :type vendor_id: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
         :type max_results: float
-        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
         :type next_token: str
         :param sort_direction: Sets the sorting direction of the result items. When set to 'asc' these items are returned in ascending order of sortField value and when set to 'desc' these items are returned in descending order of sortField value.
         :type sort_direction: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestV1, ListSlotTypeResponseV1]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, ListSlotTypeResponseV1, BadRequestErrorV1]
         """
         operation_name = "list_interaction_model_slot_types_v1"
         params = locals()
@@ -3715,9 +3816,9 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.list_slot_type_response.ListSlotTypeResponse", status_code=200, message="Returns list of slot types for the vendor."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
@@ -3738,7 +3839,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def create_interaction_model_slot_type_v1(self, slot_type, **kwargs):
-        # type: (DefinitionDataV1, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestV1, SlotTypeResponseV1]
+        # type: (DefinitionDataV1, **Any) -> Union[ApiResponse, StandardizedErrorV1, SlotTypeResponseV1, BadRequestErrorV1]
         """
         Create a new version of slot type within the given slotTypeId. 
 
@@ -3747,7 +3848,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestV1, SlotTypeResponseV1]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, SlotTypeResponseV1, BadRequestErrorV1]
         """
         operation_name = "create_interaction_model_slot_type_v1"
         params = locals()
@@ -3786,7 +3887,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_response.SlotTypeResponse", status_code=200, message="Returns the generated slotTypeId."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="Server cannot process the request due to a client error e.g. the slot type definition is invalid."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error e.g. the slot type definition is invalid."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
@@ -3808,7 +3909,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def delete_interaction_model_slot_type_v1(self, slot_type_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestV1]
+        # type: (str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Delete the slot type. 
 
@@ -3817,7 +3918,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestV1]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "delete_interaction_model_slot_type_v1"
         params = locals()
@@ -3856,9 +3957,9 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="No content; just confirm the slot type is deleted."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="The slot type cannot be deleted from reasons due to in-use by other entities."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="The slot type cannot be deleted from reasons due to in-use by other entities."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="There is no slot type defined for the slotTypeId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
@@ -3880,7 +3981,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_interaction_model_slot_type_definition_v1(self, slot_type_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, StandardizedErrorV1, SlotTypeDefinitionOutputV1, BadRequestV1]
+        # type: (str, **Any) -> Union[ApiResponse, StandardizedErrorV1, SlotTypeDefinitionOutputV1, BadRequestErrorV1]
         """
         Get the slot type definition. 
 
@@ -3889,7 +3990,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedErrorV1, SlotTypeDefinitionOutputV1, BadRequestV1]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, SlotTypeDefinitionOutputV1, BadRequestErrorV1]
         """
         operation_name = "get_interaction_model_slot_type_definition_v1"
         params = locals()
@@ -3928,9 +4029,9 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_definition_output.SlotTypeDefinitionOutput", status_code=200, message="The slot type definition."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="The slot type cannot be retrieved due to errors listed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="The slot type cannot be retrieved due to errors listed."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="There is no slot type defined for the slotTypeId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
@@ -3952,7 +4053,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def update_interaction_model_slot_type_v1(self, slot_type_id, update_request, **kwargs):
-        # type: (str, UpdateRequestV1, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestV1]
+        # type: (str, UpdateRequestV1, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Update description and vendorGuidance string for certain version of a slot type. 
 
@@ -3963,7 +4064,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestV1]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "update_interaction_model_slot_type_v1"
         params = locals()
@@ -4008,9 +4109,9 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="No content, indicates the fields were successfully updated."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="There is no slot type defined for the slotTypeId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
@@ -4032,7 +4133,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_interaction_model_slot_type_build_status_v1(self, slot_type_id, update_request_id, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestV1, SlotTypeStatusV1]
+        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, SlotTypeStatusV1, BadRequestErrorV1]
         """
         Get the status of slot type resource and its sub-resources for a given slotTypeId. 
 
@@ -4043,7 +4144,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestV1, SlotTypeStatusV1]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, SlotTypeStatusV1, BadRequestErrorV1]
         """
         operation_name = "get_interaction_model_slot_type_build_status_v1"
         params = locals()
@@ -4088,9 +4189,9 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_status.SlotTypeStatus", status_code=200, message="Returns the build status and error codes for the given slotTypeId."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="There is no slot type defined for the slotTypeId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
@@ -4112,7 +4213,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def list_interaction_model_slot_type_versions_v1(self, slot_type_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, ListSlotTypeVersionResponseV1, StandardizedErrorV1, BadRequestV1]
+        # type: (str, **Any) -> Union[ApiResponse, ListSlotTypeVersionResponseV1, StandardizedErrorV1, BadRequestErrorV1]
         """
         List all slot type versions for the slot type id. 
 
@@ -4120,14 +4221,14 @@ class SkillManagementServiceClient(BaseServiceClient):
         :type slot_type_id: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
         :type max_results: float
-        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
         :type next_token: str
         :param sort_direction: Sets the sorting direction of the result items. When set to 'asc' these items are returned in ascending order of sortField value and when set to 'desc' these items are returned in descending order of sortField value.
         :type sort_direction: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, ListSlotTypeVersionResponseV1, StandardizedErrorV1, BadRequestV1]
+        :rtype: Union[ApiResponse, ListSlotTypeVersionResponseV1, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "list_interaction_model_slot_type_versions_v1"
         params = locals()
@@ -4172,9 +4273,9 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.type_version.list_slot_type_version_response.ListSlotTypeVersionResponse", status_code=200, message="Returns list of slot type version for the slot type id."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
@@ -4195,7 +4296,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def create_interaction_model_slot_type_version_v1(self, slot_type_id, slot_type, **kwargs):
-        # type: (str, VersionDataV1, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestV1]
+        # type: (str, VersionDataV1, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Create a new version of slot type entity for the given slotTypeId. 
 
@@ -4206,7 +4307,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestV1]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "create_interaction_model_slot_type_version_v1"
         params = locals()
@@ -4251,9 +4352,9 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=202, message="Returns update status location link on success."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="Server cannot process the request due to a client error e.g. the slot type definition is invalid."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error e.g. the slot type definition is invalid."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The specified slot type does not exist."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
@@ -4275,7 +4376,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def delete_interaction_model_slot_type_version_v1(self, slot_type_id, version, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestV1]
+        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Delete slot type version. 
 
@@ -4286,7 +4387,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestV1]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "delete_interaction_model_slot_type_version_v1"
         params = locals()
@@ -4331,9 +4432,9 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="No Content; Confirms that version is successfully deleted."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="There is no slot type version for this slotTypeId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
@@ -4355,7 +4456,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_interaction_model_slot_type_version_v1(self, slot_type_id, version, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestV1, SlotTypeVersionDataV1]
+        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, SlotTypeVersionDataV1, BadRequestErrorV1]
         """
         Get slot type version data of given slot type version. 
 
@@ -4366,7 +4467,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestV1, SlotTypeVersionDataV1]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, SlotTypeVersionDataV1, BadRequestErrorV1]
         """
         operation_name = "get_interaction_model_slot_type_version_v1"
         params = locals()
@@ -4411,9 +4512,9 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_version_data.SlotTypeVersionData", status_code=200, message="Returns the slot type version metadata for the given slotTypeId and version."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="There is no slot type defined for the slotTypeId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
@@ -4435,7 +4536,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def update_interaction_model_slot_type_version_v1(self, slot_type_id, version, slot_type_update, **kwargs):
-        # type: (str, str, SlotTypeUpdateV1, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestV1]
+        # type: (str, str, SlotTypeUpdateV1, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         Update description and vendorGuidance string for certain version of a slot type. 
 
@@ -4448,7 +4549,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestV1]
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
         """
         operation_name = "update_interaction_model_slot_type_version_v1"
         params = locals()
@@ -4499,9 +4600,9 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="No Content; Confirms that version is successfully updated."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.model_type.bad_request.BadRequest", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="There is no slot type defined for the slotTypeId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
@@ -4599,11 +4700,11 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         :param vendor_id: (required) The vendor ID.
         :type vendor_id: str
-        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
         :type max_results: float
-        :param skill_id: the list of skillIds that you wish to get the summary for. A maximum of 10 skillIds can be specified to get the skill summary in single listSkills call. Please note that this parameter must not be used with 'nextToken' or/and 'maxResults' parameter.
+        :param skill_id: The list of skillIds that you wish to get the summary for. A maximum of 10 skillIds can be specified to get the skill summary in single listSkills call. Please note that this parameter must not be used with 'nextToken' or/and 'maxResults' parameter.
         :type skill_id: list[str]
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
@@ -5036,6 +5137,1035 @@ class SkillManagementServiceClient(BaseServiceClient):
             return api_response
         return api_response.body
 
+    def get_annotations_for_asr_annotation_set_v1(self, skill_id, annotation_set_id, accept, **kwargs):
+        # type: (str, str, str, **Any) -> Union[ApiResponse, GetAsrAnnotationSetAnnotationsResponseV1, ErrorV1, BadRequestErrorV1]
+        """
+        Download the annotation set contents.
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param annotation_set_id: (required) Identifier of the ASR annotation set.
+        :type annotation_set_id: str
+        :param accept: (required) - `application/json`: indicate to download annotation set contents in JSON format - `text/csv`: indicate to download annotation set contents in CSV format 
+        :type accept: str
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
+        :type next_token: str
+        :param max_results: Sets the maximum number of results returned in the response body. Defaults to 1000. If more results are present, the response will contain a paginationContext. 
+        :type max_results: float
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, GetAsrAnnotationSetAnnotationsResponseV1, ErrorV1, BadRequestErrorV1]
+        """
+        operation_name = "get_annotations_for_asr_annotation_set_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'annotation_set_id' is set
+        if ('annotation_set_id' not in params) or (params['annotation_set_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `annotation_set_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'accept' is set
+        if ('accept' not in params) or (params['accept'] is None):
+            raise ValueError(
+                "Missing the required parameter `accept` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/asrAnnotationSets/{annotationSetId}/annotations'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+        if 'annotation_set_id' in params:
+            path_params['annotationSetId'] = params['annotation_set_id']
+
+        query_params = []  # type: List
+        if 'next_token' in params:
+            query_params.append(('nextToken', params['next_token']))
+        if 'max_results' in params:
+            query_params.append(('maxResults', params['max_results']))
+
+        header_params = []  # type: List
+        if 'accept' in params:
+            header_params.append(('Accept', params['accept']))
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.asr.annotation_sets.get_asr_annotation_set_annotations_response.GetAsrAnnotationSetAnnotationsResponse", status_code=200, message="The annotation set contents payload in specified format.  This API also supports pagination for annotation set contents requested in  &#x60;application/json&#x60; content type. Paginaiton for requested content  type &#x60;text/csv&#x60; is not supported. In this case, the nextToken and  maxResults query parameters would be ignored even if they are  specified as query parameters. "))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=503, message="Service Unavailable."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=0, message="Internal Server Error."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.asr.annotation_sets.get_asr_annotation_set_annotations_response.GetAsrAnnotationSetAnnotationsResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def set_annotations_for_asr_annotation_set_v1(self, skill_id, annotation_set_id, update_asr_annotation_set_contents_request, **kwargs):
+        # type: (str, str, UpdateAsrAnnotationSetContentsPayloadV1, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
+        """
+        Update the annotations in the annotation set
+        API that updates the annotaions in the annotation set 
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param annotation_set_id: (required) Identifier of the ASR annotation set.
+        :type annotation_set_id: str
+        :param update_asr_annotation_set_contents_request: (required) Payload containing annotation set contents. Two formats are accepted here: - `application/json`: Annotation set payload in JSON format. - `text/csv`: Annotation set payload in CSV format. Note that for CSV format, the first row should describe the column attributes. Columns should be delimited by comma.  The subsequent rows should describe annotation data and each annotation attributes has to follow the strict ordering defined in the first row. Each annotation fields should be delimited by comma. 
+        :type update_asr_annotation_set_contents_request: ask_smapi_model.v1.skill.asr.annotation_sets.update_asr_annotation_set_contents_payload.UpdateAsrAnnotationSetContentsPayload
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1]
+        """
+        operation_name = "set_annotations_for_asr_annotation_set_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'annotation_set_id' is set
+        if ('annotation_set_id' not in params) or (params['annotation_set_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `annotation_set_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'update_asr_annotation_set_contents_request' is set
+        if ('update_asr_annotation_set_contents_request' not in params) or (params['update_asr_annotation_set_contents_request'] is None):
+            raise ValueError(
+                "Missing the required parameter `update_asr_annotation_set_contents_request` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/asrAnnotationSets/{annotationSetId}/annotations'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+        if 'annotation_set_id' in params:
+            path_params['annotationSetId'] = params['annotation_set_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'update_asr_annotation_set_contents_request' in params:
+            body_params = params['update_asr_annotation_set_contents_request']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="ASR annotation set contents have been updated successfully."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=503, message="Service Unavailable."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=0, message="Internal Server Error."))
+
+        api_response = self.invoke(
+            method="PUT",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+
+    def delete_asr_annotation_set_v1(self, skill_id, annotation_set_id, **kwargs):
+        # type: (str, str, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
+        """
+        Delete the ASR annotation set
+        API which deletes the ASR annotation set. Developers cannot get/list the deleted annotation set. 
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param annotation_set_id: (required) Identifier of the ASR annotation set.
+        :type annotation_set_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1]
+        """
+        operation_name = "delete_asr_annotation_set_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'annotation_set_id' is set
+        if ('annotation_set_id' not in params) or (params['annotation_set_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `annotation_set_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/asrAnnotationSets/{annotationSetId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+        if 'annotation_set_id' in params:
+            path_params['annotationSetId'] = params['annotation_set_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="ASR annotation set exists and is deleted successfully."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=409, message="The request could not be completed due to a conflict with the current state of the target resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=503, message="Service Unavailable."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=0, message="Internal Server Error."))
+
+        api_response = self.invoke(
+            method="DELETE",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+
+    def get_asr_annotation_set_v1(self, skill_id, annotation_set_id, **kwargs):
+        # type: (str, str, **Any) -> Union[ApiResponse, GetASRAnnotationSetsPropertiesResponseV1, ErrorV1, BadRequestErrorV1]
+        """
+        Get the metadata of an ASR annotation set
+        Return the metadata for an ASR annotation set. 
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param annotation_set_id: (required) Identifier of the ASR annotation set.
+        :type annotation_set_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, GetASRAnnotationSetsPropertiesResponseV1, ErrorV1, BadRequestErrorV1]
+        """
+        operation_name = "get_asr_annotation_set_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'annotation_set_id' is set
+        if ('annotation_set_id' not in params) or (params['annotation_set_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `annotation_set_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/asrAnnotationSets/{annotationSetId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+        if 'annotation_set_id' in params:
+            path_params['annotationSetId'] = params['annotation_set_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.asr.annotation_sets.get_asr_annotation_sets_properties_response.GetASRAnnotationSetsPropertiesResponse", status_code=200, message="The ASR annotation set exists."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=503, message="Service Unavailable."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=0, message="Internal Server Error."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.asr.annotation_sets.get_asr_annotation_sets_properties_response.GetASRAnnotationSetsPropertiesResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def set_asr_annotation_set_v1(self, skill_id, annotation_set_id, update_asr_annotation_set_properties_request_v1, **kwargs):
+        # type: (str, str, UpdateAsrAnnotationSetPropertiesRequestObjectV1, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
+        """
+        update the ASR annotation set properties.
+        API which updates the ASR annotation set properties. Currently, the only data can be updated is annotation set name. 
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param annotation_set_id: (required) Identifier of the ASR annotation set.
+        :type annotation_set_id: str
+        :param update_asr_annotation_set_properties_request_v1: (required) Payload sent to the update ASR annotation set properties API.
+        :type update_asr_annotation_set_properties_request_v1: ask_smapi_model.v1.skill.asr.annotation_sets.update_asr_annotation_set_properties_request_object.UpdateAsrAnnotationSetPropertiesRequestObject
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1]
+        """
+        operation_name = "set_asr_annotation_set_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'annotation_set_id' is set
+        if ('annotation_set_id' not in params) or (params['annotation_set_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `annotation_set_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'update_asr_annotation_set_properties_request_v1' is set
+        if ('update_asr_annotation_set_properties_request_v1' not in params) or (params['update_asr_annotation_set_properties_request_v1'] is None):
+            raise ValueError(
+                "Missing the required parameter `update_asr_annotation_set_properties_request_v1` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/asrAnnotationSets/{annotationSetId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+        if 'annotation_set_id' in params:
+            path_params['annotationSetId'] = params['annotation_set_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'update_asr_annotation_set_properties_request_v1' in params:
+            body_params = params['update_asr_annotation_set_properties_request_v1']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="ASR annotation set exists and properties are updated successfully."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=503, message="Service Unavailable."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=0, message="Internal Server Error."))
+
+        api_response = self.invoke(
+            method="PUT",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+
+    def list_asr_annotation_sets_v1(self, skill_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, ErrorV1, ListASRAnnotationSetsResponseV1, BadRequestErrorV1]
+        """
+        List ASR annotation sets metadata for a given skill.
+        API which requests all the ASR annotation sets for a skill. Returns the annotation set id and properties for each ASR annotation set. Supports paging of results. 
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
+        :type next_token: str
+        :param max_results: Sets the maximum number of results returned in the response body. Defaults to 1000. If more results are present, the response will contain a paginationContext. 
+        :type max_results: float
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV1, ListASRAnnotationSetsResponseV1, BadRequestErrorV1]
+        """
+        operation_name = "list_asr_annotation_sets_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/asrAnnotationSets'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+
+        query_params = []  # type: List
+        if 'next_token' in params:
+            query_params.append(('nextToken', params['next_token']))
+        if 'max_results' in params:
+            query_params.append(('maxResults', params['max_results']))
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.asr.annotation_sets.list_asr_annotation_sets_response.ListASRAnnotationSetsResponse", status_code=200, message="ASR annotation sets metadata are returned."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=503, message="Service Unavailable."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=0, message="Internal Server Error."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.asr.annotation_sets.list_asr_annotation_sets_response.ListASRAnnotationSetsResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def create_asr_annotation_set_v1(self, skill_id, create_asr_annotation_set_request, **kwargs):
+        # type: (str, CreateAsrAnnotationSetRequestObjectV1, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1, CreateAsrAnnotationSetResponseV1]
+        """
+        Create a new ASR annotation set for a skill
+        This is an API that creates a new ASR annotation set with a name and returns the annotationSetId which can later be used to retrieve or reference the annotation set 
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param create_asr_annotation_set_request: (required) Payload sent to the create ASR annotation set API.
+        :type create_asr_annotation_set_request: ask_smapi_model.v1.skill.asr.annotation_sets.create_asr_annotation_set_request_object.CreateAsrAnnotationSetRequestObject
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1, CreateAsrAnnotationSetResponseV1]
+        """
+        operation_name = "create_asr_annotation_set_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'create_asr_annotation_set_request' is set
+        if ('create_asr_annotation_set_request' not in params) or (params['create_asr_annotation_set_request'] is None):
+            raise ValueError(
+                "Missing the required parameter `create_asr_annotation_set_request` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/asrAnnotationSets'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'create_asr_annotation_set_request' in params:
+            body_params = params['create_asr_annotation_set_request']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.asr.annotation_sets.create_asr_annotation_set_response.CreateAsrAnnotationSetResponse", status_code=200, message="ASR annotation set created successfully."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=503, message="Service Unavailable."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=0, message="Internal Server Error."))
+
+        api_response = self.invoke(
+            method="POST",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.asr.annotation_sets.create_asr_annotation_set_response.CreateAsrAnnotationSetResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def delete_asr_evaluation_v1(self, skill_id, evaluation_id, **kwargs):
+        # type: (str, str, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
+        """
+        Delete an evaluation.
+        API which enables the deletion of an evaluation.  
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param evaluation_id: (required) Identifier of the evaluation.
+        :type evaluation_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1]
+        """
+        operation_name = "delete_asr_evaluation_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'evaluation_id' is set
+        if ('evaluation_id' not in params) or (params['evaluation_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `evaluation_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/asrEvaluations/{evaluationId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+        if 'evaluation_id' in params:
+            path_params['evaluationId'] = params['evaluation_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="ASR evaluation exists and is deleted successfully."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=503, message="Service Unavailable."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=0, message="Internal Server Error."))
+
+        api_response = self.invoke(
+            method="DELETE",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+
+    def list_asr_evaluations_results_v1(self, skill_id, evaluation_id, **kwargs):
+        # type: (str, str, **Any) -> Union[ApiResponse, ErrorV1, GetAsrEvaluationsResultsResponseV1, BadRequestErrorV1]
+        """
+        List results for a completed Evaluation.
+        Paginated API which returns the test case results of an evaluation. This should be considered the \"expensive\" operation while GetAsrEvaluationsStatus is \"cheap\". 
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param evaluation_id: (required) Identifier of the evaluation.
+        :type evaluation_id: str
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
+        :type next_token: str
+        :param max_results: Sets the maximum number of results returned in the response body. Defaults to 1000. If more results are present, the response will contain a nextToken. 
+        :type max_results: float
+        :param status: query parameter used to filter evaluation result status.   * `PASSED` - filter evaluation result status of `PASSED`   * `FAILED` - filter evaluation result status of `FAILED` 
+        :type status: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV1, GetAsrEvaluationsResultsResponseV1, BadRequestErrorV1]
+        """
+        operation_name = "list_asr_evaluations_results_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'evaluation_id' is set
+        if ('evaluation_id' not in params) or (params['evaluation_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `evaluation_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/asrEvaluations/{evaluationId}/results'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+        if 'evaluation_id' in params:
+            path_params['evaluationId'] = params['evaluation_id']
+
+        query_params = []  # type: List
+        if 'next_token' in params:
+            query_params.append(('nextToken', params['next_token']))
+        if 'max_results' in params:
+            query_params.append(('maxResults', params['max_results']))
+        if 'status' in params:
+            query_params.append(('status', params['status']))
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.asr.evaluations.get_asr_evaluations_results_response.GetAsrEvaluationsResultsResponse", status_code=200, message="Evaluation exists and its status is queryable."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=503, message="Service Unavailable."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=0, message="Internal Server Error."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.asr.evaluations.get_asr_evaluations_results_response.GetAsrEvaluationsResultsResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def get_asr_evaluation_status_v1(self, skill_id, evaluation_id, **kwargs):
+        # type: (str, str, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1, GetAsrEvaluationStatusResponseObjectV1]
+        """
+        Get high level information and status of a asr evaluation.
+        API which requests high level information about the evaluation like the current state of the job, status of the evaluation (if complete). Also returns the request used to start the job, like the number of total evaluations, number of completed evaluations, and start time. This should be considered the \"cheap\" operation while GetAsrEvaluationsResults is \"expensive\". 
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param evaluation_id: (required) Identifier of the evaluation.
+        :type evaluation_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1, GetAsrEvaluationStatusResponseObjectV1]
+        """
+        operation_name = "get_asr_evaluation_status_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'evaluation_id' is set
+        if ('evaluation_id' not in params) or (params['evaluation_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `evaluation_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/asrEvaluations/{evaluationId}/status'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+        if 'evaluation_id' in params:
+            path_params['evaluationId'] = params['evaluation_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.asr.evaluations.get_asr_evaluation_status_response_object.GetAsrEvaluationStatusResponseObject", status_code=200, message="Evaluation exists and its status is queryable."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=503, message="Service Unavailable."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=0, message="Internal Server Error."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.asr.evaluations.get_asr_evaluation_status_response_object.GetAsrEvaluationStatusResponseObject")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def list_asr_evaluations_v1(self, skill_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, ErrorV1, ListAsrEvaluationsResponseV1, BadRequestErrorV1]
+        """
+        List asr evaluations run for a skill.
+        API that allows developers to get historical ASR evaluations they run before. 
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
+        :type next_token: str
+        :param locale: locale in bcp 47 format. Used to filter results with the specified locale. If omitted, the response would include all evaluations regardless of what locale was used in the evaluation
+        :type locale: str
+        :param stage: Query parameter used to filter evaluations with specified skill stage.   * `development` - skill in `development` stage   * `live` - skill in `live` stage 
+        :type stage: str
+        :param annotation_set_id: filter to evaluations started using this annotationSetId
+        :type annotation_set_id: str
+        :param max_results: Sets the maximum number of results returned in the response body. Defaults to 1000. If more results are present, the response will contain a nextToken. 
+        :type max_results: float
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV1, ListAsrEvaluationsResponseV1, BadRequestErrorV1]
+        """
+        operation_name = "list_asr_evaluations_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/asrEvaluations'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+
+        query_params = []  # type: List
+        if 'next_token' in params:
+            query_params.append(('nextToken', params['next_token']))
+        if 'locale' in params:
+            query_params.append(('locale', params['locale']))
+        if 'stage' in params:
+            query_params.append(('stage', params['stage']))
+        if 'annotation_set_id' in params:
+            query_params.append(('annotationSetId', params['annotation_set_id']))
+        if 'max_results' in params:
+            query_params.append(('maxResults', params['max_results']))
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.asr.evaluations.list_asr_evaluations_response.ListAsrEvaluationsResponse", status_code=200, message="Evaluations are returned."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=503, message="Service Unavailable."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=0, message="Internal Server Error."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.asr.evaluations.list_asr_evaluations_response.ListAsrEvaluationsResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def create_asr_evaluation_v1(self, post_asr_evaluations_request, skill_id, **kwargs):
+        # type: (PostAsrEvaluationsRequestObjectV1, str, **Any) -> Union[ApiResponse, ErrorV1, PostAsrEvaluationsResponseObjectV1, BadRequestErrorV1]
+        """
+        Start an evaluation against the ASR model built by the skill's interaction model.
+        This is an asynchronous API that starts an evaluation against the ASR model built by the skill's interaction model. The operation outputs an evaluationId which allows the retrieval of the current status of the operation and the results upon completion. This operation is unified, meaning both internal and external skill developers may use it to evaluate ASR models. 
+
+        :param post_asr_evaluations_request: (required) Payload sent to trigger evaluation run.
+        :type post_asr_evaluations_request: ask_smapi_model.v1.skill.asr.evaluations.post_asr_evaluations_request_object.PostAsrEvaluationsRequestObject
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ErrorV1, PostAsrEvaluationsResponseObjectV1, BadRequestErrorV1]
+        """
+        operation_name = "create_asr_evaluation_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'post_asr_evaluations_request' is set
+        if ('post_asr_evaluations_request' not in params) or (params['post_asr_evaluations_request'] is None):
+            raise ValueError(
+                "Missing the required parameter `post_asr_evaluations_request` when calling `" + operation_name + "`")
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/asrEvaluations'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'post_asr_evaluations_request' in params:
+            body_params = params['post_asr_evaluations_request']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.asr.evaluations.post_asr_evaluations_response_object.PostAsrEvaluationsResponseObject", status_code=200, message="Evaluation has successfully begun."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=409, message="The request could not be completed due to a conflict with the current state of the target resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=503, message="Service Unavailable."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=0, message="Internal Server Error."))
+
+        api_response = self.invoke(
+            method="POST",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.asr.evaluations.post_asr_evaluations_response_object.PostAsrEvaluationsResponseObject")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
     def end_beta_test_v1(self, skill_id, **kwargs):
         # type: (str, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
@@ -5180,7 +6310,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def create_beta_test_v1(self, skill_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, ErrorV1]
+        # type: (str, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         Create beta test.
         Create a beta test for a given Alexa skill.
@@ -5192,7 +6322,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, ErrorV1]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "create_beta_test_v1"
         params = locals()
@@ -5233,7 +6363,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="Success. Return a URL to track the resource in &#39;Location&#39; header."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=409, message="The request could not be completed due to a conflict with the current state of the target resource."))
@@ -5489,7 +6619,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         :param skill_id: (required) The skill ID.
         :type skill_id: str
-        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
         :type max_results: float
@@ -5881,20 +7011,20 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def get_certifications_list_v1(self, skill_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, ErrorV1, ListCertificationsResponseV1]
+        # type: (str, **Any) -> Union[ApiResponse, ErrorV1, ListCertificationsResponseV1, BadRequestErrorV1]
         """
         Get list of all certifications available for a skill, including information about past certifications and any ongoing certification. The default sort order is descending on skillSubmissionTimestamp for Certifications. 
 
         :param skill_id: (required) The skill ID.
         :type skill_id: str
-        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
         :type max_results: float
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, ErrorV1, ListCertificationsResponseV1]
+        :rtype: Union[ApiResponse, ErrorV1, ListCertificationsResponseV1, BadRequestErrorV1]
         """
         operation_name = "get_certifications_list_v1"
         params = locals()
@@ -5937,7 +7067,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.certification.list_certifications_response.ListCertificationsResponse", status_code=200, message="Returns list of certifications for the skillId."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=400, message="Server cannot process the request due to a client error e.g. if any request parameter is invalid like certification Id or pagination token etc. If the maxResults is not in the range of 1 to 50, it also qualifies for this error. "))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error e.g. if any request parameter is invalid like certification Id or pagination token etc. If the maxResults is not in the range of 1 to 50, it also qualifies for this error. "))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceeded the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId. "))
@@ -6106,7 +7236,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         :param skill_id: (required) The skill ID.
         :type skill_id: str
-        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
         :type max_results: float
@@ -6307,6 +7437,85 @@ class SkillManagementServiceClient(BaseServiceClient):
             return api_response
         
 
+    def invoke_skill_v1(self, skill_id, invoke_skill_request, **kwargs):
+        # type: (str, InvokeSkillRequestV1, **Any) -> Union[ApiResponse, InvokeSkillResponseV1, StandardizedErrorV1, BadRequestErrorV1]
+        """
+        This is a synchronous API that invokes the Lambda or third party HTTPS endpoint for a given skill. A successful response will contain information related to what endpoint was called, payload sent to and received from the endpoint. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. In cases where invoking the skill endpoint specifically fails, the response will contain a status attribute indicating that a failure occurred and details about what was sent to the endpoint. The skill must belong to and be enabled by the user of this API. Also, note that calls to the skill endpoint will timeout after 10 seconds. 
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param invoke_skill_request: (required) Payload sent to the skill invocation API.
+        :type invoke_skill_request: ask_smapi_model.v1.skill.invocations.invoke_skill_request.InvokeSkillRequest
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, InvokeSkillResponseV1, StandardizedErrorV1, BadRequestErrorV1]
+        """
+        operation_name = "invoke_skill_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'invoke_skill_request' is set
+        if ('invoke_skill_request' not in params) or (params['invoke_skill_request'] is None):
+            raise ValueError(
+                "Missing the required parameter `invoke_skill_request` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/invocations'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'invoke_skill_request' in params:
+            body_params = params['invoke_skill_request']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.invocations.invoke_skill_response.InvokeSkillResponse", status_code=200, message="Skill was invoked."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Bad request due to invalid or missing data."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="API user does not have permission to call this API or is currently in a state that does not allow invocation of this skill. "))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The specified skill does not exist."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="API user has exceeded the permitted request rate."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="POST",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.invocations.invoke_skill_response.InvokeSkillResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
     def get_skill_metrics_v1(self, skill_id, start_time, end_time, period, metric, stage, skill_type, **kwargs):
         # type: (str, datetime, datetime, str, str, str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1, GetMetricDataResponseV1]
         """
@@ -6332,7 +7541,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :type locale: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
         :type max_results: float
-        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
         :type next_token: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
@@ -6444,7 +7653,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def get_annotations_for_nlu_annotation_sets_v1(self, skill_id, annotation_id, accept, **kwargs):
-        # type: (str, str, str, **Any) -> Union[ApiResponse, Model400, Model401]
+        # type: (str, str, str, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         Get the annotations of an NLU annotation set
 
@@ -6457,7 +7666,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Model400, Model401]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "get_annotations_for_nlu_annotation_sets_v1"
         params = locals()
@@ -6508,12 +7717,12 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=200, message="The specific version of a NLU annotation set has the content."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model400.Model400", status_code=400, message="Server cannot process the request due to a client error."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model400.Model400", status_code=403, message="The operation being requested is not allowed."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=404, message="The resource being requested is not found."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=500, message="Internal Server Error."))
 
         api_response = self.invoke(
             method="GET",
@@ -6531,7 +7740,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def update_annotations_for_nlu_annotation_sets_v1(self, skill_id, annotation_id, content_type, update_nlu_annotation_set_annotations_request, **kwargs):
-        # type: (str, str, str, UpdateNLUAnnotationSetAnnotationsRequestV1, **Any) -> Union[ApiResponse, Model400, Model401]
+        # type: (str, str, str, UpdateNLUAnnotationSetAnnotationsRequestV1, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         Replace the annotations in NLU annotation set.
         API which replaces the annotations in NLU annotation set. 
@@ -6547,7 +7756,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Model400, Model401]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "update_annotations_for_nlu_annotation_sets_v1"
         params = locals()
@@ -6604,12 +7813,12 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=200, message="NLU annotation set exists and starts the update."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model400.Model400", status_code=400, message="Server cannot process the request due to a client error."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model400.Model400", status_code=403, message="The operation being requested is not allowed."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=404, message="The resource being requested is not found."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=500, message="Internal Server Error."))
 
         api_response = self.invoke(
             method="POST",
@@ -6627,7 +7836,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def delete_properties_for_nlu_annotation_sets_v1(self, skill_id, annotation_id, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, Model400, Model401]
+        # type: (str, str, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         Delete the NLU annotation set
         API which deletes the NLU annotation set. Developers cannot get/list the deleted annotation set. 
@@ -6639,7 +7848,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Model400, Model401]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "delete_properties_for_nlu_annotation_sets_v1"
         params = locals()
@@ -6684,12 +7893,12 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="NLU annotation set exists and is deleted successfully."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model400.Model400", status_code=400, message="Server cannot process the request due to a client error."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model400.Model400", status_code=403, message="The operation being requested is not allowed."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=404, message="The resource being requested is not found."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=500, message="Internal Server Error."))
 
         api_response = self.invoke(
             method="DELETE",
@@ -6707,7 +7916,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_properties_for_nlu_annotation_sets_v1(self, skill_id, annotation_id, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, Model400, GetNLUAnnotationSetPropertiesResponseV1, Model401]
+        # type: (str, str, **Any) -> Union[ApiResponse, ErrorV1, GetNLUAnnotationSetPropertiesResponseV1, BadRequestErrorV1]
         """
         Get the properties of an NLU annotation set
         Return the properties for an NLU annotation set. 
@@ -6719,7 +7928,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Model400, GetNLUAnnotationSetPropertiesResponseV1, Model401]
+        :rtype: Union[ApiResponse, ErrorV1, GetNLUAnnotationSetPropertiesResponseV1, BadRequestErrorV1]
         """
         operation_name = "get_properties_for_nlu_annotation_sets_v1"
         params = locals()
@@ -6764,12 +7973,12 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.nlu.annotation_sets.get_nlu_annotation_set_properties_response.GetNLUAnnotationSetPropertiesResponse", status_code=200, message="The NLU annotation set exists."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model400.Model400", status_code=400, message="Server cannot process the request due to a client error."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model400.Model400", status_code=403, message="The operation being requested is not allowed."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=404, message="The resource being requested is not found."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=500, message="Internal Server Error."))
 
         api_response = self.invoke(
             method="GET",
@@ -6787,7 +7996,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def update_properties_for_nlu_annotation_sets_v1(self, skill_id, annotation_id, update_nlu_annotation_set_properties_request, **kwargs):
-        # type: (str, str, UpdateNLUAnnotationSetPropertiesRequestV1, **Any) -> Union[ApiResponse, Model400, Model401]
+        # type: (str, str, UpdateNLUAnnotationSetPropertiesRequestV1, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         update the NLU annotation set properties.
         API which updates the NLU annotation set properties. Currently, the only data can be updated is annotation set name. 
@@ -6801,7 +8010,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Model400, Model401]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "update_properties_for_nlu_annotation_sets_v1"
         params = locals()
@@ -6852,12 +8061,12 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=201, message="NLU annotation set exists and properties are updated successfully."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model400.Model400", status_code=400, message="Server cannot process the request due to a client error."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model400.Model400", status_code=403, message="The operation being requested is not allowed."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=404, message="The resource being requested is not found."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=500, message="Internal Server Error."))
 
         api_response = self.invoke(
             method="PUT",
@@ -6875,7 +8084,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def list_nlu_annotation_sets_v1(self, skill_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, ListNLUAnnotationSetsResponseV1, Model400, Model401]
+        # type: (str, **Any) -> Union[ApiResponse, ErrorV1, ListNLUAnnotationSetsResponseV1, BadRequestErrorV1]
         """
         List NLU annotation sets for a given skill.
         API which requests all the NLU annotation sets for a skill. Returns the annotationId and properties for each NLU annotation set. Developers can filter the results using locale. Supports paging of results. 
@@ -6891,7 +8100,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, ListNLUAnnotationSetsResponseV1, Model400, Model401]
+        :rtype: Union[ApiResponse, ErrorV1, ListNLUAnnotationSetsResponseV1, BadRequestErrorV1]
         """
         operation_name = "list_nlu_annotation_sets_v1"
         params = locals()
@@ -6936,12 +8145,12 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.nlu.annotation_sets.list_nlu_annotation_sets_response.ListNLUAnnotationSetsResponse", status_code=200, message="NLU annotation sets are returned."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model400.Model400", status_code=400, message="Server cannot process the request due to a client error."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model400.Model400", status_code=403, message="The operation being requested is not allowed."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=404, message="The resource being requested is not found."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=500, message="Internal Server Error."))
 
         api_response = self.invoke(
             method="GET",
@@ -6959,7 +8168,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def create_nlu_annotation_set_v1(self, skill_id, create_nlu_annotation_set_request, **kwargs):
-        # type: (str, CreateNLUAnnotationSetRequestV1, **Any) -> Union[ApiResponse, CreateNLUAnnotationSetResponseV1, Model400, Model401]
+        # type: (str, CreateNLUAnnotationSetRequestV1, **Any) -> Union[ApiResponse, CreateNLUAnnotationSetResponseV1, ErrorV1, BadRequestErrorV1]
         """
         Create a new NLU annotation set for a skill which will generate a new annotationId.
         This is an API that creates a new NLU annotation set with properties and returns the annotationId. 
@@ -6971,7 +8180,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, CreateNLUAnnotationSetResponseV1, Model400, Model401]
+        :rtype: Union[ApiResponse, CreateNLUAnnotationSetResponseV1, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "create_nlu_annotation_set_v1"
         params = locals()
@@ -7016,13 +8225,13 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.nlu.annotation_sets.create_nlu_annotation_set_response.CreateNLUAnnotationSetResponse", status_code=201, message="NLU annotation set created successfully."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model400.Model400", status_code=400, message="Server cannot process the request due to a client error."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model400.Model400", status_code=403, message="The operation being requested is not allowed."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=404, message="The resource being requested is not found."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=500, message="Internal Server Error."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=503, message="Service Unavailable."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=503, message="Service Unavailable."))
 
         api_response = self.invoke(
             method="POST",
@@ -7040,7 +8249,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def get_nlu_evaluation_v1(self, skill_id, evaluation_id, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, Model400, GetNLUEvaluationResponseV1, Model401]
+        # type: (str, str, **Any) -> Union[ApiResponse, ErrorV1, BadRequestErrorV1, GetNLUEvaluationResponseV1]
         """
         Get top level information and status of a nlu evaluation.
         API which requests top level information about the evaluation like the current state of the job, status of the evaluation (if complete). Also returns data used to start the job, like the number of test cases, stage, locale, and start time. This should be considered the 'cheap' operation while getResultForNLUEvaluations is 'expensive'. 
@@ -7052,7 +8261,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Model400, GetNLUEvaluationResponseV1, Model401]
+        :rtype: Union[ApiResponse, ErrorV1, BadRequestErrorV1, GetNLUEvaluationResponseV1]
         """
         operation_name = "get_nlu_evaluation_v1"
         params = locals()
@@ -7097,12 +8306,12 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.nlu.evaluations.get_nlu_evaluation_response.GetNLUEvaluationResponse", status_code=200, message="Evaluation exists and its status is queryable."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model400.Model400", status_code=400, message="Server cannot process the request due to a client error."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model400.Model400", status_code=403, message="The operation being requested is not allowed."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=404, message="The resource being requested is not found."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=500, message="Internal Server Error."))
 
         api_response = self.invoke(
             method="GET",
@@ -7120,7 +8329,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def get_result_for_nlu_evaluations_v1(self, skill_id, evaluation_id, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, GetNLUEvaluationResultsResponseV1, Model400, Model401]
+        # type: (str, str, **Any) -> Union[ApiResponse, ErrorV1, GetNLUEvaluationResultsResponseV1, BadRequestErrorV1]
         """
         Get test case results for a completed Evaluation.
         Paginated API which returns the test case results of an evaluation. This should be considered the 'expensive' operation while getNluEvaluation is 'cheap'. 
@@ -7144,7 +8353,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, GetNLUEvaluationResultsResponseV1, Model400, Model401]
+        :rtype: Union[ApiResponse, ErrorV1, GetNLUEvaluationResultsResponseV1, BadRequestErrorV1]
         """
         operation_name = "get_result_for_nlu_evaluations_v1"
         params = locals()
@@ -7201,12 +8410,12 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.nlu.evaluations.get_nlu_evaluation_results_response.GetNLUEvaluationResultsResponse", status_code=200, message="Evaluation exists and its status is queryable."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model400.Model400", status_code=400, message="Server cannot process the request due to a client error."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model400.Model400", status_code=403, message="The operation being requested is not allowed."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=404, message="The resource being requested is not found."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=500, message="Internal Server Error."))
 
         api_response = self.invoke(
             method="GET",
@@ -7224,7 +8433,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def list_nlu_evaluations_v1(self, skill_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, ListNLUEvaluationsResponseV1, Model400, Model401]
+        # type: (str, **Any) -> Union[ApiResponse, ListNLUEvaluationsResponseV1, ErrorV1, BadRequestErrorV1]
         """
         List nlu evaluations run for a skill.
         API which requests recently run nlu evaluations started by a vendor for a skill. Returns the evaluation id and some of the parameters used to start the evaluation. Developers can filter the results using locale and stage. Supports paging of results. 
@@ -7244,7 +8453,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, ListNLUEvaluationsResponseV1, Model400, Model401]
+        :rtype: Union[ApiResponse, ListNLUEvaluationsResponseV1, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "list_nlu_evaluations_v1"
         params = locals()
@@ -7293,12 +8502,12 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.nlu.evaluations.list_nlu_evaluations_response.ListNLUEvaluationsResponse", status_code=200, message="Evaluations are returned."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model400.Model400", status_code=400, message="Server cannot process the request due to a client error."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model400.Model400", status_code=403, message="The operation being requested is not allowed."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=404, message="The resource being requested is not found."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=500, message="Internal Server Error."))
 
         api_response = self.invoke(
             method="GET",
@@ -7316,7 +8525,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
 
     def create_nlu_evaluations_v1(self, evaluate_nlu_request, skill_id, **kwargs):
-        # type: (EvaluateNLURequestV1, str, **Any) -> Union[ApiResponse, EvaluateResponseV1, Model400, Model401]
+        # type: (EvaluateNLURequestV1, str, **Any) -> Union[ApiResponse, EvaluateResponseV1, ErrorV1, BadRequestErrorV1]
         """
         Start an evaluation against the NLU model built by the skill's interaction model.
         This is an asynchronous API that starts an evaluation against the NLU model built by the skill's interaction model. The operation outputs an evaluationId which allows the retrieval of the current status of the operation and the results upon completion. This operation is unified, meaning both internal and external skill developers may use it evaluate NLU models. 
@@ -7328,7 +8537,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, EvaluateResponseV1, Model400, Model401]
+        :rtype: Union[ApiResponse, EvaluateResponseV1, ErrorV1, BadRequestErrorV1]
         """
         operation_name = "create_nlu_evaluations_v1"
         params = locals()
@@ -7373,12 +8582,12 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.nlu.evaluations.evaluate_response.EvaluateResponse", status_code=200, message="Evaluation has successfully begun."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model400.Model400", status_code=400, message="Server cannot process the request due to a client error."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model400.Model400", status_code=403, message="The operation being requested is not allowed."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=404, message="The resource being requested is not found."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.model401.Model401", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=500, message="Internal Server Error."))
 
         api_response = self.invoke(
             method="POST",
@@ -7765,7 +8974,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="No Content; Confirms that enablement is successfully deleted."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
@@ -7845,7 +9054,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="No Content; Confirms that enablement resource exists for given skillId &amp; stage."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
@@ -7925,7 +9134,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="No Content; Confirms that enablement is successfully created/updated."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=409, message="The request could not be completed due to a conflict with the current state of the target resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
@@ -8035,7 +9244,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :type skill_id: str
         :param stage: (required) Stage for skill.
         :type stage: str
-        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
         :type max_results: float
@@ -8319,7 +9528,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :type stage: str
         :param version: (required) Version of interaction model. Use \"~current\" to get the model of the current version.
         :type version: str
-        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. Defaults to 100. If more results are present, the response will contain a nextToken and a _link.next href.
         :type max_results: float
@@ -8419,7 +9628,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :type skill_id: str
         :param stage: (required) Stage for skill.
         :type stage: str
-        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
         :type max_results: float
@@ -9213,7 +10422,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :type stage_v2: str
         :param locale: (required) The locale for the model requested e.g. en-GB, en-US, de-DE.
         :type locale: str
-        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :param next_token: A token provided to continue returning results from a previous request which was partial. 
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
         :type max_results: float
