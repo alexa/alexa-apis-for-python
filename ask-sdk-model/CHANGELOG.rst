@@ -308,3 +308,11 @@ This release contains the following changes :
 This release contains the following changes : 
 
 - Support for the next version of the Alexa Presentation Language (APL) with support for new Alexa responsive components and templates, dynamic data sources, new time primitives, and conditional commands. `Ref <https://developer.amazon.com/en-US/blogs/alexa/alexa-skills-kit/2020/03/new-alexa-presentation-language-responsive-components-templates-dynamic-data-sources-new-time-primitives-and-commands>`__.
+
+
+1.23.1
+^^^^^^
+
+This release contains the following changes : 
+
+- general bug fixes and updates

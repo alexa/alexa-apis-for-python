@@ -16,6 +16,8 @@ from __future__ import absolute_import
 
 from .intent_request import IntentRequest
 from .permission_status import PermissionStatus
+from .simple_slot_value import SimpleSlotValue
+from .list_slot_value import ListSlotValue
 from .application import Application
 from .permissions import Permissions
 from .slot_confirmation_status import SlotConfirmationStatus
@@ -33,6 +35,7 @@ from .session_ended_reason import SessionEndedReason
 from .user import User
 from .scope import Scope
 from .dialog_state import DialogState
+from .slot_value import SlotValue
 from .launch_request import LaunchRequest
 from .session import Session
 from .session_resumed_request import SessionResumedRequest

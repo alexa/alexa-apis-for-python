@@ -18,70 +18,54 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
+from ask_sdk_model.slot_value import SlotValue
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_sdk_model.slot_value import SlotValue
     from ask_sdk_model.slu.entityresolution.resolutions import Resolutions
-    from ask_sdk_model.slot_confirmation_status import SlotConfirmationStatus
 
 
-class Slot(object):
+class SimpleSlotValue(SlotValue):
     """
+    Slot value containing a single string value and resolutions.
 
-    :param name: A string that represents the name of the slot.
-    :type name: (optional) str
+
     :param value: A string that represents the value the user spoke for the slot. This is the actual value the user spoke, not necessarily the canonical value or one of the synonyms defined for the entity. Note that AMAZON.LITERAL slot values sent to your service are always in all lower case.
     :type value: (optional) str
-    :param confirmation_status: Indication of whether an intent or slot has been explicitly confirmed or denied by the user, or neither.
-    :type confirmation_status: (optional) ask_sdk_model.slot_confirmation_status.SlotConfirmationStatus
-    :param resolutions: Contains the resultsof entity resolution. These are organized by authority. An authority represents the source for the data provided for the slot. For a custom slot type, the authority is the slot type you defined.
+    :param resolutions: Contains the results of entity resolution. These are organized by authority. An authority represents the source for the data provided for the slot. For a custom slot type, the authority is the slot type you defined.
     :type resolutions: (optional) ask_sdk_model.slu.entityresolution.resolutions.Resolutions
-    :param slot_value: Object representing the value of the slot.
-    :type slot_value: (optional) ask_sdk_model.slot_value.SlotValue
 
     """
     deserialized_types = {
-        'name': 'str',
+        'object_type': 'str',
         'value': 'str',
-        'confirmation_status': 'ask_sdk_model.slot_confirmation_status.SlotConfirmationStatus',
-        'resolutions': 'ask_sdk_model.slu.entityresolution.resolutions.Resolutions',
-        'slot_value': 'ask_sdk_model.slot_value.SlotValue'
+        'resolutions': 'ask_sdk_model.slu.entityresolution.resolutions.Resolutions'
     }  # type: Dict
 
     attribute_map = {
-        'name': 'name',
+        'object_type': 'type',
         'value': 'value',
-        'confirmation_status': 'confirmationStatus',
-        'resolutions': 'resolutions',
-        'slot_value': 'slotValue'
+        'resolutions': 'resolutions'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, name=None, value=None, confirmation_status=None, resolutions=None, slot_value=None):
-        # type: (Optional[str], Optional[str], Optional[SlotConfirmationStatus], Optional[Resolutions], Optional[SlotValue]) -> None
-        """
+    def __init__(self, value=None, resolutions=None):
+        # type: (Optional[str], Optional[Resolutions]) -> None
+        """Slot value containing a single string value and resolutions.
 
-        :param name: A string that represents the name of the slot.
-        :type name: (optional) str
         :param value: A string that represents the value the user spoke for the slot. This is the actual value the user spoke, not necessarily the canonical value or one of the synonyms defined for the entity. Note that AMAZON.LITERAL slot values sent to your service are always in all lower case.
         :type value: (optional) str
-        :param confirmation_status: Indication of whether an intent or slot has been explicitly confirmed or denied by the user, or neither.
-        :type confirmation_status: (optional) ask_sdk_model.slot_confirmation_status.SlotConfirmationStatus
-        :param resolutions: Contains the resultsof entity resolution. These are organized by authority. An authority represents the source for the data provided for the slot. For a custom slot type, the authority is the slot type you defined.
+        :param resolutions: Contains the results of entity resolution. These are organized by authority. An authority represents the source for the data provided for the slot. For a custom slot type, the authority is the slot type you defined.
         :type resolutions: (optional) ask_sdk_model.slu.entityresolution.resolutions.Resolutions
-        :param slot_value: Object representing the value of the slot.
-        :type slot_value: (optional) ask_sdk_model.slot_value.SlotValue
         """
-        self.__discriminator_value = None  # type: str
+        self.__discriminator_value = "Simple"  # type: str
 
-        self.name = name
+        self.object_type = self.__discriminator_value
+        super(SimpleSlotValue, self).__init__(object_type=self.__discriminator_value)
         self.value = value
-        self.confirmation_status = confirmation_status
         self.resolutions = resolutions
-        self.slot_value = slot_value
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -126,7 +110,7 @@ class Slot(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Slot):
+        if not isinstance(other, SimpleSlotValue):
             return False
 
         return self.__dict__ == other.__dict__
