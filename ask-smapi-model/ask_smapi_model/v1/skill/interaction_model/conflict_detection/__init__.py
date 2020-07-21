@@ -18,7 +18,6 @@ from .get_conflicts_response_result import GetConflictsResponseResult
 from .pagination_context import PaginationContext
 from .conflict_result import ConflictResult
 from .get_conflicts_response import GetConflictsResponse
-from .conflict_intent_slots import ConflictIntentSlots
 from .conflict_intent_slot import ConflictIntentSlot
 from .get_conflict_detection_job_status_response import GetConflictDetectionJobStatusResponse
 from .conflict_intent import ConflictIntent

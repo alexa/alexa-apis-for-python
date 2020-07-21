@@ -23,6 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
+    from ask_smapi_model.v1.skill.interaction_model.multiple_values_config import MultipleValuesConfigV1
 
 
 class SlotDefinition(object):
@@ -34,6 +35,8 @@ class SlotDefinition(object):
     :type name: (optional) str
     :param object_type: The type of the slot. It can be a built-in or custom type.
     :type object_type: (optional) str
+    :param multiple_values: Configuration object for multiple values capturing behavior for this slot.
+    :type multiple_values: (optional) ask_smapi_model.v1.skill.interaction_model.multiple_values_config.MultipleValuesConfig
     :param samples: Phrases the user can speak e.g. to trigger an intent or provide value for a slot elicitation.
     :type samples: (optional) list[str]
 
@@ -41,24 +44,28 @@ class SlotDefinition(object):
     deserialized_types = {
         'name': 'str',
         'object_type': 'str',
+        'multiple_values': 'ask_smapi_model.v1.skill.interaction_model.multiple_values_config.MultipleValuesConfig',
         'samples': 'list[str]'
     }  # type: Dict
 
     attribute_map = {
         'name': 'name',
         'object_type': 'type',
+        'multiple_values': 'multipleValues',
         'samples': 'samples'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, name=None, object_type=None, samples=None):
-        # type: (Optional[str], Optional[str], Optional[List[object]]) -> None
+    def __init__(self, name=None, object_type=None, multiple_values=None, samples=None):
+        # type: (Optional[str], Optional[str], Optional[MultipleValuesConfigV1], Optional[List[object]]) -> None
         """Slot definition.
 
         :param name: The name of the slot.
         :type name: (optional) str
         :param object_type: The type of the slot. It can be a built-in or custom type.
         :type object_type: (optional) str
+        :param multiple_values: Configuration object for multiple values capturing behavior for this slot.
+        :type multiple_values: (optional) ask_smapi_model.v1.skill.interaction_model.multiple_values_config.MultipleValuesConfig
         :param samples: Phrases the user can speak e.g. to trigger an intent or provide value for a slot elicitation.
         :type samples: (optional) list[str]
         """
@@ -66,6 +73,7 @@ class SlotDefinition(object):
 
         self.name = name
         self.object_type = object_type
+        self.multiple_values = multiple_values
         self.samples = samples
 
     def to_dict(self):

@@ -23,42 +23,59 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot import ConflictIntentSlotV1
+    from ask_smapi_model.v1.links import LinksV1
+    from ask_smapi_model.v1.skill.skill_version import SkillVersionV1
 
 
-class ConflictIntent(object):
+class ListSkillVersionsResponse(object):
     """
+    List of all skill versions
 
-    :param name: Conflict intent name
-    :type name: (optional) str
-    :param slots: List of conflict intent slots
-    :type slots: (optional) dict(str, ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot.ConflictIntentSlot)
+
+    :param links: 
+    :type links: (optional) ask_smapi_model.v1.links.Links
+    :param skill_versions: Skill version metadata
+    :type skill_versions: (optional) list[ask_smapi_model.v1.skill.skill_version.SkillVersion]
+    :param is_truncated: 
+    :type is_truncated: (optional) bool
+    :param next_token: 
+    :type next_token: (optional) str
 
     """
     deserialized_types = {
-        'name': 'str',
-        'slots': 'dict(str, ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot.ConflictIntentSlot)'
+        'links': 'ask_smapi_model.v1.links.Links',
+        'skill_versions': 'list[ask_smapi_model.v1.skill.skill_version.SkillVersion]',
+        'is_truncated': 'bool',
+        'next_token': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'name': 'name',
-        'slots': 'slots'
+        'links': '_links',
+        'skill_versions': 'skillVersions',
+        'is_truncated': 'isTruncated',
+        'next_token': 'nextToken'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, name=None, slots=None):
-        # type: (Optional[str], Optional[Dict[str, ConflictIntentSlotV1]]) -> None
-        """
+    def __init__(self, links=None, skill_versions=None, is_truncated=None, next_token=None):
+        # type: (Optional[LinksV1], Optional[List[SkillVersionV1]], Optional[bool], Optional[str]) -> None
+        """List of all skill versions
 
-        :param name: Conflict intent name
-        :type name: (optional) str
-        :param slots: List of conflict intent slots
-        :type slots: (optional) dict(str, ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot.ConflictIntentSlot)
+        :param links: 
+        :type links: (optional) ask_smapi_model.v1.links.Links
+        :param skill_versions: Skill version metadata
+        :type skill_versions: (optional) list[ask_smapi_model.v1.skill.skill_version.SkillVersion]
+        :param is_truncated: 
+        :type is_truncated: (optional) bool
+        :param next_token: 
+        :type next_token: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
-        self.name = name
-        self.slots = slots
+        self.links = links
+        self.skill_versions = skill_versions
+        self.is_truncated = is_truncated
+        self.next_token = next_token
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -103,7 +120,7 @@ class ConflictIntent(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, ConflictIntent):
+        if not isinstance(other, ListSkillVersionsResponse):
             return False
 
         return self.__dict__ == other.__dict__

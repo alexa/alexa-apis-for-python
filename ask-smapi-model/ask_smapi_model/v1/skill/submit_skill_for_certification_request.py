@@ -31,27 +31,34 @@ class SubmitSkillForCertificationRequest(object):
 
     :param publication_method: 
     :type publication_method: (optional) ask_smapi_model.v1.skill.publication_method.PublicationMethod
+    :param version_message: Description of the version (limited to 300 characters).
+    :type version_message: (optional) str
 
     """
     deserialized_types = {
-        'publication_method': 'ask_smapi_model.v1.skill.publication_method.PublicationMethod'
+        'publication_method': 'ask_smapi_model.v1.skill.publication_method.PublicationMethod',
+        'version_message': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'publication_method': 'publicationMethod'
+        'publication_method': 'publicationMethod',
+        'version_message': 'versionMessage'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, publication_method=None):
-        # type: (Optional[PublicationMethodV1]) -> None
+    def __init__(self, publication_method=None, version_message=None):
+        # type: (Optional[PublicationMethodV1], Optional[str]) -> None
         """
 
         :param publication_method: 
         :type publication_method: (optional) ask_smapi_model.v1.skill.publication_method.PublicationMethod
+        :param version_message: Description of the version (limited to 300 characters).
+        :type version_message: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
         self.publication_method = publication_method
+        self.version_message = version_message
 
     def to_dict(self):
         # type: () -> Dict[str, object]

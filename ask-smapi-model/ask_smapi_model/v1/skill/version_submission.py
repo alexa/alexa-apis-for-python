@@ -23,42 +23,44 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot import ConflictIntentSlotV1
+    from ask_smapi_model.v1.skill.version_submission_status import VersionSubmissionStatusV1
 
 
-class ConflictIntent(object):
+class VersionSubmission(object):
     """
+    Submission for a skill version 
 
-    :param name: Conflict intent name
-    :type name: (optional) str
-    :param slots: List of conflict intent slots
-    :type slots: (optional) dict(str, ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot.ConflictIntentSlot)
+
+    :param status: 
+    :type status: (optional) ask_smapi_model.v1.skill.version_submission_status.VersionSubmissionStatus
+    :param submission_time: 
+    :type submission_time: (optional) datetime
 
     """
     deserialized_types = {
-        'name': 'str',
-        'slots': 'dict(str, ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot.ConflictIntentSlot)'
+        'status': 'ask_smapi_model.v1.skill.version_submission_status.VersionSubmissionStatus',
+        'submission_time': 'datetime'
     }  # type: Dict
 
     attribute_map = {
-        'name': 'name',
-        'slots': 'slots'
+        'status': 'status',
+        'submission_time': 'submissionTime'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, name=None, slots=None):
-        # type: (Optional[str], Optional[Dict[str, ConflictIntentSlotV1]]) -> None
-        """
+    def __init__(self, status=None, submission_time=None):
+        # type: (Optional[VersionSubmissionStatusV1], Optional[datetime]) -> None
+        """Submission for a skill version 
 
-        :param name: Conflict intent name
-        :type name: (optional) str
-        :param slots: List of conflict intent slots
-        :type slots: (optional) dict(str, ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot.ConflictIntentSlot)
+        :param status: 
+        :type status: (optional) ask_smapi_model.v1.skill.version_submission_status.VersionSubmissionStatus
+        :param submission_time: 
+        :type submission_time: (optional) datetime
         """
         self.__discriminator_value = None  # type: str
 
-        self.name = name
-        self.slots = slots
+        self.status = status
+        self.submission_time = submission_time
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -103,7 +105,7 @@ class ConflictIntent(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, ConflictIntent):
+        if not isinstance(other, VersionSubmission):
             return False
 
         return self.__dict__ == other.__dict__

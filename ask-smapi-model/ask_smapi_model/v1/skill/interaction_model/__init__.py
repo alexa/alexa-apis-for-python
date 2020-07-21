@@ -17,6 +17,7 @@ from __future__ import absolute_import
 from .dialog_prompts import DialogPrompts
 from .prompt_items import PromptItems
 from .has_entity_resolution_match import HasEntityResolutionMatch
+from .multiple_values_config import MultipleValuesConfig
 from .is_less_than import IsLessThan
 from .is_not_in_set import IsNotInSet
 from .dialog_intents import DialogIntents

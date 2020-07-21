@@ -23,42 +23,66 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot import ConflictIntentSlotV1
+    from ask_smapi_model.v1.skill.standardized_error import StandardizedErrorV1
+    from ask_smapi_model.v1.skill.rollback_request_status_types import RollbackRequestStatusTypesV1
 
 
-class ConflictIntent(object):
+class RollbackRequestStatus(object):
     """
+    Rollback request for a skill
 
-    :param name: Conflict intent name
-    :type name: (optional) str
-    :param slots: List of conflict intent slots
-    :type slots: (optional) dict(str, ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot.ConflictIntentSlot)
+
+    :param id: rollback request id
+    :type id: (optional) str
+    :param target_version: The target skill version to rollback to.
+    :type target_version: (optional) str
+    :param submission_time: 
+    :type submission_time: (optional) datetime
+    :param status: 
+    :type status: (optional) ask_smapi_model.v1.skill.rollback_request_status_types.RollbackRequestStatusTypes
+    :param errors: 
+    :type errors: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
 
     """
     deserialized_types = {
-        'name': 'str',
-        'slots': 'dict(str, ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot.ConflictIntentSlot)'
+        'id': 'str',
+        'target_version': 'str',
+        'submission_time': 'datetime',
+        'status': 'ask_smapi_model.v1.skill.rollback_request_status_types.RollbackRequestStatusTypes',
+        'errors': 'list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]'
     }  # type: Dict
 
     attribute_map = {
-        'name': 'name',
-        'slots': 'slots'
+        'id': 'id',
+        'target_version': 'targetVersion',
+        'submission_time': 'submissionTime',
+        'status': 'status',
+        'errors': 'errors'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, name=None, slots=None):
-        # type: (Optional[str], Optional[Dict[str, ConflictIntentSlotV1]]) -> None
-        """
+    def __init__(self, id=None, target_version=None, submission_time=None, status=None, errors=None):
+        # type: (Optional[str], Optional[str], Optional[datetime], Optional[RollbackRequestStatusTypesV1], Optional[List[StandardizedErrorV1]]) -> None
+        """Rollback request for a skill
 
-        :param name: Conflict intent name
-        :type name: (optional) str
-        :param slots: List of conflict intent slots
-        :type slots: (optional) dict(str, ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot.ConflictIntentSlot)
+        :param id: rollback request id
+        :type id: (optional) str
+        :param target_version: The target skill version to rollback to.
+        :type target_version: (optional) str
+        :param submission_time: 
+        :type submission_time: (optional) datetime
+        :param status: 
+        :type status: (optional) ask_smapi_model.v1.skill.rollback_request_status_types.RollbackRequestStatusTypes
+        :param errors: 
+        :type errors: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
         """
         self.__discriminator_value = None  # type: str
 
-        self.name = name
-        self.slots = slots
+        self.id = id
+        self.target_version = target_version
+        self.submission_time = submission_time
+        self.status = status
+        self.errors = errors
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -103,7 +127,7 @@ class ConflictIntent(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, ConflictIntent):
+        if not isinstance(other, RollbackRequestStatus):
             return False
 
         return self.__dict__ == other.__dict__

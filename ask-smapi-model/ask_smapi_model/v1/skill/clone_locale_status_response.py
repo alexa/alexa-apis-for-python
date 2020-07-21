@@ -23,42 +23,60 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot import ConflictIntentSlotV1
+    from ask_smapi_model.clone_locale_resource_status import CloneLocaleResourceStatus
+    from ask_smapi_model.v1.skill.clone_locale_request_status import CloneLocaleRequestStatusV1
+    from ask_smapi_model.v1.skill.standardized_error import StandardizedErrorV1
 
 
-class ConflictIntent(object):
+class CloneLocaleStatusResponse(object):
     """
+    A mapping of statuses per locale detailing progress of resource or error if encountered.
 
-    :param name: Conflict intent name
-    :type name: (optional) str
-    :param slots: List of conflict intent slots
-    :type slots: (optional) dict(str, ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot.ConflictIntentSlot)
+
+    :param status: 
+    :type status: (optional) ask_smapi_model.v1.skill.clone_locale_request_status.CloneLocaleRequestStatus
+    :param errors: 
+    :type errors: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
+    :param source_locale: source locale which is cloned to target locales.
+    :type source_locale: (optional) str
+    :param target_locales: Mapping of statuses per locale.
+    :type target_locales: (optional) dict(str, ask_smapi_model.clone_locale_resource_status.CloneLocaleResourceStatus)
 
     """
     deserialized_types = {
-        'name': 'str',
-        'slots': 'dict(str, ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot.ConflictIntentSlot)'
+        'status': 'ask_smapi_model.v1.skill.clone_locale_request_status.CloneLocaleRequestStatus',
+        'errors': 'list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]',
+        'source_locale': 'str',
+        'target_locales': 'dict(str, ask_smapi_model.clone_locale_resource_status.CloneLocaleResourceStatus)'
     }  # type: Dict
 
     attribute_map = {
-        'name': 'name',
-        'slots': 'slots'
+        'status': 'status',
+        'errors': 'errors',
+        'source_locale': 'sourceLocale',
+        'target_locales': 'targetLocales'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, name=None, slots=None):
-        # type: (Optional[str], Optional[Dict[str, ConflictIntentSlotV1]]) -> None
-        """
+    def __init__(self, status=None, errors=None, source_locale=None, target_locales=None):
+        # type: (Optional[CloneLocaleRequestStatusV1], Optional[List[StandardizedErrorV1]], Optional[str], Optional[Dict[str, CloneLocaleResourceStatus]]) -> None
+        """A mapping of statuses per locale detailing progress of resource or error if encountered.
 
-        :param name: Conflict intent name
-        :type name: (optional) str
-        :param slots: List of conflict intent slots
-        :type slots: (optional) dict(str, ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot.ConflictIntentSlot)
+        :param status: 
+        :type status: (optional) ask_smapi_model.v1.skill.clone_locale_request_status.CloneLocaleRequestStatus
+        :param errors: 
+        :type errors: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
+        :param source_locale: source locale which is cloned to target locales.
+        :type source_locale: (optional) str
+        :param target_locales: Mapping of statuses per locale.
+        :type target_locales: (optional) dict(str, ask_smapi_model.clone_locale_resource_status.CloneLocaleResourceStatus)
         """
         self.__discriminator_value = None  # type: str
 
-        self.name = name
-        self.slots = slots
+        self.status = status
+        self.errors = errors
+        self.source_locale = source_locale
+        self.target_locales = target_locales
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -103,7 +121,7 @@ class ConflictIntent(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, ConflictIntent):
+        if not isinstance(other, CloneLocaleStatusResponse):
             return False
 
         return self.__dict__ == other.__dict__

@@ -23,42 +23,45 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot import ConflictIntentSlotV1
+    from ask_smapi_model.v1.skill.standardized_error import StandardizedErrorV1
+    from ask_smapi_model.clone_locale_status import CloneLocaleStatus
 
 
-class ConflictIntent(object):
+class CloneLocaleResourceStatus(object):
     """
+    an object detailing the status of a locale clone request and if applicable the errors occurred when saving/building resources during clone process.
 
-    :param name: Conflict intent name
-    :type name: (optional) str
-    :param slots: List of conflict intent slots
-    :type slots: (optional) dict(str, ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot.ConflictIntentSlot)
+
+    :param status: 
+    :type status: (optional) ask_smapi_model.clone_locale_status.CloneLocaleStatus
+    :param errors: 
+    :type errors: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
 
     """
     deserialized_types = {
-        'name': 'str',
-        'slots': 'dict(str, ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot.ConflictIntentSlot)'
+        'status': 'ask_smapi_model.clone_locale_status.CloneLocaleStatus',
+        'errors': 'list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]'
     }  # type: Dict
 
     attribute_map = {
-        'name': 'name',
-        'slots': 'slots'
+        'status': 'status',
+        'errors': 'errors'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, name=None, slots=None):
-        # type: (Optional[str], Optional[Dict[str, ConflictIntentSlotV1]]) -> None
-        """
+    def __init__(self, status=None, errors=None):
+        # type: (Optional[CloneLocaleStatus], Optional[List[StandardizedErrorV1]]) -> None
+        """an object detailing the status of a locale clone request and if applicable the errors occurred when saving/building resources during clone process.
 
-        :param name: Conflict intent name
-        :type name: (optional) str
-        :param slots: List of conflict intent slots
-        :type slots: (optional) dict(str, ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot.ConflictIntentSlot)
+        :param status: 
+        :type status: (optional) ask_smapi_model.clone_locale_status.CloneLocaleStatus
+        :param errors: 
+        :type errors: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
         """
         self.__discriminator_value = None  # type: str
 
-        self.name = name
-        self.slots = slots
+        self.status = status
+        self.errors = errors
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -103,7 +106,7 @@ class ConflictIntent(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, ConflictIntent):
+        if not isinstance(other, CloneLocaleResourceStatus):
             return False
 
         return self.__dict__ == other.__dict__

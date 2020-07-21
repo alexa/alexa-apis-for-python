@@ -24,6 +24,7 @@ if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
     from ask_smapi_model.v1.skill.account_linking.account_linking_type import AccountLinkingTypeV1
+    from ask_smapi_model.v1.skill.account_linking.account_linking_platform_authorization_url import AccountLinkingPlatformAuthorizationUrlV1
     from ask_smapi_model.v1.skill.account_linking.access_token_scheme_type import AccessTokenSchemeTypeV1
 
 
@@ -54,6 +55,8 @@ class AccountLinkingRequest(object):
     :type reciprocal_access_token_url: (optional) str
     :param redirect_urls: The list of valid urls to redirect back to, when the linking process is initiated from a third party system.
     :type redirect_urls: (optional) list[str]
+    :param authorization_urls_by_platform: The list of valid authorization urls for allowed platforms to initiate account linking.
+    :type authorization_urls_by_platform: (optional) list[ask_smapi_model.v1.skill.account_linking.account_linking_platform_authorization_url.AccountLinkingPlatformAuthorizationUrl]
 
     """
     deserialized_types = {
@@ -67,7 +70,8 @@ class AccountLinkingRequest(object):
         'access_token_scheme': 'ask_smapi_model.v1.skill.account_linking.access_token_scheme_type.AccessTokenSchemeType',
         'default_token_expiration_in_seconds': 'int',
         'reciprocal_access_token_url': 'str',
-        'redirect_urls': 'list[str]'
+        'redirect_urls': 'list[str]',
+        'authorization_urls_by_platform': 'list[ask_smapi_model.v1.skill.account_linking.account_linking_platform_authorization_url.AccountLinkingPlatformAuthorizationUrl]'
     }  # type: Dict
 
     attribute_map = {
@@ -81,12 +85,13 @@ class AccountLinkingRequest(object):
         'access_token_scheme': 'accessTokenScheme',
         'default_token_expiration_in_seconds': 'defaultTokenExpirationInSeconds',
         'reciprocal_access_token_url': 'reciprocalAccessTokenUrl',
-        'redirect_urls': 'redirectUrls'
+        'redirect_urls': 'redirectUrls',
+        'authorization_urls_by_platform': 'authorizationUrlsByPlatform'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, object_type=None, authorization_url=None, domains=None, client_id=None, scopes=None, access_token_url=None, client_secret=None, access_token_scheme=None, default_token_expiration_in_seconds=None, reciprocal_access_token_url=None, redirect_urls=None):
-        # type: (Optional[AccountLinkingTypeV1], Optional[str], Optional[List[object]], Optional[str], Optional[List[object]], Optional[str], Optional[str], Optional[AccessTokenSchemeTypeV1], Optional[int], Optional[str], Optional[List[object]]) -> None
+    def __init__(self, object_type=None, authorization_url=None, domains=None, client_id=None, scopes=None, access_token_url=None, client_secret=None, access_token_scheme=None, default_token_expiration_in_seconds=None, reciprocal_access_token_url=None, redirect_urls=None, authorization_urls_by_platform=None):
+        # type: (Optional[AccountLinkingTypeV1], Optional[str], Optional[List[object]], Optional[str], Optional[List[object]], Optional[str], Optional[str], Optional[AccessTokenSchemeTypeV1], Optional[int], Optional[str], Optional[List[object]], Optional[List[AccountLinkingPlatformAuthorizationUrlV1]]) -> None
         """The payload for creating the account linking partner.
 
         :param object_type: 
@@ -111,6 +116,8 @@ class AccountLinkingRequest(object):
         :type reciprocal_access_token_url: (optional) str
         :param redirect_urls: The list of valid urls to redirect back to, when the linking process is initiated from a third party system.
         :type redirect_urls: (optional) list[str]
+        :param authorization_urls_by_platform: The list of valid authorization urls for allowed platforms to initiate account linking.
+        :type authorization_urls_by_platform: (optional) list[ask_smapi_model.v1.skill.account_linking.account_linking_platform_authorization_url.AccountLinkingPlatformAuthorizationUrl]
         """
         self.__discriminator_value = None  # type: str
 
@@ -125,6 +132,7 @@ class AccountLinkingRequest(object):
         self.default_token_expiration_in_seconds = default_token_expiration_in_seconds
         self.reciprocal_access_token_url = reciprocal_access_token_url
         self.redirect_urls = redirect_urls
+        self.authorization_urls_by_platform = authorization_urls_by_platform
 
     def to_dict(self):
         # type: () -> Dict[str, object]

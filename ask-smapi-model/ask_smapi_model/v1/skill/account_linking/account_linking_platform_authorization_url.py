@@ -23,42 +23,44 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot import ConflictIntentSlotV1
+    from ask_smapi_model.v1.skill.account_linking.platform_type import PlatformTypeV1
 
 
-class ConflictIntent(object):
+class AccountLinkingPlatformAuthorizationUrl(object):
     """
+    A key-value pair object that contains the OAuth2 authorization url to initiate the skill account linking process.
 
-    :param name: Conflict intent name
-    :type name: (optional) str
-    :param slots: List of conflict intent slots
-    :type slots: (optional) dict(str, ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot.ConflictIntentSlot)
+
+    :param platform_type: 
+    :type platform_type: (optional) ask_smapi_model.v1.skill.account_linking.platform_type.PlatformType
+    :param platform_authorization_url: Defines the OAuth2 Authorization URL that will be used in this platform to authenticate the customer / person.
+    :type platform_authorization_url: (optional) str
 
     """
     deserialized_types = {
-        'name': 'str',
-        'slots': 'dict(str, ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot.ConflictIntentSlot)'
+        'platform_type': 'ask_smapi_model.v1.skill.account_linking.platform_type.PlatformType',
+        'platform_authorization_url': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'name': 'name',
-        'slots': 'slots'
+        'platform_type': 'platformType',
+        'platform_authorization_url': 'platformAuthorizationUrl'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, name=None, slots=None):
-        # type: (Optional[str], Optional[Dict[str, ConflictIntentSlotV1]]) -> None
-        """
+    def __init__(self, platform_type=None, platform_authorization_url=None):
+        # type: (Optional[PlatformTypeV1], Optional[str]) -> None
+        """A key-value pair object that contains the OAuth2 authorization url to initiate the skill account linking process.
 
-        :param name: Conflict intent name
-        :type name: (optional) str
-        :param slots: List of conflict intent slots
-        :type slots: (optional) dict(str, ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot.ConflictIntentSlot)
+        :param platform_type: 
+        :type platform_type: (optional) ask_smapi_model.v1.skill.account_linking.platform_type.PlatformType
+        :param platform_authorization_url: Defines the OAuth2 Authorization URL that will be used in this platform to authenticate the customer / person.
+        :type platform_authorization_url: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
-        self.name = name
-        self.slots = slots
+        self.platform_type = platform_type
+        self.platform_authorization_url = platform_authorization_url
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -103,7 +105,7 @@ class ConflictIntent(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, ConflictIntent):
+        if not isinstance(other, AccountLinkingPlatformAuthorizationUrl):
             return False
 
         return self.__dict__ == other.__dict__

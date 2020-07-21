@@ -99,3 +99,11 @@ This release contains the following changes :
 
 - New models for `ASR evaluations API <https://developer.amazon.com/en-US/docs/alexa/asr/about-asr.html>`__
 - minor bug fixes in existing models.
+
+
+1.7.0
+~~~~~
+
+This release contains the following changes : 
+
+- general bug fixes and updates

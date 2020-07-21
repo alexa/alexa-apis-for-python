@@ -14,3 +14,5 @@
 #
 from __future__ import absolute_import
 
+from .clone_locale_status import CloneLocaleStatus
+from .clone_locale_resource_status import CloneLocaleResourceStatus

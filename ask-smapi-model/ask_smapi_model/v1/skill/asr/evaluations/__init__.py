@@ -21,7 +21,6 @@ from .audio_asset import AudioAsset
 from .pagination_context import PaginationContext
 from .evaluation_status import EvaluationStatus
 from .annotation_with_audio_asset import AnnotationWithAudioAsset
-from .audio_asset_download_url_expiry_time import AudioAssetDownloadUrlExpiryTime
 from .annotation import Annotation
 from .list_asr_evaluations_response import ListAsrEvaluationsResponse
 from .evaluation_metadata_result import EvaluationMetadataResult
@@ -32,6 +31,5 @@ from .get_asr_evaluation_status_response_object import GetAsrEvaluationStatusRes
 from .evaluation_result import EvaluationResult
 from .evaluation_result_status import EvaluationResultStatus
 from .post_asr_evaluations_request_object import PostAsrEvaluationsRequestObject
-from .audio_asset_download_url import AudioAssetDownloadUrl
 from .get_asr_evaluations_results_response import GetAsrEvaluationsResultsResponse
 from .metrics import Metrics

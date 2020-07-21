@@ -23,28 +23,58 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
+    from ask_smapi_model.v1.skill.version_submission import VersionSubmissionV1
 
 
-class AudioAssetDownloadUrlExpiryTime(object):
+class SkillVersion(object):
     """
-    timestamp when the audio download url expire in ISO 8601 format
+    Information about the skill version
 
 
+    :param version: 
+    :type version: (optional) str
+    :param message: Description of the version (limited to 300 characters). 
+    :type message: (optional) str
+    :param creation_time: 
+    :type creation_time: (optional) datetime
+    :param submissions: List of submissions for the skill version 
+    :type submissions: (optional) list[ask_smapi_model.v1.skill.version_submission.VersionSubmission]
 
     """
     deserialized_types = {
+        'version': 'str',
+        'message': 'str',
+        'creation_time': 'datetime',
+        'submissions': 'list[ask_smapi_model.v1.skill.version_submission.VersionSubmission]'
     }  # type: Dict
 
     attribute_map = {
+        'version': 'version',
+        'message': 'message',
+        'creation_time': 'creationTime',
+        'submissions': 'submissions'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self):
-        # type: () -> None
-        """timestamp when the audio download url expire in ISO 8601 format
+    def __init__(self, version=None, message=None, creation_time=None, submissions=None):
+        # type: (Optional[str], Optional[str], Optional[datetime], Optional[List[VersionSubmissionV1]]) -> None
+        """Information about the skill version
 
+        :param version: 
+        :type version: (optional) str
+        :param message: Description of the version (limited to 300 characters). 
+        :type message: (optional) str
+        :param creation_time: 
+        :type creation_time: (optional) datetime
+        :param submissions: List of submissions for the skill version 
+        :type submissions: (optional) list[ask_smapi_model.v1.skill.version_submission.VersionSubmission]
         """
         self.__discriminator_value = None  # type: str
+
+        self.version = version
+        self.message = message
+        self.creation_time = creation_time
+        self.submissions = submissions
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -89,7 +119,7 @@ class AudioAssetDownloadUrlExpiryTime(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, AudioAssetDownloadUrlExpiryTime):
+        if not isinstance(other, SkillVersion):
             return False
 
         return self.__dict__ == other.__dict__

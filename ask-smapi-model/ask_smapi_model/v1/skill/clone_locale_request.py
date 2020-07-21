@@ -18,35 +18,56 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
-from  import null&lt;String, ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot.ConflictIntentSlot&gt;
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
+    from ask_smapi_model.v1.skill.overwrite_mode import OverwriteModeV1
 
 
-class ConflictIntentSlots(null&lt;String, ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot.ConflictIntentSlot&gt;):
+class CloneLocaleRequest(object):
     """
-    List of conflict intent slots
+    Defines the request body for the cloneLocale API.
 
 
+    :param source_locale: Locale with the assets that will be cloned.
+    :type source_locale: (optional) str
+    :param target_locales: A list of locale(s) where the assets will be copied to.
+    :type target_locales: (optional) list[str]
+    :param overwrite_mode: Can locale of skill be overwritten. Default value is DO_NOT_OVERWRITE.
+    :type overwrite_mode: (optional) ask_smapi_model.v1.skill.overwrite_mode.OverwriteMode
 
     """
     deserialized_types = {
+        'source_locale': 'str',
+        'target_locales': 'list[str]',
+        'overwrite_mode': 'ask_smapi_model.v1.skill.overwrite_mode.OverwriteMode'
     }  # type: Dict
 
     attribute_map = {
+        'source_locale': 'sourceLocale',
+        'target_locales': 'targetLocales',
+        'overwrite_mode': 'overwriteMode'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self):
-        # type: () -> None
-        """List of conflict intent slots
+    def __init__(self, source_locale=None, target_locales=None, overwrite_mode=None):
+        # type: (Optional[str], Optional[List[object]], Optional[OverwriteModeV1]) -> None
+        """Defines the request body for the cloneLocale API.
 
+        :param source_locale: Locale with the assets that will be cloned.
+        :type source_locale: (optional) str
+        :param target_locales: A list of locale(s) where the assets will be copied to.
+        :type target_locales: (optional) list[str]
+        :param overwrite_mode: Can locale of skill be overwritten. Default value is DO_NOT_OVERWRITE.
+        :type overwrite_mode: (optional) ask_smapi_model.v1.skill.overwrite_mode.OverwriteMode
         """
         self.__discriminator_value = None  # type: str
-        super(ConflictIntentSlots, self).__init__()
+
+        self.source_locale = source_locale
+        self.target_locales = target_locales
+        self.overwrite_mode = overwrite_mode
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -91,7 +112,7 @@ class ConflictIntentSlots(null&lt;String, ask_smapi_model.v1.skill.interaction_m
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, ConflictIntentSlots):
+        if not isinstance(other, CloneLocaleRequest):
             return False
 
         return self.__dict__ == other.__dict__
