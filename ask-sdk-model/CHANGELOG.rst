@@ -316,3 +316,11 @@ This release contains the following changes :
 This release contains the following changes : 
 
 - general bug fixes and updates
+
+
+1.24.0
+~~~~~~
+
+This release contains the following changes :
+
+- general bug fixes and updates

@@ -41,6 +41,8 @@ class Response(object):
     :type reprompt: (optional) ask_sdk_model.ui.reprompt.Reprompt
     :param directives: 
     :type directives: (optional) list[ask_sdk_model.directive.Directive]
+    :param api_response: API response object containing API response value(s)
+    :type api_response: (optional) object
     :param should_end_session: 
     :type should_end_session: (optional) bool
     :param can_fulfill_intent: 
@@ -52,6 +54,7 @@ class Response(object):
         'card': 'ask_sdk_model.ui.card.Card',
         'reprompt': 'ask_sdk_model.ui.reprompt.Reprompt',
         'directives': 'list[ask_sdk_model.directive.Directive]',
+        'api_response': 'object',
         'should_end_session': 'bool',
         'can_fulfill_intent': 'ask_sdk_model.canfulfill.can_fulfill_intent.CanFulfillIntent'
     }  # type: Dict
@@ -61,13 +64,14 @@ class Response(object):
         'card': 'card',
         'reprompt': 'reprompt',
         'directives': 'directives',
+        'api_response': 'apiResponse',
         'should_end_session': 'shouldEndSession',
         'can_fulfill_intent': 'canFulfillIntent'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, output_speech=None, card=None, reprompt=None, directives=None, should_end_session=None, can_fulfill_intent=None):
-        # type: (Optional[OutputSpeech], Optional[Card], Optional[Reprompt], Optional[List[Directive]], Optional[bool], Optional[CanFulfillIntent]) -> None
+    def __init__(self, output_speech=None, card=None, reprompt=None, directives=None, api_response=None, should_end_session=None, can_fulfill_intent=None):
+        # type: (Optional[OutputSpeech], Optional[Card], Optional[Reprompt], Optional[List[Directive]], Optional[object], Optional[bool], Optional[CanFulfillIntent]) -> None
         """
 
         :param output_speech: 
@@ -78,6 +82,8 @@ class Response(object):
         :type reprompt: (optional) ask_sdk_model.ui.reprompt.Reprompt
         :param directives: 
         :type directives: (optional) list[ask_sdk_model.directive.Directive]
+        :param api_response: API response object containing API response value(s)
+        :type api_response: (optional) object
         :param should_end_session: 
         :type should_end_session: (optional) bool
         :param can_fulfill_intent: 
@@ -89,6 +95,7 @@ class Response(object):
         self.card = card
         self.reprompt = reprompt
         self.directives = directives
+        self.api_response = api_response
         self.should_end_session = should_end_session
         self.can_fulfill_intent = can_fulfill_intent
 

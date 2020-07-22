@@ -59,6 +59,8 @@ class Directive(object):
         |
         | Alexa.Presentation.HTML.HandleMessage: :py:class:`ask_sdk_model.interfaces.alexa.presentation.html.handle_message_directive.HandleMessageDirective`,
         |
+        | Alexa.Presentation.APLA.RenderDocument: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apla.render_document_directive.RenderDocumentDirective`,
+        |
         | Dialog.ElicitSlot: :py:class:`ask_sdk_model.dialog.elicit_slot_directive.ElicitSlotDirective`,
         |
         | Alexa.Presentation.HTML.Start: :py:class:`ask_sdk_model.interfaces.alexa.presentation.html.start_directive.StartDirective`,
@@ -72,6 +74,8 @@ class Directive(object):
         | Alexa.Presentation.APL.ExecuteCommands: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.execute_commands_directive.ExecuteCommandsDirective`,
         |
         | Display.RenderTemplate: :py:class:`ask_sdk_model.interfaces.display.render_template_directive.RenderTemplateDirective`,
+        |
+        | Dialog.DelegateRequest: :py:class:`ask_sdk_model.dialog.delegate_request_directive.DelegateRequestDirective`,
         |
         | Hint: :py:class:`ask_sdk_model.interfaces.display.hint_directive.HintDirective`,
         |
@@ -119,6 +123,7 @@ class Directive(object):
         'Dialog.ConfirmIntent': 'ask_sdk_model.dialog.confirm_intent_directive.ConfirmIntentDirective',
         'CustomInterfaceController.SendDirective': 'ask_sdk_model.interfaces.custom_interface_controller.send_directive_directive.SendDirectiveDirective',
         'Alexa.Presentation.HTML.HandleMessage': 'ask_sdk_model.interfaces.alexa.presentation.html.handle_message_directive.HandleMessageDirective',
+        'Alexa.Presentation.APLA.RenderDocument': 'ask_sdk_model.interfaces.alexa.presentation.apla.render_document_directive.RenderDocumentDirective',
         'Dialog.ElicitSlot': 'ask_sdk_model.dialog.elicit_slot_directive.ElicitSlotDirective',
         'Alexa.Presentation.HTML.Start': 'ask_sdk_model.interfaces.alexa.presentation.html.start_directive.StartDirective',
         'AudioPlayer.Stop': 'ask_sdk_model.interfaces.audioplayer.stop_directive.StopDirective',
@@ -126,6 +131,7 @@ class Directive(object):
         'AudioPlayer.Play': 'ask_sdk_model.interfaces.audioplayer.play_directive.PlayDirective',
         'Alexa.Presentation.APL.ExecuteCommands': 'ask_sdk_model.interfaces.alexa.presentation.apl.execute_commands_directive.ExecuteCommandsDirective',
         'Display.RenderTemplate': 'ask_sdk_model.interfaces.display.render_template_directive.RenderTemplateDirective',
+        'Dialog.DelegateRequest': 'ask_sdk_model.dialog.delegate_request_directive.DelegateRequestDirective',
         'Hint': 'ask_sdk_model.interfaces.display.hint_directive.HintDirective',
         'Connections.StartConnection': 'ask_sdk_model.interfaces.connections.v1.start_connection_directive.StartConnectionDirective',
         'Alexa.Presentation.APLT.RenderDocument': 'ask_sdk_model.interfaces.alexa.presentation.aplt.render_document_directive.RenderDocumentDirective',

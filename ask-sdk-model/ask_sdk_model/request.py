@@ -115,7 +115,11 @@ class Request(object):
         |
         | Alexa.Presentation.HTML.RuntimeError: :py:class:`ask_sdk_model.interfaces.alexa.presentation.html.runtime_error_request.RuntimeErrorRequest`,
         |
+        | Dialog.InputRequest: :py:class:`ask_sdk_model.dialog.input_request.InputRequest`,
+        |
         | IntentRequest: :py:class:`ask_sdk_model.intent_request.IntentRequest`,
+        |
+        | Dialog.API.Invoked: :py:class:`ask_sdk_model.interfaces.conversations.api_invocation_request.APIInvocationRequest`,
         |
         | Reminders.ReminderStarted: :py:class:`ask_sdk_model.services.reminder_management.reminder_started_event_request.ReminderStartedEventRequest`,
         |
@@ -187,7 +191,9 @@ class Request(object):
         'Reminders.ReminderUpdated': 'ask_sdk_model.services.reminder_management.reminder_updated_event_request.ReminderUpdatedEventRequest',
         'Alexa.Presentation.APL.RuntimeError': 'ask_sdk_model.interfaces.alexa.presentation.apl.runtime_error_event.RuntimeErrorEvent',
         'Alexa.Presentation.HTML.RuntimeError': 'ask_sdk_model.interfaces.alexa.presentation.html.runtime_error_request.RuntimeErrorRequest',
+        'Dialog.InputRequest': 'ask_sdk_model.dialog.input_request.InputRequest',
         'IntentRequest': 'ask_sdk_model.intent_request.IntentRequest',
+        'Dialog.API.Invoked': 'ask_sdk_model.interfaces.conversations.api_invocation_request.APIInvocationRequest',
         'Reminders.ReminderStarted': 'ask_sdk_model.services.reminder_management.reminder_started_event_request.ReminderStartedEventRequest',
         'AudioPlayer.PlaybackStopped': 'ask_sdk_model.interfaces.audioplayer.playback_stopped_request.PlaybackStoppedRequest',
         'PlaybackController.PreviousCommandIssued': 'ask_sdk_model.interfaces.playbackcontroller.previous_command_issued_request.PreviousCommandIssuedRequest',
