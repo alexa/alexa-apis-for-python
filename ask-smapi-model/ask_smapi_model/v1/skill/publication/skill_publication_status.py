@@ -25,20 +25,19 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class CloneLocaleStatus(Enum):
+class SkillPublicationStatus(Enum):
     """
-    Status for a locale clone on a particular target locale   * &#x60;IN_PROGRESS&#x60; status would indicate the clone is still in progress to the target locale.   * &#x60;SUCCEEDED&#x60; status would indicate the source locale was cloned successfully to the target locale.   * &#x60;INELIGIBLE&#x60; status would indicate the source locale was ineligible to be cloned the target locale.   * &#x60;FAILED&#x60; status would indicate the source locale was not cloned the target locale successfully.   * &#x60;ROLLBACK_SUCCEEDED&#x60; status would indicate the locale was rollbacked to the previous state in case any failure.   * &#x60;ROLLBACK_FAILED&#x60; status would indicate that in case of failure, the rollback to the previous state of the locale was attempted, but it failed. 
+    Status of publishing
 
 
 
-    Allowed enum values: [FAILED, INELIGIBLE, IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_SUCCEEDED, SUCCEEDED]
+    Allowed enum values: [IN_PROGRESS, SUCCEEDED, FAILED, CANCELLED, SCHEDULED]
     """
-    FAILED = "FAILED"
-    INELIGIBLE = "INELIGIBLE"
     IN_PROGRESS = "IN_PROGRESS"
-    ROLLBACK_FAILED = "ROLLBACK_FAILED"
-    ROLLBACK_SUCCEEDED = "ROLLBACK_SUCCEEDED"
     SUCCEEDED = "SUCCEEDED"
+    FAILED = "FAILED"
+    CANCELLED = "CANCELLED"
+    SCHEDULED = "SCHEDULED"
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -59,7 +58,7 @@ class CloneLocaleStatus(Enum):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, CloneLocaleStatus):
+        if not isinstance(other, SkillPublicationStatus):
             return False
 
         return self.__dict__ == other.__dict__

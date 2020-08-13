@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v2.skill.invocation import InvocationV2
     from ask_smapi_model.v2.error import ErrorV2
+    from ask_smapi_model.v2.skill.simulations.skill_execution_info import SkillExecutionInfoV2
     from ask_smapi_model.v2.skill.simulations.alexa_execution_info import AlexaExecutionInfoV2
 
 
@@ -34,14 +34,14 @@ class SimulationResult(object):
     :param alexa_execution_info: 
     :type alexa_execution_info: (optional) ask_smapi_model.v2.skill.simulations.alexa_execution_info.AlexaExecutionInfo
     :param skill_execution_info: 
-    :type skill_execution_info: (optional) ask_smapi_model.v2.skill.invocation.Invocation
+    :type skill_execution_info: (optional) ask_smapi_model.v2.skill.simulations.skill_execution_info.SkillExecutionInfo
     :param error: 
     :type error: (optional) ask_smapi_model.v2.error.Error
 
     """
     deserialized_types = {
         'alexa_execution_info': 'ask_smapi_model.v2.skill.simulations.alexa_execution_info.AlexaExecutionInfo',
-        'skill_execution_info': 'ask_smapi_model.v2.skill.invocation.Invocation',
+        'skill_execution_info': 'ask_smapi_model.v2.skill.simulations.skill_execution_info.SkillExecutionInfo',
         'error': 'ask_smapi_model.v2.error.Error'
     }  # type: Dict
 
@@ -53,13 +53,13 @@ class SimulationResult(object):
     supports_multiple_types = False
 
     def __init__(self, alexa_execution_info=None, skill_execution_info=None, error=None):
-        # type: (Optional[AlexaExecutionInfoV2], Optional[InvocationV2], Optional[ErrorV2]) -> None
+        # type: (Optional[AlexaExecutionInfoV2], Optional[SkillExecutionInfoV2], Optional[ErrorV2]) -> None
         """
 
         :param alexa_execution_info: 
         :type alexa_execution_info: (optional) ask_smapi_model.v2.skill.simulations.alexa_execution_info.AlexaExecutionInfo
         :param skill_execution_info: 
-        :type skill_execution_info: (optional) ask_smapi_model.v2.skill.invocation.Invocation
+        :type skill_execution_info: (optional) ask_smapi_model.v2.skill.simulations.skill_execution_info.SkillExecutionInfo
         :param error: 
         :type error: (optional) ask_smapi_model.v2.error.Error
         """

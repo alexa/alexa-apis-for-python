@@ -107,3 +107,11 @@ This release contains the following changes :
 This release contains the following changes : 
 
 - general bug fixes and updates
+
+
+1.7.1
+^^^^^
+
+This release contains the following changes : 
+
+- general bug fixes and updates

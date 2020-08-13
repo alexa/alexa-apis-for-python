@@ -21,6 +21,7 @@ from .validation_feature import ValidationFeature
 from .skill_status import SkillStatus
 from .build_step_name import BuildStepName
 from .response_status import ResponseStatus
+from .clone_locale_status import CloneLocaleStatus
 from .create_rollback_request import CreateRollbackRequest
 from .ssl_certificate_payload import SSLCertificatePayload
 from .clone_locale_status_response import CloneLocaleStatusResponse
@@ -54,6 +55,7 @@ from .hosted_skill_deployment_status import HostedSkillDeploymentStatus
 from .create_rollback_response import CreateRollbackResponse
 from .status import Status
 from .regional_ssl_certificate import RegionalSSLCertificate
+from .clone_locale_resource_status import CloneLocaleResourceStatus
 from .import_response import ImportResponse
 from .withdraw_request import WithdrawRequest
 from .export_response_skill import ExportResponseSkill

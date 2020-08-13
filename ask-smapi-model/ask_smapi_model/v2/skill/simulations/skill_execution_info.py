@@ -23,45 +23,35 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.standardized_error import StandardizedErrorV1
-    from ask_smapi_model.clone_locale_status import CloneLocaleStatus
+    from ask_smapi_model.v2.skill.invocation import InvocationV2
 
 
-class CloneLocaleResourceStatus(object):
+class SkillExecutionInfo(object):
     """
-    an object detailing the status of a locale clone request and if applicable the errors occurred when saving/building resources during clone process.
 
-
-    :param status: 
-    :type status: (optional) ask_smapi_model.clone_locale_status.CloneLocaleStatus
-    :param errors: 
-    :type errors: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
+    :param invocations: 
+    :type invocations: (optional) list[ask_smapi_model.v2.skill.invocation.Invocation]
 
     """
     deserialized_types = {
-        'status': 'ask_smapi_model.clone_locale_status.CloneLocaleStatus',
-        'errors': 'list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]'
+        'invocations': 'list[ask_smapi_model.v2.skill.invocation.Invocation]'
     }  # type: Dict
 
     attribute_map = {
-        'status': 'status',
-        'errors': 'errors'
+        'invocations': 'invocations'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, status=None, errors=None):
-        # type: (Optional[CloneLocaleStatus], Optional[List[StandardizedErrorV1]]) -> None
-        """an object detailing the status of a locale clone request and if applicable the errors occurred when saving/building resources during clone process.
+    def __init__(self, invocations=None):
+        # type: (Optional[List[InvocationV2]]) -> None
+        """
 
-        :param status: 
-        :type status: (optional) ask_smapi_model.clone_locale_status.CloneLocaleStatus
-        :param errors: 
-        :type errors: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
+        :param invocations: 
+        :type invocations: (optional) list[ask_smapi_model.v2.skill.invocation.Invocation]
         """
         self.__discriminator_value = None  # type: str
 
-        self.status = status
-        self.errors = errors
+        self.invocations = invocations
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -106,7 +96,7 @@ class CloneLocaleResourceStatus(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, CloneLocaleResourceStatus):
+        if not isinstance(other, SkillExecutionInfo):
             return False
 
         return self.__dict__ == other.__dict__

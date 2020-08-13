@@ -102,6 +102,7 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.private.list_private_distribution_accounts_response import ListPrivateDistributionAccountsResponseV1
     from ask_smapi_model.v1.skill.history.interaction_type import InteractionTypeV1
     from ask_smapi_model.v0.catalog.upload.get_content_upload_response import GetContentUploadResponseV0
+    from ask_smapi_model.v1.skill.publication.skill_publication_response import SkillPublicationResponseV1
     from ask_smapi_model.v1.skill.asr.evaluations.get_asr_evaluation_status_response_object import GetAsrEvaluationStatusResponseObjectV1
     from ask_smapi_model.v1.skill.interaction_model.catalog.catalog_status import CatalogStatusV1
     from ask_smapi_model.v1.skill.asr.annotation_sets.get_asr_annotation_sets_properties_response import GetASRAnnotationSetsPropertiesResponseV1
@@ -116,6 +117,7 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v0.development_events.subscription.update_subscription_request import UpdateSubscriptionRequestV0
     from ask_smapi_model.v0.catalog.upload.complete_upload_request import CompleteUploadRequestV0
     from ask_smapi_model.v1.skill.nlu.evaluations.get_nlu_evaluation_response import GetNLUEvaluationResponseV1
+    from ask_smapi_model.v1.skill.publication.publish_skill_request import PublishSkillRequestV1
     from ask_smapi_model.v1.skill.interaction_model.version.catalog_update import CatalogUpdateV1
     from ask_smapi_model.v0.development_events.subscriber.update_subscriber_request import UpdateSubscriberRequestV0
     from ask_smapi_model.v1.skill.validations.validations_api_response import ValidationsApiResponseV1
@@ -8605,6 +8607,168 @@ class SkillManagementServiceClient(BaseServiceClient):
             body=body_params,
             response_definitions=error_definitions,
             response_type="ask_smapi_model.v1.skill.nlu.evaluations.evaluate_response.EvaluateResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def publish_skill_v1(self, skill_id, accept_language, **kwargs):
+        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, SkillPublicationResponseV1, BadRequestErrorV1]
+        """
+        If the skill is in certified stage, initiate publishing immediately or set a date at which the skill can publish at. 
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param accept_language: (required) User's locale/language in context.
+        :type accept_language: str
+        :param publish_skill_request: Defines the request body for publish skill API.
+        :type publish_skill_request: ask_smapi_model.v1.skill.publication.publish_skill_request.PublishSkillRequest
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, StandardizedErrorV1, SkillPublicationResponseV1, BadRequestErrorV1]
+        """
+        operation_name = "publish_skill_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'accept_language' is set
+        if ('accept_language' not in params) or (params['accept_language'] is None):
+            raise ValueError(
+                "Missing the required parameter `accept_language` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/publications'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+        if 'accept_language' in params:
+            header_params.append(('Accept-Language', params['accept_language']))
+
+        body_params = None
+        if 'publish_skill_request' in params:
+            body_params = params['publish_skill_request']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.publication.skill_publication_response.SkillPublicationResponse", status_code=202, message="Successfully processed skill publication request."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="POST",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.publication.skill_publication_response.SkillPublicationResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def get_skill_publications_v1(self, skill_id, accept_language, **kwargs):
+        # type: (str, str, **Any) -> Union[ApiResponse, StandardizedErrorV1, SkillPublicationResponseV1]
+        """
+        Retrieves the latest skill publishing details of the certified stage of the skill. The publishesAtDate and status of skill publishing. 
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param accept_language: (required) User's locale/language in context.
+        :type accept_language: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, StandardizedErrorV1, SkillPublicationResponseV1]
+        """
+        operation_name = "get_skill_publications_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'accept_language' is set
+        if ('accept_language' not in params) or (params['accept_language'] is None):
+            raise ValueError(
+                "Missing the required parameter `accept_language` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/publications/~latest'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+        if 'accept_language' in params:
+            header_params.append(('Accept-Language', params['accept_language']))
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.publication.skill_publication_response.SkillPublicationResponse", status_code=200, message="Successfully retrieved latest skill publication information."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.publication.skill_publication_response.SkillPublicationResponse")
 
         if full_response:
             return api_response

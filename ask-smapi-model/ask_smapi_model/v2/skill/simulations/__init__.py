@@ -31,5 +31,6 @@ from .device import Device
 from .alexa_response import AlexaResponse
 from .session import Session
 from .resolutions_per_authority_status import ResolutionsPerAuthorityStatus
+from .skill_execution_info import SkillExecutionInfo
 from .session_mode import SessionMode
 from .intent import Intent

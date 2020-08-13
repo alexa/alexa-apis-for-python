@@ -23,36 +23,42 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
+    from ask_smapi_model.v1.skill.publication.skill_publication_status import SkillPublicationStatusV1
 
 
-class CreateRollbackRequest(object):
+class SkillPublicationResponse(object):
     """
-    Defines the request body to create a rollback request
 
-
-    :param target_version: The target skill version to rollback to.
-    :type target_version: (optional) str
+    :param publishes_at_date: Used to determine when the skill Publishing should start.
+    :type publishes_at_date: (optional) datetime
+    :param status: 
+    :type status: (optional) ask_smapi_model.v1.skill.publication.skill_publication_status.SkillPublicationStatus
 
     """
     deserialized_types = {
-        'target_version': 'str'
+        'publishes_at_date': 'datetime',
+        'status': 'ask_smapi_model.v1.skill.publication.skill_publication_status.SkillPublicationStatus'
     }  # type: Dict
 
     attribute_map = {
-        'target_version': 'targetVersion'
+        'publishes_at_date': 'publishesAtDate',
+        'status': 'status'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, target_version=None):
-        # type: (Optional[str]) -> None
-        """Defines the request body to create a rollback request
+    def __init__(self, publishes_at_date=None, status=None):
+        # type: (Optional[datetime], Optional[SkillPublicationStatusV1]) -> None
+        """
 
-        :param target_version: The target skill version to rollback to.
-        :type target_version: (optional) str
+        :param publishes_at_date: Used to determine when the skill Publishing should start.
+        :type publishes_at_date: (optional) datetime
+        :param status: 
+        :type status: (optional) ask_smapi_model.v1.skill.publication.skill_publication_status.SkillPublicationStatus
         """
         self.__discriminator_value = None  # type: str
 
-        self.target_version = target_version
+        self.publishes_at_date = publishes_at_date
+        self.status = status
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -97,7 +103,7 @@ class CreateRollbackRequest(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, CreateRollbackRequest):
+        if not isinstance(other, SkillPublicationResponse):
             return False
 
         return self.__dict__ == other.__dict__

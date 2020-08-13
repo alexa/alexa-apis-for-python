@@ -25,34 +25,32 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class CreateRollbackRequest(object):
+class PublishSkillRequest(object):
     """
-    Defines the request body to create a rollback request
 
-
-    :param target_version: The target skill version to rollback to.
-    :type target_version: (optional) str
+    :param publishes_at_date: Used to determine when the skill Publishing should start. It takes the request timestamp as default value. The date range can be a maximum of upto 6 months from the current time stamp. The format should be the  RFC 3399 variant of ISO 8601. e.g 2019-04-12T23:20:50.52Z
+    :type publishes_at_date: (optional) datetime
 
     """
     deserialized_types = {
-        'target_version': 'str'
+        'publishes_at_date': 'datetime'
     }  # type: Dict
 
     attribute_map = {
-        'target_version': 'targetVersion'
+        'publishes_at_date': 'publishesAtDate'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, target_version=None):
-        # type: (Optional[str]) -> None
-        """Defines the request body to create a rollback request
+    def __init__(self, publishes_at_date=None):
+        # type: (Optional[datetime]) -> None
+        """
 
-        :param target_version: The target skill version to rollback to.
-        :type target_version: (optional) str
+        :param publishes_at_date: Used to determine when the skill Publishing should start. It takes the request timestamp as default value. The date range can be a maximum of upto 6 months from the current time stamp. The format should be the  RFC 3399 variant of ISO 8601. e.g 2019-04-12T23:20:50.52Z
+        :type publishes_at_date: (optional) datetime
         """
         self.__discriminator_value = None  # type: str
 
-        self.target_version = target_version
+        self.publishes_at_date = publishes_at_date
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -97,7 +95,7 @@ class CreateRollbackRequest(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, CreateRollbackRequest):
+        if not isinstance(other, PublishSkillRequest):
             return False
 
         return self.__dict__ == other.__dict__

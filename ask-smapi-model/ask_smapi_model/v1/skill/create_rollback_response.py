@@ -27,10 +27,10 @@ if typing.TYPE_CHECKING:
 
 class CreateRollbackResponse(object):
     """
-    defines the response body when a rollback request is created
+    Defines the response body when a rollback request is created
 
 
-    :param rollback_request_id: defines the identifier for a rollback request.
+    :param rollback_request_id: Defines the identifier for a rollback request.
     :type rollback_request_id: (optional) str
 
     """
@@ -45,9 +45,9 @@ class CreateRollbackResponse(object):
 
     def __init__(self, rollback_request_id=None):
         # type: (Optional[str]) -> None
-        """defines the response body when a rollback request is created
+        """Defines the response body when a rollback request is created
 
-        :param rollback_request_id: defines the identifier for a rollback request.
+        :param rollback_request_id: Defines the identifier for a rollback request.
         :type rollback_request_id: (optional) str
         """
         self.__discriminator_value = None  # type: str

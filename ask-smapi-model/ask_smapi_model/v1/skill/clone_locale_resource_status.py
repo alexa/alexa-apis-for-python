@@ -23,36 +23,45 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
+    from ask_smapi_model.v1.skill.clone_locale_status import CloneLocaleStatusV1
+    from ask_smapi_model.v1.skill.standardized_error import StandardizedErrorV1
 
 
-class CreateRollbackRequest(object):
+class CloneLocaleResourceStatus(object):
     """
-    Defines the request body to create a rollback request
+    an object detailing the status of a locale clone request and if applicable the errors occurred when saving/building resources during clone process.
 
 
-    :param target_version: The target skill version to rollback to.
-    :type target_version: (optional) str
+    :param status: 
+    :type status: (optional) ask_smapi_model.v1.skill.clone_locale_status.CloneLocaleStatus
+    :param errors: 
+    :type errors: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
 
     """
     deserialized_types = {
-        'target_version': 'str'
+        'status': 'ask_smapi_model.v1.skill.clone_locale_status.CloneLocaleStatus',
+        'errors': 'list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]'
     }  # type: Dict
 
     attribute_map = {
-        'target_version': 'targetVersion'
+        'status': 'status',
+        'errors': 'errors'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, target_version=None):
-        # type: (Optional[str]) -> None
-        """Defines the request body to create a rollback request
+    def __init__(self, status=None, errors=None):
+        # type: (Optional[CloneLocaleStatusV1], Optional[List[StandardizedErrorV1]]) -> None
+        """an object detailing the status of a locale clone request and if applicable the errors occurred when saving/building resources during clone process.
 
-        :param target_version: The target skill version to rollback to.
-        :type target_version: (optional) str
+        :param status: 
+        :type status: (optional) ask_smapi_model.v1.skill.clone_locale_status.CloneLocaleStatus
+        :param errors: 
+        :type errors: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
         """
         self.__discriminator_value = None  # type: str
 
-        self.target_version = target_version
+        self.status = status
+        self.errors = errors
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -97,7 +106,7 @@ class CreateRollbackRequest(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, CreateRollbackRequest):
+        if not isinstance(other, CloneLocaleResourceStatus):
             return False
 
         return self.__dict__ == other.__dict__

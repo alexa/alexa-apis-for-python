@@ -25,18 +25,17 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class CloneLocaleRequestStatus(Enum):
+class CloneLocaleStatus(Enum):
     """
-    Status for a locale clone request CloneLocale API initiates cloning from a source locale to all target locales.   * &#x60;IN_PROGRESS&#x60; status would indicate the clone is still in progress.   * &#x60;SUCCEEDED&#x60; status would indicate the source locale was cloned successfully to all target locales.   * &#x60;INELIGIBLE&#x60; status would indicate the source locale was ineligible to be cloned to all target locales.   * &#x60;MIXED&#x60; status would indicate the different status of clone on different locales, and individual target locale statues should be checked.   * &#x60;FAILED&#x60; status would indicate the source locale was not cloned all target locales successfully despite the request being eligible due to internal service issues.   * &#x60;ROLLBACK_SUCCEEDED&#x60; status would indicate the skill was rolled back to the previous state in case any failure.   * &#x60;ROLLBACK_FAILED&#x60; status would indicate that in case of failure, the rollback to the previous state of the skill was attempted, but it failed. 
+    Status for a locale clone on a particular target locale   * &#x60;IN_PROGRESS&#x60; status would indicate the clone is still in progress to the target locale.   * &#x60;SUCCEEDED&#x60; status would indicate the source locale was cloned successfully to the target locale.   * &#x60;INELIGIBLE&#x60; status would indicate the source locale was ineligible to be cloned the target locale.   * &#x60;FAILED&#x60; status would indicate the source locale was not cloned the target locale successfully.   * &#x60;ROLLBACK_SUCCEEDED&#x60; status would indicate the locale was rolled back to the previous state in case any failure.   * &#x60;ROLLBACK_FAILED&#x60; status would indicate that in case of failure, the rollback to the previous state of the locale was attempted, but it failed. 
 
 
 
-    Allowed enum values: [FAILED, INELIGIBLE, IN_PROGRESS, MIXED, ROLLBACK_FAILED, ROLLBACK_SUCCEEDED, SUCCEEDED]
+    Allowed enum values: [FAILED, INELIGIBLE, IN_PROGRESS, ROLLBACK_FAILED, ROLLBACK_SUCCEEDED, SUCCEEDED]
     """
     FAILED = "FAILED"
     INELIGIBLE = "INELIGIBLE"
     IN_PROGRESS = "IN_PROGRESS"
-    MIXED = "MIXED"
     ROLLBACK_FAILED = "ROLLBACK_FAILED"
     ROLLBACK_SUCCEEDED = "ROLLBACK_SUCCEEDED"
     SUCCEEDED = "SUCCEEDED"
@@ -60,7 +59,7 @@ class CloneLocaleRequestStatus(Enum):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, CloneLocaleRequestStatus):
+        if not isinstance(other, CloneLocaleStatus):
             return False
 
         return self.__dict__ == other.__dict__

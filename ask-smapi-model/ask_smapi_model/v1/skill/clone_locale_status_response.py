@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.clone_locale_resource_status import CloneLocaleResourceStatus
+    from ask_smapi_model.v1.skill.clone_locale_resource_status import CloneLocaleResourceStatusV1
     from ask_smapi_model.v1.skill.clone_locale_request_status import CloneLocaleRequestStatusV1
     from ask_smapi_model.v1.skill.standardized_error import StandardizedErrorV1
 
@@ -37,17 +37,17 @@ class CloneLocaleStatusResponse(object):
     :type status: (optional) ask_smapi_model.v1.skill.clone_locale_request_status.CloneLocaleRequestStatus
     :param errors: 
     :type errors: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
-    :param source_locale: source locale which is cloned to target locales.
+    :param source_locale: Source locale which is cloned to target locales.
     :type source_locale: (optional) str
     :param target_locales: Mapping of statuses per locale.
-    :type target_locales: (optional) dict(str, ask_smapi_model.clone_locale_resource_status.CloneLocaleResourceStatus)
+    :type target_locales: (optional) dict(str, ask_smapi_model.v1.skill.clone_locale_resource_status.CloneLocaleResourceStatus)
 
     """
     deserialized_types = {
         'status': 'ask_smapi_model.v1.skill.clone_locale_request_status.CloneLocaleRequestStatus',
         'errors': 'list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]',
         'source_locale': 'str',
-        'target_locales': 'dict(str, ask_smapi_model.clone_locale_resource_status.CloneLocaleResourceStatus)'
+        'target_locales': 'dict(str, ask_smapi_model.v1.skill.clone_locale_resource_status.CloneLocaleResourceStatus)'
     }  # type: Dict
 
     attribute_map = {
@@ -59,17 +59,17 @@ class CloneLocaleStatusResponse(object):
     supports_multiple_types = False
 
     def __init__(self, status=None, errors=None, source_locale=None, target_locales=None):
-        # type: (Optional[CloneLocaleRequestStatusV1], Optional[List[StandardizedErrorV1]], Optional[str], Optional[Dict[str, CloneLocaleResourceStatus]]) -> None
+        # type: (Optional[CloneLocaleRequestStatusV1], Optional[List[StandardizedErrorV1]], Optional[str], Optional[Dict[str, CloneLocaleResourceStatusV1]]) -> None
         """A mapping of statuses per locale detailing progress of resource or error if encountered.
 
         :param status: 
         :type status: (optional) ask_smapi_model.v1.skill.clone_locale_request_status.CloneLocaleRequestStatus
         :param errors: 
         :type errors: (optional) list[ask_smapi_model.v1.skill.standardized_error.StandardizedError]
-        :param source_locale: source locale which is cloned to target locales.
+        :param source_locale: Source locale which is cloned to target locales.
         :type source_locale: (optional) str
         :param target_locales: Mapping of statuses per locale.
-        :type target_locales: (optional) dict(str, ask_smapi_model.clone_locale_resource_status.CloneLocaleResourceStatus)
+        :type target_locales: (optional) dict(str, ask_smapi_model.v1.skill.clone_locale_resource_status.CloneLocaleResourceStatus)
         """
         self.__discriminator_value = None  # type: str
 
