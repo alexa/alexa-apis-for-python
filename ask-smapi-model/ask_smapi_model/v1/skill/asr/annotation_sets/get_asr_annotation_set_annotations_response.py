@@ -29,7 +29,7 @@ if typing.TYPE_CHECKING:
 
 class GetAsrAnnotationSetAnnotationsResponse(object):
     """
-    This the payload schema for annotation set contents. Note that &#39;audioAsset&#39; is always included in the returned annotation set content payload in case the payload content type is &#39;application/json&#39;. For &#39;text/csv&#39; annotation set content type, &#39;audioAssetDownloadUrl&#39; and &#39;audioAssetDownloadUrlExpiryTime&#39; are included in the csv headers for representing the audio download url and the expiry time of the  presigned audio download url. 
+    This is the payload schema for annotation set contents. Note that when uploadId and filePathInUpload is present, and the payload content type is &#39;application/json&#39;, audioAsset is included in the returned annotation set content payload. For &#39;text/csv&#39; annotation set content type, audioAssetDownloadUrl and audioAssetDownloadUrlExpiryTime are included in the csv headers for representing the audio download url and the expiry time of the presigned audio download. 
 
 
     :param annotations: 
@@ -51,7 +51,7 @@ class GetAsrAnnotationSetAnnotationsResponse(object):
 
     def __init__(self, annotations=None, pagination_context=None):
         # type: (Optional[List[AnnotationWithAudioAssetV1]], Optional[PaginationContextV1]) -> None
-        """This the payload schema for annotation set contents. Note that &#39;audioAsset&#39; is always included in the returned annotation set content payload in case the payload content type is &#39;application/json&#39;. For &#39;text/csv&#39; annotation set content type, &#39;audioAssetDownloadUrl&#39; and &#39;audioAssetDownloadUrlExpiryTime&#39; are included in the csv headers for representing the audio download url and the expiry time of the  presigned audio download url. 
+        """This is the payload schema for annotation set contents. Note that when uploadId and filePathInUpload is present, and the payload content type is &#39;application/json&#39;, audioAsset is included in the returned annotation set content payload. For &#39;text/csv&#39; annotation set content type, audioAssetDownloadUrl and audioAssetDownloadUrlExpiryTime are included in the csv headers for representing the audio download url and the expiry time of the presigned audio download. 
 
         :param annotations: 
         :type annotations: (optional) list[ask_smapi_model.v1.skill.asr.annotation_sets.annotation_with_audio_asset.AnnotationWithAudioAsset]

@@ -27,7 +27,7 @@ if typing.TYPE_CHECKING:
 
 class AudioAssetDownloadUrlExpiryTime(object):
     """
-    timestamp when the audio download url expire in ISO 8601 format
+    Timestamp when the audio download url expire in ISO 8601 format
 
 
 
@@ -41,7 +41,7 @@ class AudioAssetDownloadUrlExpiryTime(object):
 
     def __init__(self):
         # type: () -> None
-        """timestamp when the audio download url expire in ISO 8601 format
+        """Timestamp when the audio download url expire in ISO 8601 format
 
         """
         self.__discriminator_value = None  # type: str

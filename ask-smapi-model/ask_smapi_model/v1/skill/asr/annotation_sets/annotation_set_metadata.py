@@ -34,23 +34,27 @@ class AnnotationSetMetadata(object):
     :type annotation_count: (optional) int
     :param last_updated_timestamp: The timestamp for the most recent update of ASR annotation set
     :type last_updated_timestamp: (optional) datetime
+    :param eligible_for_evaluation: Indicates if the annotation set is eligible for evaluation. A set is not eligible for evaluation if any annotation within the set has a missing uploadId, filePathInUpload, expectedTranscription, or evaluationWeight.
+    :type eligible_for_evaluation: (optional) bool
 
     """
     deserialized_types = {
         'name': 'str',
         'annotation_count': 'int',
-        'last_updated_timestamp': 'datetime'
+        'last_updated_timestamp': 'datetime',
+        'eligible_for_evaluation': 'bool'
     }  # type: Dict
 
     attribute_map = {
         'name': 'name',
         'annotation_count': 'annotationCount',
-        'last_updated_timestamp': 'lastUpdatedTimestamp'
+        'last_updated_timestamp': 'lastUpdatedTimestamp',
+        'eligible_for_evaluation': 'eligibleForEvaluation'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, name=None, annotation_count=None, last_updated_timestamp=None):
-        # type: (Optional[str], Optional[int], Optional[datetime]) -> None
+    def __init__(self, name=None, annotation_count=None, last_updated_timestamp=None, eligible_for_evaluation=None):
+        # type: (Optional[str], Optional[int], Optional[datetime], Optional[bool]) -> None
         """
 
         :param name: Name of the ASR annotation set
@@ -59,12 +63,15 @@ class AnnotationSetMetadata(object):
         :type annotation_count: (optional) int
         :param last_updated_timestamp: The timestamp for the most recent update of ASR annotation set
         :type last_updated_timestamp: (optional) datetime
+        :param eligible_for_evaluation: Indicates if the annotation set is eligible for evaluation. A set is not eligible for evaluation if any annotation within the set has a missing uploadId, filePathInUpload, expectedTranscription, or evaluationWeight.
+        :type eligible_for_evaluation: (optional) bool
         """
         self.__discriminator_value = None  # type: str
 
         self.name = name
         self.annotation_count = annotation_count
         self.last_updated_timestamp = last_updated_timestamp
+        self.eligible_for_evaluation = eligible_for_evaluation
 
     def to_dict(self):
         # type: () -> Dict[str, object]

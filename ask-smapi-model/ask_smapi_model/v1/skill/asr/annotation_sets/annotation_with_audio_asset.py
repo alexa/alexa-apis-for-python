@@ -29,16 +29,16 @@ if typing.TYPE_CHECKING:
 
 class AnnotationWithAudioAsset(Annotation):
     """
-    object containing annotation content and audio file download information.
+    Object containing annotation content and audio file download information.
 
 
-    :param upload_id: upload id obtained when developer creates an upload using catalog API
+    :param upload_id: Upload id obtained when developer creates an upload using catalog API. Required to be present when expectedTranscription is missing. When uploadId is present, filePathInUpload must also be present.
     :type upload_id: (optional) str
-    :param file_path_in_upload: file path in the uploaded zip file. For example, a zip containing a folder named &#39;a&#39; and there is an audio b.mp3 in that folder. The file path is a/b.mp3. Notice that forward slash (&#39;/&#39;) should be used to concatenate directories.
+    :param file_path_in_upload: File path in the uploaded zip file. For example, a zip containing a folder named &#39;a&#39; and there is an audio b.mp3 in that folder. The file path is a/b.mp3. Notice that forward slash (&#39;/&#39;) should be used to concatenate directories. Required to be present when expectedTranscription is missing. When filePathInUpload is present, uploadId must also be present.
     :type file_path_in_upload: (optional) str
-    :param evaluation_weight: weight of the test case in an evaluation, the value would be used for calculating metrics such as overall error rate.  The acceptable values are from 1 - 1000. 1 means least significant, 1000 means mot significant. Here is how weight  impact the &#x60;OVERALL_ERROR_RATE&#x60; calculation: For example, an annotation set consists of 3 annotations and they have weight of 8, 1, 1. The evaluation results  show that only the first annotation test case passed while the rest of the test cases failed. In this case,  the overall error rate is (8 / (8 + 1 + 1)) &#x3D; 0.8 
+    :param evaluation_weight: Weight of the test case in an evaluation, the value would be used for calculating metrics such as overall error rate.  The acceptable values are from 1 - 1000. 1 means least significant, 1000 means mot significant. Here is how weight  impact the &#x60;OVERALL_ERROR_RATE&#x60; calculation: For example, an annotation set consists of 3 annotations and they have weight of 8, 1, 1. The evaluation results  show that only the first annotation test case passed while the rest of the test cases failed. In this case,  the overall error rate is (8 / (8 + 1 + 1)) &#x3D; 0.8 
     :type evaluation_weight: (optional) float
-    :param expected_transcription: expected transcription text for the input audio. The acceptable length of the string is between 1 and 500 Unicode characters
+    :param expected_transcription: Expected transcription text for the input audio. The acceptable length of the string is between 1 and 500 Unicode characters. Required to be present when uploadId and filePathInUpload are missing.
     :type expected_transcription: (optional) str
     :param audio_asset: 
     :type audio_asset: (optional) ask_smapi_model.v1.skill.asr.annotation_sets.audio_asset.AudioAsset
@@ -63,15 +63,15 @@ class AnnotationWithAudioAsset(Annotation):
 
     def __init__(self, upload_id=None, file_path_in_upload=None, evaluation_weight=None, expected_transcription=None, audio_asset=None):
         # type: (Optional[str], Optional[str], Optional[float], Optional[str], Optional[AudioAssetV1]) -> None
-        """object containing annotation content and audio file download information.
+        """Object containing annotation content and audio file download information.
 
-        :param upload_id: upload id obtained when developer creates an upload using catalog API
+        :param upload_id: Upload id obtained when developer creates an upload using catalog API. Required to be present when expectedTranscription is missing. When uploadId is present, filePathInUpload must also be present.
         :type upload_id: (optional) str
-        :param file_path_in_upload: file path in the uploaded zip file. For example, a zip containing a folder named &#39;a&#39; and there is an audio b.mp3 in that folder. The file path is a/b.mp3. Notice that forward slash (&#39;/&#39;) should be used to concatenate directories.
+        :param file_path_in_upload: File path in the uploaded zip file. For example, a zip containing a folder named &#39;a&#39; and there is an audio b.mp3 in that folder. The file path is a/b.mp3. Notice that forward slash (&#39;/&#39;) should be used to concatenate directories. Required to be present when expectedTranscription is missing. When filePathInUpload is present, uploadId must also be present.
         :type file_path_in_upload: (optional) str
-        :param evaluation_weight: weight of the test case in an evaluation, the value would be used for calculating metrics such as overall error rate.  The acceptable values are from 1 - 1000. 1 means least significant, 1000 means mot significant. Here is how weight  impact the &#x60;OVERALL_ERROR_RATE&#x60; calculation: For example, an annotation set consists of 3 annotations and they have weight of 8, 1, 1. The evaluation results  show that only the first annotation test case passed while the rest of the test cases failed. In this case,  the overall error rate is (8 / (8 + 1 + 1)) &#x3D; 0.8 
+        :param evaluation_weight: Weight of the test case in an evaluation, the value would be used for calculating metrics such as overall error rate.  The acceptable values are from 1 - 1000. 1 means least significant, 1000 means mot significant. Here is how weight  impact the &#x60;OVERALL_ERROR_RATE&#x60; calculation: For example, an annotation set consists of 3 annotations and they have weight of 8, 1, 1. The evaluation results  show that only the first annotation test case passed while the rest of the test cases failed. In this case,  the overall error rate is (8 / (8 + 1 + 1)) &#x3D; 0.8 
         :type evaluation_weight: (optional) float
-        :param expected_transcription: expected transcription text for the input audio. The acceptable length of the string is between 1 and 500 Unicode characters
+        :param expected_transcription: Expected transcription text for the input audio. The acceptable length of the string is between 1 and 500 Unicode characters. Required to be present when uploadId and filePathInUpload are missing.
         :type expected_transcription: (optional) str
         :param audio_asset: 
         :type audio_asset: (optional) ask_smapi_model.v1.skill.asr.annotation_sets.audio_asset.AudioAsset

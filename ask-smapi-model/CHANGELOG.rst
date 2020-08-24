@@ -115,3 +115,11 @@ This release contains the following changes :
 This release contains the following changes : 
 
 - general bug fixes and updates
+
+
+1.7.2
+^^^^^
+
+This release contains the following changes :
+
+- Added new metadata, removed requirements and updated descriptions for enabling save incomplete ASR annotation sets.
