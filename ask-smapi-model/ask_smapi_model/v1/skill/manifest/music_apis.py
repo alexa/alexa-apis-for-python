@@ -42,8 +42,8 @@ class MusicApis(object):
     :type endpoint: (optional) ask_smapi_model.v1.skill.manifest.lambda_endpoint.LambdaEndpoint
     :param capabilities: Defines the structure of music capabilities information in the skill manifest.
     :type capabilities: (optional) list[ask_smapi_model.v1.skill.manifest.music_capability.MusicCapability]
-    :param interfaces: 
-    :type interfaces: (optional) ask_smapi_model.v1.skill.manifest.music_interfaces.MusicInterfaces
+    :param interfaces: A list of music skill interfaces that your skill supports.
+    :type interfaces: (optional) list[ask_smapi_model.v1.skill.manifest.music_interfaces.MusicInterfaces]
     :param locales: Defines the structure of locale specific music information in the skill manifest.
     :type locales: (optional) dict(str, ask_smapi_model.v1.skill.manifest.localized_music_info.LocalizedMusicInfo)
     :param content_types: List of the type of content to be provided by the music skill.
@@ -54,7 +54,7 @@ class MusicApis(object):
         'regions': 'dict(str, ask_smapi_model.v1.skill.manifest.lambda_region.LambdaRegion)',
         'endpoint': 'ask_smapi_model.v1.skill.manifest.lambda_endpoint.LambdaEndpoint',
         'capabilities': 'list[ask_smapi_model.v1.skill.manifest.music_capability.MusicCapability]',
-        'interfaces': 'ask_smapi_model.v1.skill.manifest.music_interfaces.MusicInterfaces',
+        'interfaces': 'list[ask_smapi_model.v1.skill.manifest.music_interfaces.MusicInterfaces]',
         'locales': 'dict(str, ask_smapi_model.v1.skill.manifest.localized_music_info.LocalizedMusicInfo)',
         'content_types': 'list[ask_smapi_model.v1.skill.manifest.music_content_type.MusicContentType]'
     }  # type: Dict
@@ -70,7 +70,7 @@ class MusicApis(object):
     supports_multiple_types = False
 
     def __init__(self, regions=None, endpoint=None, capabilities=None, interfaces=None, locales=None, content_types=None):
-        # type: (Optional[Dict[str, LambdaRegionV1]], Optional[LambdaEndpointV1], Optional[List[MusicCapabilityV1]], Optional[MusicInterfacesV1], Optional[Dict[str, LocalizedMusicInfoV1]], Optional[List[MusicContentTypeV1]]) -> None
+        # type: (Optional[Dict[str, LambdaRegionV1]], Optional[LambdaEndpointV1], Optional[List[MusicCapabilityV1]], Optional[List[MusicInterfacesV1]], Optional[Dict[str, LocalizedMusicInfoV1]], Optional[List[MusicContentTypeV1]]) -> None
         """Defines the structure of music api in the skill manifest.
 
         :param regions: Contains an array of the supported &lt;region&gt; Objects.
@@ -79,8 +79,8 @@ class MusicApis(object):
         :type endpoint: (optional) ask_smapi_model.v1.skill.manifest.lambda_endpoint.LambdaEndpoint
         :param capabilities: Defines the structure of music capabilities information in the skill manifest.
         :type capabilities: (optional) list[ask_smapi_model.v1.skill.manifest.music_capability.MusicCapability]
-        :param interfaces: 
-        :type interfaces: (optional) ask_smapi_model.v1.skill.manifest.music_interfaces.MusicInterfaces
+        :param interfaces: A list of music skill interfaces that your skill supports.
+        :type interfaces: (optional) list[ask_smapi_model.v1.skill.manifest.music_interfaces.MusicInterfaces]
         :param locales: Defines the structure of locale specific music information in the skill manifest.
         :type locales: (optional) dict(str, ask_smapi_model.v1.skill.manifest.localized_music_info.LocalizedMusicInfo)
         :param content_types: List of the type of content to be provided by the music skill.
