@@ -28,7 +28,7 @@ if typing.TYPE_CHECKING:
 class Permission(object):
     """
 
-    :param scope: 
+    :param scope: The value representing the permission scope. 
     :type scope: (optional) str
 
     """
@@ -45,7 +45,7 @@ class Permission(object):
         # type: (Optional[str]) -> None
         """
 
-        :param scope: 
+        :param scope: The value representing the permission scope. 
         :type scope: (optional) str
         """
         self.__discriminator_value = None  # type: str

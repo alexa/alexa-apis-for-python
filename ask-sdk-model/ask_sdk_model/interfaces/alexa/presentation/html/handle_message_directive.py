@@ -29,7 +29,7 @@ if typing.TYPE_CHECKING:
 
 class HandleMessageDirective(Directive):
     """
-    The HandleMessage directive sends a message to a skill&#39;s web application that runs on the device browser. To use this directive, [apply to participate](https://build.amazonalexadev.com/AlexaWebAPIforGamesDeveloperPreview_AlexaWebAPIforGames.html) in the Alexa Web API for Games developer preview. 
+    The HandleMessage directive sends a message to a skill&#39;s web application that runs on the device browser. 
 
 
     :param message: A free-form object containing data to deliver to a skill&#39;s HTML application running the device. Maximum size 18 KB.
@@ -53,7 +53,7 @@ class HandleMessageDirective(Directive):
 
     def __init__(self, message=None, transformers=None):
         # type: (Optional[object], Optional[List[Transformer]]) -> None
-        """The HandleMessage directive sends a message to a skill&#39;s web application that runs on the device browser. To use this directive, [apply to participate](https://build.amazonalexadev.com/AlexaWebAPIforGamesDeveloperPreview_AlexaWebAPIforGames.html) in the Alexa Web API for Games developer preview. 
+        """The HandleMessage directive sends a message to a skill&#39;s web application that runs on the device browser. 
 
         :param message: A free-form object containing data to deliver to a skill&#39;s HTML application running the device. Maximum size 18 KB.
         :type message: (optional) object

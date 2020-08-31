@@ -324,3 +324,11 @@ This release contains the following changes :
 This release contains the following changes :
 
 - general bug fixes and updates
+
+
+1.25.0
+~~~~~~
+
+This release contains the following changes :
+
+- Introducing `person-level permissions <https://developer.amazon.com/en-US/docs/alexa/smapi/skill-events-in-alexa-skills.html#skill-permission-changed-event>`__ for Skill events.

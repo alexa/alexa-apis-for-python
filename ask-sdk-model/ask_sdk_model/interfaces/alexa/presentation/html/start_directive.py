@@ -31,7 +31,7 @@ if typing.TYPE_CHECKING:
 
 class StartDirective(Directive):
     """
-    The Start directive provides the data necessary to load an HTML page on the target device. To use this directive, [apply to participate](https://build.amazonalexadev.com/AlexaWebAPIforGamesDeveloperPreview_AlexaWebAPIforGames.html) in the Alexa Web API for Games developer preview. 
+    The Start directive provides the data necessary to load an HTML page on the target device. 
 
 
     :param data: Optional startup data which will be made available to the runtime for skill startup. Maximum size: 18 KB
@@ -63,7 +63,7 @@ class StartDirective(Directive):
 
     def __init__(self, data=None, transformers=None, request=None, configuration=None):
         # type: (Optional[object], Optional[List[Transformer]], Optional[StartRequest], Optional[Configuration]) -> None
-        """The Start directive provides the data necessary to load an HTML page on the target device. To use this directive, [apply to participate](https://build.amazonalexadev.com/AlexaWebAPIforGamesDeveloperPreview_AlexaWebAPIforGames.html) in the Alexa Web API for Games developer preview. 
+        """The Start directive provides the data necessary to load an HTML page on the target device. 
 
         :param data: Optional startup data which will be made available to the runtime for skill startup. Maximum size: 18 KB
         :type data: (optional) object

@@ -29,29 +29,36 @@ if typing.TYPE_CHECKING:
 class PermissionBody(object):
     """
 
-    :param accepted_permissions: 
+    :param accepted_permissions: The current list of permissions consented to on the account level. It can be an empty list if there are no account level permissions consented to. 
     :type accepted_permissions: (optional) list[ask_sdk_model.events.skillevents.permission.Permission]
+    :param accepted_person_permissions: The current list of permissions consented to on the person level. This is only present if the request contains the &#x60;&#x60;&#x60;person&#x60;&#x60;&#x60; object. It can be an empty list if there are no person level permissions consented to. 
+    :type accepted_person_permissions: (optional) list[ask_sdk_model.events.skillevents.permission.Permission]
 
     """
     deserialized_types = {
-        'accepted_permissions': 'list[ask_sdk_model.events.skillevents.permission.Permission]'
+        'accepted_permissions': 'list[ask_sdk_model.events.skillevents.permission.Permission]',
+        'accepted_person_permissions': 'list[ask_sdk_model.events.skillevents.permission.Permission]'
     }  # type: Dict
 
     attribute_map = {
-        'accepted_permissions': 'acceptedPermissions'
+        'accepted_permissions': 'acceptedPermissions',
+        'accepted_person_permissions': 'acceptedPersonPermissions'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, accepted_permissions=None):
-        # type: (Optional[List[Permission]]) -> None
+    def __init__(self, accepted_permissions=None, accepted_person_permissions=None):
+        # type: (Optional[List[Permission]], Optional[List[Permission]]) -> None
         """
 
-        :param accepted_permissions: 
+        :param accepted_permissions: The current list of permissions consented to on the account level. It can be an empty list if there are no account level permissions consented to. 
         :type accepted_permissions: (optional) list[ask_sdk_model.events.skillevents.permission.Permission]
+        :param accepted_person_permissions: The current list of permissions consented to on the person level. This is only present if the request contains the &#x60;&#x60;&#x60;person&#x60;&#x60;&#x60; object. It can be an empty list if there are no person level permissions consented to. 
+        :type accepted_person_permissions: (optional) list[ask_sdk_model.events.skillevents.permission.Permission]
         """
         self.__discriminator_value = None  # type: str
 
         self.accepted_permissions = accepted_permissions
+        self.accepted_person_permissions = accepted_person_permissions
 
     def to_dict(self):
         # type: () -> Dict[str, object]

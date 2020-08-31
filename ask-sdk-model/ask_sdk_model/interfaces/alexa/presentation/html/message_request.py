@@ -28,7 +28,7 @@ if typing.TYPE_CHECKING:
 
 class MessageRequest(Request):
     """
-    The Message request sends a message to the skill lambda. To use this request, [apply to participate](https://build.amazonalexadev.com/AlexaWebAPIforGamesDeveloperPreview_AlexaWebAPIforGames.html) in the Alexa Web API for Games developer preview. 
+    The Message request sends a message to the skill lambda. 
 
 
     :param request_id: Represents the unique identifier for the specific request.
@@ -60,7 +60,7 @@ class MessageRequest(Request):
 
     def __init__(self, request_id=None, timestamp=None, locale=None, message=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[object]) -> None
-        """The Message request sends a message to the skill lambda. To use this request, [apply to participate](https://build.amazonalexadev.com/AlexaWebAPIforGamesDeveloperPreview_AlexaWebAPIforGames.html) in the Alexa Web API for Games developer preview. 
+        """The Message request sends a message to the skill lambda. 
 
         :param request_id: Represents the unique identifier for the specific request.
         :type request_id: (optional) str

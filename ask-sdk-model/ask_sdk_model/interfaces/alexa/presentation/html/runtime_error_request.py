@@ -29,7 +29,7 @@ if typing.TYPE_CHECKING:
 
 class RuntimeErrorRequest(Request):
     """
-    The RuntimeError request occurs when the device software encounters an error with loading a skill&#39;s web application. To use this request, [apply to participate](https://build.amazonalexadev.com/AlexaWebAPIforGamesDeveloperPreview_AlexaWebAPIforGames.html) in the Alexa Web API for Games developer preview. 
+    The RuntimeError request occurs when the device software encounters an error with loading a skill&#39;s web application. 
 
 
     :param request_id: Represents the unique identifier for the specific request.
@@ -61,7 +61,7 @@ class RuntimeErrorRequest(Request):
 
     def __init__(self, request_id=None, timestamp=None, locale=None, error=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[RuntimeError]) -> None
-        """The RuntimeError request occurs when the device software encounters an error with loading a skill&#39;s web application. To use this request, [apply to participate](https://build.amazonalexadev.com/AlexaWebAPIforGamesDeveloperPreview_AlexaWebAPIforGames.html) in the Alexa Web API for Games developer preview. 
+        """The RuntimeError request occurs when the device software encounters an error with loading a skill&#39;s web application. 
 
         :param request_id: Represents the unique identifier for the specific request.
         :type request_id: (optional) str

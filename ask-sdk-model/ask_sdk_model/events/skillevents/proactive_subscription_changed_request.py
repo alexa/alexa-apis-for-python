@@ -29,7 +29,7 @@ if typing.TYPE_CHECKING:
 
 class ProactiveSubscriptionChangedRequest(Request):
     """
-    This event indicates a customer subscription to receive events from your skill and contains information for that user. You need this information to know the userId in order to send events to individual users. Note that these events can arrive out of order, so ensure that your skill service uses the timestamp in the event to correctly record the latest subscription state for a customer. 
+    This event indicates a customer subscription to receive events from your skill and contains information for that user and person, if recognized. You need this information to know the userId and personId in order to send events to individual users. Note that these events can arrive out of order, so ensure that your skill service uses the timestamp in the event to correctly record the latest subscription state for a customer. 
 
 
     :param request_id: Represents the unique identifier for the specific request.
@@ -61,7 +61,7 @@ class ProactiveSubscriptionChangedRequest(Request):
 
     def __init__(self, request_id=None, timestamp=None, locale=None, body=None):
         # type: (Optional[str], Optional[datetime], Optional[str], Optional[ProactiveSubscriptionChangedBody]) -> None
-        """This event indicates a customer subscription to receive events from your skill and contains information for that user. You need this information to know the userId in order to send events to individual users. Note that these events can arrive out of order, so ensure that your skill service uses the timestamp in the event to correctly record the latest subscription state for a customer. 
+        """This event indicates a customer subscription to receive events from your skill and contains information for that user and person, if recognized. You need this information to know the userId and personId in order to send events to individual users. Note that these events can arrive out of order, so ensure that your skill service uses the timestamp in the event to correctly record the latest subscription state for a customer. 
 
         :param request_id: Represents the unique identifier for the specific request.
         :type request_id: (optional) str
