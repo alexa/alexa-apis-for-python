@@ -332,3 +332,11 @@ This release contains the following changes :
 This release contains the following changes :
 
 - Introducing `person-level permissions <https://developer.amazon.com/en-US/docs/alexa/smapi/skill-events-in-alexa-skills.html#skill-permission-changed-event>`__ for Skill events.
+
+
+1.26.0
+~~~~~~
+
+This release contains the following changes : 
+
+- Support for 'Alexa for residential' properties. More information about 'Alexa for residential' can be found here : https://developer.amazon.com/en-US/docs/alexa/alexa-smart-properties/about-alexa-for-residential.html
