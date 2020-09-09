@@ -24,6 +24,7 @@ from ask_sdk_model.directive import Directive
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
+    from ask_sdk_model.interfaces.connections.on_completion import OnCompletion
 
 
 class StartConnectionDirective(Directive):
@@ -33,6 +34,8 @@ class StartConnectionDirective(Directive):
 
     :param uri: This defines the name and version of connection that the requester is trying to send. The format of the uri should follow this pattern: connection://connectionName/connectionVersion. Invalid uri will cause an error which will be sent back to the requester.
     :type uri: (optional) str
+    :param on_completion: 
+    :type on_completion: (optional) ask_sdk_model.interfaces.connections.on_completion.OnCompletion
     :param input: This is the input to the connection that the requester is trying to send. It is predefined by the handler of the connection. If the input format is incorrect, an error will be sent to to the requester.
     :type input: (optional) dict(str, object)
     :param token: This is an echo back string that requester will receive it when it gets resumed. It is never sent to the handler of the connection.
@@ -42,6 +45,7 @@ class StartConnectionDirective(Directive):
     deserialized_types = {
         'object_type': 'str',
         'uri': 'str',
+        'on_completion': 'ask_sdk_model.interfaces.connections.on_completion.OnCompletion',
         'input': 'dict(str, object)',
         'token': 'str'
     }  # type: Dict
@@ -49,17 +53,20 @@ class StartConnectionDirective(Directive):
     attribute_map = {
         'object_type': 'type',
         'uri': 'uri',
+        'on_completion': 'onCompletion',
         'input': 'input',
         'token': 'token'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, uri=None, input=None, token=None):
-        # type: (Optional[str], Optional[Dict[str, object]], Optional[str]) -> None
+    def __init__(self, uri=None, on_completion=None, input=None, token=None):
+        # type: (Optional[str], Optional[OnCompletion], Optional[Dict[str, object]], Optional[str]) -> None
         """This is the directive that a skill can send as part of their response to a session based request to start a connection. A response will be returned to the skill when the connection is handled.
 
         :param uri: This defines the name and version of connection that the requester is trying to send. The format of the uri should follow this pattern: connection://connectionName/connectionVersion. Invalid uri will cause an error which will be sent back to the requester.
         :type uri: (optional) str
+        :param on_completion: 
+        :type on_completion: (optional) ask_sdk_model.interfaces.connections.on_completion.OnCompletion
         :param input: This is the input to the connection that the requester is trying to send. It is predefined by the handler of the connection. If the input format is incorrect, an error will be sent to to the requester.
         :type input: (optional) dict(str, object)
         :param token: This is an echo back string that requester will receive it when it gets resumed. It is never sent to the handler of the connection.
@@ -70,6 +77,7 @@ class StartConnectionDirective(Directive):
         self.object_type = self.__discriminator_value
         super(StartConnectionDirective, self).__init__(object_type=self.__discriminator_value)
         self.uri = uri
+        self.on_completion = on_completion
         self.input = input
         self.token = token
 

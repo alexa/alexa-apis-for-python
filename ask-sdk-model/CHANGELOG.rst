@@ -340,3 +340,11 @@ This release contains the following changes :
 This release contains the following changes : 
 
 - Support for 'Alexa for residential' properties. More information about 'Alexa for residential' can be found here : https://developer.amazon.com/en-US/docs/alexa/alexa-smart-properties/about-alexa-for-residential.html
+
+
+1.27.0
+~~~~~~
+
+This release contains the following changes :
+- Add “onCompletion” field in Connections.StartConnection directive. When sending this directive to start a Skill Connection, requester skill can set onCompletion to be RESUME_SESSION to receive the control back after the task is completed or SEND_ERRORS_ONLY to only receive error notifications without control back. More information about using Skill Connections to Request Tasks can be found `here <https://developer.amazon.com/en-US/docs/alexa/custom-skills/use-skill-connections-to-request-tasks.html>`__.
+- Add “Authorization.Grant” directive support for user specific access token in out-of-session calls. More information can be found `here <https://developer.amazon.com/en-US/docs/alexa/custom-skills/get-a-user-specific-access-token.html>`__.

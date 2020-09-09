@@ -71,6 +71,8 @@ class Request(object):
         |
         | LaunchRequest: :py:class:`ask_sdk_model.launch_request.LaunchRequest`,
         |
+        | Alexa.Authorization.Grant: :py:class:`ask_sdk_model.authorization.authorization_grant_request.AuthorizationGrantRequest`,
+        |
         | Reminders.ReminderCreated: :py:class:`ask_sdk_model.services.reminder_management.reminder_created_event_request.ReminderCreatedEventRequest`,
         |
         | Alexa.Presentation.APLT.UserEvent: :py:class:`ask_sdk_model.interfaces.alexa.presentation.aplt.user_event.UserEvent`,
@@ -169,6 +171,7 @@ class Request(object):
         'CustomInterfaceController.Expired': 'ask_sdk_model.interfaces.custom_interface_controller.expired_request.ExpiredRequest',
         'Alexa.Presentation.HTML.Message': 'ask_sdk_model.interfaces.alexa.presentation.html.message_request.MessageRequest',
         'LaunchRequest': 'ask_sdk_model.launch_request.LaunchRequest',
+        'Alexa.Authorization.Grant': 'ask_sdk_model.authorization.authorization_grant_request.AuthorizationGrantRequest',
         'Reminders.ReminderCreated': 'ask_sdk_model.services.reminder_management.reminder_created_event_request.ReminderCreatedEventRequest',
         'Alexa.Presentation.APLT.UserEvent': 'ask_sdk_model.interfaces.alexa.presentation.aplt.user_event.UserEvent',
         'AlexaHouseholdListEvent.ItemsUpdated': 'ask_sdk_model.services.list_management.list_items_updated_event_request.ListItemsUpdatedEventRequest',

@@ -14,9 +14,7 @@
 #
 from __future__ import absolute_import
 
-from .connections_request import ConnectionsRequest
-from .on_completion import OnCompletion
-from .connections_status import ConnectionsStatus
-from .send_response_directive import SendResponseDirective
-from .send_request_directive import SendRequestDirective
-from .connections_response import ConnectionsResponse
+from .grant_type import GrantType
+from .authorization_grant_request import AuthorizationGrantRequest
+from .grant import Grant
+from .authorization_grant_body import AuthorizationGrantBody
