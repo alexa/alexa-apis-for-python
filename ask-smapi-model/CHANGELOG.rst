@@ -131,3 +131,11 @@ This release contains the following changes :
 This release contains the following changes :
 
 - minor bug fixes in existing models.
+
+
+1.8.0
+~~~~~
+
+This release contains the following changes : 
+
+- New models for `Jobs Definitions API <https://developer.amazon.com/en-US/docs/alexa/smapi/manage-update-jobs.html>`__

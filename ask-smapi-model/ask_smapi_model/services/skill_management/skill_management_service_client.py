@@ -62,11 +62,13 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.simulations.simulations_api_response import SimulationsApiResponseV1
     from ask_smapi_model.v0.development_events.subscription.subscription_info import SubscriptionInfoV0
     from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_repository_credentials_list import HostedSkillRepositoryCredentialsListV1
+    from ask_smapi_model.v1.skill.interaction_model.jobs.create_job_definition_request import CreateJobDefinitionRequestV1
     from ask_smapi_model.v1.skill.clone_locale_request import CloneLocaleRequestV1
     from ask_smapi_model.v1.skill.upload_response import UploadResponseV1
     from ask_smapi_model.v0.bad_request_error import BadRequestErrorV0
     from ask_smapi_model.v1.isp.in_skill_product_summary_response import InSkillProductSummaryResponseV1
     from ask_smapi_model.v1.catalog.create_content_upload_url_response import CreateContentUploadUrlResponseV1
+    from ask_smapi_model.v1.skill.interaction_model.jobs.list_job_definitions_response import ListJobDefinitionsResponseV1
     from ask_smapi_model.v1.skill.create_rollback_request import CreateRollbackRequestV1
     from ask_smapi_model.v1.skill.ssl_certificate_payload import SSLCertificatePayloadV1
     from ask_smapi_model.v1.skill.asr.annotation_sets.list_asr_annotation_sets_response import ListASRAnnotationSetsResponseV1
@@ -83,6 +85,7 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.history.intent_requests import IntentRequestsV1
     from ask_smapi_model.v1.skill.interaction_model.interaction_model_data import InteractionModelDataV1
     from ask_smapi_model.v2.bad_request_error import BadRequestErrorV2
+    from ask_smapi_model.v1.skill.interaction_model.jobs.update_job_status_request import UpdateJobStatusRequestV1
     from ask_smapi_model.v1.skill.interaction_model.type_version.version_data import VersionDataV1
     from ask_smapi_model.v0.development_events.subscriber.list_subscribers_response import ListSubscribersResponseV0
     from ask_smapi_model.v1.skill.beta_test.beta_test import BetaTestV1
@@ -124,6 +127,7 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.nlu.evaluations.list_nlu_evaluations_response import ListNLUEvaluationsResponseV1
     import str
     from ask_smapi_model.v1.skill.nlu.annotation_sets.update_nlu_annotation_set_properties_request import UpdateNLUAnnotationSetPropertiesRequestV1
+    from ask_smapi_model.v1.skill.interaction_model.jobs.create_job_definition_response import CreateJobDefinitionResponseV1
     from ask_smapi_model.v1.skill.interaction_model.model_type.update_request import UpdateRequestV1
     from ask_smapi_model.v1.skill.export_response import ExportResponseV1
     from ask_smapi_model.v1.skill.evaluations.profile_nlu_request import ProfileNluRequestV1
@@ -131,6 +135,7 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.nlu.evaluations.get_nlu_evaluation_results_response import GetNLUEvaluationResultsResponseV1
     from ask_smapi_model.v1.skill.list_skill_versions_response import ListSkillVersionsResponseV1
     from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_definition_output import SlotTypeDefinitionOutputV1
+    from ask_smapi_model.v1.skill.interaction_model.jobs.get_executions_response import GetExecutionsResponseV1
     from ask_smapi_model.v0.development_events.subscriber.subscriber_info import SubscriberInfoV0
     from ask_smapi_model.v0.development_events.subscription.create_subscription_request import CreateSubscriptionRequestV0
     from ask_smapi_model.v0.development_events.subscription.list_subscriptions_response import ListSubscriptionsResponseV0
@@ -172,6 +177,7 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.asr.annotation_sets.update_asr_annotation_set_contents_payload import UpdateAsrAnnotationSetContentsPayloadV1
     from ask_smapi_model.v1.skill.interaction_model.version.catalog_version_data import CatalogVersionDataV1
     from ask_smapi_model.v1.skill.create_skill_with_package_request import CreateSkillWithPackageRequestV1
+    from ask_smapi_model.v1.skill.interaction_model.jobs.validation_errors import ValidationErrorsV1
     from ask_smapi_model.v1.skill.interaction_model.version.list_response import ListResponseV1
 
 
@@ -3758,6 +3764,542 @@ class SkillManagementServiceClient(BaseServiceClient):
             body=body_params,
             response_definitions=error_definitions,
             response_type="ask_smapi_model.v1.skill.interaction_model.catalog.catalog_response.CatalogResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def list_job_definitions_for_interaction_model_v1(self, vendor_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, StandardizedErrorV1, ListJobDefinitionsResponseV1, BadRequestErrorV1]
+        """
+        Retrieve a list of jobs associated with the vendor.
+
+        :param vendor_id: (required) The vendor ID.
+        :type vendor_id: str
+        :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
+        :type max_results: float
+        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :type next_token: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, StandardizedErrorV1, ListJobDefinitionsResponseV1, BadRequestErrorV1]
+        """
+        operation_name = "list_job_definitions_for_interaction_model_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'vendor_id' is set
+        if ('vendor_id' not in params) or (params['vendor_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `vendor_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/api/custom/interactionModel/jobs'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+
+        query_params = []  # type: List
+        if 'vendor_id' in params:
+            query_params.append(('vendorId', params['vendor_id']))
+        if 'max_results' in params:
+            query_params.append(('maxResults', params['max_results']))
+        if 'next_token' in params:
+            query_params.append(('nextToken', params['next_token']))
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.jobs.list_job_definitions_response.ListJobDefinitionsResponse", status_code=200, message="List of all jobs associated with the vendor."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.interaction_model.jobs.list_job_definitions_response.ListJobDefinitionsResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def delete_job_definition_for_interaction_model_v1(self, job_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, ValidationErrorsV1, StandardizedErrorV1, BadRequestErrorV1]
+        """
+        Delete the job definition for a given jobId.
+
+        :param job_id: (required) The identifier for dynamic jobs.
+        :type job_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ValidationErrorsV1, StandardizedErrorV1, BadRequestErrorV1]
+        """
+        operation_name = "delete_job_definition_for_interaction_model_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `job_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/api/custom/interactionModel/jobs/{jobId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="No content, confirms the resource is updated."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.jobs.validation_errors.ValidationErrors", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="DELETE",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+
+    def cancel_next_job_execution_for_interaction_model_v1(self, job_id, execution_id, **kwargs):
+        # type: (str, str, **Any) -> Union[ApiResponse, ValidationErrorsV1, StandardizedErrorV1, BadRequestErrorV1]
+        """
+        Cancel the next execution for the given job.
+
+        :param job_id: (required) The identifier for dynamic jobs.
+        :type job_id: str
+        :param execution_id: (required) The identifier for dynamic job executions. Currently only allowed for scheduled executions.
+        :type execution_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ValidationErrorsV1, StandardizedErrorV1, BadRequestErrorV1]
+        """
+        operation_name = "cancel_next_job_execution_for_interaction_model_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `job_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'execution_id' is set
+        if ('execution_id' not in params) or (params['execution_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `execution_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/api/custom/interactionModel/jobs/{jobId}/executions/{executionId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+        if 'execution_id' in params:
+            path_params['executionId'] = params['execution_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="No Content; Confirms that the next execution is canceled."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.jobs.validation_errors.ValidationErrors", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="DELETE",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+
+    def list_job_executions_for_interaction_model_v1(self, job_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1, GetExecutionsResponseV1]
+        """
+        List the execution history associated with the job definition, with default sortField to be the executions' timestamp.
+
+        :param job_id: (required) The identifier for dynamic jobs.
+        :type job_id: str
+        :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
+        :type max_results: float
+        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :type next_token: str
+        :param sort_direction: Sets the sorting direction of the result items. When set to 'asc' these items are returned in ascending order of sortField value and when set to 'desc' these items are returned in descending order of sortField value.
+        :type sort_direction: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1, GetExecutionsResponseV1]
+        """
+        operation_name = "list_job_executions_for_interaction_model_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `job_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/api/custom/interactionModel/jobs/{jobId}/executions'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = []  # type: List
+        if 'max_results' in params:
+            query_params.append(('maxResults', params['max_results']))
+        if 'next_token' in params:
+            query_params.append(('nextToken', params['next_token']))
+        if 'sort_direction' in params:
+            query_params.append(('sortDirection', params['sort_direction']))
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.jobs.get_executions_response.GetExecutionsResponse", status_code=200, message="Retrun list of executions associated with the job definition."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.interaction_model.jobs.get_executions_response.GetExecutionsResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+
+    def get_job_definition_for_interaction_model_v1(self, job_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
+        """
+        Get the job definition for a given jobId. 
+
+        :param job_id: (required) The identifier for dynamic jobs.
+        :type job_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, StandardizedErrorV1, BadRequestErrorV1]
+        """
+        operation_name = "get_job_definition_for_interaction_model_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `job_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/api/custom/interactionModel/jobs/{jobId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=200, message="The job definition for a given jobId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+
+    def set_job_status_for_interaction_model_v1(self, job_id, update_job_status_request, **kwargs):
+        # type: (str, UpdateJobStatusRequestV1, **Any) -> Union[ApiResponse, ValidationErrorsV1, StandardizedErrorV1, BadRequestErrorV1]
+        """
+        Update the JobStatus to Enable or Disable a job.
+
+        :param job_id: (required) The identifier for dynamic jobs.
+        :type job_id: str
+        :param update_job_status_request: (required) Request to update Job Definition status.
+        :type update_job_status_request: ask_smapi_model.v1.skill.interaction_model.jobs.update_job_status_request.UpdateJobStatusRequest
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ValidationErrorsV1, StandardizedErrorV1, BadRequestErrorV1]
+        """
+        operation_name = "set_job_status_for_interaction_model_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'job_id' is set
+        if ('job_id' not in params) or (params['job_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `job_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'update_job_status_request' is set
+        if ('update_job_status_request' not in params) or (params['update_job_status_request'] is None):
+            raise ValueError(
+                "Missing the required parameter `update_job_status_request` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/api/custom/interactionModel/jobs/{jobId}/status'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'job_id' in params:
+            path_params['jobId'] = params['job_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'update_job_status_request' in params:
+            body_params = params['update_job_status_request']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="No content; Confirms that the fields are updated."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.jobs.validation_errors.ValidationErrors", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="PUT",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+
+    def create_job_definition_for_interaction_model_v1(self, create_job_definition_request, **kwargs):
+        # type: (CreateJobDefinitionRequestV1, **Any) -> Union[ApiResponse, ValidationErrorsV1, StandardizedErrorV1, BadRequestErrorV1, CreateJobDefinitionResponseV1]
+        """
+        Creates a new Job Definition from the Job Definition request provided. This can be either a CatalogAutoRefresh, which supports time-based configurations for catalogs, or a ReferencedResourceVersionUpdate, which is used for slotTypes and Interaction models to be automatically updated on the dynamic update of their referenced catalog. 
+
+        :param create_job_definition_request: (required) Request to create a new Job Definition.
+        :type create_job_definition_request: ask_smapi_model.v1.skill.interaction_model.jobs.create_job_definition_request.CreateJobDefinitionRequest
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, ValidationErrorsV1, StandardizedErrorV1, BadRequestErrorV1, CreateJobDefinitionResponseV1]
+        """
+        operation_name = "create_job_definition_for_interaction_model_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'create_job_definition_request' is set
+        if ('create_job_definition_request' not in params) or (params['create_job_definition_request'] is None):
+            raise ValueError(
+                "Missing the required parameter `create_job_definition_request` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/api/custom/interactionModel/jobs'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'create_job_definition_request' in params:
+            body_params = params['create_job_definition_request']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.jobs.create_job_definition_response.CreateJobDefinitionResponse", status_code=201, message="Returns the generated jobId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.interaction_model.jobs.validation_errors.ValidationErrors", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="POST",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.interaction_model.jobs.create_job_definition_response.CreateJobDefinitionResponse")
 
         if full_response:
             return api_response
