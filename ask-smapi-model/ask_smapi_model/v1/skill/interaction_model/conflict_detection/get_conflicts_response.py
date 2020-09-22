@@ -26,6 +26,7 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
     from ask_smapi_model.v1.skill.interaction_model.conflict_detection.pagination_context import PaginationContextV1
     from ask_smapi_model.v1.links import LinksV1
+    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.get_conflicts_response_result import GetConflictsResponseResultV1
 
 
 class GetConflictsResponse(PagedResponse):
@@ -35,31 +36,38 @@ class GetConflictsResponse(PagedResponse):
     :type pagination_context: (optional) ask_smapi_model.v1.skill.interaction_model.conflict_detection.pagination_context.PaginationContext
     :param links: 
     :type links: (optional) ask_smapi_model.v1.links.Links
+    :param results: 
+    :type results: (optional) list[ask_smapi_model.v1.skill.interaction_model.conflict_detection.get_conflicts_response_result.GetConflictsResponseResult]
 
     """
     deserialized_types = {
         'pagination_context': 'ask_smapi_model.v1.skill.interaction_model.conflict_detection.pagination_context.PaginationContext',
-        'links': 'ask_smapi_model.v1.links.Links'
+        'links': 'ask_smapi_model.v1.links.Links',
+        'results': 'list[ask_smapi_model.v1.skill.interaction_model.conflict_detection.get_conflicts_response_result.GetConflictsResponseResult]'
     }  # type: Dict
 
     attribute_map = {
         'pagination_context': 'paginationContext',
-        'links': '_links'
+        'links': '_links',
+        'results': 'results'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, pagination_context=None, links=None):
-        # type: (Optional[PaginationContextV1], Optional[LinksV1]) -> None
+    def __init__(self, pagination_context=None, links=None, results=None):
+        # type: (Optional[PaginationContextV1], Optional[LinksV1], Optional[List[GetConflictsResponseResultV1]]) -> None
         """
 
         :param pagination_context: 
         :type pagination_context: (optional) ask_smapi_model.v1.skill.interaction_model.conflict_detection.pagination_context.PaginationContext
         :param links: 
         :type links: (optional) ask_smapi_model.v1.links.Links
+        :param results: 
+        :type results: (optional) list[ask_smapi_model.v1.skill.interaction_model.conflict_detection.get_conflicts_response_result.GetConflictsResponseResult]
         """
         self.__discriminator_value = None  # type: str
 
         super(GetConflictsResponse, self).__init__(pagination_context=pagination_context, links=links)
+        self.results = results
 
     def to_dict(self):
         # type: () -> Dict[str, object]

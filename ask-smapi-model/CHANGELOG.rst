@@ -139,3 +139,11 @@ This release contains the following changes :
 This release contains the following changes : 
 
 - New models for `Jobs Definitions API <https://developer.amazon.com/en-US/docs/alexa/smapi/manage-update-jobs.html>`__
+
+
+1.8.1
+^^^^^
+
+This release contains the following changes : 
+
+- Fix the model definition of `AccountLinkingRequest body <https://developer.amazon.com/en-US/docs/alexa/smapi/account-linking-schemas.html#accountlinkingrequest-object>`__.

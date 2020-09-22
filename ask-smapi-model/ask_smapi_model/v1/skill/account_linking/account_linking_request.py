@@ -23,116 +23,37 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union
     from datetime import datetime
-    from ask_smapi_model.v1.skill.account_linking.account_linking_type import AccountLinkingTypeV1
-    from ask_smapi_model.v1.skill.account_linking.account_linking_platform_authorization_url import AccountLinkingPlatformAuthorizationUrlV1
-    from ask_smapi_model.v1.skill.account_linking.access_token_scheme_type import AccessTokenSchemeTypeV1
+    from ask_smapi_model.v1.skill.account_linking.account_linking_request_payload import AccountLinkingRequestPayloadV1
 
 
 class AccountLinkingRequest(object):
     """
-    The payload for creating the account linking partner.
+    The request body of AccountLinkingRequest.
 
 
-    :param object_type: 
-    :type object_type: (optional) ask_smapi_model.v1.skill.account_linking.account_linking_type.AccountLinkingType
-    :param authorization_url: The url where customers will be redirected in the companion app to enter login credentials.
-    :type authorization_url: (optional) str
-    :param domains: The list of domains that the authorization URL will fetch content from.
-    :type domains: (optional) list[str]
-    :param client_id: The unique public string used to identify the client requesting for authentication.
-    :type client_id: (optional) str
-    :param scopes: The list of permissions which will be requested from the skill user.
-    :type scopes: (optional) list[str]
-    :param access_token_url: The url used for access token and token refresh requests.
-    :type access_token_url: (optional) str
-    :param client_secret: The client secret provided by developer.
-    :type client_secret: (optional) str
-    :param access_token_scheme: 
-    :type access_token_scheme: (optional) ask_smapi_model.v1.skill.account_linking.access_token_scheme_type.AccessTokenSchemeType
-    :param default_token_expiration_in_seconds: The time in seconds for which access token is valid. If OAuth client returns \&quot;expires_in\&quot;, it will be overwrite this parameter. 
-    :type default_token_expiration_in_seconds: (optional) int
-    :param reciprocal_access_token_url: Optional, if your skill requires reciprocal authorization, provide this additional access token url to handle reciprocal (Alexa) authorization codes that can be exchanged for Alexa access tokens.
-    :type reciprocal_access_token_url: (optional) str
-    :param redirect_urls: The list of valid urls to redirect back to, when the linking process is initiated from a third party system.
-    :type redirect_urls: (optional) list[str]
-    :param authorization_urls_by_platform: The list of valid authorization urls for allowed platforms to initiate account linking.
-    :type authorization_urls_by_platform: (optional) list[ask_smapi_model.v1.skill.account_linking.account_linking_platform_authorization_url.AccountLinkingPlatformAuthorizationUrl]
+    :param account_linking_request: 
+    :type account_linking_request: (optional) ask_smapi_model.v1.skill.account_linking.account_linking_request_payload.AccountLinkingRequestPayload
 
     """
     deserialized_types = {
-        'object_type': 'ask_smapi_model.v1.skill.account_linking.account_linking_type.AccountLinkingType',
-        'authorization_url': 'str',
-        'domains': 'list[str]',
-        'client_id': 'str',
-        'scopes': 'list[str]',
-        'access_token_url': 'str',
-        'client_secret': 'str',
-        'access_token_scheme': 'ask_smapi_model.v1.skill.account_linking.access_token_scheme_type.AccessTokenSchemeType',
-        'default_token_expiration_in_seconds': 'int',
-        'reciprocal_access_token_url': 'str',
-        'redirect_urls': 'list[str]',
-        'authorization_urls_by_platform': 'list[ask_smapi_model.v1.skill.account_linking.account_linking_platform_authorization_url.AccountLinkingPlatformAuthorizationUrl]'
+        'account_linking_request': 'ask_smapi_model.v1.skill.account_linking.account_linking_request_payload.AccountLinkingRequestPayload'
     }  # type: Dict
 
     attribute_map = {
-        'object_type': 'type',
-        'authorization_url': 'authorizationUrl',
-        'domains': 'domains',
-        'client_id': 'clientId',
-        'scopes': 'scopes',
-        'access_token_url': 'accessTokenUrl',
-        'client_secret': 'clientSecret',
-        'access_token_scheme': 'accessTokenScheme',
-        'default_token_expiration_in_seconds': 'defaultTokenExpirationInSeconds',
-        'reciprocal_access_token_url': 'reciprocalAccessTokenUrl',
-        'redirect_urls': 'redirectUrls',
-        'authorization_urls_by_platform': 'authorizationUrlsByPlatform'
+        'account_linking_request': 'accountLinkingRequest'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, object_type=None, authorization_url=None, domains=None, client_id=None, scopes=None, access_token_url=None, client_secret=None, access_token_scheme=None, default_token_expiration_in_seconds=None, reciprocal_access_token_url=None, redirect_urls=None, authorization_urls_by_platform=None):
-        # type: (Optional[AccountLinkingTypeV1], Optional[str], Optional[List[object]], Optional[str], Optional[List[object]], Optional[str], Optional[str], Optional[AccessTokenSchemeTypeV1], Optional[int], Optional[str], Optional[List[object]], Optional[List[AccountLinkingPlatformAuthorizationUrlV1]]) -> None
-        """The payload for creating the account linking partner.
+    def __init__(self, account_linking_request=None):
+        # type: (Optional[AccountLinkingRequestPayloadV1]) -> None
+        """The request body of AccountLinkingRequest.
 
-        :param object_type: 
-        :type object_type: (optional) ask_smapi_model.v1.skill.account_linking.account_linking_type.AccountLinkingType
-        :param authorization_url: The url where customers will be redirected in the companion app to enter login credentials.
-        :type authorization_url: (optional) str
-        :param domains: The list of domains that the authorization URL will fetch content from.
-        :type domains: (optional) list[str]
-        :param client_id: The unique public string used to identify the client requesting for authentication.
-        :type client_id: (optional) str
-        :param scopes: The list of permissions which will be requested from the skill user.
-        :type scopes: (optional) list[str]
-        :param access_token_url: The url used for access token and token refresh requests.
-        :type access_token_url: (optional) str
-        :param client_secret: The client secret provided by developer.
-        :type client_secret: (optional) str
-        :param access_token_scheme: 
-        :type access_token_scheme: (optional) ask_smapi_model.v1.skill.account_linking.access_token_scheme_type.AccessTokenSchemeType
-        :param default_token_expiration_in_seconds: The time in seconds for which access token is valid. If OAuth client returns \&quot;expires_in\&quot;, it will be overwrite this parameter. 
-        :type default_token_expiration_in_seconds: (optional) int
-        :param reciprocal_access_token_url: Optional, if your skill requires reciprocal authorization, provide this additional access token url to handle reciprocal (Alexa) authorization codes that can be exchanged for Alexa access tokens.
-        :type reciprocal_access_token_url: (optional) str
-        :param redirect_urls: The list of valid urls to redirect back to, when the linking process is initiated from a third party system.
-        :type redirect_urls: (optional) list[str]
-        :param authorization_urls_by_platform: The list of valid authorization urls for allowed platforms to initiate account linking.
-        :type authorization_urls_by_platform: (optional) list[ask_smapi_model.v1.skill.account_linking.account_linking_platform_authorization_url.AccountLinkingPlatformAuthorizationUrl]
+        :param account_linking_request: 
+        :type account_linking_request: (optional) ask_smapi_model.v1.skill.account_linking.account_linking_request_payload.AccountLinkingRequestPayload
         """
         self.__discriminator_value = None  # type: str
 
-        self.object_type = object_type
-        self.authorization_url = authorization_url
-        self.domains = domains
-        self.client_id = client_id
-        self.scopes = scopes
-        self.access_token_url = access_token_url
-        self.client_secret = client_secret
-        self.access_token_scheme = access_token_scheme
-        self.default_token_expiration_in_seconds = default_token_expiration_in_seconds
-        self.reciprocal_access_token_url = reciprocal_access_token_url
-        self.redirect_urls = redirect_urls
-        self.authorization_urls_by_platform = authorization_urls_by_platform
+        self.account_linking_request = account_linking_request
 
     def to_dict(self):
         # type: () -> Dict[str, object]
