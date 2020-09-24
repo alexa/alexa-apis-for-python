@@ -30,6 +30,7 @@ if typing.TYPE_CHECKING:
     from ask_sdk_model.interfaces.audioplayer.audio_player_state import AudioPlayerState
     from ask_sdk_model.interfaces.viewport.viewport_state import ViewportState
     from ask_sdk_model.interfaces.viewport.typed_viewport_state import TypedViewportState
+    from ask_sdk_model.interfaces.alexa.extension.extensions_state import ExtensionsState
     from ask_sdk_model.interfaces.display.display_state import DisplayState
 
 
@@ -52,6 +53,8 @@ class Context(object):
     :type viewport: (optional) ask_sdk_model.interfaces.viewport.viewport_state.ViewportState
     :param viewports: This object contains a list of viewports characteristics related to the device&#39;s viewports.
     :type viewports: (optional) list[ask_sdk_model.interfaces.viewport.typed_viewport_state.TypedViewportState]
+    :param extensions: Provides the current state for Extensions interface
+    :type extensions: (optional) ask_sdk_model.interfaces.alexa.extension.extensions_state.ExtensionsState
 
     """
     deserialized_types = {
@@ -62,7 +65,8 @@ class Context(object):
         'display': 'ask_sdk_model.interfaces.display.display_state.DisplayState',
         'geolocation': 'ask_sdk_model.interfaces.geolocation.geolocation_state.GeolocationState',
         'viewport': 'ask_sdk_model.interfaces.viewport.viewport_state.ViewportState',
-        'viewports': 'list[ask_sdk_model.interfaces.viewport.typed_viewport_state.TypedViewportState]'
+        'viewports': 'list[ask_sdk_model.interfaces.viewport.typed_viewport_state.TypedViewportState]',
+        'extensions': 'ask_sdk_model.interfaces.alexa.extension.extensions_state.ExtensionsState'
     }  # type: Dict
 
     attribute_map = {
@@ -73,12 +77,13 @@ class Context(object):
         'display': 'Display',
         'geolocation': 'Geolocation',
         'viewport': 'Viewport',
-        'viewports': 'Viewports'
+        'viewports': 'Viewports',
+        'extensions': 'Extensions'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, system=None, alexa_presentation_apl=None, audio_player=None, automotive=None, display=None, geolocation=None, viewport=None, viewports=None):
-        # type: (Optional[SystemState], Optional[RenderedDocumentState], Optional[AudioPlayerState], Optional[AutomotiveState], Optional[DisplayState], Optional[GeolocationState], Optional[ViewportState], Optional[List[TypedViewportState]]) -> None
+    def __init__(self, system=None, alexa_presentation_apl=None, audio_player=None, automotive=None, display=None, geolocation=None, viewport=None, viewports=None, extensions=None):
+        # type: (Optional[SystemState], Optional[RenderedDocumentState], Optional[AudioPlayerState], Optional[AutomotiveState], Optional[DisplayState], Optional[GeolocationState], Optional[ViewportState], Optional[List[TypedViewportState]], Optional[ExtensionsState]) -> None
         """
 
         :param system: Provides information about the current state of the Alexa service and the device interacting with your skill.
@@ -97,6 +102,8 @@ class Context(object):
         :type viewport: (optional) ask_sdk_model.interfaces.viewport.viewport_state.ViewportState
         :param viewports: This object contains a list of viewports characteristics related to the device&#39;s viewports.
         :type viewports: (optional) list[ask_sdk_model.interfaces.viewport.typed_viewport_state.TypedViewportState]
+        :param extensions: Provides the current state for Extensions interface
+        :type extensions: (optional) ask_sdk_model.interfaces.alexa.extension.extensions_state.ExtensionsState
         """
         self.__discriminator_value = None  # type: str
 
@@ -108,6 +115,7 @@ class Context(object):
         self.geolocation = geolocation
         self.viewport = viewport
         self.viewports = viewports
+        self.extensions = extensions
 
     def to_dict(self):
         # type: () -> Dict[str, object]
