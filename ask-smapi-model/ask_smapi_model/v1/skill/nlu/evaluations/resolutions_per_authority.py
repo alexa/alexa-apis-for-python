@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.nlu.evaluations.resolutions_per_authority_status import ResolutionsPerAuthorityStatusV1
-    from ask_smapi_model.v1.skill.nlu.evaluations.resolutions_per_authority_value import ResolutionsPerAuthorityValueV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.resolutions_per_authority_status import ResolutionsPerAuthorityStatus as Evaluations_ResolutionsPerAuthorityStatusV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.resolutions_per_authority_value import ResolutionsPerAuthorityValue as Evaluations_ResolutionsPerAuthorityValueV1
 
 
 class ResolutionsPerAuthority(object):
@@ -52,7 +52,7 @@ class ResolutionsPerAuthority(object):
     supports_multiple_types = False
 
     def __init__(self, authority=None, status=None, values=None):
-        # type: (Optional[str], Optional[ResolutionsPerAuthorityStatusV1], Optional[List[ResolutionsPerAuthorityValueV1]]) -> None
+        # type: (Optional[str], Optional[Evaluations_ResolutionsPerAuthorityStatusV1], Optional[List[Evaluations_ResolutionsPerAuthorityValueV1]]) -> None
         """
 
         :param authority: The name of the authority for the slot values. For custom slot types, this authority label incorporates your skill ID and the slot type name. 

@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.standardized_error import StandardizedErrorV1
-    from ask_smapi_model.v1.skill.rollback_request_status_types import RollbackRequestStatusTypesV1
+    from ask_smapi_model.v1.skill.rollback_request_status_types import RollbackRequestStatusTypes as Skill_RollbackRequestStatusTypesV1
+    from ask_smapi_model.v1.skill.standardized_error import StandardizedError as Skill_StandardizedErrorV1
 
 
 class RollbackRequestStatus(object):
@@ -62,7 +62,7 @@ class RollbackRequestStatus(object):
     supports_multiple_types = False
 
     def __init__(self, id=None, target_version=None, submission_time=None, status=None, errors=None):
-        # type: (Optional[str], Optional[str], Optional[datetime], Optional[RollbackRequestStatusTypesV1], Optional[List[StandardizedErrorV1]]) -> None
+        # type: (Optional[str], Optional[str], Optional[datetime], Optional[Skill_RollbackRequestStatusTypesV1], Optional[List[Skill_StandardizedErrorV1]]) -> None
         """Rollback request for a skill
 
         :param id: rollback request id

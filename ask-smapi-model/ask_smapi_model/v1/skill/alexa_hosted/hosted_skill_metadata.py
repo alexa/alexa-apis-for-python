@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_info import HostedSkillInfoV1
+    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_info import HostedSkillInfo as AlexaHosted_HostedSkillInfoV1
 
 
 class HostedSkillMetadata(object):
@@ -45,7 +45,7 @@ class HostedSkillMetadata(object):
     supports_multiple_types = False
 
     def __init__(self, alexa_hosted=None):
-        # type: (Optional[HostedSkillInfoV1]) -> None
+        # type: (Optional[AlexaHosted_HostedSkillInfoV1]) -> None
         """Alexa Hosted skill&#39;s metadata
 
         :param alexa_hosted: 

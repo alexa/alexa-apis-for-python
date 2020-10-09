@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent import ConflictIntentV1
+    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent import ConflictIntent as ConflictDetection_ConflictIntentV1
 
 
 class ConflictResult(object):
@@ -47,7 +47,7 @@ class ConflictResult(object):
     supports_multiple_types = False
 
     def __init__(self, sample_utterance=None, intent=None):
-        # type: (Optional[str], Optional[ConflictIntentV1]) -> None
+        # type: (Optional[str], Optional[ConflictDetection_ConflictIntentV1]) -> None
         """
 
         :param sample_utterance: Sample utterance provided by 3P developers for intents.

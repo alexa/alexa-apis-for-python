@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v0.catalog.upload.upload_status import UploadStatusV0
+    from ask_smapi_model.v0.catalog.upload.upload_status import UploadStatus as Upload_UploadStatusV0
 
 
 class ContentUploadSummary(object):
@@ -59,7 +59,7 @@ class ContentUploadSummary(object):
     supports_multiple_types = False
 
     def __init__(self, id=None, catalog_id=None, status=None, created_date=None, last_updated_date=None):
-        # type: (Optional[str], Optional[str], Optional[UploadStatusV0], Optional[datetime], Optional[datetime]) -> None
+        # type: (Optional[str], Optional[str], Optional[Upload_UploadStatusV0], Optional[datetime], Optional[datetime]) -> None
         """
 
         :param id: Unique identifier of the upload.

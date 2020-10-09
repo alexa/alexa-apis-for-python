@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_repository_credentials import HostedSkillRepositoryCredentialsV1
+    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_repository_credentials import HostedSkillRepositoryCredentials as AlexaHosted_HostedSkillRepositoryCredentialsV1
 
 
 class HostedSkillRepositoryCredentialsList(object):
@@ -45,7 +45,7 @@ class HostedSkillRepositoryCredentialsList(object):
     supports_multiple_types = False
 
     def __init__(self, repository_credentials=None):
-        # type: (Optional[HostedSkillRepositoryCredentialsV1]) -> None
+        # type: (Optional[AlexaHosted_HostedSkillRepositoryCredentialsV1]) -> None
         """defines the structure for the hosted skill repository credentials response
 
         :param repository_credentials: 

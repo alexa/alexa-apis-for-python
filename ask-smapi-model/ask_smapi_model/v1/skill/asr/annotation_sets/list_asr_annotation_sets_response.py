@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.asr.annotation_sets.annotation_set_items import AnnotationSetItemsV1
-    from ask_smapi_model.v1.skill.asr.annotation_sets.pagination_context import PaginationContextV1
+    from ask_smapi_model.v1.skill.asr.annotation_sets.annotation_set_items import AnnotationSetItems as AnnotationSets_AnnotationSetItemsV1
+    from ask_smapi_model.v1.skill.asr.annotation_sets.pagination_context import PaginationContext as AnnotationSets_PaginationContextV1
 
 
 class ListASRAnnotationSetsResponse(object):
@@ -48,7 +48,7 @@ class ListASRAnnotationSetsResponse(object):
     supports_multiple_types = False
 
     def __init__(self, annotation_sets=None, pagination_context=None):
-        # type: (Optional[List[AnnotationSetItemsV1]], Optional[PaginationContextV1]) -> None
+        # type: (Optional[List[AnnotationSets_AnnotationSetItemsV1]], Optional[AnnotationSets_PaginationContextV1]) -> None
         """
 
         :param annotation_sets: 

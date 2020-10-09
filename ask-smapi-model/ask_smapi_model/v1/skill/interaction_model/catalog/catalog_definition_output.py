@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.catalog.catalog_entity import CatalogEntityV1
+    from ask_smapi_model.v1.skill.interaction_model.catalog.catalog_entity import CatalogEntity as Catalog_CatalogEntityV1
 
 
 class CatalogDefinitionOutput(object):
@@ -53,7 +53,7 @@ class CatalogDefinitionOutput(object):
     supports_multiple_types = False
 
     def __init__(self, catalog=None, creation_time=None, total_versions=None):
-        # type: (Optional[CatalogEntityV1], Optional[str], Optional[str]) -> None
+        # type: (Optional[Catalog_CatalogEntityV1], Optional[str], Optional[str]) -> None
         """Catalog request definitions.
 
         :param catalog: 

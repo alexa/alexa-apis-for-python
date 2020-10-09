@@ -22,7 +22,7 @@ from ask_smapi_model.v1.skill.asr.annotation_sets.annotation_set_metadata import
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
 
 

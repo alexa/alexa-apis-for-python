@@ -21,7 +21,7 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
 
 
@@ -32,34 +32,34 @@ class CustomProductPrompts(object):
 
     :param purchase_prompt_description: Description of in-skill product heard before customer is prompted for purchase.
     :type purchase_prompt_description: (optional) str
-    :param bought_confirmation_prompt: Confirmation of in-skill product purchase.
-    :type bought_confirmation_prompt: (optional) str
+    :param bought_card_description: A description of the product that displays on the skill card in the Alexa app.
+    :type bought_card_description: (optional) str
 
     """
     deserialized_types = {
         'purchase_prompt_description': 'str',
-        'bought_confirmation_prompt': 'str'
+        'bought_card_description': 'str'
     }  # type: Dict
 
     attribute_map = {
         'purchase_prompt_description': 'purchasePromptDescription',
-        'bought_confirmation_prompt': 'boughtConfirmationPrompt'
+        'bought_card_description': 'boughtCardDescription'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, purchase_prompt_description=None, bought_confirmation_prompt=None):
+    def __init__(self, purchase_prompt_description=None, bought_card_description=None):
         # type: (Optional[str], Optional[str]) -> None
         """Custom prompts used for in-skill product purchasing options. Supports Speech Synthesis Markup Language (SSML), which can be used to control pronunciation, intonation, timing, and emotion.
 
         :param purchase_prompt_description: Description of in-skill product heard before customer is prompted for purchase.
         :type purchase_prompt_description: (optional) str
-        :param bought_confirmation_prompt: Confirmation of in-skill product purchase.
-        :type bought_confirmation_prompt: (optional) str
+        :param bought_card_description: A description of the product that displays on the skill card in the Alexa app.
+        :type bought_card_description: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
         self.purchase_prompt_description = purchase_prompt_description
-        self.bought_confirmation_prompt = bought_confirmation_prompt
+        self.bought_card_description = bought_card_description
 
     def to_dict(self):
         # type: () -> Dict[str, object]

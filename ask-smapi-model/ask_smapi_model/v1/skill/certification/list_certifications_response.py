@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.certification.certification_summary import CertificationSummaryV1
-    from ask_smapi_model.v1.links import LinksV1
+    from ask_smapi_model.v1.links import Links as V1_LinksV1
+    from ask_smapi_model.v1.skill.certification.certification_summary import CertificationSummary as Certification_CertificationSummaryV1
 
 
 class ListCertificationsResponse(object):
@@ -62,7 +62,7 @@ class ListCertificationsResponse(object):
     supports_multiple_types = False
 
     def __init__(self, links=None, is_truncated=None, next_token=None, total_count=None, items=None):
-        # type: (Optional[LinksV1], Optional[bool], Optional[str], Optional[int], Optional[List[CertificationSummaryV1]]) -> None
+        # type: (Optional[V1_LinksV1], Optional[bool], Optional[str], Optional[int], Optional[List[Certification_CertificationSummaryV1]]) -> None
         """List of certification summary for a skill.
 
         :param links: 

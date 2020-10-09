@@ -21,11 +21,11 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.dialog import DialogV1
-    from ask_smapi_model.v1.skill.interaction_model.language_model import LanguageModelV1
-    from ask_smapi_model.v1.skill.interaction_model.prompt import PromptV1
+    from ask_smapi_model.v1.skill.interaction_model.dialog import Dialog as InteractionModel_DialogV1
+    from ask_smapi_model.v1.skill.interaction_model.prompt import Prompt as InteractionModel_PromptV1
+    from ask_smapi_model.v1.skill.interaction_model.language_model import LanguageModel as InteractionModel_LanguageModelV1
 
 
 class InteractionModelSchema(object):
@@ -53,7 +53,7 @@ class InteractionModelSchema(object):
     supports_multiple_types = False
 
     def __init__(self, language_model=None, dialog=None, prompts=None):
-        # type: (Optional[LanguageModelV1], Optional[DialogV1], Optional[List[PromptV1]]) -> None
+        # type: (Optional[InteractionModel_LanguageModelV1], Optional[InteractionModel_DialogV1], Optional[List[InteractionModel_PromptV1]]) -> None
         """
 
         :param language_model: 

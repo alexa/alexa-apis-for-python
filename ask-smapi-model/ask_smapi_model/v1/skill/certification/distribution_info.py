@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.certification.publication_failure import PublicationFailureV1
+    from ask_smapi_model.v1.skill.certification.publication_failure import PublicationFailure as Certification_PublicationFailureV1
 
 
 class DistributionInfo(object):
@@ -49,7 +49,7 @@ class DistributionInfo(object):
     supports_multiple_types = False
 
     def __init__(self, published_countries=None, publication_failures=None):
-        # type: (Optional[List[object]], Optional[List[PublicationFailureV1]]) -> None
+        # type: (Optional[List[object]], Optional[List[Certification_PublicationFailureV1]]) -> None
         """The distribution information for skill where Amazon distributed the skill
 
         :param published_countries: All countries where the skill was published in by Amazon.

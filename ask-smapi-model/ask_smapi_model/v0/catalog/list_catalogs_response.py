@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v0.links import LinksV0
-    from ask_smapi_model.v0.catalog.catalog_summary import CatalogSummaryV0
+    from ask_smapi_model.v0.links import Links as V0_LinksV0
+    from ask_smapi_model.v0.catalog.catalog_summary import CatalogSummary as Catalog_CatalogSummaryV0
 
 
 class ListCatalogsResponse(object):
@@ -58,7 +58,7 @@ class ListCatalogsResponse(object):
     supports_multiple_types = False
 
     def __init__(self, links=None, catalogs=None, is_truncated=None, next_token=None):
-        # type: (Optional[LinksV0], Optional[List[CatalogSummaryV0]], Optional[bool], Optional[str]) -> None
+        # type: (Optional[V0_LinksV0], Optional[List[Catalog_CatalogSummaryV0]], Optional[bool], Optional[str]) -> None
         """Information about catalogs.
 
         :param links: 

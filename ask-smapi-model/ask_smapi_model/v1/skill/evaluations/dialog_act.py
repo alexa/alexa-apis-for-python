@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.evaluations.dialog_act_type import DialogActTypeV1
+    from ask_smapi_model.v1.skill.evaluations.dialog_act_type import DialogActType as Evaluations_DialogActTypeV1
 
 
 class DialogAct(object):
@@ -49,7 +49,7 @@ class DialogAct(object):
     supports_multiple_types = False
 
     def __init__(self, object_type=None, target_slot=None):
-        # type: (Optional[DialogActTypeV1], Optional[str]) -> None
+        # type: (Optional[Evaluations_DialogActTypeV1], Optional[str]) -> None
         """A representation of question prompts to the user for multi-turn, which requires user to fill a slot value, or confirm a slot value, or confirm an intent. 
 
         :param object_type: 

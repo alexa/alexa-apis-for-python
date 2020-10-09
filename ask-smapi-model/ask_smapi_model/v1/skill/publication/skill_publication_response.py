@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.publication.skill_publication_status import SkillPublicationStatusV1
+    from ask_smapi_model.v1.skill.publication.skill_publication_status import SkillPublicationStatus as Publication_SkillPublicationStatusV1
 
 
 class SkillPublicationResponse(object):
@@ -47,7 +47,7 @@ class SkillPublicationResponse(object):
     supports_multiple_types = False
 
     def __init__(self, publishes_at_date=None, status=None):
-        # type: (Optional[datetime], Optional[SkillPublicationStatusV1]) -> None
+        # type: (Optional[datetime], Optional[Publication_SkillPublicationStatusV1]) -> None
         """
 
         :param publishes_at_date: Used to determine when the skill Publishing should start.

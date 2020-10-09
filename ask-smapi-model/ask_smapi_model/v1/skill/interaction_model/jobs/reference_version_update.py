@@ -22,10 +22,10 @@ from ask_smapi_model.v1.skill.interaction_model.jobs.job_definition import JobDe
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.jobs.resource_object import ResourceObjectV1
-    from ask_smapi_model.v1.skill.interaction_model.jobs.referenced_resource_jobs_complete import ReferencedResourceJobsCompleteV1
+    from ask_smapi_model.v1.skill.interaction_model.jobs.resource_object import ResourceObject as Jobs_ResourceObjectV1
+    from ask_smapi_model.v1.skill.interaction_model.jobs.referenced_resource_jobs_complete import ReferencedResourceJobsComplete as Jobs_ReferencedResourceJobsCompleteV1
 
 
 class ReferenceVersionUpdate(JobDefinition):
@@ -65,7 +65,7 @@ class ReferenceVersionUpdate(JobDefinition):
     supports_multiple_types = False
 
     def __init__(self, trigger=None, status=None, resource=None, references=None, publish_to_live=None):
-        # type: (Optional[ReferencedResourceJobsCompleteV1], Optional[str], Optional[ResourceObjectV1], Optional[List[ResourceObjectV1]], Optional[bool]) -> None
+        # type: (Optional[Jobs_ReferencedResourceJobsCompleteV1], Optional[str], Optional[Jobs_ResourceObjectV1], Optional[List[Jobs_ResourceObjectV1]], Optional[bool]) -> None
         """Definition for ReferenceVersionUpdate job.
 
         :param trigger: Can only have ReferencedResourceJobsComplete trigger.

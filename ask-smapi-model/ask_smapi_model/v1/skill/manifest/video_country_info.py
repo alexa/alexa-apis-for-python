@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.video_catalog_info import VideoCatalogInfoV1
+    from ask_smapi_model.v1.skill.manifest.video_catalog_info import VideoCatalogInfo as Manifest_VideoCatalogInfoV1
 
 
 class VideoCountryInfo(object):
@@ -45,7 +45,7 @@ class VideoCountryInfo(object):
     supports_multiple_types = False
 
     def __init__(self, catalog_information=None):
-        # type: (Optional[List[VideoCatalogInfoV1]]) -> None
+        # type: (Optional[List[Manifest_VideoCatalogInfoV1]]) -> None
         """Defines the structure of per-country video info in the skill manifest.
 
         :param catalog_information: 

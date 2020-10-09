@@ -21,16 +21,16 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.image_attributes import ImageAttributesV1
-    from ask_smapi_model.v1.skill.agreement_type import AgreementTypeV1
-    from ask_smapi_model.v1.skill.instance import InstanceV1
-    from ask_smapi_model.v1.skill.format import FormatV1
-    from ask_smapi_model.v1.skill.validation_feature import ValidationFeatureV1
-    from ask_smapi_model.v1.skill.validation_failure_reason import ValidationFailureReasonV1
-    from ask_smapi_model.v1.skill.validation_data_types import ValidationDataTypesV1
-    from ask_smapi_model.v1.skill.validation_endpoint import ValidationEndpointV1
+    from ask_smapi_model.v1.skill.instance import Instance as Skill_InstanceV1
+    from ask_smapi_model.v1.skill.validation_failure_reason import ValidationFailureReason as Skill_ValidationFailureReasonV1
+    from ask_smapi_model.v1.skill.image_attributes import ImageAttributes as Skill_ImageAttributesV1
+    from ask_smapi_model.v1.skill.validation_endpoint import ValidationEndpoint as Skill_ValidationEndpointV1
+    from ask_smapi_model.v1.skill.format import Format as Skill_FormatV1
+    from ask_smapi_model.v1.skill.agreement_type import AgreementType as Skill_AgreementTypeV1
+    from ask_smapi_model.v1.skill.validation_data_types import ValidationDataTypes as Skill_ValidationDataTypesV1
+    from ask_smapi_model.v1.skill.validation_feature import ValidationFeature as Skill_ValidationFeatureV1
 
 
 class ValidationDetails(object):
@@ -144,7 +144,7 @@ class ValidationDetails(object):
     supports_multiple_types = False
 
     def __init__(self, actual_image_attributes=None, actual_number_of_items=None, actual_string_length=None, allowed_content_types=None, allowed_data_types=None, allowed_image_attributes=None, conflicting_instance=None, expected_format=None, expected_instance=None, expected_regex_pattern=None, agreement_type=None, feature=None, inconsistent_endpoint=None, minimum_integer_value=None, minimum_number_of_items=None, minimum_string_length=None, maximum_integer_value=None, maximum_number_of_items=None, maximum_string_length=None, original_endpoint=None, original_instance=None, reason=None, required_property=None, unexpected_property=None):
-        # type: (Optional[ImageAttributesV1], Optional[int], Optional[int], Optional[List[object]], Optional[List[ValidationDataTypesV1]], Optional[List[ImageAttributesV1]], Optional[InstanceV1], Optional[FormatV1], Optional[InstanceV1], Optional[str], Optional[AgreementTypeV1], Optional[ValidationFeatureV1], Optional[ValidationEndpointV1], Optional[int], Optional[int], Optional[int], Optional[int], Optional[int], Optional[int], Optional[ValidationEndpointV1], Optional[InstanceV1], Optional[ValidationFailureReasonV1], Optional[str], Optional[str]) -> None
+        # type: (Optional[Skill_ImageAttributesV1], Optional[int], Optional[int], Optional[List[object]], Optional[List[Skill_ValidationDataTypesV1]], Optional[List[Skill_ImageAttributesV1]], Optional[Skill_InstanceV1], Optional[Skill_FormatV1], Optional[Skill_InstanceV1], Optional[str], Optional[Skill_AgreementTypeV1], Optional[Skill_ValidationFeatureV1], Optional[Skill_ValidationEndpointV1], Optional[int], Optional[int], Optional[int], Optional[int], Optional[int], Optional[int], Optional[Skill_ValidationEndpointV1], Optional[Skill_InstanceV1], Optional[Skill_ValidationFailureReasonV1], Optional[str], Optional[str]) -> None
         """Standardized, machine readable structure that wraps all the information about a specific occurrence of an error of the type specified by the code.
 
         :param actual_image_attributes: Set of properties of the image provided by the customer.

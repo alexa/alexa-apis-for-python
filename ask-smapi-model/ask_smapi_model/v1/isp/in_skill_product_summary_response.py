@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.isp.in_skill_product_summary import InSkillProductSummaryV1
+    from ask_smapi_model.v1.isp.in_skill_product_summary import InSkillProductSummary as Isp_InSkillProductSummaryV1
 
 
 class InSkillProductSummaryResponse(object):
@@ -45,7 +45,7 @@ class InSkillProductSummaryResponse(object):
     supports_multiple_types = False
 
     def __init__(self, in_skill_product_summary=None):
-        # type: (Optional[InSkillProductSummaryV1]) -> None
+        # type: (Optional[Isp_InSkillProductSummaryV1]) -> None
         """In-skill product summary response.
 
         :param in_skill_product_summary: 

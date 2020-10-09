@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v0.development_events.subscriber.endpoint import EndpointV0
+    from ask_smapi_model.v0.development_events.subscriber.endpoint import Endpoint as Subscriber_EndpointV0
 
 
 class CreateSubscriberRequest(object):
@@ -51,7 +51,7 @@ class CreateSubscriberRequest(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, vendor_id=None, endpoint=None):
-        # type: (Optional[str], Optional[str], Optional[EndpointV0]) -> None
+        # type: (Optional[str], Optional[str], Optional[Subscriber_EndpointV0]) -> None
         """
 
         :param name: Name of the subscriber.

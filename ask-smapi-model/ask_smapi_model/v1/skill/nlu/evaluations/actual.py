@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.nlu.evaluations.intent import IntentV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.intent import Intent as Evaluations_IntentV1
 
 
 class Actual(object):
@@ -47,7 +47,7 @@ class Actual(object):
     supports_multiple_types = False
 
     def __init__(self, domain=None, intent=None):
-        # type: (Optional[str], Optional[IntentV1]) -> None
+        # type: (Optional[str], Optional[Evaluations_IntentV1]) -> None
         """
 
         :param domain: 

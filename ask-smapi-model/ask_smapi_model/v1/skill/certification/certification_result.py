@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.certification.distribution_info import DistributionInfoV1
+    from ask_smapi_model.v1.skill.certification.distribution_info import DistributionInfo as Certification_DistributionInfoV1
 
 
 class CertificationResult(object):
@@ -45,7 +45,7 @@ class CertificationResult(object):
     supports_multiple_types = False
 
     def __init__(self, distribution_info=None):
-        # type: (Optional[DistributionInfoV1]) -> None
+        # type: (Optional[Certification_DistributionInfoV1]) -> None
         """Structure for the result for the outcomes of certification review for the skill. Currently provides the distribution information of a skill if the certification SUCCEEDED. 
 
         :param distribution_info: 

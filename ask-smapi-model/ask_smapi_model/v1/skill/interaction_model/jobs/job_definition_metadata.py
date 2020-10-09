@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.jobs.job_definition_status import JobDefinitionStatusV1
+    from ask_smapi_model.v1.skill.interaction_model.jobs.job_definition_status import JobDefinitionStatus as Jobs_JobDefinitionStatusV1
 
 
 class JobDefinitionMetadata(object):
@@ -53,7 +53,7 @@ class JobDefinitionMetadata(object):
     supports_multiple_types = False
 
     def __init__(self, id=None, object_type=None, status=None):
-        # type: (Optional[str], Optional[str], Optional[JobDefinitionStatusV1]) -> None
+        # type: (Optional[str], Optional[str], Optional[Jobs_JobDefinitionStatusV1]) -> None
         """Metadata of the job definition.
 
         :param id: Job identifier.

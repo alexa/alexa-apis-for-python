@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v0.development_events.subscriber.endpoint_authorization import EndpointAuthorizationV0
+    from ask_smapi_model.v0.development_events.subscriber.endpoint_authorization import EndpointAuthorization as Subscriber_EndpointAuthorizationV0
 
 
 class Endpoint(object):
@@ -47,7 +47,7 @@ class Endpoint(object):
     supports_multiple_types = False
 
     def __init__(self, uri=None, authorization=None):
-        # type: (Optional[str], Optional[EndpointAuthorizationV0]) -> None
+        # type: (Optional[str], Optional[Subscriber_EndpointAuthorizationV0]) -> None
         """
 
         :param uri: Uri of the endpoint that receives the notification.

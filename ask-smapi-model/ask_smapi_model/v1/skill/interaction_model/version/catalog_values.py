@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.links import LinksV1
-    from ask_smapi_model.v1.skill.interaction_model.version.value_schema import ValueSchemaV1
+    from ask_smapi_model.v1.links import Links as V1_LinksV1
+    from ask_smapi_model.v1.skill.interaction_model.version.value_schema import ValueSchema as Version_ValueSchemaV1
 
 
 class CatalogValues(object):
@@ -62,7 +62,7 @@ class CatalogValues(object):
     supports_multiple_types = False
 
     def __init__(self, is_truncated=None, next_token=None, total_count=None, links=None, values=None):
-        # type: (Optional[bool], Optional[str], Optional[int], Optional[LinksV1], Optional[List[ValueSchemaV1]]) -> None
+        # type: (Optional[bool], Optional[str], Optional[int], Optional[V1_LinksV1], Optional[List[Version_ValueSchemaV1]]) -> None
         """List of catalog values.
 
         :param is_truncated: 

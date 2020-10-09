@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_repository import HostedSkillRepositoryV1
+    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_repository import HostedSkillRepository as AlexaHosted_HostedSkillRepositoryV1
 
 
 class HostedSkillRepositoryInfo(object):
@@ -49,7 +49,7 @@ class HostedSkillRepositoryInfo(object):
     supports_multiple_types = False
 
     def __init__(self, url=None, object_type=None):
-        # type: (Optional[str], Optional[HostedSkillRepositoryV1]) -> None
+        # type: (Optional[str], Optional[AlexaHosted_HostedSkillRepositoryV1]) -> None
         """Alexa Hosted Skill&#39;s Repository Information
 
         :param url: 

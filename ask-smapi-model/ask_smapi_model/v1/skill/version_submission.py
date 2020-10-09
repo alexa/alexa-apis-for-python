@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.version_submission_status import VersionSubmissionStatusV1
+    from ask_smapi_model.v1.skill.version_submission_status import VersionSubmissionStatus as Skill_VersionSubmissionStatusV1
 
 
 class VersionSubmission(object):
@@ -49,7 +49,7 @@ class VersionSubmission(object):
     supports_multiple_types = False
 
     def __init__(self, status=None, submission_time=None):
-        # type: (Optional[VersionSubmissionStatusV1], Optional[datetime]) -> None
+        # type: (Optional[Skill_VersionSubmissionStatusV1], Optional[datetime]) -> None
         """Submission for a skill version 
 
         :param status: 

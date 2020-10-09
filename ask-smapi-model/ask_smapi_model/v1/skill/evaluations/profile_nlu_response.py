@@ -21,11 +21,11 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.evaluations.profile_nlu_selected_intent import ProfileNluSelectedIntentV1
-    from ask_smapi_model.v1.skill.evaluations.intent import IntentV1
-    from ask_smapi_model.v1.skill.evaluations.multi_turn import MultiTurnV1
+    from ask_smapi_model.v1.skill.evaluations.profile_nlu_selected_intent import ProfileNluSelectedIntent as Evaluations_ProfileNluSelectedIntentV1
+    from ask_smapi_model.v1.skill.evaluations.intent import Intent as Evaluations_IntentV1
+    from ask_smapi_model.v1.skill.evaluations.multi_turn import MultiTurn as Evaluations_MultiTurnV1
 
 
 class ProfileNluResponse(object):
@@ -57,7 +57,7 @@ class ProfileNluResponse(object):
     supports_multiple_types = False
 
     def __init__(self, session_ended=None, selected_intent=None, considered_intents=None, multi_turn=None):
-        # type: (Optional[bool], Optional[ProfileNluSelectedIntentV1], Optional[List[IntentV1]], Optional[MultiTurnV1]) -> None
+        # type: (Optional[bool], Optional[Evaluations_ProfileNluSelectedIntentV1], Optional[List[Evaluations_IntentV1]], Optional[Evaluations_MultiTurnV1]) -> None
         """
 
         :param session_ended: Represents when an utterance results in the skill exiting. It would be true when NLU selects 1P ExitAppIntent or GoHomeIntent, and false otherwise. 

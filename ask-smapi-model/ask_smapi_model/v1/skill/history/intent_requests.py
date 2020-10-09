@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.links import LinksV1
-    from ask_smapi_model.v1.skill.history.intent_request import IntentRequestV1
+    from ask_smapi_model.v1.links import Links as V1_LinksV1
+    from ask_smapi_model.v1.skill.history.intent_request import IntentRequest as History_IntentRequestV1
 
 
 class IntentRequests(object):
@@ -70,7 +70,7 @@ class IntentRequests(object):
     supports_multiple_types = False
 
     def __init__(self, links=None, next_token=None, is_truncated=None, total_count=None, start_index=None, skill_id=None, items=None):
-        # type: (Optional[LinksV1], Optional[str], Optional[bool], Optional[float], Optional[float], Optional[str], Optional[List[IntentRequestV1]]) -> None
+        # type: (Optional[V1_LinksV1], Optional[str], Optional[bool], Optional[float], Optional[float], Optional[str], Optional[List[History_IntentRequestV1]]) -> None
         """Response to the GET Intent Request History API. It contains the collection of utterances for the skill, nextToken and other metadata related to the search query.
 
         :param links: 

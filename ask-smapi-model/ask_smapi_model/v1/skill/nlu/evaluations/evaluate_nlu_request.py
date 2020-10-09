@@ -21,16 +21,16 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.nlu.evaluations.source import SourceV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.source import Source as Evaluations_SourceV1
 
 
 class EvaluateNLURequest(object):
     """
 
     :param stage: 
-    :type stage: str
+    :type stage: (optional) object
     :param locale: 
     :type locale: (optional) str
     :param source: 
@@ -38,7 +38,7 @@ class EvaluateNLURequest(object):
 
     """
     deserialized_types = {
-        'stage': 'str',
+        'stage': 'object',
         'locale': 'str',
         'source': 'ask_smapi_model.v1.skill.nlu.evaluations.source.Source'
     }  # type: Dict
@@ -50,12 +50,12 @@ class EvaluateNLURequest(object):
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, stage='development', locale=None, source=None):
-        # type: (Optional[str], Optional[str], Optional[SourceV1]) -> None
+    def __init__(self, stage=None, locale=None, source=None):
+        # type: (Optional[object], Optional[str], Optional[Evaluations_SourceV1]) -> None
         """
 
         :param stage: 
-        :type stage: str
+        :type stage: (optional) object
         :param locale: 
         :type locale: (optional) str
         :param source: 

@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.nlu.evaluations.confirmation_status import ConfirmationStatusV1
-    from ask_smapi_model.v1.skill.nlu.evaluations.resolutions import ResolutionsV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.confirmation_status import ConfirmationStatus as Evaluations_ConfirmationStatusV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.resolutions import Resolutions as Evaluations_ResolutionsV1
 
 
 class SlotsProps(object):
@@ -56,7 +56,7 @@ class SlotsProps(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, value=None, confirmation_status=None, resolutions=None):
-        # type: (Optional[str], Optional[str], Optional[ConfirmationStatusV1], Optional[ResolutionsV1]) -> None
+        # type: (Optional[str], Optional[str], Optional[Evaluations_ConfirmationStatusV1], Optional[Evaluations_ResolutionsV1]) -> None
         """
 
         :param name: 

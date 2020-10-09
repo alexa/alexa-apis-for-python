@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v0.catalog.catalog_type import CatalogTypeV0
-    from ask_smapi_model.v0.catalog.catalog_usage import CatalogUsageV0
+    from ask_smapi_model.v0.catalog.catalog_type import CatalogType as Catalog_CatalogTypeV0
+    from ask_smapi_model.v0.catalog.catalog_usage import CatalogUsage as Catalog_CatalogUsageV0
 
 
 class CatalogDetails(object):
@@ -68,7 +68,7 @@ class CatalogDetails(object):
     supports_multiple_types = False
 
     def __init__(self, id=None, title=None, object_type=None, usage=None, last_updated_date=None, created_date=None, associated_skill_ids=None):
-        # type: (Optional[str], Optional[str], Optional[CatalogTypeV0], Optional[CatalogUsageV0], Optional[datetime], Optional[datetime], Optional[List[object]]) -> None
+        # type: (Optional[str], Optional[str], Optional[Catalog_CatalogTypeV0], Optional[Catalog_CatalogUsageV0], Optional[datetime], Optional[datetime], Optional[List[object]]) -> None
         """
 
         :param id: Unique identifier of the added catalog object.

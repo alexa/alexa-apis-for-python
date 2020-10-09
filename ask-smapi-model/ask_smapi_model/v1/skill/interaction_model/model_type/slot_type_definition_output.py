@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_input import SlotTypeInputV1
+    from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_input import SlotTypeInput as ModelType_SlotTypeInputV1
 
 
 class SlotTypeDefinitionOutput(object):
@@ -49,7 +49,7 @@ class SlotTypeDefinitionOutput(object):
     supports_multiple_types = False
 
     def __init__(self, slot_type=None, total_versions=None):
-        # type: (Optional[SlotTypeInputV1], Optional[str]) -> None
+        # type: (Optional[ModelType_SlotTypeInputV1], Optional[str]) -> None
         """Slot Type request definitions.
 
         :param slot_type: 

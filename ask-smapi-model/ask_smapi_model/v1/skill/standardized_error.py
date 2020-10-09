@@ -22,9 +22,9 @@ from ask_smapi_model.v1.error import Error
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.validation_details import ValidationDetailsV1
+    from ask_smapi_model.v1.skill.validation_details import ValidationDetails as Skill_ValidationDetailsV1
 
 
 class StandardizedError(Error):
@@ -54,7 +54,7 @@ class StandardizedError(Error):
     supports_multiple_types = False
 
     def __init__(self, validation_details=None, code=None, message=None):
-        # type: (Optional[ValidationDetailsV1], Optional[str], Optional[str]) -> None
+        # type: (Optional[Skill_ValidationDetailsV1], Optional[str], Optional[str]) -> None
         """Standardized structure which wraps machine parsable and human readable information about an error.
 
         :param validation_details: Standardized, machine readable structure that wraps all the information about a specific occurrence of an error of the type specified by the code.

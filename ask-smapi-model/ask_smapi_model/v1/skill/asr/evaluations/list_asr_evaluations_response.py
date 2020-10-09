@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.asr.evaluations.pagination_context import PaginationContextV1
-    from ask_smapi_model.v1.skill.asr.evaluations.evaluation_items import EvaluationItemsV1
+    from ask_smapi_model.v1.skill.asr.evaluations.pagination_context import PaginationContext as Evaluations_PaginationContextV1
+    from ask_smapi_model.v1.skill.asr.evaluations.evaluation_items import EvaluationItems as Evaluations_EvaluationItemsV1
 
 
 class ListAsrEvaluationsResponse(object):
@@ -50,7 +50,7 @@ class ListAsrEvaluationsResponse(object):
     supports_multiple_types = False
 
     def __init__(self, evaluations=None, pagination_context=None):
-        # type: (Optional[List[EvaluationItemsV1]], Optional[PaginationContextV1]) -> None
+        # type: (Optional[List[Evaluations_EvaluationItemsV1]], Optional[Evaluations_PaginationContextV1]) -> None
         """response body for a list evaluation API
 
         :param evaluations: an array containing all evaluations that have ever run by developers based on the filter criteria defined in the request

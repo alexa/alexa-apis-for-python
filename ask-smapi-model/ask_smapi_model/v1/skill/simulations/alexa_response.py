@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.simulations.alexa_response_content import AlexaResponseContentV1
+    from ask_smapi_model.v1.skill.simulations.alexa_response_content import AlexaResponseContent as Simulations_AlexaResponseContentV1
 
 
 class AlexaResponse(object):
@@ -47,7 +47,7 @@ class AlexaResponse(object):
     supports_multiple_types = False
 
     def __init__(self, object_type=None, content=None):
-        # type: (Optional[str], Optional[AlexaResponseContentV1]) -> None
+        # type: (Optional[str], Optional[Simulations_AlexaResponseContentV1]) -> None
         """
 
         :param object_type: The type of Alexa response

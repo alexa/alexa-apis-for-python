@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v0.development_events.subscriber.endpoint import EndpointV0
-    from ask_smapi_model.v0.development_events.subscriber.subscriber_status import SubscriberStatusV0
+    from ask_smapi_model.v0.development_events.subscriber.subscriber_status import SubscriberStatus as Subscriber_SubscriberStatusV0
+    from ask_smapi_model.v0.development_events.subscriber.endpoint import Endpoint as Subscriber_EndpointV0
 
 
 class SubscriberSummary(object):
@@ -60,7 +60,7 @@ class SubscriberSummary(object):
     supports_multiple_types = False
 
     def __init__(self, subscriber_id=None, name=None, status=None, client_id=None, endpoint=None):
-        # type: (Optional[str], Optional[str], Optional[SubscriberStatusV0], Optional[str], Optional[EndpointV0]) -> None
+        # type: (Optional[str], Optional[str], Optional[Subscriber_SubscriberStatusV0], Optional[str], Optional[Subscriber_EndpointV0]) -> None
         """
 
         :param subscriber_id: Unique identifier of the subscriber resource.

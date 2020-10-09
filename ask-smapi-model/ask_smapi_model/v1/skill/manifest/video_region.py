@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.lambda_endpoint import LambdaEndpointV1
-    from ask_smapi_model.v1.skill.manifest.up_channel_items import UpChannelItemsV1
+    from ask_smapi_model.v1.skill.manifest.lambda_endpoint import LambdaEndpoint as Manifest_LambdaEndpointV1
+    from ask_smapi_model.v1.skill.manifest.up_channel_items import UpChannelItems as Manifest_UpChannelItemsV1
 
 
 class VideoRegion(object):
@@ -50,7 +50,7 @@ class VideoRegion(object):
     supports_multiple_types = False
 
     def __init__(self, endpoint=None, upchannel=None):
-        # type: (Optional[LambdaEndpointV1], Optional[List[UpChannelItemsV1]]) -> None
+        # type: (Optional[Manifest_LambdaEndpointV1], Optional[List[Manifest_UpChannelItemsV1]]) -> None
         """Defines the structure for endpoint information.
 
         :param endpoint: 

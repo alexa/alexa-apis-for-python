@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_response_entity import SlotTypeResponseEntityV1
+    from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_response_entity import SlotTypeResponseEntity as ModelType_SlotTypeResponseEntityV1
 
 
 class SlotTypeResponse(object):
@@ -45,7 +45,7 @@ class SlotTypeResponse(object):
     supports_multiple_types = False
 
     def __init__(self, slot_type=None):
-        # type: (Optional[SlotTypeResponseEntityV1]) -> None
+        # type: (Optional[ModelType_SlotTypeResponseEntityV1]) -> None
         """Slot Type information.
 
         :param slot_type: 

@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.localized_flash_briefing_info import LocalizedFlashBriefingInfoV1
+    from ask_smapi_model.v1.skill.manifest.localized_flash_briefing_info import LocalizedFlashBriefingInfo as Manifest_LocalizedFlashBriefingInfoV1
 
 
 class FlashBriefingApis(object):
@@ -45,7 +45,7 @@ class FlashBriefingApis(object):
     supports_multiple_types = False
 
     def __init__(self, locales=None):
-        # type: (Optional[Dict[str, LocalizedFlashBriefingInfoV1]]) -> None
+        # type: (Optional[Dict[str, Manifest_LocalizedFlashBriefingInfoV1]]) -> None
         """Defines the structure for flash briefing api of the skill.
 
         :param locales: Defines the structure for locale specific flash briefing api information.

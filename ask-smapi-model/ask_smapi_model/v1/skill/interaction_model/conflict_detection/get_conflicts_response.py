@@ -22,11 +22,11 @@ from ask_smapi_model.v1.skill.interaction_model.conflict_detection.paged_respons
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.pagination_context import PaginationContextV1
-    from ask_smapi_model.v1.links import LinksV1
-    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.get_conflicts_response_result import GetConflictsResponseResultV1
+    from ask_smapi_model.v1.links import Links as V1_LinksV1
+    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.pagination_context import PaginationContext as ConflictDetection_PaginationContextV1
+    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.get_conflicts_response_result import GetConflictsResponseResult as ConflictDetection_GetConflictsResponseResultV1
 
 
 class GetConflictsResponse(PagedResponse):
@@ -54,7 +54,7 @@ class GetConflictsResponse(PagedResponse):
     supports_multiple_types = False
 
     def __init__(self, pagination_context=None, links=None, results=None):
-        # type: (Optional[PaginationContextV1], Optional[LinksV1], Optional[List[GetConflictsResponseResultV1]]) -> None
+        # type: (Optional[ConflictDetection_PaginationContextV1], Optional[V1_LinksV1], Optional[List[ConflictDetection_GetConflictsResponseResultV1]]) -> None
         """
 
         :param pagination_context: 

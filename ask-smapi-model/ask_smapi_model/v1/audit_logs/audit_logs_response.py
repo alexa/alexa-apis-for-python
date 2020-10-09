@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.audit_logs.audit_log import AuditLogV1
-    from ask_smapi_model.v1.audit_logs.response_pagination_context import ResponsePaginationContextV1
+    from ask_smapi_model.v1.audit_logs.audit_log import AuditLog as AuditLogs_AuditLogV1
+    from ask_smapi_model.v1.audit_logs.response_pagination_context import ResponsePaginationContext as AuditLogs_ResponsePaginationContextV1
 
 
 class AuditLogsResponse(object):
@@ -50,7 +50,7 @@ class AuditLogsResponse(object):
     supports_multiple_types = False
 
     def __init__(self, pagination_context=None, audit_logs=None):
-        # type: (Optional[ResponsePaginationContextV1], Optional[List[AuditLogV1]]) -> None
+        # type: (Optional[AuditLogs_ResponsePaginationContextV1], Optional[List[AuditLogs_AuditLogV1]]) -> None
         """Response to the Query Audit Logs API. It contains the collection of audit logs for the vendor, nextToken and other metadata related to the search query.
 
         :param pagination_context: 

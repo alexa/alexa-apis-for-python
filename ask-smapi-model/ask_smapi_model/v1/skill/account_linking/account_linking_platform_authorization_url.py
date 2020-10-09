@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.account_linking.platform_type import PlatformTypeV1
+    from ask_smapi_model.v1.skill.account_linking.platform_type import PlatformType as AccountLinking_PlatformTypeV1
 
 
 class AccountLinkingPlatformAuthorizationUrl(object):
@@ -49,7 +49,7 @@ class AccountLinkingPlatformAuthorizationUrl(object):
     supports_multiple_types = False
 
     def __init__(self, platform_type=None, platform_authorization_url=None):
-        # type: (Optional[PlatformTypeV1], Optional[str]) -> None
+        # type: (Optional[AccountLinking_PlatformTypeV1], Optional[str]) -> None
         """A key-value pair object that contains the OAuth2 authorization url to initiate the skill account linking process.
 
         :param platform_type: 

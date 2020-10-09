@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.nlu.evaluations.source import SourceV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.source import Source as Evaluations_SourceV1
 
 
 class EvaluationInputs(object):
@@ -32,14 +32,14 @@ class EvaluationInputs(object):
     :param locale: 
     :type locale: (optional) str
     :param stage: 
-    :type stage: (optional) str
+    :type stage: (optional) object
     :param source: 
     :type source: (optional) ask_smapi_model.v1.skill.nlu.evaluations.source.Source
 
     """
     deserialized_types = {
         'locale': 'str',
-        'stage': 'str',
+        'stage': 'object',
         'source': 'ask_smapi_model.v1.skill.nlu.evaluations.source.Source'
     }  # type: Dict
 
@@ -51,13 +51,13 @@ class EvaluationInputs(object):
     supports_multiple_types = False
 
     def __init__(self, locale=None, stage=None, source=None):
-        # type: (Optional[str], Optional[str], Optional[SourceV1]) -> None
+        # type: (Optional[str], Optional[object], Optional[Evaluations_SourceV1]) -> None
         """
 
         :param locale: 
         :type locale: (optional) str
         :param stage: 
-        :type stage: (optional) str
+        :type stage: (optional) object
         :param source: 
         :type source: (optional) ask_smapi_model.v1.skill.nlu.evaluations.source.Source
         """

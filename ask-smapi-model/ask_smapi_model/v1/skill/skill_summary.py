@@ -21,11 +21,12 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.links import LinksV1
-    from ask_smapi_model.v1.skill.publication_status import PublicationStatusV1
-    from ask_smapi_model.v1.skill.skill_summary_apis import SkillSummaryApisV1
+    from ask_smapi_model.v1.links import Links as V1_LinksV1
+    from ask_smapi_model.v1.stage_v2_type import StageV2Type as V1_StageV2TypeV1
+    from ask_smapi_model.v1.skill.skill_summary_apis import SkillSummaryApis as Skill_SkillSummaryApisV1
+    from ask_smapi_model.v1.skill.publication_status import PublicationStatus as Skill_PublicationStatusV1
 
 
 class SkillSummary(object):
@@ -35,6 +36,8 @@ class SkillSummary(object):
 
     :param skill_id: 
     :type skill_id: (optional) str
+    :param stage: 
+    :type stage: (optional) ask_smapi_model.v1.stage_v2_type.StageV2Type
     :param apis: List of APIs currently implemented by the skill.
     :type apis: (optional) list[ask_smapi_model.v1.skill.skill_summary_apis.SkillSummaryApis]
     :param publication_status: 
@@ -51,6 +54,7 @@ class SkillSummary(object):
     """
     deserialized_types = {
         'skill_id': 'str',
+        'stage': 'ask_smapi_model.v1.stage_v2_type.StageV2Type',
         'apis': 'list[ask_smapi_model.v1.skill.skill_summary_apis.SkillSummaryApis]',
         'publication_status': 'ask_smapi_model.v1.skill.publication_status.PublicationStatus',
         'last_updated': 'datetime',
@@ -61,6 +65,7 @@ class SkillSummary(object):
 
     attribute_map = {
         'skill_id': 'skillId',
+        'stage': 'stage',
         'apis': 'apis',
         'publication_status': 'publicationStatus',
         'last_updated': 'lastUpdated',
@@ -70,12 +75,14 @@ class SkillSummary(object):
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, skill_id=None, apis=None, publication_status=None, last_updated=None, name_by_locale=None, asin=None, links=None):
-        # type: (Optional[str], Optional[List[SkillSummaryApisV1]], Optional[PublicationStatusV1], Optional[datetime], Optional[Dict[str, object]], Optional[str], Optional[LinksV1]) -> None
+    def __init__(self, skill_id=None, stage=None, apis=None, publication_status=None, last_updated=None, name_by_locale=None, asin=None, links=None):
+        # type: (Optional[str], Optional[V1_StageV2TypeV1], Optional[List[Skill_SkillSummaryApisV1]], Optional[Skill_PublicationStatusV1], Optional[datetime], Optional[Dict[str, object]], Optional[str], Optional[V1_LinksV1]) -> None
         """Information about the skills.
 
         :param skill_id: 
         :type skill_id: (optional) str
+        :param stage: 
+        :type stage: (optional) ask_smapi_model.v1.stage_v2_type.StageV2Type
         :param apis: List of APIs currently implemented by the skill.
         :type apis: (optional) list[ask_smapi_model.v1.skill.skill_summary_apis.SkillSummaryApis]
         :param publication_status: 
@@ -92,6 +99,7 @@ class SkillSummary(object):
         self.__discriminator_value = None  # type: str
 
         self.skill_id = skill_id
+        self.stage = stage
         self.apis = apis
         self.publication_status = publication_status
         self.last_updated = last_updated

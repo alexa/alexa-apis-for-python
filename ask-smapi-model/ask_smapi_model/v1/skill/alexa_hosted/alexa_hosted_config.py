@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_runtime import HostedSkillRuntimeV1
+    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_runtime import HostedSkillRuntime as AlexaHosted_HostedSkillRuntimeV1
 
 
 class AlexaHostedConfig(object):
@@ -45,7 +45,7 @@ class AlexaHostedConfig(object):
     supports_multiple_types = False
 
     def __init__(self, runtime=None):
-        # type: (Optional[HostedSkillRuntimeV1]) -> None
+        # type: (Optional[AlexaHosted_HostedSkillRuntimeV1]) -> None
         """Alexa hosted skill create configuration
 
         :param runtime: 

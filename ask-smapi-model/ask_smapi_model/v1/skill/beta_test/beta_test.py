@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.beta_test.status import StatusV1
+    from ask_smapi_model.v1.skill.beta_test.status import Status as BetaTest_StatusV1
 
 
 class BetaTest(object):
@@ -61,7 +61,7 @@ class BetaTest(object):
     supports_multiple_types = False
 
     def __init__(self, expiry_date=None, status=None, feedback_email=None, invitation_url=None, invites_remaining=None):
-        # type: (Optional[datetime], Optional[StatusV1], Optional[str], Optional[str], Optional[float]) -> None
+        # type: (Optional[datetime], Optional[BetaTest_StatusV1], Optional[str], Optional[str], Optional[float]) -> None
         """Beta test for an Alexa skill.
 
         :param expiry_date: Expiry date of the beta test.

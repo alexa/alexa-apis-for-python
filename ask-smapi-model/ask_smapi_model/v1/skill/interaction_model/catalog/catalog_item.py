@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.links import LinksV1
+    from ask_smapi_model.v1.links import Links as V1_LinksV1
 
 
 class CatalogItem(object):
@@ -57,7 +57,7 @@ class CatalogItem(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, description=None, catalog_id=None, links=None):
-        # type: (Optional[str], Optional[str], Optional[str], Optional[LinksV1]) -> None
+        # type: (Optional[str], Optional[str], Optional[str], Optional[V1_LinksV1]) -> None
         """Definition for catalog entity.
 
         :param name: Name of the catalog.

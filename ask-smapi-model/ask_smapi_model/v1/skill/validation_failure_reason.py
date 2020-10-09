@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.validation_failure_type import ValidationFailureTypeV1
+    from ask_smapi_model.v1.skill.validation_failure_type import ValidationFailureType as Skill_ValidationFailureTypeV1
 
 
 class ValidationFailureReason(object):
@@ -45,7 +45,7 @@ class ValidationFailureReason(object):
     supports_multiple_types = False
 
     def __init__(self, object_type=None):
-        # type: (Optional[ValidationFailureTypeV1]) -> None
+        # type: (Optional[Skill_ValidationFailureTypeV1]) -> None
         """Object representing what is wrong in the request.
 
         :param object_type: Enum for type of validation failure in the request.

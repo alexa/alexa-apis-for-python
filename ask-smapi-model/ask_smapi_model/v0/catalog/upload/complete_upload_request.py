@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v0.catalog.upload.pre_signed_url_item import PreSignedUrlItemV0
+    from ask_smapi_model.v0.catalog.upload.pre_signed_url_item import PreSignedUrlItem as Upload_PreSignedUrlItemV0
 
 
 class CompleteUploadRequest(object):
@@ -43,7 +43,7 @@ class CompleteUploadRequest(object):
     supports_multiple_types = False
 
     def __init__(self, part_e_tags=None):
-        # type: (Optional[List[PreSignedUrlItemV0]]) -> None
+        # type: (Optional[List[Upload_PreSignedUrlItemV0]]) -> None
         """
 
         :param part_e_tags: List of (eTag, part number) pairs for each part of the file uploaded.

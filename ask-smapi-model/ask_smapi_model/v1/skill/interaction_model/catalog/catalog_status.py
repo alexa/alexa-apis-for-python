@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.catalog.last_update_request import LastUpdateRequestV1
+    from ask_smapi_model.v1.skill.interaction_model.catalog.last_update_request import LastUpdateRequest as Catalog_LastUpdateRequestV1
 
 
 class CatalogStatus(object):
@@ -45,7 +45,7 @@ class CatalogStatus(object):
     supports_multiple_types = False
 
     def __init__(self, last_update_request=None):
-        # type: (Optional[LastUpdateRequestV1]) -> None
+        # type: (Optional[Catalog_LastUpdateRequestV1]) -> None
         """Defines the structure for catalog status response.
 
         :param last_update_request: 

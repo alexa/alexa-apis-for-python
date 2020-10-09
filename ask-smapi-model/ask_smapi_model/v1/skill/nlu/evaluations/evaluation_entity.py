@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.nlu.evaluations.status import StatusV1
-    from ask_smapi_model.v1.skill.nlu.evaluations.evaluation_inputs import EvaluationInputsV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.evaluation_inputs import EvaluationInputs as Evaluations_EvaluationInputsV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.status import Status as Evaluations_StatusV1
 
 
 class EvaluationEntity(object):
@@ -60,7 +60,7 @@ class EvaluationEntity(object):
     supports_multiple_types = False
 
     def __init__(self, start_timestamp=None, end_timestamp=None, status=None, error_message=None, inputs=None):
-        # type: (Optional[datetime], Optional[datetime], Optional[StatusV1], Optional[str], Optional[EvaluationInputsV1]) -> None
+        # type: (Optional[datetime], Optional[datetime], Optional[Evaluations_StatusV1], Optional[str], Optional[Evaluations_EvaluationInputsV1]) -> None
         """
 
         :param start_timestamp: 

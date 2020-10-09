@@ -22,9 +22,9 @@ from ask_smapi_model.v1.skill.asr.evaluations.annotation import Annotation
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.asr.evaluations.audio_asset import AudioAssetV1
+    from ask_smapi_model.v1.skill.asr.evaluations.audio_asset import AudioAsset as Evaluations_AudioAssetV1
 
 
 class AnnotationWithAudioAsset(Annotation):
@@ -62,7 +62,7 @@ class AnnotationWithAudioAsset(Annotation):
     supports_multiple_types = False
 
     def __init__(self, upload_id=None, file_path_in_upload=None, evaluation_weight=None, expected_transcription=None, audio_asset=None):
-        # type: (Optional[str], Optional[str], Optional[float], Optional[str], Optional[AudioAssetV1]) -> None
+        # type: (Optional[str], Optional[str], Optional[float], Optional[str], Optional[Evaluations_AudioAssetV1]) -> None
         """object containing annotation content and audio file download information.
 
         :param upload_id: upload id obtained when developer creates an upload using catalog API

@@ -21,13 +21,13 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.isp.subscription_information import SubscriptionInformationV1
-    from ask_smapi_model.v1.isp.publishing_information import PublishingInformationV1
-    from ask_smapi_model.v1.isp.privacy_and_compliance import PrivacyAndComplianceV1
-    from ask_smapi_model.v1.isp.product_type import ProductTypeV1
-    from ask_smapi_model.v1.isp.purchasable_state import PurchasableStateV1
+    from ask_smapi_model.v1.isp.purchasable_state import PurchasableState as Isp_PurchasableStateV1
+    from ask_smapi_model.v1.isp.privacy_and_compliance import PrivacyAndCompliance as Isp_PrivacyAndComplianceV1
+    from ask_smapi_model.v1.isp.subscription_information import SubscriptionInformation as Isp_SubscriptionInformationV1
+    from ask_smapi_model.v1.isp.publishing_information import PublishingInformation as Isp_PublishingInformationV1
+    from ask_smapi_model.v1.isp.product_type import ProductType as Isp_ProductTypeV1
 
 
 class InSkillProductDefinition(object):
@@ -77,7 +77,7 @@ class InSkillProductDefinition(object):
     supports_multiple_types = False
 
     def __init__(self, version=None, object_type=None, reference_name=None, purchasable_state=None, subscription_information=None, publishing_information=None, privacy_and_compliance=None, testing_instructions=None):
-        # type: (Optional[str], Optional[ProductTypeV1], Optional[str], Optional[PurchasableStateV1], Optional[SubscriptionInformationV1], Optional[PublishingInformationV1], Optional[PrivacyAndComplianceV1], Optional[str]) -> None
+        # type: (Optional[str], Optional[Isp_ProductTypeV1], Optional[str], Optional[Isp_PurchasableStateV1], Optional[Isp_SubscriptionInformationV1], Optional[Isp_PublishingInformationV1], Optional[Isp_PrivacyAndComplianceV1], Optional[str]) -> None
         """Defines the structure for an in-skill product.
 
         :param version: Version of in-skill product definition.

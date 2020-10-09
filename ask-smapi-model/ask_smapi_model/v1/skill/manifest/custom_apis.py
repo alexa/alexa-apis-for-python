@@ -21,13 +21,13 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.interface import InterfaceV1
-    from ask_smapi_model.v1.skill.manifest.skill_manifest_endpoint import SkillManifestEndpointV1
-    from ask_smapi_model.v1.skill.manifest.custom_connections import CustomConnectionsV1
-    from ask_smapi_model.v1.skill.manifest.region import RegionV1
-    from ask_smapi_model.v1.skill.manifest.skill_manifest_custom_task import SkillManifestCustomTaskV1
+    from ask_smapi_model.v1.skill.manifest.skill_manifest_custom_task import SkillManifestCustomTask as Manifest_SkillManifestCustomTaskV1
+    from ask_smapi_model.v1.skill.manifest.region import Region as Manifest_RegionV1
+    from ask_smapi_model.v1.skill.manifest.interface import Interface as Manifest_InterfaceV1
+    from ask_smapi_model.v1.skill.manifest.custom_connections import CustomConnections as Manifest_CustomConnectionsV1
+    from ask_smapi_model.v1.skill.manifest.skill_manifest_endpoint import SkillManifestEndpoint as Manifest_SkillManifestEndpointV1
 
 
 class CustomApis(object):
@@ -65,7 +65,7 @@ class CustomApis(object):
     supports_multiple_types = False
 
     def __init__(self, regions=None, endpoint=None, interfaces=None, tasks=None, connections=None):
-        # type: (Optional[Dict[str, RegionV1]], Optional[SkillManifestEndpointV1], Optional[List[InterfaceV1]], Optional[List[SkillManifestCustomTaskV1]], Optional[CustomConnectionsV1]) -> None
+        # type: (Optional[Dict[str, Manifest_RegionV1]], Optional[Manifest_SkillManifestEndpointV1], Optional[List[Manifest_InterfaceV1]], Optional[List[Manifest_SkillManifestCustomTaskV1]], Optional[Manifest_CustomConnectionsV1]) -> None
         """Defines the structure for custom api of the skill.
 
         :param regions: Contains an array of the supported &lt;region&gt; Objects.

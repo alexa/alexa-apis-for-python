@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_detection_job_status import ConflictDetectionJobStatusV1
+    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_detection_job_status import ConflictDetectionJobStatus as ConflictDetection_ConflictDetectionJobStatusV1
 
 
 class GetConflictDetectionJobStatusResponse(object):
@@ -47,7 +47,7 @@ class GetConflictDetectionJobStatusResponse(object):
     supports_multiple_types = False
 
     def __init__(self, status=None, total_conflicts=None):
-        # type: (Optional[ConflictDetectionJobStatusV1], Optional[float]) -> None
+        # type: (Optional[ConflictDetection_ConflictDetectionJobStatusV1], Optional[float]) -> None
         """
 
         :param status: 

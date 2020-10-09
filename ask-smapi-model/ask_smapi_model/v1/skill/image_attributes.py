@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.image_dimension import ImageDimensionV1
-    from ask_smapi_model.v1.skill.image_size import ImageSizeV1
+    from ask_smapi_model.v1.skill.image_size import ImageSize as Skill_ImageSizeV1
+    from ask_smapi_model.v1.skill.image_dimension import ImageDimension as Skill_ImageDimensionV1
 
 
 class ImageAttributes(object):
@@ -50,7 +50,7 @@ class ImageAttributes(object):
     supports_multiple_types = False
 
     def __init__(self, dimension=None, size=None):
-        # type: (Optional[ImageDimensionV1], Optional[ImageSizeV1]) -> None
+        # type: (Optional[Skill_ImageDimensionV1], Optional[Skill_ImageSizeV1]) -> None
         """Set of properties of the image provided by the customer.
 
         :param dimension: 

@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.isp.tax_information_category import TaxInformationCategoryV1
+    from ask_smapi_model.v1.isp.tax_information_category import TaxInformationCategory as Isp_TaxInformationCategoryV1
 
 
 class TaxInformation(object):
@@ -45,7 +45,7 @@ class TaxInformation(object):
     supports_multiple_types = False
 
     def __init__(self, category=None):
-        # type: (Optional[TaxInformationCategoryV1]) -> None
+        # type: (Optional[Isp_TaxInformationCategoryV1]) -> None
         """Defines the structure for in-skill product tax information.
 
         :param category: 

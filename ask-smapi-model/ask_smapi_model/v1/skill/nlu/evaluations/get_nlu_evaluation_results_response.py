@@ -22,11 +22,11 @@ from ask_smapi_model.v1.skill.nlu.evaluations.paged_results_response import Page
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.nlu.evaluations.paged_results_response_pagination_context import PagedResultsResponsePaginationContextV1
-    from ask_smapi_model.v1.skill.nlu.evaluations.test_case import TestCaseV1
-    from ask_smapi_model.v1.skill.nlu.evaluations.links import LinksV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.paged_results_response_pagination_context import PagedResultsResponsePaginationContext as Evaluations_PagedResultsResponsePaginationContextV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.test_case import TestCase as Evaluations_TestCaseV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.links import Links as Evaluations_LinksV1
 
 
 class GetNLUEvaluationResultsResponse(PagedResultsResponse):
@@ -58,7 +58,7 @@ class GetNLUEvaluationResultsResponse(PagedResultsResponse):
     supports_multiple_types = False
 
     def __init__(self, pagination_context=None, links=None, total_failed=None, test_cases=None):
-        # type: (Optional[PagedResultsResponsePaginationContextV1], Optional[LinksV1], Optional[float], Optional[List[TestCaseV1]]) -> None
+        # type: (Optional[Evaluations_PagedResultsResponsePaginationContextV1], Optional[Evaluations_LinksV1], Optional[float], Optional[List[Evaluations_TestCaseV1]]) -> None
         """
 
         :param pagination_context: 

@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.evaluations.dialog_act import DialogActV1
+    from ask_smapi_model.v1.skill.evaluations.dialog_act import DialogAct as Evaluations_DialogActV1
 
 
 class MultiTurn(object):
@@ -53,7 +53,7 @@ class MultiTurn(object):
     supports_multiple_types = False
 
     def __init__(self, dialog_act=None, token=None, prompt=None):
-        # type: (Optional[DialogActV1], Optional[str], Optional[str]) -> None
+        # type: (Optional[Evaluations_DialogActV1], Optional[str], Optional[str]) -> None
         """Included when the selected intent has dialog defined and the dialog is not completed.  To continue the dialog, provide the value of the token in the multiTurnToken field in the next request. 
 
         :param dialog_act: 

@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.music_request import MusicRequestV1
+    from ask_smapi_model.v1.skill.manifest.music_request import MusicRequest as Manifest_MusicRequestV1
 
 
 class MusicInterfaces(object):
@@ -51,7 +51,7 @@ class MusicInterfaces(object):
     supports_multiple_types = False
 
     def __init__(self, namespace=None, version=None, requests=None):
-        # type: (Optional[str], Optional[str], Optional[List[MusicRequestV1]]) -> None
+        # type: (Optional[str], Optional[str], Optional[List[Manifest_MusicRequestV1]]) -> None
         """
 
         :param namespace: Name of the interface.

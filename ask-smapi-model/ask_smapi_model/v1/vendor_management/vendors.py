@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.vendor_management.vendor import VendorV1
+    from ask_smapi_model.v1.vendor_management.vendor import Vendor as VendorManagement_VendorV1
 
 
 class Vendors(object):
@@ -45,7 +45,7 @@ class Vendors(object):
     supports_multiple_types = False
 
     def __init__(self, vendors=None):
-        # type: (Optional[List[VendorV1]]) -> None
+        # type: (Optional[List[VendorManagement_VendorV1]]) -> None
         """List of Vendors.
 
         :param vendors: 

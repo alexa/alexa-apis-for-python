@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.fallback_intent_sensitivity import FallbackIntentSensitivityV1
+    from ask_smapi_model.v1.skill.interaction_model.fallback_intent_sensitivity import FallbackIntentSensitivity as InteractionModel_FallbackIntentSensitivityV1
 
 
 class ModelConfiguration(object):
@@ -45,7 +45,7 @@ class ModelConfiguration(object):
     supports_multiple_types = False
 
     def __init__(self, fallback_intent_sensitivity=None):
-        # type: (Optional[FallbackIntentSensitivityV1]) -> None
+        # type: (Optional[InteractionModel_FallbackIntentSensitivityV1]) -> None
         """Global configurations applicable to a skill&#39;s model.
 
         :param fallback_intent_sensitivity: 

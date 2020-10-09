@@ -21,11 +21,11 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.jobs.job_api_pagination_context import JobAPIPaginationContextV1
-    from ask_smapi_model.v1.skill.interaction_model.jobs.execution import ExecutionV1
-    from ask_smapi_model.v1.links import LinksV1
+    from ask_smapi_model.v1.skill.interaction_model.jobs.job_api_pagination_context import JobAPIPaginationContext as Jobs_JobAPIPaginationContextV1
+    from ask_smapi_model.v1.links import Links as V1_LinksV1
+    from ask_smapi_model.v1.skill.interaction_model.jobs.execution import Execution as Jobs_ExecutionV1
 
 
 class GetExecutionsResponse(object):
@@ -55,7 +55,7 @@ class GetExecutionsResponse(object):
     supports_multiple_types = False
 
     def __init__(self, pagination_context=None, links=None, executions=None):
-        # type: (Optional[JobAPIPaginationContextV1], Optional[LinksV1], Optional[List[ExecutionV1]]) -> None
+        # type: (Optional[Jobs_JobAPIPaginationContextV1], Optional[V1_LinksV1], Optional[List[Jobs_ExecutionV1]]) -> None
         """The response of get execution history.
 
         :param pagination_context: 

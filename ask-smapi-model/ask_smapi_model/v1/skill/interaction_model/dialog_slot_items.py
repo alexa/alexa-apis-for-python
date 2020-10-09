@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.slot_validation import SlotValidationV1
-    from ask_smapi_model.v1.skill.interaction_model.dialog_prompts import DialogPromptsV1
+    from ask_smapi_model.v1.skill.interaction_model.dialog_prompts import DialogPrompts as InteractionModel_DialogPromptsV1
+    from ask_smapi_model.v1.skill.interaction_model.slot_validation import SlotValidation as InteractionModel_SlotValidationV1
 
 
 class DialogSlotItems(object):
@@ -64,7 +64,7 @@ class DialogSlotItems(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, object_type=None, elicitation_required=None, confirmation_required=None, prompts=None, validations=None):
-        # type: (Optional[str], Optional[str], Optional[bool], Optional[bool], Optional[DialogPromptsV1], Optional[List[SlotValidationV1]]) -> None
+        # type: (Optional[str], Optional[str], Optional[bool], Optional[bool], Optional[InteractionModel_DialogPromptsV1], Optional[List[InteractionModel_SlotValidationV1]]) -> None
         """
 
         :param name: The name of the slot that has dialog rules associated with it.

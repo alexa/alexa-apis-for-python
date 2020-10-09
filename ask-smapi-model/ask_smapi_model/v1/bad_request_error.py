@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.error import ErrorV1
+    from ask_smapi_model.v1.error import Error as V1_ErrorV1
 
 
 class BadRequestError(object):
@@ -47,7 +47,7 @@ class BadRequestError(object):
     supports_multiple_types = False
 
     def __init__(self, message=None, violations=None):
-        # type: (Optional[str], Optional[List[ErrorV1]]) -> None
+        # type: (Optional[str], Optional[List[V1_ErrorV1]]) -> None
         """
 
         :param message: Human readable description of error.

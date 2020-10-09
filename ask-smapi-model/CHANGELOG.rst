@@ -147,3 +147,11 @@ This release contains the following changes :
 This release contains the following changes : 
 
 - Fix the model definition of `AccountLinkingRequest body <https://developer.amazon.com/en-US/docs/alexa/smapi/account-linking-schemas.html#accountlinkingrequest-object>`__.
+
+
+1.8.2
+^^^^^
+
+This release contains the following changes : 
+
+- Updating model definitions

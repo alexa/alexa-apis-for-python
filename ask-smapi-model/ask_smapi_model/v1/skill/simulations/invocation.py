@@ -21,11 +21,11 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.simulations.metrics import MetricsV1
-    from ask_smapi_model.v1.skill.simulations.invocation_request import InvocationRequestV1
-    from ask_smapi_model.v1.skill.simulations.invocation_response import InvocationResponseV1
+    from ask_smapi_model.v1.skill.simulations.invocation_request import InvocationRequest as Simulations_InvocationRequestV1
+    from ask_smapi_model.v1.skill.simulations.metrics import Metrics as Simulations_MetricsV1
+    from ask_smapi_model.v1.skill.simulations.invocation_response import InvocationResponse as Simulations_InvocationResponseV1
 
 
 class Invocation(object):
@@ -53,7 +53,7 @@ class Invocation(object):
     supports_multiple_types = False
 
     def __init__(self, invocation_request=None, invocation_response=None, metrics=None):
-        # type: (Optional[InvocationRequestV1], Optional[InvocationResponseV1], Optional[MetricsV1]) -> None
+        # type: (Optional[Simulations_InvocationRequestV1], Optional[Simulations_InvocationResponseV1], Optional[Simulations_MetricsV1]) -> None
         """
 
         :param invocation_request: 

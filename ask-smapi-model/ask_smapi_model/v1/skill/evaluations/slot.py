@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.evaluations.slot_resolutions import SlotResolutionsV1
-    from ask_smapi_model.v1.skill.evaluations.confirmation_status_type import ConfirmationStatusTypeV1
+    from ask_smapi_model.v1.skill.evaluations.confirmation_status_type import ConfirmationStatusType as Evaluations_ConfirmationStatusTypeV1
+    from ask_smapi_model.v1.skill.evaluations.slot_resolutions import SlotResolutions as Evaluations_SlotResolutionsV1
 
 
 class Slot(object):
@@ -56,7 +56,7 @@ class Slot(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, value=None, confirmation_status=None, resolutions=None):
-        # type: (Optional[str], Optional[str], Optional[ConfirmationStatusTypeV1], Optional[SlotResolutionsV1]) -> None
+        # type: (Optional[str], Optional[str], Optional[Evaluations_ConfirmationStatusTypeV1], Optional[Evaluations_SlotResolutionsV1]) -> None
         """
 
         :param name: 

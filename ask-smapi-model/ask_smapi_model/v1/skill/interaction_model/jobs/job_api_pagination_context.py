@@ -21,28 +21,36 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
 
 
 class JobAPIPaginationContext(object):
     """
 
+    :param next_token: 
+    :type next_token: (optional) str
 
     """
     deserialized_types = {
+        'next_token': 'str'
     }  # type: Dict
 
     attribute_map = {
+        'next_token': 'nextToken'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self):
-        # type: () -> None
+    def __init__(self, next_token=None):
+        # type: (Optional[str]) -> None
         """
 
+        :param next_token: 
+        :type next_token: (optional) str
         """
         self.__discriminator_value = None  # type: str
+
+        self.next_token = next_token
 
     def to_dict(self):
         # type: () -> Dict[str, object]

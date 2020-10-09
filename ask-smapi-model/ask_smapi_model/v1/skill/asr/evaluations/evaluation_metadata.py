@@ -21,12 +21,12 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.asr.evaluations.error_object import ErrorObjectV1
-    from ask_smapi_model.v1.skill.asr.evaluations.evaluation_status import EvaluationStatusV1
-    from ask_smapi_model.v1.skill.asr.evaluations.evaluation_metadata_result import EvaluationMetadataResultV1
-    from ask_smapi_model.v1.skill.asr.evaluations.post_asr_evaluations_request_object import PostAsrEvaluationsRequestObjectV1
+    from ask_smapi_model.v1.skill.asr.evaluations.error_object import ErrorObject as Evaluations_ErrorObjectV1
+    from ask_smapi_model.v1.skill.asr.evaluations.evaluation_metadata_result import EvaluationMetadataResult as Evaluations_EvaluationMetadataResultV1
+    from ask_smapi_model.v1.skill.asr.evaluations.evaluation_status import EvaluationStatus as Evaluations_EvaluationStatusV1
+    from ask_smapi_model.v1.skill.asr.evaluations.post_asr_evaluations_request_object import PostAsrEvaluationsRequestObject as Evaluations_PostAsrEvaluationsRequestObjectV1
 
 
 class EvaluationMetadata(object):
@@ -72,7 +72,7 @@ class EvaluationMetadata(object):
     supports_multiple_types = False
 
     def __init__(self, status=None, total_evaluation_count=None, completed_evaluation_count=None, start_timestamp=None, request=None, error=None, result=None):
-        # type: (Optional[EvaluationStatusV1], Optional[float], Optional[float], Optional[datetime], Optional[PostAsrEvaluationsRequestObjectV1], Optional[ErrorObjectV1], Optional[EvaluationMetadataResultV1]) -> None
+        # type: (Optional[Evaluations_EvaluationStatusV1], Optional[float], Optional[float], Optional[datetime], Optional[Evaluations_PostAsrEvaluationsRequestObjectV1], Optional[Evaluations_ErrorObjectV1], Optional[Evaluations_EvaluationMetadataResultV1]) -> None
         """response body for GetAsrEvaluationsStatus API
 
         :param status: 

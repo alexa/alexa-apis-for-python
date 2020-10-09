@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.asr.annotation_sets.annotation import AnnotationV1
+    from ask_smapi_model.v1.skill.asr.annotation_sets.annotation import Annotation as AnnotationSets_AnnotationV1
 
 
 class UpdateAsrAnnotationSetContentsPayload(object):
@@ -45,7 +45,7 @@ class UpdateAsrAnnotationSetContentsPayload(object):
     supports_multiple_types = False
 
     def __init__(self, annotations=None):
-        # type: (Optional[List[AnnotationV1]]) -> None
+        # type: (Optional[List[AnnotationSets_AnnotationV1]]) -> None
         """This is the payload shema for updating asr annotation set contents. Note for text/csv content type, the  csv header definitions need to follow the properties of &#39;#/definitions/Annotaion&#39; 
 
         :param annotations: 

@@ -21,12 +21,12 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v0.event_schema.subscription_attributes import SubscriptionAttributesV0
-    from ask_smapi_model.v0.event_schema.interaction_model_attributes import InteractionModelAttributesV0
-    from ask_smapi_model.v0.event_schema.request_status import RequestStatusV0
-    from ask_smapi_model.v0.event_schema.actor_attributes import ActorAttributesV0
+    from ask_smapi_model.v0.event_schema.request_status import RequestStatus as EventSchema_RequestStatusV0
+    from ask_smapi_model.v0.event_schema.actor_attributes import ActorAttributes as EventSchema_ActorAttributesV0
+    from ask_smapi_model.v0.event_schema.subscription_attributes import SubscriptionAttributes as EventSchema_SubscriptionAttributesV0
+    from ask_smapi_model.v0.event_schema.interaction_model_attributes import InteractionModelAttributes as EventSchema_InteractionModelAttributesV0
 
 
 class InteractionModelEventAttributes(object):
@@ -60,7 +60,7 @@ class InteractionModelEventAttributes(object):
     supports_multiple_types = False
 
     def __init__(self, status=None, actor=None, interaction_model=None, subscription=None):
-        # type: (Optional[RequestStatusV0], Optional[ActorAttributesV0], Optional[InteractionModelAttributesV0], Optional[SubscriptionAttributesV0]) -> None
+        # type: (Optional[EventSchema_RequestStatusV0], Optional[EventSchema_ActorAttributesV0], Optional[EventSchema_InteractionModelAttributesV0], Optional[EventSchema_SubscriptionAttributesV0]) -> None
         """Interaction model event specific attributes. 
 
         :param status: 

@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.value_supplier import ValueSupplierV1
+    from ask_smapi_model.v1.skill.interaction_model.value_supplier import ValueSupplier as InteractionModel_ValueSupplierV1
 
 
 class ValueSupplierObject(object):
@@ -45,7 +45,7 @@ class ValueSupplierObject(object):
     supports_multiple_types = False
 
     def __init__(self, value_supplier=None):
-        # type: (Optional[ValueSupplierV1]) -> None
+        # type: (Optional[InteractionModel_ValueSupplierV1]) -> None
         """Value supplier object for slot definition.
 
         :param value_supplier: 

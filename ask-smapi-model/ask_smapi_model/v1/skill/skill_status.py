@@ -21,12 +21,12 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest_status import ManifestStatusV1
-    from ask_smapi_model.v1.skill.hosted_skill_deployment_status import HostedSkillDeploymentStatusV1
-    from ask_smapi_model.v1.skill.skill_interaction_model_status import SkillInteractionModelStatusV1
-    from ask_smapi_model.v1.skill.hosted_skill_provisioning_status import HostedSkillProvisioningStatusV1
+    from ask_smapi_model.v1.skill.hosted_skill_deployment_status import HostedSkillDeploymentStatus as Skill_HostedSkillDeploymentStatusV1
+    from ask_smapi_model.v1.skill.manifest_status import ManifestStatus as Skill_ManifestStatusV1
+    from ask_smapi_model.v1.skill.hosted_skill_provisioning_status import HostedSkillProvisioningStatus as Skill_HostedSkillProvisioningStatusV1
+    from ask_smapi_model.v1.skill.skill_interaction_model_status import SkillInteractionModelStatus as Skill_SkillInteractionModelStatusV1
 
 
 class SkillStatus(object):
@@ -60,7 +60,7 @@ class SkillStatus(object):
     supports_multiple_types = False
 
     def __init__(self, manifest=None, interaction_model=None, hosted_skill_deployment=None, hosted_skill_provisioning=None):
-        # type: (Optional[ManifestStatusV1], Optional[Dict[str, SkillInteractionModelStatusV1]], Optional[HostedSkillDeploymentStatusV1], Optional[HostedSkillProvisioningStatusV1]) -> None
+        # type: (Optional[Skill_ManifestStatusV1], Optional[Dict[str, Skill_SkillInteractionModelStatusV1]], Optional[Skill_HostedSkillDeploymentStatusV1], Optional[Skill_HostedSkillProvisioningStatusV1]) -> None
         """Defines the structure for skill status response.
 
         :param manifest: 

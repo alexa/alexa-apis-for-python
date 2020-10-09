@@ -21,7 +21,7 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
 
 
@@ -37,7 +37,7 @@ class SortDirection(Enum):
     DESC = "DESC"
 
     def to_dict(self):
-        # type: () -> Dict[str, object]
+        # type: () -> Dict[str, Any]
         """Returns the model properties as a dict"""
         result = {self.name: self.value}
         return result
@@ -53,7 +53,7 @@ class SortDirection(Enum):
         return self.to_str()
 
     def __eq__(self, other):
-        # type: (object) -> bool
+        # type: (Any) -> bool
         """Returns true if both objects are equal"""
         if not isinstance(other, SortDirection):
             return False
@@ -61,6 +61,6 @@ class SortDirection(Enum):
         return self.__dict__ == other.__dict__
 
     def __ne__(self, other):
-        # type: (object) -> bool
+        # type: (Any) -> bool
         """Returns true if both objects are not equal"""
         return not self == other

@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.fallback_intent_sensitivity_level import FallbackIntentSensitivityLevelV1
+    from ask_smapi_model.v1.skill.interaction_model.fallback_intent_sensitivity_level import FallbackIntentSensitivityLevel as InteractionModel_FallbackIntentSensitivityLevelV1
 
 
 class FallbackIntentSensitivity(object):
@@ -45,7 +45,7 @@ class FallbackIntentSensitivity(object):
     supports_multiple_types = False
 
     def __init__(self, level=None):
-        # type: (Optional[FallbackIntentSensitivityLevelV1]) -> None
+        # type: (Optional[InteractionModel_FallbackIntentSensitivityLevelV1]) -> None
         """Denotes skill&#39;s sensitivity for out-of-domain utterances.
 
         :param level: 

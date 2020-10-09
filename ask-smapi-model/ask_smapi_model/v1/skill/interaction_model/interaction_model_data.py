@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.interaction_model_schema import InteractionModelSchemaV1
+    from ask_smapi_model.v1.skill.interaction_model.interaction_model_schema import InteractionModelSchema as InteractionModel_InteractionModelSchemaV1
 
 
 class InteractionModelData(object):
@@ -51,7 +51,7 @@ class InteractionModelData(object):
     supports_multiple_types = False
 
     def __init__(self, version=None, description=None, interaction_model=None):
-        # type: (Optional[str], Optional[str], Optional[InteractionModelSchemaV1]) -> None
+        # type: (Optional[str], Optional[str], Optional[InteractionModel_InteractionModelSchemaV1]) -> None
         """
 
         :param version: 

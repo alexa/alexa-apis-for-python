@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.overwrite_mode import OverwriteModeV1
+    from ask_smapi_model.v1.skill.overwrite_mode import OverwriteMode as Skill_OverwriteModeV1
 
 
 class CloneLocaleRequest(object):
@@ -53,7 +53,7 @@ class CloneLocaleRequest(object):
     supports_multiple_types = False
 
     def __init__(self, source_locale=None, target_locales=None, overwrite_mode=None):
-        # type: (Optional[str], Optional[List[object]], Optional[OverwriteModeV1]) -> None
+        # type: (Optional[str], Optional[List[object]], Optional[Skill_OverwriteModeV1]) -> None
         """Defines the request body for the cloneLocale API.
 
         :param source_locale: Locale with the assets that will be cloned.

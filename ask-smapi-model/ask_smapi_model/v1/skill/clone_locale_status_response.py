@@ -21,11 +21,11 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.clone_locale_resource_status import CloneLocaleResourceStatusV1
-    from ask_smapi_model.v1.skill.clone_locale_request_status import CloneLocaleRequestStatusV1
-    from ask_smapi_model.v1.skill.standardized_error import StandardizedErrorV1
+    from ask_smapi_model.v1.skill.standardized_error import StandardizedError as Skill_StandardizedErrorV1
+    from ask_smapi_model.v1.skill.clone_locale_resource_status import CloneLocaleResourceStatus as Skill_CloneLocaleResourceStatusV1
+    from ask_smapi_model.v1.skill.clone_locale_request_status import CloneLocaleRequestStatus as Skill_CloneLocaleRequestStatusV1
 
 
 class CloneLocaleStatusResponse(object):
@@ -59,7 +59,7 @@ class CloneLocaleStatusResponse(object):
     supports_multiple_types = False
 
     def __init__(self, status=None, errors=None, source_locale=None, target_locales=None):
-        # type: (Optional[CloneLocaleRequestStatusV1], Optional[List[StandardizedErrorV1]], Optional[str], Optional[Dict[str, CloneLocaleResourceStatusV1]]) -> None
+        # type: (Optional[Skill_CloneLocaleRequestStatusV1], Optional[List[Skill_StandardizedErrorV1]], Optional[str], Optional[Dict[str, Skill_CloneLocaleResourceStatusV1]]) -> None
         """A mapping of statuses per locale detailing progress of resource or error if encountered.
 
         :param status: 

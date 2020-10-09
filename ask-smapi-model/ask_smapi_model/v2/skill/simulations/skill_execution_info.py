@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v2.skill.invocation import InvocationV2
+    from ask_smapi_model.v2.skill.invocation import Invocation as Skill_InvocationV2
 
 
 class SkillExecutionInfo(object):
@@ -43,7 +43,7 @@ class SkillExecutionInfo(object):
     supports_multiple_types = False
 
     def __init__(self, invocations=None):
-        # type: (Optional[List[InvocationV2]]) -> None
+        # type: (Optional[List[Skill_InvocationV2]]) -> None
         """
 
         :param invocations: 

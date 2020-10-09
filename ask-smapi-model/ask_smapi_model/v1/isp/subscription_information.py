@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.isp.subscription_payment_frequency import SubscriptionPaymentFrequencyV1
+    from ask_smapi_model.v1.isp.subscription_payment_frequency import SubscriptionPaymentFrequency as Isp_SubscriptionPaymentFrequencyV1
 
 
 class SubscriptionInformation(object):
@@ -49,7 +49,7 @@ class SubscriptionInformation(object):
     supports_multiple_types = False
 
     def __init__(self, subscription_payment_frequency=None, subscription_trial_period_days=None):
-        # type: (Optional[SubscriptionPaymentFrequencyV1], Optional[int]) -> None
+        # type: (Optional[Isp_SubscriptionPaymentFrequencyV1], Optional[int]) -> None
         """Defines the structure for in-skill product subscription information.
 
         :param subscription_payment_frequency: 

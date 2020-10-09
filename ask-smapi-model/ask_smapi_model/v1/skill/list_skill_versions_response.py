@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.links import LinksV1
-    from ask_smapi_model.v1.skill.skill_version import SkillVersionV1
+    from ask_smapi_model.v1.links import Links as V1_LinksV1
+    from ask_smapi_model.v1.skill.skill_version import SkillVersion as Skill_SkillVersionV1
 
 
 class ListSkillVersionsResponse(object):
@@ -58,7 +58,7 @@ class ListSkillVersionsResponse(object):
     supports_multiple_types = False
 
     def __init__(self, links=None, skill_versions=None, is_truncated=None, next_token=None):
-        # type: (Optional[LinksV1], Optional[List[SkillVersionV1]], Optional[bool], Optional[str]) -> None
+        # type: (Optional[V1_LinksV1], Optional[List[Skill_SkillVersionV1]], Optional[bool], Optional[str]) -> None
         """List of all skill versions
 
         :param links: 

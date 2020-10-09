@@ -22,11 +22,11 @@ from ask_smapi_model.v0.catalog.upload.content_upload_summary import ContentUplo
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v0.catalog.upload.upload_ingestion_step import UploadIngestionStepV0
-    from ask_smapi_model.v0.catalog.upload.presigned_upload_part import PresignedUploadPartV0
-    from ask_smapi_model.v0.catalog.upload.upload_status import UploadStatusV0
+    from ask_smapi_model.v0.catalog.upload.upload_ingestion_step import UploadIngestionStep as Upload_UploadIngestionStepV0
+    from ask_smapi_model.v0.catalog.upload.presigned_upload_part import PresignedUploadPart as Upload_PresignedUploadPartV0
+    from ask_smapi_model.v0.catalog.upload.upload_status import UploadStatus as Upload_UploadStatusV0
 
 
 class CreateContentUploadResponse(ContentUploadSummary):
@@ -72,7 +72,7 @@ class CreateContentUploadResponse(ContentUploadSummary):
     supports_multiple_types = False
 
     def __init__(self, id=None, catalog_id=None, status=None, created_date=None, last_updated_date=None, ingestion_steps=None, presigned_upload_parts=None):
-        # type: (Optional[str], Optional[str], Optional[UploadStatusV0], Optional[datetime], Optional[datetime], Optional[List[UploadIngestionStepV0]], Optional[List[PresignedUploadPartV0]]) -> None
+        # type: (Optional[str], Optional[str], Optional[Upload_UploadStatusV0], Optional[datetime], Optional[datetime], Optional[List[Upload_UploadIngestionStepV0]], Optional[List[Upload_PresignedUploadPartV0]]) -> None
         """Request body for self-hosted catalog uploads.
 
         :param id: Unique identifier of the upload.

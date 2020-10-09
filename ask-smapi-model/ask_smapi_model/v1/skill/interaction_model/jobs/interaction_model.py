@@ -22,7 +22,7 @@ from ask_smapi_model.v1.skill.interaction_model.jobs.resource_object import Reso
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
 
 

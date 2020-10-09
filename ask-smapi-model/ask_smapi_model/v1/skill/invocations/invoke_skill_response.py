@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.invocations.invocation_response_result import InvocationResponseResultV1
-    from ask_smapi_model.v1.skill.invocations.invocation_response_status import InvocationResponseStatusV1
+    from ask_smapi_model.v1.skill.invocations.invocation_response_status import InvocationResponseStatus as Invocations_InvocationResponseStatusV1
+    from ask_smapi_model.v1.skill.invocations.invocation_response_result import InvocationResponseResult as Invocations_InvocationResponseResultV1
 
 
 class InvokeSkillResponse(object):
@@ -48,7 +48,7 @@ class InvokeSkillResponse(object):
     supports_multiple_types = False
 
     def __init__(self, status=None, result=None):
-        # type: (Optional[InvocationResponseStatusV1], Optional[InvocationResponseResultV1]) -> None
+        # type: (Optional[Invocations_InvocationResponseStatusV1], Optional[Invocations_InvocationResponseResultV1]) -> None
         """
 
         :param status: 

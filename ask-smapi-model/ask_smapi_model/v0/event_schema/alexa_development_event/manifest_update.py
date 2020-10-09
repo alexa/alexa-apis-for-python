@@ -22,9 +22,9 @@ from ask_smapi_model.v0.event_schema.base_schema import BaseSchema
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v0.event_schema.skill_event_attributes import SkillEventAttributesV0
+    from ask_smapi_model.v0.event_schema.skill_event_attributes import SkillEventAttributes as EventSchema_SkillEventAttributesV0
 
 
 class ManifestUpdate(BaseSchema):
@@ -56,7 +56,7 @@ class ManifestUpdate(BaseSchema):
     supports_multiple_types = False
 
     def __init__(self, timestamp=None, request_id=None, payload=None):
-        # type: (Optional[datetime], Optional[str], Optional[SkillEventAttributesV0]) -> None
+        # type: (Optional[datetime], Optional[str], Optional[EventSchema_SkillEventAttributesV0]) -> None
         """&#39;AlexaDevelopmentEvent.ManifestUpdate&#39; event represents the status of the update request on the Manifest. This event is generated when request to create a skill or update an existing skill is completed. The request may complete either with &#x60;SUCCEEDED&#x60; or &#x60;FAILED&#x60; status.
 
         :param timestamp: ISO 8601 timestamp for the instant when event was created. 

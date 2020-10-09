@@ -21,12 +21,12 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.audit_logs.sort_field import SortFieldV1
-    from ask_smapi_model.v1.audit_logs.request_pagination_context import RequestPaginationContextV1
-    from ask_smapi_model.v1.audit_logs.sort_direction import SortDirectionV1
-    from ask_smapi_model.v1.audit_logs.request_filters import RequestFiltersV1
+    from ask_smapi_model.v1.audit_logs.sort_direction import SortDirection as AuditLogs_SortDirectionV1
+    from ask_smapi_model.v1.audit_logs.request_filters import RequestFilters as AuditLogs_RequestFiltersV1
+    from ask_smapi_model.v1.audit_logs.sort_field import SortField as AuditLogs_SortFieldV1
+    from ask_smapi_model.v1.audit_logs.request_pagination_context import RequestPaginationContext as AuditLogs_RequestPaginationContextV1
 
 
 class AuditLogsRequest(object):
@@ -62,7 +62,7 @@ class AuditLogsRequest(object):
     supports_multiple_types = False
 
     def __init__(self, vendor_id=None, request_filters=None, sort_direction=None, sort_field=None, pagination_context=None):
-        # type: (Optional[str], Optional[RequestFiltersV1], Optional[SortDirectionV1], Optional[SortFieldV1], Optional[RequestPaginationContextV1]) -> None
+        # type: (Optional[str], Optional[AuditLogs_RequestFiltersV1], Optional[AuditLogs_SortDirectionV1], Optional[AuditLogs_SortFieldV1], Optional[AuditLogs_RequestPaginationContextV1]) -> None
         """
 
         :param vendor_id: Vendor Id. See developer.amazon.com/mycid.html.

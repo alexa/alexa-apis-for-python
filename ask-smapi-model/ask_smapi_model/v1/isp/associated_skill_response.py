@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.links import LinksV1
+    from ask_smapi_model.v1.links import Links as V1_LinksV1
 
 
 class AssociatedSkillResponse(object):
@@ -57,7 +57,7 @@ class AssociatedSkillResponse(object):
     supports_multiple_types = False
 
     def __init__(self, associated_skill_ids=None, links=None, is_truncated=None, next_token=None):
-        # type: (Optional[List[object]], Optional[LinksV1], Optional[bool], Optional[str]) -> None
+        # type: (Optional[List[object]], Optional[V1_LinksV1], Optional[bool], Optional[str]) -> None
         """In-skill product skill association details.
 
         :param associated_skill_ids: List of skill IDs that correspond to the skills associated with the in-skill product. The associations are stage specific. A live association is created through successful skill certification.

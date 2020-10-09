@@ -21,14 +21,14 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.stage_type import StageTypeV1
-    from ask_smapi_model.v1.skill.history.intent_request_locales import IntentRequestLocalesV1
-    from ask_smapi_model.v1.skill.history.dialog_act import DialogActV1
-    from ask_smapi_model.v1.skill.history.interaction_type import InteractionTypeV1
-    from ask_smapi_model.v1.skill.history.intent import IntentV1
-    from ask_smapi_model.v1.skill.history.publication_status import PublicationStatusV1
+    from ask_smapi_model.v1.skill.history.dialog_act import DialogAct as History_DialogActV1
+    from ask_smapi_model.v1.skill.history.publication_status import PublicationStatus as History_PublicationStatusV1
+    from ask_smapi_model.v1.stage_type import StageType as V1_StageTypeV1
+    from ask_smapi_model.v1.skill.history.interaction_type import InteractionType as History_InteractionTypeV1
+    from ask_smapi_model.v1.skill.history.intent_request_locales import IntentRequestLocales as History_IntentRequestLocalesV1
+    from ask_smapi_model.v1.skill.history.intent import Intent as History_IntentV1
 
 
 class IntentRequest(object):
@@ -72,7 +72,7 @@ class IntentRequest(object):
     supports_multiple_types = False
 
     def __init__(self, dialog_act=None, intent=None, interaction_type=None, locale=None, publication_status=None, stage=None, utterance_text=None):
-        # type: (Optional[DialogActV1], Optional[IntentV1], Optional[InteractionTypeV1], Optional[IntentRequestLocalesV1], Optional[PublicationStatusV1], Optional[StageTypeV1], Optional[str]) -> None
+        # type: (Optional[History_DialogActV1], Optional[History_IntentV1], Optional[History_InteractionTypeV1], Optional[History_IntentRequestLocalesV1], Optional[History_PublicationStatusV1], Optional[V1_StageTypeV1], Optional[str]) -> None
         """
 
         :param dialog_act: 

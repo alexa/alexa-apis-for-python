@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.links import LinksV1
-    from ask_smapi_model.v1.skill.private.private_distribution_account import PrivateDistributionAccountV1
+    from ask_smapi_model.v1.links import Links as V1_LinksV1
+    from ask_smapi_model.v1.skill.private.private_distribution_account import PrivateDistributionAccount as Private_PrivateDistributionAccountV1
 
 
 class ListPrivateDistributionAccountsResponse(object):
@@ -54,7 +54,7 @@ class ListPrivateDistributionAccountsResponse(object):
     supports_multiple_types = False
 
     def __init__(self, links=None, private_distribution_accounts=None, next_token=None):
-        # type: (Optional[LinksV1], Optional[List[PrivateDistributionAccountV1]], Optional[str]) -> None
+        # type: (Optional[V1_LinksV1], Optional[List[Private_PrivateDistributionAccountV1]], Optional[str]) -> None
         """Response of ListPrivateDistributionAccounts.
 
         :param links: 

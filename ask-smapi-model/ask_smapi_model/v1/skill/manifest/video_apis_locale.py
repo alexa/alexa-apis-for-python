@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.video_catalog_info import VideoCatalogInfoV1
+    from ask_smapi_model.v1.skill.manifest.video_catalog_info import VideoCatalogInfo as Manifest_VideoCatalogInfoV1
 
 
 class VideoApisLocale(object):
@@ -53,7 +53,7 @@ class VideoApisLocale(object):
     supports_multiple_types = False
 
     def __init__(self, video_provider_targeting_names=None, video_provider_logo_uri=None, catalog_information=None):
-        # type: (Optional[List[object]], Optional[str], Optional[List[VideoCatalogInfoV1]]) -> None
+        # type: (Optional[List[object]], Optional[str], Optional[List[Manifest_VideoCatalogInfoV1]]) -> None
         """Defines the structure for localized video api information.
 
         :param video_provider_targeting_names: Defines the video provider&#39;s targeting name.

@@ -21,10 +21,8 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.asr.annotation_sets.audio_asset_download_url import AudioAssetDownloadUrlV1
-    from ask_smapi_model.v1.skill.asr.annotation_sets.audio_asset_download_url_expiry_time import AudioAssetDownloadUrlExpiryTimeV1
 
 
 class AudioAsset(object):
@@ -32,15 +30,15 @@ class AudioAsset(object):
     Object containing information about downloading audio file
 
 
-    :param download_url: 
-    :type download_url: (optional) ask_smapi_model.v1.skill.asr.annotation_sets.audio_asset_download_url.AudioAssetDownloadUrl
-    :param expiry_time: 
-    :type expiry_time: (optional) ask_smapi_model.v1.skill.asr.annotation_sets.audio_asset_download_url_expiry_time.AudioAssetDownloadUrlExpiryTime
+    :param download_url: S3 presigned download url for downloading the audio file
+    :type download_url: (optional) str
+    :param expiry_time: Timestamp when the audio download url expire in ISO 8601 format
+    :type expiry_time: (optional) str
 
     """
     deserialized_types = {
-        'download_url': 'ask_smapi_model.v1.skill.asr.annotation_sets.audio_asset_download_url.AudioAssetDownloadUrl',
-        'expiry_time': 'ask_smapi_model.v1.skill.asr.annotation_sets.audio_asset_download_url_expiry_time.AudioAssetDownloadUrlExpiryTime'
+        'download_url': 'str',
+        'expiry_time': 'str'
     }  # type: Dict
 
     attribute_map = {
@@ -50,13 +48,13 @@ class AudioAsset(object):
     supports_multiple_types = False
 
     def __init__(self, download_url=None, expiry_time=None):
-        # type: (Optional[AudioAssetDownloadUrlV1], Optional[AudioAssetDownloadUrlExpiryTimeV1]) -> None
+        # type: (Optional[str], Optional[str]) -> None
         """Object containing information about downloading audio file
 
-        :param download_url: 
-        :type download_url: (optional) ask_smapi_model.v1.skill.asr.annotation_sets.audio_asset_download_url.AudioAssetDownloadUrl
-        :param expiry_time: 
-        :type expiry_time: (optional) ask_smapi_model.v1.skill.asr.annotation_sets.audio_asset_download_url_expiry_time.AudioAssetDownloadUrlExpiryTime
+        :param download_url: S3 presigned download url for downloading the audio file
+        :type download_url: (optional) str
+        :param expiry_time: Timestamp when the audio download url expire in ISO 8601 format
+        :type expiry_time: (optional) str
         """
         self.__discriminator_value = None  # type: str
 

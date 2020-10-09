@@ -21,13 +21,13 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.skill_manifest_apis import SkillManifestApisV1
-    from ask_smapi_model.v1.skill.manifest.permission_items import PermissionItemsV1
-    from ask_smapi_model.v1.skill.manifest.skill_manifest_publishing_information import SkillManifestPublishingInformationV1
-    from ask_smapi_model.v1.skill.manifest.skill_manifest_events import SkillManifestEventsV1
-    from ask_smapi_model.v1.skill.manifest.skill_manifest_privacy_and_compliance import SkillManifestPrivacyAndComplianceV1
+    from ask_smapi_model.v1.skill.manifest.permission_items import PermissionItems as Manifest_PermissionItemsV1
+    from ask_smapi_model.v1.skill.manifest.skill_manifest_privacy_and_compliance import SkillManifestPrivacyAndCompliance as Manifest_SkillManifestPrivacyAndComplianceV1
+    from ask_smapi_model.v1.skill.manifest.skill_manifest_apis import SkillManifestApis as Manifest_SkillManifestApisV1
+    from ask_smapi_model.v1.skill.manifest.skill_manifest_events import SkillManifestEvents as Manifest_SkillManifestEventsV1
+    from ask_smapi_model.v1.skill.manifest.skill_manifest_publishing_information import SkillManifestPublishingInformation as Manifest_SkillManifestPublishingInformationV1
 
 
 class SkillManifest(object):
@@ -69,7 +69,7 @@ class SkillManifest(object):
     supports_multiple_types = False
 
     def __init__(self, manifest_version=None, publishing_information=None, privacy_and_compliance=None, events=None, permissions=None, apis=None):
-        # type: (Optional[str], Optional[SkillManifestPublishingInformationV1], Optional[SkillManifestPrivacyAndComplianceV1], Optional[SkillManifestEventsV1], Optional[List[PermissionItemsV1]], Optional[SkillManifestApisV1]) -> None
+        # type: (Optional[str], Optional[Manifest_SkillManifestPublishingInformationV1], Optional[Manifest_SkillManifestPrivacyAndComplianceV1], Optional[Manifest_SkillManifestEventsV1], Optional[List[Manifest_PermissionItemsV1]], Optional[Manifest_SkillManifestApisV1]) -> None
         """Defines the structure for a skill&#39;s metadata.
 
         :param manifest_version: Version of the skill manifest.

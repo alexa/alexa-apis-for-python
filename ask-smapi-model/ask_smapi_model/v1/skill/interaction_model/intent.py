@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.slot_definition import SlotDefinitionV1
+    from ask_smapi_model.v1.skill.interaction_model.slot_definition import SlotDefinition as InteractionModel_SlotDefinitionV1
 
 
 class Intent(object):
@@ -53,7 +53,7 @@ class Intent(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, slots=None, samples=None):
-        # type: (Optional[str], Optional[List[SlotDefinitionV1]], Optional[List[object]]) -> None
+        # type: (Optional[str], Optional[List[InteractionModel_SlotDefinitionV1]], Optional[List[object]]) -> None
         """The set of intents your service can accept and process.
 
         :param name: Name to identify the intent.

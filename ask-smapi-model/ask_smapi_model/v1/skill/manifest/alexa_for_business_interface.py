@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.version import VersionV1
-    from ask_smapi_model.v1.skill.manifest.request import RequestV1
+    from ask_smapi_model.v1.skill.manifest.version import Version as Manifest_VersionV1
+    from ask_smapi_model.v1.skill.manifest.request import Request as Manifest_RequestV1
 
 
 class AlexaForBusinessInterface(object):
@@ -52,7 +52,7 @@ class AlexaForBusinessInterface(object):
     supports_multiple_types = False
 
     def __init__(self, namespace=None, version=None, requests=None):
-        # type: (Optional[str], Optional[VersionV1], Optional[List[RequestV1]]) -> None
+        # type: (Optional[str], Optional[Manifest_VersionV1], Optional[List[Manifest_RequestV1]]) -> None
         """
 
         :param namespace: Name of the interface.

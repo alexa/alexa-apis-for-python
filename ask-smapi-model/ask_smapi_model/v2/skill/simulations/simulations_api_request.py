@@ -21,11 +21,11 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v2.skill.simulations.device import DeviceV2
-    from ask_smapi_model.v2.skill.simulations.input import InputV2
-    from ask_smapi_model.v2.skill.simulations.session import SessionV2
+    from ask_smapi_model.v2.skill.simulations.input import Input as Simulations_InputV2
+    from ask_smapi_model.v2.skill.simulations.session import Session as Simulations_SessionV2
+    from ask_smapi_model.v2.skill.simulations.device import Device as Simulations_DeviceV2
 
 
 class SimulationsApiRequest(object):
@@ -53,7 +53,7 @@ class SimulationsApiRequest(object):
     supports_multiple_types = False
 
     def __init__(self, input=None, device=None, session=None):
-        # type: (Optional[InputV2], Optional[DeviceV2], Optional[SessionV2]) -> None
+        # type: (Optional[Simulations_InputV2], Optional[Simulations_DeviceV2], Optional[Simulations_SessionV2]) -> None
         """
 
         :param input: 

@@ -21,15 +21,15 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.isp.summary_marketplace_pricing import SummaryMarketplacePricingV1
-    from ask_smapi_model.v1.isp.stage import StageV1
-    from ask_smapi_model.v1.isp.isp_summary_links import IspSummaryLinksV1
-    from ask_smapi_model.v1.isp.product_type import ProductTypeV1
-    from ask_smapi_model.v1.isp.status import StatusV1
-    from ask_smapi_model.v1.isp.editable_state import EditableStateV1
-    from ask_smapi_model.v1.isp.purchasable_state import PurchasableStateV1
+    from ask_smapi_model.v1.isp.stage import Stage as Isp_StageV1
+    from ask_smapi_model.v1.isp.purchasable_state import PurchasableState as Isp_PurchasableStateV1
+    from ask_smapi_model.v1.isp.editable_state import EditableState as Isp_EditableStateV1
+    from ask_smapi_model.v1.isp.status import Status as Isp_StatusV1
+    from ask_smapi_model.v1.isp.summary_marketplace_pricing import SummaryMarketplacePricing as Isp_SummaryMarketplacePricingV1
+    from ask_smapi_model.v1.isp.isp_summary_links import IspSummaryLinks as Isp_IspSummaryLinksV1
+    from ask_smapi_model.v1.isp.product_type import ProductType as Isp_ProductTypeV1
 
 
 class InSkillProductSummary(object):
@@ -91,7 +91,7 @@ class InSkillProductSummary(object):
     supports_multiple_types = False
 
     def __init__(self, object_type=None, product_id=None, reference_name=None, last_updated=None, name_by_locale=None, status=None, stage=None, editable_state=None, purchasable_state=None, links=None, pricing=None):
-        # type: (Optional[ProductTypeV1], Optional[str], Optional[str], Optional[datetime], Optional[Dict[str, object]], Optional[StatusV1], Optional[StageV1], Optional[EditableStateV1], Optional[PurchasableStateV1], Optional[IspSummaryLinksV1], Optional[Dict[str, SummaryMarketplacePricingV1]]) -> None
+        # type: (Optional[Isp_ProductTypeV1], Optional[str], Optional[str], Optional[datetime], Optional[Dict[str, object]], Optional[Isp_StatusV1], Optional[Isp_StageV1], Optional[Isp_EditableStateV1], Optional[Isp_PurchasableStateV1], Optional[Isp_IspSummaryLinksV1], Optional[Dict[str, Isp_SummaryMarketplacePricingV1]]) -> None
         """Information about the in-skill product that is not editable.
 
         :param object_type: 

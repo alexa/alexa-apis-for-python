@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.skill_manifest_localized_privacy_and_compliance import SkillManifestLocalizedPrivacyAndComplianceV1
+    from ask_smapi_model.v1.skill.manifest.skill_manifest_localized_privacy_and_compliance import SkillManifestLocalizedPrivacyAndCompliance as Manifest_SkillManifestLocalizedPrivacyAndComplianceV1
 
 
 class SkillManifestPrivacyAndCompliance(object):
@@ -69,7 +69,7 @@ class SkillManifestPrivacyAndCompliance(object):
     supports_multiple_types = False
 
     def __init__(self, locales=None, allows_purchases=None, uses_personal_info=None, is_child_directed=None, is_export_compliant=None, contains_ads=None, uses_health_info=None):
-        # type: (Optional[Dict[str, SkillManifestLocalizedPrivacyAndComplianceV1]], Optional[bool], Optional[bool], Optional[bool], Optional[bool], Optional[bool], Optional[bool]) -> None
+        # type: (Optional[Dict[str, Manifest_SkillManifestLocalizedPrivacyAndComplianceV1]], Optional[bool], Optional[bool], Optional[bool], Optional[bool], Optional[bool], Optional[bool]) -> None
         """Defines the structure for privacy &amp; compliance information in the skill manifest.
 
         :param locales: Defines the structure for locale specific privacy &amp; compliance information in the skill manifest.

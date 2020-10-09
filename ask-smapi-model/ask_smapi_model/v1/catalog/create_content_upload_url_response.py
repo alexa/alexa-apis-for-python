@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.catalog.presigned_upload_part_items import PresignedUploadPartItemsV1
+    from ask_smapi_model.v1.catalog.presigned_upload_part_items import PresignedUploadPartItems as Catalog_PresignedUploadPartItemsV1
 
 
 class CreateContentUploadUrlResponse(object):
@@ -47,7 +47,7 @@ class CreateContentUploadUrlResponse(object):
     supports_multiple_types = False
 
     def __init__(self, url_id=None, pre_signed_upload_parts=None):
-        # type: (Optional[str], Optional[List[PresignedUploadPartItemsV1]]) -> None
+        # type: (Optional[str], Optional[List[Catalog_PresignedUploadPartItemsV1]]) -> None
         """
 
         :param url_id: Unique identifier for collection of generated urls.
