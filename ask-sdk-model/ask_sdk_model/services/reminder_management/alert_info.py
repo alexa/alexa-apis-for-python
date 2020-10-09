@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.reminder_management.alert_info_spoken_info import SpokenInfo
+    from ask_sdk_model.services.reminder_management.alert_info_spoken_info import AlertInfoSpokenInfo
 
 
 class AlertInfo(object):
@@ -32,11 +32,11 @@ class AlertInfo(object):
 
 
     :param spoken_info: 
-    :type spoken_info: (optional) ask_sdk_model.services.reminder_management.alert_info_spoken_info.SpokenInfo
+    :type spoken_info: (optional) ask_sdk_model.services.reminder_management.alert_info_spoken_info.AlertInfoSpokenInfo
 
     """
     deserialized_types = {
-        'spoken_info': 'ask_sdk_model.services.reminder_management.alert_info_spoken_info.SpokenInfo'
+        'spoken_info': 'ask_sdk_model.services.reminder_management.alert_info_spoken_info.AlertInfoSpokenInfo'
     }  # type: Dict
 
     attribute_map = {
@@ -45,11 +45,11 @@ class AlertInfo(object):
     supports_multiple_types = False
 
     def __init__(self, spoken_info=None):
-        # type: (Optional[SpokenInfo]) -> None
+        # type: (Optional[AlertInfoSpokenInfo]) -> None
         """Alert info for VUI / GUI
 
         :param spoken_info: 
-        :type spoken_info: (optional) ask_sdk_model.services.reminder_management.alert_info_spoken_info.SpokenInfo
+        :type spoken_info: (optional) ask_sdk_model.services.reminder_management.alert_info_spoken_info.AlertInfoSpokenInfo
         """
         self.__discriminator_value = None  # type: str
 

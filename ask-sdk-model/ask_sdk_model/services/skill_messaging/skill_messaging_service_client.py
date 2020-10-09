@@ -70,7 +70,7 @@ class SkillMessagingServiceClient(BaseServiceClient):
             self._lwa_service_client = lwa_client
 
     def send_skill_message(self, user_id, send_skill_messaging_request, **kwargs):
-        # type: (str, SendSkillMessagingRequest, **Any) -> Union[ApiResponse, Error]
+        # type: (str, SendSkillMessagingRequest, **Any) -> Union[ApiResponse, object, Error]
         """
         Send a message request to a skill for a specified user.
 
@@ -81,7 +81,7 @@ class SkillMessagingServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error]
+        :rtype: Union[ApiResponse, object, Error]
         """
         operation_name = "send_skill_message"
         params = locals()
@@ -148,3 +148,4 @@ class SkillMessagingServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         
+        return None

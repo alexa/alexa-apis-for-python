@@ -21,7 +21,7 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
     from ask_sdk_model.services.monetization.purchasable_state import PurchasableState
     from ask_sdk_model.services.monetization.purchase_mode import PurchaseMode

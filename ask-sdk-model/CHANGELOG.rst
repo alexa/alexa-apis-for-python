@@ -356,3 +356,11 @@ This release contains the following changes :
 This release contains the following changes :
 
 - Models and support for Extensions interfaces.
+
+
+1.28.1
+^^^^^^
+
+This release contains the following changes : 
+
+- Updating model definitions

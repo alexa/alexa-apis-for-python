@@ -21,10 +21,10 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.amazonpay.model.v1.price import PriceV1
-    from ask_sdk_model.interfaces.amazonpay.model.v1.authorization_status import AuthorizationStatusV1
+    from ask_sdk_model.interfaces.amazonpay.model.v1.price import Price as V1_PriceV1
+    from ask_sdk_model.interfaces.amazonpay.model.v1.authorization_status import AuthorizationStatus as V1_AuthorizationStatusV1
 
 
 class AuthorizationDetails(object):
@@ -94,7 +94,7 @@ class AuthorizationDetails(object):
     supports_multiple_types = False
 
     def __init__(self, amazon_authorization_id=None, authorization_reference_id=None, seller_authorization_note=None, authorization_amount=None, captured_amount=None, authorization_fee=None, id_list=None, creation_timestamp=None, expiration_timestamp=None, authorization_status=None, soft_decline=None, capture_now=None, soft_descriptor=None):
-        # type: (Optional[str], Optional[str], Optional[str], Optional[PriceV1], Optional[PriceV1], Optional[PriceV1], Optional[List[object]], Optional[datetime], Optional[datetime], Optional[AuthorizationStatusV1], Optional[bool], Optional[bool], Optional[str]) -> None
+        # type: (Optional[str], Optional[str], Optional[str], Optional[V1_PriceV1], Optional[V1_PriceV1], Optional[V1_PriceV1], Optional[List[object]], Optional[datetime], Optional[datetime], Optional[V1_AuthorizationStatusV1], Optional[bool], Optional[bool], Optional[str]) -> None
         """This object encapsulates details about an Authorization object including the status, amount captured and fee charged.
 
         :param amazon_authorization_id: This is AmazonPay generated identifier for this authorization transaction.

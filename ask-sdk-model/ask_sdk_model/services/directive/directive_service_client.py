@@ -52,7 +52,7 @@ class DirectiveServiceClient(BaseServiceClient):
         self.user_agent = user_agent_info(sdk_version="1.0.0", custom_user_agent=custom_user_agent)
 
     def enqueue(self, send_directive_request, **kwargs):
-        # type: (SendDirectiveRequest, **Any) -> Union[ApiResponse, Error]
+        # type: (SendDirectiveRequest, **Any) -> Union[ApiResponse, object, Error]
         """
         Send directives to Alexa.
 
@@ -61,7 +61,7 @@ class DirectiveServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error]
+        :rtype: Union[ApiResponse, object, Error]
         """
         operation_name = "enqueue"
         params = locals()
@@ -118,3 +118,4 @@ class DirectiveServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         
+        return None

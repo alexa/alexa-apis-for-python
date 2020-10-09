@@ -55,14 +55,14 @@ class UpsServiceClient(BaseServiceClient):
         self.user_agent = user_agent_info(sdk_version="1.0.0", custom_user_agent=custom_user_agent)
 
     def get_profile_email(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, str, Error]
+        # type: (**Any) -> Union[ApiResponse, object, str, Error]
         """
         Gets the email address of the customer associated with the current enablement. Requires customer consent for scopes: [alexa::profile:email:read] 
 
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, str, Error]
+        :rtype: Union[ApiResponse, object, str, Error]
         """
         operation_name = "get_profile_email"
         params = locals()
@@ -114,16 +114,17 @@ class UpsServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        
 
     def get_profile_given_name(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, str, Error]
+        # type: (**Any) -> Union[ApiResponse, object, str, Error]
         """
         Gets the given name (first name) of the customer associated with the current enablement. Requires customer consent for scopes: [alexa::profile:given_name:read] 
 
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, str, Error]
+        :rtype: Union[ApiResponse, object, str, Error]
         """
         operation_name = "get_profile_given_name"
         params = locals()
@@ -175,16 +176,17 @@ class UpsServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        
 
     def get_profile_mobile_number(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, PhoneNumber, Error]
+        # type: (**Any) -> Union[ApiResponse, object, PhoneNumber, Error]
         """
         Gets the mobile phone number of the customer associated with the current enablement. Requires customer consent for scopes: [alexa::profile:mobile_number:read] 
 
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, PhoneNumber, Error]
+        :rtype: Union[ApiResponse, object, PhoneNumber, Error]
         """
         operation_name = "get_profile_mobile_number"
         params = locals()
@@ -236,16 +238,17 @@ class UpsServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        
 
     def get_profile_name(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, str, Error]
+        # type: (**Any) -> Union[ApiResponse, object, str, Error]
         """
         Gets the full name of the customer associated with the current enablement. Requires customer consent for scopes: [alexa::profile:name:read] 
 
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, str, Error]
+        :rtype: Union[ApiResponse, object, str, Error]
         """
         operation_name = "get_profile_name"
         params = locals()
@@ -297,9 +300,10 @@ class UpsServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        
 
     def get_system_distance_units(self, device_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, Error, DistanceUnits]
+        # type: (str, **Any) -> Union[ApiResponse, object, Error, DistanceUnits]
         """
         Gets the distance measurement unit of the device. Does not require explict customer consent. 
 
@@ -308,7 +312,7 @@ class UpsServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, DistanceUnits]
+        :rtype: Union[ApiResponse, object, Error, DistanceUnits]
         """
         operation_name = "get_system_distance_units"
         params = locals()
@@ -366,9 +370,10 @@ class UpsServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        
 
     def get_system_temperature_unit(self, device_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, TemperatureUnit, Error]
+        # type: (str, **Any) -> Union[ApiResponse, object, TemperatureUnit, Error]
         """
         Gets the temperature measurement units of the device. Does not require explict customer consent. 
 
@@ -377,7 +382,7 @@ class UpsServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, TemperatureUnit, Error]
+        :rtype: Union[ApiResponse, object, TemperatureUnit, Error]
         """
         operation_name = "get_system_temperature_unit"
         params = locals()
@@ -435,9 +440,10 @@ class UpsServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        
 
     def get_system_time_zone(self, device_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, str, Error]
+        # type: (str, **Any) -> Union[ApiResponse, object, str, Error]
         """
         Gets the time zone of the device. Does not require explict customer consent. 
 
@@ -446,7 +452,7 @@ class UpsServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, str, Error]
+        :rtype: Union[ApiResponse, object, str, Error]
         """
         operation_name = "get_system_time_zone"
         params = locals()
@@ -504,16 +510,17 @@ class UpsServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        
 
     def get_persons_profile_given_name(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, str, Error]
+        # type: (**Any) -> Union[ApiResponse, object, str, Error]
         """
         Gets the given name (first name) of the recognized speaker at person-level. Requires speaker consent at person-level for scopes: [alexa::profile:given_name:read] 
 
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, str, Error]
+        :rtype: Union[ApiResponse, object, str, Error]
         """
         operation_name = "get_persons_profile_given_name"
         params = locals()
@@ -565,16 +572,17 @@ class UpsServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        
 
     def get_persons_profile_mobile_number(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, PhoneNumber, Error]
+        # type: (**Any) -> Union[ApiResponse, object, PhoneNumber, Error]
         """
         Gets the mobile phone number of the recognized speaker at person-level. Requires speaker consent at person-level for scopes: [alexa::profile:mobile_number:read] 
 
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, PhoneNumber, Error]
+        :rtype: Union[ApiResponse, object, PhoneNumber, Error]
         """
         operation_name = "get_persons_profile_mobile_number"
         params = locals()
@@ -626,16 +634,17 @@ class UpsServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        
 
     def get_persons_profile_name(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, str, Error]
+        # type: (**Any) -> Union[ApiResponse, object, str, Error]
         """
         Gets the full name of the recognized speaker at person-level. Requires speaker consent at person-level for scopes: [alexa::profile:name:read] 
 
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, str, Error]
+        :rtype: Union[ApiResponse, object, str, Error]
         """
         operation_name = "get_persons_profile_name"
         params = locals()
@@ -687,3 +696,4 @@ class UpsServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        

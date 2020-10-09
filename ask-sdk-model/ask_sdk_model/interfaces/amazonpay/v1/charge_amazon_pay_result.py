@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.amazonpay.model.v1.authorization_details import AuthorizationDetailsV1
+    from ask_sdk_model.interfaces.amazonpay.model.v1.authorization_details import AuthorizationDetails as V1_AuthorizationDetailsV1
 
 
 class ChargeAmazonPayResult(object):
@@ -49,7 +49,7 @@ class ChargeAmazonPayResult(object):
     supports_multiple_types = False
 
     def __init__(self, amazon_order_reference_id=None, authorization_details=None):
-        # type: (Optional[str], Optional[AuthorizationDetailsV1]) -> None
+        # type: (Optional[str], Optional[V1_AuthorizationDetailsV1]) -> None
         """Charge Amazon Pay Result Object. It is sent as part of the reponse to ChargeAmazonPay request.
 
         :param amazon_order_reference_id: The order reference identifier.

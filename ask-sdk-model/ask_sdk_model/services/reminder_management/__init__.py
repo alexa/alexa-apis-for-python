@@ -27,7 +27,7 @@ from .reminder_updated_event_request import ReminderUpdatedEventRequest
 from .reminder_status_changed_event_request import ReminderStatusChangedEventRequest
 from .recurrence_freq import RecurrenceFreq
 from .spoken_text import SpokenText
-from .alert_info_spoken_info import SpokenInfo
+from .alert_info_spoken_info import AlertInfoSpokenInfo
 from .status import Status
 from .recurrence import Recurrence
 from .recurrence_day import RecurrenceDay

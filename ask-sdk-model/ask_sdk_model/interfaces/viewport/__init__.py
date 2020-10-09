@@ -22,7 +22,7 @@ from .shape import Shape
 from .mode import Mode
 from .keyboard import Keyboard
 from .aplt_viewport_state import APLTViewportState
-from .viewport_state_video import Video
+from .viewport_state_video import ViewportStateVideo
 from .viewport_state import ViewportState
 from .experience import Experience
 from .dialog import Dialog

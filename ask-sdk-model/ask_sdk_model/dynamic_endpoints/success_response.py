@@ -22,7 +22,7 @@ from ask_sdk_model.dynamic_endpoints.base_response import BaseResponse
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
 
 

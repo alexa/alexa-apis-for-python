@@ -22,7 +22,7 @@ from ask_sdk_model.interfaces.alexa.presentation.apl.runtime_error import Runtim
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
     from ask_sdk_model.interfaces.alexa.presentation.apl.list_runtime_error_reason import ListRuntimeErrorReason
 

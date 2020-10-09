@@ -53,7 +53,7 @@ class DeviceAddressServiceClient(BaseServiceClient):
         self.user_agent = user_agent_info(sdk_version="1.0.0", custom_user_agent=custom_user_agent)
 
     def get_country_and_postal_code(self, device_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, ShortAddress, Error]
+        # type: (str, **Any) -> Union[ApiResponse, object, ShortAddress, Error]
         """
         Gets the country and postal code of a device 
 
@@ -62,7 +62,7 @@ class DeviceAddressServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, ShortAddress, Error]
+        :rtype: Union[ApiResponse, object, ShortAddress, Error]
         """
         operation_name = "get_country_and_postal_code"
         params = locals()
@@ -120,9 +120,10 @@ class DeviceAddressServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        
 
     def get_full_address(self, device_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, Address, Error]
+        # type: (str, **Any) -> Union[ApiResponse, object, Address, Error]
         """
         Gets the address of a device 
 
@@ -131,7 +132,7 @@ class DeviceAddressServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Address, Error]
+        :rtype: Union[ApiResponse, object, Address, Error]
         """
         operation_name = "get_full_address"
         params = locals()
@@ -189,3 +190,4 @@ class DeviceAddressServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        

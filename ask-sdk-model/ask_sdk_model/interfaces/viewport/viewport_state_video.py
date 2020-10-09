@@ -21,12 +21,12 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
     from ask_sdk_model.interfaces.viewport.video.codecs import Codecs
 
 
-class Video(object):
+class ViewportStateVideo(object):
     """
     Details of the technologies which are available for playing video on the device.
 
@@ -98,7 +98,7 @@ class Video(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Video):
+        if not isinstance(other, ViewportStateVideo):
             return False
 
         return self.__dict__ == other.__dict__

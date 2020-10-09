@@ -21,7 +21,7 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
     from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen import ComponentVisibleOnScreen
     from ask_sdk_model.interfaces.alexa.presentation.apl.component_entity import ComponentEntity

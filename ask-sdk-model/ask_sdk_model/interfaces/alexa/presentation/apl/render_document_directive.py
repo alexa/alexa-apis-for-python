@@ -22,7 +22,7 @@ from ask_sdk_model.directive import Directive
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
 
 
@@ -35,6 +35,8 @@ class RenderDocumentDirective(Directive):
     :type document: (optional) dict(str, object)
     :param datasources: Data sources to bind to the document when rendering.
     :type datasources: (optional) dict(str, object)
+    :param sources: An object containing named documents or links. These documents can be referenced by the “template” parameter in the transformer.
+    :type sources: (optional) dict(str, object)
     :param packages: A list of packages including layouts, styles, and images etc.
     :type packages: (optional) list[object]
 
@@ -44,6 +46,7 @@ class RenderDocumentDirective(Directive):
         'token': 'str',
         'document': 'dict(str, object)',
         'datasources': 'dict(str, object)',
+        'sources': 'dict(str, object)',
         'packages': 'list[object]'
     }  # type: Dict
 
@@ -52,12 +55,13 @@ class RenderDocumentDirective(Directive):
         'token': 'token',
         'document': 'document',
         'datasources': 'datasources',
+        'sources': 'sources',
         'packages': 'packages'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, token=None, document=None, datasources=None, packages=None):
-        # type: (Optional[str], Optional[Dict[str, object]], Optional[Dict[str, object]], Optional[List[object]]) -> None
+    def __init__(self, token=None, document=None, datasources=None, sources=None, packages=None):
+        # type: (Optional[str], Optional[Dict[str, object]], Optional[Dict[str, object]], Optional[Dict[str, object]], Optional[List[object]]) -> None
         """
 
         :param token: A unique identifier for the presentation.
@@ -66,6 +70,8 @@ class RenderDocumentDirective(Directive):
         :type document: (optional) dict(str, object)
         :param datasources: Data sources to bind to the document when rendering.
         :type datasources: (optional) dict(str, object)
+        :param sources: An object containing named documents or links. These documents can be referenced by the “template” parameter in the transformer.
+        :type sources: (optional) dict(str, object)
         :param packages: A list of packages including layouts, styles, and images etc.
         :type packages: (optional) list[object]
         """
@@ -76,6 +82,7 @@ class RenderDocumentDirective(Directive):
         self.token = token
         self.document = document
         self.datasources = datasources
+        self.sources = sources
         self.packages = packages
 
     def to_dict(self):

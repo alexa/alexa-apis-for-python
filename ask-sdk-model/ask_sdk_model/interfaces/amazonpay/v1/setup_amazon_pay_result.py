@@ -21,9 +21,9 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_details import BillingAgreementDetailsV1
+    from ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_details import BillingAgreementDetails as V1_BillingAgreementDetailsV1
 
 
 class SetupAmazonPayResult(object):
@@ -45,7 +45,7 @@ class SetupAmazonPayResult(object):
     supports_multiple_types = False
 
     def __init__(self, billing_agreement_details=None):
-        # type: (Optional[BillingAgreementDetailsV1]) -> None
+        # type: (Optional[V1_BillingAgreementDetailsV1]) -> None
         """Setup Amazon Pay Result Object. It is sent as part of the reponse to SetupAmazonPay request.
 
         :param billing_agreement_details: 

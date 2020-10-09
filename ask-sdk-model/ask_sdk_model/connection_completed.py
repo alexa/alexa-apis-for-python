@@ -22,7 +22,7 @@ from ask_sdk_model.cause import Cause
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
     from ask_sdk_model.status import Status
 

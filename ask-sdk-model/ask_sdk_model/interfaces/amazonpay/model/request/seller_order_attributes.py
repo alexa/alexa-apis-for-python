@@ -22,7 +22,7 @@ from ask_sdk_model.interfaces.amazonpay.model.request.base_amazon_pay_entity imp
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
 
 

@@ -21,12 +21,12 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
     from ask_sdk_model.services.reminder_management.spoken_text import SpokenText
 
 
-class SpokenInfo(object):
+class AlertInfoSpokenInfo(object):
     """
     Parameters for VUI presentation of the reminder
 
@@ -98,7 +98,7 @@ class SpokenInfo(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, SpokenInfo):
+        if not isinstance(other, AlertInfoSpokenInfo):
             return False
 
         return self.__dict__ == other.__dict__

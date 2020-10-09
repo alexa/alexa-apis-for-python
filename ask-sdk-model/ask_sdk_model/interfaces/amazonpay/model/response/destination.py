@@ -22,7 +22,7 @@ from ask_sdk_model.interfaces.amazonpay.model.v1.destination import Destination
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
 
 

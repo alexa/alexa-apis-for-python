@@ -55,7 +55,7 @@ class MonetizationServiceClient(BaseServiceClient):
         self.user_agent = user_agent_info(sdk_version="1.0.0", custom_user_agent=custom_user_agent)
 
     def get_in_skill_products(self, accept_language, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, Error, InSkillProductsResponse]
+        # type: (str, **Any) -> Union[ApiResponse, object, Error, InSkillProductsResponse]
         """
         Gets In-Skill Products based on user's context for the Skill.
 
@@ -74,7 +74,7 @@ class MonetizationServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, InSkillProductsResponse]
+        :rtype: Union[ApiResponse, object, Error, InSkillProductsResponse]
         """
         operation_name = "get_in_skill_products"
         params = locals()
@@ -140,9 +140,10 @@ class MonetizationServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        
 
     def get_in_skill_product(self, accept_language, product_id, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, Error, InSkillProduct]
+        # type: (str, str, **Any) -> Union[ApiResponse, object, Error, InSkillProduct]
         """
         Get In-Skill Product information based on user context for the Skill.
 
@@ -153,7 +154,7 @@ class MonetizationServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, InSkillProduct]
+        :rtype: Union[ApiResponse, object, Error, InSkillProduct]
         """
         operation_name = "get_in_skill_product"
         params = locals()
@@ -216,9 +217,10 @@ class MonetizationServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        
 
     def get_in_skill_products_transactions(self, accept_language, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, Error, InSkillProductTransactionsResponse]
+        # type: (str, **Any) -> Union[ApiResponse, object, Error, InSkillProductTransactionsResponse]
         """
         Returns transactions of all in skill products purchases of the customer
 
@@ -239,7 +241,7 @@ class MonetizationServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, Error, InSkillProductTransactionsResponse]
+        :rtype: Union[ApiResponse, object, Error, InSkillProductTransactionsResponse]
         """
         operation_name = "get_in_skill_products_transactions"
         params = locals()
@@ -311,16 +313,17 @@ class MonetizationServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        
 
     def get_voice_purchase_setting(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, bool, Error]
+        # type: (**Any) -> Union[ApiResponse, object, bool, Error]
         """
         Returns whether or not voice purchasing is enabled for the skill
 
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, bool, Error]
+        :rtype: Union[ApiResponse, object, bool, Error]
         """
         operation_name = "get_voice_purchase_setting"
         params = locals()
@@ -370,3 +373,4 @@ class MonetizationServiceClient(BaseServiceClient):
         if full_response:
             return api_response
         return api_response.body
+        

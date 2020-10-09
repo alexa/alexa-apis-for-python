@@ -19,7 +19,7 @@ from codecs import open
 
 here = os.path.abspath(os.path.dirname(__file__))
 
-about = {}
+about = {} # type: ignore
 with open(os.path.join(here, 'ask_sdk_model', '__version__.py'), 'r', 'utf-8') as f:
     exec(f.read(), about)
 

@@ -21,13 +21,13 @@ from enum import Enum
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
     from ask_sdk_model.interfaces.viewport.experience import Experience
+    from ask_sdk_model.interfaces.viewport.viewport_state_video import ViewportStateVideo
     from ask_sdk_model.interfaces.viewport.touch import Touch
     from ask_sdk_model.interfaces.viewport.keyboard import Keyboard
     from ask_sdk_model.interfaces.viewport.shape import Shape
-    from ask_sdk_model.interfaces.viewport.viewport_state_video import Video
     from ask_sdk_model.interfaces.viewport.mode import Mode
 
 
@@ -57,7 +57,7 @@ class ViewportState(object):
     :param keyboard: The physical button input mechanisms supported by the device. An empty array indicates physical button input is unsupported.
     :type keyboard: (optional) list[ask_sdk_model.interfaces.viewport.keyboard.Keyboard]
     :param video: 
-    :type video: (optional) ask_sdk_model.interfaces.viewport.viewport_state_video.Video
+    :type video: (optional) ask_sdk_model.interfaces.viewport.viewport_state_video.ViewportStateVideo
 
     """
     deserialized_types = {
@@ -71,7 +71,7 @@ class ViewportState(object):
         'current_pixel_height': 'float',
         'touch': 'list[ask_sdk_model.interfaces.viewport.touch.Touch]',
         'keyboard': 'list[ask_sdk_model.interfaces.viewport.keyboard.Keyboard]',
-        'video': 'ask_sdk_model.interfaces.viewport.viewport_state_video.Video'
+        'video': 'ask_sdk_model.interfaces.viewport.viewport_state_video.ViewportStateVideo'
     }  # type: Dict
 
     attribute_map = {
@@ -90,7 +90,7 @@ class ViewportState(object):
     supports_multiple_types = False
 
     def __init__(self, experiences=None, mode=None, shape=None, pixel_width=None, pixel_height=None, dpi=None, current_pixel_width=None, current_pixel_height=None, touch=None, keyboard=None, video=None):
-        # type: (Optional[List[Experience]], Optional[Mode], Optional[Shape], Optional[float], Optional[float], Optional[float], Optional[float], Optional[float], Optional[List[Touch]], Optional[List[Keyboard]], Optional[Video]) -> None
+        # type: (Optional[List[Experience]], Optional[Mode], Optional[Shape], Optional[float], Optional[float], Optional[float], Optional[float], Optional[float], Optional[List[Touch]], Optional[List[Keyboard]], Optional[ViewportStateVideo]) -> None
         """This object contains the characteristics related to the device&#39;s viewport.
 
         :param experiences: The experiences supported by the device, in descending order of arcMinuteWidth and arcMinuteHeight.
@@ -114,7 +114,7 @@ class ViewportState(object):
         :param keyboard: The physical button input mechanisms supported by the device. An empty array indicates physical button input is unsupported.
         :type keyboard: (optional) list[ask_sdk_model.interfaces.viewport.keyboard.Keyboard]
         :param video: 
-        :type video: (optional) ask_sdk_model.interfaces.viewport.viewport_state_video.Video
+        :type video: (optional) ask_sdk_model.interfaces.viewport.viewport_state_video.ViewportStateVideo
         """
         self.__discriminator_value = None  # type: str
 

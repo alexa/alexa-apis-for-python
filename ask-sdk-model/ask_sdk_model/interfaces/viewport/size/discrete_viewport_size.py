@@ -22,7 +22,7 @@ from ask_sdk_model.interfaces.viewport.size.viewport_size import ViewportSize
 
 
 if typing.TYPE_CHECKING:
-    from typing import Dict, List, Optional, Union
+    from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
 
 
