@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.display.image import Image
-    from ask_sdk_model.interfaces.display.text_content import TextContent
+    from ask_sdk_model.interfaces.display.image import Image as Image_1942d978
+    from ask_sdk_model.interfaces.display.text_content import TextContent as TextContent_1d3959d5
 
 
 class ListItem(object):
@@ -52,7 +52,7 @@ class ListItem(object):
     supports_multiple_types = False
 
     def __init__(self, token=None, image=None, text_content=None):
-        # type: (Optional[str], Optional[Image], Optional[TextContent]) -> None
+        # type: (Optional[str], Optional[Image_1942d978], Optional[TextContent_1d3959d5]) -> None
         """
 
         :param token: 

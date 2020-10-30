@@ -30,10 +30,10 @@ from ask_sdk_model.services.utils import user_agent_info
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.timer_management.timer_request import TimerRequest
-    from ask_sdk_model.services.timer_management.timer_response import TimerResponse
-    from ask_sdk_model.services.timer_management.timers_response import TimersResponse
-    from ask_sdk_model.services.timer_management.error import Error
+    from ask_sdk_model.services.timer_management.timers_response import TimersResponse as TimersResponse_df2de7c
+    from ask_sdk_model.services.timer_management.timer_request import TimerRequest as TimerRequest_5f036a34
+    from ask_sdk_model.services.timer_management.error import Error as Error_249911d1
+    from ask_sdk_model.services.timer_management.timer_response import TimerResponse as TimerResponse_5be9ee64
 
 
 class TimerManagementServiceClient(BaseServiceClient):
@@ -54,14 +54,14 @@ class TimerManagementServiceClient(BaseServiceClient):
         self.user_agent = user_agent_info(sdk_version="1.0.0", custom_user_agent=custom_user_agent)
 
     def delete_timers(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, object, Error]
+        # type: (**Any) -> Union[ApiResponse, object, Error_249911d1]
         """
         Delete all timers created by the skill. 
 
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, Error]
+        :rtype: Union[ApiResponse, object, Error_249911d1]
         """
         operation_name = "delete_timers"
         params = locals()
@@ -114,14 +114,14 @@ class TimerManagementServiceClient(BaseServiceClient):
         return None
 
     def get_timers(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, object, Error, TimersResponse]
+        # type: (**Any) -> Union[ApiResponse, object, TimersResponse_df2de7c, Error_249911d1]
         """
         Get all timers created by the skill. 
 
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, Error, TimersResponse]
+        :rtype: Union[ApiResponse, object, TimersResponse_df2de7c, Error_249911d1]
         """
         operation_name = "get_timers"
         params = locals()
@@ -174,7 +174,7 @@ class TimerManagementServiceClient(BaseServiceClient):
         
 
     def delete_timer(self, id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, object, Error]
+        # type: (str, **Any) -> Union[ApiResponse, object, Error_249911d1]
         """
         Delete a timer by ID. 
 
@@ -183,7 +183,7 @@ class TimerManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, Error]
+        :rtype: Union[ApiResponse, object, Error_249911d1]
         """
         operation_name = "delete_timer"
         params = locals()
@@ -243,7 +243,7 @@ class TimerManagementServiceClient(BaseServiceClient):
         return None
 
     def get_timer(self, id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, object, TimerResponse, Error]
+        # type: (str, **Any) -> Union[ApiResponse, object, TimerResponse_5be9ee64, Error_249911d1]
         """
         Get timer by ID. 
 
@@ -252,7 +252,7 @@ class TimerManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, TimerResponse, Error]
+        :rtype: Union[ApiResponse, object, TimerResponse_5be9ee64, Error_249911d1]
         """
         operation_name = "get_timer"
         params = locals()
@@ -312,7 +312,7 @@ class TimerManagementServiceClient(BaseServiceClient):
         
 
     def pause_timer(self, id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, object, Error]
+        # type: (str, **Any) -> Union[ApiResponse, object, Error_249911d1]
         """
         Pause a timer. 
 
@@ -321,7 +321,7 @@ class TimerManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, Error]
+        :rtype: Union[ApiResponse, object, Error_249911d1]
         """
         operation_name = "pause_timer"
         params = locals()
@@ -382,7 +382,7 @@ class TimerManagementServiceClient(BaseServiceClient):
         return None
 
     def resume_timer(self, id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, object, Error]
+        # type: (str, **Any) -> Union[ApiResponse, object, Error_249911d1]
         """
         Resume a timer. 
 
@@ -391,7 +391,7 @@ class TimerManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, Error]
+        :rtype: Union[ApiResponse, object, Error_249911d1]
         """
         operation_name = "resume_timer"
         params = locals()
@@ -452,7 +452,7 @@ class TimerManagementServiceClient(BaseServiceClient):
         return None
 
     def create_timer(self, timer_request, **kwargs):
-        # type: (TimerRequest, **Any) -> Union[ApiResponse, object, TimerResponse, Error]
+        # type: (TimerRequest_5f036a34, **Any) -> Union[ApiResponse, object, TimerResponse_5be9ee64, Error_249911d1]
         """
         Create a new timer. 
 
@@ -461,7 +461,7 @@ class TimerManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, TimerResponse, Error]
+        :rtype: Union[ApiResponse, object, TimerResponse_5be9ee64, Error_249911d1]
         """
         operation_name = "create_timer"
         params = locals()

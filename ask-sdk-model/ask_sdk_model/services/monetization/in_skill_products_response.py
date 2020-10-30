@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.monetization.in_skill_product import InSkillProduct
+    from ask_sdk_model.services.monetization.in_skill_product import InSkillProduct as InSkillProduct_81648c45
 
 
 class InSkillProductsResponse(object):
@@ -51,7 +51,7 @@ class InSkillProductsResponse(object):
     supports_multiple_types = False
 
     def __init__(self, in_skill_products=None, is_truncated=None, next_token=None):
-        # type: (Optional[List[InSkillProduct]], Optional[bool], Optional[str]) -> None
+        # type: (Optional[List[InSkillProduct_81648c45]], Optional[bool], Optional[str]) -> None
         """
 
         :param in_skill_products: List of In-Skill Products

@@ -24,7 +24,7 @@ from ask_sdk_model.request import Request
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.conversations.api_request import APIRequest
+    from ask_sdk_model.interfaces.conversations.api_request import APIRequest as APIRequest_cc358b5b
 
 
 class APIInvocationRequest(Request):
@@ -58,7 +58,7 @@ class APIInvocationRequest(Request):
     supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, api_request=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[APIRequest]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[APIRequest_cc358b5b]) -> None
         """
 
         :param request_id: Represents the unique identifier for the specific request.

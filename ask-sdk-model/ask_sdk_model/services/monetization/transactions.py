@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.monetization.status import Status
+    from ask_sdk_model.services.monetization.status import Status as Status_dffc19e9
 
 
 class Transactions(object):
@@ -55,7 +55,7 @@ class Transactions(object):
     supports_multiple_types = False
 
     def __init__(self, status=None, product_id=None, created_time=None, last_modified_time=None):
-        # type: (Optional[Status], Optional[str], Optional[datetime], Optional[datetime]) -> None
+        # type: (Optional[Status_dffc19e9], Optional[str], Optional[datetime], Optional[datetime]) -> None
         """
 
         :param status: 

@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.permissions import Permissions
+    from ask_sdk_model.permissions import Permissions as Permissions_9a74ccaa
 
 
 class User(object):
@@ -53,7 +53,7 @@ class User(object):
     supports_multiple_types = False
 
     def __init__(self, user_id=None, access_token=None, permissions=None):
-        # type: (Optional[str], Optional[str], Optional[Permissions]) -> None
+        # type: (Optional[str], Optional[str], Optional[Permissions_9a74ccaa]) -> None
         """An object that describes the Amazon account for which the skill is enabled.
 
         :param user_id: A string that represents a unique identifier for the user who made the request. The length of this identifier can vary, but is never more than 255 characters. The userId is automatically generated when a user enables the skill in the Alexa app. Note: Disabling and re-enabling a skill generates a new identifier.

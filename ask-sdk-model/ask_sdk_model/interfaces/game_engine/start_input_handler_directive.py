@@ -24,8 +24,8 @@ from ask_sdk_model.directive import Directive
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.game_engine.recognizer import Recognizer
-    from ask_sdk_model.services.game_engine.event import Event
+    from ask_sdk_model.services.game_engine.event import Event as Event_28203a7
+    from ask_sdk_model.services.game_engine.recognizer import Recognizer as Recognizer_f1651c8f
 
 
 class StartInputHandlerDirective(Directive):
@@ -59,7 +59,7 @@ class StartInputHandlerDirective(Directive):
     supports_multiple_types = False
 
     def __init__(self, timeout=None, proxies=None, recognizers=None, events=None):
-        # type: (Optional[int], Optional[List[object]], Optional[Dict[str, Recognizer]], Optional[Dict[str, Event]]) -> None
+        # type: (Optional[int], Optional[List[object]], Optional[Dict[str, Recognizer_f1651c8f]], Optional[Dict[str, Event_28203a7]]) -> None
         """
 
         :param timeout: The maximum run time for this Input Handler, in milliseconds. Although this parameter is required, you can specify events with conditions on which to end the Input Handler earlier.

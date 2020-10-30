@@ -24,7 +24,7 @@ from ask_sdk_model.request import Request
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.events.skillevents.account_linked_body import AccountLinkedBody
+    from ask_sdk_model.events.skillevents.account_linked_body import AccountLinkedBody as AccountLinkedBody_34990fc7
 
 
 class AccountLinkedRequest(Request):
@@ -68,7 +68,7 @@ class AccountLinkedRequest(Request):
     supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, body=None, event_creation_time=None, event_publishing_time=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[AccountLinkedBody], Optional[datetime], Optional[datetime]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[AccountLinkedBody_34990fc7], Optional[datetime], Optional[datetime]) -> None
         """This event indicates that a customer has linked an account in a third-party application with the Alexa app. This event is useful for an application that support out-of-session (non-voice) user interactions so that this application can be notified when the internal customer can be associated with the Alexa customer. This event is required for many applications that synchronize customer Alexa lists with application lists. During the account linking process, the Alexa app directs the user to the skill website where the customer logs in. When the customer logs in, the skill then provides an access token and a consent token to Alexa. The event includes the same access token and consent token.
 
         :param request_id: Represents the unique identifier for the specific request.

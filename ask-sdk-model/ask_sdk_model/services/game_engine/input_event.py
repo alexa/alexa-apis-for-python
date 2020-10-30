@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.game_engine.input_event_action_type import InputEventActionType
+    from ask_sdk_model.services.game_engine.input_event_action_type import InputEventActionType as InputEventActionType_89d7c6e4
 
 
 class InputEvent(object):
@@ -59,7 +59,7 @@ class InputEvent(object):
     supports_multiple_types = False
 
     def __init__(self, gadget_id=None, timestamp=None, action=None, color=None, feature=None):
-        # type: (Optional[str], Optional[str], Optional[InputEventActionType], Optional[str], Optional[str]) -> None
+        # type: (Optional[str], Optional[str], Optional[InputEventActionType_89d7c6e4], Optional[str], Optional[str]) -> None
         """
 
         :param gadget_id: The identifier of the Echo Button in question. It matches the gadgetId that you will have discovered in roll call.

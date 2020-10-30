@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.audioplayer.error_type import ErrorType
+    from ask_sdk_model.interfaces.audioplayer.error_type import ErrorType as ErrorType_1ffc9c0
 
 
 class Error(object):
@@ -47,7 +47,7 @@ class Error(object):
     supports_multiple_types = False
 
     def __init__(self, message=None, object_type=None):
-        # type: (Optional[str], Optional[ErrorType]) -> None
+        # type: (Optional[str], Optional[ErrorType_1ffc9c0]) -> None
         """
 
         :param message: 

@@ -24,7 +24,7 @@ from ask_sdk_model.directive import Directive
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.aplt.command import Command
+    from ask_sdk_model.interfaces.alexa.presentation.aplt.command import Command as Command_bcba0676
 
 
 class ExecuteCommandsDirective(Directive):
@@ -52,7 +52,7 @@ class ExecuteCommandsDirective(Directive):
     supports_multiple_types = False
 
     def __init__(self, commands=None, token=None):
-        # type: (Optional[List[Command]], Optional[str]) -> None
+        # type: (Optional[List[Command_bcba0676]], Optional[str]) -> None
         """Alexa.Presentation.APLT.ExecuteCommands directive used to send APL-T commands to a device.
 
         :param commands: List of Command instances

@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.videoapp.metadata import Metadata
+    from ask_sdk_model.interfaces.videoapp.metadata import Metadata as Metadata_d0c69dca
 
 
 class VideoItem(object):
@@ -47,7 +47,7 @@ class VideoItem(object):
     supports_multiple_types = False
 
     def __init__(self, source=None, metadata=None):
-        # type: (Optional[str], Optional[Metadata]) -> None
+        # type: (Optional[str], Optional[Metadata_d0c69dca]) -> None
         """
 
         :param source: 

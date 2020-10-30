@@ -24,7 +24,7 @@ from ask_sdk_model.interfaces.connections.requests.base_request import BaseReque
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.connections.entities.restaurant import Restaurant
+    from ask_sdk_model.interfaces.connections.entities.restaurant import Restaurant as Restaurant_dd179ebe
 
 
 class ScheduleFoodEstablishmentReservationRequest(BaseRequest):
@@ -60,7 +60,7 @@ class ScheduleFoodEstablishmentReservationRequest(BaseRequest):
     supports_multiple_types = False
 
     def __init__(self, version=None, start_time=None, party_size=None, restaurant=None):
-        # type: (Optional[str], Optional[str], Optional[str], Optional[Restaurant]) -> None
+        # type: (Optional[str], Optional[str], Optional[str], Optional[Restaurant_dd179ebe]) -> None
         """ScheduleFoodEstablishmentReservationRequest for booking restaurant reservation
 
         :param version: version of the request

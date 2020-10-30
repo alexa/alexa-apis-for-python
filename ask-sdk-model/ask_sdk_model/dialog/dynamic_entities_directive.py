@@ -24,8 +24,8 @@ from ask_sdk_model.directive import Directive
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.er.dynamic.update_behavior import UpdateBehavior
-    from ask_sdk_model.er.dynamic.entity_list_item import EntityListItem
+    from ask_sdk_model.er.dynamic.update_behavior import UpdateBehavior as UpdateBehavior_3fa306a1
+    from ask_sdk_model.er.dynamic.entity_list_item import EntityListItem as EntityListItem_51f574a
 
 
 class DynamicEntitiesDirective(Directive):
@@ -51,7 +51,7 @@ class DynamicEntitiesDirective(Directive):
     supports_multiple_types = False
 
     def __init__(self, update_behavior=None, types=None):
-        # type: (Optional[UpdateBehavior], Optional[List[EntityListItem]]) -> None
+        # type: (Optional[UpdateBehavior_3fa306a1], Optional[List[EntityListItem_51f574a]]) -> None
         """
 
         :param update_behavior: 

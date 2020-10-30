@@ -24,7 +24,7 @@ from abc import ABCMeta, abstractmethod
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.display.back_button_behavior import BackButtonBehavior
+    from ask_sdk_model.interfaces.display.back_button_behavior import BackButtonBehavior as BackButtonBehavior_46c3eb02
 
 
 class Template(object):
@@ -86,7 +86,7 @@ class Template(object):
 
     @abstractmethod
     def __init__(self, object_type=None, token=None, back_button=None):
-        # type: (Optional[str], Optional[str], Optional[BackButtonBehavior]) -> None
+        # type: (Optional[str], Optional[str], Optional[BackButtonBehavior_46c3eb02]) -> None
         """
 
         :param object_type: 

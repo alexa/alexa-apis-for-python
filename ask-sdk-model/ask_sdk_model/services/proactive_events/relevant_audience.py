@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.proactive_events.relevant_audience_type import RelevantAudienceType
+    from ask_sdk_model.services.proactive_events.relevant_audience_type import RelevantAudienceType as RelevantAudienceType_a189080d
 
 
 class RelevantAudience(object):
@@ -49,7 +49,7 @@ class RelevantAudience(object):
     supports_multiple_types = False
 
     def __init__(self, object_type=None, payload=None):
-        # type: (Optional[RelevantAudienceType], Optional[object]) -> None
+        # type: (Optional[RelevantAudienceType_a189080d], Optional[object]) -> None
         """The audience for this event.
 
         :param object_type: 

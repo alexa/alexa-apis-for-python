@@ -24,9 +24,9 @@ from ask_sdk_model.interfaces.viewport.typed_viewport_state import TypedViewport
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.viewport.aplt.viewport_profile import ViewportProfile
-    from ask_sdk_model.interfaces.viewport.aplt.inter_segment import InterSegment
-    from ask_sdk_model.interfaces.viewport.aplt.character_format import CharacterFormat
+    from ask_sdk_model.interfaces.viewport.aplt.viewport_profile import ViewportProfile as ViewportProfile_b56b71b8
+    from ask_sdk_model.interfaces.viewport.aplt.character_format import CharacterFormat as CharacterFormat_3252d8d2
+    from ask_sdk_model.interfaces.viewport.aplt.inter_segment import InterSegment as InterSegment_71b0a608
 
 
 class APLTViewportState(TypedViewportState):
@@ -70,7 +70,7 @@ class APLTViewportState(TypedViewportState):
     supports_multiple_types = False
 
     def __init__(self, id=None, supported_profiles=None, line_length=None, line_count=None, character_format=None, inter_segments=None):
-        # type: (Optional[str], Optional[List[ViewportProfile]], Optional[int], Optional[int], Optional[CharacterFormat], Optional[List[InterSegment]]) -> None
+        # type: (Optional[str], Optional[List[ViewportProfile_b56b71b8]], Optional[int], Optional[int], Optional[CharacterFormat_3252d8d2], Optional[List[InterSegment_71b0a608]]) -> None
         """This object contains the characteristics related to the text device&#39;s viewport.
 
         :param id: unique identifier of a viewport object

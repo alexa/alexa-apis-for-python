@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.reminder_management.status import Status
+    from ask_sdk_model.services.reminder_management.status import Status as Status_fbbd2410
 
 
 class Event(object):
@@ -47,7 +47,7 @@ class Event(object):
     supports_multiple_types = False
 
     def __init__(self, status=None, alert_token=None):
-        # type: (Optional[Status], Optional[str]) -> None
+        # type: (Optional[Status_fbbd2410], Optional[str]) -> None
         """
 
         :param status: 

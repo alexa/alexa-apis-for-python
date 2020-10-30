@@ -24,7 +24,7 @@ from ask_sdk_model.interfaces.alexa.presentation.aplt.command import Command
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.aplt.command import Command
+    from ask_sdk_model.interfaces.alexa.presentation.aplt.command import Command as Command_bcba0676
 
 
 class ParallelCommand(Command):
@@ -64,7 +64,7 @@ class ParallelCommand(Command):
     supports_multiple_types = False
 
     def __init__(self, delay=None, description=None, screen_lock=None, when=None, commands=None):
-        # type: (Optional[int], Optional[str], Optional[bool], Union[bool, str, None], Optional[List[Command]]) -> None
+        # type: (Optional[int], Optional[str], Optional[bool], Union[bool, str, None], Optional[List[Command_bcba0676]]) -> None
         """Execute a series of commands in parallel. The parallel command starts executing all child command simultaneously. The parallel command is considered finished when all of its child commands have finished. When the parallel command is terminated early, all currently executing commands are terminated.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.

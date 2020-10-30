@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.slot import Slot
+    from ask_sdk_model.slot import Slot as Slot_9e3ddabe
 
 
 class Input(object):
@@ -49,7 +49,7 @@ class Input(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, slots=None):
-        # type: (Optional[str], Optional[Dict[str, Slot]]) -> None
+        # type: (Optional[str], Optional[Dict[str, Slot_9e3ddabe]]) -> None
         """Structured input data to send to a dialog manager. Currently, this is an Alexa Conversations input instance.
 
         :param name: The Alexa Conversations input name as dictated in the Conversations model.

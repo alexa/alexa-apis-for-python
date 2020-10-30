@@ -24,7 +24,7 @@ from ask_sdk_model.directive import Directive
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.display.template import Template
+    from ask_sdk_model.interfaces.display.template import Template as Template_14d6ce1e
 
 
 class RenderTemplateDirective(Directive):
@@ -46,7 +46,7 @@ class RenderTemplateDirective(Directive):
     supports_multiple_types = False
 
     def __init__(self, template=None):
-        # type: (Optional[Template]) -> None
+        # type: (Optional[Template_14d6ce1e]) -> None
         """
 
         :param template: 

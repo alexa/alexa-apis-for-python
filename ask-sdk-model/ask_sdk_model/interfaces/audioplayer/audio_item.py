@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.audioplayer.audio_item_metadata import AudioItemMetadata
-    from ask_sdk_model.interfaces.audioplayer.stream import Stream
+    from ask_sdk_model.interfaces.audioplayer.stream import Stream as Stream_ede56f13
+    from ask_sdk_model.interfaces.audioplayer.audio_item_metadata import AudioItemMetadata as AudioItemMetadata_6f8cf3c1
 
 
 class AudioItem(object):
@@ -48,7 +48,7 @@ class AudioItem(object):
     supports_multiple_types = False
 
     def __init__(self, stream=None, metadata=None):
-        # type: (Optional[Stream], Optional[AudioItemMetadata]) -> None
+        # type: (Optional[Stream_ede56f13], Optional[AudioItemMetadata_6f8cf3c1]) -> None
         """
 
         :param stream: 

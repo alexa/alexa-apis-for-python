@@ -24,7 +24,7 @@ from ask_sdk_model.request import Request
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.apl.runtime_error import RuntimeError
+    from ask_sdk_model.interfaces.alexa.presentation.apl.runtime_error import RuntimeError as RuntimeError_6272b033
 
 
 class RuntimeErrorEvent(Request):
@@ -64,7 +64,7 @@ class RuntimeErrorEvent(Request):
     supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, token=None, errors=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[str], Optional[List[RuntimeError]]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[str], Optional[List[RuntimeError_6272b033]]) -> None
         """Notifies the skill of any errors in APL functionality.
 
         :param request_id: Represents the unique identifier for the specific request.

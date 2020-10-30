@@ -24,7 +24,7 @@ from ask_sdk_model.interfaces.amazonpay.model.request.base_amazon_pay_entity imp
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.amazonpay.model.request.billing_agreement_attributes import BillingAgreementAttributes
+    from ask_sdk_model.interfaces.amazonpay.model.request.billing_agreement_attributes import BillingAgreementAttributes as BillingAgreementAttributes_ec1c47b2
 
 
 class SetupAmazonPayRequest(BaseAmazonPayEntity):
@@ -80,7 +80,7 @@ class SetupAmazonPayRequest(BaseAmazonPayEntity):
     supports_multiple_types = False
 
     def __init__(self, version=None, seller_id=None, country_of_establishment=None, ledger_currency=None, checkout_language=None, billing_agreement_attributes=None, need_amazon_shipping_address=False, sandbox_mode=False, sandbox_customer_email_id=None):
-        # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[BillingAgreementAttributes], Optional[bool], Optional[bool], Optional[str]) -> None
+        # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[BillingAgreementAttributes_ec1c47b2], Optional[bool], Optional[bool], Optional[str]) -> None
         """Setup Amazon Pay Request Object.
 
         :param version: Version of the Amazon Pay Entity. Can be 1 or greater.

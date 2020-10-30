@@ -24,7 +24,7 @@ from ask_sdk_model.request import Request
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.events.skillevents.proactive_subscription_changed_body import ProactiveSubscriptionChangedBody
+    from ask_sdk_model.events.skillevents.proactive_subscription_changed_body import ProactiveSubscriptionChangedBody as ProactiveSubscriptionChangedBody_5642f11a
 
 
 class ProactiveSubscriptionChangedRequest(Request):
@@ -60,7 +60,7 @@ class ProactiveSubscriptionChangedRequest(Request):
     supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, body=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[ProactiveSubscriptionChangedBody]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[ProactiveSubscriptionChangedBody_5642f11a]) -> None
         """This event indicates a customer subscription to receive events from your skill and contains information for that user and person, if recognized. You need this information to know the userId and personId in order to send events to individual users. Note that these events can arrive out of order, so ensure that your skill service uses the timestamp in the event to correctly record the latest subscription state for a customer. 
 
         :param request_id: Represents the unique identifier for the specific request.

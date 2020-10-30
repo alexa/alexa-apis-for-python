@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.session_ended_error_type import SessionEndedErrorType
+    from ask_sdk_model.session_ended_error_type import SessionEndedErrorType as SessionEndedErrorType_fbc052bf
 
 
 class SessionEndedError(object):
@@ -49,7 +49,7 @@ class SessionEndedError(object):
     supports_multiple_types = False
 
     def __init__(self, object_type=None, message=None):
-        # type: (Optional[SessionEndedErrorType], Optional[str]) -> None
+        # type: (Optional[SessionEndedErrorType_fbc052bf], Optional[str]) -> None
         """An error object providing more information about the error that occurred.
 
         :param object_type: A string indicating the type of error that occurred.

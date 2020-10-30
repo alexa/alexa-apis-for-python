@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.reminder_management.recurrence_freq import RecurrenceFreq
-    from ask_sdk_model.services.reminder_management.recurrence_day import RecurrenceDay
+    from ask_sdk_model.services.reminder_management.recurrence_day import RecurrenceDay as RecurrenceDay_64e1cd49
+    from ask_sdk_model.services.reminder_management.recurrence_freq import RecurrenceFreq as RecurrenceFreq_e8445a4d
 
 
 class Recurrence(object):
@@ -66,7 +66,7 @@ class Recurrence(object):
     supports_multiple_types = False
 
     def __init__(self, freq=None, by_day=None, interval=None, start_date_time=None, end_date_time=None, recurrence_rules=None):
-        # type: (Optional[RecurrenceFreq], Optional[List[RecurrenceDay]], Optional[int], Optional[datetime], Optional[datetime], Optional[List[object]]) -> None
+        # type: (Optional[RecurrenceFreq_e8445a4d], Optional[List[RecurrenceDay_64e1cd49]], Optional[int], Optional[datetime], Optional[datetime], Optional[List[object]]) -> None
         """Recurring date/time using the RFC 5545 standard in JSON object form
 
         :param freq: 

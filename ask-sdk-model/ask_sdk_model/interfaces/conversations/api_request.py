@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.slot_value import SlotValue
+    from ask_sdk_model.slot_value import SlotValue as SlotValue_4725c8c5
 
 
 class APIRequest(object):
@@ -53,7 +53,7 @@ class APIRequest(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, arguments=None, slots=None):
-        # type: (Optional[str], Optional[Dict[str, object]], Optional[Dict[str, SlotValue]]) -> None
+        # type: (Optional[str], Optional[Dict[str, object]], Optional[Dict[str, SlotValue_4725c8c5]]) -> None
         """API request object
 
         :param name: API name

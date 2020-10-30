@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.slu.entityresolution.resolution import Resolution
+    from ask_sdk_model.slu.entityresolution.resolution import Resolution as Resolution_fcf523b1
 
 
 class Resolutions(object):
@@ -45,7 +45,7 @@ class Resolutions(object):
     supports_multiple_types = False
 
     def __init__(self, resolutions_per_authority=None):
-        # type: (Optional[List[Resolution]]) -> None
+        # type: (Optional[List[Resolution_fcf523b1]]) -> None
         """Represents the results of resolving the words captured from the user&#39;s utterance. This is included for slots that use a custom slot type or a built-in slot type that you have extended with your own values. Note that resolutions is not included for built-in slot types that you have not extended.
 
         :param resolutions_per_authority: 

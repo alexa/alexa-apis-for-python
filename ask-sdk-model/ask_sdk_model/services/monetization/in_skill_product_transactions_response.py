@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.monetization.transactions import Transactions
-    from ask_sdk_model.services.monetization.metadata import Metadata
+    from ask_sdk_model.services.monetization.metadata import Metadata as Metadata_a873d209
+    from ask_sdk_model.services.monetization.transactions import Transactions as Transactions_c92d5d49
 
 
 class InSkillProductTransactionsResponse(object):
@@ -48,7 +48,7 @@ class InSkillProductTransactionsResponse(object):
     supports_multiple_types = False
 
     def __init__(self, results=None, metadata=None):
-        # type: (Optional[List[Transactions]], Optional[Metadata]) -> None
+        # type: (Optional[List[Transactions_c92d5d49]], Optional[Metadata_a873d209]) -> None
         """
 
         :param results: List of transactions of in skill products purchases

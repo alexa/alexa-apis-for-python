@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.reminder_management.push_notification_status import PushNotificationStatus
+    from ask_sdk_model.services.reminder_management.push_notification_status import PushNotificationStatus as PushNotificationStatus_149f8706
 
 
 class PushNotification(object):
@@ -45,7 +45,7 @@ class PushNotification(object):
     supports_multiple_types = False
 
     def __init__(self, status=None):
-        # type: (Optional[PushNotificationStatus]) -> None
+        # type: (Optional[PushNotificationStatus_149f8706]) -> None
         """Enable / disable reminders push notifications to Alexa mobile apps
 
         :param status: 

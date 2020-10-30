@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.display.image_size import ImageSize
+    from ask_sdk_model.interfaces.display.image_size import ImageSize as ImageSize_d9870903
 
 
 class ImageInstance(object):
@@ -55,7 +55,7 @@ class ImageInstance(object):
     supports_multiple_types = False
 
     def __init__(self, url=None, size=None, width_pixels=None, height_pixels=None):
-        # type: (Optional[str], Optional[ImageSize], Optional[int], Optional[int]) -> None
+        # type: (Optional[str], Optional[ImageSize_d9870903], Optional[int], Optional[int]) -> None
         """
 
         :param url: 

@@ -23,10 +23,10 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.viewport.dialog import Dialog
-    from ask_sdk_model.interfaces.viewport.viewport_video import ViewportVideo
-    from ask_sdk_model.interfaces.viewport.mode import Mode
-    from ask_sdk_model.interfaces.viewport.size.viewport_size import ViewportSize
+    from ask_sdk_model.interfaces.viewport.dialog import Dialog as Dialog_9057824a
+    from ask_sdk_model.interfaces.viewport.viewport_video import ViewportVideo as ViewportVideo_d4424d0d
+    from ask_sdk_model.interfaces.viewport.mode import Mode as Mode_968d4aaa
+    from ask_sdk_model.interfaces.viewport.size.viewport_size import ViewportSize as ViewportSize_cc246be4
 
 
 class CurrentConfiguration(object):
@@ -60,7 +60,7 @@ class CurrentConfiguration(object):
     supports_multiple_types = False
 
     def __init__(self, mode=None, video=None, size=None, dialog=None):
-        # type: (Optional[Mode], Optional[ViewportVideo], Optional[ViewportSize], Optional[Dialog]) -> None
+        # type: (Optional[Mode_968d4aaa], Optional[ViewportVideo_d4424d0d], Optional[ViewportSize_cc246be4], Optional[Dialog_9057824a]) -> None
         """The viewport configuration at the time of the request.
 
         :param mode: 

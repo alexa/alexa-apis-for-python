@@ -23,11 +23,11 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.canfulfill.can_fulfill_intent import CanFulfillIntent
-    from ask_sdk_model.ui.card import Card
-    from ask_sdk_model.ui.output_speech import OutputSpeech
-    from ask_sdk_model.directive import Directive
-    from ask_sdk_model.ui.reprompt import Reprompt
+    from ask_sdk_model.ui.reprompt import Reprompt as Reprompt_ffee6ea4
+    from ask_sdk_model.directive import Directive as Directive_e3e6b000
+    from ask_sdk_model.canfulfill.can_fulfill_intent import CanFulfillIntent as CanFulfillIntent_8d777e62
+    from ask_sdk_model.ui.output_speech import OutputSpeech as OutputSpeech_a070f8fb
+    from ask_sdk_model.ui.card import Card as Card_3a03f3c4
 
 
 class Response(object):
@@ -71,7 +71,7 @@ class Response(object):
     supports_multiple_types = False
 
     def __init__(self, output_speech=None, card=None, reprompt=None, directives=None, api_response=None, should_end_session=None, can_fulfill_intent=None):
-        # type: (Optional[OutputSpeech], Optional[Card], Optional[Reprompt], Optional[List[Directive]], Optional[object], Optional[bool], Optional[CanFulfillIntent]) -> None
+        # type: (Optional[OutputSpeech_a070f8fb], Optional[Card_3a03f3c4], Optional[Reprompt_ffee6ea4], Optional[List[Directive_e3e6b000]], Optional[object], Optional[bool], Optional[CanFulfillIntent_8d777e62]) -> None
         """
 
         :param output_speech: 

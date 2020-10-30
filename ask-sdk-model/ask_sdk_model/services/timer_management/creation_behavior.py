@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.timer_management.display_experience import DisplayExperience
+    from ask_sdk_model.services.timer_management.display_experience import DisplayExperience as DisplayExperience_450b6a16
 
 
 class CreationBehavior(object):
@@ -45,7 +45,7 @@ class CreationBehavior(object):
     supports_multiple_types = False
 
     def __init__(self, display_experience=None):
-        # type: (Optional[DisplayExperience]) -> None
+        # type: (Optional[DisplayExperience_450b6a16]) -> None
         """Whether the native Timer GUI is shown for 8-seconds upon Timer Creation.
 
         :param display_experience: 

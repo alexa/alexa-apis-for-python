@@ -24,7 +24,7 @@ from ask_sdk_model.request import Request
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.html.runtime_error import RuntimeError
+    from ask_sdk_model.interfaces.alexa.presentation.html.runtime_error import RuntimeError as RuntimeError_7feba13b
 
 
 class RuntimeErrorRequest(Request):
@@ -60,7 +60,7 @@ class RuntimeErrorRequest(Request):
     supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, error=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[RuntimeError]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[RuntimeError_7feba13b]) -> None
         """The RuntimeError request occurs when the device software encounters an error with loading a skill&#39;s web application. 
 
         :param request_id: Represents the unique identifier for the specific request.

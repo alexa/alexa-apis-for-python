@@ -24,7 +24,7 @@ from abc import ABCMeta, abstractmethod
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.ui.play_behavior import PlayBehavior
+    from ask_sdk_model.ui.play_behavior import PlayBehavior as PlayBehavior_a7b45b61
 
 
 class OutputSpeech(object):
@@ -67,7 +67,7 @@ class OutputSpeech(object):
 
     @abstractmethod
     def __init__(self, object_type=None, play_behavior=None):
-        # type: (Optional[str], Optional[PlayBehavior]) -> None
+        # type: (Optional[str], Optional[PlayBehavior_a7b45b61]) -> None
         """
 
         :param object_type: 

@@ -24,7 +24,7 @@ from ask_sdk_model.request import Request
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.custom_interface_controller.event import Event
+    from ask_sdk_model.interfaces.custom_interface_controller.event import Event as Event_df85ab64
 
 
 class EventsReceivedRequest(Request):
@@ -64,7 +64,7 @@ class EventsReceivedRequest(Request):
     supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, token=None, events=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[str], Optional[List[Event]]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[str], Optional[List[Event_df85ab64]]) -> None
         """Skill receives this type of event when an event meets the filter  conditions provided in the StartEventHandlerDirective.
 
         :param request_id: Represents the unique identifier for the specific request.

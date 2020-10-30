@@ -30,9 +30,9 @@ from ask_sdk_model.services.utils import user_agent_info
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.device_address.short_address import ShortAddress
-    from ask_sdk_model.services.device_address.error import Error
-    from ask_sdk_model.services.device_address.address import Address
+    from ask_sdk_model.services.device_address.short_address import ShortAddress as ShortAddress_6be70e18
+    from ask_sdk_model.services.device_address.address import Address as Address_b1cbe937
+    from ask_sdk_model.services.device_address.error import Error as Error_5ed86e5f
 
 
 class DeviceAddressServiceClient(BaseServiceClient):
@@ -53,7 +53,7 @@ class DeviceAddressServiceClient(BaseServiceClient):
         self.user_agent = user_agent_info(sdk_version="1.0.0", custom_user_agent=custom_user_agent)
 
     def get_country_and_postal_code(self, device_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, object, ShortAddress, Error]
+        # type: (str, **Any) -> Union[ApiResponse, object, ShortAddress_6be70e18, Error_5ed86e5f]
         """
         Gets the country and postal code of a device 
 
@@ -62,7 +62,7 @@ class DeviceAddressServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, ShortAddress, Error]
+        :rtype: Union[ApiResponse, object, ShortAddress_6be70e18, Error_5ed86e5f]
         """
         operation_name = "get_country_and_postal_code"
         params = locals()
@@ -123,7 +123,7 @@ class DeviceAddressServiceClient(BaseServiceClient):
         
 
     def get_full_address(self, device_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, object, Address, Error]
+        # type: (str, **Any) -> Union[ApiResponse, object, Address_b1cbe937, Error_5ed86e5f]
         """
         Gets the address of a device 
 
@@ -132,7 +132,7 @@ class DeviceAddressServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, Address, Error]
+        :rtype: Union[ApiResponse, object, Address_b1cbe937, Error_5ed86e5f]
         """
         operation_name = "get_full_address"
         params = locals()

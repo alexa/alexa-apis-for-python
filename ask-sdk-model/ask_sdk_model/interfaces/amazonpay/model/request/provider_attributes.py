@@ -24,7 +24,7 @@ from ask_sdk_model.interfaces.amazonpay.model.request.base_amazon_pay_entity imp
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.amazonpay.model.request.provider_credit import ProviderCredit
+    from ask_sdk_model.interfaces.amazonpay.model.request.provider_credit import ProviderCredit as ProviderCredit_5051c023
 
 
 class ProviderAttributes(BaseAmazonPayEntity):
@@ -56,7 +56,7 @@ class ProviderAttributes(BaseAmazonPayEntity):
     supports_multiple_types = False
 
     def __init__(self, provider_id=None, provider_credit_list=None, version=None):
-        # type: (Optional[str], Optional[List[ProviderCredit]], Optional[str]) -> None
+        # type: (Optional[str], Optional[List[ProviderCredit_5051c023]], Optional[str]) -> None
         """This is required only for Ecommerce provider (Solution provider) use cases.
 
         :param provider_id: Solution provider ID.

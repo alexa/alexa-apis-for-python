@@ -24,7 +24,7 @@ from ask_sdk_model.request import Request
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.cause import Cause
+    from ask_sdk_model.cause import Cause as Cause_6683e534
 
 
 class SessionResumedRequest(Request):
@@ -60,7 +60,7 @@ class SessionResumedRequest(Request):
     supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, cause=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[Cause]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[Cause_6683e534]) -> None
         """The request to resume a skill&#39;s session and tells the skill why it is resumed.
 
         :param request_id: Represents the unique identifier for the specific request.

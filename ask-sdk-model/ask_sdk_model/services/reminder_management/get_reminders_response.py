@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.reminder_management.reminder import Reminder
+    from ask_sdk_model.services.reminder_management.reminder import Reminder as Reminder_9b9bac10
 
 
 class GetRemindersResponse(object):
@@ -53,7 +53,7 @@ class GetRemindersResponse(object):
     supports_multiple_types = False
 
     def __init__(self, total_count=None, alerts=None, links=None):
-        # type: (Optional[str], Optional[List[Reminder]], Optional[str]) -> None
+        # type: (Optional[str], Optional[List[Reminder_9b9bac10]], Optional[str]) -> None
         """Response object for get reminders request
 
         :param total_count: Total count of reminders returned

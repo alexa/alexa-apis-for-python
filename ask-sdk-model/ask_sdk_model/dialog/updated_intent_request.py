@@ -24,7 +24,7 @@ from ask_sdk_model.dialog.updated_request import UpdatedRequest
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.intent import Intent
+    from ask_sdk_model.intent import Intent as Intent_fd0ef0fe
 
 
 class UpdatedIntentRequest(UpdatedRequest):
@@ -46,7 +46,7 @@ class UpdatedIntentRequest(UpdatedRequest):
     supports_multiple_types = False
 
     def __init__(self, intent=None):
-        # type: (Optional[Intent]) -> None
+        # type: (Optional[Intent_fd0ef0fe]) -> None
         """
 
         :param intent: 

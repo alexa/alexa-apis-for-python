@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.events.skillevents.permission import Permission
+    from ask_sdk_model.events.skillevents.permission import Permission as Permission_38016ee5
 
 
 class PermissionBody(object):
@@ -47,7 +47,7 @@ class PermissionBody(object):
     supports_multiple_types = False
 
     def __init__(self, accepted_permissions=None, accepted_person_permissions=None):
-        # type: (Optional[List[Permission]], Optional[List[Permission]]) -> None
+        # type: (Optional[List[Permission_38016ee5]], Optional[List[Permission_38016ee5]]) -> None
         """
 
         :param accepted_permissions: The current list of permissions consented to on the account level. It can be an empty list if there are no account level permissions consented to. 

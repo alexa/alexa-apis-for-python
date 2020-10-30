@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.html.runtime_error_reason import RuntimeErrorReason
+    from ask_sdk_model.interfaces.alexa.presentation.html.runtime_error_reason import RuntimeErrorReason as RuntimeErrorReason_431c1642
 
 
 class RuntimeError(object):
@@ -51,7 +51,7 @@ class RuntimeError(object):
     supports_multiple_types = False
 
     def __init__(self, reason=None, message=None, code=None):
-        # type: (Optional[RuntimeErrorReason], Optional[str], Optional[str]) -> None
+        # type: (Optional[RuntimeErrorReason_431c1642], Optional[str], Optional[str]) -> None
         """
 
         :param reason: 

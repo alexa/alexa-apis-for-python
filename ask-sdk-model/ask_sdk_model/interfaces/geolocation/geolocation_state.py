@@ -23,11 +23,11 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.geolocation.coordinate import Coordinate
-    from ask_sdk_model.interfaces.geolocation.altitude import Altitude
-    from ask_sdk_model.interfaces.geolocation.heading import Heading
-    from ask_sdk_model.interfaces.geolocation.speed import Speed
-    from ask_sdk_model.interfaces.geolocation.location_services import LocationServices
+    from ask_sdk_model.interfaces.geolocation.altitude import Altitude as Altitude_328a6962
+    from ask_sdk_model.interfaces.geolocation.heading import Heading as Heading_bf10e3ca
+    from ask_sdk_model.interfaces.geolocation.speed import Speed as Speed_22d2d794
+    from ask_sdk_model.interfaces.geolocation.coordinate import Coordinate as Coordinate_c6912a2
+    from ask_sdk_model.interfaces.geolocation.location_services import LocationServices as LocationServices_c8dfc485
 
 
 class GeolocationState(object):
@@ -67,7 +67,7 @@ class GeolocationState(object):
     supports_multiple_types = False
 
     def __init__(self, timestamp=None, coordinate=None, altitude=None, heading=None, speed=None, location_services=None):
-        # type: (Optional[str], Optional[Coordinate], Optional[Altitude], Optional[Heading], Optional[Speed], Optional[LocationServices]) -> None
+        # type: (Optional[str], Optional[Coordinate_c6912a2], Optional[Altitude_328a6962], Optional[Heading_bf10e3ca], Optional[Speed_22d2d794], Optional[LocationServices_c8dfc485]) -> None
         """
 
         :param timestamp: Specifies the time when the geolocation data was last collected on the device.

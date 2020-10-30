@@ -23,11 +23,11 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.device import Device
-    from ask_sdk_model.interfaces.system_unit.unit import Unit
-    from ask_sdk_model.person import Person
-    from ask_sdk_model.application import Application
-    from ask_sdk_model.user import User
+    from ask_sdk_model.device import Device as Device_8c07abbe
+    from ask_sdk_model.interfaces.system_unit.unit import Unit as Unit_14958eb0
+    from ask_sdk_model.application import Application as Application_fbe81c42
+    from ask_sdk_model.user import User as User_8987f2de
+    from ask_sdk_model.person import Person as Person_a00fdede
 
 
 class SystemState(object):
@@ -71,7 +71,7 @@ class SystemState(object):
     supports_multiple_types = False
 
     def __init__(self, application=None, user=None, device=None, person=None, unit=None, api_endpoint=None, api_access_token=None):
-        # type: (Optional[Application], Optional[User], Optional[Device], Optional[Person], Optional[Unit], Optional[str], Optional[str]) -> None
+        # type: (Optional[Application_fbe81c42], Optional[User_8987f2de], Optional[Device_8c07abbe], Optional[Person_a00fdede], Optional[Unit_14958eb0], Optional[str], Optional[str]) -> None
         """
 
         :param application: 

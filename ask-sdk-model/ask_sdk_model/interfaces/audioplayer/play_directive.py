@@ -24,8 +24,8 @@ from ask_sdk_model.directive import Directive
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.audioplayer.audio_item import AudioItem
-    from ask_sdk_model.interfaces.audioplayer.play_behavior import PlayBehavior
+    from ask_sdk_model.interfaces.audioplayer.audio_item import AudioItem as AudioItem_70c73972
+    from ask_sdk_model.interfaces.audioplayer.play_behavior import PlayBehavior as PlayBehavior_b04a7f2
 
 
 class PlayDirective(Directive):
@@ -51,7 +51,7 @@ class PlayDirective(Directive):
     supports_multiple_types = False
 
     def __init__(self, play_behavior=None, audio_item=None):
-        # type: (Optional[PlayBehavior], Optional[AudioItem]) -> None
+        # type: (Optional[PlayBehavior_b04a7f2], Optional[AudioItem_70c73972]) -> None
         """
 
         :param play_behavior: 

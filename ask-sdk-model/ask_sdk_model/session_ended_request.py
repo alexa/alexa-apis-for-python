@@ -24,8 +24,8 @@ from ask_sdk_model.request import Request
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.session_ended_error import SessionEndedError
-    from ask_sdk_model.session_ended_reason import SessionEndedReason
+    from ask_sdk_model.session_ended_reason import SessionEndedReason as SessionEndedReason_8be684f4
+    from ask_sdk_model.session_ended_error import SessionEndedError as SessionEndedError_39281860
 
 
 class SessionEndedRequest(Request):
@@ -65,7 +65,7 @@ class SessionEndedRequest(Request):
     supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, reason=None, error=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[SessionEndedReason], Optional[SessionEndedError]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[SessionEndedReason_8be684f4], Optional[SessionEndedError_39281860]) -> None
         """A SessionEndedRequest is an object that represents a request made to an Alexa skill to notify that a session was ended. Your service receives a SessionEndedRequest when a currently open session is closed for one of the following reasons: &lt;ol&gt;&lt;li&gt;The user says “exit”&lt;/li&gt;&lt;li&gt;the user does not respond or says something that does not match an intent defined in your voice interface while the device is listening for the user’s response&lt;/li&gt;&lt;li&gt;an error occurs&lt;/li&gt;&lt;/ol&gt;
 
         :param request_id: Represents the unique identifier for the specific request.

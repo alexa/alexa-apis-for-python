@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.custom_interface_controller.filter_match_action import FilterMatchAction
+    from ask_sdk_model.interfaces.custom_interface_controller.filter_match_action import FilterMatchAction as FilterMatchAction_1d20768a
 
 
 class EventFilter(object):
@@ -49,7 +49,7 @@ class EventFilter(object):
     supports_multiple_types = False
 
     def __init__(self, filter_expression=None, filter_match_action=None):
-        # type: (Optional[object], Optional[FilterMatchAction]) -> None
+        # type: (Optional[object], Optional[FilterMatchAction_1d20768a]) -> None
         """Defines the Jsonlogic event filter expression and its corresponding match action.  This filter is applied to all events during the event handler&#39;s duration.  Events that are rejected by the filter expression are not sent to the skill.
 
         :param filter_expression: The JSON object that represents the Jsonlogic expression against which the events are evaluated. If this expression is satisfied, the corresponding match action is performed.

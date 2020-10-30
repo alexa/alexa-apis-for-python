@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.list_management.list_state import ListState
+    from ask_sdk_model.services.list_management.list_state import ListState as ListState_7568bb1f
 
 
 class UpdateListRequest(object):
@@ -51,7 +51,7 @@ class UpdateListRequest(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, state=None, version=None):
-        # type: (Optional[str], Optional[ListState], Optional[int]) -> None
+        # type: (Optional[str], Optional[ListState_7568bb1f], Optional[int]) -> None
         """
 
         :param name: 

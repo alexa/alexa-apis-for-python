@@ -24,7 +24,7 @@ from ask_sdk_model.request import Request
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.list_management.list_item_body import ListItemBody
+    from ask_sdk_model.services.list_management.list_item_body import ListItemBody as ListItemBody_c30b8eea
 
 
 class ListItemsCreatedEventRequest(Request):
@@ -66,7 +66,7 @@ class ListItemsCreatedEventRequest(Request):
     supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, body=None, event_creation_time=None, event_publishing_time=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[ListItemBody], Optional[datetime], Optional[datetime]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[ListItemBody_c30b8eea], Optional[datetime], Optional[datetime]) -> None
         """
 
         :param request_id: Represents the unique identifier for the specific request.

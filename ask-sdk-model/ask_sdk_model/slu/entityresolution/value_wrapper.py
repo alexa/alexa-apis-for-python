@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.slu.entityresolution.value import Value
+    from ask_sdk_model.slu.entityresolution.value import Value as Value_c01e22b7
 
 
 class ValueWrapper(object):
@@ -45,7 +45,7 @@ class ValueWrapper(object):
     supports_multiple_types = False
 
     def __init__(self, value=None):
-        # type: (Optional[Value]) -> None
+        # type: (Optional[Value_c01e22b7]) -> None
         """A wrapper class for an entity resolution value used for JSON serialization.
 
         :param value: 

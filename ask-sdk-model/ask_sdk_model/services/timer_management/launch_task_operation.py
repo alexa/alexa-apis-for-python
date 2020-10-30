@@ -24,8 +24,8 @@ from ask_sdk_model.services.timer_management.operation import Operation
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.timer_management.text_to_confirm import TextToConfirm
-    from ask_sdk_model.services.timer_management.task import Task
+    from ask_sdk_model.services.timer_management.task import Task as Task_55b9f77d
+    from ask_sdk_model.services.timer_management.text_to_confirm import TextToConfirm as TextToConfirm_792b9be7
 
 
 class LaunchTaskOperation(Operation):
@@ -53,7 +53,7 @@ class LaunchTaskOperation(Operation):
     supports_multiple_types = False
 
     def __init__(self, text_to_confirm=None, task=None):
-        # type: (Optional[List[TextToConfirm]], Optional[Task]) -> None
+        # type: (Optional[List[TextToConfirm_792b9be7]], Optional[Task_55b9f77d]) -> None
         """LAUNCH_TASK trigger behavior representing launch a Skill Connection task exposed by the same skill.
 
         :param text_to_confirm: 

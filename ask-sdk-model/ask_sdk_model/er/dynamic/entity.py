@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.er.dynamic.entity_value_and_synonyms import EntityValueAndSynonyms
+    from ask_sdk_model.er.dynamic.entity_value_and_synonyms import EntityValueAndSynonyms as EntityValueAndSynonyms_3f32dca5
 
 
 class Entity(object):
@@ -49,7 +49,7 @@ class Entity(object):
     supports_multiple_types = False
 
     def __init__(self, id=None, name=None):
-        # type: (Optional[str], Optional[EntityValueAndSynonyms]) -> None
+        # type: (Optional[str], Optional[EntityValueAndSynonyms_3f32dca5]) -> None
         """Represents an entity that the skill wants to store. An entity has an optional Id and the value and the synonyms for the entity
 
         :param id: An unique id associated with the entity

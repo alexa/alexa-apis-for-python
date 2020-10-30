@@ -24,7 +24,7 @@ from ask_sdk_model.ui.card import Card
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.ui.image import Image
+    from ask_sdk_model.ui.image import Image as Image_510835de
 
 
 class StandardCard(Card):
@@ -54,7 +54,7 @@ class StandardCard(Card):
     supports_multiple_types = False
 
     def __init__(self, title=None, text=None, image=None):
-        # type: (Optional[str], Optional[str], Optional[Image]) -> None
+        # type: (Optional[str], Optional[str], Optional[Image_510835de]) -> None
         """
 
         :param title: 

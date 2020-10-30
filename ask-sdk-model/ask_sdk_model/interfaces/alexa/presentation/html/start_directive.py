@@ -24,9 +24,9 @@ from ask_sdk_model.directive import Directive
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.html.configuration import Configuration
-    from ask_sdk_model.interfaces.alexa.presentation.html.start_request import StartRequest
-    from ask_sdk_model.interfaces.alexa.presentation.html.transformer import Transformer
+    from ask_sdk_model.interfaces.alexa.presentation.html.configuration import Configuration as Configuration_de3afb80
+    from ask_sdk_model.interfaces.alexa.presentation.html.start_request import StartRequest as StartRequest_f0a55ec7
+    from ask_sdk_model.interfaces.alexa.presentation.html.transformer import Transformer as Transformer_8371ca46
 
 
 class StartDirective(Directive):
@@ -62,7 +62,7 @@ class StartDirective(Directive):
     supports_multiple_types = False
 
     def __init__(self, data=None, transformers=None, request=None, configuration=None):
-        # type: (Optional[object], Optional[List[Transformer]], Optional[StartRequest], Optional[Configuration]) -> None
+        # type: (Optional[object], Optional[List[Transformer_8371ca46]], Optional[StartRequest_f0a55ec7], Optional[Configuration_de3afb80]) -> None
         """The Start directive provides the data necessary to load an HTML page on the target device. 
 
         :param data: Optional startup data which will be made available to the runtime for skill startup. Maximum size: 18 KB

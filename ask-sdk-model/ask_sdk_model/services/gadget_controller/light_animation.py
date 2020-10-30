@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.gadget_controller.animation_step import AnimationStep
+    from ask_sdk_model.services.gadget_controller.animation_step import AnimationStep as AnimationStep_8c5baba8
 
 
 class LightAnimation(object):
@@ -51,7 +51,7 @@ class LightAnimation(object):
     supports_multiple_types = False
 
     def __init__(self, repeat=None, target_lights=None, sequence=None):
-        # type: (Optional[int], Optional[List[object]], Optional[List[AnimationStep]]) -> None
+        # type: (Optional[int], Optional[List[object]], Optional[List[AnimationStep_8c5baba8]]) -> None
         """
 
         :param repeat: The number of times to play this animation. 

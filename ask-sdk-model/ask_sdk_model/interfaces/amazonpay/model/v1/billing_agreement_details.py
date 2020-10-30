@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.amazonpay.model.v1.release_environment import ReleaseEnvironment as V1_ReleaseEnvironmentV1
-    from ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_status import BillingAgreementStatus as V1_BillingAgreementStatusV1
-    from ask_sdk_model.interfaces.amazonpay.model.v1.destination import Destination as V1_DestinationV1
+    from ask_sdk_model.interfaces.amazonpay.model.v1.billing_agreement_status import BillingAgreementStatus as BillingAgreementStatus_92faa5c4
+    from ask_sdk_model.interfaces.amazonpay.model.v1.destination import Destination as Destination_1fa740ce
+    from ask_sdk_model.interfaces.amazonpay.model.v1.release_environment import ReleaseEnvironment as ReleaseEnvironment_c4558bdf
 
 
 class BillingAgreementDetails(object):
@@ -67,7 +67,7 @@ class BillingAgreementDetails(object):
     supports_multiple_types = False
 
     def __init__(self, billing_agreement_id=None, creation_timestamp=None, destination=None, checkout_language=None, release_environment=None, billing_agreement_status=None):
-        # type: (Optional[str], Optional[datetime], Optional[V1_DestinationV1], Optional[str], Optional[V1_ReleaseEnvironmentV1], Optional[V1_BillingAgreementStatusV1]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[Destination_1fa740ce], Optional[str], Optional[ReleaseEnvironment_c4558bdf], Optional[BillingAgreementStatus_92faa5c4]) -> None
         """The result attributes from successful SetupAmazonPay call.
 
         :param billing_agreement_id: Billing agreement id which can be used for one time and recurring purchases

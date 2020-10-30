@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.endpoint_enumeration.endpoint_info import EndpointInfo
+    from ask_sdk_model.services.endpoint_enumeration.endpoint_info import EndpointInfo as EndpointInfo_f10a0cca
 
 
 class EndpointEnumerationResponse(object):
@@ -45,7 +45,7 @@ class EndpointEnumerationResponse(object):
     supports_multiple_types = False
 
     def __init__(self, endpoints=None):
-        # type: (Optional[List[EndpointInfo]]) -> None
+        # type: (Optional[List[EndpointInfo_f10a0cca]]) -> None
         """Contains the list of endpoints.
 
         :param endpoints: The list of endpoints.

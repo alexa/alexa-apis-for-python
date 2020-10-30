@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.reminder_management.trigger_type import TriggerType
-    from ask_sdk_model.services.reminder_management.recurrence import Recurrence
+    from ask_sdk_model.services.reminder_management.trigger_type import TriggerType as TriggerType_e3ee0c23
+    from ask_sdk_model.services.reminder_management.recurrence import Recurrence as Recurrence_12788150
 
 
 class Trigger(object):
@@ -62,7 +62,7 @@ class Trigger(object):
     supports_multiple_types = False
 
     def __init__(self, object_type=None, scheduled_time=None, offset_in_seconds=None, time_zone_id=None, recurrence=None):
-        # type: (Optional[TriggerType], Optional[datetime], Optional[int], Optional[str], Optional[Recurrence]) -> None
+        # type: (Optional[TriggerType_e3ee0c23], Optional[datetime], Optional[int], Optional[str], Optional[Recurrence_12788150]) -> None
         """Trigger information for Reminder
 
         :param object_type: 

@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.timer_management.visibility import Visibility
+    from ask_sdk_model.services.timer_management.visibility import Visibility as Visibility_d5053c1d
 
 
 class DisplayExperience(object):
@@ -45,7 +45,7 @@ class DisplayExperience(object):
     supports_multiple_types = False
 
     def __init__(self, visibility=None):
-        # type: (Optional[Visibility]) -> None
+        # type: (Optional[Visibility_d5053c1d]) -> None
         """Multi model presentation of the timer creation.
 
         :param visibility: 

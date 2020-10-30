@@ -24,8 +24,8 @@ from ask_sdk_model.directive import Directive
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.custom_interface_controller.expiration import Expiration
-    from ask_sdk_model.interfaces.custom_interface_controller.event_filter import EventFilter
+    from ask_sdk_model.interfaces.custom_interface_controller.event_filter import EventFilter as EventFilter_321cde63
+    from ask_sdk_model.interfaces.custom_interface_controller.expiration import Expiration as Expiration_edfb772c
 
 
 class StartEventHandlerDirective(Directive):
@@ -57,7 +57,7 @@ class StartEventHandlerDirective(Directive):
     supports_multiple_types = False
 
     def __init__(self, token=None, event_filter=None, expiration=None):
-        # type: (Optional[str], Optional[EventFilter], Optional[Expiration]) -> None
+        # type: (Optional[str], Optional[EventFilter_321cde63], Optional[Expiration_edfb772c]) -> None
         """This directive configures and starts an event handler. This will enable the skill to receive Custom Events. A skill can only have one active Event Handler at a time.
 
         :param token: A unique string to identify the Event Handler. This identifier is associated with all events dispatched by the Event Handler while it is active.

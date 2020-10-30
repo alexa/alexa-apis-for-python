@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.scope import Scope
+    from ask_sdk_model.scope import Scope as Scope_ed061cca
 
 
 class Permissions(object):
@@ -49,7 +49,7 @@ class Permissions(object):
     supports_multiple_types = False
 
     def __init__(self, consent_token=None, scopes=None):
-        # type: (Optional[str], Optional[Dict[str, Scope]]) -> None
+        # type: (Optional[str], Optional[Dict[str, Scope_ed061cca]]) -> None
         """Contains a consentToken allowing the skill access to information that the customer has consented to provide, such as address information. Note that the consentToken is deprecated. Use the apiAccessToken available in the context object to determine the user’s permissions.
 
         :param consent_token: A token listing all the permissions granted for this user.

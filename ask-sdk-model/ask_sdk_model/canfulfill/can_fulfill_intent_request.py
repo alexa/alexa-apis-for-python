@@ -24,8 +24,8 @@ from ask_sdk_model.request import Request
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.dialog_state import DialogState
-    from ask_sdk_model.intent import Intent
+    from ask_sdk_model.dialog_state import DialogState as DialogState_2ba20645
+    from ask_sdk_model.intent import Intent as Intent_fd0ef0fe
 
 
 class CanFulfillIntentRequest(Request):
@@ -65,7 +65,7 @@ class CanFulfillIntentRequest(Request):
     supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, dialog_state=None, intent=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[DialogState], Optional[Intent]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[DialogState_2ba20645], Optional[Intent_fd0ef0fe]) -> None
         """An object that represents a request made to skill to query whether the skill can understand and fulfill the intent request with detected slots, before actually asking the skill to take action. Skill should be aware this is not to actually take action, skill should handle this request without causing side-effect, skill should not modify some state outside its scope or has an observable interaction with its calling functions or the outside world besides returning a value, such as playing sound,turning on/off lights, committing a transaction or a charge.
 
         :param request_id: Represents the unique identifier for the specific request.

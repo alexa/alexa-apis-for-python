@@ -24,7 +24,7 @@ from ask_sdk_model.directive import Directive
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.connections.on_completion import OnCompletion
+    from ask_sdk_model.interfaces.connections.on_completion import OnCompletion as OnCompletion_8fc1f2aa
 
 
 class StartConnectionDirective(Directive):
@@ -60,7 +60,7 @@ class StartConnectionDirective(Directive):
     supports_multiple_types = False
 
     def __init__(self, uri=None, on_completion=None, input=None, token=None):
-        # type: (Optional[str], Optional[OnCompletion], Optional[Dict[str, object]], Optional[str]) -> None
+        # type: (Optional[str], Optional[OnCompletion_8fc1f2aa], Optional[Dict[str, object]], Optional[str]) -> None
         """This is the directive that a skill can send as part of their response to a session based request to start a connection. A response will be returned to the skill when the connection is handled.
 
         :param uri: This defines the name and version of connection that the requester is trying to send. The format of the uri should follow this pattern: connection://connectionName/connectionVersion. Invalid uri will cause an error which will be sent back to the requester.

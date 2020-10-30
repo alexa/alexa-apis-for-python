@@ -24,7 +24,7 @@ from ask_sdk_model.interfaces.alexa.presentation.apl.runtime_error import Runtim
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.apl.list_runtime_error_reason import ListRuntimeErrorReason
+    from ask_sdk_model.interfaces.alexa.presentation.apl.list_runtime_error_reason import ListRuntimeErrorReason as ListRuntimeErrorReason_ae1e3d53
 
 
 class ListRuntimeError(RuntimeError):
@@ -64,7 +64,7 @@ class ListRuntimeError(RuntimeError):
     supports_multiple_types = False
 
     def __init__(self, message=None, reason=None, list_id=None, list_version=None, operation_index=None):
-        # type: (Optional[str], Optional[ListRuntimeErrorReason], Optional[str], Optional[int], Optional[int]) -> None
+        # type: (Optional[str], Optional[ListRuntimeErrorReason_ae1e3d53], Optional[str], Optional[int], Optional[int]) -> None
         """Reports an error with list functionality.
 
         :param message: A human-readable description of the error.

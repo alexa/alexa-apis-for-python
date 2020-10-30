@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.events.skillevents.proactive_subscription_event import ProactiveSubscriptionEvent
+    from ask_sdk_model.events.skillevents.proactive_subscription_event import ProactiveSubscriptionEvent as ProactiveSubscriptionEvent_a4c7910b
 
 
 class ProactiveSubscriptionChangedBody(object):
@@ -43,7 +43,7 @@ class ProactiveSubscriptionChangedBody(object):
     supports_multiple_types = False
 
     def __init__(self, subscriptions=None):
-        # type: (Optional[List[ProactiveSubscriptionEvent]]) -> None
+        # type: (Optional[List[ProactiveSubscriptionEvent_a4c7910b]]) -> None
         """
 
         :param subscriptions: The list of events that this customer is currently subscribed to. If a customer unsubscribes from an event, this list will contain remaining event types to which the customer is still subscribed to receive from your skill. If the list of subscriptions is empty, this customer has unsubscribed from all event types from your skill. 

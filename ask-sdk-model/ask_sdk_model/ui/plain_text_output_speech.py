@@ -24,7 +24,7 @@ from ask_sdk_model.ui.output_speech import OutputSpeech
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.ui.play_behavior import PlayBehavior
+    from ask_sdk_model.ui.play_behavior import PlayBehavior as PlayBehavior_a7b45b61
 
 
 class PlainTextOutputSpeech(OutputSpeech):
@@ -50,7 +50,7 @@ class PlainTextOutputSpeech(OutputSpeech):
     supports_multiple_types = False
 
     def __init__(self, play_behavior=None, text=None):
-        # type: (Optional[PlayBehavior], Optional[str]) -> None
+        # type: (Optional[PlayBehavior_a7b45b61], Optional[str]) -> None
         """
 
         :param play_behavior: 

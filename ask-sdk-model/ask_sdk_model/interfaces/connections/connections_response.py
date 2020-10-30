@@ -24,7 +24,7 @@ from ask_sdk_model.request import Request
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.connections.connections_status import ConnectionsStatus
+    from ask_sdk_model.interfaces.connections.connections_status import ConnectionsStatus as ConnectionsStatus_145c3ef2
 
 
 class ConnectionsResponse(Request):
@@ -72,7 +72,7 @@ class ConnectionsResponse(Request):
     supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, status=None, name=None, payload=None, token=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[ConnectionsStatus], Optional[str], Optional[Dict[str, object]], Optional[str]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[ConnectionsStatus_145c3ef2], Optional[str], Optional[Dict[str, object]], Optional[str]) -> None
         """This is the request object that a skill will receive as a result of Connections.SendResponse directive from referrer skill.
 
         :param request_id: Represents the unique identifier for the specific request.

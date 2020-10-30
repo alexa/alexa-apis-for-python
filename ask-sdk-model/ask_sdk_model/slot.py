@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.slot_value import SlotValue
-    from ask_sdk_model.slu.entityresolution.resolutions import Resolutions
-    from ask_sdk_model.slot_confirmation_status import SlotConfirmationStatus
+    from ask_sdk_model.slu.entityresolution.resolutions import Resolutions as Resolutions_e7d66a3
+    from ask_sdk_model.slot_confirmation_status import SlotConfirmationStatus as SlotConfirmationStatus_b8466dc8
+    from ask_sdk_model.slot_value import SlotValue as SlotValue_4725c8c5
 
 
 class Slot(object):
@@ -61,7 +61,7 @@ class Slot(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, value=None, confirmation_status=None, resolutions=None, slot_value=None):
-        # type: (Optional[str], Optional[str], Optional[SlotConfirmationStatus], Optional[Resolutions], Optional[SlotValue]) -> None
+        # type: (Optional[str], Optional[str], Optional[SlotConfirmationStatus_b8466dc8], Optional[Resolutions_e7d66a3], Optional[SlotValue_4725c8c5]) -> None
         """
 
         :param name: A string that represents the name of the slot.

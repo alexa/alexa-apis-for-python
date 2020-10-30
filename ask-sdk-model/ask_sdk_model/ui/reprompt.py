@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.ui.output_speech import OutputSpeech
+    from ask_sdk_model.ui.output_speech import OutputSpeech as OutputSpeech_a070f8fb
 
 
 class Reprompt(object):
@@ -43,7 +43,7 @@ class Reprompt(object):
     supports_multiple_types = False
 
     def __init__(self, output_speech=None):
-        # type: (Optional[OutputSpeech]) -> None
+        # type: (Optional[OutputSpeech_a070f8fb]) -> None
         """
 
         :param output_speech: 

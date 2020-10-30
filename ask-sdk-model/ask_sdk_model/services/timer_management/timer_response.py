@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.timer_management.status import Status
+    from ask_sdk_model.services.timer_management.status import Status as Status_26679d1d
 
 
 class TimerResponse(object):
@@ -73,7 +73,7 @@ class TimerResponse(object):
     supports_multiple_types = False
 
     def __init__(self, id=None, status=None, duration=None, trigger_time=None, timer_label=None, created_time=None, updated_time=None, remaining_time_when_paused=None):
-        # type: (Optional[str], Optional[Status], Optional[str], Optional[datetime], Optional[str], Optional[datetime], Optional[datetime], Optional[str]) -> None
+        # type: (Optional[str], Optional[Status_26679d1d], Optional[str], Optional[datetime], Optional[str], Optional[datetime], Optional[datetime], Optional[str]) -> None
         """Timer object
 
         :param id: Unique id of this timer alert

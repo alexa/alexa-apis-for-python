@@ -30,8 +30,8 @@ from ask_sdk_model.services.utils import user_agent_info
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.directive.error import Error
-    from ask_sdk_model.services.directive.send_directive_request import SendDirectiveRequest
+    from ask_sdk_model.services.directive.send_directive_request import SendDirectiveRequest as SendDirectiveRequest_e934a2f
+    from ask_sdk_model.services.directive.error import Error as Error_67b0923
 
 
 class DirectiveServiceClient(BaseServiceClient):
@@ -52,7 +52,7 @@ class DirectiveServiceClient(BaseServiceClient):
         self.user_agent = user_agent_info(sdk_version="1.0.0", custom_user_agent=custom_user_agent)
 
     def enqueue(self, send_directive_request, **kwargs):
-        # type: (SendDirectiveRequest, **Any) -> Union[ApiResponse, object, Error]
+        # type: (SendDirectiveRequest_e934a2f, **Any) -> Union[ApiResponse, object, Error_67b0923]
         """
         Send directives to Alexa.
 
@@ -61,7 +61,7 @@ class DirectiveServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, Error]
+        :rtype: Union[ApiResponse, object, Error_67b0923]
         """
         operation_name = "enqueue"
         params = locals()

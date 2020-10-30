@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.proactive_events.relevant_audience import RelevantAudience
-    from ask_sdk_model.services.proactive_events.event import Event
+    from ask_sdk_model.services.proactive_events.event import Event as Event_6f1ea2dd
+    from ask_sdk_model.services.proactive_events.relevant_audience import RelevantAudience as RelevantAudience_fa9e50d2
 
 
 class CreateProactiveEventRequest(object):
@@ -64,7 +64,7 @@ class CreateProactiveEventRequest(object):
     supports_multiple_types = False
 
     def __init__(self, timestamp=None, reference_id=None, expiry_time=None, event=None, localized_attributes=None, relevant_audience=None):
-        # type: (Optional[datetime], Optional[str], Optional[datetime], Optional[Event], Optional[List[object]], Optional[RelevantAudience]) -> None
+        # type: (Optional[datetime], Optional[str], Optional[datetime], Optional[Event_6f1ea2dd], Optional[List[object]], Optional[RelevantAudience_fa9e50d2]) -> None
         """
 
         :param timestamp: The date and time of the event associated with this request, in ISO 8601 format.

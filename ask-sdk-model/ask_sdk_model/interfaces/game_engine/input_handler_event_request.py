@@ -24,7 +24,7 @@ from ask_sdk_model.request import Request
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.game_engine.input_handler_event import InputHandlerEvent
+    from ask_sdk_model.services.game_engine.input_handler_event import InputHandlerEvent as InputHandlerEvent_206447bd
 
 
 class InputHandlerEventRequest(Request):
@@ -64,7 +64,7 @@ class InputHandlerEventRequest(Request):
     supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, originating_request_id=None, events=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[str], Optional[List[InputHandlerEvent]]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[str], Optional[List[InputHandlerEvent_206447bd]]) -> None
         """Sent when the conditions of an Echo Button event that your skill defined were met.
 
         :param request_id: Represents the unique identifier for the specific request.

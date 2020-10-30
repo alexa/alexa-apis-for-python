@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.canfulfill.can_fulfill_intent_values import CanFulfillIntentValues
-    from ask_sdk_model.canfulfill.can_fulfill_slot import CanFulfillSlot
+    from ask_sdk_model.canfulfill.can_fulfill_intent_values import CanFulfillIntentValues as CanFulfillIntentValues_912ef433
+    from ask_sdk_model.canfulfill.can_fulfill_slot import CanFulfillSlot as CanFulfillSlot_d32230a2
 
 
 class CanFulfillIntent(object):
@@ -50,7 +50,7 @@ class CanFulfillIntent(object):
     supports_multiple_types = False
 
     def __init__(self, can_fulfill=None, slots=None):
-        # type: (Optional[CanFulfillIntentValues], Optional[Dict[str, CanFulfillSlot]]) -> None
+        # type: (Optional[CanFulfillIntentValues_912ef433], Optional[Dict[str, CanFulfillSlot_d32230a2]]) -> None
         """CanFulfillIntent represents the response to canFulfillIntentRequest includes the details about whether the skill can understand and fulfill the intent request with detected slots.
 
         :param can_fulfill: 

@@ -23,11 +23,11 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.monetization.purchasable_state import PurchasableState
-    from ask_sdk_model.services.monetization.purchase_mode import PurchaseMode
-    from ask_sdk_model.services.monetization.entitled_state import EntitledState
-    from ask_sdk_model.services.monetization.product_type import ProductType
-    from ask_sdk_model.services.monetization.entitlement_reason import EntitlementReason
+    from ask_sdk_model.services.monetization.product_type import ProductType as ProductType_8f71260a
+    from ask_sdk_model.services.monetization.entitled_state import EntitledState as EntitledState_c546a5da
+    from ask_sdk_model.services.monetization.entitlement_reason import EntitlementReason as EntitlementReason_43c3309e
+    from ask_sdk_model.services.monetization.purchasable_state import PurchasableState as PurchasableState_f8ea2076
+    from ask_sdk_model.services.monetization.purchase_mode import PurchaseMode as PurchaseMode_156cd096
 
 
 class InSkillProduct(object):
@@ -83,7 +83,7 @@ class InSkillProduct(object):
     supports_multiple_types = False
 
     def __init__(self, product_id=None, reference_name=None, name=None, object_type=None, summary=None, purchasable=None, entitled=None, entitlement_reason=None, active_entitlement_count=None, purchase_mode=None):
-        # type: (Optional[str], Optional[str], Optional[str], Optional[ProductType], Optional[str], Optional[PurchasableState], Optional[EntitledState], Optional[EntitlementReason], Optional[int], Optional[PurchaseMode]) -> None
+        # type: (Optional[str], Optional[str], Optional[str], Optional[ProductType_8f71260a], Optional[str], Optional[PurchasableState_f8ea2076], Optional[EntitledState_c546a5da], Optional[EntitlementReason_43c3309e], Optional[int], Optional[PurchaseMode_156cd096]) -> None
         """
 
         :param product_id: Product Id

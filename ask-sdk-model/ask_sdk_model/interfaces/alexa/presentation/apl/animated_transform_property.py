@@ -24,7 +24,7 @@ from ask_sdk_model.interfaces.alexa.presentation.apl.animated_property import An
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.apl.transform_property import TransformProperty
+    from ask_sdk_model.interfaces.alexa.presentation.apl.transform_property import TransformProperty as TransformProperty_5119bfb1
 
 
 class AnimatedTransformProperty(AnimatedProperty):
@@ -50,7 +50,7 @@ class AnimatedTransformProperty(AnimatedProperty):
     supports_multiple_types = False
 
     def __init__(self, object_from=None, to=None):
-        # type: (Optional[List[TransformProperty]], Optional[List[TransformProperty]]) -> None
+        # type: (Optional[List[TransformProperty_5119bfb1]], Optional[List[TransformProperty_5119bfb1]]) -> None
         """
 
         :param object_from: The starting value of the property.

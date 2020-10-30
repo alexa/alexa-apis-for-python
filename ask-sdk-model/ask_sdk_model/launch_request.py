@@ -24,7 +24,7 @@ from ask_sdk_model.request import Request
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.task import Task
+    from ask_sdk_model.task import Task as Task_8012f71e
 
 
 class LaunchRequest(Request):
@@ -60,7 +60,7 @@ class LaunchRequest(Request):
     supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, task=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[Task]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[Task_8012f71e]) -> None
         """Represents that a user made a request to an Alexa skill, but did not provide a specific intent.
 
         :param request_id: Represents the unique identifier for the specific request.

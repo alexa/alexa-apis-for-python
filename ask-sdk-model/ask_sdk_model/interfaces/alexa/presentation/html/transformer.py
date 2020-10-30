@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.html.transformer_type import TransformerType
+    from ask_sdk_model.interfaces.alexa.presentation.html.transformer_type import TransformerType as TransformerType_656f5c23
 
 
 class Transformer(object):
@@ -53,7 +53,7 @@ class Transformer(object):
     supports_multiple_types = False
 
     def __init__(self, transformer=None, input_path=None, output_name=None):
-        # type: (Optional[TransformerType], Optional[str], Optional[str]) -> None
+        # type: (Optional[TransformerType_656f5c23], Optional[str], Optional[str]) -> None
         """Properties for performing text to speech transformations. These are the same properties that [APL transformers](https://developer.amazon.com/docs/alexa-presentation-language/apl-data-source.html#transformer-properties-and-conversion-rules) use. 
 
         :param transformer: 

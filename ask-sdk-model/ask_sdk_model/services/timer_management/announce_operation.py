@@ -24,7 +24,7 @@ from ask_sdk_model.services.timer_management.operation import Operation
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.timer_management.text_to_announce import TextToAnnounce
+    from ask_sdk_model.services.timer_management.text_to_announce import TextToAnnounce as TextToAnnounce_94c703b3
 
 
 class AnnounceOperation(Operation):
@@ -48,7 +48,7 @@ class AnnounceOperation(Operation):
     supports_multiple_types = False
 
     def __init__(self, text_to_announce=None):
-        # type: (Optional[List[TextToAnnounce]]) -> None
+        # type: (Optional[List[TextToAnnounce_94c703b3]]) -> None
         """ANNOUNCE trigger behavior represents announcing a certain text that the developer wants to be read out at the expiration of the timer.
 
         :param text_to_announce: 

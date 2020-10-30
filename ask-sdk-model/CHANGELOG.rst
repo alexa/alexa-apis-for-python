@@ -364,3 +364,10 @@ This release contains the following changes :
 This release contains the following changes : 
 
 - Updating model definitions
+
+
+1.29.0
+~~~~~~
+
+This release contains the following changes :
+- APL for Audio now sends RuntimeError requests that notify developer of any errors that happened during APLA processing.

@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen import ComponentVisibleOnScreen
-    from ask_sdk_model.interfaces.alexa.presentation.apl.component_entity import ComponentEntity
-    from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen_tags import ComponentVisibleOnScreenTags
+    from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen import ComponentVisibleOnScreen as ComponentVisibleOnScreen_c94bf507
+    from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen_tags import ComponentVisibleOnScreenTags as ComponentVisibleOnScreenTags_2ad43cf6
+    from ask_sdk_model.interfaces.alexa.presentation.apl.component_entity import ComponentEntity as ComponentEntity_262ae12d
 
 
 class ComponentVisibleOnScreen(object):
@@ -79,7 +79,7 @@ class ComponentVisibleOnScreen(object):
     supports_multiple_types = False
 
     def __init__(self, children=None, entities=None, id=None, position=None, tags=None, transform=None, object_type=None, uid=None, visibility=None):
-        # type: (Optional[List[ComponentVisibleOnScreen]], Optional[List[ComponentEntity]], Optional[str], Optional[str], Optional[ComponentVisibleOnScreenTags], Optional[List[object]], Optional[str], Optional[str], Optional[float]) -> None
+        # type: (Optional[List[ComponentVisibleOnScreen_c94bf507]], Optional[List[ComponentEntity_262ae12d]], Optional[str], Optional[str], Optional[ComponentVisibleOnScreenTags_2ad43cf6], Optional[List[object]], Optional[str], Optional[str], Optional[float]) -> None
         """Definition of a visible APL element shown on screen.
 
         :param children: All child elements of the displayed element.

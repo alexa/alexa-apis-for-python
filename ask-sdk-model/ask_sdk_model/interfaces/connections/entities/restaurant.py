@@ -24,7 +24,7 @@ from ask_sdk_model.interfaces.connections.entities.base_entity import BaseEntity
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.connections.entities.postal_address import PostalAddress
+    from ask_sdk_model.interfaces.connections.entities.postal_address import PostalAddress as PostalAddress_4b374d8b
 
 
 class Restaurant(BaseEntity):
@@ -56,7 +56,7 @@ class Restaurant(BaseEntity):
     supports_multiple_types = False
 
     def __init__(self, version=None, name=None, location=None):
-        # type: (Optional[str], Optional[str], Optional[PostalAddress]) -> None
+        # type: (Optional[str], Optional[str], Optional[PostalAddress_4b374d8b]) -> None
         """Restaurant entity
 
         :param version: version of the request

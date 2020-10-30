@@ -24,7 +24,7 @@ from ask_sdk_model.cause import Cause
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.status import Status
+    from ask_sdk_model.status import Status as Status_7705e43e
 
 
 class ConnectionCompleted(Cause):
@@ -56,7 +56,7 @@ class ConnectionCompleted(Cause):
     supports_multiple_types = False
 
     def __init__(self, token=None, status=None, result=None):
-        # type: (Optional[str], Optional[Status], Optional[object]) -> None
+        # type: (Optional[str], Optional[Status_7705e43e], Optional[object]) -> None
         """Represents the status and result needed to resume a skill&#39;s suspended session.
 
         :param token: This is an echo back string that skills send when during Connections.StartConnection directive. They will receive it when they get the SessionResumedRequest. It is never sent to the skill handling the request.

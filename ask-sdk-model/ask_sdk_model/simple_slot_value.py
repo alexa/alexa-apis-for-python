@@ -24,7 +24,7 @@ from ask_sdk_model.slot_value import SlotValue
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.slu.entityresolution.resolutions import Resolutions
+    from ask_sdk_model.slu.entityresolution.resolutions import Resolutions as Resolutions_e7d66a3
 
 
 class SimpleSlotValue(SlotValue):
@@ -52,7 +52,7 @@ class SimpleSlotValue(SlotValue):
     supports_multiple_types = False
 
     def __init__(self, value=None, resolutions=None):
-        # type: (Optional[str], Optional[Resolutions]) -> None
+        # type: (Optional[str], Optional[Resolutions_e7d66a3]) -> None
         """Slot value containing a single string value and resolutions.
 
         :param value: A string that represents the value the user spoke for the slot. This is the actual value the user spoke, not necessarily the canonical value or one of the synonyms defined for the entity. Note that AMAZON.LITERAL slot values sent to your service are always in all lower case.

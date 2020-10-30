@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.html.start_request_method import StartRequestMethod
+    from ask_sdk_model.interfaces.alexa.presentation.html.start_request_method import StartRequestMethod as StartRequestMethod_63e40db0
 
 
 class StartRequest(object):
@@ -51,7 +51,7 @@ class StartRequest(object):
     supports_multiple_types = False
 
     def __init__(self, method=None, uri=None, headers=None):
-        # type: (Optional[StartRequestMethod], Optional[str], Optional[object]) -> None
+        # type: (Optional[StartRequestMethod_63e40db0], Optional[str], Optional[object]) -> None
         """
 
         :param method: 

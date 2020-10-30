@@ -24,10 +24,10 @@ from ask_sdk_model.interfaces.amazonpay.model.request.base_amazon_pay_entity imp
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.amazonpay.model.request.payment_action import PaymentAction
-    from ask_sdk_model.interfaces.amazonpay.model.request.seller_order_attributes import SellerOrderAttributes
-    from ask_sdk_model.interfaces.amazonpay.model.request.authorize_attributes import AuthorizeAttributes
-    from ask_sdk_model.interfaces.amazonpay.model.request.provider_attributes import ProviderAttributes
+    from ask_sdk_model.interfaces.amazonpay.model.request.provider_attributes import ProviderAttributes as ProviderAttributes_32296063
+    from ask_sdk_model.interfaces.amazonpay.model.request.authorize_attributes import AuthorizeAttributes as AuthorizeAttributes_2defaf71
+    from ask_sdk_model.interfaces.amazonpay.model.request.payment_action import PaymentAction as PaymentAction_974ab70f
+    from ask_sdk_model.interfaces.amazonpay.model.request.seller_order_attributes import SellerOrderAttributes as SellerOrderAttributes_48ed79ae
 
 
 class ChargeAmazonPayRequest(BaseAmazonPayEntity):
@@ -75,7 +75,7 @@ class ChargeAmazonPayRequest(BaseAmazonPayEntity):
     supports_multiple_types = False
 
     def __init__(self, version=None, seller_id=None, billing_agreement_id=None, payment_action=None, authorize_attributes=None, seller_order_attributes=None, provider_attributes=None):
-        # type: (Optional[str], Optional[str], Optional[str], Optional[PaymentAction], Optional[AuthorizeAttributes], Optional[SellerOrderAttributes], Optional[ProviderAttributes]) -> None
+        # type: (Optional[str], Optional[str], Optional[str], Optional[PaymentAction_974ab70f], Optional[AuthorizeAttributes_2defaf71], Optional[SellerOrderAttributes_48ed79ae], Optional[ProviderAttributes_32296063]) -> None
         """Charge Amazon Pay Request Object.
 
         :param version: Version of the Amazon Pay Entity. Can be 1 or greater.

@@ -24,8 +24,8 @@ from ask_sdk_model.request import Request
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.dialog_state import DialogState
-    from ask_sdk_model.intent import Intent
+    from ask_sdk_model.dialog_state import DialogState as DialogState_2ba20645
+    from ask_sdk_model.intent import Intent as Intent_fd0ef0fe
 
 
 class IntentRequest(Request):
@@ -65,7 +65,7 @@ class IntentRequest(Request):
     supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, dialog_state=None, intent=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[DialogState], Optional[Intent]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[DialogState_2ba20645], Optional[Intent_fd0ef0fe]) -> None
         """An IntentRequest is an object that represents a request made to a skill based on what the user wants to do.
 
         :param request_id: Represents the unique identifier for the specific request.

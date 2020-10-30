@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.apl.component_entity import ComponentEntity
-    from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen_media_tag_state_enum import ComponentVisibleOnScreenMediaTagStateEnum
+    from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen_media_tag_state_enum import ComponentVisibleOnScreenMediaTagStateEnum as ComponentVisibleOnScreenMediaTagStateEnum_669eb6d5
+    from ask_sdk_model.interfaces.alexa.presentation.apl.component_entity import ComponentEntity as ComponentEntity_262ae12d
 
 
 class ComponentVisibleOnScreenMediaTag(object):
@@ -74,7 +74,7 @@ class ComponentVisibleOnScreenMediaTag(object):
     supports_multiple_types = False
 
     def __init__(self, position_in_milliseconds=None, state=None, allow_adjust_seek_position_forward=None, allow_adjust_seek_position_backwards=None, allow_next=None, allow_previous=None, entities=None, url=None):
-        # type: (Optional[int], Optional[ComponentVisibleOnScreenMediaTagStateEnum], Optional[bool], Optional[bool], Optional[bool], Optional[bool], Optional[List[ComponentEntity]], Optional[str]) -> None
+        # type: (Optional[int], Optional[ComponentVisibleOnScreenMediaTagStateEnum_669eb6d5], Optional[bool], Optional[bool], Optional[bool], Optional[bool], Optional[List[ComponentEntity_262ae12d]], Optional[str]) -> None
         """Media player
 
         :param position_in_milliseconds: Current position of the play head from the start of the track.

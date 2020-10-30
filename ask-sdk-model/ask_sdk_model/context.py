@@ -23,15 +23,15 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.apl.rendered_document_state import RenderedDocumentState
-    from ask_sdk_model.interfaces.system.system_state import SystemState
-    from ask_sdk_model.interfaces.automotive.automotive_state import AutomotiveState
-    from ask_sdk_model.interfaces.geolocation.geolocation_state import GeolocationState
-    from ask_sdk_model.interfaces.audioplayer.audio_player_state import AudioPlayerState
-    from ask_sdk_model.interfaces.viewport.viewport_state import ViewportState
-    from ask_sdk_model.interfaces.viewport.typed_viewport_state import TypedViewportState
-    from ask_sdk_model.interfaces.alexa.extension.extensions_state import ExtensionsState
-    from ask_sdk_model.interfaces.display.display_state import DisplayState
+    from ask_sdk_model.interfaces.alexa.presentation.apl.rendered_document_state import RenderedDocumentState as RenderedDocumentState_4fad8b14
+    from ask_sdk_model.interfaces.viewport.viewport_state import ViewportState as ViewportState_a05eceb9
+    from ask_sdk_model.interfaces.viewport.typed_viewport_state import TypedViewportState as TypedViewportState_c366f13e
+    from ask_sdk_model.interfaces.audioplayer.audio_player_state import AudioPlayerState as AudioPlayerState_ac652451
+    from ask_sdk_model.interfaces.automotive.automotive_state import AutomotiveState as AutomotiveState_2b614eea
+    from ask_sdk_model.interfaces.alexa.extension.extensions_state import ExtensionsState as ExtensionsState_f02207d3
+    from ask_sdk_model.interfaces.geolocation.geolocation_state import GeolocationState as GeolocationState_5225020d
+    from ask_sdk_model.interfaces.system.system_state import SystemState as SystemState_22fcb230
+    from ask_sdk_model.interfaces.display.display_state import DisplayState as DisplayState_726e4959
 
 
 class Context(object):
@@ -83,7 +83,7 @@ class Context(object):
     supports_multiple_types = False
 
     def __init__(self, system=None, alexa_presentation_apl=None, audio_player=None, automotive=None, display=None, geolocation=None, viewport=None, viewports=None, extensions=None):
-        # type: (Optional[SystemState], Optional[RenderedDocumentState], Optional[AudioPlayerState], Optional[AutomotiveState], Optional[DisplayState], Optional[GeolocationState], Optional[ViewportState], Optional[List[TypedViewportState]], Optional[ExtensionsState]) -> None
+        # type: (Optional[SystemState_22fcb230], Optional[RenderedDocumentState_4fad8b14], Optional[AudioPlayerState_ac652451], Optional[AutomotiveState_2b614eea], Optional[DisplayState_726e4959], Optional[GeolocationState_5225020d], Optional[ViewportState_a05eceb9], Optional[List[TypedViewportState_c366f13e]], Optional[ExtensionsState_f02207d3]) -> None
         """
 
         :param system: Provides information about the current state of the Alexa service and the device interacting with your skill.

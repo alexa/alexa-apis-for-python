@@ -23,12 +23,12 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.viewport.experience import Experience
-    from ask_sdk_model.interfaces.viewport.viewport_state_video import ViewportStateVideo
-    from ask_sdk_model.interfaces.viewport.touch import Touch
-    from ask_sdk_model.interfaces.viewport.keyboard import Keyboard
-    from ask_sdk_model.interfaces.viewport.shape import Shape
-    from ask_sdk_model.interfaces.viewport.mode import Mode
+    from ask_sdk_model.interfaces.viewport.keyboard import Keyboard as Keyboard_6e759daa
+    from ask_sdk_model.interfaces.viewport.experience import Experience as Experience_99e18a0a
+    from ask_sdk_model.interfaces.viewport.shape import Shape as Shape_d8a6bf70
+    from ask_sdk_model.interfaces.viewport.viewport_state_video import ViewportStateVideo as ViewportStateVideo_a9fffd46
+    from ask_sdk_model.interfaces.viewport.mode import Mode as Mode_968d4aaa
+    from ask_sdk_model.interfaces.viewport.touch import Touch as Touch_93b302c
 
 
 class ViewportState(object):
@@ -90,7 +90,7 @@ class ViewportState(object):
     supports_multiple_types = False
 
     def __init__(self, experiences=None, mode=None, shape=None, pixel_width=None, pixel_height=None, dpi=None, current_pixel_width=None, current_pixel_height=None, touch=None, keyboard=None, video=None):
-        # type: (Optional[List[Experience]], Optional[Mode], Optional[Shape], Optional[float], Optional[float], Optional[float], Optional[float], Optional[float], Optional[List[Touch]], Optional[List[Keyboard]], Optional[ViewportStateVideo]) -> None
+        # type: (Optional[List[Experience_99e18a0a]], Optional[Mode_968d4aaa], Optional[Shape_d8a6bf70], Optional[float], Optional[float], Optional[float], Optional[float], Optional[float], Optional[List[Touch_93b302c]], Optional[List[Keyboard_6e759daa]], Optional[ViewportStateVideo_a9fffd46]) -> None
         """This object contains the characteristics related to the device&#39;s viewport.
 
         :param experiences: The experiences supported by the device, in descending order of arcMinuteWidth and arcMinuteHeight.

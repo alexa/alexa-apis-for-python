@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.audioplayer.player_activity import PlayerActivity
+    from ask_sdk_model.interfaces.audioplayer.player_activity import PlayerActivity as PlayerActivity_555ba3ec
 
 
 class AudioPlayerState(object):
@@ -51,7 +51,7 @@ class AudioPlayerState(object):
     supports_multiple_types = False
 
     def __init__(self, offset_in_milliseconds=None, token=None, player_activity=None):
-        # type: (Optional[int], Optional[str], Optional[PlayerActivity]) -> None
+        # type: (Optional[int], Optional[str], Optional[PlayerActivity_555ba3ec]) -> None
         """
 
         :param offset_in_milliseconds: 

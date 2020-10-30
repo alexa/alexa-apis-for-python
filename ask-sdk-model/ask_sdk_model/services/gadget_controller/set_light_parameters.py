@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.gadget_controller.light_animation import LightAnimation
-    from ask_sdk_model.services.gadget_controller.trigger_event_type import TriggerEventType
+    from ask_sdk_model.services.gadget_controller.light_animation import LightAnimation as LightAnimation_f3c63c80
+    from ask_sdk_model.services.gadget_controller.trigger_event_type import TriggerEventType as TriggerEventType_3b491945
 
 
 class SetLightParameters(object):
@@ -54,7 +54,7 @@ class SetLightParameters(object):
     supports_multiple_types = False
 
     def __init__(self, trigger_event=None, trigger_event_time_ms=None, animations=None):
-        # type: (Optional[TriggerEventType], Optional[int], Optional[List[LightAnimation]]) -> None
+        # type: (Optional[TriggerEventType_3b491945], Optional[int], Optional[List[LightAnimation_f3c63c80]]) -> None
         """Arguments that pertain to animating the buttons.
 
         :param trigger_event: 

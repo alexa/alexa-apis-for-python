@@ -24,7 +24,7 @@ from ask_sdk_model.interfaces.alexa.presentation.apl.command import Command
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.apl.command import Command
+    from ask_sdk_model.interfaces.alexa.presentation.apl.command import Command as Command_bc5ff832
 
 
 class SequentialCommand(Command):
@@ -72,7 +72,7 @@ class SequentialCommand(Command):
     supports_multiple_types = False
 
     def __init__(self, delay=None, description=None, when=None, catch=None, commands=None, object_finally=None, repeat_count=None):
-        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[List[Command]], Optional[List[Command]], Optional[List[Command]], Union[int, str, None]) -> None
+        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[List[Command_bc5ff832]], Optional[List[Command_bc5ff832]], Optional[List[Command_bc5ff832]], Union[int, str, None]) -> None
         """A sequential command executes a series of commands in order. The sequential command executes the command list in order, waiting for the previous command to finish before executing the next. The sequential command is finished when all of its child commands have finished. When the Sequential command is terminated early, the currently executing command is terminated and no further commands are executed.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.

@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.session import Session
-    from ask_sdk_model.request import Request
-    from ask_sdk_model.context import Context
+    from ask_sdk_model.request import Request as Request_601a68c0
+    from ask_sdk_model.context import Context as Context_d885cf00
+    from ask_sdk_model.session import Session as Session_c56c91ce
 
 
 class RequestEnvelope(object):
@@ -59,7 +59,7 @@ class RequestEnvelope(object):
     supports_multiple_types = False
 
     def __init__(self, version=None, session=None, context=None, request=None):
-        # type: (Optional[str], Optional[Session], Optional[Context], Optional[Request]) -> None
+        # type: (Optional[str], Optional[Session_c56c91ce], Optional[Context_d885cf00], Optional[Request_601a68c0]) -> None
         """Request wrapper for all requests sent to your Skill.
 
         :param version: The version specifier for the request.

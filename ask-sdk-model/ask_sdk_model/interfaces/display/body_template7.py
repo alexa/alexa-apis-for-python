@@ -24,8 +24,8 @@ from ask_sdk_model.interfaces.display.template import Template
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.display.back_button_behavior import BackButtonBehavior
-    from ask_sdk_model.interfaces.display.image import Image
+    from ask_sdk_model.interfaces.display.image import Image as Image_1942d978
+    from ask_sdk_model.interfaces.display.back_button_behavior import BackButtonBehavior as BackButtonBehavior_46c3eb02
 
 
 class BodyTemplate7(Template):
@@ -63,7 +63,7 @@ class BodyTemplate7(Template):
     supports_multiple_types = False
 
     def __init__(self, token=None, back_button=None, title=None, image=None, background_image=None):
-        # type: (Optional[str], Optional[BackButtonBehavior], Optional[str], Optional[Image], Optional[Image]) -> None
+        # type: (Optional[str], Optional[BackButtonBehavior_46c3eb02], Optional[str], Optional[Image_1942d978], Optional[Image_1942d978]) -> None
         """
 
         :param token: 

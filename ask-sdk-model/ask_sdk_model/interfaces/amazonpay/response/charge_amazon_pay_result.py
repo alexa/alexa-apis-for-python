@@ -24,7 +24,7 @@ from ask_sdk_model.interfaces.amazonpay.v1.charge_amazon_pay_result import Charg
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.amazonpay.model.response.authorization_details import AuthorizationDetails
+    from ask_sdk_model.interfaces.amazonpay.model.response.authorization_details import AuthorizationDetails as AuthorizationDetails_d5ea3d5
 
 
 class ChargeAmazonPayResult(ChargeAmazonPayResult):
@@ -50,7 +50,7 @@ class ChargeAmazonPayResult(ChargeAmazonPayResult):
     supports_multiple_types = False
 
     def __init__(self, amazon_order_reference_id=None, authorization_details=None):
-        # type: (Optional[str], Optional[AuthorizationDetails]) -> None
+        # type: (Optional[str], Optional[AuthorizationDetails_d5ea3d5]) -> None
         """Charge Amazon Pay Result Object. It is sent as part of the response to ChargeAmazonPayRequest.
 
         :param amazon_order_reference_id: The order reference identifier.

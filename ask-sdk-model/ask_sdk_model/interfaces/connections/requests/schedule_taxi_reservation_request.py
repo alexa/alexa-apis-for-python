@@ -24,7 +24,7 @@ from ask_sdk_model.interfaces.connections.requests.base_request import BaseReque
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.connections.entities.postal_address import PostalAddress
+    from ask_sdk_model.interfaces.connections.entities.postal_address import PostalAddress as PostalAddress_4b374d8b
 
 
 class ScheduleTaxiReservationRequest(BaseRequest):
@@ -64,7 +64,7 @@ class ScheduleTaxiReservationRequest(BaseRequest):
     supports_multiple_types = False
 
     def __init__(self, version=None, pickup_time=None, party_size=None, pickup_location=None, drop_off_location=None):
-        # type: (Optional[str], Optional[str], Optional[str], Optional[PostalAddress], Optional[PostalAddress]) -> None
+        # type: (Optional[str], Optional[str], Optional[str], Optional[PostalAddress_4b374d8b], Optional[PostalAddress_4b374d8b]) -> None
         """ScheduleTaxiReservationRequest for booking taxi reservation
 
         :param version: version of the request

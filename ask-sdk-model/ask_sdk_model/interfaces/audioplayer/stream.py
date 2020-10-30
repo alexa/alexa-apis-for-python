@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.audioplayer.caption_data import CaptionData
+    from ask_sdk_model.interfaces.audioplayer.caption_data import CaptionData as CaptionData_e119f120
 
 
 class Stream(object):
@@ -59,7 +59,7 @@ class Stream(object):
     supports_multiple_types = False
 
     def __init__(self, expected_previous_token=None, token=None, url=None, offset_in_milliseconds=None, caption_data=None):
-        # type: (Optional[str], Optional[str], Optional[str], Optional[int], Optional[CaptionData]) -> None
+        # type: (Optional[str], Optional[str], Optional[str], Optional[int], Optional[CaptionData_e119f120]) -> None
         """
 
         :param expected_previous_token: 

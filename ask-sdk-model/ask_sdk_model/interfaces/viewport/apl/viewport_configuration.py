@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.viewport.apl.current_configuration import CurrentConfiguration
+    from ask_sdk_model.interfaces.viewport.apl.current_configuration import CurrentConfiguration as CurrentConfiguration_e0d94110
 
 
 class ViewportConfiguration(object):
@@ -43,7 +43,7 @@ class ViewportConfiguration(object):
     supports_multiple_types = False
 
     def __init__(self, current=None):
-        # type: (Optional[CurrentConfiguration]) -> None
+        # type: (Optional[CurrentConfiguration_e0d94110]) -> None
         """
 
         :param current: 

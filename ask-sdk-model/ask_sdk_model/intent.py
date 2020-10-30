@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.intent_confirmation_status import IntentConfirmationStatus
-    from ask_sdk_model.slot import Slot
+    from ask_sdk_model.intent_confirmation_status import IntentConfirmationStatus as IntentConfirmationStatus_89f2a248
+    from ask_sdk_model.slot import Slot as Slot_9e3ddabe
 
 
 class Intent(object):
@@ -54,7 +54,7 @@ class Intent(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, slots=None, confirmation_status=None):
-        # type: (Optional[str], Optional[Dict[str, Slot]], Optional[IntentConfirmationStatus]) -> None
+        # type: (Optional[str], Optional[Dict[str, Slot_9e3ddabe]], Optional[IntentConfirmationStatus_89f2a248]) -> None
         """An object that represents what the user wants.
 
         :param name: A string representing the name of the intent.

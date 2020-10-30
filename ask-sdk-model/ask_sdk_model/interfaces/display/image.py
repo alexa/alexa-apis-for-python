@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.display.image_instance import ImageInstance
+    from ask_sdk_model.interfaces.display.image_instance import ImageInstance as ImageInstance_6992042b
 
 
 class Image(object):
@@ -47,7 +47,7 @@ class Image(object):
     supports_multiple_types = False
 
     def __init__(self, content_description=None, sources=None):
-        # type: (Optional[str], Optional[List[ImageInstance]]) -> None
+        # type: (Optional[str], Optional[List[ImageInstance_6992042b]]) -> None
         """
 
         :param content_description: 

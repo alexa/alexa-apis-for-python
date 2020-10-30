@@ -24,7 +24,7 @@ from ask_sdk_model.request import Request
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.dialog.input import Input
+    from ask_sdk_model.dialog.input import Input as Input_de301c30
 
 
 class InputRequest(Request):
@@ -60,7 +60,7 @@ class InputRequest(Request):
     supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, input=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[Input]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[Input_de301c30]) -> None
         """A request representing structured data used to provide dialog input to a dialog manager.
 
         :param request_id: Represents the unique identifier for the specific request.

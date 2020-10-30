@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.reminder_management.push_notification import PushNotification
-    from ask_sdk_model.services.reminder_management.alert_info import AlertInfo
-    from ask_sdk_model.services.reminder_management.trigger import Trigger
+    from ask_sdk_model.services.reminder_management.trigger import Trigger as Trigger_4ec8964
+    from ask_sdk_model.services.reminder_management.push_notification import PushNotification as PushNotification_dd7adc41
+    from ask_sdk_model.services.reminder_management.alert_info import AlertInfo as AlertInfo_97082f4b
 
 
 class ReminderRequest(object):
@@ -59,7 +59,7 @@ class ReminderRequest(object):
     supports_multiple_types = False
 
     def __init__(self, request_time=None, trigger=None, alert_info=None, push_notification=None):
-        # type: (Optional[datetime], Optional[Trigger], Optional[AlertInfo], Optional[PushNotification]) -> None
+        # type: (Optional[datetime], Optional[Trigger_4ec8964], Optional[AlertInfo_97082f4b], Optional[PushNotification_dd7adc41]) -> None
         """Input request for creating a reminder
 
         :param request_time: Valid ISO 8601 format - Creation time of this reminder alert

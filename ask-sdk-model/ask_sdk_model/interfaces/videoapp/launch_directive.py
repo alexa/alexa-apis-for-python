@@ -24,7 +24,7 @@ from ask_sdk_model.directive import Directive
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.videoapp.video_item import VideoItem
+    from ask_sdk_model.interfaces.videoapp.video_item import VideoItem as VideoItem_7858bd1b
 
 
 class LaunchDirective(Directive):
@@ -46,7 +46,7 @@ class LaunchDirective(Directive):
     supports_multiple_types = False
 
     def __init__(self, video_item=None):
-        # type: (Optional[VideoItem]) -> None
+        # type: (Optional[VideoItem_7858bd1b]) -> None
         """
 
         :param video_item: 

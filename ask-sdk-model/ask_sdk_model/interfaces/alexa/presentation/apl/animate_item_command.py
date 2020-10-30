@@ -24,8 +24,8 @@ from ask_sdk_model.interfaces.alexa.presentation.apl.command import Command
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.apl.animated_property import AnimatedProperty
-    from ask_sdk_model.interfaces.alexa.presentation.apl.animate_item_repeat_mode import AnimateItemRepeatMode
+    from ask_sdk_model.interfaces.alexa.presentation.apl.animated_property import AnimatedProperty as AnimatedProperty_b438632b
+    from ask_sdk_model.interfaces.alexa.presentation.apl.animate_item_repeat_mode import AnimateItemRepeatMode as AnimateItemRepeatMode_22d93893
 
 
 class AnimateItemCommand(Command):
@@ -81,7 +81,7 @@ class AnimateItemCommand(Command):
     supports_multiple_types = False
 
     def __init__(self, delay=None, description=None, when=None, component_id=None, duration=None, easing='linear', repeat_count=None, repeat_mode=None, value=None):
-        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Union[int, str, None], Optional[str], Union[int, str, None], Optional[AnimateItemRepeatMode], Optional[List[AnimatedProperty]]) -> None
+        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Union[int, str, None], Optional[str], Union[int, str, None], Optional[AnimateItemRepeatMode_22d93893], Optional[List[AnimatedProperty_b438632b]]) -> None
         """Runs a fixed-duration animation sequence on one or more properties of a single component.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.

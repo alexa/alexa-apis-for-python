@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.canfulfill.can_fulfill_slot_values import CanFulfillSlotValues
-    from ask_sdk_model.canfulfill.can_understand_slot_values import CanUnderstandSlotValues
+    from ask_sdk_model.canfulfill.can_fulfill_slot_values import CanFulfillSlotValues as CanFulfillSlotValues_5e21cab7
+    from ask_sdk_model.canfulfill.can_understand_slot_values import CanUnderstandSlotValues as CanUnderstandSlotValues_83ff9bff
 
 
 class CanFulfillSlot(object):
@@ -50,7 +50,7 @@ class CanFulfillSlot(object):
     supports_multiple_types = False
 
     def __init__(self, can_understand=None, can_fulfill=None):
-        # type: (Optional[CanUnderstandSlotValues], Optional[CanFulfillSlotValues]) -> None
+        # type: (Optional[CanUnderstandSlotValues_83ff9bff], Optional[CanFulfillSlotValues_5e21cab7]) -> None
         """This represents skill&#39;s capability to understand and fulfill each detected slot.
 
         :param can_understand: 

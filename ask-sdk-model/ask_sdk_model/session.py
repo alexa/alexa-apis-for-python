@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.application import Application
-    from ask_sdk_model.user import User
+    from ask_sdk_model.application import Application as Application_fbe81c42
+    from ask_sdk_model.user import User as User_8987f2de
 
 
 class Session(object):
@@ -62,7 +62,7 @@ class Session(object):
     supports_multiple_types = False
 
     def __init__(self, new=None, session_id=None, user=None, attributes=None, application=None):
-        # type: (Optional[bool], Optional[str], Optional[User], Optional[Dict[str, object]], Optional[Application]) -> None
+        # type: (Optional[bool], Optional[str], Optional[User_8987f2de], Optional[Dict[str, object]], Optional[Application_fbe81c42]) -> None
         """Represents a single execution of the alexa service
 
         :param new: A boolean value indicating whether this is a new session. Returns true for a new session or false for an existing session.

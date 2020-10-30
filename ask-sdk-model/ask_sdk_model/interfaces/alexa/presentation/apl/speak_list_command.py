@@ -24,7 +24,7 @@ from ask_sdk_model.interfaces.alexa.presentation.apl.command import Command
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.apl.align import Align
+    from ask_sdk_model.interfaces.alexa.presentation.apl.align import Align as Align_70ae0466
 
 
 class SpeakListCommand(Command):
@@ -76,7 +76,7 @@ class SpeakListCommand(Command):
     supports_multiple_types = False
 
     def __init__(self, delay=None, description=None, when=None, align=None, component_id=None, count=None, minimum_dwell_time=None, start=None):
-        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[Align], Optional[str], Union[int, str, None], Union[int, str, None], Union[int, str, None]) -> None
+        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[Align_70ae0466], Optional[str], Union[int, str, None], Union[int, str, None], Union[int, str, None]) -> None
         """Read the contents of a range of items inside a common container. Each item will scroll into view before speech. Each item should have a speech property, but it is not required.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.

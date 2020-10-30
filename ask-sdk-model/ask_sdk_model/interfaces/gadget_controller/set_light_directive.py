@@ -24,7 +24,7 @@ from ask_sdk_model.directive import Directive
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.gadget_controller.set_light_parameters import SetLightParameters
+    from ask_sdk_model.services.gadget_controller.set_light_parameters import SetLightParameters as SetLightParameters_4fffcafd
 
 
 class SetLightDirective(Directive):
@@ -56,7 +56,7 @@ class SetLightDirective(Directive):
     supports_multiple_types = False
 
     def __init__(self, version=None, target_gadgets=None, parameters=None):
-        # type: (Optional[int], Optional[List[object]], Optional[SetLightParameters]) -> None
+        # type: (Optional[int], Optional[List[object]], Optional[SetLightParameters_4fffcafd]) -> None
         """Sends Alexa a command to modify the behavior of connected Echo Buttons.
 
         :param version: The version of the directive. Must be set to 1.

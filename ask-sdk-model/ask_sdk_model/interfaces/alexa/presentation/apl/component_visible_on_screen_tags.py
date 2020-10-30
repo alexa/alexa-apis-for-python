@@ -23,12 +23,12 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen_pager_tag import ComponentVisibleOnScreenPagerTag
-    from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen_list_item_tag import ComponentVisibleOnScreenListItemTag
-    from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen_scrollable_tag import ComponentVisibleOnScreenScrollableTag
-    from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen_viewport_tag import ComponentVisibleOnScreenViewportTag
-    from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen_list_tag import ComponentVisibleOnScreenListTag
-    from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen_media_tag import ComponentVisibleOnScreenMediaTag
+    from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen_viewport_tag import ComponentVisibleOnScreenViewportTag as ComponentVisibleOnScreenViewportTag_fe01bdff
+    from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen_media_tag import ComponentVisibleOnScreenMediaTag as ComponentVisibleOnScreenMediaTag_21044cbd
+    from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen_pager_tag import ComponentVisibleOnScreenPagerTag as ComponentVisibleOnScreenPagerTag_c57e1bff
+    from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen_list_item_tag import ComponentVisibleOnScreenListItemTag as ComponentVisibleOnScreenListItemTag_9ab82632
+    from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen_scrollable_tag import ComponentVisibleOnScreenScrollableTag as ComponentVisibleOnScreenScrollableTag_29ddcc5f
+    from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen_list_tag import ComponentVisibleOnScreenListTag as ComponentVisibleOnScreenListTag_7f7ef87f
 
 
 class ComponentVisibleOnScreenTags(object):
@@ -94,7 +94,7 @@ class ComponentVisibleOnScreenTags(object):
     supports_multiple_types = False
 
     def __init__(self, checked=None, clickable=None, disabled=None, focused=None, list=None, list_item=None, media=None, ordinal=None, pager=None, scrollable=None, spoken=None, viewport=None):
-        # type: (Optional[bool], Optional[bool], Optional[bool], Optional[bool], Optional[ComponentVisibleOnScreenListTag], Optional[ComponentVisibleOnScreenListItemTag], Optional[ComponentVisibleOnScreenMediaTag], Optional[int], Optional[ComponentVisibleOnScreenPagerTag], Optional[ComponentVisibleOnScreenScrollableTag], Optional[bool], Optional[ComponentVisibleOnScreenViewportTag]) -> None
+        # type: (Optional[bool], Optional[bool], Optional[bool], Optional[bool], Optional[ComponentVisibleOnScreenListTag_7f7ef87f], Optional[ComponentVisibleOnScreenListItemTag_9ab82632], Optional[ComponentVisibleOnScreenMediaTag_21044cbd], Optional[int], Optional[ComponentVisibleOnScreenPagerTag_c57e1bff], Optional[ComponentVisibleOnScreenScrollableTag_29ddcc5f], Optional[bool], Optional[ComponentVisibleOnScreenViewportTag_fe01bdff]) -> None
         """The tags which were attached to an element.
 
         :param checked: The checked state of a component that has two states.

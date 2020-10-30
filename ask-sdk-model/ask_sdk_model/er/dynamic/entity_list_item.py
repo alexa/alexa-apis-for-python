@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.er.dynamic.entity import Entity
+    from ask_sdk_model.er.dynamic.entity import Entity as Entity_9ab80dce
 
 
 class EntityListItem(object):
@@ -49,7 +49,7 @@ class EntityListItem(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, values=None):
-        # type: (Optional[str], Optional[List[Entity]]) -> None
+        # type: (Optional[str], Optional[List[Entity_9ab80dce]]) -> None
         """Represents an array of entities of a particular type.
 
         :param name: The entity type. Must match the slot type as defined in the interaction model.

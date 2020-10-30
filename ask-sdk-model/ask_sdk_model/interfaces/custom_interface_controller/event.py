@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.custom_interface_controller.endpoint import Endpoint
-    from ask_sdk_model.interfaces.custom_interface_controller.header import Header
+    from ask_sdk_model.interfaces.custom_interface_controller.endpoint import Endpoint as Endpoint_3be30cac
+    from ask_sdk_model.interfaces.custom_interface_controller.header import Header as Header_57ad56ec
 
 
 class Event(object):
@@ -54,7 +54,7 @@ class Event(object):
     supports_multiple_types = False
 
     def __init__(self, header=None, payload=None, endpoint=None):
-        # type: (Optional[Header], Optional[object], Optional[Endpoint]) -> None
+        # type: (Optional[Header_57ad56ec], Optional[object], Optional[Endpoint_3be30cac]) -> None
         """An Event object defining a single event sent by an endpoint
 
         :param header: The object that contains the header of the event.

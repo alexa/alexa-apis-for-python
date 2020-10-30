@@ -24,8 +24,8 @@ from ask_sdk_model.request import Request
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.audioplayer.error import Error
-    from ask_sdk_model.interfaces.audioplayer.current_playback_state import CurrentPlaybackState
+    from ask_sdk_model.interfaces.audioplayer.current_playback_state import CurrentPlaybackState as CurrentPlaybackState_723846fd
+    from ask_sdk_model.interfaces.audioplayer.error import Error as Error_4b0d507
 
 
 class PlaybackFailedRequest(Request):
@@ -67,7 +67,7 @@ class PlaybackFailedRequest(Request):
     supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, current_playback_state=None, error=None, token=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[CurrentPlaybackState], Optional[Error], Optional[str]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[CurrentPlaybackState_723846fd], Optional[Error_4b0d507], Optional[str]) -> None
         """
 
         :param request_id: Represents the unique identifier for the specific request.

@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.extension.available_extension import AvailableExtension
+    from ask_sdk_model.interfaces.alexa.extension.available_extension import AvailableExtension as AvailableExtension_67e7ad39
 
 
 class ExtensionsState(object):
@@ -43,7 +43,7 @@ class ExtensionsState(object):
     supports_multiple_types = False
 
     def __init__(self, available=None):
-        # type: (Optional[Dict[str, AvailableExtension]]) -> None
+        # type: (Optional[Dict[str, AvailableExtension_67e7ad39]]) -> None
         """
 
         :param available: A map from extension URI to extension object where the object space is reserved for providing authorization information or other such data in the future.

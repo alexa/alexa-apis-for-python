@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.dialog.delegation_period_until import DelegationPeriodUntil
+    from ask_sdk_model.dialog.delegation_period_until import DelegationPeriodUntil as DelegationPeriodUntil_20703f48
 
 
 class DelegationPeriod(object):
@@ -45,7 +45,7 @@ class DelegationPeriod(object):
     supports_multiple_types = False
 
     def __init__(self, until=None):
-        # type: (Optional[DelegationPeriodUntil]) -> None
+        # type: (Optional[DelegationPeriodUntil_20703f48]) -> None
         """The delegation period.
 
         :param until: 

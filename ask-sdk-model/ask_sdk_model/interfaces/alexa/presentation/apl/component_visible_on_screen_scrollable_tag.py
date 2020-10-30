@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen_scrollable_tag_direction_enum import ComponentVisibleOnScreenScrollableTagDirectionEnum
+    from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen_scrollable_tag_direction_enum import ComponentVisibleOnScreenScrollableTagDirectionEnum as ComponentVisibleOnScreenScrollableTagDirectionEnum_7f54ff15
 
 
 class ComponentVisibleOnScreenScrollableTag(object):
@@ -53,7 +53,7 @@ class ComponentVisibleOnScreenScrollableTag(object):
     supports_multiple_types = False
 
     def __init__(self, direction=None, allow_forward=None, allow_backward=None):
-        # type: (Optional[ComponentVisibleOnScreenScrollableTagDirectionEnum], Optional[bool], Optional[bool]) -> None
+        # type: (Optional[ComponentVisibleOnScreenScrollableTagDirectionEnum_7f54ff15], Optional[bool], Optional[bool]) -> None
         """A scrollable region.
 
         :param direction: 

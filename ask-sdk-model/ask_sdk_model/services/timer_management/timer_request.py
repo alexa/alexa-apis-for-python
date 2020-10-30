@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.timer_management.creation_behavior import CreationBehavior
-    from ask_sdk_model.services.timer_management.triggering_behavior import TriggeringBehavior
+    from ask_sdk_model.services.timer_management.creation_behavior import CreationBehavior as CreationBehavior_c34ad8fe
+    from ask_sdk_model.services.timer_management.triggering_behavior import TriggeringBehavior as TriggeringBehavior_71806894
 
 
 class TimerRequest(object):
@@ -58,7 +58,7 @@ class TimerRequest(object):
     supports_multiple_types = False
 
     def __init__(self, duration=None, timer_label=None, creation_behavior=None, triggering_behavior=None):
-        # type: (Optional[str], Optional[str], Optional[CreationBehavior], Optional[TriggeringBehavior]) -> None
+        # type: (Optional[str], Optional[str], Optional[CreationBehavior_c34ad8fe], Optional[TriggeringBehavior_71806894]) -> None
         """Input request for creating a timer.
 
         :param duration: An ISO-8601 representation of duration. E.g. for 2 minutes and 3 seconds - \&quot;PT2M3S\&quot;.

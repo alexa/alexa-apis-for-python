@@ -139,7 +139,9 @@ class Request(object):
         |
         | AlexaSkillEvent.SkillPermissionAccepted: :py:class:`ask_sdk_model.events.skillevents.permission_accepted_request.PermissionAcceptedRequest`,
         |
-        | PlaybackController.NextCommandIssued: :py:class:`ask_sdk_model.interfaces.playbackcontroller.next_command_issued_request.NextCommandIssuedRequest`
+        | PlaybackController.NextCommandIssued: :py:class:`ask_sdk_model.interfaces.playbackcontroller.next_command_issued_request.NextCommandIssuedRequest`,
+        |
+        | Alexa.Presentation.APLA.RuntimeError: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apla.runtime_error_event.RuntimeErrorEvent`
 
     """
     deserialized_types = {
@@ -205,7 +207,8 @@ class Request(object):
         'Connections.Request': 'ask_sdk_model.interfaces.connections.connections_request.ConnectionsRequest',
         'System.ExceptionEncountered': 'ask_sdk_model.interfaces.system.exception_encountered_request.ExceptionEncounteredRequest',
         'AlexaSkillEvent.SkillPermissionAccepted': 'ask_sdk_model.events.skillevents.permission_accepted_request.PermissionAcceptedRequest',
-        'PlaybackController.NextCommandIssued': 'ask_sdk_model.interfaces.playbackcontroller.next_command_issued_request.NextCommandIssuedRequest'
+        'PlaybackController.NextCommandIssued': 'ask_sdk_model.interfaces.playbackcontroller.next_command_issued_request.NextCommandIssuedRequest',
+        'Alexa.Presentation.APLA.RuntimeError': 'ask_sdk_model.interfaces.alexa.presentation.apla.runtime_error_event.RuntimeErrorEvent'
     }
 
     json_discriminator_key = "type"

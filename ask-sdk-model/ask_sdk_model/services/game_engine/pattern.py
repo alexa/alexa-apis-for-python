@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.game_engine.input_event_action_type import InputEventActionType
+    from ask_sdk_model.services.game_engine.input_event_action_type import InputEventActionType as InputEventActionType_89d7c6e4
 
 
 class Pattern(object):
@@ -57,7 +57,7 @@ class Pattern(object):
     supports_multiple_types = False
 
     def __init__(self, gadget_ids=None, colors=None, action=None, repeat=None):
-        # type: (Optional[List[object]], Optional[List[object]], Optional[InputEventActionType], Optional[int]) -> None
+        # type: (Optional[List[object]], Optional[List[object]], Optional[InputEventActionType_89d7c6e4], Optional[int]) -> None
         """An object that provides all of the events that need to occur, in a specific order, for this recognizer to be true. Omitting any parameters in this object means \&quot;match anything\&quot;.
 
         :param gadget_ids: A whitelist of gadgetIds that are eligible for this match.

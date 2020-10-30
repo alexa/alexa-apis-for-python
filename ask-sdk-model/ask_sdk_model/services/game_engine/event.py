@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.game_engine.event_reporting_type import EventReportingType
+    from ask_sdk_model.services.game_engine.event_reporting_type import EventReportingType as EventReportingType_9ff38fed
 
 
 class Event(object):
@@ -65,7 +65,7 @@ class Event(object):
     supports_multiple_types = False
 
     def __init__(self, should_end_input_handler=None, meets=None, fails=None, reports=None, maximum_invocations=None, trigger_time_milliseconds=None):
-        # type: (Optional[bool], Optional[List[object]], Optional[List[object]], Optional[EventReportingType], Optional[int], Optional[int]) -> None
+        # type: (Optional[bool], Optional[List[object]], Optional[List[object]], Optional[EventReportingType_9ff38fed], Optional[int], Optional[int]) -> None
         """The events object is where you define the conditions that must be met for your skill to be notified of Echo Button input. You must define at least one event.
 
         :param should_end_input_handler: Whether the Input Handler should end after this event fires. If true, the Input Handler will stop and no further events will be sent to your skill unless you call StartInputHandler again.

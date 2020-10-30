@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.apl.runtime import Runtime
+    from ask_sdk_model.interfaces.alexa.presentation.apl.runtime import Runtime as Runtime_dab8fc4c
 
 
 class AlexaPresentationAplInterface(object):
@@ -43,7 +43,7 @@ class AlexaPresentationAplInterface(object):
     supports_multiple_types = False
 
     def __init__(self, runtime=None):
-        # type: (Optional[Runtime]) -> None
+        # type: (Optional[Runtime_dab8fc4c]) -> None
         """
 
         :param runtime: 

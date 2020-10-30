@@ -24,10 +24,10 @@ from ask_sdk_model.services.reminder_management.reminder import Reminder
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.reminder_management.push_notification import PushNotification
-    from ask_sdk_model.services.reminder_management.status import Status
-    from ask_sdk_model.services.reminder_management.alert_info import AlertInfo
-    from ask_sdk_model.services.reminder_management.trigger import Trigger
+    from ask_sdk_model.services.reminder_management.trigger import Trigger as Trigger_4ec8964
+    from ask_sdk_model.services.reminder_management.status import Status as Status_fbbd2410
+    from ask_sdk_model.services.reminder_management.push_notification import PushNotification as PushNotification_dd7adc41
+    from ask_sdk_model.services.reminder_management.alert_info import AlertInfo as AlertInfo_97082f4b
 
 
 class GetReminderResponse(Reminder):
@@ -77,7 +77,7 @@ class GetReminderResponse(Reminder):
     supports_multiple_types = False
 
     def __init__(self, alert_token=None, created_time=None, updated_time=None, status=None, trigger=None, alert_info=None, push_notification=None, version=None):
-        # type: (Optional[str], Optional[datetime], Optional[datetime], Optional[Status], Optional[Trigger], Optional[AlertInfo], Optional[PushNotification], Optional[str]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[datetime], Optional[Status_fbbd2410], Optional[Trigger_4ec8964], Optional[AlertInfo_97082f4b], Optional[PushNotification_dd7adc41], Optional[str]) -> None
         """Response object for get reminder request
 
         :param alert_token: Unique id of this reminder alert

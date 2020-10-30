@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.game_engine.input_event import InputEvent
+    from ask_sdk_model.services.game_engine.input_event import InputEvent as InputEvent_46dfcc98
 
 
 class InputHandlerEvent(object):
@@ -47,7 +47,7 @@ class InputHandlerEvent(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, input_events=None):
-        # type: (Optional[str], Optional[List[InputEvent]]) -> None
+        # type: (Optional[str], Optional[List[InputEvent_46dfcc98]]) -> None
         """
 
         :param name: The name of the event as you defined it in your GameEngine.StartInputHandler directive.

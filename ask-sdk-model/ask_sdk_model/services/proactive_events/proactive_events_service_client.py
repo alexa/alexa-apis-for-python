@@ -33,8 +33,8 @@ from ask_sdk_model.services.proactive_events.skill_stage import SkillStage
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.proactive_events.error import Error
-    from ask_sdk_model.services.proactive_events.create_proactive_event_request import CreateProactiveEventRequest
+    from ask_sdk_model.services.proactive_events.error import Error as Error_23859739
+    from ask_sdk_model.services.proactive_events.create_proactive_event_request import CreateProactiveEventRequest as CreateProactiveEventRequest_3eea71c2
 
 
 class ProactiveEventsServiceClient(BaseServiceClient):
@@ -71,7 +71,7 @@ class ProactiveEventsServiceClient(BaseServiceClient):
             self._lwa_service_client = lwa_client
 
     def create_proactive_event(self, create_proactive_event_request, stage, **kwargs):
-        # type: (CreateProactiveEventRequest, SkillStage, **Any) -> Union[ApiResponse, object, Error]
+        # type: (CreateProactiveEventRequest_3eea71c2, SkillStage, **Any) -> Union[ApiResponse, object, Error_23859739]
         """
         Create a new proactive event in live stage.
 
@@ -80,7 +80,7 @@ class ProactiveEventsServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, Error]
+        :rtype: Union[ApiResponse, object, Error_23859739]
         """
         operation_name = "create_proactive_event"
         params = locals()

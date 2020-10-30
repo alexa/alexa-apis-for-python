@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.display.image import Image
+    from ask_sdk_model.interfaces.display.image import Image as Image_1942d978
 
 
 class AudioItemMetadata(object):
@@ -57,7 +57,7 @@ class AudioItemMetadata(object):
     supports_multiple_types = False
 
     def __init__(self, title=None, subtitle=None, art=None, background_image=None):
-        # type: (Optional[str], Optional[str], Optional[Image], Optional[Image]) -> None
+        # type: (Optional[str], Optional[str], Optional[Image_1942d978], Optional[Image_1942d978]) -> None
         """Encapsulates the metadata about an AudioItem.
 
         :param title: An optional title of the audio item.

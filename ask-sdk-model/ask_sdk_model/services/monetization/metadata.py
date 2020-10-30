@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.monetization.result_set import ResultSet
+    from ask_sdk_model.services.monetization.result_set import ResultSet as ResultSet_6c062fc
 
 
 class Metadata(object):
@@ -43,7 +43,7 @@ class Metadata(object):
     supports_multiple_types = False
 
     def __init__(self, result_set=None):
-        # type: (Optional[ResultSet]) -> None
+        # type: (Optional[ResultSet_6c062fc]) -> None
         """
 
         :param result_set: 

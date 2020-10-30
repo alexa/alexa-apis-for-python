@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.ups.error_code import ErrorCode
+    from ask_sdk_model.services.ups.error_code import ErrorCode as ErrorCode_2d037d81
 
 
 class Error(object):
@@ -47,7 +47,7 @@ class Error(object):
     supports_multiple_types = False
 
     def __init__(self, code=None, message=None):
-        # type: (Optional[ErrorCode], Optional[str]) -> None
+        # type: (Optional[ErrorCode_2d037d81], Optional[str]) -> None
         """
 
         :param code: 

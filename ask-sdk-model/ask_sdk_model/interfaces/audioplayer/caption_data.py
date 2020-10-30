@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.audioplayer.caption_type import CaptionType
+    from ask_sdk_model.interfaces.audioplayer.caption_type import CaptionType as CaptionType_99665840
 
 
 class CaptionData(object):
@@ -47,7 +47,7 @@ class CaptionData(object):
     supports_multiple_types = False
 
     def __init__(self, content=None, object_type=None):
-        # type: (Optional[str], Optional[CaptionType]) -> None
+        # type: (Optional[str], Optional[CaptionType_99665840]) -> None
         """
 
         :param content: This contains the caption text.

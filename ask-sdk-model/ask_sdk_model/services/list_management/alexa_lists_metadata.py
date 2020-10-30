@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.list_management.alexa_list_metadata import AlexaListMetadata
+    from ask_sdk_model.services.list_management.alexa_list_metadata import AlexaListMetadata as AlexaListMetadata_bfa5b64c
 
 
 class AlexaListsMetadata(object):
@@ -43,7 +43,7 @@ class AlexaListsMetadata(object):
     supports_multiple_types = False
 
     def __init__(self, lists=None):
-        # type: (Optional[List[AlexaListMetadata]]) -> None
+        # type: (Optional[List[AlexaListMetadata_bfa5b64c]]) -> None
         """
 
         :param lists: 

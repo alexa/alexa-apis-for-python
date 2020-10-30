@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.response import Response
+    from ask_sdk_model.response import Response as Response_121c7e1e
 
 
 class ResponseEnvelope(object):
@@ -55,7 +55,7 @@ class ResponseEnvelope(object):
     supports_multiple_types = False
 
     def __init__(self, version=None, session_attributes=None, user_agent=None, response=None):
-        # type: (Optional[str], Optional[Dict[str, object]], Optional[str], Optional[Response]) -> None
+        # type: (Optional[str], Optional[Dict[str, object]], Optional[str], Optional[Response_121c7e1e]) -> None
         """
 
         :param version: 

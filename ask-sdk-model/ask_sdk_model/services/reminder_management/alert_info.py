@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.reminder_management.alert_info_spoken_info import AlertInfoSpokenInfo
+    from ask_sdk_model.services.reminder_management.alert_info_spoken_info import AlertInfoSpokenInfo as AlertInfoSpokenInfo_3eafce07
 
 
 class AlertInfo(object):
@@ -45,7 +45,7 @@ class AlertInfo(object):
     supports_multiple_types = False
 
     def __init__(self, spoken_info=None):
-        # type: (Optional[AlertInfoSpokenInfo]) -> None
+        # type: (Optional[AlertInfoSpokenInfo_3eafce07]) -> None
         """Alert info for VUI / GUI
 
         :param spoken_info: 

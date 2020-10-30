@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.authorization.grant_type import GrantType
+    from ask_sdk_model.authorization.grant_type import GrantType as GrantType_1a5423ca
 
 
 class Grant(object):
@@ -49,7 +49,7 @@ class Grant(object):
     supports_multiple_types = False
 
     def __init__(self, object_type=None, code=None):
-        # type: (Optional[GrantType], Optional[str]) -> None
+        # type: (Optional[GrantType_1a5423ca], Optional[str]) -> None
         """Information that identifies a user in Amazon Alexa systems.
 
         :param object_type: Type of the grant.

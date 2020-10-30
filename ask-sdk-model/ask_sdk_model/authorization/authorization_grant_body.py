@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.authorization.grant import Grant
+    from ask_sdk_model.authorization.grant import Grant as Grant_b5a32265
 
 
 class AuthorizationGrantBody(object):
@@ -45,7 +45,7 @@ class AuthorizationGrantBody(object):
     supports_multiple_types = False
 
     def __init__(self, grant=None):
-        # type: (Optional[Grant]) -> None
+        # type: (Optional[Grant_b5a32265]) -> None
         """Authorization grant body.
 
         :param grant: 

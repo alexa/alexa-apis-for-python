@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.directive.header import Header
-    from ask_sdk_model.services.directive.directive import Directive
+    from ask_sdk_model.services.directive.header import Header as Header_6046f38f
+    from ask_sdk_model.services.directive.directive import Directive as Directive_4b928af1
 
 
 class SendDirectiveRequest(object):
@@ -50,7 +50,7 @@ class SendDirectiveRequest(object):
     supports_multiple_types = False
 
     def __init__(self, header=None, directive=None):
-        # type: (Optional[Header], Optional[Directive]) -> None
+        # type: (Optional[Header_6046f38f], Optional[Directive_4b928af1]) -> None
         """Send Directive Request payload.
 
         :param header: contains the header attributes of the send directive request.

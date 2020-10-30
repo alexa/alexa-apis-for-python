@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.display.text_field import TextField
+    from ask_sdk_model.interfaces.display.text_field import TextField as TextField_b5418c17
 
 
 class TextContent(object):
@@ -51,7 +51,7 @@ class TextContent(object):
     supports_multiple_types = False
 
     def __init__(self, primary_text=None, secondary_text=None, tertiary_text=None):
-        # type: (Optional[TextField], Optional[TextField], Optional[TextField]) -> None
+        # type: (Optional[TextField_b5418c17], Optional[TextField_b5418c17], Optional[TextField_b5418c17]) -> None
         """
 
         :param primary_text: 

@@ -24,8 +24,8 @@ from ask_sdk_model.request import Request
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.system.error import Error
-    from ask_sdk_model.interfaces.system.error_cause import ErrorCause
+    from ask_sdk_model.interfaces.system.error_cause import ErrorCause as ErrorCause_f5e108b8
+    from ask_sdk_model.interfaces.system.error import Error as Error_96a33007
 
 
 class ExceptionEncounteredRequest(Request):
@@ -63,7 +63,7 @@ class ExceptionEncounteredRequest(Request):
     supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, error=None, cause=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[Error], Optional[ErrorCause]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[Error_96a33007], Optional[ErrorCause_f5e108b8]) -> None
         """
 
         :param request_id: Represents the unique identifier for the specific request.

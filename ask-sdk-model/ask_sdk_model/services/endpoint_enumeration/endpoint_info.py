@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.endpoint_enumeration.endpoint_capability import EndpointCapability
+    from ask_sdk_model.services.endpoint_enumeration.endpoint_capability import EndpointCapability as EndpointCapability_afc63a4a
 
 
 class EndpointInfo(object):
@@ -53,7 +53,7 @@ class EndpointInfo(object):
     supports_multiple_types = False
 
     def __init__(self, endpoint_id=None, friendly_name=None, capabilities=None):
-        # type: (Optional[str], Optional[str], Optional[List[EndpointCapability]]) -> None
+        # type: (Optional[str], Optional[str], Optional[List[EndpointCapability_afc63a4a]]) -> None
         """Contains the list of connected endpoints and their declared capabilities.
 
         :param endpoint_id: A unique identifier for the endpoint.

@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.timer_management.timer_response import TimerResponse
+    from ask_sdk_model.services.timer_management.timer_response import TimerResponse as TimerResponse_5be9ee64
 
 
 class TimersResponse(object):
@@ -53,7 +53,7 @@ class TimersResponse(object):
     supports_multiple_types = False
 
     def __init__(self, total_count=None, timers=None, next_token=None):
-        # type: (Optional[int], Optional[List[TimerResponse]], Optional[str]) -> None
+        # type: (Optional[int], Optional[List[TimerResponse_5be9ee64]], Optional[str]) -> None
         """Timers object with paginated list of multiple timers
 
         :param total_count: Total count of timers returned.

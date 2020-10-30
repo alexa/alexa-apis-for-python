@@ -24,7 +24,7 @@ from ask_sdk_model.directive import Directive
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.status import Status
+    from ask_sdk_model.status import Status as Status_7705e43e
 
 
 class CompleteTaskDirective(Directive):
@@ -52,7 +52,7 @@ class CompleteTaskDirective(Directive):
     supports_multiple_types = False
 
     def __init__(self, status=None, result=None):
-        # type: (Optional[Status], Optional[Dict[str, object]]) -> None
+        # type: (Optional[Status_7705e43e], Optional[Dict[str, object]]) -> None
         """This is the directive that a skill can send as part of their response to a session based request. The response will contain the result of the task that the skill is launched for.
 
         :param status: 

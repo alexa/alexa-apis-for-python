@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.timer_management.operation import Operation
-    from ask_sdk_model.services.timer_management.notification_config import NotificationConfig
+    from ask_sdk_model.services.timer_management.operation import Operation as Operation_d6b621cf
+    from ask_sdk_model.services.timer_management.notification_config import NotificationConfig as NotificationConfig_41d41b56
 
 
 class TriggeringBehavior(object):
@@ -50,7 +50,7 @@ class TriggeringBehavior(object):
     supports_multiple_types = False
 
     def __init__(self, operation=None, notification_config=None):
-        # type: (Optional[Operation], Optional[NotificationConfig]) -> None
+        # type: (Optional[Operation_d6b621cf], Optional[NotificationConfig_41d41b56]) -> None
         """The triggering behavior upon Timer Expired.
 
         :param operation: 

@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.slu.entityresolution.status import Status
-    from ask_sdk_model.slu.entityresolution.value_wrapper import ValueWrapper
+    from ask_sdk_model.slu.entityresolution.value_wrapper import ValueWrapper as ValueWrapper_eca23f08
+    from ask_sdk_model.slu.entityresolution.status import Status as Status_862c3cf1
 
 
 class Resolution(object):
@@ -54,7 +54,7 @@ class Resolution(object):
     supports_multiple_types = False
 
     def __init__(self, authority=None, status=None, values=None):
-        # type: (Optional[str], Optional[Status], Optional[List[ValueWrapper]]) -> None
+        # type: (Optional[str], Optional[Status_862c3cf1], Optional[List[ValueWrapper_eca23f08]]) -> None
         """Represents a possible authority for entity resolution
 
         :param authority: 

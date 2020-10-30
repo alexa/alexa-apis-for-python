@@ -24,9 +24,9 @@ from ask_sdk_model.interfaces.amazonpay.model.v1.authorization_details import Au
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.amazonpay.model.response.authorization_status import AuthorizationStatus
-    from ask_sdk_model.interfaces.amazonpay.model.response.destination import Destination
-    from ask_sdk_model.interfaces.amazonpay.model.response.price import Price
+    from ask_sdk_model.interfaces.amazonpay.model.response.price import Price as Price_8b8ddd8a
+    from ask_sdk_model.interfaces.amazonpay.model.response.destination import Destination as Destination_c290e254
+    from ask_sdk_model.interfaces.amazonpay.model.response.authorization_status import AuthorizationStatus as AuthorizationStatus_d0b055af
 
 
 class AuthorizationDetails(AuthorizationDetails):
@@ -100,7 +100,7 @@ class AuthorizationDetails(AuthorizationDetails):
     supports_multiple_types = False
 
     def __init__(self, amazon_authorization_id=None, authorization_reference_id=None, seller_authorization_note=None, authorization_amount=None, captured_amount=None, authorization_fee=None, id_list=None, creation_timestamp=None, expiration_timestamp=None, authorization_status=None, soft_decline=None, capture_now=None, soft_descriptor=None, authorization_billing_address=None):
-        # type: (Optional[str], Optional[str], Optional[str], Optional[Price], Optional[Price], Optional[Price], Optional[List[object]], Optional[datetime], Optional[datetime], Optional[AuthorizationStatus], Optional[bool], Optional[bool], Optional[str], Optional[Destination]) -> None
+        # type: (Optional[str], Optional[str], Optional[str], Optional[Price_8b8ddd8a], Optional[Price_8b8ddd8a], Optional[Price_8b8ddd8a], Optional[List[object]], Optional[datetime], Optional[datetime], Optional[AuthorizationStatus_d0b055af], Optional[bool], Optional[bool], Optional[str], Optional[Destination_c290e254]) -> None
         """This object encapsulates details about an Authorization object including the status, amount captured and fee charged.
 
         :param amazon_authorization_id: This is AmazonPay generated identifier for this authorization transaction.

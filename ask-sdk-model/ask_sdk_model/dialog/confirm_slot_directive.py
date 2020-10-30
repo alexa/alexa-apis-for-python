@@ -24,7 +24,7 @@ from ask_sdk_model.directive import Directive
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.intent import Intent
+    from ask_sdk_model.intent import Intent as Intent_fd0ef0fe
 
 
 class ConfirmSlotDirective(Directive):
@@ -50,7 +50,7 @@ class ConfirmSlotDirective(Directive):
     supports_multiple_types = False
 
     def __init__(self, updated_intent=None, slot_to_confirm=None):
-        # type: (Optional[Intent], Optional[str]) -> None
+        # type: (Optional[Intent_fd0ef0fe], Optional[str]) -> None
         """
 
         :param updated_intent: 

@@ -30,8 +30,8 @@ from ask_sdk_model.services.utils import user_agent_info
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.endpoint_enumeration.endpoint_enumeration_response import EndpointEnumerationResponse
-    from ask_sdk_model.services.endpoint_enumeration.error import Error
+    from ask_sdk_model.services.endpoint_enumeration.endpoint_enumeration_response import EndpointEnumerationResponse as EndpointEnumerationResponse_5b0d1e17
+    from ask_sdk_model.services.endpoint_enumeration.error import Error as Error_3a116f1
 
 
 class EndpointEnumerationServiceClient(BaseServiceClient):
@@ -52,14 +52,14 @@ class EndpointEnumerationServiceClient(BaseServiceClient):
         self.user_agent = user_agent_info(sdk_version="1.0.0", custom_user_agent=custom_user_agent)
 
     def get_endpoints(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, object, EndpointEnumerationResponse, Error]
+        # type: (**Any) -> Union[ApiResponse, object, EndpointEnumerationResponse_5b0d1e17, Error_3a116f1]
         """
         This API is invoked by the skill to retrieve endpoints connected to the Echo device. 
 
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, EndpointEnumerationResponse, Error]
+        :rtype: Union[ApiResponse, object, EndpointEnumerationResponse_5b0d1e17, Error_3a116f1]
         """
         operation_name = "get_endpoints"
         params = locals()

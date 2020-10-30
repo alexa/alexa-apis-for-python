@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.supported_interfaces import SupportedInterfaces
+    from ask_sdk_model.supported_interfaces import SupportedInterfaces as SupportedInterfaces_8ec830f5
 
 
 class Device(object):
@@ -49,7 +49,7 @@ class Device(object):
     supports_multiple_types = False
 
     def __init__(self, device_id=None, supported_interfaces=None):
-        # type: (Optional[str], Optional[SupportedInterfaces]) -> None
+        # type: (Optional[str], Optional[SupportedInterfaces_8ec830f5]) -> None
         """An object providing information about the device used to send the request. The device object contains both deviceId and supportedInterfaces properties. The deviceId property uniquely identifies the device. The supportedInterfaces property lists each interface that the device supports. For example, if supportedInterfaces includes AudioPlayer {}, then you know that the device supports streaming audio using the AudioPlayer interface.
 
         :param device_id: The deviceId property uniquely identifies the device.

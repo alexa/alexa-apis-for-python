@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.permission_status import PermissionStatus
+    from ask_sdk_model.permission_status import PermissionStatus as PermissionStatus_ea4afa1d
 
 
 class Scope(object):
@@ -45,7 +45,7 @@ class Scope(object):
     supports_multiple_types = False
 
     def __init__(self, status=None):
-        # type: (Optional[PermissionStatus]) -> None
+        # type: (Optional[PermissionStatus_ea4afa1d]) -> None
         """This is the value of LoginWithAmazon(LWA) consent scope. This object is used as in the key-value pairs that are provided in user.permissions.scopes object
 
         :param status: 

@@ -24,8 +24,8 @@ from ask_sdk_model.services.game_engine.recognizer import Recognizer
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.game_engine.pattern import Pattern
-    from ask_sdk_model.services.game_engine.pattern_recognizer_anchor_type import PatternRecognizerAnchorType
+    from ask_sdk_model.services.game_engine.pattern_recognizer_anchor_type import PatternRecognizerAnchorType as PatternRecognizerAnchorType_61e1414c
+    from ask_sdk_model.services.game_engine.pattern import Pattern as Pattern_e6ee4413
 
 
 class PatternRecognizer(Recognizer):
@@ -65,7 +65,7 @@ class PatternRecognizer(Recognizer):
     supports_multiple_types = False
 
     def __init__(self, anchor=None, fuzzy=None, gadget_ids=None, actions=None, pattern=None):
-        # type: (Optional[PatternRecognizerAnchorType], Optional[bool], Optional[List[object]], Optional[List[object]], Optional[List[Pattern]]) -> None
+        # type: (Optional[PatternRecognizerAnchorType_61e1414c], Optional[bool], Optional[List[object]], Optional[List[object]], Optional[List[Pattern_e6ee4413]]) -> None
         """This recognizer is true when all of the specified events have occurred in the specified order.
 
         :param anchor: 

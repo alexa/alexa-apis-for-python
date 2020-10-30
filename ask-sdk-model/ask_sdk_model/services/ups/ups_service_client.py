@@ -30,11 +30,11 @@ from ask_sdk_model.services.utils import user_agent_info
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.ups.phone_number import PhoneNumber
-    from ask_sdk_model.services.ups.distance_units import DistanceUnits
+    from ask_sdk_model.services.ups.distance_units import DistanceUnits as DistanceUnits_491ebc07
+    from ask_sdk_model.services.ups.phone_number import PhoneNumber as PhoneNumber_1251efb9
     import str
-    from ask_sdk_model.services.ups.error import Error
-    from ask_sdk_model.services.ups.temperature_unit import TemperatureUnit
+    from ask_sdk_model.services.ups.error import Error as Error_1aa1008c
+    from ask_sdk_model.services.ups.temperature_unit import TemperatureUnit as TemperatureUnit_3d472aaf
 
 
 class UpsServiceClient(BaseServiceClient):
@@ -55,14 +55,14 @@ class UpsServiceClient(BaseServiceClient):
         self.user_agent = user_agent_info(sdk_version="1.0.0", custom_user_agent=custom_user_agent)
 
     def get_profile_email(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, object, str, Error]
+        # type: (**Any) -> Union[ApiResponse, object, str, Error_1aa1008c]
         """
         Gets the email address of the customer associated with the current enablement. Requires customer consent for scopes: [alexa::profile:email:read] 
 
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, str, Error]
+        :rtype: Union[ApiResponse, object, str, Error_1aa1008c]
         """
         operation_name = "get_profile_email"
         params = locals()
@@ -117,14 +117,14 @@ class UpsServiceClient(BaseServiceClient):
         
 
     def get_profile_given_name(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, object, str, Error]
+        # type: (**Any) -> Union[ApiResponse, object, str, Error_1aa1008c]
         """
         Gets the given name (first name) of the customer associated with the current enablement. Requires customer consent for scopes: [alexa::profile:given_name:read] 
 
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, str, Error]
+        :rtype: Union[ApiResponse, object, str, Error_1aa1008c]
         """
         operation_name = "get_profile_given_name"
         params = locals()
@@ -179,14 +179,14 @@ class UpsServiceClient(BaseServiceClient):
         
 
     def get_profile_mobile_number(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, object, PhoneNumber, Error]
+        # type: (**Any) -> Union[ApiResponse, object, Error_1aa1008c, PhoneNumber_1251efb9]
         """
         Gets the mobile phone number of the customer associated with the current enablement. Requires customer consent for scopes: [alexa::profile:mobile_number:read] 
 
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, PhoneNumber, Error]
+        :rtype: Union[ApiResponse, object, Error_1aa1008c, PhoneNumber_1251efb9]
         """
         operation_name = "get_profile_mobile_number"
         params = locals()
@@ -241,14 +241,14 @@ class UpsServiceClient(BaseServiceClient):
         
 
     def get_profile_name(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, object, str, Error]
+        # type: (**Any) -> Union[ApiResponse, object, str, Error_1aa1008c]
         """
         Gets the full name of the customer associated with the current enablement. Requires customer consent for scopes: [alexa::profile:name:read] 
 
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, str, Error]
+        :rtype: Union[ApiResponse, object, str, Error_1aa1008c]
         """
         operation_name = "get_profile_name"
         params = locals()
@@ -303,7 +303,7 @@ class UpsServiceClient(BaseServiceClient):
         
 
     def get_system_distance_units(self, device_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, object, Error, DistanceUnits]
+        # type: (str, **Any) -> Union[ApiResponse, object, DistanceUnits_491ebc07, Error_1aa1008c]
         """
         Gets the distance measurement unit of the device. Does not require explict customer consent. 
 
@@ -312,7 +312,7 @@ class UpsServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, Error, DistanceUnits]
+        :rtype: Union[ApiResponse, object, DistanceUnits_491ebc07, Error_1aa1008c]
         """
         operation_name = "get_system_distance_units"
         params = locals()
@@ -373,7 +373,7 @@ class UpsServiceClient(BaseServiceClient):
         
 
     def get_system_temperature_unit(self, device_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, object, TemperatureUnit, Error]
+        # type: (str, **Any) -> Union[ApiResponse, object, TemperatureUnit_3d472aaf, Error_1aa1008c]
         """
         Gets the temperature measurement units of the device. Does not require explict customer consent. 
 
@@ -382,7 +382,7 @@ class UpsServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, TemperatureUnit, Error]
+        :rtype: Union[ApiResponse, object, TemperatureUnit_3d472aaf, Error_1aa1008c]
         """
         operation_name = "get_system_temperature_unit"
         params = locals()
@@ -443,7 +443,7 @@ class UpsServiceClient(BaseServiceClient):
         
 
     def get_system_time_zone(self, device_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, object, str, Error]
+        # type: (str, **Any) -> Union[ApiResponse, object, str, Error_1aa1008c]
         """
         Gets the time zone of the device. Does not require explict customer consent. 
 
@@ -452,7 +452,7 @@ class UpsServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, str, Error]
+        :rtype: Union[ApiResponse, object, str, Error_1aa1008c]
         """
         operation_name = "get_system_time_zone"
         params = locals()
@@ -513,14 +513,14 @@ class UpsServiceClient(BaseServiceClient):
         
 
     def get_persons_profile_given_name(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, object, str, Error]
+        # type: (**Any) -> Union[ApiResponse, object, str, Error_1aa1008c]
         """
         Gets the given name (first name) of the recognized speaker at person-level. Requires speaker consent at person-level for scopes: [alexa::profile:given_name:read] 
 
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, str, Error]
+        :rtype: Union[ApiResponse, object, str, Error_1aa1008c]
         """
         operation_name = "get_persons_profile_given_name"
         params = locals()
@@ -575,14 +575,14 @@ class UpsServiceClient(BaseServiceClient):
         
 
     def get_persons_profile_mobile_number(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, object, PhoneNumber, Error]
+        # type: (**Any) -> Union[ApiResponse, object, Error_1aa1008c, PhoneNumber_1251efb9]
         """
         Gets the mobile phone number of the recognized speaker at person-level. Requires speaker consent at person-level for scopes: [alexa::profile:mobile_number:read] 
 
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, PhoneNumber, Error]
+        :rtype: Union[ApiResponse, object, Error_1aa1008c, PhoneNumber_1251efb9]
         """
         operation_name = "get_persons_profile_mobile_number"
         params = locals()
@@ -637,14 +637,14 @@ class UpsServiceClient(BaseServiceClient):
         
 
     def get_persons_profile_name(self, **kwargs):
-        # type: (**Any) -> Union[ApiResponse, object, str, Error]
+        # type: (**Any) -> Union[ApiResponse, object, str, Error_1aa1008c]
         """
         Gets the full name of the recognized speaker at person-level. Requires speaker consent at person-level for scopes: [alexa::profile:name:read] 
 
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, str, Error]
+        :rtype: Union[ApiResponse, object, str, Error_1aa1008c]
         """
         operation_name = "get_persons_profile_name"
         params = locals()

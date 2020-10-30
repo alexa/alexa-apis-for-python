@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.amazonpay.model.v1.state import State as V1_StateV1
+    from ask_sdk_model.interfaces.amazonpay.model.v1.state import State as State_2b6f3394
 
 
 class AuthorizationStatus(object):
@@ -57,7 +57,7 @@ class AuthorizationStatus(object):
     supports_multiple_types = False
 
     def __init__(self, state=None, reason_code=None, reason_description=None, last_update_timestamp=None):
-        # type: (Optional[V1_StateV1], Optional[str], Optional[str], Optional[datetime]) -> None
+        # type: (Optional[State_2b6f3394], Optional[str], Optional[str], Optional[datetime]) -> None
         """Indicates the current status of an Authorization object, a Capture object, or a Refund object.
 
         :param state: 

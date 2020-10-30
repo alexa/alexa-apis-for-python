@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.list_management.alexa_list_item import AlexaListItem
-    from ask_sdk_model.services.list_management.list_state import ListState
-    from ask_sdk_model.services.list_management.links import Links
+    from ask_sdk_model.services.list_management.links import Links as Links_2cc36a7a
+    from ask_sdk_model.services.list_management.alexa_list_item import AlexaListItem as AlexaListItem_6fd31314
+    from ask_sdk_model.services.list_management.list_state import ListState as ListState_7568bb1f
 
 
 class AlexaList(object):
@@ -65,7 +65,7 @@ class AlexaList(object):
     supports_multiple_types = False
 
     def __init__(self, list_id=None, name=None, state=None, version=None, items=None, links=None):
-        # type: (Optional[str], Optional[str], Optional[ListState], Optional[int], Optional[List[AlexaListItem]], Optional[Links]) -> None
+        # type: (Optional[str], Optional[str], Optional[ListState_7568bb1f], Optional[int], Optional[List[AlexaListItem_6fd31314]], Optional[Links_2cc36a7a]) -> None
         """
 
         :param list_id: 

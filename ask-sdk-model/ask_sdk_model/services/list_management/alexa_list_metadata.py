@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.list_management.list_state import ListState
-    from ask_sdk_model.services.list_management.status import Status
+    from ask_sdk_model.services.list_management.status import Status as Status_bac65d64
+    from ask_sdk_model.services.list_management.list_state import ListState as ListState_7568bb1f
 
 
 class AlexaListMetadata(object):
@@ -60,7 +60,7 @@ class AlexaListMetadata(object):
     supports_multiple_types = False
 
     def __init__(self, list_id=None, name=None, state=None, version=None, status_map=None):
-        # type: (Optional[str], Optional[str], Optional[ListState], Optional[int], Optional[List[Status]]) -> None
+        # type: (Optional[str], Optional[str], Optional[ListState_7568bb1f], Optional[int], Optional[List[Status_bac65d64]]) -> None
         """
 
         :param list_id: 

@@ -24,8 +24,8 @@ from ask_sdk_model.directive import Directive
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.custom_interface_controller.endpoint import Endpoint
-    from ask_sdk_model.interfaces.custom_interface_controller.header import Header
+    from ask_sdk_model.interfaces.custom_interface_controller.endpoint import Endpoint as Endpoint_3be30cac
+    from ask_sdk_model.interfaces.custom_interface_controller.header import Header as Header_57ad56ec
 
 
 class SendDirectiveDirective(Directive):
@@ -57,7 +57,7 @@ class SendDirectiveDirective(Directive):
     supports_multiple_types = False
 
     def __init__(self, header=None, payload=None, endpoint=None):
-        # type: (Optional[Header], Optional[object], Optional[Endpoint]) -> None
+        # type: (Optional[Header_57ad56ec], Optional[object], Optional[Endpoint_3be30cac]) -> None
         """The directive to be delivered to the gadgets. Each directive is targeted to one gadget  (that is, one endpointId). To target the same directive to multiple gadgets, include one  directive for each gadget in the response.
 
         :param header: The object that contains the header of the directive.

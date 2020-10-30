@@ -24,7 +24,7 @@ from ask_sdk_model.directive import Directive
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.aplt.target_profile import TargetProfile
+    from ask_sdk_model.interfaces.alexa.presentation.aplt.target_profile import TargetProfile as TargetProfile_1664aad7
 
 
 class RenderDocumentDirective(Directive):
@@ -58,7 +58,7 @@ class RenderDocumentDirective(Directive):
     supports_multiple_types = False
 
     def __init__(self, token=None, target_profile=None, document=None, datasources=None):
-        # type: (Optional[str], Optional[TargetProfile], Optional[Dict[str, object]], Optional[Dict[str, object]]) -> None
+        # type: (Optional[str], Optional[TargetProfile_1664aad7], Optional[Dict[str, object]], Optional[Dict[str, object]]) -> None
         """
 
         :param token: A unique identifier for the presentation.

@@ -24,7 +24,7 @@ from ask_sdk_model.request import Request
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.reminder_management.event import Event
+    from ask_sdk_model.services.reminder_management.event import Event as Event_7b12c528
 
 
 class ReminderUpdatedEventRequest(Request):
@@ -58,7 +58,7 @@ class ReminderUpdatedEventRequest(Request):
     supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, body=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[Event]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[Event_7b12c528]) -> None
         """
 
         :param request_id: Represents the unique identifier for the specific request.

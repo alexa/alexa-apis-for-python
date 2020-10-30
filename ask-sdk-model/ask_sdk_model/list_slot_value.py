@@ -24,7 +24,7 @@ from ask_sdk_model.slot_value import SlotValue
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.slot_value import SlotValue
+    from ask_sdk_model.slot_value import SlotValue as SlotValue_4725c8c5
 
 
 class ListSlotValue(SlotValue):
@@ -48,7 +48,7 @@ class ListSlotValue(SlotValue):
     supports_multiple_types = False
 
     def __init__(self, values=None):
-        # type: (Optional[List[SlotValue]]) -> None
+        # type: (Optional[List[SlotValue_4725c8c5]]) -> None
         """Slot value containing a list of other slot value objects.
 
         :param values: An array containing the values captured for this slot.

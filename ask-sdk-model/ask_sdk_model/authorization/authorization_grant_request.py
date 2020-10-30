@@ -24,7 +24,7 @@ from ask_sdk_model.request import Request
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.authorization.authorization_grant_body import AuthorizationGrantBody
+    from ask_sdk_model.authorization.authorization_grant_body import AuthorizationGrantBody as AuthorizationGrantBody_afdf2aa3
 
 
 class AuthorizationGrantRequest(Request):
@@ -60,7 +60,7 @@ class AuthorizationGrantRequest(Request):
     supports_multiple_types = False
 
     def __init__(self, request_id=None, timestamp=None, locale=None, body=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[AuthorizationGrantBody]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[AuthorizationGrantBody_afdf2aa3]) -> None
         """Represents an authorization code delivered to a skill that has out-of-session permissions without requiring account linking.
 
         :param request_id: Represents the unique identifier for the specific request.

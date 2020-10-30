@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.reminder_management.status import Status
+    from ask_sdk_model.services.reminder_management.status import Status as Status_fbbd2410
 
 
 class ReminderResponse(object):
@@ -65,7 +65,7 @@ class ReminderResponse(object):
     supports_multiple_types = False
 
     def __init__(self, alert_token=None, created_time=None, updated_time=None, status=None, version=None, href=None):
-        # type: (Optional[str], Optional[str], Optional[str], Optional[Status], Optional[str], Optional[str]) -> None
+        # type: (Optional[str], Optional[str], Optional[str], Optional[Status_fbbd2410], Optional[str], Optional[str]) -> None
         """Response object for post/put/delete reminder request
 
         :param alert_token: Unique id of this reminder alert

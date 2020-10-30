@@ -24,9 +24,9 @@ from ask_sdk_model.interfaces.amazonpay.model.request.base_amazon_pay_entity imp
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.amazonpay.model.request.seller_billing_agreement_attributes import SellerBillingAgreementAttributes
-    from ask_sdk_model.interfaces.amazonpay.model.request.billing_agreement_type import BillingAgreementType
-    from ask_sdk_model.interfaces.amazonpay.model.request.price import Price
+    from ask_sdk_model.interfaces.amazonpay.model.request.billing_agreement_type import BillingAgreementType as BillingAgreementType_33b14792
+    from ask_sdk_model.interfaces.amazonpay.model.request.seller_billing_agreement_attributes import SellerBillingAgreementAttributes as SellerBillingAgreementAttributes_4f93d175
+    from ask_sdk_model.interfaces.amazonpay.model.request.price import Price as Price_28baad92
 
 
 class BillingAgreementAttributes(BaseAmazonPayEntity):
@@ -70,7 +70,7 @@ class BillingAgreementAttributes(BaseAmazonPayEntity):
     supports_multiple_types = False
 
     def __init__(self, platform_id=None, seller_note=None, seller_billing_agreement_attributes=None, billing_agreement_type=None, subscription_amount=None, version=None):
-        # type: (Optional[str], Optional[str], Optional[SellerBillingAgreementAttributes], Optional[BillingAgreementType], Optional[Price], Optional[str]) -> None
+        # type: (Optional[str], Optional[str], Optional[SellerBillingAgreementAttributes_4f93d175], Optional[BillingAgreementType_33b14792], Optional[Price_28baad92], Optional[str]) -> None
         """The merchant can choose to set the attributes specified in the BillingAgreementAttributes.
 
         :param platform_id: Represents the SellerId of the Solution Provider that developed the eCommerce platform. This value is only used by Solution Providers, for whom it is required. It should not be provided by merchants creating their own custom integration. Do not specify the SellerId of the merchant for this request parameter. If you are a merchant, do not enter a PlatformId.

@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.slu.entityresolution.status_code import StatusCode
+    from ask_sdk_model.slu.entityresolution.status_code import StatusCode as StatusCode_118f7170
 
 
 class Status(object):
@@ -43,7 +43,7 @@ class Status(object):
     supports_multiple_types = False
 
     def __init__(self, code=None):
-        # type: (Optional[StatusCode]) -> None
+        # type: (Optional[StatusCode_118f7170]) -> None
         """
 
         :param code: Indication of the results of attempting to resolve the user utterance against the defined slot types.

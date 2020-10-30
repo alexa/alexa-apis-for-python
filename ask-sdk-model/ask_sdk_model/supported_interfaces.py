@@ -23,14 +23,14 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.audioplayer.audio_player_interface import AudioPlayerInterface
-    from ask_sdk_model.interfaces.alexa.presentation.html.alexa_presentation_html_interface import AlexaPresentationHtmlInterface
-    from ask_sdk_model.interfaces.alexa.presentation.apl.alexa_presentation_apl_interface import AlexaPresentationAplInterface
-    from ask_sdk_model.interfaces.navigation.navigation_interface import NavigationInterface
-    from ask_sdk_model.interfaces.videoapp.video_app_interface import VideoAppInterface
-    from ask_sdk_model.interfaces.geolocation.geolocation_interface import GeolocationInterface
-    from ask_sdk_model.interfaces.alexa.presentation.aplt.alexa_presentation_aplt_interface import AlexaPresentationApltInterface
-    from ask_sdk_model.interfaces.display.display_interface import DisplayInterface
+    from ask_sdk_model.interfaces.alexa.presentation.html.alexa_presentation_html_interface import AlexaPresentationHtmlInterface as AlexaPresentationHtmlInterface_b20f808f
+    from ask_sdk_model.interfaces.alexa.presentation.apl.alexa_presentation_apl_interface import AlexaPresentationAplInterface as AlexaPresentationAplInterface_58fc19ef
+    from ask_sdk_model.interfaces.navigation.navigation_interface import NavigationInterface as NavigationInterface_aa96009b
+    from ask_sdk_model.interfaces.audioplayer.audio_player_interface import AudioPlayerInterface as AudioPlayerInterface_24d2b051
+    from ask_sdk_model.interfaces.alexa.presentation.aplt.alexa_presentation_aplt_interface import AlexaPresentationApltInterface as AlexaPresentationApltInterface_95b3be2b
+    from ask_sdk_model.interfaces.display.display_interface import DisplayInterface as DisplayInterface_c1477bd9
+    from ask_sdk_model.interfaces.videoapp.video_app_interface import VideoAppInterface as VideoAppInterface_f245c658
+    from ask_sdk_model.interfaces.geolocation.geolocation_interface import GeolocationInterface as GeolocationInterface_d5c5128d
 
 
 class SupportedInterfaces(object):
@@ -80,7 +80,7 @@ class SupportedInterfaces(object):
     supports_multiple_types = False
 
     def __init__(self, alexa_presentation_apl=None, alexa_presentation_aplt=None, alexa_presentation_html=None, audio_player=None, display=None, video_app=None, geolocation=None, navigation=None):
-        # type: (Optional[AlexaPresentationAplInterface], Optional[AlexaPresentationApltInterface], Optional[AlexaPresentationHtmlInterface], Optional[AudioPlayerInterface], Optional[DisplayInterface], Optional[VideoAppInterface], Optional[GeolocationInterface], Optional[NavigationInterface]) -> None
+        # type: (Optional[AlexaPresentationAplInterface_58fc19ef], Optional[AlexaPresentationApltInterface_95b3be2b], Optional[AlexaPresentationHtmlInterface_b20f808f], Optional[AudioPlayerInterface_24d2b051], Optional[DisplayInterface_c1477bd9], Optional[VideoAppInterface_f245c658], Optional[GeolocationInterface_d5c5128d], Optional[NavigationInterface_aa96009b]) -> None
         """An object listing each interface that the device supports. For example, if supportedInterfaces includes AudioPlayer {}, then you know that the device supports streaming audio using the AudioPlayer interface.
 
         :param alexa_presentation_apl: 

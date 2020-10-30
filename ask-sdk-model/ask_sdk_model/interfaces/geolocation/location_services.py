@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.geolocation.status import Status
-    from ask_sdk_model.interfaces.geolocation.access import Access
+    from ask_sdk_model.interfaces.geolocation.status import Status as Status_d747e462
+    from ask_sdk_model.interfaces.geolocation.access import Access as Access_20924022
 
 
 class LocationServices(object):
@@ -50,7 +50,7 @@ class LocationServices(object):
     supports_multiple_types = False
 
     def __init__(self, status=None, access=None):
-        # type: (Optional[Status], Optional[Access]) -> None
+        # type: (Optional[Status_d747e462], Optional[Access_20924022]) -> None
         """An object containing status and access.
 
         :param status: A string representing the status of whether location services is currently running or not on the host OS of device.

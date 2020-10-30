@@ -24,8 +24,8 @@ from ask_sdk_model.directive import Directive
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.dialog.delegation_period import DelegationPeriod
-    from ask_sdk_model.dialog.updated_request import UpdatedRequest
+    from ask_sdk_model.dialog.delegation_period import DelegationPeriod as DelegationPeriod_79d528b5
+    from ask_sdk_model.dialog.updated_request import UpdatedRequest as UpdatedRequest_cb727acd
 
 
 class DelegateRequestDirective(Directive):
@@ -55,7 +55,7 @@ class DelegateRequestDirective(Directive):
     supports_multiple_types = False
 
     def __init__(self, target=None, period=None, updated_request=None):
-        # type: (Optional[str], Optional[DelegationPeriod], Optional[UpdatedRequest]) -> None
+        # type: (Optional[str], Optional[DelegationPeriod_79d528b5], Optional[UpdatedRequest_cb727acd]) -> None
         """
 
         :param target: The delegation target.

@@ -24,7 +24,7 @@ from ask_sdk_model.interfaces.amazonpay.model.v1.authorization_status import Aut
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.amazonpay.model.response.state import State
+    from ask_sdk_model.interfaces.amazonpay.model.response.state import State as State_76ca6e1a
 
 
 class AuthorizationStatus(AuthorizationStatus):
@@ -58,7 +58,7 @@ class AuthorizationStatus(AuthorizationStatus):
     supports_multiple_types = False
 
     def __init__(self, state=None, reason_code=None, reason_description=None, last_update_timestamp=None):
-        # type: (Optional[State], Optional[str], Optional[str], Optional[datetime]) -> None
+        # type: (Optional[State_76ca6e1a], Optional[str], Optional[str], Optional[datetime]) -> None
         """Indicates the current status of an Authorization object, a Capture object, or a Refund object.
 
         :param state: 

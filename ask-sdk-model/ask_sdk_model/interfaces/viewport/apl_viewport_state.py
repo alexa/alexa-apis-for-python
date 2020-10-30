@@ -24,9 +24,9 @@ from ask_sdk_model.interfaces.viewport.typed_viewport_state import TypedViewport
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.viewport.shape import Shape
-    from ask_sdk_model.interfaces.viewport.presentation_type import PresentationType
-    from ask_sdk_model.interfaces.viewport.apl.viewport_configuration import ViewportConfiguration
+    from ask_sdk_model.interfaces.viewport.presentation_type import PresentationType as PresentationType_26a73e67
+    from ask_sdk_model.interfaces.viewport.shape import Shape as Shape_d8a6bf70
+    from ask_sdk_model.interfaces.viewport.apl.viewport_configuration import ViewportConfiguration as ViewportConfiguration_19084f4
 
 
 class APLViewportState(TypedViewportState):
@@ -70,7 +70,7 @@ class APLViewportState(TypedViewportState):
     supports_multiple_types = False
 
     def __init__(self, id=None, shape=None, dpi=None, presentation_type=None, can_rotate=None, configuration=None):
-        # type: (Optional[str], Optional[Shape], Optional[float], Optional[PresentationType], Optional[bool], Optional[ViewportConfiguration]) -> None
+        # type: (Optional[str], Optional[Shape_d8a6bf70], Optional[float], Optional[PresentationType_26a73e67], Optional[bool], Optional[ViewportConfiguration_19084f4]) -> None
         """This object contains the characteristics related to the APL device&#39;s viewport.
 
         :param id: unique identifier of a viewport object

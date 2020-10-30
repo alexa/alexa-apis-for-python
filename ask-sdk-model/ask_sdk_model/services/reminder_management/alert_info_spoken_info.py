@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.services.reminder_management.spoken_text import SpokenText
+    from ask_sdk_model.services.reminder_management.spoken_text import SpokenText as SpokenText_b927b411
 
 
 class AlertInfoSpokenInfo(object):
@@ -45,7 +45,7 @@ class AlertInfoSpokenInfo(object):
     supports_multiple_types = False
 
     def __init__(self, content=None):
-        # type: (Optional[List[SpokenText]]) -> None
+        # type: (Optional[List[SpokenText_b927b411]]) -> None
         """Parameters for VUI presentation of the reminder
 
         :param content: 

@@ -24,7 +24,7 @@ from ask_sdk_model.directive import Directive
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.html.transformer import Transformer
+    from ask_sdk_model.interfaces.alexa.presentation.html.transformer import Transformer as Transformer_8371ca46
 
 
 class HandleMessageDirective(Directive):
@@ -52,7 +52,7 @@ class HandleMessageDirective(Directive):
     supports_multiple_types = False
 
     def __init__(self, message=None, transformers=None):
-        # type: (Optional[object], Optional[List[Transformer]]) -> None
+        # type: (Optional[object], Optional[List[Transformer_8371ca46]]) -> None
         """The HandleMessage directive sends a message to a skill&#39;s web application that runs on the device browser. 
 
         :param message: A free-form object containing data to deliver to a skill&#39;s HTML application running the device. Maximum size 18 KB.

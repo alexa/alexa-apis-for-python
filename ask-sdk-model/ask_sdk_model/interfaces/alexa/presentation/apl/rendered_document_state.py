@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen import ComponentVisibleOnScreen
+    from ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen import ComponentVisibleOnScreen as ComponentVisibleOnScreen_c94bf507
 
 
 class RenderedDocumentState(object):
@@ -53,7 +53,7 @@ class RenderedDocumentState(object):
     supports_multiple_types = False
 
     def __init__(self, token=None, version=None, components_visible_on_screen=None):
-        # type: (Optional[str], Optional[str], Optional[List[ComponentVisibleOnScreen]]) -> None
+        # type: (Optional[str], Optional[str], Optional[List[ComponentVisibleOnScreen_c94bf507]]) -> None
         """Provides context for any APL content shown on screen.
 
         :param token: The token specified in the RenderDocument directive which rendered the content shown on screen.

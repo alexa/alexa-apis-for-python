@@ -24,7 +24,7 @@ from ask_sdk_model.dialog.updated_request import UpdatedRequest
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.dialog.input import Input
+    from ask_sdk_model.dialog.input import Input as Input_de301c30
 
 
 class UpdatedInputRequest(UpdatedRequest):
@@ -46,7 +46,7 @@ class UpdatedInputRequest(UpdatedRequest):
     supports_multiple_types = False
 
     def __init__(self, input=None):
-        # type: (Optional[Input]) -> None
+        # type: (Optional[Input_de301c30]) -> None
         """
 
         :param input: 

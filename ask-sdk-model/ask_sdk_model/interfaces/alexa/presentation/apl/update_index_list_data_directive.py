@@ -24,7 +24,7 @@ from ask_sdk_model.directive import Directive
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.apl.listoperations.operation import Operation
+    from ask_sdk_model.interfaces.alexa.presentation.apl.listoperations.operation import Operation as Operation_37040fb2
 
 
 class UpdateIndexListDataDirective(Directive):
@@ -60,7 +60,7 @@ class UpdateIndexListDataDirective(Directive):
     supports_multiple_types = False
 
     def __init__(self, token=None, list_id=None, list_version=None, operations=None):
-        # type: (Optional[str], Optional[str], Optional[int], Optional[List[Operation]]) -> None
+        # type: (Optional[str], Optional[str], Optional[int], Optional[List[Operation_37040fb2]]) -> None
         """Updates the content of an dynamicIndexList datasource which has been previously communicated to an Alexa device.
 
         :param token: The unique identifier for the presentation containing the dynamicIndexList.

@@ -24,7 +24,7 @@ from ask_sdk_model.interfaces.alexa.presentation.apl.command import Command
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.presentation.apl.command import Command
+    from ask_sdk_model.interfaces.alexa.presentation.apl.command import Command as Command_bc5ff832
 
 
 class OpenUrlCommand(Command):
@@ -64,7 +64,7 @@ class OpenUrlCommand(Command):
     supports_multiple_types = False
 
     def __init__(self, delay=None, description=None, when=None, source=None, on_fail=None):
-        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Optional[List[Command]]) -> None
+        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Optional[List[Command_bc5ff832]]) -> None
         """Opens a url with web browser or other application on the device. The APL author is responsible for providing a suitable URL that works on the current device.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
