@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.catalog.catalog_input import CatalogInput as Catalog_CatalogInputV1
+    from ask_smapi_model.v1.skill.interaction_model.catalog.catalog_input import CatalogInput as CatalogInput_948a7988
 
 
 class DefinitionData(object):
@@ -49,7 +49,7 @@ class DefinitionData(object):
     supports_multiple_types = False
 
     def __init__(self, catalog=None, vendor_id=None):
-        # type: (Optional[Catalog_CatalogInputV1], Optional[str]) -> None
+        # type: (Optional[CatalogInput_948a7988], Optional[str]) -> None
         """Catalog request definitions.
 
         :param catalog: 

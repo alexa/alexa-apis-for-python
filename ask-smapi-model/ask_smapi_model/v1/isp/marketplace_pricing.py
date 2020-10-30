@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.isp.price_listing import PriceListing as Isp_PriceListingV1
+    from ask_smapi_model.v1.isp.price_listing import PriceListing as PriceListing_37c6f12c
 
 
 class MarketplacePricing(object):
@@ -49,7 +49,7 @@ class MarketplacePricing(object):
     supports_multiple_types = False
 
     def __init__(self, release_date=None, default_price_listing=None):
-        # type: (Optional[datetime], Optional[Isp_PriceListingV1]) -> None
+        # type: (Optional[datetime], Optional[PriceListing_37c6f12c]) -> None
         """In-skill product pricing information for a marketplace.
 
         :param release_date: Date when in-skill product is available to customers for both purchase and use. Prior to this date the in-skill product will appear unavailable to customers and will not be purchasable.

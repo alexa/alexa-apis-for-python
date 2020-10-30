@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest_last_update_request import ManifestLastUpdateRequest as Skill_ManifestLastUpdateRequestV1
+    from ask_smapi_model.v1.skill.manifest_last_update_request import ManifestLastUpdateRequest as ManifestLastUpdateRequest_a14b90ab
 
 
 class ManifestStatus(object):
@@ -49,7 +49,7 @@ class ManifestStatus(object):
     supports_multiple_types = False
 
     def __init__(self, last_update_request=None, e_tag=None):
-        # type: (Optional[Skill_ManifestLastUpdateRequestV1], Optional[str]) -> None
+        # type: (Optional[ManifestLastUpdateRequest_a14b90ab], Optional[str]) -> None
         """Defines the structure for a resource status.
 
         :param last_update_request: 

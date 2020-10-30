@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.hosted_skill_deployment_status_last_update_request import HostedSkillDeploymentStatusLastUpdateRequest as Skill_HostedSkillDeploymentStatusLastUpdateRequestV1
+    from ask_smapi_model.v1.skill.hosted_skill_deployment_status_last_update_request import HostedSkillDeploymentStatusLastUpdateRequest as HostedSkillDeploymentStatusLastUpdateRequest_4ef7ab8e
 
 
 class HostedSkillDeploymentStatus(object):
@@ -45,7 +45,7 @@ class HostedSkillDeploymentStatus(object):
     supports_multiple_types = False
 
     def __init__(self, last_update_request=None):
-        # type: (Optional[Skill_HostedSkillDeploymentStatusLastUpdateRequestV1]) -> None
+        # type: (Optional[HostedSkillDeploymentStatusLastUpdateRequest_4ef7ab8e]) -> None
         """Defines the most recent deployment status for the Alexa hosted skill.
 
         :param last_update_request: 

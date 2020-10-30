@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v0.catalog.catalog_type import CatalogType as Catalog_CatalogTypeV0
-    from ask_smapi_model.v0.catalog.catalog_usage import CatalogUsage as Catalog_CatalogUsageV0
+    from ask_smapi_model.v0.catalog.catalog_usage import CatalogUsage as CatalogUsage_2f19919a
+    from ask_smapi_model.v0.catalog.catalog_type import CatalogType as CatalogType_da9270a4
 
 
 class CreateCatalogRequest(object):
@@ -56,7 +56,7 @@ class CreateCatalogRequest(object):
     supports_multiple_types = False
 
     def __init__(self, title=None, object_type=None, usage=None, vendor_id=None):
-        # type: (Optional[str], Optional[Catalog_CatalogTypeV0], Optional[Catalog_CatalogUsageV0], Optional[str]) -> None
+        # type: (Optional[str], Optional[CatalogType_da9270a4], Optional[CatalogUsage_2f19919a], Optional[str]) -> None
         """
 
         :param title: Title of the catalog.

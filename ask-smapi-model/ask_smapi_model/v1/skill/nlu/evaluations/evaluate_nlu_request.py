@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.nlu.evaluations.source import Source as Evaluations_SourceV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.source import Source as Source_89d9013a
 
 
 class EvaluateNLURequest(object):
@@ -51,7 +51,7 @@ class EvaluateNLURequest(object):
     supports_multiple_types = False
 
     def __init__(self, stage=None, locale=None, source=None):
-        # type: (Optional[object], Optional[str], Optional[Evaluations_SourceV1]) -> None
+        # type: (Optional[object], Optional[str], Optional[Source_89d9013a]) -> None
         """
 
         :param stage: 

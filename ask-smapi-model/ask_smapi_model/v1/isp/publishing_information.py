@@ -23,10 +23,10 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.isp.localized_publishing_information import LocalizedPublishingInformation as Isp_LocalizedPublishingInformationV1
-    from ask_smapi_model.v1.isp.distribution_countries import DistributionCountries as Isp_DistributionCountriesV1
-    from ask_smapi_model.v1.isp.marketplace_pricing import MarketplacePricing as Isp_MarketplacePricingV1
-    from ask_smapi_model.v1.isp.tax_information import TaxInformation as Isp_TaxInformationV1
+    from ask_smapi_model.v1.isp.distribution_countries import DistributionCountries as DistributionCountries_9441646c
+    from ask_smapi_model.v1.isp.tax_information import TaxInformation as TaxInformation_d7a91e8
+    from ask_smapi_model.v1.isp.marketplace_pricing import MarketplacePricing as MarketplacePricing_bbe8aae8
+    from ask_smapi_model.v1.isp.localized_publishing_information import LocalizedPublishingInformation as LocalizedPublishingInformation_4fbbbb97
 
 
 class PublishingInformation(object):
@@ -60,7 +60,7 @@ class PublishingInformation(object):
     supports_multiple_types = False
 
     def __init__(self, locales=None, distribution_countries=None, pricing=None, tax_information=None):
-        # type: (Optional[Dict[str, Isp_LocalizedPublishingInformationV1]], Optional[List[Isp_DistributionCountriesV1]], Optional[Dict[str, Isp_MarketplacePricingV1]], Optional[Isp_TaxInformationV1]) -> None
+        # type: (Optional[Dict[str, LocalizedPublishingInformation_4fbbbb97]], Optional[List[DistributionCountries_9441646c]], Optional[Dict[str, MarketplacePricing_bbe8aae8]], Optional[TaxInformation_d7a91e8]) -> None
         """Defines the structure for in-skill product publishing information.
 
         :param locales: Defines the structure for locale specific publishing information for an in-skill product.

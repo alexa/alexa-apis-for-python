@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v2.skill.simulations.alexa_response import AlexaResponse as Simulations_AlexaResponseV2
-    from ask_smapi_model.v2.skill.simulations.intent import Intent as Simulations_IntentV2
+    from ask_smapi_model.v2.skill.simulations.alexa_response import AlexaResponse as AlexaResponse_d40e19a
+    from ask_smapi_model.v2.skill.simulations.intent import Intent as Intent_779d95a7
 
 
 class AlexaExecutionInfo(object):
@@ -48,7 +48,7 @@ class AlexaExecutionInfo(object):
     supports_multiple_types = False
 
     def __init__(self, alexa_responses=None, considered_intents=None):
-        # type: (Optional[List[Simulations_AlexaResponseV2]], Optional[List[Simulations_IntentV2]]) -> None
+        # type: (Optional[List[AlexaResponse_d40e19a]], Optional[List[Intent_779d95a7]]) -> None
         """
 
         :param alexa_responses: 

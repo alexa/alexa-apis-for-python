@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.certification.estimation_update import EstimationUpdate as Certification_EstimationUpdateV1
+    from ask_smapi_model.v1.skill.certification.estimation_update import EstimationUpdate as EstimationUpdate_39260d1f
 
 
 class ReviewTrackingInfo(object):
@@ -57,7 +57,7 @@ class ReviewTrackingInfo(object):
     supports_multiple_types = False
 
     def __init__(self, estimated_completion_timestamp=None, actual_completion_timestamp=None, last_updated=None, estimation_updates=None):
-        # type: (Optional[datetime], Optional[datetime], Optional[datetime], Optional[List[Certification_EstimationUpdateV1]]) -> None
+        # type: (Optional[datetime], Optional[datetime], Optional[datetime], Optional[List[EstimationUpdate_39260d1f]]) -> None
         """Structure for review tracking information of the skill.
 
         :param estimated_completion_timestamp: Timestamp for estimated completion of certification review for the skill.

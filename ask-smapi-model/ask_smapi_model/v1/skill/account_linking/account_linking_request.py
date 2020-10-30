@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.account_linking.account_linking_request_payload import AccountLinkingRequestPayload as AccountLinking_AccountLinkingRequestPayloadV1
+    from ask_smapi_model.v1.skill.account_linking.account_linking_request_payload import AccountLinkingRequestPayload as AccountLinkingRequestPayload_6a6fa471
 
 
 class AccountLinkingRequest(object):
@@ -45,7 +45,7 @@ class AccountLinkingRequest(object):
     supports_multiple_types = False
 
     def __init__(self, account_linking_request=None):
-        # type: (Optional[AccountLinking_AccountLinkingRequestPayloadV1]) -> None
+        # type: (Optional[AccountLinkingRequestPayload_6a6fa471]) -> None
         """The request body of AccountLinkingRequest.
 
         :param account_linking_request: 

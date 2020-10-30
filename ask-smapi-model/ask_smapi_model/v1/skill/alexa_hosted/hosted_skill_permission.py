@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_permission_status import HostedSkillPermissionStatus as AlexaHosted_HostedSkillPermissionStatusV1
-    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_permission_type import HostedSkillPermissionType as AlexaHosted_HostedSkillPermissionTypeV1
+    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_permission_type import HostedSkillPermissionType as HostedSkillPermissionType_97df770e
+    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_permission_status import HostedSkillPermissionStatus as HostedSkillPermissionStatus_52fd27be
 
 
 class HostedSkillPermission(object):
@@ -54,7 +54,7 @@ class HostedSkillPermission(object):
     supports_multiple_types = False
 
     def __init__(self, permission=None, status=None, action_url=None):
-        # type: (Optional[AlexaHosted_HostedSkillPermissionTypeV1], Optional[AlexaHosted_HostedSkillPermissionStatusV1], Optional[str]) -> None
+        # type: (Optional[HostedSkillPermissionType_97df770e], Optional[HostedSkillPermissionStatus_52fd27be], Optional[str]) -> None
         """Customer&#39;s permission about Hosted skill features.
 
         :param permission: 

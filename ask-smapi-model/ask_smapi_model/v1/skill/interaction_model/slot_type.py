@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.value_supplier import ValueSupplier as InteractionModel_ValueSupplierV1
-    from ask_smapi_model.v1.skill.interaction_model.type_value import TypeValue as InteractionModel_TypeValueV1
+    from ask_smapi_model.v1.skill.interaction_model.type_value import TypeValue as TypeValue_6d4bbead
+    from ask_smapi_model.v1.skill.interaction_model.value_supplier import ValueSupplier as ValueSupplier_88bf9fe1
 
 
 class SlotType(object):
@@ -54,7 +54,7 @@ class SlotType(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, values=None, value_supplier=None):
-        # type: (Optional[str], Optional[List[InteractionModel_TypeValueV1]], Optional[InteractionModel_ValueSupplierV1]) -> None
+        # type: (Optional[str], Optional[List[TypeValue_6d4bbead]], Optional[ValueSupplier_88bf9fe1]) -> None
         """Custom slot type to define a list of possible values for a slot. Used for items that are not covered by Amazon&#39;s built-in slot types.
 
         :param name: The name of the custom slot type.

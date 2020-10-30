@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.ssl_certificate_type import SSLCertificateType as Manifest_SSLCertificateTypeV1
+    from ask_smapi_model.v1.skill.manifest.ssl_certificate_type import SSLCertificateType as SSLCertificateType_b8d91d45
 
 
 class SkillManifestEndpoint(object):
@@ -49,7 +49,7 @@ class SkillManifestEndpoint(object):
     supports_multiple_types = False
 
     def __init__(self, uri=None, ssl_certificate_type=None):
-        # type: (Optional[str], Optional[Manifest_SSLCertificateTypeV1]) -> None
+        # type: (Optional[str], Optional[SSLCertificateType_b8d91d45]) -> None
         """Defines the structure for endpoint information in the skill manifest.
 
         :param uri: Amazon Resource Name (ARN) of the skill&#39;s Lambda function or HTTPS URL.

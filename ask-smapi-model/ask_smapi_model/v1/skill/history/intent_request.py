@@ -23,12 +23,12 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.history.dialog_act import DialogAct as History_DialogActV1
-    from ask_smapi_model.v1.skill.history.publication_status import PublicationStatus as History_PublicationStatusV1
-    from ask_smapi_model.v1.stage_type import StageType as V1_StageTypeV1
-    from ask_smapi_model.v1.skill.history.interaction_type import InteractionType as History_InteractionTypeV1
-    from ask_smapi_model.v1.skill.history.intent_request_locales import IntentRequestLocales as History_IntentRequestLocalesV1
-    from ask_smapi_model.v1.skill.history.intent import Intent as History_IntentV1
+    from ask_smapi_model.v1.skill.history.dialog_act import DialogAct as DialogAct_4ef13157
+    from ask_smapi_model.v1.skill.history.intent_request_locales import IntentRequestLocales as IntentRequestLocales_e5c9ca2e
+    from ask_smapi_model.v1.skill.history.publication_status import PublicationStatus as PublicationStatus_af1ce535
+    from ask_smapi_model.v1.skill.history.intent import Intent as Intent_529291ee
+    from ask_smapi_model.v1.stage_type import StageType as StageType_700be16e
+    from ask_smapi_model.v1.skill.history.interaction_type import InteractionType as InteractionType_80494a05
 
 
 class IntentRequest(object):
@@ -72,7 +72,7 @@ class IntentRequest(object):
     supports_multiple_types = False
 
     def __init__(self, dialog_act=None, intent=None, interaction_type=None, locale=None, publication_status=None, stage=None, utterance_text=None):
-        # type: (Optional[History_DialogActV1], Optional[History_IntentV1], Optional[History_InteractionTypeV1], Optional[History_IntentRequestLocalesV1], Optional[History_PublicationStatusV1], Optional[V1_StageTypeV1], Optional[str]) -> None
+        # type: (Optional[DialogAct_4ef13157], Optional[Intent_529291ee], Optional[InteractionType_80494a05], Optional[IntentRequestLocales_e5c9ca2e], Optional[PublicationStatus_af1ce535], Optional[StageType_700be16e], Optional[str]) -> None
         """
 
         :param dialog_act: 

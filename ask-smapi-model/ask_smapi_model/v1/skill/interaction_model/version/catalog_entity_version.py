@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.version.links import Links as Version_LinksV1
+    from ask_smapi_model.v1.skill.interaction_model.version.links import Links as Links_7f14ca56
 
 
 class CatalogEntityVersion(object):
@@ -57,7 +57,7 @@ class CatalogEntityVersion(object):
     supports_multiple_types = False
 
     def __init__(self, version=None, creation_time=None, description=None, links=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[Version_LinksV1]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[Links_7f14ca56]) -> None
         """Version metadata about the catalog entity version.
 
         :param version: 

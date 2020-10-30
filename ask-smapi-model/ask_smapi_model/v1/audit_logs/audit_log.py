@@ -23,10 +23,10 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.audit_logs.client import Client as AuditLogs_ClientV1
-    from ask_smapi_model.v1.audit_logs.requester import Requester as AuditLogs_RequesterV1
-    from ask_smapi_model.v1.audit_logs.resource import Resource as AuditLogs_ResourceV1
-    from ask_smapi_model.v1.audit_logs.operation import Operation as AuditLogs_OperationV1
+    from ask_smapi_model.v1.audit_logs.operation import Operation as Operation_7cffbee
+    from ask_smapi_model.v1.audit_logs.resource import Resource as Resource_1b84fbfc
+    from ask_smapi_model.v1.audit_logs.requester import Requester as Requester_fd4ba9d8
+    from ask_smapi_model.v1.audit_logs.client import Client as Client_2d5ce45c
 
 
 class AuditLog(object):
@@ -70,7 +70,7 @@ class AuditLog(object):
     supports_multiple_types = False
 
     def __init__(self, x_amzn_request_id=None, timestamp=None, client=None, operation=None, resources=None, requester=None, http_response_code=None):
-        # type: (Optional[str], Optional[datetime], Optional[AuditLogs_ClientV1], Optional[AuditLogs_OperationV1], Optional[List[AuditLogs_ResourceV1]], Optional[AuditLogs_RequesterV1], Optional[int]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[Client_2d5ce45c], Optional[Operation_7cffbee], Optional[List[Resource_1b84fbfc]], Optional[Requester_fd4ba9d8], Optional[int]) -> None
         """
 
         :param x_amzn_request_id: UUID that identifies a specific request.

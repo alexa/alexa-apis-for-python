@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.nlu.evaluations.expected_intent import ExpectedIntent as Evaluations_ExpectedIntentV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.expected_intent import ExpectedIntent as ExpectedIntent_a4c5ac93
 
 
 class Expected(object):
@@ -47,7 +47,7 @@ class Expected(object):
     supports_multiple_types = False
 
     def __init__(self, domain=None, intent=None):
-        # type: (Optional[str], Optional[Evaluations_ExpectedIntentV1]) -> None
+        # type: (Optional[str], Optional[ExpectedIntent_a4c5ac93]) -> None
         """
 
         :param domain: 

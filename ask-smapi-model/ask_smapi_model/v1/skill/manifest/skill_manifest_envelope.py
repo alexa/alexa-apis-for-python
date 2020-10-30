@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.skill_manifest import SkillManifest as Manifest_SkillManifestV1
+    from ask_smapi_model.v1.skill.manifest.skill_manifest import SkillManifest as SkillManifest_312bea88
 
 
 class SkillManifestEnvelope(object):
@@ -43,7 +43,7 @@ class SkillManifestEnvelope(object):
     supports_multiple_types = False
 
     def __init__(self, manifest=None):
-        # type: (Optional[Manifest_SkillManifestV1]) -> None
+        # type: (Optional[SkillManifest_312bea88]) -> None
         """
 
         :param manifest: 

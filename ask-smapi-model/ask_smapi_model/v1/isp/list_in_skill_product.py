@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.links import Links as V1_LinksV1
-    from ask_smapi_model.v1.isp.in_skill_product_summary import InSkillProductSummary as Isp_InSkillProductSummaryV1
+    from ask_smapi_model.v1.links import Links as Links_bc43467b
+    from ask_smapi_model.v1.isp.in_skill_product_summary import InSkillProductSummary as InSkillProductSummary_295940f4
 
 
 class ListInSkillProduct(object):
@@ -58,7 +58,7 @@ class ListInSkillProduct(object):
     supports_multiple_types = False
 
     def __init__(self, links=None, in_skill_products=None, is_truncated=None, next_token=None):
-        # type: (Optional[V1_LinksV1], Optional[List[Isp_InSkillProductSummaryV1]], Optional[bool], Optional[str]) -> None
+        # type: (Optional[Links_bc43467b], Optional[List[InSkillProductSummary_295940f4]], Optional[bool], Optional[str]) -> None
         """List of in-skill products.
 
         :param links: 

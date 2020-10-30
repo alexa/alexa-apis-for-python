@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.certification.review_tracking_info_summary import ReviewTrackingInfoSummary as Certification_ReviewTrackingInfoSummaryV1
-    from ask_smapi_model.v1.skill.certification.certification_status import CertificationStatus as Certification_CertificationStatusV1
+    from ask_smapi_model.v1.skill.certification.certification_status import CertificationStatus as CertificationStatus_f3c4064f
+    from ask_smapi_model.v1.skill.certification.review_tracking_info_summary import ReviewTrackingInfoSummary as ReviewTrackingInfoSummary_98ac3a4b
 
 
 class CertificationSummary(object):
@@ -58,7 +58,7 @@ class CertificationSummary(object):
     supports_multiple_types = False
 
     def __init__(self, id=None, status=None, skill_submission_timestamp=None, review_tracking_info=None):
-        # type: (Optional[str], Optional[Certification_CertificationStatusV1], Optional[datetime], Optional[Certification_ReviewTrackingInfoSummaryV1]) -> None
+        # type: (Optional[str], Optional[CertificationStatus_f3c4064f], Optional[datetime], Optional[ReviewTrackingInfoSummary_98ac3a4b]) -> None
         """Summary of the certification resource. This is a leaner view of the certification resource for the collections API.
 
         :param id: Certification Id for the skill.

@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v0.development_events.subscriber.endpoint import Endpoint as Subscriber_EndpointV0
+    from ask_smapi_model.v0.development_events.subscriber.endpoint import Endpoint as Endpoint_7e4d296f
 
 
 class SubscriberInfo(object):
@@ -53,7 +53,7 @@ class SubscriberInfo(object):
     supports_multiple_types = False
 
     def __init__(self, subscriber_id=None, name=None, endpoint=None):
-        # type: (Optional[str], Optional[str], Optional[Subscriber_EndpointV0]) -> None
+        # type: (Optional[str], Optional[str], Optional[Endpoint_7e4d296f]) -> None
         """Information about the subscriber.
 
         :param subscriber_id: Unique identifier of the subscriber resource.

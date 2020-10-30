@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.model_type.warning import Warning as ModelType_WarningV1
-    from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_status_type import SlotTypeStatusType as ModelType_SlotTypeStatusTypeV1
-    from ask_smapi_model.v1.skill.interaction_model.model_type.error import Error as ModelType_ErrorV1
+    from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_status_type import SlotTypeStatusType as SlotTypeStatusType_7b04d795
+    from ask_smapi_model.v1.skill.interaction_model.model_type.warning import Warning as Warning_e65df984
+    from ask_smapi_model.v1.skill.interaction_model.model_type.error import Error as Error_bf6a85dc
 
 
 class LastUpdateRequest(object):
@@ -59,7 +59,7 @@ class LastUpdateRequest(object):
     supports_multiple_types = False
 
     def __init__(self, status=None, version=None, errors=None, warnings=None):
-        # type: (Optional[ModelType_SlotTypeStatusTypeV1], Optional[str], Optional[List[ModelType_ErrorV1]], Optional[List[ModelType_WarningV1]]) -> None
+        # type: (Optional[SlotTypeStatusType_7b04d795], Optional[str], Optional[List[Error_bf6a85dc]], Optional[List[Warning_e65df984]]) -> None
         """Contains attributes related to last modification request of a resource.
 
         :param status: 

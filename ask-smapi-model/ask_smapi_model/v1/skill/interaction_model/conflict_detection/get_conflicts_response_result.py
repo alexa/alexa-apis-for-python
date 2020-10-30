@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_result import ConflictResult as ConflictDetection_ConflictResultV1
+    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_result import ConflictResult as ConflictResult_e85f1991
 
 
 class GetConflictsResponseResult(object):
@@ -47,7 +47,7 @@ class GetConflictsResponseResult(object):
     supports_multiple_types = False
 
     def __init__(self, conflicting_utterance=None, conflicts=None):
-        # type: (Optional[str], Optional[List[ConflictDetection_ConflictResultV1]]) -> None
+        # type: (Optional[str], Optional[List[ConflictResult_e85f1991]]) -> None
         """
 
         :param conflicting_utterance: Utterance resolved from sample utterance that causes conflicts among different intents.

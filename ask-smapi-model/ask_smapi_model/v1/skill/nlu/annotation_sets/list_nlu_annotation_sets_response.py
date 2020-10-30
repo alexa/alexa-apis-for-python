@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.nlu.annotation_sets.pagination_context import PaginationContext as AnnotationSets_PaginationContextV1
-    from ask_smapi_model.v1.skill.nlu.annotation_sets.links import Links as AnnotationSets_LinksV1
-    from ask_smapi_model.v1.skill.nlu.annotation_sets.annotation_set import AnnotationSet as AnnotationSets_AnnotationSetV1
+    from ask_smapi_model.v1.skill.nlu.annotation_sets.pagination_context import PaginationContext as PaginationContext_c92f317b
+    from ask_smapi_model.v1.skill.nlu.annotation_sets.links import Links as Links_2dc49e1a
+    from ask_smapi_model.v1.skill.nlu.annotation_sets.annotation_set import AnnotationSet as AnnotationSet_b0768ac1
 
 
 class ListNLUAnnotationSetsResponse(object):
@@ -53,7 +53,7 @@ class ListNLUAnnotationSetsResponse(object):
     supports_multiple_types = False
 
     def __init__(self, annotation_sets=None, pagination_context=None, links=None):
-        # type: (Optional[List[AnnotationSets_AnnotationSetV1]], Optional[AnnotationSets_PaginationContextV1], Optional[AnnotationSets_LinksV1]) -> None
+        # type: (Optional[List[AnnotationSet_b0768ac1]], Optional[PaginationContext_c92f317b], Optional[Links_2dc49e1a]) -> None
         """
 
         :param annotation_sets: 

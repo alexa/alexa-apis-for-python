@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v0.development_events.subscription.subscription_summary import SubscriptionSummary as Subscription_SubscriptionSummaryV0
-    from ask_smapi_model.v0.links import Links as V0_LinksV0
+    from ask_smapi_model.v0.development_events.subscription.subscription_summary import SubscriptionSummary as SubscriptionSummary_f00dfd49
+    from ask_smapi_model.v0.links import Links as Links_cdc03ffa
 
 
 class ListSubscriptionsResponse(object):
@@ -52,7 +52,7 @@ class ListSubscriptionsResponse(object):
     supports_multiple_types = False
 
     def __init__(self, links=None, next_token=None, subscriptions=None):
-        # type: (Optional[V0_LinksV0], Optional[str], Optional[List[Subscription_SubscriptionSummaryV0]]) -> None
+        # type: (Optional[Links_cdc03ffa], Optional[str], Optional[List[SubscriptionSummary_f00dfd49]]) -> None
         """
 
         :param links: 

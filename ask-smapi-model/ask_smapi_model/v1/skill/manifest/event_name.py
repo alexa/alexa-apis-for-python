@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.event_name_type import EventNameType as Manifest_EventNameTypeV1
+    from ask_smapi_model.v1.skill.manifest.event_name_type import EventNameType as EventNameType_e044f521
 
 
 class EventName(object):
@@ -43,7 +43,7 @@ class EventName(object):
     supports_multiple_types = False
 
     def __init__(self, event_name=None):
-        # type: (Optional[Manifest_EventNameTypeV1]) -> None
+        # type: (Optional[EventNameType_e044f521]) -> None
         """
 
         :param event_name: 

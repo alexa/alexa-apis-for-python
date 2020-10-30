@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.hosted_skill_deployment_details import HostedSkillDeploymentDetails as Skill_HostedSkillDeploymentDetailsV1
-    from ask_smapi_model.v1.skill.standardized_error import StandardizedError as Skill_StandardizedErrorV1
-    from ask_smapi_model.v1.skill.status import Status as Skill_StatusV1
+    from ask_smapi_model.v1.skill.status import Status as Status_585d1308
+    from ask_smapi_model.v1.skill.hosted_skill_deployment_details import HostedSkillDeploymentDetails as HostedSkillDeploymentDetails_874bf779
+    from ask_smapi_model.v1.skill.standardized_error import StandardizedError as StandardizedError_f5106a89
 
 
 class HostedSkillDeploymentStatusLastUpdateRequest(object):
@@ -59,7 +59,7 @@ class HostedSkillDeploymentStatusLastUpdateRequest(object):
     supports_multiple_types = False
 
     def __init__(self, status=None, errors=None, warnings=None, deployment_details=None):
-        # type: (Optional[Skill_StatusV1], Optional[List[Skill_StandardizedErrorV1]], Optional[List[Skill_StandardizedErrorV1]], Optional[Skill_HostedSkillDeploymentDetailsV1]) -> None
+        # type: (Optional[Status_585d1308], Optional[List[StandardizedError_f5106a89]], Optional[List[StandardizedError_f5106a89]], Optional[HostedSkillDeploymentDetails_874bf779]) -> None
         """Contains attributes related to last modification request of a hosted skill deployment resource.
 
         :param status: 

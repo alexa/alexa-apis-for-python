@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.alexa_hosted.hosting_configuration import HostingConfiguration as AlexaHosted_HostingConfigurationV1
-    from ask_smapi_model.v1.skill.manifest.skill_manifest import SkillManifest as Manifest_SkillManifestV1
+    from ask_smapi_model.v1.skill.manifest.skill_manifest import SkillManifest as SkillManifest_312bea88
+    from ask_smapi_model.v1.skill.alexa_hosted.hosting_configuration import HostingConfiguration as HostingConfiguration_695b9ede
 
 
 class CreateSkillRequest(object):
@@ -52,7 +52,7 @@ class CreateSkillRequest(object):
     supports_multiple_types = False
 
     def __init__(self, vendor_id=None, manifest=None, hosting=None):
-        # type: (Optional[str], Optional[Manifest_SkillManifestV1], Optional[AlexaHosted_HostingConfigurationV1]) -> None
+        # type: (Optional[str], Optional[SkillManifest_312bea88], Optional[HostingConfiguration_695b9ede]) -> None
         """
 
         :param vendor_id: ID of the vendor owning the skill.

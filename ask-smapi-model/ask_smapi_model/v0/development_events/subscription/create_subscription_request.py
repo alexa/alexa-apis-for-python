@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v0.development_events.subscription.event import Event as Subscription_EventV0
+    from ask_smapi_model.v0.development_events.subscription.event import Event as Event_a93e65dc
 
 
 class CreateSubscriptionRequest(object):
@@ -55,7 +55,7 @@ class CreateSubscriptionRequest(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, events=None, vendor_id=None, subscriber_id=None):
-        # type: (Optional[str], Optional[List[Subscription_EventV0]], Optional[str], Optional[str]) -> None
+        # type: (Optional[str], Optional[List[Event_a93e65dc]], Optional[str], Optional[str]) -> None
         """
 
         :param name: Name of the subscription.

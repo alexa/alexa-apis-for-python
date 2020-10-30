@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.jobs.job_definition_metadata import JobDefinitionMetadata as Jobs_JobDefinitionMetadataV1
-    from ask_smapi_model.v1.skill.interaction_model.jobs.job_api_pagination_context import JobAPIPaginationContext as Jobs_JobAPIPaginationContextV1
-    from ask_smapi_model.v1.links import Links as V1_LinksV1
+    from ask_smapi_model.v1.skill.interaction_model.jobs.job_api_pagination_context import JobAPIPaginationContext as JobAPIPaginationContext_8ba512fb
+    from ask_smapi_model.v1.links import Links as Links_bc43467b
+    from ask_smapi_model.v1.skill.interaction_model.jobs.job_definition_metadata import JobDefinitionMetadata as JobDefinitionMetadata_c4abc32a
 
 
 class ListJobDefinitionsResponse(object):
@@ -55,7 +55,7 @@ class ListJobDefinitionsResponse(object):
     supports_multiple_types = False
 
     def __init__(self, pagination_context=None, links=None, jobs=None):
-        # type: (Optional[Jobs_JobAPIPaginationContextV1], Optional[V1_LinksV1], Optional[List[Jobs_JobDefinitionMetadataV1]]) -> None
+        # type: (Optional[JobAPIPaginationContext_8ba512fb], Optional[Links_bc43467b], Optional[List[JobDefinitionMetadata_c4abc32a]]) -> None
         """The response of list job definitions.
 
         :param pagination_context: 

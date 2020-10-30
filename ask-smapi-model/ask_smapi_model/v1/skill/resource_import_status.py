@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.response_status import ResponseStatus as Skill_ResponseStatusV1
-    from ask_smapi_model.v1.skill.action import Action as Skill_ActionV1
-    from ask_smapi_model.v1.skill.standardized_error import StandardizedError as Skill_StandardizedErrorV1
+    from ask_smapi_model.v1.skill.response_status import ResponseStatus as ResponseStatus_95347977
+    from ask_smapi_model.v1.skill.standardized_error import StandardizedError as StandardizedError_f5106a89
+    from ask_smapi_model.v1.skill.action import Action as Action_fd8d3e88
 
 
 class ResourceImportStatus(object):
@@ -63,7 +63,7 @@ class ResourceImportStatus(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, status=None, action=None, errors=None, warnings=None):
-        # type: (Optional[str], Optional[Skill_ResponseStatusV1], Optional[Skill_ActionV1], Optional[List[Skill_StandardizedErrorV1]], Optional[List[Skill_StandardizedErrorV1]]) -> None
+        # type: (Optional[str], Optional[ResponseStatus_95347977], Optional[Action_fd8d3e88], Optional[List[StandardizedError_f5106a89]], Optional[List[StandardizedError_f5106a89]]) -> None
         """Defines the structure for a resource deployment status.
 
         :param name: Resource name. eg. manifest, interactionModels.en_US and so on.

@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.asr.evaluations.skill import Skill as Evaluations_SkillV1
+    from ask_smapi_model.v1.skill.asr.evaluations.skill import Skill as Skill_9cb28c29
 
 
 class PostAsrEvaluationsRequestObject(object):
@@ -47,7 +47,7 @@ class PostAsrEvaluationsRequestObject(object):
     supports_multiple_types = False
 
     def __init__(self, skill=None, annotation_set_id=None):
-        # type: (Optional[Evaluations_SkillV1], Optional[str]) -> None
+        # type: (Optional[Skill_9cb28c29], Optional[str]) -> None
         """
 
         :param skill: 

@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.links import Links as V1_LinksV1
-    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.pagination_context import PaginationContext as ConflictDetection_PaginationContextV1
+    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.pagination_context import PaginationContext as PaginationContext_25fb50cf
+    from ask_smapi_model.v1.links import Links as Links_bc43467b
 
 
 class PagedResponse(object):
@@ -48,7 +48,7 @@ class PagedResponse(object):
     supports_multiple_types = False
 
     def __init__(self, pagination_context=None, links=None):
-        # type: (Optional[ConflictDetection_PaginationContextV1], Optional[V1_LinksV1]) -> None
+        # type: (Optional[PaginationContext_25fb50cf], Optional[Links_bc43467b]) -> None
         """
 
         :param pagination_context: 

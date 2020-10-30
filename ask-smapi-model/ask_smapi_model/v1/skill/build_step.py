@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.build_step_name import BuildStepName as Skill_BuildStepNameV1
-    from ask_smapi_model.v1.skill.standardized_error import StandardizedError as Skill_StandardizedErrorV1
-    from ask_smapi_model.v1.skill.status import Status as Skill_StatusV1
+    from ask_smapi_model.v1.skill.build_step_name import BuildStepName as BuildStepName_524a98be
+    from ask_smapi_model.v1.skill.status import Status as Status_585d1308
+    from ask_smapi_model.v1.skill.standardized_error import StandardizedError as StandardizedError_f5106a89
 
 
 class BuildStep(object):
@@ -55,7 +55,7 @@ class BuildStep(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, status=None, errors=None):
-        # type: (Optional[Skill_BuildStepNameV1], Optional[Skill_StatusV1], Optional[List[Skill_StandardizedErrorV1]]) -> None
+        # type: (Optional[BuildStepName_524a98be], Optional[Status_585d1308], Optional[List[StandardizedError_f5106a89]]) -> None
         """Describes the status of a build step.
 
         :param name: 

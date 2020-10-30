@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.catalog.upload.file_upload_status import FileUploadStatus as Upload_FileUploadStatusV1
+    from ask_smapi_model.v1.catalog.upload.file_upload_status import FileUploadStatus as FileUploadStatus_e5a3f0c1
 
 
 class ContentUploadFileSummary(object):
@@ -51,7 +51,7 @@ class ContentUploadFileSummary(object):
     supports_multiple_types = False
 
     def __init__(self, download_url=None, expires_at=None, status=None):
-        # type: (Optional[str], Optional[datetime], Optional[Upload_FileUploadStatusV1]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[FileUploadStatus_e5a3f0c1]) -> None
         """
 
         :param download_url: If the file is available for download, downloadUrl can be used to download the file.

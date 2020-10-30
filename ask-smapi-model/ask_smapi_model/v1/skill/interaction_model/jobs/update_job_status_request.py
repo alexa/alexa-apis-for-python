@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.jobs.job_definition_status import JobDefinitionStatus as Jobs_JobDefinitionStatusV1
+    from ask_smapi_model.v1.skill.interaction_model.jobs.job_definition_status import JobDefinitionStatus as JobDefinitionStatus_2d026a70
 
 
 class UpdateJobStatusRequest(object):
@@ -45,7 +45,7 @@ class UpdateJobStatusRequest(object):
     supports_multiple_types = False
 
     def __init__(self, status=None):
-        # type: (Optional[Jobs_JobDefinitionStatusV1]) -> None
+        # type: (Optional[JobDefinitionStatus_2d026a70]) -> None
         """Update job status.
 
         :param status: 

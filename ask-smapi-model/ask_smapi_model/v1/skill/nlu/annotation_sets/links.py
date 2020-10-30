@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.link import Link as V1_LinkV1
+    from ask_smapi_model.v1.link import Link as Link_5c161ca5
 
 
 class Links(object):
@@ -49,7 +49,7 @@ class Links(object):
     supports_multiple_types = False
 
     def __init__(self, object_self=None, next=None):
-        # type: (Optional[V1_LinkV1], Optional[V1_LinkV1]) -> None
+        # type: (Optional[Link_5c161ca5], Optional[Link_5c161ca5]) -> None
         """Links for the API navigation.
 
         :param object_self: 

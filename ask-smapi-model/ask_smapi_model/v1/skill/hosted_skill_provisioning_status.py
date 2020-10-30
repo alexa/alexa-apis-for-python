@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.hosted_skill_provisioning_last_update_request import HostedSkillProvisioningLastUpdateRequest as Skill_HostedSkillProvisioningLastUpdateRequestV1
+    from ask_smapi_model.v1.skill.hosted_skill_provisioning_last_update_request import HostedSkillProvisioningLastUpdateRequest as HostedSkillProvisioningLastUpdateRequest_93921317
 
 
 class HostedSkillProvisioningStatus(object):
@@ -45,7 +45,7 @@ class HostedSkillProvisioningStatus(object):
     supports_multiple_types = False
 
     def __init__(self, last_update_request=None):
-        # type: (Optional[Skill_HostedSkillProvisioningLastUpdateRequestV1]) -> None
+        # type: (Optional[HostedSkillProvisioningLastUpdateRequest_93921317]) -> None
         """Defines the provisioning status for hosted skill.
 
         :param last_update_request: 

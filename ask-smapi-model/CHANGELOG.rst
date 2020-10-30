@@ -155,3 +155,11 @@ This release contains the following changes :
 This release contains the following changes : 
 
 - Updating model definitions
+
+
+1.9.0
+~~~~~
+
+This release contains the following changes :
+- Add `Smart Home Evaluation APIs <https://developer.amazon.com/en-US/docs/alexa/smapi/smart-home-evaluation-api.html>`__.
+- Add `get resource schema API <https://developer.amazon.com/en-US/docs/alexa/smapi/skill-operations.html#get-skill-information>`__.

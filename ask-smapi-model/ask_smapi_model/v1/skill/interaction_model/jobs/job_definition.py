@@ -24,7 +24,7 @@ from abc import ABCMeta, abstractmethod
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.jobs.trigger import Trigger as Jobs_TriggerV1
+    from ask_smapi_model.v1.skill.interaction_model.jobs.trigger import Trigger as Trigger_ce25c582
 
 
 class JobDefinition(object):
@@ -73,7 +73,7 @@ class JobDefinition(object):
 
     @abstractmethod
     def __init__(self, object_type=None, trigger=None, status=None):
-        # type: (Optional[str], Optional[Jobs_TriggerV1], Optional[str]) -> None
+        # type: (Optional[str], Optional[Trigger_ce25c582], Optional[str]) -> None
         """Definition for dynamic job.
 
         :param object_type: Polymorphic type of the job

@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.nlu.evaluations.results import Results as Evaluations_ResultsV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.results import Results as Results_eb19baaa
 
 
 class GetNLUEvaluationResponseLinks(object):
@@ -43,7 +43,7 @@ class GetNLUEvaluationResponseLinks(object):
     supports_multiple_types = False
 
     def __init__(self, results=None):
-        # type: (Optional[Evaluations_ResultsV1]) -> None
+        # type: (Optional[Results_eb19baaa]) -> None
         """
 
         :param results: 

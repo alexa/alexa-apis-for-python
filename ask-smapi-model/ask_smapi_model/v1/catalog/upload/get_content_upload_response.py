@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.catalog.upload.upload_ingestion_step import UploadIngestionStep as Upload_UploadIngestionStepV1
-    from ask_smapi_model.v1.catalog.upload.content_upload_file_summary import ContentUploadFileSummary as Upload_ContentUploadFileSummaryV1
-    from ask_smapi_model.v1.catalog.upload.upload_status import UploadStatus as Upload_UploadStatusV1
+    from ask_smapi_model.v1.catalog.upload.upload_ingestion_step import UploadIngestionStep as UploadIngestionStep_ba905697
+    from ask_smapi_model.v1.catalog.upload.upload_status import UploadStatus as UploadStatus_f27ab940
+    from ask_smapi_model.v1.catalog.upload.content_upload_file_summary import ContentUploadFileSummary as ContentUploadFileSummary_69b0be32
 
 
 class GetContentUploadResponse(object):
@@ -69,7 +69,7 @@ class GetContentUploadResponse(object):
     supports_multiple_types = False
 
     def __init__(self, id=None, catalog_id=None, status=None, created_date=None, last_updated_date=None, file=None, ingestion_steps=None):
-        # type: (Optional[str], Optional[str], Optional[Upload_UploadStatusV1], Optional[datetime], Optional[datetime], Optional[Upload_ContentUploadFileSummaryV1], Optional[List[Upload_UploadIngestionStepV1]]) -> None
+        # type: (Optional[str], Optional[str], Optional[UploadStatus_f27ab940], Optional[datetime], Optional[datetime], Optional[ContentUploadFileSummary_69b0be32], Optional[List[UploadIngestionStep_ba905697]]) -> None
         """
 
         :param id: Unique identifier of the upload

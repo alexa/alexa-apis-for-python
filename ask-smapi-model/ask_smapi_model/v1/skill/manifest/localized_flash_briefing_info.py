@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.localized_flash_briefing_info_items import LocalizedFlashBriefingInfoItems as Manifest_LocalizedFlashBriefingInfoItemsV1
+    from ask_smapi_model.v1.skill.manifest.localized_flash_briefing_info_items import LocalizedFlashBriefingInfoItems as LocalizedFlashBriefingInfoItems_61b30981
 
 
 class LocalizedFlashBriefingInfo(object):
@@ -49,7 +49,7 @@ class LocalizedFlashBriefingInfo(object):
     supports_multiple_types = False
 
     def __init__(self, feeds=None, custom_error_message=None):
-        # type: (Optional[List[Manifest_LocalizedFlashBriefingInfoItemsV1]], Optional[str]) -> None
+        # type: (Optional[List[LocalizedFlashBriefingInfoItems_61b30981]], Optional[str]) -> None
         """Defines the localized flash briefing api information.
 
         :param feeds: Defines the structure for a feed information in the skill manifest.

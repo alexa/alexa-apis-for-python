@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v2.skill.simulations.resolutions_per_authority_items import ResolutionsPerAuthorityItems as Simulations_ResolutionsPerAuthorityItemsV2
+    from ask_smapi_model.v2.skill.simulations.resolutions_per_authority_items import ResolutionsPerAuthorityItems as ResolutionsPerAuthorityItems_57e5779e
 
 
 class SlotResolutions(object):
@@ -45,7 +45,7 @@ class SlotResolutions(object):
     supports_multiple_types = False
 
     def __init__(self, resolutions_per_authority=None):
-        # type: (Optional[List[Simulations_ResolutionsPerAuthorityItemsV2]]) -> None
+        # type: (Optional[List[ResolutionsPerAuthorityItems_57e5779e]]) -> None
         """A resolutions object representing the results of resolving the words captured from the user&#39;s utterance. 
 
         :param resolutions_per_authority: An array of objects representing each possible authority for entity resolution. An authority represents the source for the data provided for the slot. For a custom slot type, the authority is the slot type you defined. 

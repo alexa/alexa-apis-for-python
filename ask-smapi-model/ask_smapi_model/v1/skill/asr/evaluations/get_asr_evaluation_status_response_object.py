@@ -24,10 +24,10 @@ from ask_smapi_model.v1.skill.asr.evaluations.evaluation_metadata import Evaluat
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.asr.evaluations.error_object import ErrorObject as Evaluations_ErrorObjectV1
-    from ask_smapi_model.v1.skill.asr.evaluations.evaluation_metadata_result import EvaluationMetadataResult as Evaluations_EvaluationMetadataResultV1
-    from ask_smapi_model.v1.skill.asr.evaluations.evaluation_status import EvaluationStatus as Evaluations_EvaluationStatusV1
-    from ask_smapi_model.v1.skill.asr.evaluations.post_asr_evaluations_request_object import PostAsrEvaluationsRequestObject as Evaluations_PostAsrEvaluationsRequestObjectV1
+    from ask_smapi_model.v1.skill.asr.evaluations.post_asr_evaluations_request_object import PostAsrEvaluationsRequestObject as PostAsrEvaluationsRequestObject_133223f3
+    from ask_smapi_model.v1.skill.asr.evaluations.evaluation_status import EvaluationStatus as EvaluationStatus_65f63d72
+    from ask_smapi_model.v1.skill.asr.evaluations.error_object import ErrorObject as ErrorObject_27eea4fa
+    from ask_smapi_model.v1.skill.asr.evaluations.evaluation_metadata_result import EvaluationMetadataResult as EvaluationMetadataResult_4f735ec1
 
 
 class GetAsrEvaluationStatusResponseObject(EvaluationMetadata):
@@ -71,7 +71,7 @@ class GetAsrEvaluationStatusResponseObject(EvaluationMetadata):
     supports_multiple_types = False
 
     def __init__(self, status=None, total_evaluation_count=None, completed_evaluation_count=None, start_timestamp=None, request=None, error=None, result=None):
-        # type: (Optional[Evaluations_EvaluationStatusV1], Optional[float], Optional[float], Optional[datetime], Optional[Evaluations_PostAsrEvaluationsRequestObjectV1], Optional[Evaluations_ErrorObjectV1], Optional[Evaluations_EvaluationMetadataResultV1]) -> None
+        # type: (Optional[EvaluationStatus_65f63d72], Optional[float], Optional[float], Optional[datetime], Optional[PostAsrEvaluationsRequestObject_133223f3], Optional[ErrorObject_27eea4fa], Optional[EvaluationMetadataResult_4f735ec1]) -> None
         """
 
         :param status: 

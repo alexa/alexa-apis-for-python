@@ -24,8 +24,8 @@ from ask_smapi_model.v1.skill.manifest.interface import Interface
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.display_interface_apml_version import DisplayInterfaceApmlVersion as Manifest_DisplayInterfaceApmlVersionV1
-    from ask_smapi_model.v1.skill.manifest.display_interface_template_version import DisplayInterfaceTemplateVersion as Manifest_DisplayInterfaceTemplateVersionV1
+    from ask_smapi_model.v1.skill.manifest.display_interface_apml_version import DisplayInterfaceApmlVersion as DisplayInterfaceApmlVersion_558fc1e8
+    from ask_smapi_model.v1.skill.manifest.display_interface_template_version import DisplayInterfaceTemplateVersion as DisplayInterfaceTemplateVersion_13978768
 
 
 class DisplayInterface(Interface):
@@ -53,7 +53,7 @@ class DisplayInterface(Interface):
     supports_multiple_types = False
 
     def __init__(self, minimum_template_version=None, minimum_apml_version=None):
-        # type: (Optional[Manifest_DisplayInterfaceTemplateVersionV1], Optional[Manifest_DisplayInterfaceApmlVersionV1]) -> None
+        # type: (Optional[DisplayInterfaceTemplateVersion_13978768], Optional[DisplayInterfaceApmlVersion_558fc1e8]) -> None
         """Used to declare that the skill uses the Display interface. When a skill declares that it uses the Display interface the Display interface will be passed in the supportedInterfaces section of devices which meet any of the required minimum version attributes specified in the manifest. If the device does not meet any of the minimum versions specified in the manifest the Display interface will not be present in the supportedInterfaces section. If neither the minimumTemplateVersion nor the minimumApmlVersion attributes are specified in the manifes then the minimumTemplateVersion is defaulted to 1.0 and apmlVersion is omitted.
 
         :param minimum_template_version: 

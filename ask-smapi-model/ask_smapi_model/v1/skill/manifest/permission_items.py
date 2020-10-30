@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.permission_name import PermissionName as Manifest_PermissionNameV1
+    from ask_smapi_model.v1.skill.manifest.permission_name import PermissionName as PermissionName_64e2a506
 
 
 class PermissionItems(object):
@@ -43,7 +43,7 @@ class PermissionItems(object):
     supports_multiple_types = False
 
     def __init__(self, name=None):
-        # type: (Optional[Manifest_PermissionNameV1]) -> None
+        # type: (Optional[PermissionName_64e2a506]) -> None
         """
 
         :param name: 

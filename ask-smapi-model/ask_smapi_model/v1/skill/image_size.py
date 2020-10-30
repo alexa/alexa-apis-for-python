@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.image_size_unit import ImageSizeUnit as Skill_ImageSizeUnitV1
+    from ask_smapi_model.v1.skill.image_size_unit import ImageSizeUnit as ImageSizeUnit_6d76202a
 
 
 class ImageSize(object):
@@ -49,7 +49,7 @@ class ImageSize(object):
     supports_multiple_types = False
 
     def __init__(self, value=None, unit=None):
-        # type: (Optional[float], Optional[Skill_ImageSizeUnitV1]) -> None
+        # type: (Optional[float], Optional[ImageSizeUnit_6d76202a]) -> None
         """On disk storage size of image.
 
         :param value: Value measuring the size of the image.

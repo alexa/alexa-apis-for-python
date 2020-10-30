@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v2.skill.invocations.end_point_regions import EndPointRegions as Invocations_EndPointRegionsV2
-    from ask_smapi_model.v2.skill.invocations.skill_request import SkillRequest as Invocations_SkillRequestV2
+    from ask_smapi_model.v2.skill.invocations.skill_request import SkillRequest as SkillRequest_eec4e59b
+    from ask_smapi_model.v2.skill.invocations.end_point_regions import EndPointRegions as EndPointRegions_8b6a8458
 
 
 class InvocationsApiRequest(object):
@@ -48,7 +48,7 @@ class InvocationsApiRequest(object):
     supports_multiple_types = False
 
     def __init__(self, endpoint_region=None, skill_request=None):
-        # type: (Optional[Invocations_EndPointRegionsV2], Optional[Invocations_SkillRequestV2]) -> None
+        # type: (Optional[EndPointRegions_8b6a8458], Optional[SkillRequest_eec4e59b]) -> None
         """
 
         :param endpoint_region: 

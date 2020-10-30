@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.jobs.job_definition import JobDefinition as Jobs_JobDefinitionV1
+    from ask_smapi_model.v1.skill.interaction_model.jobs.job_definition import JobDefinition as JobDefinition_ee5db797
 
 
 class CreateJobDefinitionRequest(object):
@@ -49,7 +49,7 @@ class CreateJobDefinitionRequest(object):
     supports_multiple_types = False
 
     def __init__(self, vendor_id=None, job_definition=None):
-        # type: (Optional[str], Optional[Jobs_JobDefinitionV1]) -> None
+        # type: (Optional[str], Optional[JobDefinition_ee5db797]) -> None
         """Request to create job definitions.
 
         :param vendor_id: ID of the vendor owning the skill.

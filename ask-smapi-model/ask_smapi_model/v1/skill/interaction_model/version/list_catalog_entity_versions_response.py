@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.version.catalog_entity_version import CatalogEntityVersion as Version_CatalogEntityVersionV1
-    from ask_smapi_model.v1.skill.interaction_model.version.links import Links as Version_LinksV1
+    from ask_smapi_model.v1.skill.interaction_model.version.links import Links as Links_7f14ca56
+    from ask_smapi_model.v1.skill.interaction_model.version.catalog_entity_version import CatalogEntityVersion as CatalogEntityVersion_3888263a
 
 
 class ListCatalogEntityVersionsResponse(object):
@@ -62,7 +62,7 @@ class ListCatalogEntityVersionsResponse(object):
     supports_multiple_types = False
 
     def __init__(self, links=None, catalog_versions=None, is_truncated=None, next_token=None, total_count=None):
-        # type: (Optional[Version_LinksV1], Optional[List[Version_CatalogEntityVersionV1]], Optional[bool], Optional[str], Optional[int]) -> None
+        # type: (Optional[Links_7f14ca56], Optional[List[CatalogEntityVersion_3888263a]], Optional[bool], Optional[str], Optional[int]) -> None
         """List of catalog versions of a catalog for the vendor in sortDirection order, descending as default.
 
         :param links: 

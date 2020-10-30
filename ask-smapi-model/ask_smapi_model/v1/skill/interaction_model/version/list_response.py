@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.links import Links as V1_LinksV1
-    from ask_smapi_model.v1.skill.interaction_model.version.version_items import VersionItems as Version_VersionItemsV1
+    from ask_smapi_model.v1.links import Links as Links_bc43467b
+    from ask_smapi_model.v1.skill.interaction_model.version.version_items import VersionItems as VersionItems_678f4ab
 
 
 class ListResponse(object):
@@ -58,7 +58,7 @@ class ListResponse(object):
     supports_multiple_types = False
 
     def __init__(self, links=None, skill_model_versions=None, is_truncated=None, next_token=None):
-        # type: (Optional[V1_LinksV1], Optional[List[Version_VersionItemsV1]], Optional[bool], Optional[str]) -> None
+        # type: (Optional[Links_bc43467b], Optional[List[VersionItems_678f4ab]], Optional[bool], Optional[str]) -> None
         """List of interactionModel versions of a skill for the vendor
 
         :param links: 

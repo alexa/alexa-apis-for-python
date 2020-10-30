@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_runtime import HostedSkillRuntime as AlexaHosted_HostedSkillRuntimeV1
-    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_repository_info import HostedSkillRepositoryInfo as AlexaHosted_HostedSkillRepositoryInfoV1
+    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_runtime import HostedSkillRuntime as HostedSkillRuntime_6f3a4c25
+    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_repository_info import HostedSkillRepositoryInfo as HostedSkillRepositoryInfo_957f5416
 
 
 class HostedSkillInfo(object):
@@ -48,7 +48,7 @@ class HostedSkillInfo(object):
     supports_multiple_types = False
 
     def __init__(self, repository=None, runtime=None):
-        # type: (Optional[AlexaHosted_HostedSkillRepositoryInfoV1], Optional[AlexaHosted_HostedSkillRuntimeV1]) -> None
+        # type: (Optional[HostedSkillRepositoryInfo_957f5416], Optional[HostedSkillRuntime_6f3a4c25]) -> None
         """
 
         :param repository: 

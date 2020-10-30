@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.skill_messaging_credentials import SkillMessagingCredentials as Skill_SkillMessagingCredentialsV1
+    from ask_smapi_model.v1.skill.skill_messaging_credentials import SkillMessagingCredentials as SkillMessagingCredentials_a95ce148
 
 
 class SkillCredentials(object):
@@ -45,7 +45,7 @@ class SkillCredentials(object):
     supports_multiple_types = False
 
     def __init__(self, skill_messaging_credentials=None):
-        # type: (Optional[Skill_SkillMessagingCredentialsV1]) -> None
+        # type: (Optional[SkillMessagingCredentials_a95ce148]) -> None
         """Structure for skill credentials response.
 
         :param skill_messaging_credentials: 

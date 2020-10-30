@@ -24,7 +24,7 @@ from ask_smapi_model.v0.event_schema.base_schema import BaseSchema
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v0.event_schema.skill_event_attributes import SkillEventAttributes as EventSchema_SkillEventAttributesV0
+    from ask_smapi_model.v0.event_schema.skill_event_attributes import SkillEventAttributes as SkillEventAttributes_c0873626
 
 
 class SkillCertification(BaseSchema):
@@ -56,7 +56,7 @@ class SkillCertification(BaseSchema):
     supports_multiple_types = False
 
     def __init__(self, timestamp=None, request_id=None, payload=None):
-        # type: (Optional[datetime], Optional[str], Optional[EventSchema_SkillEventAttributesV0]) -> None
+        # type: (Optional[datetime], Optional[str], Optional[SkillEventAttributes_c0873626]) -> None
         """&#39;AlexaDevelopmentEvent.SkillCertification&#39; event represents the status of various validations of &#x60;certification workflow&#x60;. This step may complete either with &#x60;SUCCEEDED&#x60; or &#x60;FAILED&#x60; status. 
 
         :param timestamp: ISO 8601 timestamp for the instant when event was created. 

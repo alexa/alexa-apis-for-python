@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.isp.localized_privacy_and_compliance import LocalizedPrivacyAndCompliance as Isp_LocalizedPrivacyAndComplianceV1
+    from ask_smapi_model.v1.isp.localized_privacy_and_compliance import LocalizedPrivacyAndCompliance as LocalizedPrivacyAndCompliance_df1dc646
 
 
 class PrivacyAndCompliance(object):
@@ -45,7 +45,7 @@ class PrivacyAndCompliance(object):
     supports_multiple_types = False
 
     def __init__(self, locales=None):
-        # type: (Optional[Dict[str, Isp_LocalizedPrivacyAndComplianceV1]]) -> None
+        # type: (Optional[Dict[str, LocalizedPrivacyAndCompliance_df1dc646]]) -> None
         """Defines the structure for privacy and compliance.
 
         :param locales: Defines the structure for locale specific privacy and compliance.

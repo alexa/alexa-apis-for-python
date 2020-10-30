@@ -23,10 +23,10 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.links import Links as V1_LinksV1
-    from ask_smapi_model.v1.stage_v2_type import StageV2Type as V1_StageV2TypeV1
-    from ask_smapi_model.v1.skill.skill_summary_apis import SkillSummaryApis as Skill_SkillSummaryApisV1
-    from ask_smapi_model.v1.skill.publication_status import PublicationStatus as Skill_PublicationStatusV1
+    from ask_smapi_model.v1.stage_v2_type import StageV2Type as StageV2Type_72e74959
+    from ask_smapi_model.v1.skill.skill_summary_apis import SkillSummaryApis as SkillSummaryApis_dd99d3d6
+    from ask_smapi_model.v1.links import Links as Links_bc43467b
+    from ask_smapi_model.v1.skill.publication_status import PublicationStatus as PublicationStatus_faee621b
 
 
 class SkillSummary(object):
@@ -76,7 +76,7 @@ class SkillSummary(object):
     supports_multiple_types = False
 
     def __init__(self, skill_id=None, stage=None, apis=None, publication_status=None, last_updated=None, name_by_locale=None, asin=None, links=None):
-        # type: (Optional[str], Optional[V1_StageV2TypeV1], Optional[List[Skill_SkillSummaryApisV1]], Optional[Skill_PublicationStatusV1], Optional[datetime], Optional[Dict[str, object]], Optional[str], Optional[V1_LinksV1]) -> None
+        # type: (Optional[str], Optional[StageV2Type_72e74959], Optional[List[SkillSummaryApis_dd99d3d6]], Optional[PublicationStatus_faee621b], Optional[datetime], Optional[Dict[str, object]], Optional[str], Optional[Links_bc43467b]) -> None
         """Information about the skills.
 
         :param skill_id: 

@@ -24,7 +24,7 @@ from ask_smapi_model.v0.event_schema.base_schema import BaseSchema
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v0.event_schema.interaction_model_event_attributes import InteractionModelEventAttributes as EventSchema_InteractionModelEventAttributesV0
+    from ask_smapi_model.v0.event_schema.interaction_model_event_attributes import InteractionModelEventAttributes as InteractionModelEventAttributes_d09fc769
 
 
 class InteractionModelUpdate(BaseSchema):
@@ -56,7 +56,7 @@ class InteractionModelUpdate(BaseSchema):
     supports_multiple_types = False
 
     def __init__(self, timestamp=None, request_id=None, payload=None):
-        # type: (Optional[datetime], Optional[str], Optional[EventSchema_InteractionModelEventAttributesV0]) -> None
+        # type: (Optional[datetime], Optional[str], Optional[InteractionModelEventAttributes_d09fc769]) -> None
         """&#39;AlexaDevelopmentEvent.InteractionModelUpdate&#39; event represents the status of set/update interaction model request. The update request may complete either with &#x60;SUCCEEDED&#x60; or &#x60;FAILED&#x60; status. 
 
         :param timestamp: ISO 8601 timestamp for the instant when event was created. 

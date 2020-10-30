@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v0.links import Links as V0_LinksV0
-    from ask_smapi_model.v0.catalog.upload.content_upload_summary import ContentUploadSummary as Upload_ContentUploadSummaryV0
+    from ask_smapi_model.v0.links import Links as Links_cdc03ffa
+    from ask_smapi_model.v0.catalog.upload.content_upload_summary import ContentUploadSummary as ContentUploadSummary_8ef77e7e
 
 
 class ListUploadsResponse(object):
@@ -56,7 +56,7 @@ class ListUploadsResponse(object):
     supports_multiple_types = False
 
     def __init__(self, links=None, is_truncated=None, next_token=None, uploads=None):
-        # type: (Optional[V0_LinksV0], Optional[bool], Optional[str], Optional[List[Upload_ContentUploadSummaryV0]]) -> None
+        # type: (Optional[Links_cdc03ffa], Optional[bool], Optional[str], Optional[List[ContentUploadSummary_8ef77e7e]]) -> None
         """
 
         :param links: 

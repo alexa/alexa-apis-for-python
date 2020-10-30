@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.regional_ssl_certificate import RegionalSSLCertificate as Skill_RegionalSSLCertificateV1
+    from ask_smapi_model.v1.skill.regional_ssl_certificate import RegionalSSLCertificate as RegionalSSLCertificate_6484866e
 
 
 class SSLCertificatePayload(object):
@@ -47,7 +47,7 @@ class SSLCertificatePayload(object):
     supports_multiple_types = False
 
     def __init__(self, ssl_certificate=None, regions=None):
-        # type: (Optional[str], Optional[Dict[str, Skill_RegionalSSLCertificateV1]]) -> None
+        # type: (Optional[str], Optional[Dict[str, RegionalSSLCertificate_6484866e]]) -> None
         """
 
         :param ssl_certificate: The default ssl certificate for the skill. If a request is made for a region without an explicit ssl certificate, this certificate will be used.

@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_version_data_object import SlotTypeVersionDataObject as TypeVersion_SlotTypeVersionDataObjectV1
+    from ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_version_data_object import SlotTypeVersionDataObject as SlotTypeVersionDataObject_9bb98401
 
 
 class SlotTypeVersionData(object):
@@ -45,7 +45,7 @@ class SlotTypeVersionData(object):
     supports_multiple_types = False
 
     def __init__(self, slot_type=None):
-        # type: (Optional[TypeVersion_SlotTypeVersionDataObjectV1]) -> None
+        # type: (Optional[SlotTypeVersionDataObject_9bb98401]) -> None
         """Slot Type version data with metadata.
 
         :param slot_type: 

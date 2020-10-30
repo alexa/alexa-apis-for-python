@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.multiple_values_config import MultipleValuesConfig as InteractionModel_MultipleValuesConfigV1
+    from ask_smapi_model.v1.skill.interaction_model.multiple_values_config import MultipleValuesConfig as MultipleValuesConfig_83acc8ba
 
 
 class SlotDefinition(object):
@@ -57,7 +57,7 @@ class SlotDefinition(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, object_type=None, multiple_values=None, samples=None):
-        # type: (Optional[str], Optional[str], Optional[InteractionModel_MultipleValuesConfigV1], Optional[List[object]]) -> None
+        # type: (Optional[str], Optional[str], Optional[MultipleValuesConfig_83acc8ba], Optional[List[object]]) -> None
         """Slot definition.
 
         :param name: The name of the slot.

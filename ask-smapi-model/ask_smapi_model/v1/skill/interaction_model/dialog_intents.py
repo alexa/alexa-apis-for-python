@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.dialog_slot_items import DialogSlotItems as InteractionModel_DialogSlotItemsV1
-    from ask_smapi_model.v1.skill.interaction_model.dialog_intents_prompts import DialogIntentsPrompts as InteractionModel_DialogIntentsPromptsV1
-    from ask_smapi_model.v1.skill.interaction_model.delegation_strategy_type import DelegationStrategyType as InteractionModel_DelegationStrategyTypeV1
+    from ask_smapi_model.v1.skill.interaction_model.delegation_strategy_type import DelegationStrategyType as DelegationStrategyType_41525f1c
+    from ask_smapi_model.v1.skill.interaction_model.dialog_intents_prompts import DialogIntentsPrompts as DialogIntentsPrompts_21433a86
+    from ask_smapi_model.v1.skill.interaction_model.dialog_slot_items import DialogSlotItems as DialogSlotItems_b80f42ca
 
 
 class DialogIntents(object):
@@ -61,7 +61,7 @@ class DialogIntents(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, delegation_strategy=None, slots=None, confirmation_required=None, prompts=None):
-        # type: (Optional[str], Optional[InteractionModel_DelegationStrategyTypeV1], Optional[List[InteractionModel_DialogSlotItemsV1]], Optional[bool], Optional[InteractionModel_DialogIntentsPromptsV1]) -> None
+        # type: (Optional[str], Optional[DelegationStrategyType_41525f1c], Optional[List[DialogSlotItems_b80f42ca]], Optional[bool], Optional[DialogIntentsPrompts_21433a86]) -> None
         """
 
         :param name: Name of the intent that has a dialog specification.

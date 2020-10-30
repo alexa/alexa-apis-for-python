@@ -23,11 +23,12 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.isp.purchasable_state import PurchasableState as Isp_PurchasableStateV1
-    from ask_smapi_model.v1.isp.privacy_and_compliance import PrivacyAndCompliance as Isp_PrivacyAndComplianceV1
-    from ask_smapi_model.v1.isp.subscription_information import SubscriptionInformation as Isp_SubscriptionInformationV1
-    from ask_smapi_model.v1.isp.publishing_information import PublishingInformation as Isp_PublishingInformationV1
-    from ask_smapi_model.v1.isp.product_type import ProductType as Isp_ProductTypeV1
+    from ask_smapi_model.v1.isp.product_type import ProductType as ProductType_bf0e7936
+    from ask_smapi_model.v1.isp.promotable_state import PromotableState as PromotableState_25399706
+    from ask_smapi_model.v1.isp.publishing_information import PublishingInformation as PublishingInformation_e7caf3fc
+    from ask_smapi_model.v1.isp.privacy_and_compliance import PrivacyAndCompliance as PrivacyAndCompliance_bf320b8d
+    from ask_smapi_model.v1.isp.subscription_information import SubscriptionInformation as SubscriptionInformation_f76debbc
+    from ask_smapi_model.v1.isp.purchasable_state import PurchasableState as PurchasableState_c58a6ca2
 
 
 class InSkillProductDefinition(object):
@@ -43,6 +44,8 @@ class InSkillProductDefinition(object):
     :type reference_name: (optional) str
     :param purchasable_state: 
     :type purchasable_state: (optional) ask_smapi_model.v1.isp.purchasable_state.PurchasableState
+    :param promotable_state: 
+    :type promotable_state: (optional) ask_smapi_model.v1.isp.promotable_state.PromotableState
     :param subscription_information: 
     :type subscription_information: (optional) ask_smapi_model.v1.isp.subscription_information.SubscriptionInformation
     :param publishing_information: 
@@ -58,6 +61,7 @@ class InSkillProductDefinition(object):
         'object_type': 'ask_smapi_model.v1.isp.product_type.ProductType',
         'reference_name': 'str',
         'purchasable_state': 'ask_smapi_model.v1.isp.purchasable_state.PurchasableState',
+        'promotable_state': 'ask_smapi_model.v1.isp.promotable_state.PromotableState',
         'subscription_information': 'ask_smapi_model.v1.isp.subscription_information.SubscriptionInformation',
         'publishing_information': 'ask_smapi_model.v1.isp.publishing_information.PublishingInformation',
         'privacy_and_compliance': 'ask_smapi_model.v1.isp.privacy_and_compliance.PrivacyAndCompliance',
@@ -69,6 +73,7 @@ class InSkillProductDefinition(object):
         'object_type': 'type',
         'reference_name': 'referenceName',
         'purchasable_state': 'purchasableState',
+        'promotable_state': 'promotableState',
         'subscription_information': 'subscriptionInformation',
         'publishing_information': 'publishingInformation',
         'privacy_and_compliance': 'privacyAndCompliance',
@@ -76,8 +81,8 @@ class InSkillProductDefinition(object):
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, version=None, object_type=None, reference_name=None, purchasable_state=None, subscription_information=None, publishing_information=None, privacy_and_compliance=None, testing_instructions=None):
-        # type: (Optional[str], Optional[Isp_ProductTypeV1], Optional[str], Optional[Isp_PurchasableStateV1], Optional[Isp_SubscriptionInformationV1], Optional[Isp_PublishingInformationV1], Optional[Isp_PrivacyAndComplianceV1], Optional[str]) -> None
+    def __init__(self, version=None, object_type=None, reference_name=None, purchasable_state=None, promotable_state=None, subscription_information=None, publishing_information=None, privacy_and_compliance=None, testing_instructions=None):
+        # type: (Optional[str], Optional[ProductType_bf0e7936], Optional[str], Optional[PurchasableState_c58a6ca2], Optional[PromotableState_25399706], Optional[SubscriptionInformation_f76debbc], Optional[PublishingInformation_e7caf3fc], Optional[PrivacyAndCompliance_bf320b8d], Optional[str]) -> None
         """Defines the structure for an in-skill product.
 
         :param version: Version of in-skill product definition.
@@ -88,6 +93,8 @@ class InSkillProductDefinition(object):
         :type reference_name: (optional) str
         :param purchasable_state: 
         :type purchasable_state: (optional) ask_smapi_model.v1.isp.purchasable_state.PurchasableState
+        :param promotable_state: 
+        :type promotable_state: (optional) ask_smapi_model.v1.isp.promotable_state.PromotableState
         :param subscription_information: 
         :type subscription_information: (optional) ask_smapi_model.v1.isp.subscription_information.SubscriptionInformation
         :param publishing_information: 
@@ -103,6 +110,7 @@ class InSkillProductDefinition(object):
         self.object_type = object_type
         self.reference_name = reference_name
         self.purchasable_state = purchasable_state
+        self.promotable_state = promotable_state
         self.subscription_information = subscription_information
         self.publishing_information = publishing_information
         self.privacy_and_compliance = privacy_and_compliance

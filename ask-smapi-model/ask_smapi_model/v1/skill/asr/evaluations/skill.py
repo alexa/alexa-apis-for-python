@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.stage_type import StageType as V1_StageTypeV1
+    from ask_smapi_model.v1.stage_type import StageType as StageType_700be16e
 
 
 class Skill(object):
@@ -47,7 +47,7 @@ class Skill(object):
     supports_multiple_types = False
 
     def __init__(self, stage=None, locale=None):
-        # type: (Optional[V1_StageTypeV1], Optional[str]) -> None
+        # type: (Optional[StageType_700be16e], Optional[str]) -> None
         """
 
         :param stage: 

@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.standardized_error import StandardizedError as Skill_StandardizedErrorV1
-    from ask_smapi_model.v1.skill.status import Status as Skill_StatusV1
-    from ask_smapi_model.v1.skill.build_details import BuildDetails as Skill_BuildDetailsV1
+    from ask_smapi_model.v1.skill.status import Status as Status_585d1308
+    from ask_smapi_model.v1.skill.build_details import BuildDetails as BuildDetails_e31a9a37
+    from ask_smapi_model.v1.skill.standardized_error import StandardizedError as StandardizedError_f5106a89
 
 
 class InteractionModelLastUpdateRequest(object):
@@ -59,7 +59,7 @@ class InteractionModelLastUpdateRequest(object):
     supports_multiple_types = False
 
     def __init__(self, status=None, errors=None, warnings=None, build_details=None):
-        # type: (Optional[Skill_StatusV1], Optional[List[Skill_StandardizedErrorV1]], Optional[List[Skill_StandardizedErrorV1]], Optional[Skill_BuildDetailsV1]) -> None
+        # type: (Optional[Status_585d1308], Optional[List[StandardizedError_f5106a89]], Optional[List[StandardizedError_f5106a89]], Optional[BuildDetails_e31a9a37]) -> None
         """Contains attributes related to last modification (create/update) request of a resource.
 
         :param status: 

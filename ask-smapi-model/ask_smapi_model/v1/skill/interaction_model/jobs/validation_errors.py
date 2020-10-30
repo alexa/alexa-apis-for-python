@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.jobs.dynamic_update_error import DynamicUpdateError as Jobs_DynamicUpdateErrorV1
+    from ask_smapi_model.v1.skill.interaction_model.jobs.dynamic_update_error import DynamicUpdateError as DynamicUpdateError_da9be79c
 
 
 class ValidationErrors(object):
@@ -45,7 +45,7 @@ class ValidationErrors(object):
     supports_multiple_types = False
 
     def __init__(self, errors=None):
-        # type: (Optional[List[Jobs_DynamicUpdateErrorV1]]) -> None
+        # type: (Optional[List[DynamicUpdateError_da9be79c]]) -> None
         """The list of errors.
 
         :param errors: The list of errors.

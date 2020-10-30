@@ -24,6 +24,7 @@ from .tax_information import TaxInformation
 from .stage import Stage
 from .summary_price_listing import SummaryPriceListing
 from .localized_publishing_information import LocalizedPublishingInformation
+from .promotable_state import PromotableState
 from .in_skill_product_definition import InSkillProductDefinition
 from .create_in_skill_product_request import CreateInSkillProductRequest
 from .subscription_information import SubscriptionInformation

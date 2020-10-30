@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.asr.evaluations.evaluation_result_status import EvaluationResultStatus as Evaluations_EvaluationResultStatusV1
-    from ask_smapi_model.v1.skill.asr.evaluations.metrics import Metrics as Evaluations_MetricsV1
+    from ask_smapi_model.v1.skill.asr.evaluations.evaluation_result_status import EvaluationResultStatus as EvaluationResultStatus_2e2193d
+    from ask_smapi_model.v1.skill.asr.evaluations.metrics import Metrics as Metrics_7a347fcd
 
 
 class EvaluationMetadataResult(object):
@@ -50,7 +50,7 @@ class EvaluationMetadataResult(object):
     supports_multiple_types = False
 
     def __init__(self, status=None, metrics=None):
-        # type: (Optional[Evaluations_EvaluationResultStatusV1], Optional[Evaluations_MetricsV1]) -> None
+        # type: (Optional[EvaluationResultStatus_2e2193d], Optional[Metrics_7a347fcd]) -> None
         """indicate the result of the evaluation. This field would be present if the evaluation status is &#x60;COMPLETED&#x60;
 
         :param status: 

@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.asr.evaluations.pagination_context import PaginationContext as Evaluations_PaginationContextV1
-    from ask_smapi_model.v1.skill.asr.evaluations.evaluation_result import EvaluationResult as Evaluations_EvaluationResultV1
+    from ask_smapi_model.v1.skill.asr.evaluations.evaluation_result import EvaluationResult as EvaluationResult_8b6638d2
+    from ask_smapi_model.v1.skill.asr.evaluations.pagination_context import PaginationContext as PaginationContext_d7ee8f7c
 
 
 class GetAsrEvaluationsResultsResponse(object):
@@ -50,7 +50,7 @@ class GetAsrEvaluationsResultsResponse(object):
     supports_multiple_types = False
 
     def __init__(self, results=None, pagination_context=None):
-        # type: (Optional[List[Evaluations_EvaluationResultV1]], Optional[Evaluations_PaginationContextV1]) -> None
+        # type: (Optional[List[EvaluationResult_8b6638d2]], Optional[PaginationContext_d7ee8f7c]) -> None
         """response for GetAsrEvaluationsResults
 
         :param results: array containing all evaluation results.

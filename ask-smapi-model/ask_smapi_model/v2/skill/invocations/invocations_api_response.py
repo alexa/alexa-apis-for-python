@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v2.skill.invocations.invocation_response_result import InvocationResponseResult as Invocations_InvocationResponseResultV2
-    from ask_smapi_model.v2.skill.invocations.invocation_response_status import InvocationResponseStatus as Invocations_InvocationResponseStatusV2
+    from ask_smapi_model.v2.skill.invocations.invocation_response_status import InvocationResponseStatus as InvocationResponseStatus_ba4e3760
+    from ask_smapi_model.v2.skill.invocations.invocation_response_result import InvocationResponseResult as InvocationResponseResult_6f362dc0
 
 
 class InvocationsApiResponse(object):
@@ -48,7 +48,7 @@ class InvocationsApiResponse(object):
     supports_multiple_types = False
 
     def __init__(self, status=None, result=None):
-        # type: (Optional[Invocations_InvocationResponseStatusV2], Optional[Invocations_InvocationResponseResultV2]) -> None
+        # type: (Optional[InvocationResponseStatus_ba4e3760], Optional[InvocationResponseResult_6f362dc0]) -> None
         """
 
         :param status: 

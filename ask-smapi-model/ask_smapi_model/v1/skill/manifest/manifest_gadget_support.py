@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.gadget_support import GadgetSupport as Manifest_GadgetSupportV1
+    from ask_smapi_model.v1.skill.manifest.gadget_support import GadgetSupport as GadgetSupport_718b090a
 
 
 class ManifestGadgetSupport(object):
@@ -61,7 +61,7 @@ class ManifestGadgetSupport(object):
     supports_multiple_types = False
 
     def __init__(self, requirement=None, min_gadget_buttons=None, max_gadget_buttons=None, num_players_max=None, num_players_min=None):
-        # type: (Optional[Manifest_GadgetSupportV1], Optional[int], Optional[int], Optional[int], Optional[int]) -> None
+        # type: (Optional[GadgetSupport_718b090a], Optional[int], Optional[int], Optional[int], Optional[int]) -> None
         """Defines the structure for gadget buttons support in the skill manifest.
 
         :param requirement: 

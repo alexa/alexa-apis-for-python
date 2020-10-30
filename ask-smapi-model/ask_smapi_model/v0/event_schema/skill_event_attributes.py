@@ -23,10 +23,10 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v0.event_schema.request_status import RequestStatus as EventSchema_RequestStatusV0
-    from ask_smapi_model.v0.event_schema.skill_attributes import SkillAttributes as EventSchema_SkillAttributesV0
-    from ask_smapi_model.v0.event_schema.actor_attributes import ActorAttributes as EventSchema_ActorAttributesV0
-    from ask_smapi_model.v0.event_schema.subscription_attributes import SubscriptionAttributes as EventSchema_SubscriptionAttributesV0
+    from ask_smapi_model.v0.event_schema.request_status import RequestStatus as RequestStatus_8267d453
+    from ask_smapi_model.v0.event_schema.actor_attributes import ActorAttributes as ActorAttributes_a2b7ca5d
+    from ask_smapi_model.v0.event_schema.skill_attributes import SkillAttributes as SkillAttributes_416aaddd
+    from ask_smapi_model.v0.event_schema.subscription_attributes import SubscriptionAttributes as SubscriptionAttributes_ee385127
 
 
 class SkillEventAttributes(object):
@@ -60,7 +60,7 @@ class SkillEventAttributes(object):
     supports_multiple_types = False
 
     def __init__(self, status=None, actor=None, skill=None, subscription=None):
-        # type: (Optional[EventSchema_RequestStatusV0], Optional[EventSchema_ActorAttributesV0], Optional[EventSchema_SkillAttributesV0], Optional[EventSchema_SubscriptionAttributesV0]) -> None
+        # type: (Optional[RequestStatus_8267d453], Optional[ActorAttributes_a2b7ca5d], Optional[SkillAttributes_416aaddd], Optional[SubscriptionAttributes_ee385127]) -> None
         """Skill event specific attributes. 
 
         :param status: 

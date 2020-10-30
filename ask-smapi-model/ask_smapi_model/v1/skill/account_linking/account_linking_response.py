@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.account_linking.account_linking_type import AccountLinkingType as AccountLinking_AccountLinkingTypeV1
-    from ask_smapi_model.v1.skill.account_linking.account_linking_platform_authorization_url import AccountLinkingPlatformAuthorizationUrl as AccountLinking_AccountLinkingPlatformAuthorizationUrlV1
-    from ask_smapi_model.v1.skill.account_linking.access_token_scheme_type import AccessTokenSchemeType as AccountLinking_AccessTokenSchemeTypeV1
+    from ask_smapi_model.v1.skill.account_linking.account_linking_type import AccountLinkingType as AccountLinkingType_bb3d8e2
+    from ask_smapi_model.v1.skill.account_linking.access_token_scheme_type import AccessTokenSchemeType as AccessTokenSchemeType_e9bad6d7
+    from ask_smapi_model.v1.skill.account_linking.account_linking_platform_authorization_url import AccountLinkingPlatformAuthorizationUrl as AccountLinkingPlatformAuthorizationUrl_2972ebae
 
 
 class AccountLinkingResponse(object):
@@ -83,7 +83,7 @@ class AccountLinkingResponse(object):
     supports_multiple_types = False
 
     def __init__(self, object_type=None, authorization_url=None, domains=None, client_id=None, scopes=None, access_token_url=None, access_token_scheme=None, default_token_expiration_in_seconds=None, redirect_urls=None, authorization_urls_by_platform=None):
-        # type: (Optional[AccountLinking_AccountLinkingTypeV1], Optional[str], Optional[List[object]], Optional[str], Optional[List[object]], Optional[str], Optional[AccountLinking_AccessTokenSchemeTypeV1], Optional[int], Optional[List[object]], Optional[List[AccountLinking_AccountLinkingPlatformAuthorizationUrlV1]]) -> None
+        # type: (Optional[AccountLinkingType_bb3d8e2], Optional[str], Optional[List[object]], Optional[str], Optional[List[object]], Optional[str], Optional[AccessTokenSchemeType_e9bad6d7], Optional[int], Optional[List[object]], Optional[List[AccountLinkingPlatformAuthorizationUrl_2972ebae]]) -> None
         """The account linking information of a skill.
 
         :param object_type: 

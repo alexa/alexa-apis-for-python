@@ -23,10 +23,10 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.lambda_endpoint import LambdaEndpoint as Manifest_LambdaEndpointV1
-    from ask_smapi_model.v1.skill.manifest.video_apis_locale import VideoApisLocale as Manifest_VideoApisLocaleV1
-    from ask_smapi_model.v1.skill.manifest.video_country_info import VideoCountryInfo as Manifest_VideoCountryInfoV1
-    from ask_smapi_model.v1.skill.manifest.video_region import VideoRegion as Manifest_VideoRegionV1
+    from ask_smapi_model.v1.skill.manifest.video_region import VideoRegion as VideoRegion_376628d2
+    from ask_smapi_model.v1.skill.manifest.video_apis_locale import VideoApisLocale as VideoApisLocale_4f25f8e3
+    from ask_smapi_model.v1.skill.manifest.video_country_info import VideoCountryInfo as VideoCountryInfo_d9ac11a3
+    from ask_smapi_model.v1.skill.manifest.lambda_endpoint import LambdaEndpoint as LambdaEndpoint_87e61436
 
 
 class VideoApis(object):
@@ -60,7 +60,7 @@ class VideoApis(object):
     supports_multiple_types = False
 
     def __init__(self, regions=None, locales=None, endpoint=None, countries=None):
-        # type: (Optional[Dict[str, Manifest_VideoRegionV1]], Optional[Dict[str, Manifest_VideoApisLocaleV1]], Optional[Manifest_LambdaEndpointV1], Optional[Dict[str, Manifest_VideoCountryInfoV1]]) -> None
+        # type: (Optional[Dict[str, VideoRegion_376628d2]], Optional[Dict[str, VideoApisLocale_4f25f8e3]], Optional[LambdaEndpoint_87e61436], Optional[Dict[str, VideoCountryInfo_d9ac11a3]]) -> None
         """Defines the structure for video api of the skill.
 
         :param regions: Defines the structure for region information.

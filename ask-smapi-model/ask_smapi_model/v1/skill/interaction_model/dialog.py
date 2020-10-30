@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.dialog_intents import DialogIntents as InteractionModel_DialogIntentsV1
-    from ask_smapi_model.v1.skill.interaction_model.delegation_strategy_type import DelegationStrategyType as InteractionModel_DelegationStrategyTypeV1
+    from ask_smapi_model.v1.skill.interaction_model.dialog_intents import DialogIntents as DialogIntents_30175679
+    from ask_smapi_model.v1.skill.interaction_model.delegation_strategy_type import DelegationStrategyType as DelegationStrategyType_41525f1c
 
 
 class Dialog(object):
@@ -50,7 +50,7 @@ class Dialog(object):
     supports_multiple_types = False
 
     def __init__(self, delegation_strategy=None, intents=None):
-        # type: (Optional[InteractionModel_DelegationStrategyTypeV1], Optional[List[InteractionModel_DialogIntentsV1]]) -> None
+        # type: (Optional[DelegationStrategyType_41525f1c], Optional[List[DialogIntents_30175679]]) -> None
         """Defines dialog rules e.g. slot elicitation and validation, intent chaining etc.
 
         :param delegation_strategy: Defines a delegation strategy for the dialogs in this dialog model.

@@ -24,7 +24,7 @@ from ask_smapi_model.v1.catalog.upload.catalog_upload_base import CatalogUploadB
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.catalog.upload.pre_signed_url_item import PreSignedUrlItem as Upload_PreSignedUrlItemV1
+    from ask_smapi_model.v1.catalog.upload.pre_signed_url_item import PreSignedUrlItem as PreSignedUrlItem_843825d6
 
 
 class PreSignedUrl(CatalogUploadBase):
@@ -50,7 +50,7 @@ class PreSignedUrl(CatalogUploadBase):
     supports_multiple_types = False
 
     def __init__(self, url_id=None, part_e_tags=None):
-        # type: (Optional[str], Optional[List[Upload_PreSignedUrlItemV1]]) -> None
+        # type: (Optional[str], Optional[List[PreSignedUrlItem_843825d6]]) -> None
         """Request body for self-hosted catalog uploads
 
         :param url_id: Unique identifier for urls

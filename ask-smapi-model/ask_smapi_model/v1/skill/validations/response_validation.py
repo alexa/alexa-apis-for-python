@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.validations.response_validation_importance import ResponseValidationImportance as Validations_ResponseValidationImportanceV1
-    from ask_smapi_model.v1.skill.validations.response_validation_status import ResponseValidationStatus as Validations_ResponseValidationStatusV1
+    from ask_smapi_model.v1.skill.validations.response_validation_importance import ResponseValidationImportance as ResponseValidationImportance_c1ef7626
+    from ask_smapi_model.v1.skill.validations.response_validation_status import ResponseValidationStatus as ResponseValidationStatus_b15167e6
 
 
 class ResponseValidation(object):
@@ -64,7 +64,7 @@ class ResponseValidation(object):
     supports_multiple_types = False
 
     def __init__(self, title=None, description=None, category=None, locale=None, importance=None, status=None):
-        # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[Validations_ResponseValidationImportanceV1], Optional[Validations_ResponseValidationStatusV1]) -> None
+        # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[ResponseValidationImportance_c1ef7626], Optional[ResponseValidationStatus_b15167e6]) -> None
         """
 
         :param title: Short, human readable title of the validation performed. 

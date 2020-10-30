@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.clone_locale_status import CloneLocaleStatus as Skill_CloneLocaleStatusV1
-    from ask_smapi_model.v1.skill.standardized_error import StandardizedError as Skill_StandardizedErrorV1
+    from ask_smapi_model.v1.skill.clone_locale_status import CloneLocaleStatus as CloneLocaleStatus_404d88aa
+    from ask_smapi_model.v1.skill.standardized_error import StandardizedError as StandardizedError_f5106a89
 
 
 class CloneLocaleResourceStatus(object):
@@ -50,7 +50,7 @@ class CloneLocaleResourceStatus(object):
     supports_multiple_types = False
 
     def __init__(self, status=None, errors=None):
-        # type: (Optional[Skill_CloneLocaleStatusV1], Optional[List[Skill_StandardizedErrorV1]]) -> None
+        # type: (Optional[CloneLocaleStatus_404d88aa], Optional[List[StandardizedError_f5106a89]]) -> None
         """an object detailing the status of a locale clone request and if applicable the errors occurred when saving/building resources during clone process.
 
         :param status: 

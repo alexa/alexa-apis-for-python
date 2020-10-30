@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.jobs.job_error_details import JobErrorDetails as Jobs_JobErrorDetailsV1
+    from ask_smapi_model.v1.skill.interaction_model.jobs.job_error_details import JobErrorDetails as JobErrorDetails_b4176392
 
 
 class Execution(object):
@@ -61,7 +61,7 @@ class Execution(object):
     supports_multiple_types = False
 
     def __init__(self, execution_id=None, timestamp=None, error_code=None, status=None, error_details=None):
-        # type: (Optional[str], Optional[datetime], Optional[str], Optional[str], Optional[Jobs_JobErrorDetailsV1]) -> None
+        # type: (Optional[str], Optional[datetime], Optional[str], Optional[str], Optional[JobErrorDetails_b4176392]) -> None
         """Execution data.
 
         :param execution_id: Identifier of the execution.

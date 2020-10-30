@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.health_alias import HealthAlias as Manifest_HealthAliasV1
+    from ask_smapi_model.v1.skill.manifest.health_alias import HealthAlias as HealthAlias_f9de66cc
 
 
 class LocalizedHealthInfo(object):
@@ -49,7 +49,7 @@ class LocalizedHealthInfo(object):
     supports_multiple_types = False
 
     def __init__(self, prompt_name=None, aliases=None):
-        # type: (Optional[str], Optional[List[Manifest_HealthAliasV1]]) -> None
+        # type: (Optional[str], Optional[List[HealthAlias_f9de66cc]]) -> None
         """Defines the structure for health skill locale specific publishing information in the skill manifest.
 
         :param prompt_name: SSML supported name to use when Alexa renders the health skill name in a prompt to the user.

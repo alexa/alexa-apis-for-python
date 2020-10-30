@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_repository_info import HostedSkillRepositoryInfo as AlexaHosted_HostedSkillRepositoryInfoV1
+    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_repository_info import HostedSkillRepositoryInfo as HostedSkillRepositoryInfo_957f5416
 
 
 class HostedSkillRepositoryCredentialsRequest(object):
@@ -43,7 +43,7 @@ class HostedSkillRepositoryCredentialsRequest(object):
     supports_multiple_types = False
 
     def __init__(self, repository=None):
-        # type: (Optional[AlexaHosted_HostedSkillRepositoryInfoV1]) -> None
+        # type: (Optional[HostedSkillRepositoryInfo_957f5416]) -> None
         """
 
         :param repository: 

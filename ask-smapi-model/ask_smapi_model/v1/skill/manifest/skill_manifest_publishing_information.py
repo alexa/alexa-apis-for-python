@@ -23,10 +23,10 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.skill_manifest_localized_publishing_information import SkillManifestLocalizedPublishingInformation as Manifest_SkillManifestLocalizedPublishingInformationV1
-    from ask_smapi_model.v1.skill.manifest.distribution_mode import DistributionMode as Manifest_DistributionModeV1
-    from ask_smapi_model.v1.skill.manifest.manifest_gadget_support import ManifestGadgetSupport as Manifest_ManifestGadgetSupportV1
-    from ask_smapi_model.v1.skill.manifest.distribution_countries import DistributionCountries as Manifest_DistributionCountriesV1
+    from ask_smapi_model.v1.skill.manifest.skill_manifest_localized_publishing_information import SkillManifestLocalizedPublishingInformation as SkillManifestLocalizedPublishingInformation_1e8ff5fd
+    from ask_smapi_model.v1.skill.manifest.distribution_countries import DistributionCountries as DistributionCountries_33dc1fd4
+    from ask_smapi_model.v1.skill.manifest.distribution_mode import DistributionMode as DistributionMode_7068bbf0
+    from ask_smapi_model.v1.skill.manifest.manifest_gadget_support import ManifestGadgetSupport as ManifestGadgetSupport_2efdc899
 
 
 class SkillManifestPublishingInformation(object):
@@ -80,7 +80,7 @@ class SkillManifestPublishingInformation(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, description=None, locales=None, is_available_worldwide=None, distribution_mode=None, gadget_support=None, testing_instructions=None, category=None, distribution_countries=None):
-        # type: (Optional[str], Optional[str], Optional[Dict[str, Manifest_SkillManifestLocalizedPublishingInformationV1]], Optional[bool], Optional[Manifest_DistributionModeV1], Optional[Manifest_ManifestGadgetSupportV1], Optional[str], Optional[str], Optional[List[Manifest_DistributionCountriesV1]]) -> None
+        # type: (Optional[str], Optional[str], Optional[Dict[str, SkillManifestLocalizedPublishingInformation_1e8ff5fd]], Optional[bool], Optional[DistributionMode_7068bbf0], Optional[ManifestGadgetSupport_2efdc899], Optional[str], Optional[str], Optional[List[DistributionCountries_33dc1fd4]]) -> None
         """Defines the structure for publishing information in the skill manifest.
 
         :param name: Name of the skill that is displayed to customers in the Alexa app.

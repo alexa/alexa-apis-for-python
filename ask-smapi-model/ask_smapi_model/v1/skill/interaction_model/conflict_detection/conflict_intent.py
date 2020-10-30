@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot import ConflictIntentSlot as ConflictDetection_ConflictIntentSlotV1
+    from ask_smapi_model.v1.skill.interaction_model.conflict_detection.conflict_intent_slot import ConflictIntentSlot as ConflictIntentSlot_925d4bc8
 
 
 class ConflictIntent(object):
@@ -47,7 +47,7 @@ class ConflictIntent(object):
     supports_multiple_types = False
 
     def __init__(self, name=None, slots=None):
-        # type: (Optional[str], Optional[Dict[str, ConflictDetection_ConflictIntentSlotV1]]) -> None
+        # type: (Optional[str], Optional[Dict[str, ConflictIntentSlot_925d4bc8]]) -> None
         """
 
         :param name: Conflict intent name

@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.asr.annotation_sets.pagination_context import PaginationContext as AnnotationSets_PaginationContextV1
-    from ask_smapi_model.v1.skill.asr.annotation_sets.annotation_with_audio_asset import AnnotationWithAudioAsset as AnnotationSets_AnnotationWithAudioAssetV1
+    from ask_smapi_model.v1.skill.asr.annotation_sets.annotation_with_audio_asset import AnnotationWithAudioAsset as AnnotationWithAudioAsset_9d046a40
+    from ask_smapi_model.v1.skill.asr.annotation_sets.pagination_context import PaginationContext as PaginationContext_8c68d512
 
 
 class GetAsrAnnotationSetAnnotationsResponse(object):
@@ -50,7 +50,7 @@ class GetAsrAnnotationSetAnnotationsResponse(object):
     supports_multiple_types = False
 
     def __init__(self, annotations=None, pagination_context=None):
-        # type: (Optional[List[AnnotationSets_AnnotationWithAudioAssetV1]], Optional[AnnotationSets_PaginationContextV1]) -> None
+        # type: (Optional[List[AnnotationWithAudioAsset_9d046a40]], Optional[PaginationContext_8c68d512]) -> None
         """This is the payload schema for annotation set contents. Note that when uploadId and filePathInUpload is present, and the payload content type is &#39;application/json&#39;, audioAsset is included in the returned annotation set content payload. For &#39;text/csv&#39; annotation set content type, audioAssetDownloadUrl and audioAssetDownloadUrlExpiryTime are included in the csv headers for representing the audio download url and the expiry time of the presigned audio download. 
 
         :param annotations: 

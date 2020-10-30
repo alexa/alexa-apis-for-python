@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.simulations.simulations_api_response_status import SimulationsApiResponseStatus as Simulations_SimulationsApiResponseStatusV1
-    from ask_smapi_model.v1.skill.simulations.simulation_result import SimulationResult as Simulations_SimulationResultV1
+    from ask_smapi_model.v1.skill.simulations.simulation_result import SimulationResult as SimulationResult_1c241445
+    from ask_smapi_model.v1.skill.simulations.simulations_api_response_status import SimulationsApiResponseStatus as SimulationsApiResponseStatus_e76dde3f
 
 
 class SimulationsApiResponse(object):
@@ -52,7 +52,7 @@ class SimulationsApiResponse(object):
     supports_multiple_types = False
 
     def __init__(self, id=None, status=None, result=None):
-        # type: (Optional[str], Optional[Simulations_SimulationsApiResponseStatusV1], Optional[Simulations_SimulationResultV1]) -> None
+        # type: (Optional[str], Optional[SimulationsApiResponseStatus_e76dde3f], Optional[SimulationResult_1c241445]) -> None
         """
 
         :param id: Id of the simulation resource.

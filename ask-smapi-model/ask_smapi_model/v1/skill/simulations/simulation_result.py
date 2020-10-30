@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.simulations.alexa_execution_info import AlexaExecutionInfo as Simulations_AlexaExecutionInfoV1
-    from ask_smapi_model.v1.error import Error as V1_ErrorV1
-    from ask_smapi_model.v1.skill.simulations.invocation import Invocation as Simulations_InvocationV1
+    from ask_smapi_model.v1.skill.simulations.invocation import Invocation as Invocation_e7f6d826
+    from ask_smapi_model.v1.skill.simulations.alexa_execution_info import AlexaExecutionInfo as AlexaExecutionInfo_84a001f8
+    from ask_smapi_model.v1.error import Error as Error_fbe913d9
 
 
 class SimulationResult(object):
@@ -53,7 +53,7 @@ class SimulationResult(object):
     supports_multiple_types = False
 
     def __init__(self, alexa_execution_info=None, skill_execution_info=None, error=None):
-        # type: (Optional[Simulations_AlexaExecutionInfoV1], Optional[Simulations_InvocationV1], Optional[V1_ErrorV1]) -> None
+        # type: (Optional[AlexaExecutionInfo_84a001f8], Optional[Invocation_e7f6d826], Optional[Error_fbe913d9]) -> None
         """
 
         :param alexa_execution_info: 

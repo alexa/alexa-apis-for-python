@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.nlu.evaluations.resolutions_per_authority_status_code import ResolutionsPerAuthorityStatusCode as Evaluations_ResolutionsPerAuthorityStatusCodeV1
+    from ask_smapi_model.v1.skill.nlu.evaluations.resolutions_per_authority_status_code import ResolutionsPerAuthorityStatusCode as ResolutionsPerAuthorityStatusCode_b309d82e
 
 
 class ResolutionsPerAuthorityStatus(object):
@@ -43,7 +43,7 @@ class ResolutionsPerAuthorityStatus(object):
     supports_multiple_types = False
 
     def __init__(self, code=None):
-        # type: (Optional[Evaluations_ResolutionsPerAuthorityStatusCodeV1]) -> None
+        # type: (Optional[ResolutionsPerAuthorityStatusCode_b309d82e]) -> None
         """
 
         :param code: A code indicating the results of attempting to resolve the user utterance against the defined slot types. This can be one of the following: ER_SUCCESS_MATCH: The spoken value matched a value or synonym explicitly defined in your custom slot type. ER_SUCCESS_NO_MATCH: The spoken value did not match any values or synonyms explicitly defined in your custom slot type. ER_ERROR_TIMEOUT: An error occurred due to a timeout. ER_ERROR_EXCEPTION: An error occurred due to an exception during processing. 

@@ -23,10 +23,10 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.audit_logs.client_filter import ClientFilter as AuditLogs_ClientFilterV1
-    from ask_smapi_model.v1.audit_logs.resource_filter import ResourceFilter as AuditLogs_ResourceFilterV1
-    from ask_smapi_model.v1.audit_logs.requester_filter import RequesterFilter as AuditLogs_RequesterFilterV1
-    from ask_smapi_model.v1.audit_logs.operation_filter import OperationFilter as AuditLogs_OperationFilterV1
+    from ask_smapi_model.v1.audit_logs.operation_filter import OperationFilter as OperationFilter_65f5ab53
+    from ask_smapi_model.v1.audit_logs.client_filter import ClientFilter as ClientFilter_f8370157
+    from ask_smapi_model.v1.audit_logs.requester_filter import RequesterFilter as RequesterFilter_22457ff3
+    from ask_smapi_model.v1.audit_logs.resource_filter import ResourceFilter as ResourceFilter_ca75dd
 
 
 class RequestFilters(object):
@@ -72,7 +72,7 @@ class RequestFilters(object):
     supports_multiple_types = False
 
     def __init__(self, clients=None, operations=None, resources=None, requesters=None, start_time=None, end_time=None, http_response_codes=None):
-        # type: (Optional[List[AuditLogs_ClientFilterV1]], Optional[List[AuditLogs_OperationFilterV1]], Optional[List[AuditLogs_ResourceFilterV1]], Optional[List[AuditLogs_RequesterFilterV1]], Optional[datetime], Optional[datetime], Optional[List[object]]) -> None
+        # type: (Optional[List[ClientFilter_f8370157]], Optional[List[OperationFilter_65f5ab53]], Optional[List[ResourceFilter_ca75dd]], Optional[List[RequesterFilter_22457ff3]], Optional[datetime], Optional[datetime], Optional[List[object]]) -> None
         """Request Filters for filtering audit logs.
 
         :param clients: List of Client IDs for filtering.

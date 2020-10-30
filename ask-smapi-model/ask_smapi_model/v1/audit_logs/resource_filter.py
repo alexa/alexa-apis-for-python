@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.audit_logs.resource_type_enum import ResourceTypeEnum as AuditLogs_ResourceTypeEnumV1
+    from ask_smapi_model.v1.audit_logs.resource_type_enum import ResourceTypeEnum as ResourceTypeEnum_fbeff4f0
 
 
 class ResourceFilter(object):
@@ -49,7 +49,7 @@ class ResourceFilter(object):
     supports_multiple_types = False
 
     def __init__(self, id=None, object_type=None):
-        # type: (Optional[str], Optional[AuditLogs_ResourceTypeEnumV1]) -> None
+        # type: (Optional[str], Optional[ResourceTypeEnum_fbeff4f0]) -> None
         """Resource that the developer operated on. Both do not need to be provided.
 
         :param id: 

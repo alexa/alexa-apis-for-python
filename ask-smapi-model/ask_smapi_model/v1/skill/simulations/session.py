@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.simulations.session_mode import SessionMode as Simulations_SessionModeV1
+    from ask_smapi_model.v1.skill.simulations.session_mode import SessionMode as SessionMode_8a5f999f
 
 
 class Session(object):
@@ -45,7 +45,7 @@ class Session(object):
     supports_multiple_types = False
 
     def __init__(self, mode=None):
-        # type: (Optional[Simulations_SessionModeV1]) -> None
+        # type: (Optional[SessionMode_8a5f999f]) -> None
         """Session settings for running current simulation. 
 
         :param mode: 

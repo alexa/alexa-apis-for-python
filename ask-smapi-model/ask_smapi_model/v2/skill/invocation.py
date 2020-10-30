@@ -23,9 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v2.skill.invocation_response import InvocationResponse as Skill_InvocationResponseV2
-    from ask_smapi_model.v2.skill.invocation_request import InvocationRequest as Skill_InvocationRequestV2
-    from ask_smapi_model.v2.skill.metrics import Metrics as Skill_MetricsV2
+    from ask_smapi_model.v2.skill.invocation_response import InvocationResponse as InvocationResponse_92ff1a14
+    from ask_smapi_model.v2.skill.metrics import Metrics as Metrics_f81eceb3
+    from ask_smapi_model.v2.skill.invocation_request import InvocationRequest as InvocationRequest_c1e3e5d6
 
 
 class Invocation(object):
@@ -53,7 +53,7 @@ class Invocation(object):
     supports_multiple_types = False
 
     def __init__(self, invocation_request=None, invocation_response=None, metrics=None):
-        # type: (Optional[Skill_InvocationRequestV2], Optional[Skill_InvocationResponseV2], Optional[Skill_MetricsV2]) -> None
+        # type: (Optional[InvocationRequest_c1e3e5d6], Optional[InvocationResponse_92ff1a14], Optional[Metrics_f81eceb3]) -> None
         """
 
         :param invocation_request: 

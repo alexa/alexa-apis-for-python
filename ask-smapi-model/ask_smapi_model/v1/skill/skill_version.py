@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.version_submission import VersionSubmission as Skill_VersionSubmissionV1
+    from ask_smapi_model.v1.skill.version_submission import VersionSubmission as VersionSubmission_65be74f
 
 
 class SkillVersion(object):
@@ -57,7 +57,7 @@ class SkillVersion(object):
     supports_multiple_types = False
 
     def __init__(self, version=None, message=None, creation_time=None, submissions=None):
-        # type: (Optional[str], Optional[str], Optional[datetime], Optional[List[Skill_VersionSubmissionV1]]) -> None
+        # type: (Optional[str], Optional[str], Optional[datetime], Optional[List[VersionSubmission_65be74f]]) -> None
         """Information about the skill version
 
         :param version: 

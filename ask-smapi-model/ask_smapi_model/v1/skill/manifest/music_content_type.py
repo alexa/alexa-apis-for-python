@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.music_content_name import MusicContentName as Manifest_MusicContentNameV1
+    from ask_smapi_model.v1.skill.manifest.music_content_name import MusicContentName as MusicContentName_8780c789
 
 
 class MusicContentType(object):
@@ -45,7 +45,7 @@ class MusicContentType(object):
     supports_multiple_types = False
 
     def __init__(self, name=None):
-        # type: (Optional[Manifest_MusicContentNameV1]) -> None
+        # type: (Optional[MusicContentName_8780c789]) -> None
         """Defines the structure for content that can be provided by a music skill.
 
         :param name: 

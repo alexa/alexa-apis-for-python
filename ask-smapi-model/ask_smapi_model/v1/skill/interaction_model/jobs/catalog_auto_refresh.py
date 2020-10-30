@@ -24,8 +24,8 @@ from ask_smapi_model.v1.skill.interaction_model.jobs.job_definition import JobDe
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.jobs.scheduled import Scheduled as Jobs_ScheduledV1
-    from ask_smapi_model.v1.skill.interaction_model.jobs.catalog import Catalog as Jobs_CatalogV1
+    from ask_smapi_model.v1.skill.interaction_model.jobs.catalog import Catalog as Catalog_5d01e944
+    from ask_smapi_model.v1.skill.interaction_model.jobs.scheduled import Scheduled as Scheduled_efc5aac
 
 
 class CatalogAutoRefresh(JobDefinition):
@@ -57,7 +57,7 @@ class CatalogAutoRefresh(JobDefinition):
     supports_multiple_types = False
 
     def __init__(self, trigger=None, status=None, resource=None):
-        # type: (Optional[Jobs_ScheduledV1], Optional[str], Optional[Jobs_CatalogV1]) -> None
+        # type: (Optional[Scheduled_efc5aac], Optional[str], Optional[Catalog_5d01e944]) -> None
         """Definition for CatalogAutoRefresh job.
 
         :param trigger: CatalogAutoRefresh can only have CatalogAutoRefresh trigger.

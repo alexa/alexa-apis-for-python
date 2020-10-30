@@ -23,12 +23,12 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.lambda_endpoint import LambdaEndpoint as Manifest_LambdaEndpointV1
-    from ask_smapi_model.v1.skill.manifest.music_capability import MusicCapability as Manifest_MusicCapabilityV1
-    from ask_smapi_model.v1.skill.manifest.music_content_type import MusicContentType as Manifest_MusicContentTypeV1
-    from ask_smapi_model.v1.skill.manifest.localized_music_info import LocalizedMusicInfo as Manifest_LocalizedMusicInfoV1
-    from ask_smapi_model.v1.skill.manifest.lambda_region import LambdaRegion as Manifest_LambdaRegionV1
-    from ask_smapi_model.v1.skill.manifest.music_interfaces import MusicInterfaces as Manifest_MusicInterfacesV1
+    from ask_smapi_model.v1.skill.manifest.music_capability import MusicCapability as MusicCapability_d0d720da
+    from ask_smapi_model.v1.skill.manifest.localized_music_info import LocalizedMusicInfo as LocalizedMusicInfo_d0ce0241
+    from ask_smapi_model.v1.skill.manifest.lambda_region import LambdaRegion as LambdaRegion_3e305f16
+    from ask_smapi_model.v1.skill.manifest.lambda_endpoint import LambdaEndpoint as LambdaEndpoint_87e61436
+    from ask_smapi_model.v1.skill.manifest.music_content_type import MusicContentType as MusicContentType_f344db69
+    from ask_smapi_model.v1.skill.manifest.music_interfaces import MusicInterfaces as MusicInterfaces_8eb4875e
 
 
 class MusicApis(object):
@@ -70,7 +70,7 @@ class MusicApis(object):
     supports_multiple_types = False
 
     def __init__(self, regions=None, endpoint=None, capabilities=None, interfaces=None, locales=None, content_types=None):
-        # type: (Optional[Dict[str, Manifest_LambdaRegionV1]], Optional[Manifest_LambdaEndpointV1], Optional[List[Manifest_MusicCapabilityV1]], Optional[List[Manifest_MusicInterfacesV1]], Optional[Dict[str, Manifest_LocalizedMusicInfoV1]], Optional[List[Manifest_MusicContentTypeV1]]) -> None
+        # type: (Optional[Dict[str, LambdaRegion_3e305f16]], Optional[LambdaEndpoint_87e61436], Optional[List[MusicCapability_d0d720da]], Optional[List[MusicInterfaces_8eb4875e]], Optional[Dict[str, LocalizedMusicInfo_d0ce0241]], Optional[List[MusicContentType_f344db69]]) -> None
         """Defines the structure of music api in the skill manifest.
 
         :param regions: Contains an array of the supported &lt;region&gt; Objects.

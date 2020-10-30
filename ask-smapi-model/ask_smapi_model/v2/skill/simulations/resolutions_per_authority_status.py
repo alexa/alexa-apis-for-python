@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v2.skill.simulations.resolutions_per_authority_status_code import ResolutionsPerAuthorityStatusCode as Simulations_ResolutionsPerAuthorityStatusCodeV2
+    from ask_smapi_model.v2.skill.simulations.resolutions_per_authority_status_code import ResolutionsPerAuthorityStatusCode as ResolutionsPerAuthorityStatusCode_5fb9957b
 
 
 class ResolutionsPerAuthorityStatus(object):
@@ -45,7 +45,7 @@ class ResolutionsPerAuthorityStatus(object):
     supports_multiple_types = False
 
     def __init__(self, code=None):
-        # type: (Optional[Simulations_ResolutionsPerAuthorityStatusCodeV2]) -> None
+        # type: (Optional[ResolutionsPerAuthorityStatusCode_5fb9957b]) -> None
         """An object representing the status of entity resolution for the slot.
 
         :param code: 

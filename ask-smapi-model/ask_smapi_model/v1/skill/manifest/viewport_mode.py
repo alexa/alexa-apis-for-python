@@ -31,10 +31,13 @@ class ViewportMode(Enum):
 
 
 
-    Allowed enum values: [HUB, TV]
+    Allowed enum values: [HUB, TV, MOBILE, PC, AUTO]
     """
     HUB = "HUB"
     TV = "TV"
+    MOBILE = "MOBILE"
+    PC = "PC"
+    AUTO = "AUTO"
 
     def to_dict(self):
         # type: () -> Dict[str, Any]

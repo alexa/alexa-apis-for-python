@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.viewport_mode import ViewportMode as Manifest_ViewportModeV1
-    from ask_smapi_model.v1.skill.manifest.viewport_shape import ViewportShape as Manifest_ViewportShapeV1
+    from ask_smapi_model.v1.skill.manifest.viewport_mode import ViewportMode as ViewportMode_ade01bb4
+    from ask_smapi_model.v1.skill.manifest.viewport_shape import ViewportShape as ViewportShape_bfdfacae
 
 
 class ViewportSpecification(object):
@@ -66,7 +66,7 @@ class ViewportSpecification(object):
     supports_multiple_types = False
 
     def __init__(self, mode=None, shape=None, min_width=None, max_width=None, min_height=None, max_height=None):
-        # type: (Optional[Manifest_ViewportModeV1], Optional[Manifest_ViewportShapeV1], Optional[int], Optional[int], Optional[int], Optional[int]) -> None
+        # type: (Optional[ViewportMode_ade01bb4], Optional[ViewportShape_bfdfacae], Optional[int], Optional[int], Optional[int], Optional[int]) -> None
         """Defines a viewport specification.
 
         :param mode: 

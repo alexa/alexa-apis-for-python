@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.publication_method import PublicationMethod as Skill_PublicationMethodV1
+    from ask_smapi_model.v1.skill.publication_method import PublicationMethod as PublicationMethod_98efa639
 
 
 class SubmitSkillForCertificationRequest(object):
@@ -47,7 +47,7 @@ class SubmitSkillForCertificationRequest(object):
     supports_multiple_types = False
 
     def __init__(self, publication_method=None, version_message=None):
-        # type: (Optional[Skill_PublicationMethodV1], Optional[str]) -> None
+        # type: (Optional[PublicationMethod_98efa639], Optional[str]) -> None
         """
 
         :param publication_method: 
