@@ -20,4 +20,4 @@ All Pull Requests will be automatically closed, unless the request is generic an
 - [ ] My code follows the code style of this project
 - [ ] My change requires a change to the documentation
 - [ ] The change is generic and can be done across all model classes.
-- [ ] By submitting this pull request, I confirm that my contribution is made under the terms of the Apache 2.0 license.
+- [ ] By submitting this pull request, I confirm that you can use, modify, copy, and redistribute this contribution, under the terms of your choice.
