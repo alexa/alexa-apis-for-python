@@ -24,11 +24,12 @@ from ask_sdk_model.interfaces.alexa.presentation.apl.command import Command
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
+    from ask_sdk_model.interfaces.alexa.presentation.apl.align import Align as Align_70ae0466
 
 
-class IdleCommand(Command):
+class ScrollToComponentCommand(Command):
     """
-    The idle command does nothing. It may be a placeholder or used to insert a calculated delay in a longer series of commands.
+    Scroll forward or backward through a ScrollView or Sequence to ensure that a particular component is in view.
 
 
     :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
@@ -41,6 +42,10 @@ class IdleCommand(Command):
     :type sequencer: (optional) str
     :param when: If false, the execution of the command is skipped. Defaults to true.
     :type when: (optional) bool
+    :param align: 
+    :type align: (optional) ask_sdk_model.interfaces.alexa.presentation.apl.align.Align
+    :param component_id: The id of the component. If omitted, the component issuing the ScrollToComponent command is used.
+    :type component_id: (optional) str
 
     """
     deserialized_types = {
@@ -49,7 +54,9 @@ class IdleCommand(Command):
         'description': 'str',
         'screen_lock': 'bool',
         'sequencer': 'str',
-        'when': 'bool'
+        'when': 'bool',
+        'align': 'ask_sdk_model.interfaces.alexa.presentation.apl.align.Align',
+        'component_id': 'str'
     }  # type: Dict
 
     attribute_map = {
@@ -58,13 +65,15 @@ class IdleCommand(Command):
         'description': 'description',
         'screen_lock': 'screenLock',
         'sequencer': 'sequencer',
-        'when': 'when'
+        'when': 'when',
+        'align': 'align',
+        'component_id': 'componentId'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, delay=None, description=None, screen_lock=None, sequencer=None, when=None):
-        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Optional[bool]) -> None
-        """The idle command does nothing. It may be a placeholder or used to insert a calculated delay in a longer series of commands.
+    def __init__(self, delay=None, description=None, screen_lock=None, sequencer=None, when=None, align=None, component_id=None):
+        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Optional[bool], Optional[Align_70ae0466], Optional[str]) -> None
+        """Scroll forward or backward through a ScrollView or Sequence to ensure that a particular component is in view.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
         :type delay: (optional) int
@@ -76,11 +85,17 @@ class IdleCommand(Command):
         :type sequencer: (optional) str
         :param when: If false, the execution of the command is skipped. Defaults to true.
         :type when: (optional) bool
+        :param align: 
+        :type align: (optional) ask_sdk_model.interfaces.alexa.presentation.apl.align.Align
+        :param component_id: The id of the component. If omitted, the component issuing the ScrollToComponent command is used.
+        :type component_id: (optional) str
         """
-        self.__discriminator_value = "Idle"  # type: str
+        self.__discriminator_value = "ScrollToComponent"  # type: str
 
         self.object_type = self.__discriminator_value
-        super(IdleCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, screen_lock=screen_lock, sequencer=sequencer, when=when)
+        super(ScrollToComponentCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, screen_lock=screen_lock, sequencer=sequencer, when=when)
+        self.align = align
+        self.component_id = component_id
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -125,7 +140,7 @@ class IdleCommand(Command):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, IdleCommand):
+        if not isinstance(other, ScrollToComponentCommand):
             return False
 
         return self.__dict__ == other.__dict__

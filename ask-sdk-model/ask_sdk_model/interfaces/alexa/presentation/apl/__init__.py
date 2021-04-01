@@ -43,6 +43,7 @@ from .animate_item_command import AnimateItemCommand
 from .component_visible_on_screen_media_tag import ComponentVisibleOnScreenMediaTag
 from .transform_property import TransformProperty
 from .send_index_list_data_directive import SendIndexListDataDirective
+from .select_command import SelectCommand
 from .align import Align
 from .highlight_mode import HighlightMode
 from .sequential_command import SequentialCommand
@@ -50,6 +51,7 @@ from .runtime import Runtime
 from .execute_commands_directive import ExecuteCommandsDirective
 from .component_visible_on_screen_scrollable_tag import ComponentVisibleOnScreenScrollableTag
 from .move_transform_property import MoveTransformProperty
+from .finish_command import FinishCommand
 from .clear_focus_command import ClearFocusCommand
 from .component_entity import ComponentEntity
 from .command import Command
@@ -64,10 +66,12 @@ from .scale_transform_property import ScaleTransformProperty
 from .send_event_command import SendEventCommand
 from .component_visible_on_screen_tags import ComponentVisibleOnScreenTags
 from .alexa_presentation_apl_interface import AlexaPresentationAplInterface
+from .reinflate_command import ReinflateCommand
 from .component_visible_on_screen_viewport_tag import ComponentVisibleOnScreenViewportTag
 from .set_state_command import SetStateCommand
 from .rotate_transform_property import RotateTransformProperty
 from .scroll_to_index_command import ScrollToIndexCommand
+from .scroll_to_component_command import ScrollToComponentCommand
 from .speak_list_command import SpeakListCommand
 from .media_command_type import MediaCommandType
 from .rendered_document_state import RenderedDocumentState

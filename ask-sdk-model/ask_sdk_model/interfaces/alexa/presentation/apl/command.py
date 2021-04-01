@@ -37,6 +37,10 @@ class Command(object):
     :type delay: (optional) int
     :param description: A user-provided description of this command.
     :type description: (optional) str
+    :param screen_lock: If true, disable the Interaction Timer.
+    :type screen_lock: (optional) bool
+    :param sequencer: Specify the sequencer that should execute this command.
+    :type sequencer: (optional) str
     :param when: If false, the execution of the command is skipped. Defaults to true.
     :type when: (optional) bool
 
@@ -48,6 +52,8 @@ class Command(object):
         | SetPage: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.set_page_command.SetPageCommand`,
         |
         | ControlMedia: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.control_media_command.ControlMediaCommand`,
+        |
+        | Finish: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.finish_command.FinishCommand`,
         |
         | AutoPage: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.auto_page_command.AutoPageCommand`,
         |
@@ -63,6 +69,8 @@ class Command(object):
         |
         | SpeakList: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.speak_list_command.SpeakListCommand`,
         |
+        | Select: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.select_command.SelectCommand`,
+        |
         | Sequential: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.sequential_command.SequentialCommand`,
         |
         | SetState: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.set_state_command.SetStateCommand`,
@@ -73,19 +81,25 @@ class Command(object):
         |
         | OpenURL: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.open_url_command.OpenUrlCommand`,
         |
+        | Reinflate: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.reinflate_command.ReinflateCommand`,
+        |
         | ClearFocus: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.clear_focus_command.ClearFocusCommand`,
         |
         | ScrollToIndex: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.scroll_to_index_command.ScrollToIndexCommand`,
         |
         | SetValue: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.set_value_command.SetValueCommand`,
         |
-        | SetFocus: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.set_focus_command.SetFocusCommand`
+        | SetFocus: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.set_focus_command.SetFocusCommand`,
+        |
+        | ScrollToComponent: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.scroll_to_component_command.ScrollToComponentCommand`
 
     """
     deserialized_types = {
         'object_type': 'str',
         'delay': 'int',
         'description': 'str',
+        'screen_lock': 'bool',
+        'sequencer': 'str',
         'when': 'bool'
     }  # type: Dict
 
@@ -93,6 +107,8 @@ class Command(object):
         'object_type': 'type',
         'delay': 'delay',
         'description': 'description',
+        'screen_lock': 'screenLock',
+        'sequencer': 'sequencer',
         'when': 'when'
     }  # type: Dict
     supports_multiple_types = False
@@ -100,6 +116,7 @@ class Command(object):
     discriminator_value_class_map = {
         'SetPage': 'ask_sdk_model.interfaces.alexa.presentation.apl.set_page_command.SetPageCommand',
         'ControlMedia': 'ask_sdk_model.interfaces.alexa.presentation.apl.control_media_command.ControlMediaCommand',
+        'Finish': 'ask_sdk_model.interfaces.alexa.presentation.apl.finish_command.FinishCommand',
         'AutoPage': 'ask_sdk_model.interfaces.alexa.presentation.apl.auto_page_command.AutoPageCommand',
         'PlayMedia': 'ask_sdk_model.interfaces.alexa.presentation.apl.play_media_command.PlayMediaCommand',
         'Scroll': 'ask_sdk_model.interfaces.alexa.presentation.apl.scroll_command.ScrollCommand',
@@ -107,15 +124,18 @@ class Command(object):
         'AnimateItem': 'ask_sdk_model.interfaces.alexa.presentation.apl.animate_item_command.AnimateItemCommand',
         'SendEvent': 'ask_sdk_model.interfaces.alexa.presentation.apl.send_event_command.SendEventCommand',
         'SpeakList': 'ask_sdk_model.interfaces.alexa.presentation.apl.speak_list_command.SpeakListCommand',
+        'Select': 'ask_sdk_model.interfaces.alexa.presentation.apl.select_command.SelectCommand',
         'Sequential': 'ask_sdk_model.interfaces.alexa.presentation.apl.sequential_command.SequentialCommand',
         'SetState': 'ask_sdk_model.interfaces.alexa.presentation.apl.set_state_command.SetStateCommand',
         'SpeakItem': 'ask_sdk_model.interfaces.alexa.presentation.apl.speak_item_command.SpeakItemCommand',
         'Parallel': 'ask_sdk_model.interfaces.alexa.presentation.apl.parallel_command.ParallelCommand',
         'OpenURL': 'ask_sdk_model.interfaces.alexa.presentation.apl.open_url_command.OpenUrlCommand',
+        'Reinflate': 'ask_sdk_model.interfaces.alexa.presentation.apl.reinflate_command.ReinflateCommand',
         'ClearFocus': 'ask_sdk_model.interfaces.alexa.presentation.apl.clear_focus_command.ClearFocusCommand',
         'ScrollToIndex': 'ask_sdk_model.interfaces.alexa.presentation.apl.scroll_to_index_command.ScrollToIndexCommand',
         'SetValue': 'ask_sdk_model.interfaces.alexa.presentation.apl.set_value_command.SetValueCommand',
-        'SetFocus': 'ask_sdk_model.interfaces.alexa.presentation.apl.set_focus_command.SetFocusCommand'
+        'SetFocus': 'ask_sdk_model.interfaces.alexa.presentation.apl.set_focus_command.SetFocusCommand',
+        'ScrollToComponent': 'ask_sdk_model.interfaces.alexa.presentation.apl.scroll_to_component_command.ScrollToComponentCommand'
     }
 
     json_discriminator_key = "type"
@@ -123,8 +143,8 @@ class Command(object):
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def __init__(self, object_type=None, delay=None, description=None, when=None):
-        # type: (Optional[str], Union[int, str, None], Optional[str], Optional[bool]) -> None
+    def __init__(self, object_type=None, delay=None, description=None, screen_lock=None, sequencer=None, when=None):
+        # type: (Optional[str], Union[int, str, None], Optional[str], Optional[bool], Optional[str], Optional[bool]) -> None
         """A message that can change the visual or audio presentation of the content on the screen.
 
         :param object_type: Defines the command type and dictates which properties must/can be included.
@@ -133,6 +153,10 @@ class Command(object):
         :type delay: (optional) int
         :param description: A user-provided description of this command.
         :type description: (optional) str
+        :param screen_lock: If true, disable the Interaction Timer.
+        :type screen_lock: (optional) bool
+        :param sequencer: Specify the sequencer that should execute this command.
+        :type sequencer: (optional) str
         :param when: If false, the execution of the command is skipped. Defaults to true.
         :type when: (optional) bool
         """
@@ -141,6 +165,8 @@ class Command(object):
         self.object_type = object_type
         self.delay = delay
         self.description = description
+        self.screen_lock = screen_lock
+        self.sequencer = sequencer
         self.when = when
 
     @classmethod

@@ -36,6 +36,10 @@ class SetPageCommand(Command):
     :type delay: (optional) int
     :param description: A user-provided description of this command.
     :type description: (optional) str
+    :param screen_lock: If true, disable the Interaction Timer.
+    :type screen_lock: (optional) bool
+    :param sequencer: Specify the sequencer that should execute this command.
+    :type sequencer: (optional) str
     :param when: If false, the execution of the command is skipped. Defaults to true.
     :type when: (optional) bool
     :param component_id: The id of the Pager component.
@@ -50,6 +54,8 @@ class SetPageCommand(Command):
         'object_type': 'str',
         'delay': 'int',
         'description': 'str',
+        'screen_lock': 'bool',
+        'sequencer': 'str',
         'when': 'bool',
         'component_id': 'str',
         'position': 'ask_sdk_model.interfaces.alexa.presentation.apl.position.Position',
@@ -60,6 +66,8 @@ class SetPageCommand(Command):
         'object_type': 'type',
         'delay': 'delay',
         'description': 'description',
+        'screen_lock': 'screenLock',
+        'sequencer': 'sequencer',
         'when': 'when',
         'component_id': 'componentId',
         'position': 'position',
@@ -67,14 +75,18 @@ class SetPageCommand(Command):
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, delay=None, description=None, when=None, component_id=None, position=None, value=None):
-        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Optional[Position_8c9d1e98], Union[int, str, None]) -> None
+    def __init__(self, delay=None, description=None, screen_lock=None, sequencer=None, when=None, component_id=None, position=None, value=None):
+        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Optional[bool], Optional[str], Optional[Position_8c9d1e98], Union[int, str, None]) -> None
         """Change the page displayed in a Pager component. The SetPage command finishes when the item is fully in view.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
         :type delay: (optional) int
         :param description: A user-provided description of this command.
         :type description: (optional) str
+        :param screen_lock: If true, disable the Interaction Timer.
+        :type screen_lock: (optional) bool
+        :param sequencer: Specify the sequencer that should execute this command.
+        :type sequencer: (optional) str
         :param when: If false, the execution of the command is skipped. Defaults to true.
         :type when: (optional) bool
         :param component_id: The id of the Pager component.
@@ -87,7 +99,7 @@ class SetPageCommand(Command):
         self.__discriminator_value = "SetPage"  # type: str
 
         self.object_type = self.__discriminator_value
-        super(SetPageCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, when=when)
+        super(SetPageCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, screen_lock=screen_lock, sequencer=sequencer, when=when)
         self.component_id = component_id
         self.position = position
         self.value = value

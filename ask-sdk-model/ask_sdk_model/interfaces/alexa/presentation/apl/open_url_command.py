@@ -36,6 +36,10 @@ class OpenUrlCommand(Command):
     :type delay: (optional) int
     :param description: A user-provided description of this command.
     :type description: (optional) str
+    :param screen_lock: If true, disable the Interaction Timer.
+    :type screen_lock: (optional) bool
+    :param sequencer: Specify the sequencer that should execute this command.
+    :type sequencer: (optional) str
     :param when: If false, the execution of the command is skipped. Defaults to true.
     :type when: (optional) bool
     :param source: The URL to open
@@ -48,6 +52,8 @@ class OpenUrlCommand(Command):
         'object_type': 'str',
         'delay': 'int',
         'description': 'str',
+        'screen_lock': 'bool',
+        'sequencer': 'str',
         'when': 'bool',
         'source': 'str',
         'on_fail': 'list[ask_sdk_model.interfaces.alexa.presentation.apl.command.Command]'
@@ -57,20 +63,26 @@ class OpenUrlCommand(Command):
         'object_type': 'type',
         'delay': 'delay',
         'description': 'description',
+        'screen_lock': 'screenLock',
+        'sequencer': 'sequencer',
         'when': 'when',
         'source': 'source',
         'on_fail': 'onFail'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, delay=None, description=None, when=None, source=None, on_fail=None):
-        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Optional[List[Command_bc5ff832]]) -> None
+    def __init__(self, delay=None, description=None, screen_lock=None, sequencer=None, when=None, source=None, on_fail=None):
+        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Optional[bool], Optional[str], Optional[List[Command_bc5ff832]]) -> None
         """Opens a url with web browser or other application on the device. The APL author is responsible for providing a suitable URL that works on the current device.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
         :type delay: (optional) int
         :param description: A user-provided description of this command.
         :type description: (optional) str
+        :param screen_lock: If true, disable the Interaction Timer.
+        :type screen_lock: (optional) bool
+        :param sequencer: Specify the sequencer that should execute this command.
+        :type sequencer: (optional) str
         :param when: If false, the execution of the command is skipped. Defaults to true.
         :type when: (optional) bool
         :param source: The URL to open
@@ -81,7 +93,7 @@ class OpenUrlCommand(Command):
         self.__discriminator_value = "OpenURL"  # type: str
 
         self.object_type = self.__discriminator_value
-        super(OpenUrlCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, when=when)
+        super(OpenUrlCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, screen_lock=screen_lock, sequencer=sequencer, when=when)
         self.source = source
         self.on_fail = on_fail
 

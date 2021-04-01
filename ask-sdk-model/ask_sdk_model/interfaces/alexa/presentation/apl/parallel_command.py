@@ -36,6 +36,10 @@ class ParallelCommand(Command):
     :type delay: (optional) int
     :param description: A user-provided description of this command.
     :type description: (optional) str
+    :param screen_lock: If true, disable the Interaction Timer.
+    :type screen_lock: (optional) bool
+    :param sequencer: Specify the sequencer that should execute this command.
+    :type sequencer: (optional) str
     :param when: If false, the execution of the command is skipped. Defaults to true.
     :type when: (optional) bool
     :param commands: An un-ordered array of commands to execute in parallel. Once all commands have finished executing the parallel command finishes. Please note that the delay of parallel command and the delay of each command are additive.
@@ -46,6 +50,8 @@ class ParallelCommand(Command):
         'object_type': 'str',
         'delay': 'int',
         'description': 'str',
+        'screen_lock': 'bool',
+        'sequencer': 'str',
         'when': 'bool',
         'commands': 'list[ask_sdk_model.interfaces.alexa.presentation.apl.command.Command]'
     }  # type: Dict
@@ -54,19 +60,25 @@ class ParallelCommand(Command):
         'object_type': 'type',
         'delay': 'delay',
         'description': 'description',
+        'screen_lock': 'screenLock',
+        'sequencer': 'sequencer',
         'when': 'when',
         'commands': 'commands'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, delay=None, description=None, when=None, commands=None):
-        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[List[Command_bc5ff832]]) -> None
+    def __init__(self, delay=None, description=None, screen_lock=None, sequencer=None, when=None, commands=None):
+        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Optional[bool], Optional[List[Command_bc5ff832]]) -> None
         """Execute a series of commands in parallel. The parallel command starts executing all child command simultaneously. The parallel command is considered finished when all of its child commands have finished. When the parallel command is terminated early, all currently executing commands are terminated.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
         :type delay: (optional) int
         :param description: A user-provided description of this command.
         :type description: (optional) str
+        :param screen_lock: If true, disable the Interaction Timer.
+        :type screen_lock: (optional) bool
+        :param sequencer: Specify the sequencer that should execute this command.
+        :type sequencer: (optional) str
         :param when: If false, the execution of the command is skipped. Defaults to true.
         :type when: (optional) bool
         :param commands: An un-ordered array of commands to execute in parallel. Once all commands have finished executing the parallel command finishes. Please note that the delay of parallel command and the delay of each command are additive.
@@ -75,7 +87,7 @@ class ParallelCommand(Command):
         self.__discriminator_value = "Parallel"  # type: str
 
         self.object_type = self.__discriminator_value
-        super(ParallelCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, when=when)
+        super(ParallelCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, screen_lock=screen_lock, sequencer=sequencer, when=when)
         self.commands = commands
 
     def to_dict(self):

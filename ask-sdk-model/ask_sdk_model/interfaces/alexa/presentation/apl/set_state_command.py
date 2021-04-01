@@ -36,6 +36,10 @@ class SetStateCommand(Command):
     :type delay: (optional) int
     :param description: A user-provided description of this command.
     :type description: (optional) str
+    :param screen_lock: If true, disable the Interaction Timer.
+    :type screen_lock: (optional) bool
+    :param sequencer: Specify the sequencer that should execute this command.
+    :type sequencer: (optional) str
     :param when: If false, the execution of the command is skipped. Defaults to true.
     :type when: (optional) bool
     :param component_id: The id of the component whose value should be set.
@@ -50,6 +54,8 @@ class SetStateCommand(Command):
         'object_type': 'str',
         'delay': 'int',
         'description': 'str',
+        'screen_lock': 'bool',
+        'sequencer': 'str',
         'when': 'bool',
         'component_id': 'str',
         'state': 'ask_sdk_model.interfaces.alexa.presentation.apl.component_state.ComponentState',
@@ -60,6 +66,8 @@ class SetStateCommand(Command):
         'object_type': 'type',
         'delay': 'delay',
         'description': 'description',
+        'screen_lock': 'screenLock',
+        'sequencer': 'sequencer',
         'when': 'when',
         'component_id': 'componentId',
         'state': 'state',
@@ -67,14 +75,18 @@ class SetStateCommand(Command):
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, delay=None, description=None, when=None, component_id=None, state=None, value=None):
-        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Optional[ComponentState_c92e50c9], Union[bool, str, None]) -> None
+    def __init__(self, delay=None, description=None, screen_lock=None, sequencer=None, when=None, component_id=None, state=None, value=None):
+        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Optional[bool], Optional[str], Optional[ComponentState_c92e50c9], Union[bool, str, None]) -> None
         """The SetState command changes one of the component’s state settings. The SetState command can be used to change the checked, disabled, and focused states. The karaoke and pressed states may not be directly set; use the Select command or SpeakItem commands to change those states. Also, note that the focused state may only be set - it can’t be cleared.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
         :type delay: (optional) int
         :param description: A user-provided description of this command.
         :type description: (optional) str
+        :param screen_lock: If true, disable the Interaction Timer.
+        :type screen_lock: (optional) bool
+        :param sequencer: Specify the sequencer that should execute this command.
+        :type sequencer: (optional) str
         :param when: If false, the execution of the command is skipped. Defaults to true.
         :type when: (optional) bool
         :param component_id: The id of the component whose value should be set.
@@ -87,7 +99,7 @@ class SetStateCommand(Command):
         self.__discriminator_value = "SetState"  # type: str
 
         self.object_type = self.__discriminator_value
-        super(SetStateCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, when=when)
+        super(SetStateCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, screen_lock=screen_lock, sequencer=sequencer, when=when)
         self.component_id = component_id
         self.state = state
         self.value = value

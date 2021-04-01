@@ -24,11 +24,12 @@ from ask_sdk_model.interfaces.alexa.presentation.apl.command import Command
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
+    from ask_sdk_model.interfaces.alexa.presentation.apl.command import Command as Command_bc5ff832
 
 
-class IdleCommand(Command):
+class SelectCommand(Command):
     """
-    The idle command does nothing. It may be a placeholder or used to insert a calculated delay in a longer series of commands.
+    Select a single command from an array of commands and data.
 
 
     :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
@@ -41,6 +42,12 @@ class IdleCommand(Command):
     :type sequencer: (optional) str
     :param when: If false, the execution of the command is skipped. Defaults to true.
     :type when: (optional) bool
+    :param commands: An ordered list of commands to select from.
+    :type commands: (optional) list[ask_sdk_model.interfaces.alexa.presentation.apl.command.Command]
+    :param data: A list of data to map against the commands.
+    :type data: (optional) list[object]
+    :param otherwise: Commands to execute if nothing else runs.
+    :type otherwise: (optional) list[ask_sdk_model.interfaces.alexa.presentation.apl.command.Command]
 
     """
     deserialized_types = {
@@ -49,7 +56,10 @@ class IdleCommand(Command):
         'description': 'str',
         'screen_lock': 'bool',
         'sequencer': 'str',
-        'when': 'bool'
+        'when': 'bool',
+        'commands': 'list[ask_sdk_model.interfaces.alexa.presentation.apl.command.Command]',
+        'data': 'list[object]',
+        'otherwise': 'list[ask_sdk_model.interfaces.alexa.presentation.apl.command.Command]'
     }  # type: Dict
 
     attribute_map = {
@@ -58,13 +68,16 @@ class IdleCommand(Command):
         'description': 'description',
         'screen_lock': 'screenLock',
         'sequencer': 'sequencer',
-        'when': 'when'
+        'when': 'when',
+        'commands': 'commands',
+        'data': 'data',
+        'otherwise': 'otherwise'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, delay=None, description=None, screen_lock=None, sequencer=None, when=None):
-        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Optional[bool]) -> None
-        """The idle command does nothing. It may be a placeholder or used to insert a calculated delay in a longer series of commands.
+    def __init__(self, delay=None, description=None, screen_lock=None, sequencer=None, when=None, commands=None, data=None, otherwise=None):
+        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Optional[bool], Optional[List[Command_bc5ff832]], Optional[List[object]], Optional[List[Command_bc5ff832]]) -> None
+        """Select a single command from an array of commands and data.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
         :type delay: (optional) int
@@ -76,11 +89,20 @@ class IdleCommand(Command):
         :type sequencer: (optional) str
         :param when: If false, the execution of the command is skipped. Defaults to true.
         :type when: (optional) bool
+        :param commands: An ordered list of commands to select from.
+        :type commands: (optional) list[ask_sdk_model.interfaces.alexa.presentation.apl.command.Command]
+        :param data: A list of data to map against the commands.
+        :type data: (optional) list[object]
+        :param otherwise: Commands to execute if nothing else runs.
+        :type otherwise: (optional) list[ask_sdk_model.interfaces.alexa.presentation.apl.command.Command]
         """
-        self.__discriminator_value = "Idle"  # type: str
+        self.__discriminator_value = "Select"  # type: str
 
         self.object_type = self.__discriminator_value
-        super(IdleCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, screen_lock=screen_lock, sequencer=sequencer, when=when)
+        super(SelectCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, screen_lock=screen_lock, sequencer=sequencer, when=when)
+        self.commands = commands
+        self.data = data
+        self.otherwise = otherwise
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -125,7 +147,7 @@ class IdleCommand(Command):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, IdleCommand):
+        if not isinstance(other, SelectCommand):
             return False
 
         return self.__dict__ == other.__dict__

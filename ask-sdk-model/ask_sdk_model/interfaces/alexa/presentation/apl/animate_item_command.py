@@ -37,6 +37,10 @@ class AnimateItemCommand(Command):
     :type delay: (optional) int
     :param description: A user-provided description of this command.
     :type description: (optional) str
+    :param screen_lock: If true, disable the Interaction Timer.
+    :type screen_lock: (optional) bool
+    :param sequencer: Specify the sequencer that should execute this command.
+    :type sequencer: (optional) str
     :param when: If false, the execution of the command is skipped. Defaults to true.
     :type when: (optional) bool
     :param component_id: The ID of the animated component.
@@ -57,6 +61,8 @@ class AnimateItemCommand(Command):
         'object_type': 'str',
         'delay': 'int',
         'description': 'str',
+        'screen_lock': 'bool',
+        'sequencer': 'str',
         'when': 'bool',
         'component_id': 'str',
         'duration': 'int',
@@ -70,6 +76,8 @@ class AnimateItemCommand(Command):
         'object_type': 'type',
         'delay': 'delay',
         'description': 'description',
+        'screen_lock': 'screenLock',
+        'sequencer': 'sequencer',
         'when': 'when',
         'component_id': 'componentId',
         'duration': 'duration',
@@ -80,14 +88,18 @@ class AnimateItemCommand(Command):
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, delay=None, description=None, when=None, component_id=None, duration=None, easing='linear', repeat_count=None, repeat_mode=None, value=None):
-        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Union[int, str, None], Optional[str], Union[int, str, None], Optional[AnimateItemRepeatMode_22d93893], Optional[List[AnimatedProperty_b438632b]]) -> None
+    def __init__(self, delay=None, description=None, screen_lock=None, sequencer=None, when=None, component_id=None, duration=None, easing='linear', repeat_count=None, repeat_mode=None, value=None):
+        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Optional[bool], Optional[str], Union[int, str, None], Optional[str], Union[int, str, None], Optional[AnimateItemRepeatMode_22d93893], Optional[List[AnimatedProperty_b438632b]]) -> None
         """Runs a fixed-duration animation sequence on one or more properties of a single component.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
         :type delay: (optional) int
         :param description: A user-provided description of this command.
         :type description: (optional) str
+        :param screen_lock: If true, disable the Interaction Timer.
+        :type screen_lock: (optional) bool
+        :param sequencer: Specify the sequencer that should execute this command.
+        :type sequencer: (optional) str
         :param when: If false, the execution of the command is skipped. Defaults to true.
         :type when: (optional) bool
         :param component_id: The ID of the animated component.
@@ -106,7 +118,7 @@ class AnimateItemCommand(Command):
         self.__discriminator_value = "AnimateItem"  # type: str
 
         self.object_type = self.__discriminator_value
-        super(AnimateItemCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, when=when)
+        super(AnimateItemCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, screen_lock=screen_lock, sequencer=sequencer, when=when)
         self.component_id = component_id
         self.duration = duration
         self.easing = easing

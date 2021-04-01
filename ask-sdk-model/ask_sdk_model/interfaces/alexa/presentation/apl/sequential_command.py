@@ -36,6 +36,10 @@ class SequentialCommand(Command):
     :type delay: (optional) int
     :param description: A user-provided description of this command.
     :type description: (optional) str
+    :param screen_lock: If true, disable the Interaction Timer.
+    :type screen_lock: (optional) bool
+    :param sequencer: Specify the sequencer that should execute this command.
+    :type sequencer: (optional) str
     :param when: If false, the execution of the command is skipped. Defaults to true.
     :type when: (optional) bool
     :param catch: An ordered list of commands to execute if this sequence is prematurely terminated.
@@ -52,6 +56,8 @@ class SequentialCommand(Command):
         'object_type': 'str',
         'delay': 'int',
         'description': 'str',
+        'screen_lock': 'bool',
+        'sequencer': 'str',
         'when': 'bool',
         'catch': 'list[ask_sdk_model.interfaces.alexa.presentation.apl.command.Command]',
         'commands': 'list[ask_sdk_model.interfaces.alexa.presentation.apl.command.Command]',
@@ -63,6 +69,8 @@ class SequentialCommand(Command):
         'object_type': 'type',
         'delay': 'delay',
         'description': 'description',
+        'screen_lock': 'screenLock',
+        'sequencer': 'sequencer',
         'when': 'when',
         'catch': 'catch',
         'commands': 'commands',
@@ -71,14 +79,18 @@ class SequentialCommand(Command):
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, delay=None, description=None, when=None, catch=None, commands=None, object_finally=None, repeat_count=None):
-        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[List[Command_bc5ff832]], Optional[List[Command_bc5ff832]], Optional[List[Command_bc5ff832]], Union[int, str, None]) -> None
+    def __init__(self, delay=None, description=None, screen_lock=None, sequencer=None, when=None, catch=None, commands=None, object_finally=None, repeat_count=None):
+        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Optional[bool], Optional[List[Command_bc5ff832]], Optional[List[Command_bc5ff832]], Optional[List[Command_bc5ff832]], Union[int, str, None]) -> None
         """A sequential command executes a series of commands in order. The sequential command executes the command list in order, waiting for the previous command to finish before executing the next. The sequential command is finished when all of its child commands have finished. When the Sequential command is terminated early, the currently executing command is terminated and no further commands are executed.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
         :type delay: (optional) int
         :param description: A user-provided description of this command.
         :type description: (optional) str
+        :param screen_lock: If true, disable the Interaction Timer.
+        :type screen_lock: (optional) bool
+        :param sequencer: Specify the sequencer that should execute this command.
+        :type sequencer: (optional) str
         :param when: If false, the execution of the command is skipped. Defaults to true.
         :type when: (optional) bool
         :param catch: An ordered list of commands to execute if this sequence is prematurely terminated.
@@ -93,7 +105,7 @@ class SequentialCommand(Command):
         self.__discriminator_value = "Sequential"  # type: str
 
         self.object_type = self.__discriminator_value
-        super(SequentialCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, when=when)
+        super(SequentialCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, screen_lock=screen_lock, sequencer=sequencer, when=when)
         self.catch = catch
         self.commands = commands
         self.object_finally = object_finally

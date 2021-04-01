@@ -35,6 +35,10 @@ class ClearFocusCommand(Command):
     :type delay: (optional) int
     :param description: A user-provided description of this command.
     :type description: (optional) str
+    :param screen_lock: If true, disable the Interaction Timer.
+    :type screen_lock: (optional) bool
+    :param sequencer: Specify the sequencer that should execute this command.
+    :type sequencer: (optional) str
     :param when: If false, the execution of the command is skipped. Defaults to true.
     :type when: (optional) bool
 
@@ -43,6 +47,8 @@ class ClearFocusCommand(Command):
         'object_type': 'str',
         'delay': 'int',
         'description': 'str',
+        'screen_lock': 'bool',
+        'sequencer': 'str',
         'when': 'bool'
     }  # type: Dict
 
@@ -50,25 +56,31 @@ class ClearFocusCommand(Command):
         'object_type': 'type',
         'delay': 'delay',
         'description': 'description',
+        'screen_lock': 'screenLock',
+        'sequencer': 'sequencer',
         'when': 'when'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, delay=None, description=None, when=None):
-        # type: (Union[int, str, None], Optional[str], Optional[bool]) -> None
+    def __init__(self, delay=None, description=None, screen_lock=None, sequencer=None, when=None):
+        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Optional[bool]) -> None
         """Removes focus from the component that is currently in focus.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
         :type delay: (optional) int
         :param description: A user-provided description of this command.
         :type description: (optional) str
+        :param screen_lock: If true, disable the Interaction Timer.
+        :type screen_lock: (optional) bool
+        :param sequencer: Specify the sequencer that should execute this command.
+        :type sequencer: (optional) str
         :param when: If false, the execution of the command is skipped. Defaults to true.
         :type when: (optional) bool
         """
         self.__discriminator_value = "ClearFocus"  # type: str
 
         self.object_type = self.__discriminator_value
-        super(ClearFocusCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, when=when)
+        super(ClearFocusCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, screen_lock=screen_lock, sequencer=sequencer, when=when)
 
     def to_dict(self):
         # type: () -> Dict[str, object]

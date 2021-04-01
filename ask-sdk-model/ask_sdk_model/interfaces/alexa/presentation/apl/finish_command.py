@@ -26,9 +26,9 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class IdleCommand(Command):
+class FinishCommand(Command):
     """
-    The idle command does nothing. It may be a placeholder or used to insert a calculated delay in a longer series of commands.
+    The finish command closes the current APL document and exits.
 
 
     :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
@@ -64,7 +64,7 @@ class IdleCommand(Command):
 
     def __init__(self, delay=None, description=None, screen_lock=None, sequencer=None, when=None):
         # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Optional[bool]) -> None
-        """The idle command does nothing. It may be a placeholder or used to insert a calculated delay in a longer series of commands.
+        """The finish command closes the current APL document and exits.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
         :type delay: (optional) int
@@ -77,10 +77,10 @@ class IdleCommand(Command):
         :param when: If false, the execution of the command is skipped. Defaults to true.
         :type when: (optional) bool
         """
-        self.__discriminator_value = "Idle"  # type: str
+        self.__discriminator_value = "Finish"  # type: str
 
         self.object_type = self.__discriminator_value
-        super(IdleCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, screen_lock=screen_lock, sequencer=sequencer, when=when)
+        super(FinishCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, screen_lock=screen_lock, sequencer=sequencer, when=when)
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -125,7 +125,7 @@ class IdleCommand(Command):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, IdleCommand):
+        if not isinstance(other, FinishCommand):
             return False
 
         return self.__dict__ == other.__dict__

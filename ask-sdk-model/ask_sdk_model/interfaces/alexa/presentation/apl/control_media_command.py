@@ -36,6 +36,10 @@ class ControlMediaCommand(Command):
     :type delay: (optional) int
     :param description: A user-provided description of this command.
     :type description: (optional) str
+    :param screen_lock: If true, disable the Interaction Timer.
+    :type screen_lock: (optional) bool
+    :param sequencer: Specify the sequencer that should execute this command.
+    :type sequencer: (optional) str
     :param when: If false, the execution of the command is skipped. Defaults to true.
     :type when: (optional) bool
     :param command: The command to issue on the media player
@@ -50,6 +54,8 @@ class ControlMediaCommand(Command):
         'object_type': 'str',
         'delay': 'int',
         'description': 'str',
+        'screen_lock': 'bool',
+        'sequencer': 'str',
         'when': 'bool',
         'command': 'ask_sdk_model.interfaces.alexa.presentation.apl.media_command_type.MediaCommandType',
         'component_id': 'str',
@@ -60,6 +66,8 @@ class ControlMediaCommand(Command):
         'object_type': 'type',
         'delay': 'delay',
         'description': 'description',
+        'screen_lock': 'screenLock',
+        'sequencer': 'sequencer',
         'when': 'when',
         'command': 'command',
         'component_id': 'componentId',
@@ -67,14 +75,18 @@ class ControlMediaCommand(Command):
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, delay=None, description=None, when=None, command=None, component_id=None, value=None):
-        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[MediaCommandType_47512d90], Optional[str], Union[int, str, None]) -> None
+    def __init__(self, delay=None, description=None, screen_lock=None, sequencer=None, when=None, command=None, component_id=None, value=None):
+        # type: (Union[int, str, None], Optional[str], Optional[bool], Optional[str], Optional[bool], Optional[MediaCommandType_47512d90], Optional[str], Union[int, str, None]) -> None
         """Control a media player to play, pause, change tracks, or perform some other common action.
 
         :param delay: The delay in milliseconds before this command starts executing; must be non-negative. Defaults to 0.
         :type delay: (optional) int
         :param description: A user-provided description of this command.
         :type description: (optional) str
+        :param screen_lock: If true, disable the Interaction Timer.
+        :type screen_lock: (optional) bool
+        :param sequencer: Specify the sequencer that should execute this command.
+        :type sequencer: (optional) str
         :param when: If false, the execution of the command is skipped. Defaults to true.
         :type when: (optional) bool
         :param command: The command to issue on the media player
@@ -87,7 +99,7 @@ class ControlMediaCommand(Command):
         self.__discriminator_value = "ControlMedia"  # type: str
 
         self.object_type = self.__discriminator_value
-        super(ControlMediaCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, when=when)
+        super(ControlMediaCommand, self).__init__(object_type=self.__discriminator_value, delay=delay, description=description, screen_lock=screen_lock, sequencer=sequencer, when=when)
         self.command = command
         self.component_id = component_id
         self.value = value

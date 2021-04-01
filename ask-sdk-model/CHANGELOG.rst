@@ -371,3 +371,13 @@ This release contains the following changes :
 
 This release contains the following changes :
 - APL for Audio now sends RuntimeError requests that notify developer of any errors that happened during APLA processing.
+
+
+1.30.0
+~~~~~~
+
+This release contains the following changes :
+
+- Add support for APL 1.6 version. More information about the newest version can be found `here <https://developer.amazon.com/en-US/docs/alexa/alexa-presentation-language/apl-latest-version.html>`__.
+
+
