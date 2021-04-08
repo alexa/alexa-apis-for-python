@@ -61,6 +61,8 @@ class Request(object):
         |
         | Alexa.Presentation.APL.LoadIndexListData: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.load_index_list_data_event.LoadIndexListDataEvent`,
         |
+        | Alexa.Presentation.APL.LoadTokenListData: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.load_token_list_data_event.LoadTokenListDataEvent`,
+        |
         | AudioPlayer.PlaybackFailed: :py:class:`ask_sdk_model.interfaces.audioplayer.playback_failed_request.PlaybackFailedRequest`,
         |
         | CanFulfillIntentRequest: :py:class:`ask_sdk_model.canfulfill.can_fulfill_intent_request.CanFulfillIntentRequest`,
@@ -168,6 +170,7 @@ class Request(object):
         'SessionResumedRequest': 'ask_sdk_model.session_resumed_request.SessionResumedRequest',
         'SessionEndedRequest': 'ask_sdk_model.session_ended_request.SessionEndedRequest',
         'Alexa.Presentation.APL.LoadIndexListData': 'ask_sdk_model.interfaces.alexa.presentation.apl.load_index_list_data_event.LoadIndexListDataEvent',
+        'Alexa.Presentation.APL.LoadTokenListData': 'ask_sdk_model.interfaces.alexa.presentation.apl.load_token_list_data_event.LoadTokenListDataEvent',
         'AudioPlayer.PlaybackFailed': 'ask_sdk_model.interfaces.audioplayer.playback_failed_request.PlaybackFailedRequest',
         'CanFulfillIntentRequest': 'ask_sdk_model.canfulfill.can_fulfill_intent_request.CanFulfillIntentRequest',
         'CustomInterfaceController.Expired': 'ask_sdk_model.interfaces.custom_interface_controller.expired_request.ExpiredRequest',

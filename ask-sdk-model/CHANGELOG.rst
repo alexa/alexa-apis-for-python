@@ -381,3 +381,11 @@ This release contains the following changes :
 - Add support for APL 1.6 version. More information about the newest version can be found `here <https://developer.amazon.com/en-US/docs/alexa/alexa-presentation-language/apl-latest-version.html>`__.
 
 
+
+
+1.30.1
+^^^^^^
+
+This release contains the following changes :
+
+- Adding missing definitions for APL 1.6. More information can be found `here <https://developer.amazon.com/en-US/docs/alexa/alexa-presentation-language/apl-latest-version.html#token-based-lazy-loading>`__.

@@ -97,6 +97,8 @@ class Directive(object):
         |
         | Connections.SendResponse: :py:class:`ask_sdk_model.interfaces.connections.send_response_directive.SendResponseDirective`,
         |
+        | Alexa.Presentation.APL.SendTokenListData: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.send_token_list_data_directive.SendTokenListDataDirective`,
+        |
         | AudioPlayer.ClearQueue: :py:class:`ask_sdk_model.interfaces.audioplayer.clear_queue_directive.ClearQueueDirective`,
         |
         | Alexa.Presentation.APL.UpdateIndexListData: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.update_index_list_data_directive.UpdateIndexListDataDirective`
@@ -142,6 +144,7 @@ class Directive(object):
         'Tasks.CompleteTask': 'ask_sdk_model.interfaces.tasks.complete_task_directive.CompleteTaskDirective',
         'Alexa.Presentation.APL.RenderDocument': 'ask_sdk_model.interfaces.alexa.presentation.apl.render_document_directive.RenderDocumentDirective',
         'Connections.SendResponse': 'ask_sdk_model.interfaces.connections.send_response_directive.SendResponseDirective',
+        'Alexa.Presentation.APL.SendTokenListData': 'ask_sdk_model.interfaces.alexa.presentation.apl.send_token_list_data_directive.SendTokenListDataDirective',
         'AudioPlayer.ClearQueue': 'ask_sdk_model.interfaces.audioplayer.clear_queue_directive.ClearQueueDirective',
         'Alexa.Presentation.APL.UpdateIndexListData': 'ask_sdk_model.interfaces.alexa.presentation.apl.update_index_list_data_directive.UpdateIndexListDataDirective'
     }
