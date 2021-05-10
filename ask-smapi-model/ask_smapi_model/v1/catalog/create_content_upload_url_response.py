@@ -31,34 +31,34 @@ class CreateContentUploadUrlResponse(object):
 
     :param url_id: Unique identifier for collection of generated urls.
     :type url_id: (optional) str
-    :param pre_signed_upload_parts: Ordered list of presigned upload parts to perform a partitioned (multipart) file upload
-    :type pre_signed_upload_parts: (optional) list[ask_smapi_model.v1.catalog.presigned_upload_part_items.PresignedUploadPartItems]
+    :param presigned_upload_parts: Ordered list of presigned upload parts to perform a partitioned (multipart) file upload
+    :type presigned_upload_parts: (optional) list[ask_smapi_model.v1.catalog.presigned_upload_part_items.PresignedUploadPartItems]
 
     """
     deserialized_types = {
         'url_id': 'str',
-        'pre_signed_upload_parts': 'list[ask_smapi_model.v1.catalog.presigned_upload_part_items.PresignedUploadPartItems]'
+        'presigned_upload_parts': 'list[ask_smapi_model.v1.catalog.presigned_upload_part_items.PresignedUploadPartItems]'
     }  # type: Dict
 
     attribute_map = {
         'url_id': 'urlId',
-        'pre_signed_upload_parts': 'preSignedUploadParts'
+        'presigned_upload_parts': 'presignedUploadParts'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, url_id=None, pre_signed_upload_parts=None):
+    def __init__(self, url_id=None, presigned_upload_parts=None):
         # type: (Optional[str], Optional[List[PresignedUploadPartItems_81cf2d27]]) -> None
         """
 
         :param url_id: Unique identifier for collection of generated urls.
         :type url_id: (optional) str
-        :param pre_signed_upload_parts: Ordered list of presigned upload parts to perform a partitioned (multipart) file upload
-        :type pre_signed_upload_parts: (optional) list[ask_smapi_model.v1.catalog.presigned_upload_part_items.PresignedUploadPartItems]
+        :param presigned_upload_parts: Ordered list of presigned upload parts to perform a partitioned (multipart) file upload
+        :type presigned_upload_parts: (optional) list[ask_smapi_model.v1.catalog.presigned_upload_part_items.PresignedUploadPartItems]
         """
         self.__discriminator_value = None  # type: str
 
         self.url_id = url_id
-        self.pre_signed_upload_parts = pre_signed_upload_parts
+        self.presigned_upload_parts = presigned_upload_parts
 
     def to_dict(self):
         # type: () -> Dict[str, object]

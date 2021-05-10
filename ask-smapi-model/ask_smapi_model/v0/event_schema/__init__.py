@@ -19,6 +19,8 @@ from .actor_attributes import ActorAttributes
 from .request_status import RequestStatus
 from .subscription_attributes import SubscriptionAttributes
 from .base_schema import BaseSchema
+from .skill_review_event_attributes import SkillReviewEventAttributes
+from .skill_review_attributes import SkillReviewAttributes
 from .skill_event_attributes import SkillEventAttributes
 from .interaction_model_attributes import InteractionModelAttributes
 from .interaction_model_event_attributes import InteractionModelEventAttributes

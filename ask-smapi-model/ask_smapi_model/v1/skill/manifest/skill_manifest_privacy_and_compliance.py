@@ -31,7 +31,7 @@ class SkillManifestPrivacyAndCompliance(object):
     Defines the structure for privacy &amp; compliance information in the skill manifest.
 
 
-    :param locales: Defines the structure for locale specific privacy &amp; compliance information in the skill manifest.
+    :param locales: Object that contains &lt;locale&gt; objects for each supported locale.
     :type locales: (optional) dict(str, ask_smapi_model.v1.skill.manifest.skill_manifest_localized_privacy_and_compliance.SkillManifestLocalizedPrivacyAndCompliance)
     :param allows_purchases: True if the skill allows users to make purchases or spend real money false otherwise.
     :type allows_purchases: (optional) bool
@@ -72,7 +72,7 @@ class SkillManifestPrivacyAndCompliance(object):
         # type: (Optional[Dict[str, SkillManifestLocalizedPrivacyAndCompliance_ef86fcec]], Optional[bool], Optional[bool], Optional[bool], Optional[bool], Optional[bool], Optional[bool]) -> None
         """Defines the structure for privacy &amp; compliance information in the skill manifest.
 
-        :param locales: Defines the structure for locale specific privacy &amp; compliance information in the skill manifest.
+        :param locales: Object that contains &lt;locale&gt; objects for each supported locale.
         :type locales: (optional) dict(str, ask_smapi_model.v1.skill.manifest.skill_manifest_localized_privacy_and_compliance.SkillManifestLocalizedPrivacyAndCompliance)
         :param allows_purchases: True if the skill allows users to make purchases or spend real money false otherwise.
         :type allows_purchases: (optional) bool

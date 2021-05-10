@@ -25,14 +25,17 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class HealthProtocolVersion(Enum):
+class HostedSkillRegion(Enum):
     """
+    Hosted skill AWS region
 
 
-    Allowed enum values: [_1, _2]
+
+    Allowed enum values: [US_EAST_1, US_WEST_2, EU_WEST_1]
     """
-    _1 = "1"
-    _2 = "2"
+    US_EAST_1 = "US_EAST_1"
+    US_WEST_2 = "US_WEST_2"
+    EU_WEST_1 = "EU_WEST_1"
 
     def to_dict(self):
         # type: () -> Dict[str, Any]
@@ -53,7 +56,7 @@ class HealthProtocolVersion(Enum):
     def __eq__(self, other):
         # type: (Any) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, HealthProtocolVersion):
+        if not isinstance(other, HostedSkillRegion):
             return False
 
         return self.__dict__ == other.__dict__

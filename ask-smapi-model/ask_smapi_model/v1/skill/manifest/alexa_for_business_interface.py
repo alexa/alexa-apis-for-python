@@ -23,8 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.request import Request as Request_f4811697
     from ask_smapi_model.v1.skill.manifest.version import Version as Version_17871229
+    from ask_smapi_model.v1.skill.manifest.alexa_for_business_interface_request import AlexaForBusinessInterfaceRequest as AlexaForBusinessInterfaceRequest_3d9e9835
 
 
 class AlexaForBusinessInterface(object):
@@ -35,13 +35,13 @@ class AlexaForBusinessInterface(object):
     :param version: 
     :type version: (optional) ask_smapi_model.v1.skill.manifest.version.Version
     :param requests: Contains a list of requests/messages that skill can handle.
-    :type requests: (optional) list[ask_smapi_model.v1.skill.manifest.request.Request]
+    :type requests: (optional) list[ask_smapi_model.v1.skill.manifest.alexa_for_business_interface_request.AlexaForBusinessInterfaceRequest]
 
     """
     deserialized_types = {
         'namespace': 'str',
         'version': 'ask_smapi_model.v1.skill.manifest.version.Version',
-        'requests': 'list[ask_smapi_model.v1.skill.manifest.request.Request]'
+        'requests': 'list[ask_smapi_model.v1.skill.manifest.alexa_for_business_interface_request.AlexaForBusinessInterfaceRequest]'
     }  # type: Dict
 
     attribute_map = {
@@ -52,7 +52,7 @@ class AlexaForBusinessInterface(object):
     supports_multiple_types = False
 
     def __init__(self, namespace=None, version=None, requests=None):
-        # type: (Optional[str], Optional[Version_17871229], Optional[List[Request_f4811697]]) -> None
+        # type: (Optional[str], Optional[Version_17871229], Optional[List[AlexaForBusinessInterfaceRequest_3d9e9835]]) -> None
         """
 
         :param namespace: Name of the interface.
@@ -60,7 +60,7 @@ class AlexaForBusinessInterface(object):
         :param version: 
         :type version: (optional) ask_smapi_model.v1.skill.manifest.version.Version
         :param requests: Contains a list of requests/messages that skill can handle.
-        :type requests: (optional) list[ask_smapi_model.v1.skill.manifest.request.Request]
+        :type requests: (optional) list[ask_smapi_model.v1.skill.manifest.alexa_for_business_interface_request.AlexaForBusinessInterfaceRequest]
         """
         self.__discriminator_value = None  # type: str
 

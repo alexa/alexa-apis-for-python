@@ -29,7 +29,7 @@ class SkillSummaryApis(Enum):
     """
 
 
-    Allowed enum values: [custom, smartHome, flashBriefing, video, music, householdList, health, alexaForBusiness]
+    Allowed enum values: [custom, smartHome, flashBriefing, video, music, householdList, health, alexaForBusiness, demandResponse]
     """
     custom = "custom"
     smartHome = "smartHome"
@@ -39,6 +39,7 @@ class SkillSummaryApis(Enum):
     householdList = "householdList"
     health = "health"
     alexaForBusiness = "alexaForBusiness"
+    demandResponse = "demandResponse"
 
     def to_dict(self):
         # type: () -> Dict[str, Any]

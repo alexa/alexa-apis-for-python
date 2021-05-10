@@ -23,34 +23,37 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
+    from ask_smapi_model.v1.skill.manifest.localized_knowledge_information import LocalizedKnowledgeInformation as LocalizedKnowledgeInformation_59e51789
 
 
-class HealthAlias(object):
+class KnowledgeApis(object):
     """
+    defines the structure for the knowledge api of the skill.
 
-    :param name: Name of alias to use when invoking a health skill.
-    :type name: (optional) str
+
+    :param locales: Defines the structure of locale specific knowledge information in the skill manifest.
+    :type locales: (optional) dict(str, ask_smapi_model.v1.skill.manifest.localized_knowledge_information.LocalizedKnowledgeInformation)
 
     """
     deserialized_types = {
-        'name': 'str'
+        'locales': 'dict(str, ask_smapi_model.v1.skill.manifest.localized_knowledge_information.LocalizedKnowledgeInformation)'
     }  # type: Dict
 
     attribute_map = {
-        'name': 'name'
+        'locales': 'locales'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, name=None):
-        # type: (Optional[str]) -> None
-        """
+    def __init__(self, locales=None):
+        # type: (Optional[Dict[str, LocalizedKnowledgeInformation_59e51789]]) -> None
+        """defines the structure for the knowledge api of the skill.
 
-        :param name: Name of alias to use when invoking a health skill.
-        :type name: (optional) str
+        :param locales: Defines the structure of locale specific knowledge information in the skill manifest.
+        :type locales: (optional) dict(str, ask_smapi_model.v1.skill.manifest.localized_knowledge_information.LocalizedKnowledgeInformation)
         """
         self.__discriminator_value = None  # type: str
 
-        self.name = name
+        self.locales = locales
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -95,7 +98,7 @@ class HealthAlias(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, HealthAlias):
+        if not isinstance(other, KnowledgeApis):
             return False
 
         return self.__dict__ == other.__dict__

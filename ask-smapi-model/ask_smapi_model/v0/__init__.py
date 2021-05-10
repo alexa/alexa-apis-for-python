@@ -16,5 +16,3 @@ from __future__ import absolute_import
 
 from .bad_request_error import BadRequestError
 from .error import Error
-from .link import Link
-from .links import Links

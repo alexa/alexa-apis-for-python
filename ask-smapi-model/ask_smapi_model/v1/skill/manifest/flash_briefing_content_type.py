@@ -27,15 +27,14 @@ if typing.TYPE_CHECKING:
 
 class FlashBriefingContentType(Enum):
     """
-    format of the feed content.
+    Format of the feed content.
 
 
 
-    Allowed enum values: [TEXT, AUDIO, AUDIO_AND_VIDEO]
+    Allowed enum values: [TEXT, AUDIO]
     """
     TEXT = "TEXT"
     AUDIO = "AUDIO"
-    AUDIO_AND_VIDEO = "AUDIO_AND_VIDEO"
 
     def to_dict(self):
         # type: () -> Dict[str, Any]

@@ -25,16 +25,13 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class Stage(Enum):
+class VideoPromptNameType(Enum):
     """
-    Stage of in-skill product.
 
 
-
-    Allowed enum values: [development, live]
+    Allowed enum values: [Default]
     """
-    development = "development"
-    live = "live"
+    Default = "Default"
 
     def to_dict(self):
         # type: () -> Dict[str, Any]
@@ -55,7 +52,7 @@ class Stage(Enum):
     def __eq__(self, other):
         # type: (Any) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Stage):
+        if not isinstance(other, VideoPromptNameType):
             return False
 
         return self.__dict__ == other.__dict__

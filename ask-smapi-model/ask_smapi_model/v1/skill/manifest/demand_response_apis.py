@@ -23,61 +23,52 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.health_protocol_version import HealthProtocolVersion as HealthProtocolVersion_55d5691
-    from ask_smapi_model.v1.skill.manifest.health_interface import HealthInterface as HealthInterface_9e90f99e
-    from ask_smapi_model.v1.skill.manifest.skill_manifest_endpoint import SkillManifestEndpoint as SkillManifestEndpoint_b30bcc05
-    from ask_smapi_model.v1.skill.manifest.region import Region as Region_10de9595
+    from ask_smapi_model.v1.skill.manifest.lambda_region import LambdaRegion as LambdaRegion_3e305f16
+    from ask_smapi_model.v1.skill.manifest.lambda_endpoint import LambdaEndpoint as LambdaEndpoint_87e61436
 
 
-class HealthApis(object):
+class DemandResponseApis(object):
     """
-    Defines the structure of health api in the skill manifest.
+    Defines the structure for demand response api of the skill.
 
 
     :param regions: Contains an array of the supported &lt;region&gt; Objects.
-    :type regions: (optional) dict(str, ask_smapi_model.v1.skill.manifest.region.Region)
+    :type regions: (optional) dict(str, ask_smapi_model.v1.skill.manifest.lambda_region.LambdaRegion)
     :param endpoint: 
-    :type endpoint: (optional) ask_smapi_model.v1.skill.manifest.skill_manifest_endpoint.SkillManifestEndpoint
-    :param protocol_version: 
-    :type protocol_version: (optional) ask_smapi_model.v1.skill.manifest.health_protocol_version.HealthProtocolVersion
-    :param interfaces: 
-    :type interfaces: (optional) ask_smapi_model.v1.skill.manifest.health_interface.HealthInterface
+    :type endpoint: (optional) ask_smapi_model.v1.skill.manifest.lambda_endpoint.LambdaEndpoint
+    :param enrollment_url: Defines the url for enrolling into a demand response program.
+    :type enrollment_url: (optional) str
 
     """
     deserialized_types = {
-        'regions': 'dict(str, ask_smapi_model.v1.skill.manifest.region.Region)',
-        'endpoint': 'ask_smapi_model.v1.skill.manifest.skill_manifest_endpoint.SkillManifestEndpoint',
-        'protocol_version': 'ask_smapi_model.v1.skill.manifest.health_protocol_version.HealthProtocolVersion',
-        'interfaces': 'ask_smapi_model.v1.skill.manifest.health_interface.HealthInterface'
+        'regions': 'dict(str, ask_smapi_model.v1.skill.manifest.lambda_region.LambdaRegion)',
+        'endpoint': 'ask_smapi_model.v1.skill.manifest.lambda_endpoint.LambdaEndpoint',
+        'enrollment_url': 'str'
     }  # type: Dict
 
     attribute_map = {
         'regions': 'regions',
         'endpoint': 'endpoint',
-        'protocol_version': 'protocolVersion',
-        'interfaces': 'interfaces'
+        'enrollment_url': 'enrollmentUrl'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, regions=None, endpoint=None, protocol_version=None, interfaces=None):
-        # type: (Optional[Dict[str, Region_10de9595]], Optional[SkillManifestEndpoint_b30bcc05], Optional[HealthProtocolVersion_55d5691], Optional[HealthInterface_9e90f99e]) -> None
-        """Defines the structure of health api in the skill manifest.
+    def __init__(self, regions=None, endpoint=None, enrollment_url=None):
+        # type: (Optional[Dict[str, LambdaRegion_3e305f16]], Optional[LambdaEndpoint_87e61436], Optional[str]) -> None
+        """Defines the structure for demand response api of the skill.
 
         :param regions: Contains an array of the supported &lt;region&gt; Objects.
-        :type regions: (optional) dict(str, ask_smapi_model.v1.skill.manifest.region.Region)
+        :type regions: (optional) dict(str, ask_smapi_model.v1.skill.manifest.lambda_region.LambdaRegion)
         :param endpoint: 
-        :type endpoint: (optional) ask_smapi_model.v1.skill.manifest.skill_manifest_endpoint.SkillManifestEndpoint
-        :param protocol_version: 
-        :type protocol_version: (optional) ask_smapi_model.v1.skill.manifest.health_protocol_version.HealthProtocolVersion
-        :param interfaces: 
-        :type interfaces: (optional) ask_smapi_model.v1.skill.manifest.health_interface.HealthInterface
+        :type endpoint: (optional) ask_smapi_model.v1.skill.manifest.lambda_endpoint.LambdaEndpoint
+        :param enrollment_url: Defines the url for enrolling into a demand response program.
+        :type enrollment_url: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
         self.regions = regions
         self.endpoint = endpoint
-        self.protocol_version = protocol_version
-        self.interfaces = interfaces
+        self.enrollment_url = enrollment_url
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -122,7 +113,7 @@ class HealthApis(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, HealthApis):
+        if not isinstance(other, DemandResponseApis):
             return False
 
         return self.__dict__ == other.__dict__

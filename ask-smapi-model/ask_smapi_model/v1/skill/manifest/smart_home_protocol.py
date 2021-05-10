@@ -31,13 +31,12 @@ class SmartHomeProtocol(Enum):
 
 
 
-    Allowed enum values: [_1, _2, _2_5, _2_9, _3]
+    Allowed enum values: [_2, _2_0, _3, _3_0]
     """
-    _1 = "1"
     _2 = "2"
-    _2_5 = "2.5"
-    _2_9 = "2.9"
+    _2_0 = "2.0"
     _3 = "3"
+    _3_0 = "3.0"
 
     def to_dict(self):
         # type: () -> Dict[str, Any]

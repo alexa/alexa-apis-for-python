@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v0.links import Links as Links_cdc03ffa
+    from ask_smapi_model.v1.links import Links as Links_bc43467b
     from ask_smapi_model.v0.catalog.catalog_summary import CatalogSummary as CatalogSummary_c8609f7a
 
 
@@ -33,7 +33,7 @@ class ListCatalogsResponse(object):
 
 
     :param links: 
-    :type links: (optional) ask_smapi_model.v0.links.Links
+    :type links: (optional) ask_smapi_model.v1.links.Links
     :param catalogs: List of catalog summaries. 
     :type catalogs: (optional) list[ask_smapi_model.v0.catalog.catalog_summary.CatalogSummary]
     :param is_truncated: 
@@ -43,7 +43,7 @@ class ListCatalogsResponse(object):
 
     """
     deserialized_types = {
-        'links': 'ask_smapi_model.v0.links.Links',
+        'links': 'ask_smapi_model.v1.links.Links',
         'catalogs': 'list[ask_smapi_model.v0.catalog.catalog_summary.CatalogSummary]',
         'is_truncated': 'bool',
         'next_token': 'str'
@@ -58,11 +58,11 @@ class ListCatalogsResponse(object):
     supports_multiple_types = False
 
     def __init__(self, links=None, catalogs=None, is_truncated=None, next_token=None):
-        # type: (Optional[Links_cdc03ffa], Optional[List[CatalogSummary_c8609f7a]], Optional[bool], Optional[str]) -> None
+        # type: (Optional[Links_bc43467b], Optional[List[CatalogSummary_c8609f7a]], Optional[bool], Optional[str]) -> None
         """Information about catalogs.
 
         :param links: 
-        :type links: (optional) ask_smapi_model.v0.links.Links
+        :type links: (optional) ask_smapi_model.v1.links.Links
         :param catalogs: List of catalog summaries. 
         :type catalogs: (optional) list[ask_smapi_model.v0.catalog.catalog_summary.CatalogSummary]
         :param is_truncated: 

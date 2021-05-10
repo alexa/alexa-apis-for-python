@@ -43,6 +43,8 @@ class BaseSchema(object):
 
         | AlexaDevelopmentEvent.InteractionModelUpdate: :py:class:`ask_smapi_model.v0.event_schema.alexa_development_event.interaction_model_update.InteractionModelUpdate`,
         |
+        | AlexaCustomerFeedbackEvent.SkillReviewPublish: :py:class:`ask_smapi_model.v0.event_schema.alexa_customer_feedback_event.skill_review_publish.SkillReviewPublish`,
+        |
         | AlexaDevelopmentEvent.SkillPublish: :py:class:`ask_smapi_model.v0.event_schema.alexa_development_event.skill_publish.SkillPublish`,
         |
         | AlexaDevelopmentEvent.ManifestUpdate: :py:class:`ask_smapi_model.v0.event_schema.alexa_development_event.manifest_update.ManifestUpdate`,
@@ -63,6 +65,7 @@ class BaseSchema(object):
 
     discriminator_value_class_map = {
         'AlexaDevelopmentEvent.InteractionModelUpdate': 'ask_smapi_model.v0.event_schema.alexa_development_event.interaction_model_update.InteractionModelUpdate',
+        'AlexaCustomerFeedbackEvent.SkillReviewPublish': 'ask_smapi_model.v0.event_schema.alexa_customer_feedback_event.skill_review_publish.SkillReviewPublish',
         'AlexaDevelopmentEvent.SkillPublish': 'ask_smapi_model.v0.event_schema.alexa_development_event.skill_publish.SkillPublish',
         'AlexaDevelopmentEvent.ManifestUpdate': 'ask_smapi_model.v0.event_schema.alexa_development_event.manifest_update.ManifestUpdate',
         'AlexaDevelopmentEvent.SkillCertification': 'ask_smapi_model.v0.event_schema.alexa_development_event.skill_certification.SkillCertification'

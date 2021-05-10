@@ -23,6 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
+    from ask_smapi_model.v1.links import Links as Links_bc43467b
     from ask_smapi_model.v1.audit_logs.response_pagination_context import ResponsePaginationContext as ResponsePaginationContext_ed91c19c
     from ask_smapi_model.v1.audit_logs.audit_log import AuditLog as AuditLog_c55d4ea9
 
@@ -34,33 +35,40 @@ class AuditLogsResponse(object):
 
     :param pagination_context: 
     :type pagination_context: (optional) ask_smapi_model.v1.audit_logs.response_pagination_context.ResponsePaginationContext
+    :param links: 
+    :type links: (optional) ask_smapi_model.v1.links.Links
     :param audit_logs: List of audit logs for the vendor.
     :type audit_logs: (optional) list[ask_smapi_model.v1.audit_logs.audit_log.AuditLog]
 
     """
     deserialized_types = {
         'pagination_context': 'ask_smapi_model.v1.audit_logs.response_pagination_context.ResponsePaginationContext',
+        'links': 'ask_smapi_model.v1.links.Links',
         'audit_logs': 'list[ask_smapi_model.v1.audit_logs.audit_log.AuditLog]'
     }  # type: Dict
 
     attribute_map = {
         'pagination_context': 'paginationContext',
+        'links': '_links',
         'audit_logs': 'auditLogs'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, pagination_context=None, audit_logs=None):
-        # type: (Optional[ResponsePaginationContext_ed91c19c], Optional[List[AuditLog_c55d4ea9]]) -> None
+    def __init__(self, pagination_context=None, links=None, audit_logs=None):
+        # type: (Optional[ResponsePaginationContext_ed91c19c], Optional[Links_bc43467b], Optional[List[AuditLog_c55d4ea9]]) -> None
         """Response to the Query Audit Logs API. It contains the collection of audit logs for the vendor, nextToken and other metadata related to the search query.
 
         :param pagination_context: 
         :type pagination_context: (optional) ask_smapi_model.v1.audit_logs.response_pagination_context.ResponsePaginationContext
+        :param links: 
+        :type links: (optional) ask_smapi_model.v1.links.Links
         :param audit_logs: List of audit logs for the vendor.
         :type audit_logs: (optional) list[ask_smapi_model.v1.audit_logs.audit_log.AuditLog]
         """
         self.__discriminator_value = None  # type: str
 
         self.pagination_context = pagination_context
+        self.links = links
         self.audit_logs = audit_logs
 
     def to_dict(self):

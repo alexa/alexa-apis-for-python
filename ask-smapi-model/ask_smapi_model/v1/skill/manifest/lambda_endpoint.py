@@ -30,7 +30,7 @@ class LambdaEndpoint(object):
     Contains the uri field. This sets the global default endpoint.
 
 
-    :param uri: Amazon Resource Name (ARN) of the skill&#39;s Lambda function or HTTPS URL.
+    :param uri: Amazon Resource Name (ARN) of the Lambda function.
     :type uri: (optional) str
 
     """
@@ -47,7 +47,7 @@ class LambdaEndpoint(object):
         # type: (Optional[str]) -> None
         """Contains the uri field. This sets the global default endpoint.
 
-        :param uri: Amazon Resource Name (ARN) of the skill&#39;s Lambda function or HTTPS URL.
+        :param uri: Amazon Resource Name (ARN) of the Lambda function.
         :type uri: (optional) str
         """
         self.__discriminator_value = None  # type: str

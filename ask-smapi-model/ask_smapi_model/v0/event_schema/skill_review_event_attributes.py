@@ -23,34 +23,53 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
+    from ask_smapi_model.v0.event_schema.skill_review_attributes import SkillReviewAttributes as SkillReviewAttributes_a54ff44
+    from ask_smapi_model.v0.event_schema.skill_attributes import SkillAttributes as SkillAttributes_416aaddd
+    from ask_smapi_model.v0.event_schema.subscription_attributes import SubscriptionAttributes as SubscriptionAttributes_ee385127
 
 
-class Link(object):
+class SkillReviewEventAttributes(object):
     """
+    Skill Review by customer event specific attributes. 
 
-    :param href: 
-    :type href: (optional) str
+
+    :param skill: 
+    :type skill: (optional) ask_smapi_model.v0.event_schema.skill_attributes.SkillAttributes
+    :param subscription: 
+    :type subscription: (optional) ask_smapi_model.v0.event_schema.subscription_attributes.SubscriptionAttributes
+    :param review: 
+    :type review: (optional) ask_smapi_model.v0.event_schema.skill_review_attributes.SkillReviewAttributes
 
     """
     deserialized_types = {
-        'href': 'str'
+        'skill': 'ask_smapi_model.v0.event_schema.skill_attributes.SkillAttributes',
+        'subscription': 'ask_smapi_model.v0.event_schema.subscription_attributes.SubscriptionAttributes',
+        'review': 'ask_smapi_model.v0.event_schema.skill_review_attributes.SkillReviewAttributes'
     }  # type: Dict
 
     attribute_map = {
-        'href': 'href'
+        'skill': 'skill',
+        'subscription': 'subscription',
+        'review': 'review'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, href=None):
-        # type: (Optional[str]) -> None
-        """
+    def __init__(self, skill=None, subscription=None, review=None):
+        # type: (Optional[SkillAttributes_416aaddd], Optional[SubscriptionAttributes_ee385127], Optional[SkillReviewAttributes_a54ff44]) -> None
+        """Skill Review by customer event specific attributes. 
 
-        :param href: 
-        :type href: (optional) str
+        :param skill: 
+        :type skill: (optional) ask_smapi_model.v0.event_schema.skill_attributes.SkillAttributes
+        :param subscription: 
+        :type subscription: (optional) ask_smapi_model.v0.event_schema.subscription_attributes.SubscriptionAttributes
+        :param review: 
+        :type review: (optional) ask_smapi_model.v0.event_schema.skill_review_attributes.SkillReviewAttributes
         """
         self.__discriminator_value = None  # type: str
 
-        self.href = href
+        self.skill = skill
+        self.subscription = subscription
+        self.review = review
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -95,7 +114,7 @@ class Link(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Link):
+        if not isinstance(other, SkillReviewEventAttributes):
             return False
 
         return self.__dict__ == other.__dict__

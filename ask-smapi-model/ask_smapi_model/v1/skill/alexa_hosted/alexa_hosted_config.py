@@ -23,6 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
+    from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_region import HostedSkillRegion as HostedSkillRegion_40868d85
     from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_runtime import HostedSkillRuntime as HostedSkillRuntime_6f3a4c25
 
 
@@ -33,27 +34,34 @@ class AlexaHostedConfig(object):
 
     :param runtime: 
     :type runtime: (optional) ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_runtime.HostedSkillRuntime
+    :param region: 
+    :type region: (optional) ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_region.HostedSkillRegion
 
     """
     deserialized_types = {
-        'runtime': 'ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_runtime.HostedSkillRuntime'
+        'runtime': 'ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_runtime.HostedSkillRuntime',
+        'region': 'ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_region.HostedSkillRegion'
     }  # type: Dict
 
     attribute_map = {
-        'runtime': 'runtime'
+        'runtime': 'runtime',
+        'region': 'region'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, runtime=None):
-        # type: (Optional[HostedSkillRuntime_6f3a4c25]) -> None
+    def __init__(self, runtime=None, region=None):
+        # type: (Optional[HostedSkillRuntime_6f3a4c25], Optional[HostedSkillRegion_40868d85]) -> None
         """Alexa hosted skill create configuration
 
         :param runtime: 
         :type runtime: (optional) ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_runtime.HostedSkillRuntime
+        :param region: 
+        :type region: (optional) ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_region.HostedSkillRegion
         """
         self.__discriminator_value = None  # type: str
 
         self.runtime = runtime
+        self.region = region
 
     def to_dict(self):
         # type: () -> Dict[str, object]

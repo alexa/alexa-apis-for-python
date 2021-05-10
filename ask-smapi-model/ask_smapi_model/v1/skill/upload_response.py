@@ -32,7 +32,7 @@ class UploadResponse(object):
 
     :param upload_url: The upload URL to upload a skill package.
     :type upload_url: (optional) str
-    :param expires_at: 
+    :param expires_at: The expiration time of the URL
     :type expires_at: (optional) datetime
 
     """
@@ -53,7 +53,7 @@ class UploadResponse(object):
 
         :param upload_url: The upload URL to upload a skill package.
         :type upload_url: (optional) str
-        :param expires_at: 
+        :param expires_at: The expiration time of the URL
         :type expires_at: (optional) datetime
         """
         self.__discriminator_value = None  # type: str

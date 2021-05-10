@@ -31,11 +31,10 @@ class DistributionMode(Enum):
 
 
 
-    Allowed enum values: [PRIVATE, PUBLIC, INTERNAL]
+    Allowed enum values: [PRIVATE, PUBLIC]
     """
     PRIVATE = "PRIVATE"
     PUBLIC = "PUBLIC"
-    INTERNAL = "INTERNAL"
 
     def to_dict(self):
         # type: () -> Dict[str, Any]

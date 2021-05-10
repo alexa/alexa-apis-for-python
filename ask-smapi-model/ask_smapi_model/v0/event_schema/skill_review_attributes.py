@@ -18,7 +18,6 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
-from ask_smapi_model.v1.skill.manifest.interface import Interface
 
 
 if typing.TYPE_CHECKING:
@@ -26,31 +25,48 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class CustomInterface(Interface):
+class SkillReviewAttributes(object):
     """
-    Skills using Custom Interfaces can send custom directives and receive custom events from custom endpoints such as Alexa gadgets.
+    Represents attributes of a customer review for a skill. 
 
 
+    :param review_id: Unique review id associated with a customer review for a skill. 
+    :type review_id: (optional) str
+    :param url: Link to the customer review on Amazon retail website. 
+    :type url: (optional) str
+    :param star_rating: StarRating provided by the customer in the review. It is always a natural number from 1 to 5 (inclusive of 1 and 5). 
+    :type star_rating: (optional) str
 
     """
     deserialized_types = {
-        'object_type': 'str'
+        'review_id': 'str',
+        'url': 'str',
+        'star_rating': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'object_type': 'type'
+        'review_id': 'reviewId',
+        'url': 'url',
+        'star_rating': 'starRating'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self):
-        # type: () -> None
-        """Skills using Custom Interfaces can send custom directives and receive custom events from custom endpoints such as Alexa gadgets.
+    def __init__(self, review_id=None, url=None, star_rating=None):
+        # type: (Optional[str], Optional[str], Optional[str]) -> None
+        """Represents attributes of a customer review for a skill. 
 
+        :param review_id: Unique review id associated with a customer review for a skill. 
+        :type review_id: (optional) str
+        :param url: Link to the customer review on Amazon retail website. 
+        :type url: (optional) str
+        :param star_rating: StarRating provided by the customer in the review. It is always a natural number from 1 to 5 (inclusive of 1 and 5). 
+        :type star_rating: (optional) str
         """
-        self.__discriminator_value = "CUSTOM_INTERFACE"  # type: str
+        self.__discriminator_value = None  # type: str
 
-        self.object_type = self.__discriminator_value
-        super(CustomInterface, self).__init__(object_type=self.__discriminator_value)
+        self.review_id = review_id
+        self.url = url
+        self.star_rating = star_rating
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -95,7 +111,7 @@ class CustomInterface(Interface):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, CustomInterface):
+        if not isinstance(other, SkillReviewAttributes):
             return False
 
         return self.__dict__ == other.__dict__

@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v0.links import Links as Links_cdc03ffa
+    from ask_smapi_model.v1.links import Links as Links_bc43467b
     from ask_smapi_model.v0.catalog.upload.content_upload_summary import ContentUploadSummary as ContentUploadSummary_8ef77e7e
 
 
@@ -31,7 +31,7 @@ class ListUploadsResponse(object):
     """
 
     :param links: 
-    :type links: (optional) ask_smapi_model.v0.links.Links
+    :type links: (optional) ask_smapi_model.v1.links.Links
     :param is_truncated: 
     :type is_truncated: (optional) bool
     :param next_token: 
@@ -41,7 +41,7 @@ class ListUploadsResponse(object):
 
     """
     deserialized_types = {
-        'links': 'ask_smapi_model.v0.links.Links',
+        'links': 'ask_smapi_model.v1.links.Links',
         'is_truncated': 'bool',
         'next_token': 'str',
         'uploads': 'list[ask_smapi_model.v0.catalog.upload.content_upload_summary.ContentUploadSummary]'
@@ -56,11 +56,11 @@ class ListUploadsResponse(object):
     supports_multiple_types = False
 
     def __init__(self, links=None, is_truncated=None, next_token=None, uploads=None):
-        # type: (Optional[Links_cdc03ffa], Optional[bool], Optional[str], Optional[List[ContentUploadSummary_8ef77e7e]]) -> None
+        # type: (Optional[Links_bc43467b], Optional[bool], Optional[str], Optional[List[ContentUploadSummary_8ef77e7e]]) -> None
         """
 
         :param links: 
-        :type links: (optional) ask_smapi_model.v0.links.Links
+        :type links: (optional) ask_smapi_model.v1.links.Links
         :param is_truncated: 
         :type is_truncated: (optional) bool
         :param next_token: 

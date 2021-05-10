@@ -23,44 +23,43 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.health_alias import HealthAlias as HealthAlias_f9de66cc
 
 
-class LocalizedHealthInfo(object):
+class CustomTask(object):
     """
-    Defines the structure for health skill locale specific publishing information in the skill manifest.
+    Defines the name and version of the task that the skill wants to handle.
 
 
-    :param prompt_name: SSML supported name to use when Alexa renders the health skill name in a prompt to the user.
-    :type prompt_name: (optional) str
-    :param aliases: Defines the names to use when a user tries to invoke the health skill.
-    :type aliases: (optional) list[ask_smapi_model.v1.skill.manifest.health_alias.HealthAlias]
+    :param name: Name of the task.
+    :type name: (optional) str
+    :param version: Version of the task.
+    :type version: (optional) str
 
     """
     deserialized_types = {
-        'prompt_name': 'str',
-        'aliases': 'list[ask_smapi_model.v1.skill.manifest.health_alias.HealthAlias]'
+        'name': 'str',
+        'version': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'prompt_name': 'promptName',
-        'aliases': 'aliases'
+        'name': 'name',
+        'version': 'version'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, prompt_name=None, aliases=None):
-        # type: (Optional[str], Optional[List[HealthAlias_f9de66cc]]) -> None
-        """Defines the structure for health skill locale specific publishing information in the skill manifest.
+    def __init__(self, name=None, version=None):
+        # type: (Optional[str], Optional[str]) -> None
+        """Defines the name and version of the task that the skill wants to handle.
 
-        :param prompt_name: SSML supported name to use when Alexa renders the health skill name in a prompt to the user.
-        :type prompt_name: (optional) str
-        :param aliases: Defines the names to use when a user tries to invoke the health skill.
-        :type aliases: (optional) list[ask_smapi_model.v1.skill.manifest.health_alias.HealthAlias]
+        :param name: Name of the task.
+        :type name: (optional) str
+        :param version: Version of the task.
+        :type version: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
-        self.prompt_name = prompt_name
-        self.aliases = aliases
+        self.name = name
+        self.version = version
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -105,7 +104,7 @@ class LocalizedHealthInfo(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, LocalizedHealthInfo):
+        if not isinstance(other, CustomTask):
             return False
 
         return self.__dict__ == other.__dict__

@@ -24,13 +24,14 @@ if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
     from ask_smapi_model.v1.skill.manifest.lambda_region import LambdaRegion as LambdaRegion_3e305f16
+    from ask_smapi_model.v1.skill.manifest.supported_controls import SupportedControls as SupportedControls_f80ce036
     from ask_smapi_model.v1.skill.manifest.smart_home_protocol import SmartHomeProtocol as SmartHomeProtocol_65bf853b
     from ask_smapi_model.v1.skill.manifest.lambda_endpoint import LambdaEndpoint as LambdaEndpoint_87e61436
 
 
 class SmartHomeApis(object):
     """
-    Defines the structure for smart home api of the skill.
+    Defines the structure of smart home api of the skill.
 
 
     :param regions: Contains an array of the supported &lt;region&gt; Objects.
@@ -39,24 +40,28 @@ class SmartHomeApis(object):
     :type endpoint: (optional) ask_smapi_model.v1.skill.manifest.lambda_endpoint.LambdaEndpoint
     :param protocol_version: 
     :type protocol_version: (optional) ask_smapi_model.v1.skill.manifest.smart_home_protocol.SmartHomeProtocol
+    :param supported_controls: 
+    :type supported_controls: (optional) ask_smapi_model.v1.skill.manifest.supported_controls.SupportedControls
 
     """
     deserialized_types = {
         'regions': 'dict(str, ask_smapi_model.v1.skill.manifest.lambda_region.LambdaRegion)',
         'endpoint': 'ask_smapi_model.v1.skill.manifest.lambda_endpoint.LambdaEndpoint',
-        'protocol_version': 'ask_smapi_model.v1.skill.manifest.smart_home_protocol.SmartHomeProtocol'
+        'protocol_version': 'ask_smapi_model.v1.skill.manifest.smart_home_protocol.SmartHomeProtocol',
+        'supported_controls': 'ask_smapi_model.v1.skill.manifest.supported_controls.SupportedControls'
     }  # type: Dict
 
     attribute_map = {
         'regions': 'regions',
         'endpoint': 'endpoint',
-        'protocol_version': 'protocolVersion'
+        'protocol_version': 'protocolVersion',
+        'supported_controls': 'supportedControls'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, regions=None, endpoint=None, protocol_version=None):
-        # type: (Optional[Dict[str, LambdaRegion_3e305f16]], Optional[LambdaEndpoint_87e61436], Optional[SmartHomeProtocol_65bf853b]) -> None
-        """Defines the structure for smart home api of the skill.
+    def __init__(self, regions=None, endpoint=None, protocol_version=None, supported_controls=None):
+        # type: (Optional[Dict[str, LambdaRegion_3e305f16]], Optional[LambdaEndpoint_87e61436], Optional[SmartHomeProtocol_65bf853b], Optional[SupportedControls_f80ce036]) -> None
+        """Defines the structure of smart home api of the skill.
 
         :param regions: Contains an array of the supported &lt;region&gt; Objects.
         :type regions: (optional) dict(str, ask_smapi_model.v1.skill.manifest.lambda_region.LambdaRegion)
@@ -64,12 +69,15 @@ class SmartHomeApis(object):
         :type endpoint: (optional) ask_smapi_model.v1.skill.manifest.lambda_endpoint.LambdaEndpoint
         :param protocol_version: 
         :type protocol_version: (optional) ask_smapi_model.v1.skill.manifest.smart_home_protocol.SmartHomeProtocol
+        :param supported_controls: 
+        :type supported_controls: (optional) ask_smapi_model.v1.skill.manifest.supported_controls.SupportedControls
         """
         self.__discriminator_value = None  # type: str
 
         self.regions = regions
         self.endpoint = endpoint
         self.protocol_version = protocol_version
+        self.supported_controls = supported_controls
 
     def to_dict(self):
         # type: () -> Dict[str, object]

@@ -23,9 +23,6 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.health_request import HealthRequest as HealthRequest_8ee2408a
-    from ask_smapi_model.v1.skill.manifest.localized_health_info import LocalizedHealthInfo as LocalizedHealthInfo_a37e772b
-    from ask_smapi_model.v1.skill.manifest.version import Version as Version_17871229
 
 
 class HealthInterface(object):
@@ -33,48 +30,34 @@ class HealthInterface(object):
 
     :param namespace: Name of the interface.
     :type namespace: (optional) str
-    :param version: 
-    :type version: (optional) ask_smapi_model.v1.skill.manifest.version.Version
-    :param requests: Defines the details of requests that a health skill is capable of handling.
-    :type requests: (optional) list[ask_smapi_model.v1.skill.manifest.health_request.HealthRequest]
-    :param locales: Defines the list for health skill locale specific publishing information in the skill manifest.
-    :type locales: (optional) dict(str, ask_smapi_model.v1.skill.manifest.localized_health_info.LocalizedHealthInfo)
+    :param version: defines the version of skill interface.
+    :type version: (optional) str
 
     """
     deserialized_types = {
         'namespace': 'str',
-        'version': 'ask_smapi_model.v1.skill.manifest.version.Version',
-        'requests': 'list[ask_smapi_model.v1.skill.manifest.health_request.HealthRequest]',
-        'locales': 'dict(str, ask_smapi_model.v1.skill.manifest.localized_health_info.LocalizedHealthInfo)'
+        'version': 'str'
     }  # type: Dict
 
     attribute_map = {
         'namespace': 'namespace',
-        'version': 'version',
-        'requests': 'requests',
-        'locales': 'locales'
+        'version': 'version'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, namespace=None, version=None, requests=None, locales=None):
-        # type: (Optional[str], Optional[Version_17871229], Optional[List[HealthRequest_8ee2408a]], Optional[Dict[str, LocalizedHealthInfo_a37e772b]]) -> None
+    def __init__(self, namespace=None, version=None):
+        # type: (Optional[str], Optional[str]) -> None
         """
 
         :param namespace: Name of the interface.
         :type namespace: (optional) str
-        :param version: 
-        :type version: (optional) ask_smapi_model.v1.skill.manifest.version.Version
-        :param requests: Defines the details of requests that a health skill is capable of handling.
-        :type requests: (optional) list[ask_smapi_model.v1.skill.manifest.health_request.HealthRequest]
-        :param locales: Defines the list for health skill locale specific publishing information in the skill manifest.
-        :type locales: (optional) dict(str, ask_smapi_model.v1.skill.manifest.localized_health_info.LocalizedHealthInfo)
+        :param version: defines the version of skill interface.
+        :type version: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
         self.namespace = namespace
         self.version = version
-        self.requests = requests
-        self.locales = locales
 
     def to_dict(self):
         # type: () -> Dict[str, object]

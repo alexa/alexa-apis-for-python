@@ -18,49 +18,75 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
+from abc import ABCMeta, abstractmethod
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v0.link import Link as Link_c73169e4
 
 
-class Links(object):
+class VideoFeature(object):
     """
-    Links for the API navigation.
+    A feature of an Alexa skill.
 
 
-    :param object_self: 
-    :type object_self: (optional) ask_smapi_model.v0.link.Link
-    :param next: 
-    :type next: (optional) ask_smapi_model.v0.link.Link
+    :param version: 
+    :type version: (optional) str
+    :param name: 
+    :type name: (optional) str
+
+    .. note::
+
+        This is an abstract class. Use the following mapping, to figure out
+        the model class to be instantiated, that sets ``name`` variable.
+
+        | VIDEO_VOICE_PROFILE: :py:class:`ask_smapi_model.v1.skill.manifest.voice_profile_feature.VoiceProfileFeature`,
+        |
+        | VIDEO_WEB_PLAYER: :py:class:`ask_smapi_model.v1.skill.manifest.video_web_player_feature.VideoWebPlayerFeature`
 
     """
     deserialized_types = {
-        'object_self': 'ask_smapi_model.v0.link.Link',
-        'next': 'ask_smapi_model.v0.link.Link'
+        'version': 'str',
+        'name': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'object_self': 'self',
-        'next': 'next'
+        'version': 'version',
+        'name': 'name'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, object_self=None, next=None):
-        # type: (Optional[Link_c73169e4], Optional[Link_c73169e4]) -> None
-        """Links for the API navigation.
+    discriminator_value_class_map = {
+        'VIDEO_VOICE_PROFILE': 'ask_smapi_model.v1.skill.manifest.voice_profile_feature.VoiceProfileFeature',
+        'VIDEO_WEB_PLAYER': 'ask_smapi_model.v1.skill.manifest.video_web_player_feature.VideoWebPlayerFeature'
+    }
 
-        :param object_self: 
-        :type object_self: (optional) ask_smapi_model.v0.link.Link
-        :param next: 
-        :type next: (optional) ask_smapi_model.v0.link.Link
+    json_discriminator_key = "name"
+
+    __metaclass__ = ABCMeta
+
+    @abstractmethod
+    def __init__(self, version=None, name=None):
+        # type: (Optional[str], Optional[str]) -> None
+        """A feature of an Alexa skill.
+
+        :param version: 
+        :type version: (optional) str
+        :param name: 
+        :type name: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
-        self.object_self = object_self
-        self.next = next
+        self.version = version
+        self.name = name
+
+    @classmethod
+    def get_real_child_model(cls, data):
+        # type: (Dict[str, str]) -> Optional[str]
+        """Returns the real base class specified by the discriminator"""
+        discriminator_value = data[cls.json_discriminator_key]
+        return cls.discriminator_value_class_map.get(discriminator_value)
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -105,7 +131,7 @@ class Links(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Links):
+        if not isinstance(other, VideoFeature):
             return False
 
         return self.__dict__ == other.__dict__

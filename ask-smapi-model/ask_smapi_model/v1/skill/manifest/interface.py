@@ -39,13 +39,15 @@ class Interface(object):
 
         | ALEXA_PRESENTATION_APL: :py:class:`ask_smapi_model.v1.skill.manifest.alexa_presentation_apl_interface.AlexaPresentationAplInterface`,
         |
-        | CUSTOM_INTERFACE: :py:class:`ask_smapi_model.v1.skill.manifest.custom_interface.CustomInterface`,
+        | APP_LINKS: :py:class:`ask_smapi_model.v1.skill.manifest.app_link_interface.AppLinkInterface`,
         |
         | ALEXA_PRESENTATION_HTML: :py:class:`ask_smapi_model.v1.skill.manifest.alexa_presentation_html_interface.AlexaPresentationHtmlInterface`,
         |
         | AUDIO_PLAYER: :py:class:`ask_smapi_model.v1.skill.manifest.audio_interface.AudioInterface`,
         |
         | GAME_ENGINE: :py:class:`ask_smapi_model.v1.skill.manifest.game_engine_interface.GameEngineInterface`,
+        |
+        | APP_LINKS_V2: :py:class:`ask_smapi_model.v1.skill.manifest.app_link_v2_interface.AppLinkV2Interface`,
         |
         | RENDER_TEMPLATE: :py:class:`ask_smapi_model.v1.skill.manifest.display_interface.DisplayInterface`,
         |
@@ -65,10 +67,11 @@ class Interface(object):
 
     discriminator_value_class_map = {
         'ALEXA_PRESENTATION_APL': 'ask_smapi_model.v1.skill.manifest.alexa_presentation_apl_interface.AlexaPresentationAplInterface',
-        'CUSTOM_INTERFACE': 'ask_smapi_model.v1.skill.manifest.custom_interface.CustomInterface',
+        'APP_LINKS': 'ask_smapi_model.v1.skill.manifest.app_link_interface.AppLinkInterface',
         'ALEXA_PRESENTATION_HTML': 'ask_smapi_model.v1.skill.manifest.alexa_presentation_html_interface.AlexaPresentationHtmlInterface',
         'AUDIO_PLAYER': 'ask_smapi_model.v1.skill.manifest.audio_interface.AudioInterface',
         'GAME_ENGINE': 'ask_smapi_model.v1.skill.manifest.game_engine_interface.GameEngineInterface',
+        'APP_LINKS_V2': 'ask_smapi_model.v1.skill.manifest.app_link_v2_interface.AppLinkV2Interface',
         'RENDER_TEMPLATE': 'ask_smapi_model.v1.skill.manifest.display_interface.DisplayInterface',
         'GADGET_CONTROLLER': 'ask_smapi_model.v1.skill.manifest.gadget_controller_interface.GadgetControllerInterface',
         'VIDEO_APP': 'ask_smapi_model.v1.skill.manifest.video_app_interface.VideoAppInterface'

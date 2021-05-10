@@ -40,7 +40,7 @@ class BetaTest(object):
     :param invitation_url: Deeplinking for getting authorized to the beta test.
     :type invitation_url: (optional) str
     :param invites_remaining: Remaining invite count for the beta test.
-    :type invites_remaining: (optional) float
+    :type invites_remaining: (optional) int
 
     """
     deserialized_types = {
@@ -48,7 +48,7 @@ class BetaTest(object):
         'status': 'ask_smapi_model.v1.skill.beta_test.status.Status',
         'feedback_email': 'str',
         'invitation_url': 'str',
-        'invites_remaining': 'float'
+        'invites_remaining': 'int'
     }  # type: Dict
 
     attribute_map = {
@@ -61,7 +61,7 @@ class BetaTest(object):
     supports_multiple_types = False
 
     def __init__(self, expiry_date=None, status=None, feedback_email=None, invitation_url=None, invites_remaining=None):
-        # type: (Optional[datetime], Optional[Status_3d3324db], Optional[str], Optional[str], Optional[float]) -> None
+        # type: (Optional[datetime], Optional[Status_3d3324db], Optional[str], Optional[str], Optional[int]) -> None
         """Beta test for an Alexa skill.
 
         :param expiry_date: Expiry date of the beta test.
@@ -73,7 +73,7 @@ class BetaTest(object):
         :param invitation_url: Deeplinking for getting authorized to the beta test.
         :type invitation_url: (optional) str
         :param invites_remaining: Remaining invite count for the beta test.
-        :type invites_remaining: (optional) float
+        :type invites_remaining: (optional) int
         """
         self.__discriminator_value = None  # type: str
 

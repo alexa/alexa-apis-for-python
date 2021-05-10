@@ -25,9 +25,11 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
     from ask_smapi_model.v1.skill.manifest.skill_manifest_publishing_information import SkillManifestPublishingInformation as SkillManifestPublishingInformation_eef29c5e
     from ask_smapi_model.v1.skill.manifest.skill_manifest_privacy_and_compliance import SkillManifestPrivacyAndCompliance as SkillManifestPrivacyAndCompliance_5c8f839f
+    from ask_smapi_model.v1.skill.manifest.manifest_version import ManifestVersion as ManifestVersion_579912bc
     from ask_smapi_model.v1.skill.manifest.skill_manifest_apis import SkillManifestApis as SkillManifestApis_cbb83f8d
     from ask_smapi_model.v1.skill.manifest.permission_items import PermissionItems as PermissionItems_d3460cc
     from ask_smapi_model.v1.skill.manifest.skill_manifest_events import SkillManifestEvents as SkillManifestEvents_29025b4d
+    from ask_smapi_model.v1.skill.manifest.authorized_client import AuthorizedClient as AuthorizedClient_68a7f69e
 
 
 class SkillManifest(object):
@@ -35,8 +37,8 @@ class SkillManifest(object):
     Defines the structure for a skill&#39;s metadata.
 
 
-    :param manifest_version: Version of the skill manifest.
-    :type manifest_version: (optional) str
+    :param manifest_version: 
+    :type manifest_version: (optional) ask_smapi_model.v1.skill.manifest.manifest_version.ManifestVersion
     :param publishing_information: 
     :type publishing_information: (optional) ask_smapi_model.v1.skill.manifest.skill_manifest_publishing_information.SkillManifestPublishingInformation
     :param privacy_and_compliance: 
@@ -45,16 +47,19 @@ class SkillManifest(object):
     :type events: (optional) ask_smapi_model.v1.skill.manifest.skill_manifest_events.SkillManifestEvents
     :param permissions: Defines the structure for required permissions information in the skill manifest.
     :type permissions: (optional) list[ask_smapi_model.v1.skill.manifest.permission_items.PermissionItems]
+    :param authorized_clients: Defines a list of clients authorized for a skill.
+    :type authorized_clients: (optional) list[ask_smapi_model.v1.skill.manifest.authorized_client.AuthorizedClient]
     :param apis: 
     :type apis: (optional) ask_smapi_model.v1.skill.manifest.skill_manifest_apis.SkillManifestApis
 
     """
     deserialized_types = {
-        'manifest_version': 'str',
+        'manifest_version': 'ask_smapi_model.v1.skill.manifest.manifest_version.ManifestVersion',
         'publishing_information': 'ask_smapi_model.v1.skill.manifest.skill_manifest_publishing_information.SkillManifestPublishingInformation',
         'privacy_and_compliance': 'ask_smapi_model.v1.skill.manifest.skill_manifest_privacy_and_compliance.SkillManifestPrivacyAndCompliance',
         'events': 'ask_smapi_model.v1.skill.manifest.skill_manifest_events.SkillManifestEvents',
         'permissions': 'list[ask_smapi_model.v1.skill.manifest.permission_items.PermissionItems]',
+        'authorized_clients': 'list[ask_smapi_model.v1.skill.manifest.authorized_client.AuthorizedClient]',
         'apis': 'ask_smapi_model.v1.skill.manifest.skill_manifest_apis.SkillManifestApis'
     }  # type: Dict
 
@@ -64,16 +69,17 @@ class SkillManifest(object):
         'privacy_and_compliance': 'privacyAndCompliance',
         'events': 'events',
         'permissions': 'permissions',
+        'authorized_clients': 'authorizedClients',
         'apis': 'apis'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, manifest_version=None, publishing_information=None, privacy_and_compliance=None, events=None, permissions=None, apis=None):
-        # type: (Optional[str], Optional[SkillManifestPublishingInformation_eef29c5e], Optional[SkillManifestPrivacyAndCompliance_5c8f839f], Optional[SkillManifestEvents_29025b4d], Optional[List[PermissionItems_d3460cc]], Optional[SkillManifestApis_cbb83f8d]) -> None
+    def __init__(self, manifest_version=None, publishing_information=None, privacy_and_compliance=None, events=None, permissions=None, authorized_clients=None, apis=None):
+        # type: (Optional[ManifestVersion_579912bc], Optional[SkillManifestPublishingInformation_eef29c5e], Optional[SkillManifestPrivacyAndCompliance_5c8f839f], Optional[SkillManifestEvents_29025b4d], Optional[List[PermissionItems_d3460cc]], Optional[List[AuthorizedClient_68a7f69e]], Optional[SkillManifestApis_cbb83f8d]) -> None
         """Defines the structure for a skill&#39;s metadata.
 
-        :param manifest_version: Version of the skill manifest.
-        :type manifest_version: (optional) str
+        :param manifest_version: 
+        :type manifest_version: (optional) ask_smapi_model.v1.skill.manifest.manifest_version.ManifestVersion
         :param publishing_information: 
         :type publishing_information: (optional) ask_smapi_model.v1.skill.manifest.skill_manifest_publishing_information.SkillManifestPublishingInformation
         :param privacy_and_compliance: 
@@ -82,6 +88,8 @@ class SkillManifest(object):
         :type events: (optional) ask_smapi_model.v1.skill.manifest.skill_manifest_events.SkillManifestEvents
         :param permissions: Defines the structure for required permissions information in the skill manifest.
         :type permissions: (optional) list[ask_smapi_model.v1.skill.manifest.permission_items.PermissionItems]
+        :param authorized_clients: Defines a list of clients authorized for a skill.
+        :type authorized_clients: (optional) list[ask_smapi_model.v1.skill.manifest.authorized_client.AuthorizedClient]
         :param apis: 
         :type apis: (optional) ask_smapi_model.v1.skill.manifest.skill_manifest_apis.SkillManifestApis
         """
@@ -92,6 +100,7 @@ class SkillManifest(object):
         self.privacy_and_compliance = privacy_and_compliance
         self.events = events
         self.permissions = permissions
+        self.authorized_clients = authorized_clients
         self.apis = apis
 
     def to_dict(self):

@@ -23,44 +23,37 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.connections_payload import ConnectionsPayload as ConnectionsPayload_8d7b13bc
+    from ask_smapi_model.v1.skill.manifest.custom_dialog_management.session_start_delegation_strategy import SessionStartDelegationStrategy as SessionStartDelegationStrategy_b0dc02da
 
 
-class Connections(object):
+class CustomLocalizedInformationDialogManagement(object):
     """
-    Skill connection object.
+    Defines locale-specific dialog-management configuration for a skill.
 
 
-    :param name: Name of the connection.
-    :type name: (optional) str
-    :param payload: 
-    :type payload: (optional) ask_smapi_model.v1.skill.manifest.connections_payload.ConnectionsPayload
+    :param session_start_delegation_strategy: 
+    :type session_start_delegation_strategy: (optional) ask_smapi_model.v1.skill.manifest.custom_dialog_management.session_start_delegation_strategy.SessionStartDelegationStrategy
 
     """
     deserialized_types = {
-        'name': 'str',
-        'payload': 'ask_smapi_model.v1.skill.manifest.connections_payload.ConnectionsPayload'
+        'session_start_delegation_strategy': 'ask_smapi_model.v1.skill.manifest.custom_dialog_management.session_start_delegation_strategy.SessionStartDelegationStrategy'
     }  # type: Dict
 
     attribute_map = {
-        'name': 'name',
-        'payload': 'payload'
+        'session_start_delegation_strategy': 'sessionStartDelegationStrategy'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, name=None, payload=None):
-        # type: (Optional[str], Optional[ConnectionsPayload_8d7b13bc]) -> None
-        """Skill connection object.
+    def __init__(self, session_start_delegation_strategy=None):
+        # type: (Optional[SessionStartDelegationStrategy_b0dc02da]) -> None
+        """Defines locale-specific dialog-management configuration for a skill.
 
-        :param name: Name of the connection.
-        :type name: (optional) str
-        :param payload: 
-        :type payload: (optional) ask_smapi_model.v1.skill.manifest.connections_payload.ConnectionsPayload
+        :param session_start_delegation_strategy: 
+        :type session_start_delegation_strategy: (optional) ask_smapi_model.v1.skill.manifest.custom_dialog_management.session_start_delegation_strategy.SessionStartDelegationStrategy
         """
         self.__discriminator_value = None  # type: str
 
-        self.name = name
-        self.payload = payload
+        self.session_start_delegation_strategy = session_start_delegation_strategy
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -105,7 +98,7 @@ class Connections(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Connections):
+        if not isinstance(other, CustomLocalizedInformationDialogManagement):
             return False
 
         return self.__dict__ == other.__dict__

@@ -23,6 +23,7 @@ from .hosted_skill_repository_credentials import HostedSkillRepositoryCredential
 from .hosted_skill_info import HostedSkillInfo
 from .hosted_skill_repository import HostedSkillRepository
 from .hosted_skill_metadata import HostedSkillMetadata
+from .hosted_skill_region import HostedSkillRegion
 from .hosted_skill_repository_credentials_list import HostedSkillRepositoryCredentialsList
 from .hosted_skill_repository_credentials_request import HostedSkillRepositoryCredentialsRequest
 from .hosting_configuration import HostingConfiguration

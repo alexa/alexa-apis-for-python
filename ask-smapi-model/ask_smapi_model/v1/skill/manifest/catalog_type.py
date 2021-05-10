@@ -25,16 +25,16 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class GadgetSupport(Enum):
+class CatalogType(Enum):
     """
-    Specifies if gadget support is required/optional for this skill to work.
+    Supported catalog
 
 
 
-    Allowed enum values: [REQUIRED, OPTIONAL]
+    Allowed enum values: [IOS_APP_STORE, GOOGLE_PLAY_STORE]
     """
-    REQUIRED = "REQUIRED"
-    OPTIONAL = "OPTIONAL"
+    IOS_APP_STORE = "IOS_APP_STORE"
+    GOOGLE_PLAY_STORE = "GOOGLE_PLAY_STORE"
 
     def to_dict(self):
         # type: () -> Dict[str, Any]
@@ -55,7 +55,7 @@ class GadgetSupport(Enum):
     def __eq__(self, other):
         # type: (Any) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, GadgetSupport):
+        if not isinstance(other, CatalogType):
             return False
 
         return self.__dict__ == other.__dict__

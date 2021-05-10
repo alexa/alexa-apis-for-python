@@ -35,7 +35,7 @@ class LocalizedMusicInfo(object):
 
     :param prompt_name: Name to be used when Alexa renders the music skill name.
     :type prompt_name: (optional) str
-    :param aliases: 
+    :param aliases: Defines the structure of the music prompt name information in the skill manifest.
     :type aliases: (optional) list[ask_smapi_model.v1.skill.manifest.music_alias.MusicAlias]
     :param features: 
     :type features: (optional) list[ask_smapi_model.v1.skill.manifest.music_feature.MusicFeature]
@@ -64,7 +64,7 @@ class LocalizedMusicInfo(object):
 
         :param prompt_name: Name to be used when Alexa renders the music skill name.
         :type prompt_name: (optional) str
-        :param aliases: 
+        :param aliases: Defines the structure of the music prompt name information in the skill manifest.
         :type aliases: (optional) list[ask_smapi_model.v1.skill.manifest.music_alias.MusicAlias]
         :param features: 
         :type features: (optional) list[ask_smapi_model.v1.skill.manifest.music_feature.MusicFeature]

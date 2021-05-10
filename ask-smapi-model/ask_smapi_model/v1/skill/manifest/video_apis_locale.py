@@ -23,7 +23,9 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.video_catalog_info import VideoCatalogInfo as VideoCatalogInfo_2bd994e9
+    from ask_smapi_model.v1.skill.manifest.video_prompt_name import VideoPromptName as VideoPromptName_d8845a65
+    from ask_smapi_model.v1.skill.manifest.video_fire_tv_catalog_ingestion import VideoFireTvCatalogIngestion as VideoFireTvCatalogIngestion_66ff327d
+    from ask_smapi_model.v1.skill.manifest.video_feature import VideoFeature as VideoFeature_d9ebf070
 
 
 class VideoApisLocale(object):
@@ -35,39 +37,53 @@ class VideoApisLocale(object):
     :type video_provider_targeting_names: (optional) list[str]
     :param video_provider_logo_uri: 
     :type video_provider_logo_uri: (optional) str
-    :param catalog_information: 
-    :type catalog_information: (optional) list[ask_smapi_model.v1.skill.manifest.video_catalog_info.VideoCatalogInfo]
+    :param fire_tv_catalog_ingestion: 
+    :type fire_tv_catalog_ingestion: (optional) ask_smapi_model.v1.skill.manifest.video_fire_tv_catalog_ingestion.VideoFireTvCatalogIngestion
+    :param features: Defines the array of video features for this skill.
+    :type features: (optional) list[ask_smapi_model.v1.skill.manifest.video_feature.VideoFeature]
+    :param prompt_names: Name to use when Alexa renders the video skill name in a prompt to the user
+    :type prompt_names: (optional) list[ask_smapi_model.v1.skill.manifest.video_prompt_name.VideoPromptName]
 
     """
     deserialized_types = {
         'video_provider_targeting_names': 'list[str]',
         'video_provider_logo_uri': 'str',
-        'catalog_information': 'list[ask_smapi_model.v1.skill.manifest.video_catalog_info.VideoCatalogInfo]'
+        'fire_tv_catalog_ingestion': 'ask_smapi_model.v1.skill.manifest.video_fire_tv_catalog_ingestion.VideoFireTvCatalogIngestion',
+        'features': 'list[ask_smapi_model.v1.skill.manifest.video_feature.VideoFeature]',
+        'prompt_names': 'list[ask_smapi_model.v1.skill.manifest.video_prompt_name.VideoPromptName]'
     }  # type: Dict
 
     attribute_map = {
         'video_provider_targeting_names': 'videoProviderTargetingNames',
         'video_provider_logo_uri': 'videoProviderLogoUri',
-        'catalog_information': 'catalogInformation'
+        'fire_tv_catalog_ingestion': 'fireTvCatalogIngestion',
+        'features': 'features',
+        'prompt_names': 'promptNames'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, video_provider_targeting_names=None, video_provider_logo_uri=None, catalog_information=None):
-        # type: (Optional[List[object]], Optional[str], Optional[List[VideoCatalogInfo_2bd994e9]]) -> None
+    def __init__(self, video_provider_targeting_names=None, video_provider_logo_uri=None, fire_tv_catalog_ingestion=None, features=None, prompt_names=None):
+        # type: (Optional[List[object]], Optional[str], Optional[VideoFireTvCatalogIngestion_66ff327d], Optional[List[VideoFeature_d9ebf070]], Optional[List[VideoPromptName_d8845a65]]) -> None
         """Defines the structure for localized video api information.
 
         :param video_provider_targeting_names: Defines the video provider&#39;s targeting name.
         :type video_provider_targeting_names: (optional) list[str]
         :param video_provider_logo_uri: 
         :type video_provider_logo_uri: (optional) str
-        :param catalog_information: 
-        :type catalog_information: (optional) list[ask_smapi_model.v1.skill.manifest.video_catalog_info.VideoCatalogInfo]
+        :param fire_tv_catalog_ingestion: 
+        :type fire_tv_catalog_ingestion: (optional) ask_smapi_model.v1.skill.manifest.video_fire_tv_catalog_ingestion.VideoFireTvCatalogIngestion
+        :param features: Defines the array of video features for this skill.
+        :type features: (optional) list[ask_smapi_model.v1.skill.manifest.video_feature.VideoFeature]
+        :param prompt_names: Name to use when Alexa renders the video skill name in a prompt to the user
+        :type prompt_names: (optional) list[ask_smapi_model.v1.skill.manifest.video_prompt_name.VideoPromptName]
         """
         self.__discriminator_value = None  # type: str
 
         self.video_provider_targeting_names = video_provider_targeting_names
         self.video_provider_logo_uri = video_provider_logo_uri
-        self.catalog_information = catalog_information
+        self.fire_tv_catalog_ingestion = fire_tv_catalog_ingestion
+        self.features = features
+        self.prompt_names = prompt_names
 
     def to_dict(self):
         # type: () -> Dict[str, object]

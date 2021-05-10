@@ -36,32 +36,39 @@ class ImageAttributes(object):
     :type dimension: (optional) ask_smapi_model.v1.skill.image_dimension.ImageDimension
     :param size: 
     :type size: (optional) ask_smapi_model.v1.skill.image_size.ImageSize
+    :param maximum_size: 
+    :type maximum_size: (optional) ask_smapi_model.v1.skill.image_size.ImageSize
 
     """
     deserialized_types = {
         'dimension': 'ask_smapi_model.v1.skill.image_dimension.ImageDimension',
-        'size': 'ask_smapi_model.v1.skill.image_size.ImageSize'
+        'size': 'ask_smapi_model.v1.skill.image_size.ImageSize',
+        'maximum_size': 'ask_smapi_model.v1.skill.image_size.ImageSize'
     }  # type: Dict
 
     attribute_map = {
         'dimension': 'dimension',
-        'size': 'size'
+        'size': 'size',
+        'maximum_size': 'maximumSize'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, dimension=None, size=None):
-        # type: (Optional[ImageDimension_4f87c1d], Optional[ImageSize_f2e12ed9]) -> None
+    def __init__(self, dimension=None, size=None, maximum_size=None):
+        # type: (Optional[ImageDimension_4f87c1d], Optional[ImageSize_f2e12ed9], Optional[ImageSize_f2e12ed9]) -> None
         """Set of properties of the image provided by the customer.
 
         :param dimension: 
         :type dimension: (optional) ask_smapi_model.v1.skill.image_dimension.ImageDimension
         :param size: 
         :type size: (optional) ask_smapi_model.v1.skill.image_size.ImageSize
+        :param maximum_size: 
+        :type maximum_size: (optional) ask_smapi_model.v1.skill.image_size.ImageSize
         """
         self.__discriminator_value = None  # type: str
 
         self.dimension = dimension
         self.size = size
+        self.maximum_size = maximum_size
 
     def to_dict(self):
         # type: () -> Dict[str, object]

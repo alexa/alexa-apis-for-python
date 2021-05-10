@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.gadget_support import GadgetSupport as GadgetSupport_718b090a
+    from ask_smapi_model.v1.skill.manifest.gadget_support_requirement import GadgetSupportRequirement as GadgetSupportRequirement_59434a55
 
 
 class ManifestGadgetSupport(object):
@@ -32,7 +32,7 @@ class ManifestGadgetSupport(object):
 
 
     :param requirement: 
-    :type requirement: (optional) ask_smapi_model.v1.skill.manifest.gadget_support.GadgetSupport
+    :type requirement: (optional) ask_smapi_model.v1.skill.manifest.gadget_support_requirement.GadgetSupportRequirement
     :param min_gadget_buttons: Minimum number of gadget buttons required.
     :type min_gadget_buttons: (optional) int
     :param max_gadget_buttons: Maximum number of gadget buttons required.
@@ -44,7 +44,7 @@ class ManifestGadgetSupport(object):
 
     """
     deserialized_types = {
-        'requirement': 'ask_smapi_model.v1.skill.manifest.gadget_support.GadgetSupport',
+        'requirement': 'ask_smapi_model.v1.skill.manifest.gadget_support_requirement.GadgetSupportRequirement',
         'min_gadget_buttons': 'int',
         'max_gadget_buttons': 'int',
         'num_players_max': 'int',
@@ -61,11 +61,11 @@ class ManifestGadgetSupport(object):
     supports_multiple_types = False
 
     def __init__(self, requirement=None, min_gadget_buttons=None, max_gadget_buttons=None, num_players_max=None, num_players_min=None):
-        # type: (Optional[GadgetSupport_718b090a], Optional[int], Optional[int], Optional[int], Optional[int]) -> None
+        # type: (Optional[GadgetSupportRequirement_59434a55], Optional[int], Optional[int], Optional[int], Optional[int]) -> None
         """Defines the structure for gadget buttons support in the skill manifest.
 
         :param requirement: 
-        :type requirement: (optional) ask_smapi_model.v1.skill.manifest.gadget_support.GadgetSupport
+        :type requirement: (optional) ask_smapi_model.v1.skill.manifest.gadget_support_requirement.GadgetSupportRequirement
         :param min_gadget_buttons: Minimum number of gadget buttons required.
         :type min_gadget_buttons: (optional) int
         :param max_gadget_buttons: Maximum number of gadget buttons required.

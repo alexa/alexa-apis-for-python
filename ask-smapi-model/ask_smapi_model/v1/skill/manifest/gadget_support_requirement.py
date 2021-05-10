@@ -25,17 +25,16 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class RequestName(Enum):
+class GadgetSupportRequirement(Enum):
     """
-    Name of the request.
+    Specifies if gadget support is required/optional for this skill to work.
 
 
 
-    Allowed enum values: [Search, Create, Update]
+    Allowed enum values: [REQUIRED, OPTIONAL]
     """
-    Search = "Search"
-    Create = "Create"
-    Update = "Update"
+    REQUIRED = "REQUIRED"
+    OPTIONAL = "OPTIONAL"
 
     def to_dict(self):
         # type: () -> Dict[str, Any]
@@ -56,7 +55,7 @@ class RequestName(Enum):
     def __eq__(self, other):
         # type: (Any) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, RequestName):
+        if not isinstance(other, GadgetSupportRequirement):
             return False
 
         return self.__dict__ == other.__dict__

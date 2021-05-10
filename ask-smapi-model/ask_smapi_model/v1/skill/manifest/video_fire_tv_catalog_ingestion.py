@@ -25,41 +25,39 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class SkillManifestCustomTask(object):
+class VideoFireTvCatalogIngestion(object):
     """
-    Defines the name and version of the task that the skill wants to handle.
 
-
-    :param name: Name of the task.
-    :type name: (optional) str
-    :param version: Version of the task.
-    :type version: (optional) str
+    :param fire_tv_catalog_ingestion_source_id: 
+    :type fire_tv_catalog_ingestion_source_id: (optional) str
+    :param is_fire_tv_catalog_ingestion_enabled: 
+    :type is_fire_tv_catalog_ingestion_enabled: (optional) bool
 
     """
     deserialized_types = {
-        'name': 'str',
-        'version': 'str'
+        'fire_tv_catalog_ingestion_source_id': 'str',
+        'is_fire_tv_catalog_ingestion_enabled': 'bool'
     }  # type: Dict
 
     attribute_map = {
-        'name': 'name',
-        'version': 'version'
+        'fire_tv_catalog_ingestion_source_id': 'fireTvCatalogIngestionSourceId',
+        'is_fire_tv_catalog_ingestion_enabled': 'isFireTvCatalogIngestionEnabled'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, name=None, version=None):
-        # type: (Optional[str], Optional[str]) -> None
-        """Defines the name and version of the task that the skill wants to handle.
+    def __init__(self, fire_tv_catalog_ingestion_source_id=None, is_fire_tv_catalog_ingestion_enabled=None):
+        # type: (Optional[str], Optional[bool]) -> None
+        """
 
-        :param name: Name of the task.
-        :type name: (optional) str
-        :param version: Version of the task.
-        :type version: (optional) str
+        :param fire_tv_catalog_ingestion_source_id: 
+        :type fire_tv_catalog_ingestion_source_id: (optional) str
+        :param is_fire_tv_catalog_ingestion_enabled: 
+        :type is_fire_tv_catalog_ingestion_enabled: (optional) bool
         """
         self.__discriminator_value = None  # type: str
 
-        self.name = name
-        self.version = version
+        self.fire_tv_catalog_ingestion_source_id = fire_tv_catalog_ingestion_source_id
+        self.is_fire_tv_catalog_ingestion_enabled = is_fire_tv_catalog_ingestion_enabled
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -104,7 +102,7 @@ class SkillManifestCustomTask(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, SkillManifestCustomTask):
+        if not isinstance(other, VideoFireTvCatalogIngestion):
             return False
 
         return self.__dict__ == other.__dict__

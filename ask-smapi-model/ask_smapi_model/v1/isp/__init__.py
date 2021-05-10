@@ -21,7 +21,6 @@ from .product_type import ProductType
 from .currency import Currency
 from .associated_skill_response import AssociatedSkillResponse
 from .tax_information import TaxInformation
-from .stage import Stage
 from .summary_price_listing import SummaryPriceListing
 from .localized_publishing_information import LocalizedPublishingInformation
 from .promotable_state import PromotableState

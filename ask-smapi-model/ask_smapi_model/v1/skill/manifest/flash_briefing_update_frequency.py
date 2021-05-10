@@ -31,12 +31,11 @@ class FlashBriefingUpdateFrequency(Enum):
 
 
 
-    Allowed enum values: [HOURLY, DAILY, WEEKLY, UNKNOWN]
+    Allowed enum values: [HOURLY, DAILY, WEEKLY]
     """
     HOURLY = "HOURLY"
     DAILY = "DAILY"
     WEEKLY = "WEEKLY"
-    UNKNOWN = "UNKNOWN"
 
     def to_dict(self):
         # type: () -> Dict[str, Any]

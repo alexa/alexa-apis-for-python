@@ -23,34 +23,44 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
+    from ask_smapi_model.v1.skill.manifest.connections_payload import ConnectionsPayload as ConnectionsPayload_8d7b13bc
 
 
-class HealthRequest(object):
+class Connection(object):
     """
+    Skill connection object.
 
-    :param name: Defines the name of request, each request has their own payload format.
+
+    :param name: Name of the connection.
     :type name: (optional) str
+    :param payload: 
+    :type payload: (optional) ask_smapi_model.v1.skill.manifest.connections_payload.ConnectionsPayload
 
     """
     deserialized_types = {
-        'name': 'str'
+        'name': 'str',
+        'payload': 'ask_smapi_model.v1.skill.manifest.connections_payload.ConnectionsPayload'
     }  # type: Dict
 
     attribute_map = {
-        'name': 'name'
+        'name': 'name',
+        'payload': 'payload'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, name=None):
-        # type: (Optional[str]) -> None
-        """
+    def __init__(self, name=None, payload=None):
+        # type: (Optional[str], Optional[ConnectionsPayload_8d7b13bc]) -> None
+        """Skill connection object.
 
-        :param name: Defines the name of request, each request has their own payload format.
+        :param name: Name of the connection.
         :type name: (optional) str
+        :param payload: 
+        :type payload: (optional) ask_smapi_model.v1.skill.manifest.connections_payload.ConnectionsPayload
         """
         self.__discriminator_value = None  # type: str
 
         self.name = name
+        self.payload = payload
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -95,7 +105,7 @@ class HealthRequest(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, HealthRequest):
+        if not isinstance(other, Connection):
             return False
 
         return self.__dict__ == other.__dict__

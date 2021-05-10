@@ -31,9 +31,9 @@ class Version(Enum):
 
 
 
-    Allowed enum values: [_1]
+    Allowed enum values: [_1_0]
     """
-    _1 = "1"
+    _1_0 = "1.0"
 
     def to_dict(self):
         # type: () -> Dict[str, Any]

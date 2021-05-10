@@ -23,6 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
+    from ask_smapi_model.v1.skill.manifest.automatic_distribution import AutomaticDistribution as AutomaticDistribution_a84fbfb2
     from ask_smapi_model.v1.skill.manifest.skill_manifest_localized_publishing_information import SkillManifestLocalizedPublishingInformation as SkillManifestLocalizedPublishingInformation_1e8ff5fd
     from ask_smapi_model.v1.skill.manifest.distribution_countries import DistributionCountries as DistributionCountries_33dc1fd4
     from ask_smapi_model.v1.skill.manifest.distribution_mode import DistributionMode as DistributionMode_7068bbf0
@@ -52,6 +53,8 @@ class SkillManifestPublishingInformation(object):
     :type category: (optional) str
     :param distribution_countries: Selected list of countries provided by the skill owner where Amazon can distribute the skill.
     :type distribution_countries: (optional) list[ask_smapi_model.v1.skill.manifest.distribution_countries.DistributionCountries]
+    :param automatic_distribution: 
+    :type automatic_distribution: (optional) ask_smapi_model.v1.skill.manifest.automatic_distribution.AutomaticDistribution
 
     """
     deserialized_types = {
@@ -63,7 +66,8 @@ class SkillManifestPublishingInformation(object):
         'gadget_support': 'ask_smapi_model.v1.skill.manifest.manifest_gadget_support.ManifestGadgetSupport',
         'testing_instructions': 'str',
         'category': 'str',
-        'distribution_countries': 'list[ask_smapi_model.v1.skill.manifest.distribution_countries.DistributionCountries]'
+        'distribution_countries': 'list[ask_smapi_model.v1.skill.manifest.distribution_countries.DistributionCountries]',
+        'automatic_distribution': 'ask_smapi_model.v1.skill.manifest.automatic_distribution.AutomaticDistribution'
     }  # type: Dict
 
     attribute_map = {
@@ -75,12 +79,13 @@ class SkillManifestPublishingInformation(object):
         'gadget_support': 'gadgetSupport',
         'testing_instructions': 'testingInstructions',
         'category': 'category',
-        'distribution_countries': 'distributionCountries'
+        'distribution_countries': 'distributionCountries',
+        'automatic_distribution': 'automaticDistribution'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, name=None, description=None, locales=None, is_available_worldwide=None, distribution_mode=None, gadget_support=None, testing_instructions=None, category=None, distribution_countries=None):
-        # type: (Optional[str], Optional[str], Optional[Dict[str, SkillManifestLocalizedPublishingInformation_1e8ff5fd]], Optional[bool], Optional[DistributionMode_7068bbf0], Optional[ManifestGadgetSupport_2efdc899], Optional[str], Optional[str], Optional[List[DistributionCountries_33dc1fd4]]) -> None
+    def __init__(self, name=None, description=None, locales=None, is_available_worldwide=None, distribution_mode=None, gadget_support=None, testing_instructions=None, category=None, distribution_countries=None, automatic_distribution=None):
+        # type: (Optional[str], Optional[str], Optional[Dict[str, SkillManifestLocalizedPublishingInformation_1e8ff5fd]], Optional[bool], Optional[DistributionMode_7068bbf0], Optional[ManifestGadgetSupport_2efdc899], Optional[str], Optional[str], Optional[List[DistributionCountries_33dc1fd4]], Optional[AutomaticDistribution_a84fbfb2]) -> None
         """Defines the structure for publishing information in the skill manifest.
 
         :param name: Name of the skill that is displayed to customers in the Alexa app.
@@ -101,6 +106,8 @@ class SkillManifestPublishingInformation(object):
         :type category: (optional) str
         :param distribution_countries: Selected list of countries provided by the skill owner where Amazon can distribute the skill.
         :type distribution_countries: (optional) list[ask_smapi_model.v1.skill.manifest.distribution_countries.DistributionCountries]
+        :param automatic_distribution: 
+        :type automatic_distribution: (optional) ask_smapi_model.v1.skill.manifest.automatic_distribution.AutomaticDistribution
         """
         self.__discriminator_value = None  # type: str
 
@@ -113,6 +120,7 @@ class SkillManifestPublishingInformation(object):
         self.testing_instructions = testing_instructions
         self.category = category
         self.distribution_countries = distribution_countries
+        self.automatic_distribution = automatic_distribution
 
     def to_dict(self):
         # type: () -> Dict[str, object]

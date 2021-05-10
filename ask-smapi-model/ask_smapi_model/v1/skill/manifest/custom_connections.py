@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.connections import Connections as Connections_5364d3a3
+    from ask_smapi_model.v1.skill.manifest.custom.connection import Connection as Connection_199ae82a
 
 
 class CustomConnections(object):
@@ -32,14 +32,14 @@ class CustomConnections(object):
 
 
     :param requires: List of required connections.
-    :type requires: (optional) list[ask_smapi_model.v1.skill.manifest.connections.Connections]
+    :type requires: (optional) list[ask_smapi_model.v1.skill.manifest.custom.connection.Connection]
     :param provides: List of provided connections.
-    :type provides: (optional) list[ask_smapi_model.v1.skill.manifest.connections.Connections]
+    :type provides: (optional) list[ask_smapi_model.v1.skill.manifest.custom.connection.Connection]
 
     """
     deserialized_types = {
-        'requires': 'list[ask_smapi_model.v1.skill.manifest.connections.Connections]',
-        'provides': 'list[ask_smapi_model.v1.skill.manifest.connections.Connections]'
+        'requires': 'list[ask_smapi_model.v1.skill.manifest.custom.connection.Connection]',
+        'provides': 'list[ask_smapi_model.v1.skill.manifest.custom.connection.Connection]'
     }  # type: Dict
 
     attribute_map = {
@@ -49,13 +49,13 @@ class CustomConnections(object):
     supports_multiple_types = False
 
     def __init__(self, requires=None, provides=None):
-        # type: (Optional[List[Connections_5364d3a3]], Optional[List[Connections_5364d3a3]]) -> None
+        # type: (Optional[List[Connection_199ae82a]], Optional[List[Connection_199ae82a]]) -> None
         """Supported connections.
 
         :param requires: List of required connections.
-        :type requires: (optional) list[ask_smapi_model.v1.skill.manifest.connections.Connections]
+        :type requires: (optional) list[ask_smapi_model.v1.skill.manifest.custom.connection.Connection]
         :param provides: List of provided connections.
-        :type provides: (optional) list[ask_smapi_model.v1.skill.manifest.connections.Connections]
+        :type provides: (optional) list[ask_smapi_model.v1.skill.manifest.custom.connection.Connection]
         """
         self.__discriminator_value = None  # type: str
 

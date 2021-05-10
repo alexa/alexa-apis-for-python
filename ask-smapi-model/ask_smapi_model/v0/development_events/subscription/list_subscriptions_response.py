@@ -23,15 +23,15 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
+    from ask_smapi_model.v1.links import Links as Links_bc43467b
     from ask_smapi_model.v0.development_events.subscription.subscription_summary import SubscriptionSummary as SubscriptionSummary_f00dfd49
-    from ask_smapi_model.v0.links import Links as Links_cdc03ffa
 
 
 class ListSubscriptionsResponse(object):
     """
 
     :param links: 
-    :type links: (optional) ask_smapi_model.v0.links.Links
+    :type links: (optional) ask_smapi_model.v1.links.Links
     :param next_token: 
     :type next_token: (optional) str
     :param subscriptions: List of subscription summaries.
@@ -39,7 +39,7 @@ class ListSubscriptionsResponse(object):
 
     """
     deserialized_types = {
-        'links': 'ask_smapi_model.v0.links.Links',
+        'links': 'ask_smapi_model.v1.links.Links',
         'next_token': 'str',
         'subscriptions': 'list[ask_smapi_model.v0.development_events.subscription.subscription_summary.SubscriptionSummary]'
     }  # type: Dict
@@ -52,11 +52,11 @@ class ListSubscriptionsResponse(object):
     supports_multiple_types = False
 
     def __init__(self, links=None, next_token=None, subscriptions=None):
-        # type: (Optional[Links_cdc03ffa], Optional[str], Optional[List[SubscriptionSummary_f00dfd49]]) -> None
+        # type: (Optional[Links_bc43467b], Optional[str], Optional[List[SubscriptionSummary_f00dfd49]]) -> None
         """
 
         :param links: 
-        :type links: (optional) ask_smapi_model.v0.links.Links
+        :type links: (optional) ask_smapi_model.v1.links.Links
         :param next_token: 
         :type next_token: (optional) str
         :param subscriptions: List of subscription summaries.

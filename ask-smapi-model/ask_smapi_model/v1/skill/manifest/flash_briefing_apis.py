@@ -28,10 +28,10 @@ if typing.TYPE_CHECKING:
 
 class FlashBriefingApis(object):
     """
-    Defines the structure for flash briefing api of the skill.
+    Defines the structure of flash briefing api in the skill manifest.
 
 
-    :param locales: Defines the structure for locale specific flash briefing api information.
+    :param locales: Object that contains &lt;locale&gt; objects for each supported locale.
     :type locales: (optional) dict(str, ask_smapi_model.v1.skill.manifest.localized_flash_briefing_info.LocalizedFlashBriefingInfo)
 
     """
@@ -46,9 +46,9 @@ class FlashBriefingApis(object):
 
     def __init__(self, locales=None):
         # type: (Optional[Dict[str, LocalizedFlashBriefingInfo_ff538220]]) -> None
-        """Defines the structure for flash briefing api of the skill.
+        """Defines the structure of flash briefing api in the skill manifest.
 
-        :param locales: Defines the structure for locale specific flash briefing api information.
+        :param locales: Object that contains &lt;locale&gt; objects for each supported locale.
         :type locales: (optional) dict(str, ask_smapi_model.v1.skill.manifest.localized_flash_briefing_info.LocalizedFlashBriefingInfo)
         """
         self.__discriminator_value = None  # type: str

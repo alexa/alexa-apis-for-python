@@ -28,7 +28,7 @@ if typing.TYPE_CHECKING:
 
 class LocalizedFlashBriefingInfo(object):
     """
-    Defines the localized flash briefing api information.
+    Defines the structure of a localized flash briefing information.
 
 
     :param feeds: Defines the structure for a feed information in the skill manifest.
@@ -50,7 +50,7 @@ class LocalizedFlashBriefingInfo(object):
 
     def __init__(self, feeds=None, custom_error_message=None):
         # type: (Optional[List[LocalizedFlashBriefingInfoItems_61b30981]], Optional[str]) -> None
-        """Defines the localized flash briefing api information.
+        """Defines the structure of a localized flash briefing information.
 
         :param feeds: Defines the structure for a feed information in the skill manifest.
         :type feeds: (optional) list[ask_smapi_model.v1.skill.manifest.localized_flash_briefing_info_items.LocalizedFlashBriefingInfoItems]

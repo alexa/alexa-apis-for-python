@@ -25,9 +25,9 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
     from ask_smapi_model.v1.isp.product_type import ProductType as ProductType_bf0e7936
     from ask_smapi_model.v1.isp.editable_state import EditableState as EditableState_1fb842e6
+    from ask_smapi_model.v1.stage_type import StageType as StageType_700be16e
     from ask_smapi_model.v1.isp.promotable_state import PromotableState as PromotableState_25399706
     from ask_smapi_model.v1.isp.status import Status as Status_cbf30a3d
-    from ask_smapi_model.v1.isp.stage import Stage as Stage_70f2185d
     from ask_smapi_model.v1.isp.isp_summary_links import IspSummaryLinks as IspSummaryLinks_84051861
     from ask_smapi_model.v1.isp.summary_marketplace_pricing import SummaryMarketplacePricing as SummaryMarketplacePricing_d0d9d0db
     from ask_smapi_model.v1.isp.purchasable_state import PurchasableState as PurchasableState_c58a6ca2
@@ -51,7 +51,7 @@ class InSkillProductSummary(object):
     :param status: 
     :type status: (optional) ask_smapi_model.v1.isp.status.Status
     :param stage: 
-    :type stage: (optional) ask_smapi_model.v1.isp.stage.Stage
+    :type stage: (optional) ask_smapi_model.v1.stage_type.StageType
     :param editable_state: 
     :type editable_state: (optional) ask_smapi_model.v1.isp.editable_state.EditableState
     :param purchasable_state: 
@@ -71,7 +71,7 @@ class InSkillProductSummary(object):
         'last_updated': 'datetime',
         'name_by_locale': 'dict(str, str)',
         'status': 'ask_smapi_model.v1.isp.status.Status',
-        'stage': 'ask_smapi_model.v1.isp.stage.Stage',
+        'stage': 'ask_smapi_model.v1.stage_type.StageType',
         'editable_state': 'ask_smapi_model.v1.isp.editable_state.EditableState',
         'purchasable_state': 'ask_smapi_model.v1.isp.purchasable_state.PurchasableState',
         'promotable_state': 'ask_smapi_model.v1.isp.promotable_state.PromotableState',
@@ -96,7 +96,7 @@ class InSkillProductSummary(object):
     supports_multiple_types = False
 
     def __init__(self, object_type=None, product_id=None, reference_name=None, last_updated=None, name_by_locale=None, status=None, stage=None, editable_state=None, purchasable_state=None, promotable_state=None, links=None, pricing=None):
-        # type: (Optional[ProductType_bf0e7936], Optional[str], Optional[str], Optional[datetime], Optional[Dict[str, object]], Optional[Status_cbf30a3d], Optional[Stage_70f2185d], Optional[EditableState_1fb842e6], Optional[PurchasableState_c58a6ca2], Optional[PromotableState_25399706], Optional[IspSummaryLinks_84051861], Optional[Dict[str, SummaryMarketplacePricing_d0d9d0db]]) -> None
+        # type: (Optional[ProductType_bf0e7936], Optional[str], Optional[str], Optional[datetime], Optional[Dict[str, object]], Optional[Status_cbf30a3d], Optional[StageType_700be16e], Optional[EditableState_1fb842e6], Optional[PurchasableState_c58a6ca2], Optional[PromotableState_25399706], Optional[IspSummaryLinks_84051861], Optional[Dict[str, SummaryMarketplacePricing_d0d9d0db]]) -> None
         """Information about the in-skill product that is not editable.
 
         :param object_type: 
@@ -112,7 +112,7 @@ class InSkillProductSummary(object):
         :param status: 
         :type status: (optional) ask_smapi_model.v1.isp.status.Status
         :param stage: 
-        :type stage: (optional) ask_smapi_model.v1.isp.stage.Stage
+        :type stage: (optional) ask_smapi_model.v1.stage_type.StageType
         :param editable_state: 
         :type editable_state: (optional) ask_smapi_model.v1.isp.editable_state.EditableState
         :param purchasable_state: 

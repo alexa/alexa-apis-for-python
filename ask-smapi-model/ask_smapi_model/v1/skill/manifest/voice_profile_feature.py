@@ -18,40 +18,45 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
+from ask_smapi_model.v1.skill.manifest.video_feature import VideoFeature
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.manifest.request_name import RequestName as RequestName_a5d181c0
 
 
-class Request(object):
+class VoiceProfileFeature(VideoFeature):
     """
+    Feature for allowing for querying for available partner voice profiles, linking Alexa Speaker ID profiles to partner speaker profiles, and sending partner speaker profiles in directives.
 
-    :param name: 
-    :type name: (optional) ask_smapi_model.v1.skill.manifest.request_name.RequestName
+
+    :param version: 
+    :type version: (optional) str
 
     """
     deserialized_types = {
-        'name': 'ask_smapi_model.v1.skill.manifest.request_name.RequestName'
+        'version': 'str',
+        'name': 'str'
     }  # type: Dict
 
     attribute_map = {
+        'version': 'version',
         'name': 'name'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, name=None):
-        # type: (Optional[RequestName_a5d181c0]) -> None
-        """
+    def __init__(self, version=None):
+        # type: (Optional[str], ) -> None
+        """Feature for allowing for querying for available partner voice profiles, linking Alexa Speaker ID profiles to partner speaker profiles, and sending partner speaker profiles in directives.
 
-        :param name: 
-        :type name: (optional) ask_smapi_model.v1.skill.manifest.request_name.RequestName
+        :param version: 
+        :type version: (optional) str
         """
-        self.__discriminator_value = None  # type: str
+        self.__discriminator_value = "VIDEO_VOICE_PROFILE"  # type: str
 
-        self.name = name
+        self.name = self.__discriminator_value
+        super(VoiceProfileFeature, self).__init__(version=version, name=self.__discriminator_value)
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -96,7 +101,7 @@ class Request(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Request):
+        if not isinstance(other, VoiceProfileFeature):
             return False
 
         return self.__dict__ == other.__dict__

@@ -184,6 +184,7 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_response import SlotTypeResponse as SlotTypeResponse_1ca513dc
     from ask_smapi_model.v1.skill.nlu.evaluations.get_nlu_evaluation_results_response import GetNLUEvaluationResultsResponse as GetNLUEvaluationResultsResponse_5ca1fa54
     from ask_smapi_model.v1.skill.history.locale_in_query import LocaleInQuery as LocaleInQuery_6526a92e
+    from ask_smapi_model.v1.skill.beta_test.update_beta_test_response import UpdateBetaTestResponse as UpdateBetaTestResponse_84abf38
     from ask_smapi_model.v1.skill.interaction_model.jobs.get_executions_response import GetExecutionsResponse as GetExecutionsResponse_1b1a1680
     from ask_smapi_model.v1.bad_request_error import BadRequestError as BadRequestError_f854b05
 
@@ -226,7 +227,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Returns information about a particular catalog.
 
-        :param catalog_id: (required) Provides a unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog.
         :type catalog_id: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
@@ -299,12 +300,12 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Lists all the uploads for a particular catalog.
 
-        :param catalog_id: (required) Provides a unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog.
         :type catalog_id: str
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
@@ -380,7 +381,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Creates a new upload for a catalog and returns presigned upload parts for uploading the file.
 
-        :param catalog_id: (required) Provides a unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog.
         :type catalog_id: str
         :param create_content_upload_request: (required) Defines the request body for updateCatalog API.
         :type create_content_upload_request: ask_smapi_model.v0.catalog.upload.create_content_upload_request.CreateContentUploadRequest
@@ -461,9 +462,9 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Gets detailed information about an upload which was created for a specific catalog. Includes the upload's ingestion steps and a presigned url for downloading the file.
 
-        :param catalog_id: (required) Provides a unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog.
         :type catalog_id: str
-        :param upload_id: (required) Unique identifier of the upload
+        :param upload_id: (required) Unique identifier of the upload.
         :type upload_id: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
@@ -542,9 +543,9 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Completes an upload. To be called after the file is uploaded to the backend data store using presigned url(s).
 
-        :param catalog_id: (required) Provides a unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog.
         :type catalog_id: str
-        :param upload_id: (required) Unique identifier of the upload
+        :param upload_id: (required) Unique identifier of the upload.
         :type upload_id: str
         :param complete_upload_request_payload: (required) Request payload to complete an upload.
         :type complete_upload_request_payload: ask_smapi_model.v0.catalog.upload.complete_upload_request.CompleteUploadRequest
@@ -606,6 +607,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=409, message="The request could not be completed due to a conflict with the current state of the target resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=500, message="Internal Server Error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v0.error.Error", status_code=503, message="Service Unavailable."))
@@ -635,8 +637,8 @@ class SkillManagementServiceClient(BaseServiceClient):
         :type vendor_id: str
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
-        :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :param max_results: 
+        :type max_results: int
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
@@ -790,7 +792,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
@@ -1169,7 +1171,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param subscriber_id: Unique identifier of the subscriber. If this query parameter is provided, the list would be filtered by the owning subscriberId.
         :type subscriber_id: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
@@ -1543,7 +1545,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         :param skill_id: (required) The skill ID.
         :type skill_id: str
-        :param catalog_id: (required) Provides a unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog.
         :type catalog_id: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
@@ -1626,8 +1628,8 @@ class SkillManagementServiceClient(BaseServiceClient):
         :type skill_id: str
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
-        :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :param max_results: 
+        :type max_results: int
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
@@ -1704,7 +1706,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         Create new upload
         Creates a new upload for a catalog and returns location to track the upload process.
 
-        :param catalog_id: (required) Provides a unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog.
         :type catalog_id: str
         :param catalog_upload_request_body: (required) Provides the request body for create content upload
         :type catalog_upload_request_body: ask_smapi_model.v1.catalog.upload.catalog_upload_base.CatalogUploadBase
@@ -1786,9 +1788,9 @@ class SkillManagementServiceClient(BaseServiceClient):
         Get upload
         Gets detailed information about an upload which was created for a specific catalog. Includes the upload's ingestion steps and a url for downloading the file.
 
-        :param catalog_id: (required) Provides a unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog.
         :type catalog_id: str
-        :param upload_id: (required) Unique identifier of the upload
+        :param upload_id: (required) Unique identifier of the upload.
         :type upload_id: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
@@ -1866,7 +1868,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Generates preSigned urls to upload data
 
-        :param catalog_id: (required) Provides a unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog.
         :type catalog_id: str
         :param generate_catalog_upload_url_request_body: (required) Request body to generate catalog upload url
         :type generate_catalog_upload_url_request_body: ask_smapi_model.v1.catalog.create_content_upload_url_request.CreateContentUploadUrlRequest
@@ -2025,7 +2027,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param product_id: The list of in-skill product IDs that you wish to get the summary for. A maximum of 50 in-skill product IDs can be specified in a single listInSkillProducts call. Please note that this parameter must not be used with 'nextToken' and/or 'maxResults' parameter.
         :type product_id: list[str]
         :param stage: Filter in-skill products by specified stage.
@@ -2686,7 +2688,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return None
 
     def get_isp_associated_skills_v1(self, product_id, stage, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, object, AssociatedSkillResponse_12067635, Error_fbe913d9]
+        # type: (str, str, **Any) -> Union[ApiResponse, object, AssociatedSkillResponse_12067635, Error_fbe913d9, BadRequestError_f854b05]
         """
         Get the associated skills for the in-skill product.
 
@@ -2697,11 +2699,11 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, AssociatedSkillResponse_12067635, Error_fbe913d9]
+        :rtype: Union[ApiResponse, object, AssociatedSkillResponse_12067635, Error_fbe913d9, BadRequestError_f854b05]
         """
         operation_name = "get_isp_associated_skills_v1"
         params = locals()
@@ -2750,6 +2752,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.isp.associated_skill_response.AssociatedSkillResponse", status_code=200, message="Returns skills associated with the in-skill product."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Bad request. Returned when a required parameter is not present, badly formatted. "))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="Requested resource not found."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Too many requests received."))
@@ -2854,7 +2857,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Delete the catalog. 
 
-        :param catalog_id: (required) Provides a unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog.
         :type catalog_id: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
@@ -2927,7 +2930,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         get the catalog definition 
 
-        :param catalog_id: (required) Provides a unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog.
         :type catalog_id: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
@@ -3000,7 +3003,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         update description and vendorGuidance string for certain version of a catalog. 
 
-        :param catalog_id: (required) Provides a unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog.
         :type catalog_id: str
         :param update_request: (required) 
         :type update_request: ask_smapi_model.v1.skill.interaction_model.catalog.update_request.UpdateRequest
@@ -3081,7 +3084,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Get the status of catalog resource and its sub-resources for a given catalogId. 
 
-        :param catalog_id: (required) Provides a unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog.
         :type catalog_id: str
         :param update_request_id: (required) The identifier for slotType version creation process
         :type update_request_id: str
@@ -3162,10 +3165,10 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         List all the historical versions of the given catalogId.
 
-        :param catalog_id: (required) Provides a unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog.
         :type catalog_id: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param sort_direction: Sets the sorting direction of the result items. When set to 'asc' these items are returned in ascending order of sortField value and when set to 'desc' these items are returned in descending order of sortField value.
@@ -3251,7 +3254,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Create a new version of catalog entity for the given catalogId. 
 
-        :param catalog_id: (required) Provides a unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog.
         :type catalog_id: str
         :param catalog: (required) 
         :type catalog: ask_smapi_model.v1.skill.interaction_model.version.version_data.VersionData
@@ -3332,7 +3335,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Delete catalog version. 
 
-        :param catalog_id: (required) Provides a unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog.
         :type catalog_id: str
         :param version: (required) Version for interaction model.
         :type version: str
@@ -3413,7 +3416,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Get catalog version data of given catalog version. 
 
-        :param catalog_id: (required) Provides a unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog.
         :type catalog_id: str
         :param version: (required) Version for interaction model.
         :type version: str
@@ -3494,7 +3497,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Update description and vendorGuidance string for certain version of a catalog. 
 
-        :param catalog_id: (required) Provides a unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog.
         :type catalog_id: str
         :param version: (required) Version for interaction model.
         :type version: str
@@ -3579,12 +3582,12 @@ class SkillManagementServiceClient(BaseServiceClient):
         """
         Get catalog values from the given catalogId & version. 
 
-        :param catalog_id: (required) Provides a unique identifier of the catalog
+        :param catalog_id: (required) Provides a unique identifier of the catalog.
         :type catalog_id: str
         :param version: (required) Version for interaction model.
         :type version: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
@@ -3671,7 +3674,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param vendor_id: (required) The vendor ID.
         :type vendor_id: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param sort_direction: Sets the sorting direction of the result items. When set to 'asc' these items are returned in ascending order of sortField value and when set to 'desc' these items are returned in descending order of sortField value.
@@ -3829,7 +3832,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param vendor_id: (required) The vendor ID.
         :type vendor_id: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
@@ -4063,7 +4066,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param job_id: (required) The identifier for dynamic jobs.
         :type job_id: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param sort_direction: Sets the sorting direction of the result items. When set to 'asc' these items are returned in ascending order of sortField value and when set to 'desc' these items are returned in descending order of sortField value.
@@ -4372,7 +4375,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param vendor_id: (required) The vendor ID.
         :type vendor_id: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param sort_direction: Sets the sorting direction of the result items. When set to 'asc' these items are returned in ascending order of sortField value and when set to 'desc' these items are returned in descending order of sortField value.
@@ -4835,7 +4838,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param slot_type_id: (required) The identifier for a slot type.
         :type slot_type_id: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param sort_direction: Sets the sorting direction of the result items. When set to 'asc' these items are returned in ascending order of sortField value and when set to 'desc' these items are returned in descending order of sortField value.
@@ -5244,7 +5247,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return None
 
     def get_status_of_export_request_v1(self, export_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, object, StandardizedError_f5106a89, ExportResponse_b235e7bd]
+        # type: (str, **Any) -> Union[ApiResponse, object, StandardizedError_f5106a89, ExportResponse_b235e7bd, BadRequestError_f854b05]
         """
         Get status for given exportId 
 
@@ -5253,7 +5256,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, StandardizedError_f5106a89, ExportResponse_b235e7bd]
+        :rtype: Union[ApiResponse, object, StandardizedError_f5106a89, ExportResponse_b235e7bd, BadRequestError_f854b05]
         """
         operation_name = "get_status_of_export_request_v1"
         params = locals()
@@ -5292,6 +5295,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.export_response.ExportResponse", status_code=200, message="OK."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
@@ -5324,7 +5328,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param skill_id: The list of skillIds that you wish to get the summary for. A maximum of 10 skillIds can be specified to get the skill summary in single listSkills call. Please note that this parameter must not be used with 'nextToken' or/and 'maxResults' parameter.
         :type skill_id: list[str]
         :param full_response: Boolean value to check if response should contain headers and status code information.
@@ -5519,6 +5523,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=202, message="Accepted."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=409, message="The request could not be completed due to a conflict with the current state of the target resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=413, message="Payload too large."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
@@ -7015,6 +7020,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=409, message="Thrown if user tries to request a new simulation while the old simulation is in progress."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=500, message="Internal Server Error."))
 
@@ -7087,7 +7093,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         header_params.append(('Authorization', authorization_value))
 
         error_definitions = []  # type: List
-        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="Success. Return a URL to track the resource in &#39;Location&#39; header."))
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=201, message="Success. Return a URL to track the resource in &#39;Location&#39; header."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
@@ -7112,7 +7118,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return None
 
     def update_beta_test_v1(self, skill_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, object, Error_fbe913d9, BadRequestError_f854b05]
+        # type: (str, **Any) -> Union[ApiResponse, object, Error_fbe913d9, UpdateBetaTestResponse_84abf38, BadRequestError_f854b05]
         """
         Update beta test.
         Update a beta test for a given Alexa skill.
@@ -7124,7 +7130,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, Error_fbe913d9, BadRequestError_f854b05]
+        :rtype: Union[ApiResponse, object, Error_fbe913d9, UpdateBetaTestResponse_84abf38, BadRequestError_f854b05]
         """
         operation_name = "update_beta_test_v1"
         params = locals()
@@ -7164,10 +7170,11 @@ class SkillManagementServiceClient(BaseServiceClient):
         header_params.append(('Authorization', authorization_value))
 
         error_definitions = []  # type: List
-        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="Success. No content."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.beta_test.update_beta_test_response.UpdateBetaTestResponse", status_code=204, message="Success. No content."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=409, message="Thrown if user tries to request a new simulation while the old simulation is in progress."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=500, message="Internal Server Error."))
 
@@ -7180,12 +7187,12 @@ class SkillManagementServiceClient(BaseServiceClient):
             header_params=header_params,
             body=body_params,
             response_definitions=error_definitions,
-            response_type=None)
+            response_type="ask_smapi_model.v1.skill.beta_test.update_beta_test_response.UpdateBetaTestResponse")
 
         if full_response:
             return api_response
+        return api_response.body
         
-        return None
 
     def start_beta_test_v1(self, skill_id, **kwargs):
         # type: (str, **Any) -> Union[ApiResponse, object, Error_fbe913d9, BadRequestError_f854b05]
@@ -7321,6 +7328,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=409, message="The request could not be completed due to a conflict with the current state of the target resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=500, message="Internal Server Error."))
 
@@ -7350,8 +7358,8 @@ class SkillManagementServiceClient(BaseServiceClient):
         :type skill_id: str
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
-        :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 500 results, you can add this parameter to your request. The response might contain fewer results than maxResults, but it will never contain more.
+        :type max_results: int
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
@@ -7401,6 +7409,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Bad request."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=409, message="The request could not be completed due to a conflict with the current state of the target resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=500, message="Internal Server Error."))
 
@@ -7481,6 +7490,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=409, message="The request could not be completed due to a conflict with the current state of the target resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=500, message="Internal Server Error."))
 
@@ -7663,7 +7673,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return None
 
     def get_certification_review_v1(self, skill_id, certification_id, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, object, Error_fbe913d9, CertificationResponse_97fdaad]
+        # type: (str, str, **Any) -> Union[ApiResponse, object, Error_fbe913d9, CertificationResponse_97fdaad, BadRequestError_f854b05]
         """
         Gets a specific certification resource. The response contains the review tracking information for a skill to show how much time the skill is expected to remain under review by Amazon. Once the review is complete, the response also contains the outcome of the review. Old certifications may not be available, however any ongoing certification would always give a response. If the certification is unavailable the result will return a 404 HTTP status code. 
 
@@ -7676,7 +7686,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, Error_fbe913d9, CertificationResponse_97fdaad]
+        :rtype: Union[ApiResponse, object, Error_fbe913d9, CertificationResponse_97fdaad, BadRequestError_f854b05]
         """
         operation_name = "get_certification_review_v1"
         params = locals()
@@ -7723,6 +7733,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.certification.certification_response.CertificationResponse", status_code=200, message="Successfully retrieved skill certification information."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error e.g. if any request parameter is invalid like certification Id or pagination token etc. If the maxResults is not in the range of 1 to 50, it also qualifies for this error. "))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=429, message="Exceeded the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId. "))
@@ -7754,7 +7765,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
@@ -7978,7 +7989,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param sort_direction: Sets the sorting direction of the result items. When set to 'asc' these items are returned in ascending order of sortField value and when set to 'desc' these items are returned in descending order of sortField value.
         :type sort_direction: str
         :param sort_field: Sets the field on which the sorting would be applied.
@@ -8159,6 +8170,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=409, message="The request could not be completed due to a conflict with the current state of the target resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=412, message="Precondition failed."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=413, message="Payload too large."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
@@ -8284,7 +8296,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param locale: The locale for the skill. e.g. en-GB, en-US, de-DE and etc.
         :type locale: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
@@ -9446,7 +9458,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         
 
     def get_skill_publications_v1(self, skill_id, accept_language, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, object, SkillPublicationResponse_8da9d720, StandardizedError_f5106a89]
+        # type: (str, str, **Any) -> Union[ApiResponse, object, SkillPublicationResponse_8da9d720, StandardizedError_f5106a89, BadRequestError_f854b05]
         """
         Retrieves the latest skill publishing details of the certified stage of the skill. The publishesAtDate and status of skill publishing. 
 
@@ -9457,7 +9469,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, SkillPublicationResponse_8da9d720, StandardizedError_f5106a89]
+        :rtype: Union[ApiResponse, object, SkillPublicationResponse_8da9d720, StandardizedError_f5106a89, BadRequestError_f854b05]
         """
         operation_name = "get_skill_publications_v1"
         params = locals()
@@ -9502,6 +9514,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.publication.skill_publication_response.SkillPublicationResponse", status_code=200, message="Successfully retrieved latest skill publication information."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
@@ -9943,7 +9956,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param evaluation_id: (required) A unique ID to identify each Smart Home capability evaluation.
         :type evaluation_id: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
@@ -10036,7 +10049,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param start_timestamp_to: The end of the start time to query evaluation result.
         :type start_timestamp_to: datetime
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
@@ -10205,7 +10218,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param skill_id: (required) The skill ID.
         :type skill_id: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
@@ -10673,7 +10686,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return None
 
     def create_export_request_for_skill_v1(self, skill_id, stage, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, object, StandardizedError_f5106a89]
+        # type: (str, str, **Any) -> Union[ApiResponse, object, StandardizedError_f5106a89, BadRequestError_f854b05]
         """
         Creates a new export for a skill with given skillId and stage. 
 
@@ -10684,7 +10697,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, StandardizedError_f5106a89]
+        :rtype: Union[ApiResponse, object, StandardizedError_f5106a89, BadRequestError_f854b05]
         """
         operation_name = "create_export_request_for_skill_v1"
         params = locals()
@@ -10729,6 +10742,7 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         error_definitions = []  # type: List
         error_definitions.append(ServiceClientResponse(response_type=None, status_code=202, message="Accepted."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=409, message="The request could not be completed due to a conflict with the current state of the target resource."))
@@ -10764,7 +10778,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
@@ -11152,7 +11166,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
@@ -12134,7 +12148,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param sort_direction: Sets the sorting direction of the result items. When set to 'asc' these items are returned in ascending order of sortField value and when set to 'desc' these items are returned in descending order of sortField value.
         :type sort_direction: str
         :param sort_field: Sets the field on which the sorting would be applied.
@@ -12845,7 +12859,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
         :type next_token: str
         :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
-        :type max_results: float
+        :type max_results: int
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
@@ -13121,15 +13135,15 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
         
 
-    def get_alexa_hosted_skill_user_permissions_v1(self, vendor_id, permission, **kwargs):
+    def get_alexa_hosted_skill_user_permissions_v1(self, vendor_id, hosted_skill_permission_type, **kwargs):
         # type: (str, str, **Any) -> Union[ApiResponse, object, StandardizedError_f5106a89, HostedSkillPermission_eb71ebfb, BadRequestError_f854b05]
         """
         Get the current user permissions about Alexa hosted skill features.
 
         :param vendor_id: (required) vendorId
         :type vendor_id: str
-        :param permission: (required) The permission of a hosted skill feature that customer needs to check.
-        :type permission: str
+        :param hosted_skill_permission_type: (required) The permission of a hosted skill feature that customer needs to check.
+        :type hosted_skill_permission_type: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
@@ -13144,19 +13158,19 @@ class SkillManagementServiceClient(BaseServiceClient):
         if ('vendor_id' not in params) or (params['vendor_id'] is None):
             raise ValueError(
                 "Missing the required parameter `vendor_id` when calling `" + operation_name + "`")
-        # verify the required parameter 'permission' is set
-        if ('permission' not in params) or (params['permission'] is None):
+        # verify the required parameter 'hosted_skill_permission_type' is set
+        if ('hosted_skill_permission_type' not in params) or (params['hosted_skill_permission_type'] is None):
             raise ValueError(
-                "Missing the required parameter `permission` when calling `" + operation_name + "`")
+                "Missing the required parameter `hosted_skill_permission_type` when calling `" + operation_name + "`")
 
-        resource_path = '/v1/vendors/{vendorId}/alexaHosted/permissions/{permission}'
+        resource_path = '/v1/vendors/{vendorId}/alexaHosted/permissions/{hostedSkillPermissionType}'
         resource_path = resource_path.replace('{format}', 'json')
 
         path_params = {}  # type: Dict
         if 'vendor_id' in params:
             path_params['vendorId'] = params['vendor_id']
-        if 'permission' in params:
-            path_params['permission'] = params['permission']
+        if 'hosted_skill_permission_type' in params:
+            path_params['hostedSkillPermissionType'] = params['hosted_skill_permission_type']
 
         query_params = []  # type: List
 
@@ -13200,8 +13214,8 @@ class SkillManagementServiceClient(BaseServiceClient):
         return api_response.body
         
 
-    def invoke_skill_end_point_v2(self, skill_id, stage, invocations_api_request, **kwargs):
-        # type: (str, str, InvocationsApiRequest_a422fa08, **Any) -> Union[ApiResponse, object, BadRequestError_765e0ac6, InvocationsApiResponse_3d7e3234, Error_ea6c1a5a]
+    def invoke_skill_end_point_v2(self, skill_id, stage, **kwargs):
+        # type: (str, str, **Any) -> Union[ApiResponse, object, BadRequestError_765e0ac6, InvocationsApiResponse_3d7e3234, Error_ea6c1a5a]
         """
         Invokes the Lambda or third party HTTPS endpoint for the given skill against a given stage.
         This is a synchronous API that invokes the Lambda or third party HTTPS endpoint for a given skill. A successful response will contain information related to what endpoint was called, payload sent to and received from the endpoint. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. In cases where invoking the skill endpoint specifically fails, the response will contain a status attribute indicating that a failure occurred and details about what was sent to the endpoint. The skill must belong to and be enabled by the user of this API. Also,  note that calls to the skill endpoint will timeout after 10 seconds. This  API is currently designed in a way that allows extension to an asynchronous  API if a significantly bigger timeout is required. 
@@ -13210,7 +13224,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :type skill_id: str
         :param stage: (required) Stage for skill.
         :type stage: str
-        :param invocations_api_request: (required) Payload sent to the skill invocation API.
+        :param invocations_api_request: Payload sent to the skill invocation API.
         :type invocations_api_request: ask_smapi_model.v2.skill.invocations.invocations_api_request.InvocationsApiRequest
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
@@ -13230,10 +13244,6 @@ class SkillManagementServiceClient(BaseServiceClient):
         if ('stage' not in params) or (params['stage'] is None):
             raise ValueError(
                 "Missing the required parameter `stage` when calling `" + operation_name + "`")
-        # verify the required parameter 'invocations_api_request' is set
-        if ('invocations_api_request' not in params) or (params['invocations_api_request'] is None):
-            raise ValueError(
-                "Missing the required parameter `invocations_api_request` when calling `" + operation_name + "`")
 
         resource_path = '/v2/skills/{skillId}/stages/{stage}/invocations'
         resource_path = resource_path.replace('{format}', 'json')

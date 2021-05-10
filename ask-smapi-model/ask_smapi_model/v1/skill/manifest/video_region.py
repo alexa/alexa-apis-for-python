@@ -24,7 +24,7 @@ if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
     from ask_smapi_model.v1.skill.manifest.up_channel_items import UpChannelItems as UpChannelItems_408eea2d
-    from ask_smapi_model.v1.skill.manifest.lambda_endpoint import LambdaEndpoint as LambdaEndpoint_87e61436
+    from ask_smapi_model.v1.skill.manifest.skill_manifest_endpoint import SkillManifestEndpoint as SkillManifestEndpoint_b30bcc05
 
 
 class VideoRegion(object):
@@ -33,13 +33,13 @@ class VideoRegion(object):
 
 
     :param endpoint: 
-    :type endpoint: (optional) ask_smapi_model.v1.skill.manifest.lambda_endpoint.LambdaEndpoint
+    :type endpoint: (optional) ask_smapi_model.v1.skill.manifest.skill_manifest_endpoint.SkillManifestEndpoint
     :param upchannel: The channel through which the partner skill can communicate to Alexa.
     :type upchannel: (optional) list[ask_smapi_model.v1.skill.manifest.up_channel_items.UpChannelItems]
 
     """
     deserialized_types = {
-        'endpoint': 'ask_smapi_model.v1.skill.manifest.lambda_endpoint.LambdaEndpoint',
+        'endpoint': 'ask_smapi_model.v1.skill.manifest.skill_manifest_endpoint.SkillManifestEndpoint',
         'upchannel': 'list[ask_smapi_model.v1.skill.manifest.up_channel_items.UpChannelItems]'
     }  # type: Dict
 
@@ -50,11 +50,11 @@ class VideoRegion(object):
     supports_multiple_types = False
 
     def __init__(self, endpoint=None, upchannel=None):
-        # type: (Optional[LambdaEndpoint_87e61436], Optional[List[UpChannelItems_408eea2d]]) -> None
+        # type: (Optional[SkillManifestEndpoint_b30bcc05], Optional[List[UpChannelItems_408eea2d]]) -> None
         """Defines the structure for endpoint information.
 
         :param endpoint: 
-        :type endpoint: (optional) ask_smapi_model.v1.skill.manifest.lambda_endpoint.LambdaEndpoint
+        :type endpoint: (optional) ask_smapi_model.v1.skill.manifest.skill_manifest_endpoint.SkillManifestEndpoint
         :param upchannel: The channel through which the partner skill can communicate to Alexa.
         :type upchannel: (optional) list[ask_smapi_model.v1.skill.manifest.up_channel_items.UpChannelItems]
         """
