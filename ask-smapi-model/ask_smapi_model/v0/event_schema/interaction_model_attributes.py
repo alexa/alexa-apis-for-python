@@ -35,31 +35,38 @@ class InteractionModelAttributes(SkillAttributes):
     :type skill_id: (optional) str
     :param vendor_id: Unique identifier of vendor account to which this skill belongs. 
     :type vendor_id: (optional) str
+    :param locale: Locale of interaction model. 
+    :type locale: (optional) str
 
     """
     deserialized_types = {
         'skill_id': 'str',
-        'vendor_id': 'str'
+        'vendor_id': 'str',
+        'locale': 'str'
     }  # type: Dict
 
     attribute_map = {
         'skill_id': 'skillId',
-        'vendor_id': 'vendorId'
+        'vendor_id': 'vendorId',
+        'locale': 'locale'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, skill_id=None, vendor_id=None):
-        # type: (Optional[str], Optional[str]) -> None
+    def __init__(self, skill_id=None, vendor_id=None, locale=None):
+        # type: (Optional[str], Optional[str], Optional[str]) -> None
         """Represents a set of attributes specific to interaction model of an Alexa Skill. 
 
         :param skill_id: Unique identifier of an Alexa skill. 
         :type skill_id: (optional) str
         :param vendor_id: Unique identifier of vendor account to which this skill belongs. 
         :type vendor_id: (optional) str
+        :param locale: Locale of interaction model. 
+        :type locale: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
         super(InteractionModelAttributes, self).__init__(skill_id=skill_id, vendor_id=vendor_id)
+        self.locale = locale
 
     def to_dict(self):
         # type: () -> Dict[str, object]

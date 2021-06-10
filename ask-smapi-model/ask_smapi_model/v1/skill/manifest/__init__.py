@@ -21,7 +21,6 @@ from .skill_manifest_localized_privacy_and_compliance import SkillManifestLocali
 from .music_feature import MusicFeature
 from .dialog_delegation_strategy import DialogDelegationStrategy
 from .skill_manifest_endpoint import SkillManifestEndpoint
-from .video_web_player_feature import VideoWebPlayerFeature
 from .authorized_client_lwa_application import AuthorizedClientLwaApplication
 from .extension_request import ExtensionRequest
 from .voice_profile_feature import VoiceProfileFeature

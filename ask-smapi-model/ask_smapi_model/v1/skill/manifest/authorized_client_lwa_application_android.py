@@ -33,27 +33,41 @@ class AuthorizedClientLwaApplicationAndroid(AuthorizedClientLwaApplication):
 
     :param object_type: 
     :type object_type: (optional) str
+    :param app_store_app_id: 
+    :type app_store_app_id: (optional) str
+    :param client_id: 
+    :type client_id: (optional) str
 
     """
     deserialized_types = {
-        'object_type': 'str'
+        'object_type': 'str',
+        'app_store_app_id': 'str',
+        'client_id': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'object_type': 'type'
+        'object_type': 'type',
+        'app_store_app_id': 'appStoreAppId',
+        'client_id': 'clientId'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, object_type=None):
-        # type: (Optional[str]) -> None
+    def __init__(self, object_type=None, app_store_app_id=None, client_id=None):
+        # type: (Optional[str], Optional[str], Optional[str]) -> None
         """Defines an android application for LWA authentication provider.
 
         :param object_type: 
         :type object_type: (optional) str
+        :param app_store_app_id: 
+        :type app_store_app_id: (optional) str
+        :param client_id: 
+        :type client_id: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
         super(AuthorizedClientLwaApplicationAndroid, self).__init__(object_type=object_type)
+        self.app_store_app_id = app_store_app_id
+        self.client_id = client_id
 
     def to_dict(self):
         # type: () -> Dict[str, object]

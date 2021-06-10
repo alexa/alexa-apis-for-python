@@ -41,9 +41,7 @@ class VideoFeature(object):
         This is an abstract class. Use the following mapping, to figure out
         the model class to be instantiated, that sets ``name`` variable.
 
-        | VIDEO_VOICE_PROFILE: :py:class:`ask_smapi_model.v1.skill.manifest.voice_profile_feature.VoiceProfileFeature`,
-        |
-        | VIDEO_WEB_PLAYER: :py:class:`ask_smapi_model.v1.skill.manifest.video_web_player_feature.VideoWebPlayerFeature`
+        | VIDEO_VOICE_PROFILE: :py:class:`ask_smapi_model.v1.skill.manifest.voice_profile_feature.VoiceProfileFeature`
 
     """
     deserialized_types = {
@@ -58,8 +56,7 @@ class VideoFeature(object):
     supports_multiple_types = False
 
     discriminator_value_class_map = {
-        'VIDEO_VOICE_PROFILE': 'ask_smapi_model.v1.skill.manifest.voice_profile_feature.VoiceProfileFeature',
-        'VIDEO_WEB_PLAYER': 'ask_smapi_model.v1.skill.manifest.video_web_player_feature.VideoWebPlayerFeature'
+        'VIDEO_VOICE_PROFILE': 'ask_smapi_model.v1.skill.manifest.voice_profile_feature.VoiceProfileFeature'
     }
 
     json_discriminator_key = "name"

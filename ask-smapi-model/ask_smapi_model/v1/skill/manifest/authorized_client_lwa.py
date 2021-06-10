@@ -24,6 +24,7 @@ from ask_smapi_model.v1.skill.manifest.authorized_client import AuthorizedClient
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
+    from ask_smapi_model.v1.skill.manifest.authorized_client_lwa_application import AuthorizedClientLwaApplication as AuthorizedClientLwaApplication_39c79ff0
 
 
 class AuthorizedClientLwa(AuthorizedClient):
@@ -33,27 +34,34 @@ class AuthorizedClientLwa(AuthorizedClient):
 
     :param authentication_provider: 
     :type authentication_provider: (optional) str
+    :param applications: 
+    :type applications: (optional) list[ask_smapi_model.v1.skill.manifest.authorized_client_lwa_application.AuthorizedClientLwaApplication]
 
     """
     deserialized_types = {
-        'authentication_provider': 'str'
+        'authentication_provider': 'str',
+        'applications': 'list[ask_smapi_model.v1.skill.manifest.authorized_client_lwa_application.AuthorizedClientLwaApplication]'
     }  # type: Dict
 
     attribute_map = {
-        'authentication_provider': 'authenticationProvider'
+        'authentication_provider': 'authenticationProvider',
+        'applications': 'applications'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, authentication_provider=None):
-        # type: (Optional[str]) -> None
+    def __init__(self, authentication_provider=None, applications=None):
+        # type: (Optional[str], Optional[List[AuthorizedClientLwaApplication_39c79ff0]]) -> None
         """Defines client using Login With Amazon authentication provider, corresponds to LWA Security Profile.
 
         :param authentication_provider: 
         :type authentication_provider: (optional) str
+        :param applications: 
+        :type applications: (optional) list[ask_smapi_model.v1.skill.manifest.authorized_client_lwa_application.AuthorizedClientLwaApplication]
         """
         self.__discriminator_value = None  # type: str
 
         super(AuthorizedClientLwa, self).__init__(authentication_provider=authentication_provider)
+        self.applications = applications
 
     def to_dict(self):
         # type: () -> Dict[str, object]

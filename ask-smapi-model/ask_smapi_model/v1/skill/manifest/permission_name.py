@@ -31,7 +31,7 @@ class PermissionName(Enum):
 
 
 
-    Allowed enum values: [alexa_device_id_read, alexa_personality_explicit_read, alexa_authenticate_2_mandatory, alexa_devices_all_address_country_and_postal_code_read, alexa_profile_mobile_number_read, alexa_async_event_write, alexa_device_type_read, alexa_skill_proactive_enablement, alexa_personality_explicit_write, alexa_household_lists_read, alexa_utterance_id_read, alexa_user_experience_guidance_read, alexa_devices_all_notifications_write, avs_distributed_audio, alexa_devices_all_address_full_read, alexa_devices_all_notifications_urgent_write, payments_autopay_consent, alexa_alerts_timers_skill_readwrite, alexa_customer_id_read, alexa_skill_cds_monetization, alexa_music_cast, alexa_profile_given_name_read, alexa_alerts_reminders_skill_readwrite, alexa_household_lists_write, alexa_profile_email_read, alexa_profile_name_read, alexa_devices_all_geolocation_read, alexa_raw_person_id_read, alexa_authenticate_2_optional, alexa_health_profile_write, alexa_person_id_read, alexa_skill_products_entitlements, alexa_energy_devices_state_read]
+    Allowed enum values: [alexa_device_id_read, alexa_personality_explicit_read, alexa_authenticate_2_mandatory, alexa_devices_all_address_country_and_postal_code_read, alexa_profile_mobile_number_read, alexa_async_event_write, alexa_device_type_read, alexa_skill_proactive_enablement, alexa_personality_explicit_write, alexa_household_lists_read, alexa_utterance_id_read, alexa_user_experience_guidance_read, alexa_devices_all_notifications_write, avs_distributed_audio, alexa_devices_all_address_full_read, alexa_devices_all_notifications_urgent_write, payments_autopay_consent, alexa_alerts_timers_skill_readwrite, alexa_customer_id_read, alexa_skill_cds_monetization, alexa_music_cast, alexa_profile_given_name_read, alexa_alerts_reminders_skill_readwrite, alexa_household_lists_write, alexa_profile_email_read, alexa_profile_name_read, alexa_devices_all_geolocation_read, alexa_raw_person_id_read, alexa_authenticate_2_optional, alexa_health_profile_write, alexa_person_id_read, alexa_skill_products_entitlements, alexa_energy_devices_state_read, alexa_origin_ip_address_read]
     """
     alexa_device_id_read = "alexa::device_id:read"
     alexa_personality_explicit_read = "alexa::personality:explicit:read"
@@ -66,6 +66,7 @@ class PermissionName(Enum):
     alexa_person_id_read = "alexa::person_id:read"
     alexa_skill_products_entitlements = "alexa::skill:products:entitlements"
     alexa_energy_devices_state_read = "alexa::energy:devices:state:read"
+    alexa_origin_ip_address_read = "alexa::origin_ip_address:read"
 
     def to_dict(self):
         # type: () -> Dict[str, Any]

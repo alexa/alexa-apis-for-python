@@ -28,7 +28,7 @@ if typing.TYPE_CHECKING:
 class SkillRequest(object):
     """
 
-    :param body: ASK request body schema as defined in the public facing documentation (https://tiny.amazon.com/1h8keglep/deveamazpublsolualexalexdocs) 
+    :param body: ASK request body schema as defined in the public facing documentation (https://developer.amazon.com/en-US/docs/alexa/custom-skills/request-and-response-json-reference.html#request-body-syntax) 
     :type body: (optional) object
 
     """
@@ -45,7 +45,7 @@ class SkillRequest(object):
         # type: (Optional[object]) -> None
         """
 
-        :param body: ASK request body schema as defined in the public facing documentation (https://tiny.amazon.com/1h8keglep/deveamazpublsolualexalexdocs) 
+        :param body: ASK request body schema as defined in the public facing documentation (https://developer.amazon.com/en-US/docs/alexa/custom-skills/request-and-response-json-reference.html#request-body-syntax) 
         :type body: (optional) object
         """
         self.__discriminator_value = None  # type: str

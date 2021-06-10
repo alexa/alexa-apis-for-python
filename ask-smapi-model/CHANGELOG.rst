@@ -173,3 +173,11 @@ This release contains the following changes :
 - General bug fixes and updates.
 - Model definition updates to support `AlexaCustomerFeedbackEvent.SkillReviewPublish <https://developer.amazon.com/en-US/docs/alexa/sdns/skill-development-event-schemas.html#events-summary>`__ event notifications for skill developers in SMAPI.
 - Developers can subscribe to this `new event and get notified <https://developer.amazon.com/en-US/docs/alexa/sdns/use-skill-development-notifications.html>`__ whenever there is a customer-review published for their skills.
+
+
+1.9.2
+^^^^^
+
+This release contains the following changes :
+
+- general bug fixes and updates

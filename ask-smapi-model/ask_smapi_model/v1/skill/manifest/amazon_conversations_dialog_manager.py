@@ -28,7 +28,7 @@ if typing.TYPE_CHECKING:
 
 class AMAZONConversationsDialogManager(DialogManager):
     """
-    The type of dialog manager:  * AMAZON.Conversations - The Alexa Conversations (Coltrane) model for this skill. See https://w.amazon.com/bin/view/Digital/Alexa/ConversationalAI/Coltrane
+    The type of dialog manager:  * AMAZON.Conversations - The Alexa Conversations (Coltrane) model for this skill.
 
 
 
@@ -44,7 +44,7 @@ class AMAZONConversationsDialogManager(DialogManager):
 
     def __init__(self):
         # type: () -> None
-        """The type of dialog manager:  * AMAZON.Conversations - The Alexa Conversations (Coltrane) model for this skill. See https://w.amazon.com/bin/view/Digital/Alexa/ConversationalAI/Coltrane
+        """The type of dialog manager:  * AMAZON.Conversations - The Alexa Conversations (Coltrane) model for this skill.
 
         """
         self.__discriminator_value = "AMAZON.Conversations"  # type: str

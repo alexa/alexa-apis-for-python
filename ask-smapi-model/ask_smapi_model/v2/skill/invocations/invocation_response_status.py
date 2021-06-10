@@ -27,13 +27,13 @@ if typing.TYPE_CHECKING:
 
 class InvocationResponseStatus(Enum):
     """
-    String that specifies the status of skill invocation. Possible values are \&quot;SUCCEEDED\&quot;, and \&quot;FAILED\&quot;. 
+    String that specifies the status of skill invocation. Possible values are \&quot;SUCCESSFUL\&quot;, and \&quot;FAILED\&quot;. 
 
 
 
-    Allowed enum values: [SUCCEEDED, FAILED]
+    Allowed enum values: [SUCCESSFUL, FAILED]
     """
-    SUCCEEDED = "SUCCEEDED"
+    SUCCESSFUL = "SUCCESSFUL"
     FAILED = "FAILED"
 
     def to_dict(self):
