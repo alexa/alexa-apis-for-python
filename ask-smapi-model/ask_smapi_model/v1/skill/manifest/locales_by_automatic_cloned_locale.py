@@ -23,59 +23,43 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.simulations.session import Session as Session_700bf076
-    from ask_smapi_model.v1.skill.simulations.device import Device as Device_88be9466
-    from ask_smapi_model.v1.skill.simulations.input import Input as Input_7307d1de
-    from ask_smapi_model.v1.skill.simulations.simulation import Simulation as Simulation_618c97c6
 
 
-class SimulationsApiRequest(object):
+class LocalesByAutomaticClonedLocale(object):
     """
+    maps source locale to list of target locales. Source and target locales should be with the same language.
 
-    :param input: 
-    :type input: (optional) ask_smapi_model.v1.skill.simulations.input.Input
-    :param device: 
-    :type device: (optional) ask_smapi_model.v1.skill.simulations.device.Device
-    :param session: 
-    :type session: (optional) ask_smapi_model.v1.skill.simulations.session.Session
-    :param simulation: 
-    :type simulation: (optional) ask_smapi_model.v1.skill.simulations.simulation.Simulation
+
+    :param source: Locale where the metadata and model will be copied from. For example: en-US. This locale must already exist in the skill.
+    :type source: (optional) str
+    :param targets: Optional. List of locales where the metadata and model will be copied to. All configuration of source locale will be copied, so target locales do not have to exist before. Defaults to all locales with the same language as the sourceLocale.
+    :type targets: (optional) list[str]
 
     """
     deserialized_types = {
-        'input': 'ask_smapi_model.v1.skill.simulations.input.Input',
-        'device': 'ask_smapi_model.v1.skill.simulations.device.Device',
-        'session': 'ask_smapi_model.v1.skill.simulations.session.Session',
-        'simulation': 'ask_smapi_model.v1.skill.simulations.simulation.Simulation'
+        'source': 'str',
+        'targets': 'list[str]'
     }  # type: Dict
 
     attribute_map = {
-        'input': 'input',
-        'device': 'device',
-        'session': 'session',
-        'simulation': 'simulation'
+        'source': 'source',
+        'targets': 'targets'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, input=None, device=None, session=None, simulation=None):
-        # type: (Optional[Input_7307d1de], Optional[Device_88be9466], Optional[Session_700bf076], Optional[Simulation_618c97c6]) -> None
-        """
+    def __init__(self, source=None, targets=None):
+        # type: (Optional[str], Optional[List[object]]) -> None
+        """maps source locale to list of target locales. Source and target locales should be with the same language.
 
-        :param input: 
-        :type input: (optional) ask_smapi_model.v1.skill.simulations.input.Input
-        :param device: 
-        :type device: (optional) ask_smapi_model.v1.skill.simulations.device.Device
-        :param session: 
-        :type session: (optional) ask_smapi_model.v1.skill.simulations.session.Session
-        :param simulation: 
-        :type simulation: (optional) ask_smapi_model.v1.skill.simulations.simulation.Simulation
+        :param source: Locale where the metadata and model will be copied from. For example: en-US. This locale must already exist in the skill.
+        :type source: (optional) str
+        :param targets: Optional. List of locales where the metadata and model will be copied to. All configuration of source locale will be copied, so target locales do not have to exist before. Defaults to all locales with the same language as the sourceLocale.
+        :type targets: (optional) list[str]
         """
         self.__discriminator_value = None  # type: str
 
-        self.input = input
-        self.device = device
-        self.session = session
-        self.simulation = simulation
+        self.source = source
+        self.targets = targets
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -120,7 +104,7 @@ class SimulationsApiRequest(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, SimulationsApiRequest):
+        if not isinstance(other, LocalesByAutomaticClonedLocale):
             return False
 
         return self.__dict__ == other.__dict__

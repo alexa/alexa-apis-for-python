@@ -25,6 +25,7 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
     from ask_smapi_model.v2.skill.simulations.device import Device as Device_6965067
     from ask_smapi_model.v2.skill.simulations.input import Input as Input_87f09a1f
+    from ask_smapi_model.v2.skill.simulations.simulation import Simulation as Simulation_ee2cc2c7
     from ask_smapi_model.v2.skill.simulations.session import Session as Session_d6e4b037
 
 
@@ -37,23 +38,27 @@ class SimulationsApiRequest(object):
     :type device: (optional) ask_smapi_model.v2.skill.simulations.device.Device
     :param session: 
     :type session: (optional) ask_smapi_model.v2.skill.simulations.session.Session
+    :param simulation: 
+    :type simulation: (optional) ask_smapi_model.v2.skill.simulations.simulation.Simulation
 
     """
     deserialized_types = {
         'input': 'ask_smapi_model.v2.skill.simulations.input.Input',
         'device': 'ask_smapi_model.v2.skill.simulations.device.Device',
-        'session': 'ask_smapi_model.v2.skill.simulations.session.Session'
+        'session': 'ask_smapi_model.v2.skill.simulations.session.Session',
+        'simulation': 'ask_smapi_model.v2.skill.simulations.simulation.Simulation'
     }  # type: Dict
 
     attribute_map = {
         'input': 'input',
         'device': 'device',
-        'session': 'session'
+        'session': 'session',
+        'simulation': 'simulation'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, input=None, device=None, session=None):
-        # type: (Optional[Input_87f09a1f], Optional[Device_6965067], Optional[Session_d6e4b037]) -> None
+    def __init__(self, input=None, device=None, session=None, simulation=None):
+        # type: (Optional[Input_87f09a1f], Optional[Device_6965067], Optional[Session_d6e4b037], Optional[Simulation_ee2cc2c7]) -> None
         """
 
         :param input: 
@@ -62,12 +67,15 @@ class SimulationsApiRequest(object):
         :type device: (optional) ask_smapi_model.v2.skill.simulations.device.Device
         :param session: 
         :type session: (optional) ask_smapi_model.v2.skill.simulations.session.Session
+        :param simulation: 
+        :type simulation: (optional) ask_smapi_model.v2.skill.simulations.simulation.Simulation
         """
         self.__discriminator_value = None  # type: str
 
         self.input = input
         self.device = device
         self.session = session
+        self.simulation = simulation
 
     def to_dict(self):
         # type: () -> Dict[str, object]

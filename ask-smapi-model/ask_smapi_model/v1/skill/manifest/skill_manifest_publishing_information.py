@@ -27,6 +27,7 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.manifest.skill_manifest_localized_publishing_information import SkillManifestLocalizedPublishingInformation as SkillManifestLocalizedPublishingInformation_1e8ff5fd
     from ask_smapi_model.v1.skill.manifest.distribution_countries import DistributionCountries as DistributionCountries_33dc1fd4
     from ask_smapi_model.v1.skill.manifest.distribution_mode import DistributionMode as DistributionMode_7068bbf0
+    from ask_smapi_model.v1.skill.manifest.automatic_cloned_locale import AutomaticClonedLocale as AutomaticClonedLocale_4c2a4dc3
     from ask_smapi_model.v1.skill.manifest.manifest_gadget_support import ManifestGadgetSupport as ManifestGadgetSupport_2efdc899
 
 
@@ -55,6 +56,8 @@ class SkillManifestPublishingInformation(object):
     :type distribution_countries: (optional) list[ask_smapi_model.v1.skill.manifest.distribution_countries.DistributionCountries]
     :param automatic_distribution: 
     :type automatic_distribution: (optional) ask_smapi_model.v1.skill.manifest.automatic_distribution.AutomaticDistribution
+    :param automatic_cloned_locale: 
+    :type automatic_cloned_locale: (optional) ask_smapi_model.v1.skill.manifest.automatic_cloned_locale.AutomaticClonedLocale
 
     """
     deserialized_types = {
@@ -67,7 +70,8 @@ class SkillManifestPublishingInformation(object):
         'testing_instructions': 'str',
         'category': 'str',
         'distribution_countries': 'list[ask_smapi_model.v1.skill.manifest.distribution_countries.DistributionCountries]',
-        'automatic_distribution': 'ask_smapi_model.v1.skill.manifest.automatic_distribution.AutomaticDistribution'
+        'automatic_distribution': 'ask_smapi_model.v1.skill.manifest.automatic_distribution.AutomaticDistribution',
+        'automatic_cloned_locale': 'ask_smapi_model.v1.skill.manifest.automatic_cloned_locale.AutomaticClonedLocale'
     }  # type: Dict
 
     attribute_map = {
@@ -80,12 +84,13 @@ class SkillManifestPublishingInformation(object):
         'testing_instructions': 'testingInstructions',
         'category': 'category',
         'distribution_countries': 'distributionCountries',
-        'automatic_distribution': 'automaticDistribution'
+        'automatic_distribution': 'automaticDistribution',
+        'automatic_cloned_locale': 'automaticClonedLocale'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, name=None, description=None, locales=None, is_available_worldwide=None, distribution_mode=None, gadget_support=None, testing_instructions=None, category=None, distribution_countries=None, automatic_distribution=None):
-        # type: (Optional[str], Optional[str], Optional[Dict[str, SkillManifestLocalizedPublishingInformation_1e8ff5fd]], Optional[bool], Optional[DistributionMode_7068bbf0], Optional[ManifestGadgetSupport_2efdc899], Optional[str], Optional[str], Optional[List[DistributionCountries_33dc1fd4]], Optional[AutomaticDistribution_a84fbfb2]) -> None
+    def __init__(self, name=None, description=None, locales=None, is_available_worldwide=None, distribution_mode=None, gadget_support=None, testing_instructions=None, category=None, distribution_countries=None, automatic_distribution=None, automatic_cloned_locale=None):
+        # type: (Optional[str], Optional[str], Optional[Dict[str, SkillManifestLocalizedPublishingInformation_1e8ff5fd]], Optional[bool], Optional[DistributionMode_7068bbf0], Optional[ManifestGadgetSupport_2efdc899], Optional[str], Optional[str], Optional[List[DistributionCountries_33dc1fd4]], Optional[AutomaticDistribution_a84fbfb2], Optional[AutomaticClonedLocale_4c2a4dc3]) -> None
         """Defines the structure for publishing information in the skill manifest.
 
         :param name: Name of the skill that is displayed to customers in the Alexa app.
@@ -108,6 +113,8 @@ class SkillManifestPublishingInformation(object):
         :type distribution_countries: (optional) list[ask_smapi_model.v1.skill.manifest.distribution_countries.DistributionCountries]
         :param automatic_distribution: 
         :type automatic_distribution: (optional) ask_smapi_model.v1.skill.manifest.automatic_distribution.AutomaticDistribution
+        :param automatic_cloned_locale: 
+        :type automatic_cloned_locale: (optional) ask_smapi_model.v1.skill.manifest.automatic_cloned_locale.AutomaticClonedLocale
         """
         self.__discriminator_value = None  # type: str
 
@@ -121,6 +128,7 @@ class SkillManifestPublishingInformation(object):
         self.category = category
         self.distribution_countries = distribution_countries
         self.automatic_distribution = automatic_distribution
+        self.automatic_cloned_locale = automatic_cloned_locale
 
     def to_dict(self):
         # type: () -> Dict[str, object]

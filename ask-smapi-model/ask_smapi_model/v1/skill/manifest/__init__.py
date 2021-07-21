@@ -60,6 +60,7 @@ from .manifest_gadget_support import ManifestGadgetSupport
 from .source_language_for_locales import SourceLanguageForLocales
 from .dialog_manager import DialogManager
 from .video_fire_tv_catalog_ingestion import VideoFireTvCatalogIngestion
+from .automatic_cloned_locale import AutomaticClonedLocale
 from .distribution_countries import DistributionCountries
 from .skill_manifest_publishing_information import SkillManifestPublishingInformation
 from .gadget_support_requirement import GadgetSupportRequirement
@@ -112,6 +113,7 @@ from .demand_response_apis import DemandResponseApis
 from .custom_localized_information import CustomLocalizedInformation
 from .video_prompt_name_type import VideoPromptNameType
 from .video_prompt_name import VideoPromptName
+from .locales_by_automatic_cloned_locale import LocalesByAutomaticClonedLocale
 from .custom_task import CustomTask
 from .supported_controls_type import SupportedControlsType
 from .localized_music_info import LocalizedMusicInfo

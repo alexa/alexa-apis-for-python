@@ -25,12 +25,14 @@ from .slot import Slot
 from .simulation_result import SimulationResult
 from .resolutions_per_authority_status_code import ResolutionsPerAuthorityStatusCode
 from .simulations_api_response_status import SimulationsApiResponseStatus
+from .simulation_type import SimulationType
 from .resolutions_per_authority_value_items import ResolutionsPerAuthorityValueItems
 from .alexa_execution_info import AlexaExecutionInfo
 from .device import Device
 from .alexa_response import AlexaResponse
 from .session import Session
 from .resolutions_per_authority_status import ResolutionsPerAuthorityStatus
+from .simulation import Simulation
 from .skill_execution_info import SkillExecutionInfo
 from .session_mode import SessionMode
 from .intent import Intent

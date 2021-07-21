@@ -13304,7 +13304,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         # type: (str, str, SimulationsApiRequest_ae2e6503, **Any) -> Union[ApiResponse, object, SimulationsApiResponse_e4ad17d, BadRequestError_765e0ac6, Error_ea6c1a5a]
         """
         Simulate executing a skill with the given id against a given stage.
-        This is an asynchronous API that simulates a skill execution in the Alexa eco-system given an utterance text of what a customer would say to Alexa. A successful response will contain a header with the location of the simulation resource. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. The skill being simulated must belong to and be enabled  by the user of this API. Concurrent requests per user is currently not supported. 
+        This is an asynchronous API that simulates a skill execution in the Alexa eco-system given an utterance text of what a customer would say to Alexa. A successful response will contain a header with the location of the simulation resource. In cases where requests to this API results in an error, the response will contain an error code and a description of the problem. The skill being simulated must belong to and be enabled by the user of this API. Concurrent requests per user is currently not supported. 
 
         :param skill_id: (required) The skill ID.
         :type skill_id: str

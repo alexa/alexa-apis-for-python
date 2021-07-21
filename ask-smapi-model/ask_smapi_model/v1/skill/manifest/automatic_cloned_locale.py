@@ -23,59 +23,37 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.simulations.session import Session as Session_700bf076
-    from ask_smapi_model.v1.skill.simulations.device import Device as Device_88be9466
-    from ask_smapi_model.v1.skill.simulations.input import Input as Input_7307d1de
-    from ask_smapi_model.v1.skill.simulations.simulation import Simulation as Simulation_618c97c6
+    from ask_smapi_model.v1.skill.manifest.locales_by_automatic_cloned_locale import LocalesByAutomaticClonedLocale as LocalesByAutomaticClonedLocale_4ad48a75
 
 
-class SimulationsApiRequest(object):
+class AutomaticClonedLocale(object):
     """
+    Defines the structure for Sync Locales in the skill manifest. This is an optional property and Sync Locales will be disabled if not set.
 
-    :param input: 
-    :type input: (optional) ask_smapi_model.v1.skill.simulations.input.Input
-    :param device: 
-    :type device: (optional) ask_smapi_model.v1.skill.simulations.device.Device
-    :param session: 
-    :type session: (optional) ask_smapi_model.v1.skill.simulations.session.Session
-    :param simulation: 
-    :type simulation: (optional) ask_smapi_model.v1.skill.simulations.simulation.Simulation
+
+    :param locales: List of language specific source locale to target locales mapping.
+    :type locales: (optional) list[ask_smapi_model.v1.skill.manifest.locales_by_automatic_cloned_locale.LocalesByAutomaticClonedLocale]
 
     """
     deserialized_types = {
-        'input': 'ask_smapi_model.v1.skill.simulations.input.Input',
-        'device': 'ask_smapi_model.v1.skill.simulations.device.Device',
-        'session': 'ask_smapi_model.v1.skill.simulations.session.Session',
-        'simulation': 'ask_smapi_model.v1.skill.simulations.simulation.Simulation'
+        'locales': 'list[ask_smapi_model.v1.skill.manifest.locales_by_automatic_cloned_locale.LocalesByAutomaticClonedLocale]'
     }  # type: Dict
 
     attribute_map = {
-        'input': 'input',
-        'device': 'device',
-        'session': 'session',
-        'simulation': 'simulation'
+        'locales': 'locales'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, input=None, device=None, session=None, simulation=None):
-        # type: (Optional[Input_7307d1de], Optional[Device_88be9466], Optional[Session_700bf076], Optional[Simulation_618c97c6]) -> None
-        """
+    def __init__(self, locales=None):
+        # type: (Optional[List[LocalesByAutomaticClonedLocale_4ad48a75]]) -> None
+        """Defines the structure for Sync Locales in the skill manifest. This is an optional property and Sync Locales will be disabled if not set.
 
-        :param input: 
-        :type input: (optional) ask_smapi_model.v1.skill.simulations.input.Input
-        :param device: 
-        :type device: (optional) ask_smapi_model.v1.skill.simulations.device.Device
-        :param session: 
-        :type session: (optional) ask_smapi_model.v1.skill.simulations.session.Session
-        :param simulation: 
-        :type simulation: (optional) ask_smapi_model.v1.skill.simulations.simulation.Simulation
+        :param locales: List of language specific source locale to target locales mapping.
+        :type locales: (optional) list[ask_smapi_model.v1.skill.manifest.locales_by_automatic_cloned_locale.LocalesByAutomaticClonedLocale]
         """
         self.__discriminator_value = None  # type: str
 
-        self.input = input
-        self.device = device
-        self.session = session
-        self.simulation = simulation
+        self.locales = locales
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -120,7 +98,7 @@ class SimulationsApiRequest(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, SimulationsApiRequest):
+        if not isinstance(other, AutomaticClonedLocale):
             return False
 
         return self.__dict__ == other.__dict__

@@ -181,3 +181,13 @@ This release contains the following changes :
 This release contains the following changes :
 
 - general bug fixes and updates
+
+
+1.11.0
+~~~~~~
+
+This release contains the following changes : 
+
+- Updating model definitions
+- Added new model definitions for Simulation APIs
+- Added new model definitions for AutomaticClonedLocale

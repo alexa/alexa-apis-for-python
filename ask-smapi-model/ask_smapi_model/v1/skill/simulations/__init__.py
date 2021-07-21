@@ -20,6 +20,7 @@ from .input import Input
 from .simulations_api_response import SimulationsApiResponse
 from .simulation_result import SimulationResult
 from .simulations_api_response_status import SimulationsApiResponseStatus
+from .simulation_type import SimulationType
 from .alexa_execution_info import AlexaExecutionInfo
 from .device import Device
 from .invocation_request import InvocationRequest
@@ -28,4 +29,5 @@ from .session import Session
 from .metrics import Metrics
 from .invocation_response import InvocationResponse
 from .invocation import Invocation
+from .simulation import Simulation
 from .session_mode import SessionMode
