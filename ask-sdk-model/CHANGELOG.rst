@@ -397,3 +397,12 @@ This release contains the following changes :
 This release includes the following:
 
 - Adding support for directives in Reprompt
+
+
+1.31.1
+^^^^^^
+
+This release contains the following changes : 
+
+- Updating model definitions
+
