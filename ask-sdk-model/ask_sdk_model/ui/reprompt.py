@@ -23,6 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
+    from ask_sdk_model.directive import Directive as Directive_e3e6b000
     from ask_sdk_model.ui.output_speech import OutputSpeech as OutputSpeech_a070f8fb
 
 
@@ -31,27 +32,34 @@ class Reprompt(object):
 
     :param output_speech: 
     :type output_speech: (optional) ask_sdk_model.ui.output_speech.OutputSpeech
+    :param directives: 
+    :type directives: (optional) list[ask_sdk_model.directive.Directive]
 
     """
     deserialized_types = {
-        'output_speech': 'ask_sdk_model.ui.output_speech.OutputSpeech'
+        'output_speech': 'ask_sdk_model.ui.output_speech.OutputSpeech',
+        'directives': 'list[ask_sdk_model.directive.Directive]'
     }  # type: Dict
 
     attribute_map = {
-        'output_speech': 'outputSpeech'
+        'output_speech': 'outputSpeech',
+        'directives': 'directives'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, output_speech=None):
-        # type: (Optional[OutputSpeech_a070f8fb]) -> None
+    def __init__(self, output_speech=None, directives=None):
+        # type: (Optional[OutputSpeech_a070f8fb], Optional[List[Directive_e3e6b000]]) -> None
         """
 
         :param output_speech: 
         :type output_speech: (optional) ask_sdk_model.ui.output_speech.OutputSpeech
+        :param directives: 
+        :type directives: (optional) list[ask_sdk_model.directive.Directive]
         """
         self.__discriminator_value = None  # type: str
 
         self.output_speech = output_speech
+        self.directives = directives
 
     def to_dict(self):
         # type: () -> Dict[str, object]

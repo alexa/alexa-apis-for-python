@@ -389,3 +389,11 @@ This release contains the following changes :
 This release contains the following changes :
 
 - Adding missing definitions for APL 1.6. More information can be found `here <https://developer.amazon.com/en-US/docs/alexa/alexa-presentation-language/apl-latest-version.html#token-based-lazy-loading>`__.
+
+
+1.31.0
+~~~~~~
+
+This release includes the following:
+
+- Adding support for directives in Reprompt
