@@ -191,3 +191,11 @@ This release contains the following changes :
 - Updating model definitions
 - Added new model definitions for Simulation APIs
 - Added new model definitions for AutomaticClonedLocale
+
+
+1.12.0
+~~~~~~
+
+This release contains the following changes : 
+
+- Updating model definitions to support Node.js 12.x on Alexa Hosted Skills.
