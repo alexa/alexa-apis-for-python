@@ -23,6 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
+    from ask_smapi_model.v1.skill.manifest.custom_product_prompts import CustomProductPrompts as CustomProductPrompts_150953f5
 
 
 class SkillManifestLocalizedPublishingInformation(object):
@@ -46,6 +47,8 @@ class SkillManifestLocalizedPublishingInformation(object):
     :type example_phrases: (optional) list[str]
     :param keywords: Sample keyword phrases that describe the skill.
     :type keywords: (optional) list[str]
+    :param custom_product_prompts: 
+    :type custom_product_prompts: (optional) ask_smapi_model.v1.skill.manifest.custom_product_prompts.CustomProductPrompts
 
     """
     deserialized_types = {
@@ -56,7 +59,8 @@ class SkillManifestLocalizedPublishingInformation(object):
         'description': 'str',
         'updates_description': 'str',
         'example_phrases': 'list[str]',
-        'keywords': 'list[str]'
+        'keywords': 'list[str]',
+        'custom_product_prompts': 'ask_smapi_model.v1.skill.manifest.custom_product_prompts.CustomProductPrompts'
     }  # type: Dict
 
     attribute_map = {
@@ -67,12 +71,13 @@ class SkillManifestLocalizedPublishingInformation(object):
         'description': 'description',
         'updates_description': 'updatesDescription',
         'example_phrases': 'examplePhrases',
-        'keywords': 'keywords'
+        'keywords': 'keywords',
+        'custom_product_prompts': 'customProductPrompts'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, name=None, small_icon_uri=None, large_icon_uri=None, summary=None, description=None, updates_description=None, example_phrases=None, keywords=None):
-        # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[List[object]], Optional[List[object]]) -> None
+    def __init__(self, name=None, small_icon_uri=None, large_icon_uri=None, summary=None, description=None, updates_description=None, example_phrases=None, keywords=None, custom_product_prompts=None):
+        # type: (Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[str], Optional[List[object]], Optional[List[object]], Optional[CustomProductPrompts_150953f5]) -> None
         """Defines the structure for locale specific publishing information in the skill manifest.
 
         :param name: Name of the skill that is displayed to customers in the Alexa app.
@@ -91,6 +96,8 @@ class SkillManifestLocalizedPublishingInformation(object):
         :type example_phrases: (optional) list[str]
         :param keywords: Sample keyword phrases that describe the skill.
         :type keywords: (optional) list[str]
+        :param custom_product_prompts: 
+        :type custom_product_prompts: (optional) ask_smapi_model.v1.skill.manifest.custom_product_prompts.CustomProductPrompts
         """
         self.__discriminator_value = None  # type: str
 
@@ -102,6 +109,7 @@ class SkillManifestLocalizedPublishingInformation(object):
         self.updates_description = updates_description
         self.example_phrases = example_phrases
         self.keywords = keywords
+        self.custom_product_prompts = custom_product_prompts
 
     def to_dict(self):
         # type: () -> Dict[str, object]

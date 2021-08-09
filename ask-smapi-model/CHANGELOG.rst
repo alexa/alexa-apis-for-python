@@ -199,3 +199,11 @@ This release contains the following changes :
 This release contains the following changes : 
 
 - Updating model definitions to support Node.js 12.x on Alexa Hosted Skills.
+
+
+1.13.0
+~~~~~~
+
+This release contains the following changes :
+
+- Added models to support `Paid skills <https://developer.amazon.com/en-US/docs/alexa/paid-skills/overview.html>`__.

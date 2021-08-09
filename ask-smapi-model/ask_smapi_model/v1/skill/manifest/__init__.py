@@ -25,12 +25,15 @@ from .authorized_client_lwa_application import AuthorizedClientLwaApplication
 from .extension_request import ExtensionRequest
 from .voice_profile_feature import VoiceProfileFeature
 from .ssl_certificate_type import SSLCertificateType
+from .currency import Currency
 from .viewport_mode import ViewportMode
 from .skill_manifest_events import SkillManifestEvents
 from .alexa_for_business_interface_request import AlexaForBusinessInterfaceRequest
 from .flash_briefing_content_type import FlashBriefingContentType
+from .tax_information import TaxInformation
 from .skill_manifest_privacy_and_compliance import SkillManifestPrivacyAndCompliance
 from .authorized_client_lwa import AuthorizedClientLwa
+from .free_trial_information import FreeTrialInformation
 from .interface_type import InterfaceType
 from .music_apis import MusicApis
 from .distribution_mode import DistributionMode
@@ -55,6 +58,8 @@ from .catalog_info import CatalogInfo
 from .music_alias import MusicAlias
 from .video_feature import VideoFeature
 from .music_content_type import MusicContentType
+from .subscription_information import SubscriptionInformation
+from .subscription_payment_frequency import SubscriptionPaymentFrequency
 from .friendly_name import FriendlyName
 from .manifest_gadget_support import ManifestGadgetSupport
 from .source_language_for_locales import SourceLanguageForLocales
@@ -64,6 +69,7 @@ from .automatic_cloned_locale import AutomaticClonedLocale
 from .distribution_countries import DistributionCountries
 from .skill_manifest_publishing_information import SkillManifestPublishingInformation
 from .gadget_support_requirement import GadgetSupportRequirement
+from .tax_information_category import TaxInformationCategory
 from .video_app_interface import VideoAppInterface
 from .custom_apis import CustomApis
 from .flash_briefing_genre import FlashBriefingGenre
@@ -88,6 +94,7 @@ from .skill_manifest import SkillManifest
 from .manifest_version import ManifestVersion
 from .flash_briefing_apis import FlashBriefingApis
 from .amazon_conversations_dialog_manager import AMAZONConversationsDialogManager
+from .marketplace_pricing import MarketplacePricing
 from .permission_items import PermissionItems
 from .automatic_distribution import AutomaticDistribution
 from .authorized_client import AuthorizedClient
@@ -95,6 +102,7 @@ from .event_name_type import EventNameType
 from .audio_interface import AudioInterface
 from .smart_home_apis import SmartHomeApis
 from .alexa_for_business_interface_request_name import AlexaForBusinessInterfaceRequestName
+from .custom_product_prompts import CustomProductPrompts
 from .app_link_v2_interface import AppLinkV2Interface
 from .alexa_for_business_apis import AlexaForBusinessApis
 from .video_region import VideoRegion
@@ -104,7 +112,9 @@ from .alexa_presentation_apl_interface import AlexaPresentationAplInterface
 from .display_interface import DisplayInterface
 from .catalog_type import CatalogType
 from .music_content_name import MusicContentName
+from .offer_type import OfferType
 from .localized_name import LocalizedName
+from .paid_skill_information import PaidSkillInformation
 from .authorized_client_lwa_application_android import AuthorizedClientLwaApplicationAndroid
 from .custom_localized_information_dialog_management import CustomLocalizedInformationDialogManagement
 from .display_interface_template_version import DisplayInterfaceTemplateVersion
