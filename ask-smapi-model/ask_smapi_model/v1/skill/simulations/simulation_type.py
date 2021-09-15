@@ -27,7 +27,7 @@ if typing.TYPE_CHECKING:
 
 class SimulationType(Enum):
     """
-    String indicating the type of simulation request. Possible values are \&quot;DEFAULT\&quot; and \&quot;NFI_ISOLATED_SIMULATION\&quot;. \&quot;DEFAULT\&quot; is used to proceed with the default skill simulation behavior. \&quot;NFI_ISOLATED_SIMULATION\&quot; is used to test the NFI(Name Free Interaction)  enabled skills in isolation. 
+    String indicating the type of simulation request. Possible values are \&quot;DEFAULT\&quot; and \&quot;NFI_ISOLATED_SIMULATION\&quot;. \&quot;NFI_ISOLATED_SIMULATION\&quot; is used to test the NFI(Name Free Interaction) enabled skills in isolation. This field is reserved for testing Name Free Interactions(NFI). Skills that are eligible to add NFI can only use this field. To learn more, visit https://developer.amazon.com/en-US/docs/alexa/custom-skills/understand-name-free-interaction-for-custom-skills.html 
 
 
 

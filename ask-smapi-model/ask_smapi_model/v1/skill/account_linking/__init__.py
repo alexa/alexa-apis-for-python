@@ -14,10 +14,10 @@
 #
 from __future__ import absolute_import
 
-from .account_linking_platform_authorization_url import AccountLinkingPlatformAuthorizationUrl
-from .account_linking_request_payload import AccountLinkingRequestPayload
 from .account_linking_response import AccountLinkingResponse
-from .access_token_scheme_type import AccessTokenSchemeType
-from .account_linking_request import AccountLinkingRequest
 from .account_linking_type import AccountLinkingType
 from .platform_type import PlatformType
+from .account_linking_platform_authorization_url import AccountLinkingPlatformAuthorizationUrl
+from .account_linking_request_payload import AccountLinkingRequestPayload
+from .access_token_scheme_type import AccessTokenSchemeType
+from .account_linking_request import AccountLinkingRequest

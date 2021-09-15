@@ -207,3 +207,11 @@ This release contains the following changes :
 This release contains the following changes :
 
 - Added models to support `Paid skills <https://developer.amazon.com/en-US/docs/alexa/paid-skills/overview.html>`__.
+
+
+1.13.1
+^^^^^^
+
+This release contains the following changes :
+
+- Updating model definitions for maxResults and simulationType.
