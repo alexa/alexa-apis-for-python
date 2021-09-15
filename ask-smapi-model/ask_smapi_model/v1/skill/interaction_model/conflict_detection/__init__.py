@@ -14,12 +14,12 @@
 #
 from __future__ import absolute_import
 
-from .get_conflicts_response_result import GetConflictsResponseResult
+from .conflict_detection_job_status import ConflictDetectionJobStatus
 from .pagination_context import PaginationContext
-from .conflict_result import ConflictResult
-from .get_conflicts_response import GetConflictsResponse
+from .conflict_intent import ConflictIntent
+from .get_conflicts_response_result import GetConflictsResponseResult
+from .paged_response import PagedResponse
 from .conflict_intent_slot import ConflictIntentSlot
 from .get_conflict_detection_job_status_response import GetConflictDetectionJobStatusResponse
-from .conflict_intent import ConflictIntent
-from .conflict_detection_job_status import ConflictDetectionJobStatus
-from .paged_response import PagedResponse
+from .conflict_result import ConflictResult
+from .get_conflicts_response import GetConflictsResponse
