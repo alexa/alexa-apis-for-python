@@ -14,7 +14,7 @@
 #
 from __future__ import absolute_import
 
-from .grant_type import GrantType
 from .authorization_grant_request import AuthorizationGrantRequest
-from .grant import Grant
 from .authorization_grant_body import AuthorizationGrantBody
+from .grant import Grant
+from .grant_type import GrantType

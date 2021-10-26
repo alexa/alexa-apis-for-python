@@ -14,9 +14,8 @@
 #
 from __future__ import absolute_import
 
-from .ups_service_client import UpsServiceClient
-from .error import Error
-from .distance_units import DistanceUnits
-from .phone_number import PhoneNumber
-from .temperature_unit import TemperatureUnit
-from .error_code import ErrorCode
+from .direct_launch import DirectLaunch
+from .catalog_types import CatalogTypes
+from .app_link_state import AppLinkState
+from .app_link_interface import AppLinkInterface
+from .send_to_device import SendToDevice

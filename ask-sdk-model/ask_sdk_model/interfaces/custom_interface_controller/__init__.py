@@ -14,14 +14,14 @@
 #
 from __future__ import absolute_import
 
-from .endpoint import Endpoint
-from .header import Header
-from .filter_match_action import FilterMatchAction
 from .events_received_request import EventsReceivedRequest
-from .expired_request import ExpiredRequest
-from .start_event_handler_directive import StartEventHandlerDirective
-from .stop_event_handler_directive import StopEventHandlerDirective
-from .send_directive_directive import SendDirectiveDirective
-from .expiration import Expiration
 from .event import Event
+from .send_directive_directive import SendDirectiveDirective
+from .header import Header
+from .expiration import Expiration
+from .expired_request import ExpiredRequest
 from .event_filter import EventFilter
+from .stop_event_handler_directive import StopEventHandlerDirective
+from .filter_match_action import FilterMatchAction
+from .endpoint import Endpoint
+from .start_event_handler_directive import StartEventHandlerDirective

@@ -23,44 +23,51 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.supported_interfaces import SupportedInterfaces as SupportedInterfaces_8ec830f5
+    from ask_sdk_model.interfaces.applink.send_to_device import SendToDevice as SendToDevice_cd5aa3cd
+    from ask_sdk_model.interfaces.applink.catalog_types import CatalogTypes as CatalogTypes_132af432
+    from ask_sdk_model.interfaces.applink.direct_launch import DirectLaunch as DirectLaunch_66db2518
 
 
-class Device(object):
+class AppLinkState(object):
     """
-    An object providing information about the device used to send the request. The device object contains both deviceId and supportedInterfaces properties. The deviceId property uniquely identifies the device. The supportedInterfaces property lists each interface that the device supports. For example, if supportedInterfaces includes AudioPlayer {}, then you know that the device supports streaming audio using the AudioPlayer interface.
 
-
-    :param device_id: The deviceId property uniquely identifies the device. This identifier is scoped to a skill. Normally, disabling and re-enabling a skill generates a new identifier.
-    :type device_id: (optional) str
-    :param supported_interfaces: Lists each interface that the device supports. For example, if supportedInterfaces includes AudioPlayer {}, then you know that the device supports streaming audio using the AudioPlayer interface
-    :type supported_interfaces: (optional) ask_sdk_model.supported_interfaces.SupportedInterfaces
+    :param supported_catalog_types: 
+    :type supported_catalog_types: (optional) list[ask_sdk_model.interfaces.applink.catalog_types.CatalogTypes]
+    :param direct_launch: 
+    :type direct_launch: (optional) ask_sdk_model.interfaces.applink.direct_launch.DirectLaunch
+    :param send_to_device: 
+    :type send_to_device: (optional) ask_sdk_model.interfaces.applink.send_to_device.SendToDevice
 
     """
     deserialized_types = {
-        'device_id': 'str',
-        'supported_interfaces': 'ask_sdk_model.supported_interfaces.SupportedInterfaces'
+        'supported_catalog_types': 'list[ask_sdk_model.interfaces.applink.catalog_types.CatalogTypes]',
+        'direct_launch': 'ask_sdk_model.interfaces.applink.direct_launch.DirectLaunch',
+        'send_to_device': 'ask_sdk_model.interfaces.applink.send_to_device.SendToDevice'
     }  # type: Dict
 
     attribute_map = {
-        'device_id': 'deviceId',
-        'supported_interfaces': 'supportedInterfaces'
+        'supported_catalog_types': 'supportedCatalogTypes',
+        'direct_launch': 'directLaunch',
+        'send_to_device': 'sendToDevice'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, device_id=None, supported_interfaces=None):
-        # type: (Optional[str], Optional[SupportedInterfaces_8ec830f5]) -> None
-        """An object providing information about the device used to send the request. The device object contains both deviceId and supportedInterfaces properties. The deviceId property uniquely identifies the device. The supportedInterfaces property lists each interface that the device supports. For example, if supportedInterfaces includes AudioPlayer {}, then you know that the device supports streaming audio using the AudioPlayer interface.
+    def __init__(self, supported_catalog_types=None, direct_launch=None, send_to_device=None):
+        # type: (Optional[List[CatalogTypes_132af432]], Optional[DirectLaunch_66db2518], Optional[SendToDevice_cd5aa3cd]) -> None
+        """
 
-        :param device_id: The deviceId property uniquely identifies the device. This identifier is scoped to a skill. Normally, disabling and re-enabling a skill generates a new identifier.
-        :type device_id: (optional) str
-        :param supported_interfaces: Lists each interface that the device supports. For example, if supportedInterfaces includes AudioPlayer {}, then you know that the device supports streaming audio using the AudioPlayer interface
-        :type supported_interfaces: (optional) ask_sdk_model.supported_interfaces.SupportedInterfaces
+        :param supported_catalog_types: 
+        :type supported_catalog_types: (optional) list[ask_sdk_model.interfaces.applink.catalog_types.CatalogTypes]
+        :param direct_launch: 
+        :type direct_launch: (optional) ask_sdk_model.interfaces.applink.direct_launch.DirectLaunch
+        :param send_to_device: 
+        :type send_to_device: (optional) ask_sdk_model.interfaces.applink.send_to_device.SendToDevice
         """
         self.__discriminator_value = None  # type: str
 
-        self.device_id = device_id
-        self.supported_interfaces = supported_interfaces
+        self.supported_catalog_types = supported_catalog_types
+        self.direct_launch = direct_launch
+        self.send_to_device = send_to_device
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -105,7 +112,7 @@ class Device(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Device):
+        if not isinstance(other, AppLinkState):
             return False
 
         return self.__dict__ == other.__dict__

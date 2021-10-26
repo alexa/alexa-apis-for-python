@@ -29,6 +29,7 @@ if typing.TYPE_CHECKING:
     from ask_sdk_model.interfaces.audioplayer.audio_player_state import AudioPlayerState as AudioPlayerState_ac652451
     from ask_sdk_model.interfaces.automotive.automotive_state import AutomotiveState as AutomotiveState_2b614eea
     from ask_sdk_model.interfaces.alexa.extension.extensions_state import ExtensionsState as ExtensionsState_f02207d3
+    from ask_sdk_model.interfaces.applink.app_link_state import AppLinkState as AppLinkState_370eda23
     from ask_sdk_model.interfaces.geolocation.geolocation_state import GeolocationState as GeolocationState_5225020d
     from ask_sdk_model.interfaces.system.system_state import SystemState as SystemState_22fcb230
     from ask_sdk_model.interfaces.display.display_state import DisplayState as DisplayState_726e4959
@@ -55,6 +56,8 @@ class Context(object):
     :type viewports: (optional) list[ask_sdk_model.interfaces.viewport.typed_viewport_state.TypedViewportState]
     :param extensions: Provides the current state for Extensions interface
     :type extensions: (optional) ask_sdk_model.interfaces.alexa.extension.extensions_state.ExtensionsState
+    :param app_link: Provides the current state for app link capability.
+    :type app_link: (optional) ask_sdk_model.interfaces.applink.app_link_state.AppLinkState
 
     """
     deserialized_types = {
@@ -66,7 +69,8 @@ class Context(object):
         'geolocation': 'ask_sdk_model.interfaces.geolocation.geolocation_state.GeolocationState',
         'viewport': 'ask_sdk_model.interfaces.viewport.viewport_state.ViewportState',
         'viewports': 'list[ask_sdk_model.interfaces.viewport.typed_viewport_state.TypedViewportState]',
-        'extensions': 'ask_sdk_model.interfaces.alexa.extension.extensions_state.ExtensionsState'
+        'extensions': 'ask_sdk_model.interfaces.alexa.extension.extensions_state.ExtensionsState',
+        'app_link': 'ask_sdk_model.interfaces.applink.app_link_state.AppLinkState'
     }  # type: Dict
 
     attribute_map = {
@@ -78,12 +82,13 @@ class Context(object):
         'geolocation': 'Geolocation',
         'viewport': 'Viewport',
         'viewports': 'Viewports',
-        'extensions': 'Extensions'
+        'extensions': 'Extensions',
+        'app_link': 'AppLink'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, system=None, alexa_presentation_apl=None, audio_player=None, automotive=None, display=None, geolocation=None, viewport=None, viewports=None, extensions=None):
-        # type: (Optional[SystemState_22fcb230], Optional[RenderedDocumentState_4fad8b14], Optional[AudioPlayerState_ac652451], Optional[AutomotiveState_2b614eea], Optional[DisplayState_726e4959], Optional[GeolocationState_5225020d], Optional[ViewportState_a05eceb9], Optional[List[TypedViewportState_c366f13e]], Optional[ExtensionsState_f02207d3]) -> None
+    def __init__(self, system=None, alexa_presentation_apl=None, audio_player=None, automotive=None, display=None, geolocation=None, viewport=None, viewports=None, extensions=None, app_link=None):
+        # type: (Optional[SystemState_22fcb230], Optional[RenderedDocumentState_4fad8b14], Optional[AudioPlayerState_ac652451], Optional[AutomotiveState_2b614eea], Optional[DisplayState_726e4959], Optional[GeolocationState_5225020d], Optional[ViewportState_a05eceb9], Optional[List[TypedViewportState_c366f13e]], Optional[ExtensionsState_f02207d3], Optional[AppLinkState_370eda23]) -> None
         """
 
         :param system: Provides information about the current state of the Alexa service and the device interacting with your skill.
@@ -104,6 +109,8 @@ class Context(object):
         :type viewports: (optional) list[ask_sdk_model.interfaces.viewport.typed_viewport_state.TypedViewportState]
         :param extensions: Provides the current state for Extensions interface
         :type extensions: (optional) ask_sdk_model.interfaces.alexa.extension.extensions_state.ExtensionsState
+        :param app_link: Provides the current state for app link capability.
+        :type app_link: (optional) ask_sdk_model.interfaces.applink.app_link_state.AppLinkState
         """
         self.__discriminator_value = None  # type: str
 
@@ -116,6 +123,7 @@ class Context(object):
         self.viewport = viewport
         self.viewports = viewports
         self.extensions = extensions
+        self.app_link = app_link
 
     def to_dict(self):
         # type: () -> Dict[str, object]
