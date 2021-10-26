@@ -14,9 +14,9 @@
 #
 from __future__ import absolute_import
 
-from .can_fulfill_slot import CanFulfillSlot
-from .can_fulfill_intent import CanFulfillIntent
-from .can_fulfill_intent_request import CanFulfillIntentRequest
-from .can_fulfill_intent_values import CanFulfillIntentValues
 from .can_understand_slot_values import CanUnderstandSlotValues
+from .can_fulfill_intent_request import CanFulfillIntentRequest
+from .can_fulfill_intent import CanFulfillIntent
 from .can_fulfill_slot_values import CanFulfillSlotValues
+from .can_fulfill_intent_values import CanFulfillIntentValues
+from .can_fulfill_slot import CanFulfillSlot

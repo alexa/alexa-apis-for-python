@@ -15,8 +15,8 @@
 from __future__ import absolute_import
 
 from .error import Error
-from .speak_directive import SpeakDirective
-from .directive_service_client import DirectiveServiceClient
 from .header import Header
 from .send_directive_request import SendDirectiveRequest
+from .speak_directive import SpeakDirective
 from .directive import Directive
+from .directive_service_client import DirectiveServiceClient

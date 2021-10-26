@@ -14,5 +14,5 @@
 #
 from __future__ import absolute_import
 
-from .api_invocation_request import APIInvocationRequest
 from .api_request import APIRequest
+from .api_invocation_request import APIInvocationRequest

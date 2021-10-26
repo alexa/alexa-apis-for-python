@@ -23,44 +23,34 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.supported_interfaces import SupportedInterfaces as SupportedInterfaces_8ec830f5
 
 
-class Device(object):
+class AppLinkInterface(object):
     """
-    An object providing information about the device used to send the request. The device object contains both deviceId and supportedInterfaces properties. The deviceId property uniquely identifies the device. The supportedInterfaces property lists each interface that the device supports. For example, if supportedInterfaces includes AudioPlayer {}, then you know that the device supports streaming audio using the AudioPlayer interface.
 
-
-    :param device_id: The deviceId property uniquely identifies the device. This identifier is scoped to a skill. Normally, disabling and re-enabling a skill generates a new identifier.
-    :type device_id: (optional) str
-    :param supported_interfaces: Lists each interface that the device supports. For example, if supportedInterfaces includes AudioPlayer {}, then you know that the device supports streaming audio using the AudioPlayer interface
-    :type supported_interfaces: (optional) ask_sdk_model.supported_interfaces.SupportedInterfaces
+    :param version: 
+    :type version: (optional) str
 
     """
     deserialized_types = {
-        'device_id': 'str',
-        'supported_interfaces': 'ask_sdk_model.supported_interfaces.SupportedInterfaces'
+        'version': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'device_id': 'deviceId',
-        'supported_interfaces': 'supportedInterfaces'
+        'version': 'version'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, device_id=None, supported_interfaces=None):
-        # type: (Optional[str], Optional[SupportedInterfaces_8ec830f5]) -> None
-        """An object providing information about the device used to send the request. The device object contains both deviceId and supportedInterfaces properties. The deviceId property uniquely identifies the device. The supportedInterfaces property lists each interface that the device supports. For example, if supportedInterfaces includes AudioPlayer {}, then you know that the device supports streaming audio using the AudioPlayer interface.
+    def __init__(self, version=None):
+        # type: (Optional[str]) -> None
+        """
 
-        :param device_id: The deviceId property uniquely identifies the device. This identifier is scoped to a skill. Normally, disabling and re-enabling a skill generates a new identifier.
-        :type device_id: (optional) str
-        :param supported_interfaces: Lists each interface that the device supports. For example, if supportedInterfaces includes AudioPlayer {}, then you know that the device supports streaming audio using the AudioPlayer interface
-        :type supported_interfaces: (optional) ask_sdk_model.supported_interfaces.SupportedInterfaces
+        :param version: 
+        :type version: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
-        self.device_id = device_id
-        self.supported_interfaces = supported_interfaces
+        self.version = version
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -105,7 +95,7 @@ class Device(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Device):
+        if not isinstance(other, AppLinkInterface):
             return False
 
         return self.__dict__ == other.__dict__

@@ -28,6 +28,7 @@ if typing.TYPE_CHECKING:
     from ask_sdk_model.interfaces.navigation.navigation_interface import NavigationInterface as NavigationInterface_aa96009b
     from ask_sdk_model.interfaces.audioplayer.audio_player_interface import AudioPlayerInterface as AudioPlayerInterface_24d2b051
     from ask_sdk_model.interfaces.alexa.presentation.aplt.alexa_presentation_aplt_interface import AlexaPresentationApltInterface as AlexaPresentationApltInterface_95b3be2b
+    from ask_sdk_model.interfaces.applink.app_link_interface import AppLinkInterface as AppLinkInterface_4aa78e23
     from ask_sdk_model.interfaces.display.display_interface import DisplayInterface as DisplayInterface_c1477bd9
     from ask_sdk_model.interfaces.videoapp.video_app_interface import VideoAppInterface as VideoAppInterface_f245c658
     from ask_sdk_model.interfaces.geolocation.geolocation_interface import GeolocationInterface as GeolocationInterface_d5c5128d
@@ -44,6 +45,8 @@ class SupportedInterfaces(object):
     :type alexa_presentation_aplt: (optional) ask_sdk_model.interfaces.alexa.presentation.aplt.alexa_presentation_aplt_interface.AlexaPresentationApltInterface
     :param alexa_presentation_html: 
     :type alexa_presentation_html: (optional) ask_sdk_model.interfaces.alexa.presentation.html.alexa_presentation_html_interface.AlexaPresentationHtmlInterface
+    :param app_link: 
+    :type app_link: (optional) ask_sdk_model.interfaces.applink.app_link_interface.AppLinkInterface
     :param audio_player: 
     :type audio_player: (optional) ask_sdk_model.interfaces.audioplayer.audio_player_interface.AudioPlayerInterface
     :param display: 
@@ -60,6 +63,7 @@ class SupportedInterfaces(object):
         'alexa_presentation_apl': 'ask_sdk_model.interfaces.alexa.presentation.apl.alexa_presentation_apl_interface.AlexaPresentationAplInterface',
         'alexa_presentation_aplt': 'ask_sdk_model.interfaces.alexa.presentation.aplt.alexa_presentation_aplt_interface.AlexaPresentationApltInterface',
         'alexa_presentation_html': 'ask_sdk_model.interfaces.alexa.presentation.html.alexa_presentation_html_interface.AlexaPresentationHtmlInterface',
+        'app_link': 'ask_sdk_model.interfaces.applink.app_link_interface.AppLinkInterface',
         'audio_player': 'ask_sdk_model.interfaces.audioplayer.audio_player_interface.AudioPlayerInterface',
         'display': 'ask_sdk_model.interfaces.display.display_interface.DisplayInterface',
         'video_app': 'ask_sdk_model.interfaces.videoapp.video_app_interface.VideoAppInterface',
@@ -71,6 +75,7 @@ class SupportedInterfaces(object):
         'alexa_presentation_apl': 'Alexa.Presentation.APL',
         'alexa_presentation_aplt': 'Alexa.Presentation.APLT',
         'alexa_presentation_html': 'Alexa.Presentation.HTML',
+        'app_link': 'AppLink',
         'audio_player': 'AudioPlayer',
         'display': 'Display',
         'video_app': 'VideoApp',
@@ -79,8 +84,8 @@ class SupportedInterfaces(object):
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, alexa_presentation_apl=None, alexa_presentation_aplt=None, alexa_presentation_html=None, audio_player=None, display=None, video_app=None, geolocation=None, navigation=None):
-        # type: (Optional[AlexaPresentationAplInterface_58fc19ef], Optional[AlexaPresentationApltInterface_95b3be2b], Optional[AlexaPresentationHtmlInterface_b20f808f], Optional[AudioPlayerInterface_24d2b051], Optional[DisplayInterface_c1477bd9], Optional[VideoAppInterface_f245c658], Optional[GeolocationInterface_d5c5128d], Optional[NavigationInterface_aa96009b]) -> None
+    def __init__(self, alexa_presentation_apl=None, alexa_presentation_aplt=None, alexa_presentation_html=None, app_link=None, audio_player=None, display=None, video_app=None, geolocation=None, navigation=None):
+        # type: (Optional[AlexaPresentationAplInterface_58fc19ef], Optional[AlexaPresentationApltInterface_95b3be2b], Optional[AlexaPresentationHtmlInterface_b20f808f], Optional[AppLinkInterface_4aa78e23], Optional[AudioPlayerInterface_24d2b051], Optional[DisplayInterface_c1477bd9], Optional[VideoAppInterface_f245c658], Optional[GeolocationInterface_d5c5128d], Optional[NavigationInterface_aa96009b]) -> None
         """An object listing each interface that the device supports. For example, if supportedInterfaces includes AudioPlayer {}, then you know that the device supports streaming audio using the AudioPlayer interface.
 
         :param alexa_presentation_apl: 
@@ -89,6 +94,8 @@ class SupportedInterfaces(object):
         :type alexa_presentation_aplt: (optional) ask_sdk_model.interfaces.alexa.presentation.aplt.alexa_presentation_aplt_interface.AlexaPresentationApltInterface
         :param alexa_presentation_html: 
         :type alexa_presentation_html: (optional) ask_sdk_model.interfaces.alexa.presentation.html.alexa_presentation_html_interface.AlexaPresentationHtmlInterface
+        :param app_link: 
+        :type app_link: (optional) ask_sdk_model.interfaces.applink.app_link_interface.AppLinkInterface
         :param audio_player: 
         :type audio_player: (optional) ask_sdk_model.interfaces.audioplayer.audio_player_interface.AudioPlayerInterface
         :param display: 
@@ -105,6 +112,7 @@ class SupportedInterfaces(object):
         self.alexa_presentation_apl = alexa_presentation_apl
         self.alexa_presentation_aplt = alexa_presentation_aplt
         self.alexa_presentation_html = alexa_presentation_html
+        self.app_link = app_link
         self.audio_player = audio_player
         self.display = display
         self.video_app = video_app

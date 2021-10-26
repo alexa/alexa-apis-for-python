@@ -14,5 +14,5 @@
 #
 from __future__ import absolute_import
 
-from .extensions_state import ExtensionsState
 from .available_extension import AvailableExtension
+from .extensions_state import ExtensionsState

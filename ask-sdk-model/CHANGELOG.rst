@@ -406,3 +406,9 @@ This release contains the following changes :
 
 - Updating model definitions
 
+1.32.0
+^^^^^^
+
+This release contains the following changes : 
+
+- Models and support for `App Link Interfaces <https://developer.amazon.com/en-US/docs/alexa/alexa-for-apps/skill-connection-request-reference.html>`__.
