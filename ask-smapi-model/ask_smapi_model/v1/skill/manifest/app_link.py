@@ -23,6 +23,8 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
+    from ask_smapi_model.v1.skill.manifest.linked_android_common_intent import LinkedAndroidCommonIntent as LinkedAndroidCommonIntent_f1721a22
+    from ask_smapi_model.v1.skill.manifest.linked_common_schemes import LinkedCommonSchemes as LinkedCommonSchemes_14e98c23
     from ask_smapi_model.v1.skill.manifest.linked_application import LinkedApplication as LinkedApplication_85efe66c
 
 
@@ -33,27 +35,48 @@ class AppLink(object):
 
     :param linked_applications: Allows developers to declare their Skill will use Alexa App Links, and list relevant apps. This field is required when using the APP_LINK interface.
     :type linked_applications: (optional) list[ask_smapi_model.v1.skill.manifest.linked_application.LinkedApplication]
+    :param linked_web_domains: Allow developer to decalre their skill to link to the declared web domains.
+    :type linked_web_domains: (optional) list[str]
+    :param linked_android_common_intents: Allow developer to declare their skill to link to the speicified android common intents.
+    :type linked_android_common_intents: (optional) list[ask_smapi_model.v1.skill.manifest.linked_android_common_intent.LinkedAndroidCommonIntent]
+    :param linked_common_schemes: 
+    :type linked_common_schemes: (optional) ask_smapi_model.v1.skill.manifest.linked_common_schemes.LinkedCommonSchemes
 
     """
     deserialized_types = {
-        'linked_applications': 'list[ask_smapi_model.v1.skill.manifest.linked_application.LinkedApplication]'
+        'linked_applications': 'list[ask_smapi_model.v1.skill.manifest.linked_application.LinkedApplication]',
+        'linked_web_domains': 'list[str]',
+        'linked_android_common_intents': 'list[ask_smapi_model.v1.skill.manifest.linked_android_common_intent.LinkedAndroidCommonIntent]',
+        'linked_common_schemes': 'ask_smapi_model.v1.skill.manifest.linked_common_schemes.LinkedCommonSchemes'
     }  # type: Dict
 
     attribute_map = {
-        'linked_applications': 'linkedApplications'
+        'linked_applications': 'linkedApplications',
+        'linked_web_domains': 'linkedWebDomains',
+        'linked_android_common_intents': 'linkedAndroidCommonIntents',
+        'linked_common_schemes': 'linkedCommonSchemes'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, linked_applications=None):
-        # type: (Optional[List[LinkedApplication_85efe66c]]) -> None
+    def __init__(self, linked_applications=None, linked_web_domains=None, linked_android_common_intents=None, linked_common_schemes=None):
+        # type: (Optional[List[LinkedApplication_85efe66c]], Optional[List[object]], Optional[List[LinkedAndroidCommonIntent_f1721a22]], Optional[LinkedCommonSchemes_14e98c23]) -> None
         """Details required for app linking use cases.
 
         :param linked_applications: Allows developers to declare their Skill will use Alexa App Links, and list relevant apps. This field is required when using the APP_LINK interface.
         :type linked_applications: (optional) list[ask_smapi_model.v1.skill.manifest.linked_application.LinkedApplication]
+        :param linked_web_domains: Allow developer to decalre their skill to link to the declared web domains.
+        :type linked_web_domains: (optional) list[str]
+        :param linked_android_common_intents: Allow developer to declare their skill to link to the speicified android common intents.
+        :type linked_android_common_intents: (optional) list[ask_smapi_model.v1.skill.manifest.linked_android_common_intent.LinkedAndroidCommonIntent]
+        :param linked_common_schemes: 
+        :type linked_common_schemes: (optional) ask_smapi_model.v1.skill.manifest.linked_common_schemes.LinkedCommonSchemes
         """
         self.__discriminator_value = None  # type: str
 
         self.linked_applications = linked_applications
+        self.linked_web_domains = linked_web_domains
+        self.linked_android_common_intents = linked_android_common_intents
+        self.linked_common_schemes = linked_common_schemes
 
     def to_dict(self):
         # type: () -> Dict[str, object]

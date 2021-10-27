@@ -66,14 +66,17 @@ from .alexa_presentation_apl_interface import AlexaPresentationAplInterface
 from .app_link_interface import AppLinkInterface
 from .catalog_type import CatalogType
 from .video_fire_tv_catalog_ingestion import VideoFireTvCatalogIngestion
+from .linked_common_schemes import LinkedCommonSchemes
 from .amazon_conversations_dialog_manager import AMAZONConversationsDialogManager
 from .flash_briefing_genre import FlashBriefingGenre
 from .app_link_v2_interface import AppLinkV2Interface
+from .linked_android_common_intent import LinkedAndroidCommonIntent
 from .alexa_presentation_html_interface import AlexaPresentationHtmlInterface
 from .subscription_payment_frequency import SubscriptionPaymentFrequency
 from .video_apis_locale import VideoApisLocale
 from .alexa_for_business_interface_request_name import AlexaForBusinessInterfaceRequestName
 from .paid_skill_information import PaidSkillInformation
+from .android_custom_intent import AndroidCustomIntent
 from .ssl_certificate_type import SSLCertificateType
 from .music_request import MusicRequest
 from .video_catalog_info import VideoCatalogInfo
@@ -91,6 +94,7 @@ from .subscription_information import SubscriptionInformation
 from .offer_type import OfferType
 from .alexa_for_business_interface_request import AlexaForBusinessInterfaceRequest
 from .friendly_name import FriendlyName
+from .ios_app_store_common_scheme_name import IOSAppStoreCommonSchemeName
 from .health_interface import HealthInterface
 from .authorized_client import AuthorizedClient
 from .permission_items import PermissionItems
@@ -103,10 +107,12 @@ from .music_wordmark import MusicWordmark
 from .locales_by_automatic_cloned_locale import LocalesByAutomaticClonedLocale
 from .custom_localized_information_dialog_management import CustomLocalizedInformationDialogManagement
 from .authorized_client_lwa import AuthorizedClientLwa
+from .play_store_common_scheme_name import PlayStoreCommonSchemeName
 from .event_name_type import EventNameType
 from .video_prompt_name_type import VideoPromptNameType
 from .voice_profile_feature import VoiceProfileFeature
 from .tax_information_category import TaxInformationCategory
+from .catalog_name import CatalogName
 from .smart_home_apis import SmartHomeApis
 from .currency import Currency
 from .flash_briefing_apis import FlashBriefingApis
@@ -130,3 +136,4 @@ from .manifest_version import ManifestVersion
 from .video_app_interface import VideoAppInterface
 from .video_apis import VideoApis
 from .display_interface_template_version import DisplayInterfaceTemplateVersion
+from .android_common_intent_name import AndroidCommonIntentName

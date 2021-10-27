@@ -215,3 +215,10 @@ This release contains the following changes :
 This release contains the following changes :
 
 - Updating model definitions for maxResults and simulationType.
+
+1.14.0
+^^^^^^
+
+This release contains the following changes :
+
+- Updating model definitions for `App link interfaces <https://developer.amazon.com/en-US/docs/alexa/alexa-for-apps/skill-manifest-reference.html>`__.
