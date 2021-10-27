@@ -24,6 +24,7 @@ if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
     from ask_smapi_model.v1.skill.manifest.catalog_info import CatalogInfo as CatalogInfo_3fade9c6
+    from ask_smapi_model.v1.skill.manifest.android_custom_intent import AndroidCustomIntent as AndroidCustomIntent_f7a91c8f
     from ask_smapi_model.v1.skill.manifest.friendly_name import FriendlyName as FriendlyName_168112fe
 
 
@@ -40,25 +41,29 @@ class LinkedApplication(object):
     :type domains: (optional) list[str]
     :param friendly_name: 
     :type friendly_name: (optional) ask_smapi_model.v1.skill.manifest.friendly_name.FriendlyName
+    :param android_custom_intents: Supported android custom intent
+    :type android_custom_intents: (optional) list[ask_smapi_model.v1.skill.manifest.android_custom_intent.AndroidCustomIntent]
 
     """
     deserialized_types = {
         'catalog_info': 'ask_smapi_model.v1.skill.manifest.catalog_info.CatalogInfo',
         'custom_schemes': 'list[str]',
         'domains': 'list[str]',
-        'friendly_name': 'ask_smapi_model.v1.skill.manifest.friendly_name.FriendlyName'
+        'friendly_name': 'ask_smapi_model.v1.skill.manifest.friendly_name.FriendlyName',
+        'android_custom_intents': 'list[ask_smapi_model.v1.skill.manifest.android_custom_intent.AndroidCustomIntent]'
     }  # type: Dict
 
     attribute_map = {
         'catalog_info': 'catalogInfo',
         'custom_schemes': 'customSchemes',
         'domains': 'domains',
-        'friendly_name': 'friendlyName'
+        'friendly_name': 'friendlyName',
+        'android_custom_intents': 'androidCustomIntents'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, catalog_info=None, custom_schemes=None, domains=None, friendly_name=None):
-        # type: (Optional[CatalogInfo_3fade9c6], Optional[List[object]], Optional[List[object]], Optional[FriendlyName_168112fe]) -> None
+    def __init__(self, catalog_info=None, custom_schemes=None, domains=None, friendly_name=None, android_custom_intents=None):
+        # type: (Optional[CatalogInfo_3fade9c6], Optional[List[object]], Optional[List[object]], Optional[FriendlyName_168112fe], Optional[List[AndroidCustomIntent_f7a91c8f]]) -> None
         """Applications associated with the skill.
 
         :param catalog_info: 
@@ -69,6 +74,8 @@ class LinkedApplication(object):
         :type domains: (optional) list[str]
         :param friendly_name: 
         :type friendly_name: (optional) ask_smapi_model.v1.skill.manifest.friendly_name.FriendlyName
+        :param android_custom_intents: Supported android custom intent
+        :type android_custom_intents: (optional) list[ask_smapi_model.v1.skill.manifest.android_custom_intent.AndroidCustomIntent]
         """
         self.__discriminator_value = None  # type: str
 
@@ -76,6 +83,7 @@ class LinkedApplication(object):
         self.custom_schemes = custom_schemes
         self.domains = domains
         self.friendly_name = friendly_name
+        self.android_custom_intents = android_custom_intents
 
     def to_dict(self):
         # type: () -> Dict[str, object]
