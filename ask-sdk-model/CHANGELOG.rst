@@ -412,3 +412,10 @@ This release contains the following changes :
 This release contains the following changes : 
 
 - Models and support for `App Link Interfaces <https://developer.amazon.com/en-US/docs/alexa/alexa-for-apps/skill-connection-request-reference.html>`__.
+
+1.32.1
+^^^^^^
+
+This release contains the following changes : 
+
+- Updated model definitions for reminder_management

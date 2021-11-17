@@ -16,6 +16,7 @@ from __future__ import absolute_import
 
 from .reminder_management_service_client import ReminderManagementServiceClient
 from .reminder_updated_event_request import ReminderUpdatedEventRequest
+from .spoken_info import SpokenInfo
 from .recurrence_day import RecurrenceDay
 from .event import Event
 from .reminder_status_changed_event_request import ReminderStatusChangedEventRequest
@@ -33,7 +34,6 @@ from .reminder_response import ReminderResponse
 from .push_notification_status import PushNotificationStatus
 from .trigger_type import TriggerType
 from .push_notification import PushNotification
-from .alert_info_spoken_info import AlertInfoSpokenInfo
 from .get_reminder_response import GetReminderResponse
 from .recurrence_freq import RecurrenceFreq
 from .status import Status

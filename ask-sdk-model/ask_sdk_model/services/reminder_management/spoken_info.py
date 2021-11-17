@@ -26,7 +26,7 @@ if typing.TYPE_CHECKING:
     from ask_sdk_model.services.reminder_management.spoken_text import SpokenText as SpokenText_b927b411
 
 
-class AlertInfoSpokenInfo(object):
+class SpokenInfo(object):
     """
     Parameters for VUI presentation of the reminder
 
@@ -98,7 +98,7 @@ class AlertInfoSpokenInfo(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, AlertInfoSpokenInfo):
+        if not isinstance(other, SpokenInfo):
             return False
 
         return self.__dict__ == other.__dict__
