@@ -15,7 +15,7 @@
 from __future__ import absolute_import
 
 from .direct_launch import DirectLaunch
-from .catalog_types import CatalogTypes
-from .app_link_state import AppLinkState
 from .app_link_interface import AppLinkInterface
+from .app_link_state import AppLinkState
 from .send_to_device import SendToDevice
+from .catalog_types import CatalogTypes

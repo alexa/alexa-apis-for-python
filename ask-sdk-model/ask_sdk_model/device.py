@@ -33,33 +33,40 @@ class Device(object):
 
     :param device_id: The deviceId property uniquely identifies the device. This identifier is scoped to a skill. Normally, disabling and re-enabling a skill generates a new identifier.
     :type device_id: (optional) str
+    :param persistent_endpoint_id: A persistent identifier for the Endpoint ID where the skill request is issued from. An endpoint represents an Alexa-connected Endpoint (like an Echo device, or an application) with which an Alexa customer can interact rather than a physical device,  so it could represent applications on your fire TV or your Alexa phone app.  The persistentEndpointId is a string that represents a unique identifier for the endpoint in the context of a request.  It is in the Amazon Common Identifier format \&quot;amzn1.alexa.endpoint.did.{id}\&quot;. This identifier space is scoped to a vendor, therefore it will stay the same regardless of skill enablement.
+    :type persistent_endpoint_id: (optional) str
     :param supported_interfaces: Lists each interface that the device supports. For example, if supportedInterfaces includes AudioPlayer {}, then you know that the device supports streaming audio using the AudioPlayer interface
     :type supported_interfaces: (optional) ask_sdk_model.supported_interfaces.SupportedInterfaces
 
     """
     deserialized_types = {
         'device_id': 'str',
+        'persistent_endpoint_id': 'str',
         'supported_interfaces': 'ask_sdk_model.supported_interfaces.SupportedInterfaces'
     }  # type: Dict
 
     attribute_map = {
         'device_id': 'deviceId',
+        'persistent_endpoint_id': 'persistentEndpointId',
         'supported_interfaces': 'supportedInterfaces'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, device_id=None, supported_interfaces=None):
-        # type: (Optional[str], Optional[SupportedInterfaces_8ec830f5]) -> None
+    def __init__(self, device_id=None, persistent_endpoint_id=None, supported_interfaces=None):
+        # type: (Optional[str], Optional[str], Optional[SupportedInterfaces_8ec830f5]) -> None
         """An object providing information about the device used to send the request. The device object contains both deviceId and supportedInterfaces properties. The deviceId property uniquely identifies the device. The supportedInterfaces property lists each interface that the device supports. For example, if supportedInterfaces includes AudioPlayer {}, then you know that the device supports streaming audio using the AudioPlayer interface.
 
         :param device_id: The deviceId property uniquely identifies the device. This identifier is scoped to a skill. Normally, disabling and re-enabling a skill generates a new identifier.
         :type device_id: (optional) str
+        :param persistent_endpoint_id: A persistent identifier for the Endpoint ID where the skill request is issued from. An endpoint represents an Alexa-connected Endpoint (like an Echo device, or an application) with which an Alexa customer can interact rather than a physical device,  so it could represent applications on your fire TV or your Alexa phone app.  The persistentEndpointId is a string that represents a unique identifier for the endpoint in the context of a request.  It is in the Amazon Common Identifier format \&quot;amzn1.alexa.endpoint.did.{id}\&quot;. This identifier space is scoped to a vendor, therefore it will stay the same regardless of skill enablement.
+        :type persistent_endpoint_id: (optional) str
         :param supported_interfaces: Lists each interface that the device supports. For example, if supportedInterfaces includes AudioPlayer {}, then you know that the device supports streaming audio using the AudioPlayer interface
         :type supported_interfaces: (optional) ask_sdk_model.supported_interfaces.SupportedInterfaces
         """
         self.__discriminator_value = None  # type: str
 
         self.device_id = device_id
+        self.persistent_endpoint_id = persistent_endpoint_id
         self.supported_interfaces = supported_interfaces
 
     def to_dict(self):

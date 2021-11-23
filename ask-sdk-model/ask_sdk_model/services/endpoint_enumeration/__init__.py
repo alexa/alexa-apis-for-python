@@ -14,8 +14,8 @@
 #
 from __future__ import absolute_import
 
-from .error import Error
 from .endpoint_info import EndpointInfo
+from .endpoint_enumeration_service_client import EndpointEnumerationServiceClient
+from .error import Error
 from .endpoint_enumeration_response import EndpointEnumerationResponse
 from .endpoint_capability import EndpointCapability
-from .endpoint_enumeration_service_client import EndpointEnumerationServiceClient

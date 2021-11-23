@@ -419,3 +419,10 @@ This release contains the following changes :
 This release contains the following changes : 
 
 - Updated model definitions for reminder_management
+
+1.33.0
+^^^^^^
+
+This release contains the following changes :
+
+- Support persistent identifier for endpoint ID where the skill request is issued from.

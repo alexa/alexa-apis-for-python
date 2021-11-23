@@ -14,6 +14,6 @@
 #
 from __future__ import absolute_import
 
-from .error import Error
-from .skill_messaging_service_client import SkillMessagingServiceClient
 from .send_skill_messaging_request import SendSkillMessagingRequest
+from .skill_messaging_service_client import SkillMessagingServiceClient
+from .error import Error
