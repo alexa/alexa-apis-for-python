@@ -14,16 +14,16 @@
 #
 from __future__ import absolute_import
 
-from .configuration import Configuration
-from .runtime_error_reason import RuntimeErrorReason
-from .transformer_type import TransformerType
 from .message_request import MessageRequest
-from .runtime_error_request import RuntimeErrorRequest
-from .runtime import Runtime
-from .alexa_presentation_html_interface import AlexaPresentationHtmlInterface
 from .start_request_method import StartRequestMethod
-from .start_request import StartRequest
-from .transformer import Transformer
-from .runtime_error import RuntimeError
 from .handle_message_directive import HandleMessageDirective
+from .runtime_error import RuntimeError
+from .configuration import Configuration
+from .transformer_type import TransformerType
+from .alexa_presentation_html_interface import AlexaPresentationHtmlInterface
+from .runtime_error_reason import RuntimeErrorReason
+from .runtime import Runtime
+from .transformer import Transformer
+from .runtime_error_request import RuntimeErrorRequest
 from .start_directive import StartDirective
+from .start_request import StartRequest
