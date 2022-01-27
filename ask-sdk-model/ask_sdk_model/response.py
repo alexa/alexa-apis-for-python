@@ -25,6 +25,7 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
     from ask_sdk_model.ui.reprompt import Reprompt as Reprompt_ffee6ea4
     from ask_sdk_model.directive import Directive as Directive_e3e6b000
+    from ask_sdk_model.interfaces.alexa.experimentation.experiment_trigger_response import ExperimentTriggerResponse as ExperimentTriggerResponse_5daea3f3
     from ask_sdk_model.canfulfill.can_fulfill_intent import CanFulfillIntent as CanFulfillIntent_8d777e62
     from ask_sdk_model.ui.output_speech import OutputSpeech as OutputSpeech_a070f8fb
     from ask_sdk_model.ui.card import Card as Card_3a03f3c4
@@ -47,6 +48,8 @@ class Response(object):
     :type should_end_session: (optional) bool
     :param can_fulfill_intent: 
     :type can_fulfill_intent: (optional) ask_sdk_model.canfulfill.can_fulfill_intent.CanFulfillIntent
+    :param experimentation: Experiment trigger response from skill
+    :type experimentation: (optional) ask_sdk_model.interfaces.alexa.experimentation.experiment_trigger_response.ExperimentTriggerResponse
 
     """
     deserialized_types = {
@@ -56,7 +59,8 @@ class Response(object):
         'directives': 'list[ask_sdk_model.directive.Directive]',
         'api_response': 'object',
         'should_end_session': 'bool',
-        'can_fulfill_intent': 'ask_sdk_model.canfulfill.can_fulfill_intent.CanFulfillIntent'
+        'can_fulfill_intent': 'ask_sdk_model.canfulfill.can_fulfill_intent.CanFulfillIntent',
+        'experimentation': 'ask_sdk_model.interfaces.alexa.experimentation.experiment_trigger_response.ExperimentTriggerResponse'
     }  # type: Dict
 
     attribute_map = {
@@ -66,12 +70,13 @@ class Response(object):
         'directives': 'directives',
         'api_response': 'apiResponse',
         'should_end_session': 'shouldEndSession',
-        'can_fulfill_intent': 'canFulfillIntent'
+        'can_fulfill_intent': 'canFulfillIntent',
+        'experimentation': 'experimentation'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, output_speech=None, card=None, reprompt=None, directives=None, api_response=None, should_end_session=None, can_fulfill_intent=None):
-        # type: (Optional[OutputSpeech_a070f8fb], Optional[Card_3a03f3c4], Optional[Reprompt_ffee6ea4], Optional[List[Directive_e3e6b000]], Optional[object], Optional[bool], Optional[CanFulfillIntent_8d777e62]) -> None
+    def __init__(self, output_speech=None, card=None, reprompt=None, directives=None, api_response=None, should_end_session=None, can_fulfill_intent=None, experimentation=None):
+        # type: (Optional[OutputSpeech_a070f8fb], Optional[Card_3a03f3c4], Optional[Reprompt_ffee6ea4], Optional[List[Directive_e3e6b000]], Optional[object], Optional[bool], Optional[CanFulfillIntent_8d777e62], Optional[ExperimentTriggerResponse_5daea3f3]) -> None
         """
 
         :param output_speech: 
@@ -88,6 +93,8 @@ class Response(object):
         :type should_end_session: (optional) bool
         :param can_fulfill_intent: 
         :type can_fulfill_intent: (optional) ask_sdk_model.canfulfill.can_fulfill_intent.CanFulfillIntent
+        :param experimentation: Experiment trigger response from skill
+        :type experimentation: (optional) ask_sdk_model.interfaces.alexa.experimentation.experiment_trigger_response.ExperimentTriggerResponse
         """
         self.__discriminator_value = None  # type: str
 
@@ -98,6 +105,7 @@ class Response(object):
         self.api_response = api_response
         self.should_end_session = should_end_session
         self.can_fulfill_intent = can_fulfill_intent
+        self.experimentation = experimentation
 
     def to_dict(self):
         # type: () -> Dict[str, object]
