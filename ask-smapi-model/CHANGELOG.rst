@@ -229,4 +229,3 @@ This release contains the following changes :
 This release contains the following changes :
 
 - Enable TSB APL Extension in skill manifest
-- Remove INTERNAL scope for A/B testing endpoint
