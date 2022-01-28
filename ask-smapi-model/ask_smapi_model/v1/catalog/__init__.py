@@ -14,6 +14,6 @@
 #
 from __future__ import absolute_import
 
+from .create_content_upload_url_request import CreateContentUploadUrlRequest
 from .create_content_upload_url_response import CreateContentUploadUrlResponse
 from .presigned_upload_part_items import PresignedUploadPartItems
-from .create_content_upload_url_request import CreateContentUploadUrlRequest

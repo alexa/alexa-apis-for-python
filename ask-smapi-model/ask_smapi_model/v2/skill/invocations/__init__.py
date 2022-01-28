@@ -14,9 +14,9 @@
 #
 from __future__ import absolute_import
 
+from .invocations_api_request import InvocationsApiRequest
+from .end_point_regions import EndPointRegions
 from .invocation_response_status import InvocationResponseStatus
 from .skill_request import SkillRequest
 from .invocation_response_result import InvocationResponseResult
 from .invocations_api_response import InvocationsApiResponse
-from .end_point_regions import EndPointRegions
-from .invocations_api_request import InvocationsApiRequest

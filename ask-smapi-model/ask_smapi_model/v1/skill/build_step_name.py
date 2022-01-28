@@ -27,15 +27,17 @@ if typing.TYPE_CHECKING:
 
 class BuildStepName(Enum):
     """
-    Name of the build step. Possible values - * &#x60;DIALOG_MODEL_BUILD&#x60; - Build status for dialog model. * &#x60;LANGUAGE_MODEL_QUICK_BUILD&#x60; - Build status for FST model. * &#x60;LANGUAGE_MODEL_FULL_BUILD&#x60; - Build status for statistical model. 
+    Name of the build step. Possible values - * &#x60;DIALOG_MODEL_BUILD&#x60; - Build status for dialog model. * &#x60;LANGUAGE_MODEL_QUICK_BUILD&#x60; - Build status for FST model. * &#x60;LANGUAGE_MODEL_FULL_BUILD&#x60; - Build status for statistical model. * &#x60;ALEXA_CONVERSATIONS_QUICK_BUILD&#x60; - AlexaConversations LowFidelity model build status. * &#x60;ALEXA_CONVERSATIONS_FULL_BUILD&#x60; - AlexaConversations HighFidelity model build status. 
 
 
 
-    Allowed enum values: [DIALOG_MODEL_BUILD, LANGUAGE_MODEL_QUICK_BUILD, LANGUAGE_MODEL_FULL_BUILD]
+    Allowed enum values: [DIALOG_MODEL_BUILD, LANGUAGE_MODEL_QUICK_BUILD, LANGUAGE_MODEL_FULL_BUILD, ALEXA_CONVERSATIONS_QUICK_BUILD, ALEXA_CONVERSATIONS_FULL_BUILD]
     """
     DIALOG_MODEL_BUILD = "DIALOG_MODEL_BUILD"
     LANGUAGE_MODEL_QUICK_BUILD = "LANGUAGE_MODEL_QUICK_BUILD"
     LANGUAGE_MODEL_FULL_BUILD = "LANGUAGE_MODEL_FULL_BUILD"
+    ALEXA_CONVERSATIONS_QUICK_BUILD = "ALEXA_CONVERSATIONS_QUICK_BUILD"
+    ALEXA_CONVERSATIONS_FULL_BUILD = "ALEXA_CONVERSATIONS_FULL_BUILD"
 
     def to_dict(self):
         # type: () -> Dict[str, Any]

@@ -15,6 +15,6 @@
 from __future__ import absolute_import
 
 from .metrics import Metrics
+from .invocation import Invocation
 from .invocation_response import InvocationResponse
 from .invocation_request import InvocationRequest
-from .invocation import Invocation

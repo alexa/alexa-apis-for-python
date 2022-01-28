@@ -222,3 +222,10 @@ This release contains the following changes :
 This release contains the following changes :
 
 - Updating model definitions for `App link interfaces <https://developer.amazon.com/en-US/docs/alexa/alexa-for-apps/skill-manifest-reference.html>`__.
+
+1.14.1
+^^^^^^
+
+This release contains the following changes :
+
+- Enable TSB APL Extension in skill manifest

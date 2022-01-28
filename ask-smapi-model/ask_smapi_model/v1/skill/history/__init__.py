@@ -14,17 +14,17 @@
 #
 from __future__ import absolute_import
 
+from .locale_in_query import LocaleInQuery
 from .intent import Intent
-from .intent_requests import IntentRequests
+from .intent_request import IntentRequest
+from .interaction_type import InteractionType
+from .publication_status import PublicationStatus
 from .confidence import Confidence
 from .sort_field_for_intent_request_type import SortFieldForIntentRequestType
-from .intent_request_locales import IntentRequestLocales
-from .slot import Slot
-from .interaction_type import InteractionType
-from .intent_confidence_bin import IntentConfidenceBin
-from .locale_in_query import LocaleInQuery
-from .dialog_act import DialogAct
-from .confidence_bin import ConfidenceBin
-from .intent_request import IntentRequest
+from .intent_requests import IntentRequests
 from .dialog_act_name import DialogActName
-from .publication_status import PublicationStatus
+from .dialog_act import DialogAct
+from .slot import Slot
+from .confidence_bin import ConfidenceBin
+from .intent_confidence_bin import IntentConfidenceBin
+from .intent_request_locales import IntentRequestLocales
