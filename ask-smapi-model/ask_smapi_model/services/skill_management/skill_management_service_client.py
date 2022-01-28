@@ -38,6 +38,7 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.interaction_model.conflict_detection.get_conflicts_response import GetConflictsResponse as GetConflictsResponse_502eb394
     from ask_smapi_model.v1.skill.asr.annotation_sets.update_asr_annotation_set_properties_request_object import UpdateAsrAnnotationSetPropertiesRequestObject as UpdateAsrAnnotationSetPropertiesRequestObject_946da673
     from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_repository_credentials_list import HostedSkillRepositoryCredentialsList as HostedSkillRepositoryCredentialsList_d39d5fdf
+    from ask_smapi_model.v1.skill.experiment.update_exposure_request import UpdateExposureRequest as UpdateExposureRequest_ce52ce53
     from ask_smapi_model.v1.skill.clone_locale_status_response import CloneLocaleStatusResponse as CloneLocaleStatusResponse_8b6e06ed
     from ask_smapi_model.v1.skill.interaction_model.catalog.catalog_status import CatalogStatus as CatalogStatus_c70ba222
     from ask_smapi_model.v1.skill.invocations.invoke_skill_request import InvokeSkillRequest as InvokeSkillRequest_8cf8aff9
@@ -56,6 +57,7 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.interaction_model.version.catalog_version_data import CatalogVersionData as CatalogVersionData_86156352
     from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_metadata import HostedSkillMetadata as HostedSkillMetadata_b8976dfb
     from ask_smapi_model.v1.skill.beta_test.test_body import TestBody as TestBody_65065c26
+    from ask_smapi_model.v1.skill.experiment.set_customer_treatment_override_request import SetCustomerTreatmentOverrideRequest as SetCustomerTreatmentOverrideRequest_94022e79
     from ask_smapi_model.v1.skill.manifest.skill_manifest_envelope import SkillManifestEnvelope as SkillManifestEnvelope_fc0e823b
     from ask_smapi_model.v0.development_events.subscription.create_subscription_request import CreateSubscriptionRequest as CreateSubscriptionRequest_1931508e
     from ask_smapi_model.v1.skill.skill_credentials import SkillCredentials as SkillCredentials_a0f29ab1
@@ -71,12 +73,14 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.create_skill_with_package_request import CreateSkillWithPackageRequest as CreateSkillWithPackageRequest_cd7f22be
     from ask_smapi_model.v1.skill.interaction_model.type_version.slot_type_update import SlotTypeUpdate as SlotTypeUpdate_ae01835f
     from ask_smapi_model.v2.skill.invocations.invocations_api_request import InvocationsApiRequest as InvocationsApiRequest_a422fa08
+    from ask_smapi_model.v1.skill.experiment.list_experiments_response import ListExperimentsResponse as ListExperimentsResponse_c5b07ecb
     from ask_smapi_model.v1.smart_home_evaluation.list_sh_capability_evaluations_response import ListSHCapabilityEvaluationsResponse as ListSHCapabilityEvaluationsResponse_e6fe49d5
     from ask_smapi_model.v2.error import Error as Error_ea6c1a5a
     from ask_smapi_model.v1.isp.in_skill_product_summary_response import InSkillProductSummaryResponse as InSkillProductSummaryResponse_32ba64d7
     from ask_smapi_model.v0.bad_request_error import BadRequestError as BadRequestError_a8ac8b44
     from ask_smapi_model.v0.catalog.upload.create_content_upload_response import CreateContentUploadResponse as CreateContentUploadResponse_75cd6715
     from ask_smapi_model.v1.skill.simulations.simulations_api_request import SimulationsApiRequest as SimulationsApiRequest_606eed02
+    from ask_smapi_model.v1.skill.experiment.get_customer_treatment_override_response import GetCustomerTreatmentOverrideResponse as GetCustomerTreatmentOverrideResponse_f64f689f
     from ask_smapi_model.v1.skill.history.dialog_act_name import DialogActName as DialogActName_df8326d6
     from ask_smapi_model.v1.skill.private.list_private_distribution_accounts_response import ListPrivateDistributionAccountsResponse as ListPrivateDistributionAccountsResponse_8783420d
     from ask_smapi_model.v1.skill.ssl_certificate_payload import SSLCertificatePayload as SSLCertificatePayload_97891902
@@ -132,11 +136,13 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_status import SlotTypeStatus as SlotTypeStatus_a293ebfc
     from ask_smapi_model.v1.skill.interaction_model.type_version.version_data import VersionData as VersionData_faa770c8
     from ask_smapi_model.v1.skill.asr.evaluations.list_asr_evaluations_response import ListAsrEvaluationsResponse as ListAsrEvaluationsResponse_ef8cd586
+    from ask_smapi_model.v1.skill.experiment.update_experiment_request import UpdateExperimentRequest as UpdateExperimentRequest_d8449813
     from ask_smapi_model.v1.isp.product_response import ProductResponse as ProductResponse_b388eec4
     from ask_smapi_model.v1.skill.alexa_hosted.hosted_skill_repository_credentials_request import HostedSkillRepositoryCredentialsRequest as HostedSkillRepositoryCredentialsRequest_79a1c791
     from ask_smapi_model.v1.skill.nlu.annotation_sets.get_nlu_annotation_set_properties_response import GetNLUAnnotationSetPropertiesResponse as GetNLUAnnotationSetPropertiesResponse_731f20d3
     from ask_smapi_model.v1.skill.nlu.annotation_sets.list_nlu_annotation_sets_response import ListNLUAnnotationSetsResponse as ListNLUAnnotationSetsResponse_5b1b0b6a
     from ask_smapi_model.v1.skill.account_linking.account_linking_response import AccountLinkingResponse as AccountLinkingResponse_b1f92882
+    from ask_smapi_model.v1.skill.experiment.manage_experiment_state_request import ManageExperimentStateRequest as ManageExperimentStateRequest_c31e7ea0
     from ask_smapi_model.v1.skill.interaction_model.model_type.list_slot_type_response import ListSlotTypeResponse as ListSlotTypeResponse_b426c805
     from ask_smapi_model.v1.skill.evaluations.profile_nlu_request import ProfileNluRequest as ProfileNluRequest_501c0d87
     from ask_smapi_model.v1.skill.interaction_model.catalog.list_catalog_response import ListCatalogResponse as ListCatalogResponse_bc059ec9
@@ -155,6 +161,7 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.history.interaction_type import InteractionType as InteractionType_80494a05
     from ask_smapi_model.v1.skill.nlu.evaluations.evaluate_nlu_request import EvaluateNLURequest as EvaluateNLURequest_7a358f6a
     from ask_smapi_model.v1.isp.list_in_skill_product_response import ListInSkillProductResponse as ListInSkillProductResponse_505e7307
+    from ask_smapi_model.v1.skill.experiment.get_experiment_state_response import GetExperimentStateResponse as GetExperimentStateResponse_5152b250
     from ask_smapi_model.v1.skill.interaction_model.jobs.update_job_status_request import UpdateJobStatusRequest as UpdateJobStatusRequest_f2d8379d
     from ask_smapi_model.v1.skill.account_linking.account_linking_request import AccountLinkingRequest as AccountLinkingRequest_cac174e
     from ask_smapi_model.v1.skill.asr.annotation_sets.update_asr_annotation_set_contents_payload import UpdateAsrAnnotationSetContentsPayload as UpdateAsrAnnotationSetContentsPayload_df3c6c8c
@@ -165,11 +172,13 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.rollback_request_status import RollbackRequestStatus as RollbackRequestStatus_71665366
     from ask_smapi_model.v0.catalog.create_catalog_request import CreateCatalogRequest as CreateCatalogRequest_f3cdf8bb
     from ask_smapi_model.v1.skill.interaction_model.catalog.update_request import UpdateRequest as UpdateRequest_12e0eebe
+    from ask_smapi_model.v1.skill.experiment.get_experiment_metric_snapshot_response import GetExperimentMetricSnapshotResponse as GetExperimentMetricSnapshotResponse_b6905a35
     from ask_smapi_model.v0.catalog.catalog_details import CatalogDetails as CatalogDetails_912693fa
     from ask_smapi_model.v1.skill.nlu.annotation_sets.create_nlu_annotation_set_request import CreateNLUAnnotationSetRequest as CreateNLUAnnotationSetRequest_16b1430c
     from ask_smapi_model.v1.skill.create_rollback_request import CreateRollbackRequest as CreateRollbackRequest_e7747a32
     from ask_smapi_model.v1.catalog.upload.catalog_upload_base import CatalogUploadBase as CatalogUploadBase_d7febd7
     from ask_smapi_model.v1.skill.certification.certification_response import CertificationResponse as CertificationResponse_97fdaad
+    from ask_smapi_model.v1.skill.experiment.get_experiment_response import GetExperimentResponse as GetExperimentResponse_fcd92c35
     from ask_smapi_model.v1.skill.export_response import ExportResponse as ExportResponse_b235e7bd
     from ask_smapi_model.v0.catalog.upload.create_content_upload_request import CreateContentUploadRequest as CreateContentUploadRequest_bf7790d3
     from ask_smapi_model.v0.error import Error as Error_d660d58
@@ -186,6 +195,8 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.history.locale_in_query import LocaleInQuery as LocaleInQuery_6526a92e
     from ask_smapi_model.v1.skill.beta_test.update_beta_test_response import UpdateBetaTestResponse as UpdateBetaTestResponse_84abf38
     from ask_smapi_model.v1.skill.interaction_model.jobs.get_executions_response import GetExecutionsResponse as GetExecutionsResponse_1b1a1680
+    from ask_smapi_model.v1.skill.experiment.list_experiment_metric_snapshots_response import ListExperimentMetricSnapshotsResponse as ListExperimentMetricSnapshotsResponse_bb18308b
+    from ask_smapi_model.v1.skill.experiment.create_experiment_request import CreateExperimentRequest as CreateExperimentRequest_abced22d
     from ask_smapi_model.v1.bad_request_error import BadRequestError as BadRequestError_f854b05
 
 
@@ -7963,6 +7974,1027 @@ class SkillManagementServiceClient(BaseServiceClient):
 
         api_response = self.invoke(
             method="DELETE",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+        return None
+
+    def delete_experiment_v1(self, skill_id, experiment_id, **kwargs):
+        # type: (str, str, **Any) -> Union[ApiResponse, object, StandardizedError_f5106a89, BadRequestError_f854b05]
+        """
+        Deletes an existing experiment for a skill.
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param experiment_id: (required) Identifies the experiment in a skill.
+        :type experiment_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, object, StandardizedError_f5106a89, BadRequestError_f854b05]
+        """
+        operation_name = "delete_experiment_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'experiment_id' is set
+        if ('experiment_id' not in params) or (params['experiment_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `experiment_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/experiments/{experimentId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+        if 'experiment_id' in params:
+            path_params['experimentId'] = params['experiment_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="Success. No content."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=409, message="The request could not be completed due to a conflict with the current state of the target resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="DELETE",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+        return None
+
+    def update_exposure_v1(self, skill_id, experiment_id, update_exposure_request, **kwargs):
+        # type: (str, str, UpdateExposureRequest_ce52ce53, **Any) -> Union[ApiResponse, object, StandardizedError_f5106a89, BadRequestError_f854b05]
+        """
+        Updates the exposure of an experiment that is in CREATED or RUNNING state. 
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param experiment_id: (required) Identifies the experiment in a skill.
+        :type experiment_id: str
+        :param update_exposure_request: (required) Defines the request body for updating the exposure percentage of a running experiment.
+        :type update_exposure_request: ask_smapi_model.v1.skill.experiment.update_exposure_request.UpdateExposureRequest
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, object, StandardizedError_f5106a89, BadRequestError_f854b05]
+        """
+        operation_name = "update_exposure_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'experiment_id' is set
+        if ('experiment_id' not in params) or (params['experiment_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `experiment_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'update_exposure_request' is set
+        if ('update_exposure_request' not in params) or (params['update_exposure_request'] is None):
+            raise ValueError(
+                "Missing the required parameter `update_exposure_request` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/experiments/{experimentId}/exposurePercentage'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+        if 'experiment_id' in params:
+            path_params['experimentId'] = params['experiment_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'update_exposure_request' in params:
+            body_params = params['update_exposure_request']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="Success. No content."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=409, message="The request could not be completed due to a conflict with the current state of the target resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="POST",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+        return None
+
+    def get_experiment_v1(self, skill_id, experiment_id, **kwargs):
+        # type: (str, str, **Any) -> Union[ApiResponse, object, GetExperimentResponse_fcd92c35, StandardizedError_f5106a89, BadRequestError_f854b05]
+        """
+        Retrieves an existing experiment for a skill.
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param experiment_id: (required) Identifies the experiment in a skill.
+        :type experiment_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, object, GetExperimentResponse_fcd92c35, StandardizedError_f5106a89, BadRequestError_f854b05]
+        """
+        operation_name = "get_experiment_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'experiment_id' is set
+        if ('experiment_id' not in params) or (params['experiment_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `experiment_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/experiments/{experimentId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+        if 'experiment_id' in params:
+            path_params['experimentId'] = params['experiment_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.experiment.get_experiment_response.GetExperimentResponse", status_code=200, message="Returned skill experiment."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.experiment.get_experiment_response.GetExperimentResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+        
+
+    def list_experiment_metric_snapshots_v1(self, skill_id, experiment_id, **kwargs):
+        # type: (str, str, **Any) -> Union[ApiResponse, object, StandardizedError_f5106a89, BadRequestError_f854b05, ListExperimentMetricSnapshotsResponse_bb18308b]
+        """
+        Gets a list of all metric snapshots associated with this experiment id. The metric snapshots represent the metric data available for a time range. 
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param experiment_id: (required) Identifies the experiment in a skill.
+        :type experiment_id: str
+        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :type next_token: str
+        :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
+        :type max_results: int
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, object, StandardizedError_f5106a89, BadRequestError_f854b05, ListExperimentMetricSnapshotsResponse_bb18308b]
+        """
+        operation_name = "list_experiment_metric_snapshots_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'experiment_id' is set
+        if ('experiment_id' not in params) or (params['experiment_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `experiment_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/experiments/{experimentId}/metricSnapshots'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+        if 'experiment_id' in params:
+            path_params['experimentId'] = params['experiment_id']
+
+        query_params = []  # type: List
+        if 'next_token' in params:
+            query_params.append(('nextToken', params['next_token']))
+        if 'max_results' in params:
+            query_params.append(('maxResults', params['max_results']))
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.experiment.list_experiment_metric_snapshots_response.ListExperimentMetricSnapshotsResponse", status_code=200, message="Returned experiment metric snapshots."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.experiment.list_experiment_metric_snapshots_response.ListExperimentMetricSnapshotsResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+        
+
+    def get_experiment_metric_snapshot_v1(self, skill_id, experiment_id, metric_snapshot_id, **kwargs):
+        # type: (str, str, str, **Any) -> Union[ApiResponse, object, GetExperimentMetricSnapshotResponse_b6905a35, StandardizedError_f5106a89, BadRequestError_f854b05]
+        """
+        Gets a list of all metric data associated with this experiment's metric snapshot.
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param experiment_id: (required) Identifies the experiment in a skill.
+        :type experiment_id: str
+        :param metric_snapshot_id: (required) Identifies the experiment metric snapshot in a skill experiment. The metric snapshot represents metric data for a date range. 
+        :type metric_snapshot_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, object, GetExperimentMetricSnapshotResponse_b6905a35, StandardizedError_f5106a89, BadRequestError_f854b05]
+        """
+        operation_name = "get_experiment_metric_snapshot_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'experiment_id' is set
+        if ('experiment_id' not in params) or (params['experiment_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `experiment_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'metric_snapshot_id' is set
+        if ('metric_snapshot_id' not in params) or (params['metric_snapshot_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `metric_snapshot_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/experiments/{experimentId}/metricSnapshots/{metricSnapshotId}'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+        if 'experiment_id' in params:
+            path_params['experimentId'] = params['experiment_id']
+        if 'metric_snapshot_id' in params:
+            path_params['metricSnapshotId'] = params['metric_snapshot_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.experiment.get_experiment_metric_snapshot_response.GetExperimentMetricSnapshotResponse", status_code=200, message="Returned experiment metric data."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.experiment.get_experiment_metric_snapshot_response.GetExperimentMetricSnapshotResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+        
+
+    def update_experiment_v1(self, skill_id, experiment_id, update_experiment_request, **kwargs):
+        # type: (str, str, UpdateExperimentRequest_d8449813, **Any) -> Union[ApiResponse, object, StandardizedError_f5106a89, BadRequestError_f854b05]
+        """
+        Updates an existing experiment for a skill. Can only be called while the experiment is in CREATED state. 
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param experiment_id: (required) Identifies the experiment in a skill.
+        :type experiment_id: str
+        :param update_experiment_request: (required) Defines the request body for updating an experiment.
+        :type update_experiment_request: ask_smapi_model.v1.skill.experiment.update_experiment_request.UpdateExperimentRequest
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, object, StandardizedError_f5106a89, BadRequestError_f854b05]
+        """
+        operation_name = "update_experiment_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'experiment_id' is set
+        if ('experiment_id' not in params) or (params['experiment_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `experiment_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'update_experiment_request' is set
+        if ('update_experiment_request' not in params) or (params['update_experiment_request'] is None):
+            raise ValueError(
+                "Missing the required parameter `update_experiment_request` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/experiments/{experimentId}/properties'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+        if 'experiment_id' in params:
+            path_params['experimentId'] = params['experiment_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'update_experiment_request' in params:
+            body_params = params['update_experiment_request']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="Success. No content."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=409, message="The request could not be completed due to a conflict with the current state of the target resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="POST",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+        return None
+
+    def get_experiment_state_v1(self, skill_id, experiment_id, **kwargs):
+        # type: (str, str, **Any) -> Union[ApiResponse, object, GetExperimentStateResponse_5152b250, StandardizedError_f5106a89, BadRequestError_f854b05]
+        """
+        Retrieves the current state of the experiment. 
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param experiment_id: (required) Identifies the experiment in a skill.
+        :type experiment_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, object, GetExperimentStateResponse_5152b250, StandardizedError_f5106a89, BadRequestError_f854b05]
+        """
+        operation_name = "get_experiment_state_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'experiment_id' is set
+        if ('experiment_id' not in params) or (params['experiment_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `experiment_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/experiments/{experimentId}/state'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+        if 'experiment_id' in params:
+            path_params['experimentId'] = params['experiment_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.experiment.get_experiment_state_response.GetExperimentStateResponse", status_code=200, message="Returned skill experiment state."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.experiment.get_experiment_state_response.GetExperimentStateResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+        
+
+    def manage_experiment_state_v1(self, skill_id, experiment_id, manage_experiment_state_request, **kwargs):
+        # type: (str, str, ManageExperimentStateRequest_c31e7ea0, **Any) -> Union[ApiResponse, object, StandardizedError_f5106a89, BadRequestError_f854b05]
+        """
+        Requests an action on the experiment to move it to the targetState. Acceptable targetState values are: * `ENABLED`: Experiment configurations are deployed and customer overrides are enabled. Actual experiment has not started yet but customers with overrides set to T1 will see the T1 behavior. Initial state must be CREATED. * `RUNNING`: Starts the experiment with the configured exposure. Skill customers selected to be in the experiment will start contributing to the metric data. Initial state must be CREATED or ENABLED. * `STOPPED`: Stops the experiment by removing the experiment configurations. All customer treatment overrides are removed. Initial state must be ENABLED or RUNNING.              Final state for ENDPOINT_BASED experiments, no further action is taken by ASK. It is expected that the skill builder updates their endpoint code to make T1 the default live behavior. 
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param experiment_id: (required) Identifies the experiment in a skill.
+        :type experiment_id: str
+        :param manage_experiment_state_request: (required) Defines the request body for performing an experiment action to move it to a target state.
+        :type manage_experiment_state_request: ask_smapi_model.v1.skill.experiment.manage_experiment_state_request.ManageExperimentStateRequest
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, object, StandardizedError_f5106a89, BadRequestError_f854b05]
+        """
+        operation_name = "manage_experiment_state_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'experiment_id' is set
+        if ('experiment_id' not in params) or (params['experiment_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `experiment_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'manage_experiment_state_request' is set
+        if ('manage_experiment_state_request' not in params) or (params['manage_experiment_state_request'] is None):
+            raise ValueError(
+                "Missing the required parameter `manage_experiment_state_request` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/experiments/{experimentId}/state'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+        if 'experiment_id' in params:
+            path_params['experimentId'] = params['experiment_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'manage_experiment_state_request' in params:
+            body_params = params['manage_experiment_state_request']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=202, message="Accepted; Returns a URL to track the experiment state in &#39;Location&#39; header."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=409, message="The request could not be completed due to a conflict with the current state of the target resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="POST",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+        return None
+
+    def get_customer_treatment_override_v1(self, skill_id, experiment_id, **kwargs):
+        # type: (str, str, **Any) -> Union[ApiResponse, object, GetCustomerTreatmentOverrideResponse_f64f689f, StandardizedError_f5106a89, BadRequestError_f854b05]
+        """
+        Retrieves the current user's customer treatment override for an existing A/B Test experiment. The current user must be under the same skill vendor of the requested skill id to have access to the resource. 
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param experiment_id: (required) Identifies the experiment in a skill.
+        :type experiment_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, object, GetCustomerTreatmentOverrideResponse_f64f689f, StandardizedError_f5106a89, BadRequestError_f854b05]
+        """
+        operation_name = "get_customer_treatment_override_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'experiment_id' is set
+        if ('experiment_id' not in params) or (params['experiment_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `experiment_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/experiments/{experimentId}/treatmentOverrides/~current'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+        if 'experiment_id' in params:
+            path_params['experimentId'] = params['experiment_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.experiment.get_customer_treatment_override_response.GetCustomerTreatmentOverrideResponse", status_code=200, message="Returned customer treatment override details."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.experiment.get_customer_treatment_override_response.GetCustomerTreatmentOverrideResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+        
+
+    def set_customer_treatment_override_v1(self, skill_id, experiment_id, set_customer_treatment_override_request, **kwargs):
+        # type: (str, str, SetCustomerTreatmentOverrideRequest_94022e79, **Any) -> Union[ApiResponse, object, StandardizedError_f5106a89, BadRequestError_f854b05]
+        """
+        Adds the requesting user's customer treatment override to an existing experiment. The current user must be under the same skill vendor of the requested skill id to have access to the resource. Only the current user can attempt to add the override of their own customer account to an experiment. Can only be called before the experiment is enabled. 
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param experiment_id: (required) Identifies the experiment in a skill.
+        :type experiment_id: str
+        :param set_customer_treatment_override_request: (required) Defines the request body for adding this customer's treatment override to an experiment.
+        :type set_customer_treatment_override_request: ask_smapi_model.v1.skill.experiment.set_customer_treatment_override_request.SetCustomerTreatmentOverrideRequest
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, object, StandardizedError_f5106a89, BadRequestError_f854b05]
+        """
+        operation_name = "set_customer_treatment_override_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'experiment_id' is set
+        if ('experiment_id' not in params) or (params['experiment_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `experiment_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'set_customer_treatment_override_request' is set
+        if ('set_customer_treatment_override_request' not in params) or (params['set_customer_treatment_override_request'] is None):
+            raise ValueError(
+                "Missing the required parameter `set_customer_treatment_override_request` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/experiments/{experimentId}/treatmentOverrides/~current'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+        if 'experiment_id' in params:
+            path_params['experimentId'] = params['experiment_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'set_customer_treatment_override_request' in params:
+            body_params = params['set_customer_treatment_override_request']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="Success. No content."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=409, message="The request could not be completed due to a conflict with the current state of the target resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="PUT",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+        return None
+
+    def list_experiments_v1(self, skill_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, object, StandardizedError_f5106a89, BadRequestError_f854b05, ListExperimentsResponse_c5b07ecb]
+        """
+        Gets a list of all experiments associated with this skill id.
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param next_token: When response to this API call is truncated (that is, isTruncated response element value is true), the response also includes the nextToken element. The value of nextToken can be used in the next request as the continuation-token to list the next set of objects. The continuation token is an opaque value that Skill Management API understands. Token has expiry of 24 hours.
+        :type next_token: str
+        :param max_results: Sets the maximum number of results returned in the response body. If you want to retrieve fewer than upper limit of 50 results, you can add this parameter to your request. maxResults should not exceed the upper limit. The response might contain fewer results than maxResults, but it will never contain more. If there are additional results that satisfy the search criteria, but these results were not returned, the response contains isTruncated = true.
+        :type max_results: int
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, object, StandardizedError_f5106a89, BadRequestError_f854b05, ListExperimentsResponse_c5b07ecb]
+        """
+        operation_name = "list_experiments_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/experiments'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+
+        query_params = []  # type: List
+        if 'next_token' in params:
+            query_params.append(('nextToken', params['next_token']))
+        if 'max_results' in params:
+            query_params.append(('maxResults', params['max_results']))
+
+        header_params = []  # type: List
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.experiment.list_experiments_response.ListExperimentsResponse", status_code=200, message="Returned skill experiments."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceed the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="GET",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type="ask_smapi_model.v1.skill.experiment.list_experiments_response.ListExperimentsResponse")
+
+        if full_response:
+            return api_response
+        return api_response.body
+        
+
+    def create_experiment_v1(self, skill_id, create_experiment_request, **kwargs):
+        # type: (str, CreateExperimentRequest_abced22d, **Any) -> Union[ApiResponse, object, StandardizedError_f5106a89, BadRequestError_f854b05]
+        """
+        Create a new experiment for a skill.
+
+        :param skill_id: (required) The skill ID.
+        :type skill_id: str
+        :param create_experiment_request: (required) Defines the request body for creating an experiment.
+        :type create_experiment_request: ask_smapi_model.v1.skill.experiment.create_experiment_request.CreateExperimentRequest
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, object, StandardizedError_f5106a89, BadRequestError_f854b05]
+        """
+        operation_name = "create_experiment_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'skill_id' is set
+        if ('skill_id' not in params) or (params['skill_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `skill_id` when calling `" + operation_name + "`")
+        # verify the required parameter 'create_experiment_request' is set
+        if ('create_experiment_request' not in params) or (params['create_experiment_request'] is None):
+            raise ValueError(
+                "Missing the required parameter `create_experiment_request` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/skills/{skillId}/experiments'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'skill_id' in params:
+            path_params['skillId'] = params['skill_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+
+        body_params = None
+        if 'create_experiment_request' in params:
+            body_params = params['create_experiment_request']
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_from_refresh_token()
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=201, message="Experiment created. Returns the generated experiment identifier in &#39;Location&#39; header."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=403, message="The operation being requested is not allowed."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=404, message="The resource being requested is not found."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=429, message="Exceeds the permitted request limit. Throttling criteria includes total requests, per API, ClientId, and CustomerId."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=500, message="Internal Server Error."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.standardized_error.StandardizedError", status_code=503, message="Service Unavailable."))
+
+        api_response = self.invoke(
+            method="POST",
             endpoint=self._api_endpoint,
             path=resource_path,
             path_params=path_params,

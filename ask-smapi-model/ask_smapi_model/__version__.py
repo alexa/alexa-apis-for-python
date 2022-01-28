@@ -14,7 +14,7 @@
 __pip_package_name__ = 'ask-smapi-model'
 __description__ = 'The SMAPI SDK Model package provides model definitions for making Skill Management API calls.'
 __url__ = 'https://github.com/alexa/alexa-apis-for-python'
-__version__ = '1.14.0'
+__version__ = '1.14.1'
 __author__ = 'Alexa Skills Kit'
 __author_email__ = 'ask-sdk-dynamic@amazon.com'
 __license__ = 'Apache 2.0'
