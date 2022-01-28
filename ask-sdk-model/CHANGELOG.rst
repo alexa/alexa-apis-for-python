@@ -426,3 +426,10 @@ This release contains the following changes :
 This release contains the following changes :
 
 - Support persistent identifier for endpoint ID where the skill request is issued from.
+
+1.33.1
+^^^^^^
+
+This release contains the following changes :
+
+- Support for A/B testing experimentation SPI for GA
