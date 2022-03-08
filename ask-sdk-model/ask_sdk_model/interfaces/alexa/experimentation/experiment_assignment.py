@@ -23,7 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.experimentation.treatment import Treatment as Treatment_1f18fadd
+    from ask_sdk_model.interfaces.alexa.experimentation.treatment_id import TreatmentId as TreatmentId_29cc9e4c
 
 
 class ExperimentAssignment(object):
@@ -34,12 +34,12 @@ class ExperimentAssignment(object):
     :param id: 
     :type id: (optional) str
     :param treatment_id: 
-    :type treatment_id: (optional) ask_sdk_model.interfaces.alexa.experimentation.treatment.Treatment
+    :type treatment_id: (optional) ask_sdk_model.interfaces.alexa.experimentation.treatment_id.TreatmentId
 
     """
     deserialized_types = {
         'id': 'str',
-        'treatment_id': 'ask_sdk_model.interfaces.alexa.experimentation.treatment.Treatment'
+        'treatment_id': 'ask_sdk_model.interfaces.alexa.experimentation.treatment_id.TreatmentId'
     }  # type: Dict
 
     attribute_map = {
@@ -49,13 +49,13 @@ class ExperimentAssignment(object):
     supports_multiple_types = False
 
     def __init__(self, id=None, treatment_id=None):
-        # type: (Optional[str], Optional[Treatment_1f18fadd]) -> None
+        # type: (Optional[str], Optional[TreatmentId_29cc9e4c]) -> None
         """Represents the state of an active experiment&#39;s assignment
 
         :param id: 
         :type id: (optional) str
         :param treatment_id: 
-        :type treatment_id: (optional) ask_sdk_model.interfaces.alexa.experimentation.treatment.Treatment
+        :type treatment_id: (optional) ask_sdk_model.interfaces.alexa.experimentation.treatment_id.TreatmentId
         """
         self.__discriminator_value = None  # type: str
 

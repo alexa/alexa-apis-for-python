@@ -14,5 +14,5 @@
 #
 from __future__ import absolute_import
 
-from .in_skill_product import InSkillProduct
 from .purchase_result import PurchaseResult
+from .in_skill_product import InSkillProduct

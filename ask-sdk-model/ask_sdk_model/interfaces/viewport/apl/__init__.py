@@ -14,5 +14,5 @@
 #
 from __future__ import absolute_import
 
-from .viewport_configuration import ViewportConfiguration
 from .current_configuration import CurrentConfiguration
+from .viewport_configuration import ViewportConfiguration

@@ -433,3 +433,11 @@ This release contains the following changes :
 This release contains the following changes :
 
 - Support for A/B testing experimentation SPI for GA
+
+1.34.0
+^^^^^^
+
+This release contains the following changes :
+
+- Support for FTV and shopping skills
+- Updated model definitions for experimentation SPIs 

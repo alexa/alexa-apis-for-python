@@ -14,6 +14,6 @@
 #
 from __future__ import absolute_import
 
-from .character_format import CharacterFormat
-from .viewport_profile import ViewportProfile
 from .inter_segment import InterSegment
+from .viewport_profile import ViewportProfile
+from .character_format import CharacterFormat

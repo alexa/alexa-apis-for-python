@@ -14,16 +14,16 @@
 #
 from __future__ import absolute_import
 
+from .dialog import Dialog
+from .viewport_state import ViewportState
+from .viewport_video import ViewportVideo
+from .experience import Experience
+from .mode import Mode
+from .aplt_viewport_state import APLTViewportState
+from .presentation_type import PresentationType
+from .apl_viewport_state import APLViewportState
+from .touch import Touch
 from .shape import Shape
 from .typed_viewport_state import TypedViewportState
-from .viewport_video import ViewportVideo
 from .viewport_state_video import ViewportStateVideo
-from .experience import Experience
-from .dialog import Dialog
-from .touch import Touch
 from .keyboard import Keyboard
-from .presentation_type import PresentationType
-from .aplt_viewport_state import APLTViewportState
-from .apl_viewport_state import APLViewportState
-from .mode import Mode
-from .viewport_state import ViewportState

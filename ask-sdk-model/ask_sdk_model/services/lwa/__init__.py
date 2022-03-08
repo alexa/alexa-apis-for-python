@@ -14,8 +14,8 @@
 #
 from __future__ import absolute_import
 
-from .error import Error
-from .access_token import AccessToken
-from .lwa_client import LwaClient
 from .access_token_request import AccessTokenRequest
+from .access_token import AccessToken
+from .error import Error
 from .access_token_response import AccessTokenResponse
+from .lwa_client import LwaClient

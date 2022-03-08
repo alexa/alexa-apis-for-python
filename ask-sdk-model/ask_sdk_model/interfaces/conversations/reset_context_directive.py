@@ -18,40 +18,37 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
+from ask_sdk_model.directive import Directive
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_sdk_model.interfaces.alexa.experimentation.treatment_id import TreatmentId as TreatmentId_29cc9e4c
 
 
-class Treatment(object):
+class ResetContextDirective(Directive):
     """
 
-    :param name: 
-    :type name: (optional) ask_sdk_model.interfaces.alexa.experimentation.treatment_id.TreatmentId
 
     """
     deserialized_types = {
-        'name': 'ask_sdk_model.interfaces.alexa.experimentation.treatment_id.TreatmentId'
+        'object_type': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'name': 'name'
+        'object_type': 'type'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, name=None):
-        # type: (Optional[TreatmentId_29cc9e4c]) -> None
+    def __init__(self):
+        # type: () -> None
         """
 
-        :param name: 
-        :type name: (optional) ask_sdk_model.interfaces.alexa.experimentation.treatment_id.TreatmentId
         """
-        self.__discriminator_value = None  # type: str
+        self.__discriminator_value = "Conversations.ResetContext"  # type: str
 
-        self.name = name
+        self.object_type = self.__discriminator_value
+        super(ResetContextDirective, self).__init__(object_type=self.__discriminator_value)
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -96,7 +93,7 @@ class Treatment(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Treatment):
+        if not isinstance(other, ResetContextDirective):
             return False
 
         return self.__dict__ == other.__dict__

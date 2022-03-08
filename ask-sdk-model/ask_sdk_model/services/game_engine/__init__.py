@@ -14,14 +14,14 @@
 #
 from __future__ import absolute_import
 
-from .recognizer import Recognizer
 from .pattern_recognizer_anchor_type import PatternRecognizerAnchorType
-from .pattern import Pattern
-from .input_event_action_type import InputEventActionType
+from .event import Event
+from .progress_recognizer import ProgressRecognizer
 from .input_event import InputEvent
+from .deviation_recognizer import DeviationRecognizer
+from .input_event_action_type import InputEventActionType
+from .recognizer import Recognizer
+from .pattern import Pattern
+from .event_reporting_type import EventReportingType
 from .input_handler_event import InputHandlerEvent
 from .pattern_recognizer import PatternRecognizer
-from .event import Event
-from .event_reporting_type import EventReportingType
-from .deviation_recognizer import DeviationRecognizer
-from .progress_recognizer import ProgressRecognizer

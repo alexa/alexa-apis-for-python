@@ -14,5 +14,6 @@
 #
 from __future__ import absolute_import
 
+from .reset_context_directive import ResetContextDirective
 from .api_request import APIRequest
 from .api_invocation_request import APIInvocationRequest

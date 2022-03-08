@@ -25,16 +25,17 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class TreatmentId(Enum):
+class BackType(Enum):
     """
-    Experiment treatment identifier
+    The type of back navigation to use. Defaults to count.
 
 
 
-    Allowed enum values: [C, T1]
+    Allowed enum values: [count, index, id]
     """
-    C = "C"
-    T1 = "T1"
+    count = "count"
+    index = "index"
+    id = "id"
 
     def to_dict(self):
         # type: () -> Dict[str, Any]
@@ -55,7 +56,7 @@ class TreatmentId(Enum):
     def __eq__(self, other):
         # type: (Any) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, TreatmentId):
+        if not isinstance(other, BackType):
             return False
 
         return self.__dict__ == other.__dict__
