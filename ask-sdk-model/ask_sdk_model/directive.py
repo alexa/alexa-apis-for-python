@@ -75,6 +75,8 @@ class Directive(object):
         |
         | Display.RenderTemplate: :py:class:`ask_sdk_model.interfaces.display.render_template_directive.RenderTemplateDirective`,
         |
+        | Conversations.ResetContext: :py:class:`ask_sdk_model.interfaces.conversations.reset_context_directive.ResetContextDirective`,
+        |
         | Dialog.DelegateRequest: :py:class:`ask_sdk_model.dialog.delegate_request_directive.DelegateRequestDirective`,
         |
         | Hint: :py:class:`ask_sdk_model.interfaces.display.hint_directive.HintDirective`,
@@ -133,6 +135,7 @@ class Directive(object):
         'AudioPlayer.Play': 'ask_sdk_model.interfaces.audioplayer.play_directive.PlayDirective',
         'Alexa.Presentation.APL.ExecuteCommands': 'ask_sdk_model.interfaces.alexa.presentation.apl.execute_commands_directive.ExecuteCommandsDirective',
         'Display.RenderTemplate': 'ask_sdk_model.interfaces.display.render_template_directive.RenderTemplateDirective',
+        'Conversations.ResetContext': 'ask_sdk_model.interfaces.conversations.reset_context_directive.ResetContextDirective',
         'Dialog.DelegateRequest': 'ask_sdk_model.dialog.delegate_request_directive.DelegateRequestDirective',
         'Hint': 'ask_sdk_model.interfaces.display.hint_directive.HintDirective',
         'Connections.StartConnection': 'ask_sdk_model.interfaces.connections.v1.start_connection_directive.StartConnectionDirective',

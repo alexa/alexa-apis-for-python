@@ -59,6 +59,8 @@ class Command(object):
         |
         | PlayMedia: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.play_media_command.PlayMediaCommand`,
         |
+        | GoBack: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.go_back_command.GoBackCommand`,
+        |
         | Scroll: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.scroll_command.ScrollCommand`,
         |
         | Idle: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.idle_command.IdleCommand`,
@@ -67,9 +69,13 @@ class Command(object):
         |
         | SendEvent: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.send_event_command.SendEventCommand`,
         |
+        | ShowOverlay: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.show_overlay_command.ShowOverlayCommand`,
+        |
         | SpeakList: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.speak_list_command.SpeakListCommand`,
         |
         | Select: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.select_command.SelectCommand`,
+        |
+        | HideOverlay: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.hide_overlay_command.HideOverlayCommand`,
         |
         | Sequential: :py:class:`ask_sdk_model.interfaces.alexa.presentation.apl.sequential_command.SequentialCommand`,
         |
@@ -119,12 +125,15 @@ class Command(object):
         'Finish': 'ask_sdk_model.interfaces.alexa.presentation.apl.finish_command.FinishCommand',
         'AutoPage': 'ask_sdk_model.interfaces.alexa.presentation.apl.auto_page_command.AutoPageCommand',
         'PlayMedia': 'ask_sdk_model.interfaces.alexa.presentation.apl.play_media_command.PlayMediaCommand',
+        'GoBack': 'ask_sdk_model.interfaces.alexa.presentation.apl.go_back_command.GoBackCommand',
         'Scroll': 'ask_sdk_model.interfaces.alexa.presentation.apl.scroll_command.ScrollCommand',
         'Idle': 'ask_sdk_model.interfaces.alexa.presentation.apl.idle_command.IdleCommand',
         'AnimateItem': 'ask_sdk_model.interfaces.alexa.presentation.apl.animate_item_command.AnimateItemCommand',
         'SendEvent': 'ask_sdk_model.interfaces.alexa.presentation.apl.send_event_command.SendEventCommand',
+        'ShowOverlay': 'ask_sdk_model.interfaces.alexa.presentation.apl.show_overlay_command.ShowOverlayCommand',
         'SpeakList': 'ask_sdk_model.interfaces.alexa.presentation.apl.speak_list_command.SpeakListCommand',
         'Select': 'ask_sdk_model.interfaces.alexa.presentation.apl.select_command.SelectCommand',
+        'HideOverlay': 'ask_sdk_model.interfaces.alexa.presentation.apl.hide_overlay_command.HideOverlayCommand',
         'Sequential': 'ask_sdk_model.interfaces.alexa.presentation.apl.sequential_command.SequentialCommand',
         'SetState': 'ask_sdk_model.interfaces.alexa.presentation.apl.set_state_command.SetStateCommand',
         'SpeakItem': 'ask_sdk_model.interfaces.alexa.presentation.apl.speak_item_command.SpeakItemCommand',
