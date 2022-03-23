@@ -24,6 +24,7 @@ if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
     from ask_smapi_model.v1.skill.manifest.localized_knowledge_information import LocalizedKnowledgeInformation as LocalizedKnowledgeInformation_59e51789
+    from ask_smapi_model.v1.skill.manifest.knowledge_apis_enablement_channel import KnowledgeApisEnablementChannel as KnowledgeApisEnablementChannel_f9390f08
 
 
 class KnowledgeApis(object):
@@ -31,28 +32,35 @@ class KnowledgeApis(object):
     defines the structure for the knowledge api of the skill.
 
 
+    :param enablement_channel: 
+    :type enablement_channel: (optional) ask_smapi_model.v1.skill.manifest.knowledge_apis_enablement_channel.KnowledgeApisEnablementChannel
     :param locales: Defines the structure of locale specific knowledge information in the skill manifest.
     :type locales: (optional) dict(str, ask_smapi_model.v1.skill.manifest.localized_knowledge_information.LocalizedKnowledgeInformation)
 
     """
     deserialized_types = {
+        'enablement_channel': 'ask_smapi_model.v1.skill.manifest.knowledge_apis_enablement_channel.KnowledgeApisEnablementChannel',
         'locales': 'dict(str, ask_smapi_model.v1.skill.manifest.localized_knowledge_information.LocalizedKnowledgeInformation)'
     }  # type: Dict
 
     attribute_map = {
+        'enablement_channel': 'enablementChannel',
         'locales': 'locales'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, locales=None):
-        # type: (Optional[Dict[str, LocalizedKnowledgeInformation_59e51789]]) -> None
+    def __init__(self, enablement_channel=None, locales=None):
+        # type: (Optional[KnowledgeApisEnablementChannel_f9390f08], Optional[Dict[str, LocalizedKnowledgeInformation_59e51789]]) -> None
         """defines the structure for the knowledge api of the skill.
 
+        :param enablement_channel: 
+        :type enablement_channel: (optional) ask_smapi_model.v1.skill.manifest.knowledge_apis_enablement_channel.KnowledgeApisEnablementChannel
         :param locales: Defines the structure of locale specific knowledge information in the skill manifest.
         :type locales: (optional) dict(str, ask_smapi_model.v1.skill.manifest.localized_knowledge_information.LocalizedKnowledgeInformation)
         """
         self.__discriminator_value = None  # type: str
 
+        self.enablement_channel = enablement_channel
         self.locales = locales
 
     def to_dict(self):

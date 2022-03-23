@@ -14,5 +14,5 @@
 #
 from __future__ import absolute_import
 
-from .vendor import Vendor
 from .vendors import Vendors
+from .vendor import Vendor

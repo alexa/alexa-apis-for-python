@@ -14,17 +14,17 @@
 #
 from __future__ import absolute_import
 
-from .slot_type_input import SlotTypeInput
-from .slot_type_response_entity import SlotTypeResponseEntity
-from .slot_type_definition_output import SlotTypeDefinitionOutput
-from .last_update_request import LastUpdateRequest
-from .definition_data import DefinitionData
-from .warning import Warning
 from .slot_type_status_type import SlotTypeStatusType
-from .slot_type_update_definition import SlotTypeUpdateDefinition
-from .error import Error
-from .slot_type_response import SlotTypeResponse
 from .list_slot_type_response import ListSlotTypeResponse
+from .error import Error
 from .update_request import UpdateRequest
+from .warning import Warning
+from .last_update_request import LastUpdateRequest
+from .slot_type_definition_output import SlotTypeDefinitionOutput
+from .slot_type_response_entity import SlotTypeResponseEntity
 from .slot_type_status import SlotTypeStatus
+from .slot_type_response import SlotTypeResponse
+from .slot_type_update_definition import SlotTypeUpdateDefinition
+from .slot_type_input import SlotTypeInput
+from .definition_data import DefinitionData
 from .slot_type_item import SlotTypeItem

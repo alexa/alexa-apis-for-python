@@ -14,8 +14,8 @@
 #
 from __future__ import absolute_import
 
-from .target_runtime_device import TargetRuntimeDevice
 from .target_runtime import TargetRuntime
-from .suppressed_interface import SuppressedInterface
-from .connection import Connection
 from .target_runtime_type import TargetRuntimeType
+from .target_runtime_device import TargetRuntimeDevice
+from .connection import Connection
+from .suppressed_interface import SuppressedInterface
