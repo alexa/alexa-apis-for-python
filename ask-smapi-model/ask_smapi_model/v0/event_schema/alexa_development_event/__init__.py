@@ -14,7 +14,7 @@
 #
 from __future__ import absolute_import
 
-from .interaction_model_update import InteractionModelUpdate
 from .manifest_update import ManifestUpdate
+from .interaction_model_update import InteractionModelUpdate
 from .skill_publish import SkillPublish
 from .skill_certification import SkillCertification

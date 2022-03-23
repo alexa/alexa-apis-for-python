@@ -14,8 +14,8 @@
 #
 from __future__ import absolute_import
 
-from .period import Period
-from .get_metric_data_response import GetMetricDataResponse
-from .skill_type import SkillType
-from .metric import Metric
 from .stage_for_metric import StageForMetric
+from .metric import Metric
+from .period import Period
+from .skill_type import SkillType
+from .get_metric_data_response import GetMetricDataResponse

@@ -14,14 +14,14 @@
 #
 from __future__ import absolute_import
 
+from .list_catalog_response import ListCatalogResponse
+from .update_request import UpdateRequest
+from .catalog_response import CatalogResponse
+from .catalog_status_type import CatalogStatusType
 from .last_update_request import LastUpdateRequest
-from .definition_data import DefinitionData
-from .catalog_entity import CatalogEntity
 from .catalog_status import CatalogStatus
 from .catalog_definition_output import CatalogDefinitionOutput
-from .catalog_item import CatalogItem
-from .update_request import UpdateRequest
-from .catalog_status_type import CatalogStatusType
-from .catalog_response import CatalogResponse
-from .list_catalog_response import ListCatalogResponse
 from .catalog_input import CatalogInput
+from .definition_data import DefinitionData
+from .catalog_item import CatalogItem
+from .catalog_entity import CatalogEntity

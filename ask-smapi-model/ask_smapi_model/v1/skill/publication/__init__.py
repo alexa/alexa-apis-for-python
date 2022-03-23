@@ -14,6 +14,6 @@
 #
 from __future__ import absolute_import
 
-from .skill_publication_status import SkillPublicationStatus
 from .skill_publication_response import SkillPublicationResponse
+from .skill_publication_status import SkillPublicationStatus
 from .publish_skill_request import PublishSkillRequest
