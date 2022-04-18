@@ -23,6 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
+    from ask_smapi_model.v1.skill.manifest.lambda_ssl_certificate_type import LambdaSSLCertificateType as LambdaSSLCertificateType_50ec1486
 
 
 class LambdaEndpoint(object):
@@ -32,27 +33,34 @@ class LambdaEndpoint(object):
 
     :param uri: Amazon Resource Name (ARN) of the Lambda function.
     :type uri: (optional) str
+    :param ssl_certificate_type:
+    :type ssl_certificate_type: (optional) ask_smapi_model.v1.skill.manifest.lambda_ssl_certificate_type.LambdaSSLCertificateType
 
     """
     deserialized_types = {
-        'uri': 'str'
+        'uri': 'str',
+        'ssl_certificate_type': 'ask_smapi_model.v1.skill.manifest.lambda_ssl_certificate_type.LambdaSSLCertificateType'
     }  # type: Dict
 
     attribute_map = {
-        'uri': 'uri'
+        'uri': 'uri',
+        'ssl_certificate_type': 'sslCertificateType'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, uri=None):
-        # type: (Optional[str]) -> None
+    def __init__(self, uri=None, ssl_certificate_type=None):
+        # type: (Optional[str], Optional[LambdaSSLCertificateType_50ec1486]) -> None
         """Contains the uri field. This sets the global default endpoint.
 
         :param uri: Amazon Resource Name (ARN) of the Lambda function.
         :type uri: (optional) str
+        :param ssl_certificate_type:
+        :type ssl_certificate_type: (optional) ask_smapi_model.v1.skill.manifest.lambda_ssl_certificate_type.LambdaSSLCertificateType
         """
         self.__discriminator_value = None  # type: str
 
         self.uri = uri
+        self.ssl_certificate_type = ssl_certificate_type
 
     def to_dict(self):
         # type: () -> Dict[str, object]

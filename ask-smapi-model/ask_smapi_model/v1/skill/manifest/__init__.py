@@ -79,6 +79,7 @@ from .paid_skill_information import PaidSkillInformation
 from .android_custom_intent import AndroidCustomIntent
 from .ssl_certificate_type import SSLCertificateType
 from .music_request import MusicRequest
+from .lambda_ssl_certificate_type import LambdaSSLCertificateType
 from .video_catalog_info import VideoCatalogInfo
 from .custom_apis import CustomApis
 from .dialog_manager import DialogManager
