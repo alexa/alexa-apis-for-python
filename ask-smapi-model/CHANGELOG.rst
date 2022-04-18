@@ -229,3 +229,18 @@ This release contains the following changes :
 This release contains the following changes :
 
 - Enable TSB APL Extension in skill manifest
+
+1.14.2
+^^^^^^
+
+This release contains the following changes :
+
+- Updating model definitions
+- Added new model definitions for Knowledge APIs
+
+1.14.3
+^^^^^^
+
+This release contains the following changes :
+
+- Updating model definitions
