@@ -33,7 +33,7 @@ class LambdaEndpoint(object):
 
     :param uri: Amazon Resource Name (ARN) of the Lambda function.
     :type uri: (optional) str
-    :param ssl_certificate_type:
+    :param ssl_certificate_type: 
     :type ssl_certificate_type: (optional) ask_smapi_model.v1.skill.manifest.lambda_ssl_certificate_type.LambdaSSLCertificateType
 
     """
@@ -54,7 +54,7 @@ class LambdaEndpoint(object):
 
         :param uri: Amazon Resource Name (ARN) of the Lambda function.
         :type uri: (optional) str
-        :param ssl_certificate_type:
+        :param ssl_certificate_type: 
         :type ssl_certificate_type: (optional) ask_smapi_model.v1.skill.manifest.lambda_ssl_certificate_type.LambdaSSLCertificateType
         """
         self.__discriminator_value = None  # type: str

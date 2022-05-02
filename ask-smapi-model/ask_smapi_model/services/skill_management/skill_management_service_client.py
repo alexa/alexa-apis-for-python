@@ -193,7 +193,6 @@ if typing.TYPE_CHECKING:
     from ask_smapi_model.v1.skill.interaction_model.model_type.slot_type_response import SlotTypeResponse as SlotTypeResponse_1ca513dc
     from ask_smapi_model.v1.skill.nlu.evaluations.get_nlu_evaluation_results_response import GetNLUEvaluationResultsResponse as GetNLUEvaluationResultsResponse_5ca1fa54
     from ask_smapi_model.v1.skill.history.locale_in_query import LocaleInQuery as LocaleInQuery_6526a92e
-    from ask_smapi_model.v1.skill.beta_test.update_beta_test_response import UpdateBetaTestResponse as UpdateBetaTestResponse_84abf38
     from ask_smapi_model.v1.skill.interaction_model.jobs.get_executions_response import GetExecutionsResponse as GetExecutionsResponse_1b1a1680
     from ask_smapi_model.v1.skill.experiment.list_experiment_metric_snapshots_response import ListExperimentMetricSnapshotsResponse as ListExperimentMetricSnapshotsResponse_bb18308b
     from ask_smapi_model.v1.skill.experiment.create_experiment_request import CreateExperimentRequest as CreateExperimentRequest_abced22d
@@ -7129,7 +7128,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         return None
 
     def update_beta_test_v1(self, skill_id, **kwargs):
-        # type: (str, **Any) -> Union[ApiResponse, object, Error_fbe913d9, UpdateBetaTestResponse_84abf38, BadRequestError_f854b05]
+        # type: (str, **Any) -> Union[ApiResponse, object, Error_fbe913d9, BadRequestError_f854b05]
         """
         Update beta test.
         Update a beta test for a given Alexa skill.
@@ -7141,7 +7140,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         :param full_response: Boolean value to check if response should contain headers and status code information.
             This value had to be passed through keyword arguments, by default the parameter value is set to False. 
         :type full_response: boolean
-        :rtype: Union[ApiResponse, object, Error_fbe913d9, UpdateBetaTestResponse_84abf38, BadRequestError_f854b05]
+        :rtype: Union[ApiResponse, object, Error_fbe913d9, BadRequestError_f854b05]
         """
         operation_name = "update_beta_test_v1"
         params = locals()
@@ -7181,7 +7180,7 @@ class SkillManagementServiceClient(BaseServiceClient):
         header_params.append(('Authorization', authorization_value))
 
         error_definitions = []  # type: List
-        error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.skill.beta_test.update_beta_test_response.UpdateBetaTestResponse", status_code=204, message="Success. No content."))
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="Success. No content."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.bad_request_error.BadRequestError", status_code=400, message="Server cannot process the request due to a client error."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=401, message="The auth token is invalid/expired or doesn&#39;t have access to the resource."))
         error_definitions.append(ServiceClientResponse(response_type="ask_smapi_model.v1.error.Error", status_code=404, message="The resource being requested is not found."))
@@ -7198,12 +7197,12 @@ class SkillManagementServiceClient(BaseServiceClient):
             header_params=header_params,
             body=body_params,
             response_definitions=error_definitions,
-            response_type="ask_smapi_model.v1.skill.beta_test.update_beta_test_response.UpdateBetaTestResponse")
+            response_type=None)
 
         if full_response:
             return api_response
-        return api_response.body
         
+        return None
 
     def start_beta_test_v1(self, skill_id, **kwargs):
         # type: (str, **Any) -> Union[ApiResponse, object, Error_fbe913d9, BadRequestError_f854b05]
