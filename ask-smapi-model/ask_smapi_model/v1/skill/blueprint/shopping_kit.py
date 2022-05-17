@@ -23,58 +23,36 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.interaction_model.slot_definition import SlotDefinition as SlotDefinition_fa94ac3
 
 
-class Intent(object):
+class ShoppingKit(object):
     """
-    The set of intents your service can accept and process.
+    Defines the structure for Shopping Kit related information in the skill manifest.
 
 
-    :param name: Name to identify the intent.
-    :type name: (optional) str
-    :param generated_by: Name of the generator used to generate this object.
-    :type generated_by: (optional) str
-    :param slots: List of slots within the intent.
-    :type slots: (optional) list[ask_smapi_model.v1.skill.interaction_model.slot_definition.SlotDefinition]
-    :param samples: Phrases the user can speak e.g. to trigger an intent or provide value for a slot elicitation.
-    :type samples: (optional) list[str]
+    :param is_shopping_actions_enabled: True if the skill uses Alexa Shopping Actions, false otherwise.
+    :type is_shopping_actions_enabled: (optional) bool
 
     """
     deserialized_types = {
-        'name': 'str',
-        'generated_by': 'str',
-        'slots': 'list[ask_smapi_model.v1.skill.interaction_model.slot_definition.SlotDefinition]',
-        'samples': 'list[str]'
+        'is_shopping_actions_enabled': 'bool'
     }  # type: Dict
 
     attribute_map = {
-        'name': 'name',
-        'generated_by': 'generatedBy',
-        'slots': 'slots',
-        'samples': 'samples'
+        'is_shopping_actions_enabled': 'isShoppingActionsEnabled'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, name=None, generated_by=None, slots=None, samples=None):
-        # type: (Optional[str], Optional[str], Optional[List[SlotDefinition_fa94ac3]], Optional[List[object]]) -> None
-        """The set of intents your service can accept and process.
+    def __init__(self, is_shopping_actions_enabled=None):
+        # type: (Optional[bool]) -> None
+        """Defines the structure for Shopping Kit related information in the skill manifest.
 
-        :param name: Name to identify the intent.
-        :type name: (optional) str
-        :param generated_by: Name of the generator used to generate this object.
-        :type generated_by: (optional) str
-        :param slots: List of slots within the intent.
-        :type slots: (optional) list[ask_smapi_model.v1.skill.interaction_model.slot_definition.SlotDefinition]
-        :param samples: Phrases the user can speak e.g. to trigger an intent or provide value for a slot elicitation.
-        :type samples: (optional) list[str]
+        :param is_shopping_actions_enabled: True if the skill uses Alexa Shopping Actions, false otherwise.
+        :type is_shopping_actions_enabled: (optional) bool
         """
         self.__discriminator_value = None  # type: str
 
-        self.name = name
-        self.generated_by = generated_by
-        self.slots = slots
-        self.samples = samples
+        self.is_shopping_actions_enabled = is_shopping_actions_enabled
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -119,7 +97,7 @@ class Intent(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, Intent):
+        if not isinstance(other, ShoppingKit):
             return False
 
         return self.__dict__ == other.__dict__

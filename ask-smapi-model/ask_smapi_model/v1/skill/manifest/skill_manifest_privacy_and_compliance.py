@@ -23,6 +23,7 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
+    from ask_smapi_model.v1.skill.manifest.shopping_kit import ShoppingKit as ShoppingKit_3d28df98
     from ask_smapi_model.v1.skill.manifest.skill_manifest_localized_privacy_and_compliance import SkillManifestLocalizedPrivacyAndCompliance as SkillManifestLocalizedPrivacyAndCompliance_ef86fcec
 
 
@@ -45,6 +46,8 @@ class SkillManifestPrivacyAndCompliance(object):
     :type contains_ads: (optional) bool
     :param uses_health_info: True if the skill developer is a Covered Entity (CE) or Business Associate (BA) as defined by the Health Insurance Portability And Accountability Act (HIPAA) and the skill requires Amazon to process PHI on their behalf, false otherwise. This is an optional property and treated as false if not set.
     :type uses_health_info: (optional) bool
+    :param shopping_kit: 
+    :type shopping_kit: (optional) ask_smapi_model.v1.skill.manifest.shopping_kit.ShoppingKit
 
     """
     deserialized_types = {
@@ -54,7 +57,8 @@ class SkillManifestPrivacyAndCompliance(object):
         'is_child_directed': 'bool',
         'is_export_compliant': 'bool',
         'contains_ads': 'bool',
-        'uses_health_info': 'bool'
+        'uses_health_info': 'bool',
+        'shopping_kit': 'ask_smapi_model.v1.skill.manifest.shopping_kit.ShoppingKit'
     }  # type: Dict
 
     attribute_map = {
@@ -64,12 +68,13 @@ class SkillManifestPrivacyAndCompliance(object):
         'is_child_directed': 'isChildDirected',
         'is_export_compliant': 'isExportCompliant',
         'contains_ads': 'containsAds',
-        'uses_health_info': 'usesHealthInfo'
+        'uses_health_info': 'usesHealthInfo',
+        'shopping_kit': 'shoppingKit'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, locales=None, allows_purchases=None, uses_personal_info=None, is_child_directed=None, is_export_compliant=None, contains_ads=None, uses_health_info=None):
-        # type: (Optional[Dict[str, SkillManifestLocalizedPrivacyAndCompliance_ef86fcec]], Optional[bool], Optional[bool], Optional[bool], Optional[bool], Optional[bool], Optional[bool]) -> None
+    def __init__(self, locales=None, allows_purchases=None, uses_personal_info=None, is_child_directed=None, is_export_compliant=None, contains_ads=None, uses_health_info=None, shopping_kit=None):
+        # type: (Optional[Dict[str, SkillManifestLocalizedPrivacyAndCompliance_ef86fcec]], Optional[bool], Optional[bool], Optional[bool], Optional[bool], Optional[bool], Optional[bool], Optional[ShoppingKit_3d28df98]) -> None
         """Defines the structure for privacy &amp; compliance information in the skill manifest.
 
         :param locales: Object that contains &lt;locale&gt; objects for each supported locale.
@@ -86,6 +91,8 @@ class SkillManifestPrivacyAndCompliance(object):
         :type contains_ads: (optional) bool
         :param uses_health_info: True if the skill developer is a Covered Entity (CE) or Business Associate (BA) as defined by the Health Insurance Portability And Accountability Act (HIPAA) and the skill requires Amazon to process PHI on their behalf, false otherwise. This is an optional property and treated as false if not set.
         :type uses_health_info: (optional) bool
+        :param shopping_kit: 
+        :type shopping_kit: (optional) ask_smapi_model.v1.skill.manifest.shopping_kit.ShoppingKit
         """
         self.__discriminator_value = None  # type: str
 
@@ -96,6 +103,7 @@ class SkillManifestPrivacyAndCompliance(object):
         self.is_export_compliant = is_export_compliant
         self.contains_ads = contains_ads
         self.uses_health_info = uses_health_info
+        self.shopping_kit = shopping_kit
 
     def to_dict(self):
         # type: () -> Dict[str, object]

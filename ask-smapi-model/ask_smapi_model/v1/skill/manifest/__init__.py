@@ -24,6 +24,7 @@ from .music_feature import MusicFeature
 from .dialog_delegation_strategy import DialogDelegationStrategy
 from .skill_manifest_endpoint import SkillManifestEndpoint
 from .authorized_client_lwa_application import AuthorizedClientLwaApplication
+from .shopping_kit import ShoppingKit
 from .extension_request import ExtensionRequest
 from .voice_profile_feature import VoiceProfileFeature
 from .ios_app_store_common_scheme_name import IOSAppStoreCommonSchemeName
