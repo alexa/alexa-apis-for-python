@@ -441,3 +441,10 @@ This release contains the following changes :
 
 - Support for FTV and shopping skills
 - Updated model definitions for experimentation SPIs 
+
+1.34.1
+^^^^^^
+
+This release contains the following changes : 
+
+- Updating model definitions

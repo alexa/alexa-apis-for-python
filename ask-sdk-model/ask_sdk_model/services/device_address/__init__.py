@@ -14,7 +14,7 @@
 #
 from __future__ import absolute_import
 
-from .short_address import ShortAddress
 from .address import Address
 from .error import Error
 from .device_address_service_client import DeviceAddressServiceClient
+from .short_address import ShortAddress

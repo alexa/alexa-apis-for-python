@@ -31,7 +31,7 @@ class SlotValue(object):
     Object representing the value captured in the slot.
 
 
-    :param object_type: Type of value that was captured. Can be &#39;Simple&#39; or &#39;List&#39;.
+    :param object_type: Type of value that was captured. Can be &#39;Simple&#39;,&#39;List&#39; or &#39;Composite&#39;.
     :type object_type: (optional) str
 
     .. note::
@@ -67,7 +67,7 @@ class SlotValue(object):
         # type: (Optional[str]) -> None
         """Object representing the value captured in the slot.
 
-        :param object_type: Type of value that was captured. Can be &#39;Simple&#39; or &#39;List&#39;.
+        :param object_type: Type of value that was captured. Can be &#39;Simple&#39;,&#39;List&#39; or &#39;Composite&#39;.
         :type object_type: (optional) str
         """
         self.__discriminator_value = None  # type: str

@@ -14,7 +14,7 @@
 #
 from __future__ import absolute_import
 
-from .metadata import Metadata
-from .launch_directive import LaunchDirective
-from .video_item import VideoItem
 from .video_app_interface import VideoAppInterface
+from .metadata import Metadata
+from .video_item import VideoItem
+from .launch_directive import LaunchDirective

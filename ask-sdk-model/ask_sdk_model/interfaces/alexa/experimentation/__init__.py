@@ -15,6 +15,6 @@
 from __future__ import absolute_import
 
 from .experiment_trigger_response import ExperimentTriggerResponse
-from .experiment_assignment import ExperimentAssignment
 from .treatment_id import TreatmentId
+from .experiment_assignment import ExperimentAssignment
 from .experimentation_state import ExperimentationState

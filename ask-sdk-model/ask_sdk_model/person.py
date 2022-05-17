@@ -27,10 +27,10 @@ if typing.TYPE_CHECKING:
 
 class Person(object):
     """
-    An object that describes the user (person) who is making the request.
+    An object that describes the user (person) who is interacting with Alexa.
 
 
-    :param person_id: A string that represents a unique identifier for the person who is making the request. The length of this identifier can vary, but is never more than 255 characters. It is generated when a recognized user makes a request to your skill.
+    :param person_id: A string that represents a unique identifier for the person who is interacting with Alexa. The length of this identifier can vary, but is never more than 255 characters. It is generated when a recognized user makes a request to your skill.
     :type person_id: (optional) str
     :param access_token: A token identifying the user in another system. This is only provided if the recognized user has successfully linked their skill account with their Alexa profile. The accessToken field will not appear if null.
     :type access_token: (optional) str
@@ -49,9 +49,9 @@ class Person(object):
 
     def __init__(self, person_id=None, access_token=None):
         # type: (Optional[str], Optional[str]) -> None
-        """An object that describes the user (person) who is making the request.
+        """An object that describes the user (person) who is interacting with Alexa.
 
-        :param person_id: A string that represents a unique identifier for the person who is making the request. The length of this identifier can vary, but is never more than 255 characters. It is generated when a recognized user makes a request to your skill.
+        :param person_id: A string that represents a unique identifier for the person who is interacting with Alexa. The length of this identifier can vary, but is never more than 255 characters. It is generated when a recognized user makes a request to your skill.
         :type person_id: (optional) str
         :param access_token: A token identifying the user in another system. This is only provided if the recognized user has successfully linked their skill account with their Alexa profile. The accessToken field will not appear if null.
         :type access_token: (optional) str

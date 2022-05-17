@@ -31,9 +31,11 @@ class AudioTrack(Enum):
 
 
 
-    Allowed enum values: [foreground]
+    Allowed enum values: [foreground, background, none]
     """
     foreground = "foreground"
+    background = "background"
+    none = "none"
 
     def to_dict(self):
         # type: () -> Dict[str, Any]
