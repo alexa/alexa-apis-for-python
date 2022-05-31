@@ -34,6 +34,8 @@ class SlotType(object):
 
     :param name: The name of the custom slot type.
     :type name: (optional) str
+    :param generated_by: Name of the generator used to generate this object.
+    :type generated_by: (optional) str
     :param values: List of expected values. Values outside the list are still returned.
     :type values: (optional) list[ask_smapi_model.v1.skill.interaction_model.type_value.TypeValue]
     :param value_supplier: 
@@ -42,23 +44,27 @@ class SlotType(object):
     """
     deserialized_types = {
         'name': 'str',
+        'generated_by': 'str',
         'values': 'list[ask_smapi_model.v1.skill.interaction_model.type_value.TypeValue]',
         'value_supplier': 'ask_smapi_model.v1.skill.interaction_model.value_supplier.ValueSupplier'
     }  # type: Dict
 
     attribute_map = {
         'name': 'name',
+        'generated_by': 'generatedBy',
         'values': 'values',
         'value_supplier': 'valueSupplier'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, name=None, values=None, value_supplier=None):
-        # type: (Optional[str], Optional[List[TypeValue_6d4bbead]], Optional[ValueSupplier_88bf9fe1]) -> None
+    def __init__(self, name=None, generated_by=None, values=None, value_supplier=None):
+        # type: (Optional[str], Optional[str], Optional[List[TypeValue_6d4bbead]], Optional[ValueSupplier_88bf9fe1]) -> None
         """Custom slot type to define a list of possible values for a slot. Used for items that are not covered by Amazon&#39;s built-in slot types.
 
         :param name: The name of the custom slot type.
         :type name: (optional) str
+        :param generated_by: Name of the generator used to generate this object.
+        :type generated_by: (optional) str
         :param values: List of expected values. Values outside the list are still returned.
         :type values: (optional) list[ask_smapi_model.v1.skill.interaction_model.type_value.TypeValue]
         :param value_supplier: 
@@ -67,6 +73,7 @@ class SlotType(object):
         self.__discriminator_value = None  # type: str
 
         self.name = name
+        self.generated_by = generated_by
         self.values = values
         self.value_supplier = value_supplier
 
