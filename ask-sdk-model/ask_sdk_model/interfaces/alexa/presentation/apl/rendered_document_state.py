@@ -37,23 +37,27 @@ class RenderedDocumentState(object):
     :type version: (optional) str
     :param components_visible_on_screen: List of the visible APL components currently shown on screen.
     :type components_visible_on_screen: (optional) list[ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen.ComponentVisibleOnScreen]
+    :param data_sources: List of registered data sources&#39; associated metadata
+    :type data_sources: (optional) list[object]
 
     """
     deserialized_types = {
         'token': 'str',
         'version': 'str',
-        'components_visible_on_screen': 'list[ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen.ComponentVisibleOnScreen]'
+        'components_visible_on_screen': 'list[ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen.ComponentVisibleOnScreen]',
+        'data_sources': 'list[object]'
     }  # type: Dict
 
     attribute_map = {
         'token': 'token',
         'version': 'version',
-        'components_visible_on_screen': 'componentsVisibleOnScreen'
+        'components_visible_on_screen': 'componentsVisibleOnScreen',
+        'data_sources': 'dataSources'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, token=None, version=None, components_visible_on_screen=None):
-        # type: (Optional[str], Optional[str], Optional[List[ComponentVisibleOnScreen_c94bf507]]) -> None
+    def __init__(self, token=None, version=None, components_visible_on_screen=None, data_sources=None):
+        # type: (Optional[str], Optional[str], Optional[List[ComponentVisibleOnScreen_c94bf507]], Optional[List[object]]) -> None
         """Provides context for any APL content shown on screen.
 
         :param token: The token specified in the RenderDocument directive which rendered the content shown on screen.
@@ -62,12 +66,15 @@ class RenderedDocumentState(object):
         :type version: (optional) str
         :param components_visible_on_screen: List of the visible APL components currently shown on screen.
         :type components_visible_on_screen: (optional) list[ask_sdk_model.interfaces.alexa.presentation.apl.component_visible_on_screen.ComponentVisibleOnScreen]
+        :param data_sources: List of registered data sources&#39; associated metadata
+        :type data_sources: (optional) list[object]
         """
         self.__discriminator_value = None  # type: str
 
         self.token = token
         self.version = version
         self.components_visible_on_screen = components_visible_on_screen
+        self.data_sources = data_sources
 
     def to_dict(self):
         # type: () -> Dict[str, object]

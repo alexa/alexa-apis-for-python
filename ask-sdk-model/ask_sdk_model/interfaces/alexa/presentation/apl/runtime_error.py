@@ -35,6 +35,8 @@ class RuntimeError(object):
     :type object_type: (optional) str
     :param message: A human-readable description of the error.
     :type message: (optional) str
+    :param token: The token as specified in the presentation&#39;s RenderDocument directive.
+    :type token: (optional) str
 
     .. note::
 
@@ -46,12 +48,14 @@ class RuntimeError(object):
     """
     deserialized_types = {
         'object_type': 'str',
-        'message': 'str'
+        'message': 'str',
+        'token': 'str'
     }  # type: Dict
 
     attribute_map = {
         'object_type': 'type',
-        'message': 'message'
+        'message': 'message',
+        'token': 'token'
     }  # type: Dict
     supports_multiple_types = False
 
@@ -64,19 +68,22 @@ class RuntimeError(object):
     __metaclass__ = ABCMeta
 
     @abstractmethod
-    def __init__(self, object_type=None, message=None):
-        # type: (Optional[str], Optional[str]) -> None
+    def __init__(self, object_type=None, message=None, token=None):
+        # type: (Optional[str], Optional[str], Optional[str]) -> None
         """A description of an error in APL functionality.
 
         :param object_type: Defines the error type and dictates which properties must/can be included.
         :type object_type: (optional) str
         :param message: A human-readable description of the error.
         :type message: (optional) str
+        :param token: The token as specified in the presentation&#39;s RenderDocument directive.
+        :type token: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
         self.object_type = object_type
         self.message = message
+        self.token = token
 
     @classmethod
     def get_real_child_model(cls, data):

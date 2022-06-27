@@ -34,6 +34,8 @@ class ListRuntimeError(RuntimeError):
 
     :param message: A human-readable description of the error.
     :type message: (optional) str
+    :param token: The token as specified in the presentation&#39;s RenderDocument directive.
+    :type token: (optional) str
     :param reason: 
     :type reason: (optional) ask_sdk_model.interfaces.alexa.presentation.apl.list_runtime_error_reason.ListRuntimeErrorReason
     :param list_id: The identifier of the list in which the error occurred.
@@ -47,6 +49,7 @@ class ListRuntimeError(RuntimeError):
     deserialized_types = {
         'object_type': 'str',
         'message': 'str',
+        'token': 'str',
         'reason': 'ask_sdk_model.interfaces.alexa.presentation.apl.list_runtime_error_reason.ListRuntimeErrorReason',
         'list_id': 'str',
         'list_version': 'int',
@@ -56,6 +59,7 @@ class ListRuntimeError(RuntimeError):
     attribute_map = {
         'object_type': 'type',
         'message': 'message',
+        'token': 'token',
         'reason': 'reason',
         'list_id': 'listId',
         'list_version': 'listVersion',
@@ -63,12 +67,14 @@ class ListRuntimeError(RuntimeError):
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, message=None, reason=None, list_id=None, list_version=None, operation_index=None):
-        # type: (Optional[str], Optional[ListRuntimeErrorReason_ae1e3d53], Optional[str], Optional[int], Optional[int]) -> None
+    def __init__(self, message=None, token=None, reason=None, list_id=None, list_version=None, operation_index=None):
+        # type: (Optional[str], Optional[str], Optional[ListRuntimeErrorReason_ae1e3d53], Optional[str], Optional[int], Optional[int]) -> None
         """Reports an error with list functionality.
 
         :param message: A human-readable description of the error.
         :type message: (optional) str
+        :param token: The token as specified in the presentation&#39;s RenderDocument directive.
+        :type token: (optional) str
         :param reason: 
         :type reason: (optional) ask_sdk_model.interfaces.alexa.presentation.apl.list_runtime_error_reason.ListRuntimeErrorReason
         :param list_id: The identifier of the list in which the error occurred.
@@ -81,7 +87,7 @@ class ListRuntimeError(RuntimeError):
         self.__discriminator_value = "LIST_ERROR"  # type: str
 
         self.object_type = self.__discriminator_value
-        super(ListRuntimeError, self).__init__(object_type=self.__discriminator_value, message=message)
+        super(ListRuntimeError, self).__init__(object_type=self.__discriminator_value, message=message, token=token)
         self.reason = reason
         self.list_id = list_id
         self.list_version = list_version

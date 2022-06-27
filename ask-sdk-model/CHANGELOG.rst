@@ -448,3 +448,10 @@ This release contains the following changes :
 This release contains the following changes : 
 
 - Updating model definitions
+
+
+1.34.2
+^^^^^^
+
+This release contains the following changes :
+* Added dataSources property in APL RenderedDocumentState
