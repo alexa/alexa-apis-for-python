@@ -24,6 +24,7 @@ if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
     from ask_smapi_model.v1.skill.account_linking.account_linking_type import AccountLinkingType as AccountLinkingType_bb3d8e2
+    from ask_smapi_model.v1.skill.account_linking.voice_forward_account_linking_status import VoiceForwardAccountLinkingStatus as VoiceForwardAccountLinkingStatus_5cb337ee
     from ask_smapi_model.v1.skill.account_linking.access_token_scheme_type import AccessTokenSchemeType as AccessTokenSchemeType_e9bad6d7
     from ask_smapi_model.v1.skill.account_linking.account_linking_platform_authorization_url import AccountLinkingPlatformAuthorizationUrl as AccountLinkingPlatformAuthorizationUrl_2972ebae
 
@@ -59,6 +60,8 @@ class AccountLinkingRequestPayload(object):
     :type authorization_urls_by_platform: (optional) list[ask_smapi_model.v1.skill.account_linking.account_linking_platform_authorization_url.AccountLinkingPlatformAuthorizationUrl]
     :param skip_on_enablement: Set to true to let users enable the skill without starting the account linking flow. Set to false to require the normal account linking flow when users enable the skill.
     :type skip_on_enablement: (optional) bool
+    :param voice_forward_account_linking: 
+    :type voice_forward_account_linking: (optional) ask_smapi_model.v1.skill.account_linking.voice_forward_account_linking_status.VoiceForwardAccountLinkingStatus
 
     """
     deserialized_types = {
@@ -74,7 +77,8 @@ class AccountLinkingRequestPayload(object):
         'reciprocal_access_token_url': 'str',
         'redirect_urls': 'list[str]',
         'authorization_urls_by_platform': 'list[ask_smapi_model.v1.skill.account_linking.account_linking_platform_authorization_url.AccountLinkingPlatformAuthorizationUrl]',
-        'skip_on_enablement': 'bool'
+        'skip_on_enablement': 'bool',
+        'voice_forward_account_linking': 'ask_smapi_model.v1.skill.account_linking.voice_forward_account_linking_status.VoiceForwardAccountLinkingStatus'
     }  # type: Dict
 
     attribute_map = {
@@ -90,12 +94,13 @@ class AccountLinkingRequestPayload(object):
         'reciprocal_access_token_url': 'reciprocalAccessTokenUrl',
         'redirect_urls': 'redirectUrls',
         'authorization_urls_by_platform': 'authorizationUrlsByPlatform',
-        'skip_on_enablement': 'skipOnEnablement'
+        'skip_on_enablement': 'skipOnEnablement',
+        'voice_forward_account_linking': 'voiceForwardAccountLinking'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, object_type=None, authorization_url=None, domains=None, client_id=None, scopes=None, access_token_url=None, client_secret=None, access_token_scheme=None, default_token_expiration_in_seconds=None, reciprocal_access_token_url=None, redirect_urls=None, authorization_urls_by_platform=None, skip_on_enablement=None):
-        # type: (Optional[AccountLinkingType_bb3d8e2], Optional[str], Optional[List[object]], Optional[str], Optional[List[object]], Optional[str], Optional[str], Optional[AccessTokenSchemeType_e9bad6d7], Optional[int], Optional[str], Optional[List[object]], Optional[List[AccountLinkingPlatformAuthorizationUrl_2972ebae]], Optional[bool]) -> None
+    def __init__(self, object_type=None, authorization_url=None, domains=None, client_id=None, scopes=None, access_token_url=None, client_secret=None, access_token_scheme=None, default_token_expiration_in_seconds=None, reciprocal_access_token_url=None, redirect_urls=None, authorization_urls_by_platform=None, skip_on_enablement=None, voice_forward_account_linking=None):
+        # type: (Optional[AccountLinkingType_bb3d8e2], Optional[str], Optional[List[object]], Optional[str], Optional[List[object]], Optional[str], Optional[str], Optional[AccessTokenSchemeType_e9bad6d7], Optional[int], Optional[str], Optional[List[object]], Optional[List[AccountLinkingPlatformAuthorizationUrl_2972ebae]], Optional[bool], Optional[VoiceForwardAccountLinkingStatus_5cb337ee]) -> None
         """The payload for creating the account linking partner.
 
         :param object_type: 
@@ -124,6 +129,8 @@ class AccountLinkingRequestPayload(object):
         :type authorization_urls_by_platform: (optional) list[ask_smapi_model.v1.skill.account_linking.account_linking_platform_authorization_url.AccountLinkingPlatformAuthorizationUrl]
         :param skip_on_enablement: Set to true to let users enable the skill without starting the account linking flow. Set to false to require the normal account linking flow when users enable the skill.
         :type skip_on_enablement: (optional) bool
+        :param voice_forward_account_linking: 
+        :type voice_forward_account_linking: (optional) ask_smapi_model.v1.skill.account_linking.voice_forward_account_linking_status.VoiceForwardAccountLinkingStatus
         """
         self.__discriminator_value = None  # type: str
 
@@ -140,6 +147,7 @@ class AccountLinkingRequestPayload(object):
         self.redirect_urls = redirect_urls
         self.authorization_urls_by_platform = authorization_urls_by_platform
         self.skip_on_enablement = skip_on_enablement
+        self.voice_forward_account_linking = voice_forward_account_linking
 
     def to_dict(self):
         # type: () -> Dict[str, object]

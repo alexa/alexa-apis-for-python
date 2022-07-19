@@ -265,3 +265,15 @@ This release contains the following changes :
 ^^^^^^
 
 Updating model definitions
+
+
+1.14.7
+^^^^^^
+
+1.34.2
+
+This release contains the following changes : 
+
+- Update account linking api schema for VoiceForwardedAccount Linking
+- Adding enum for measurement system permission scope to manifest permission name
+- Adding support for nl-NL locale
