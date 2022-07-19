@@ -454,4 +454,5 @@ This release contains the following changes :
 ^^^^^^
 
 This release contains the following changes :
-* Added dataSources property in APL RenderedDocumentState
+
+- Added dataSources property in APL RenderedDocumentState
