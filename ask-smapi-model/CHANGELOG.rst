@@ -270,8 +270,6 @@ Updating model definitions
 1.14.7
 ^^^^^^
 
-1.34.2
-
 This release contains the following changes : 
 
 - Update account linking api schema for VoiceForwardedAccount Linking
