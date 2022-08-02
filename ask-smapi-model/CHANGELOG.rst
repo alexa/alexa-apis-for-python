@@ -270,8 +270,19 @@ Updating model definitions
 1.14.7
 ^^^^^^
 
+1.34.2
+
 This release contains the following changes : 
 
 - Update account linking api schema for VoiceForwardedAccount Linking
 - Adding enum for measurement system permission scope to manifest permission name
 - Adding support for nl-NL locale
+
+
+1.14.8
+^^^^^^
+
+This release contains the following changes :
+
+- Add AcousticallyRecognizedPhonemes under SpeechRecognition to IntentRequest
+- Adding enum for dash 3p endpoints read scope in manifest permission name 
