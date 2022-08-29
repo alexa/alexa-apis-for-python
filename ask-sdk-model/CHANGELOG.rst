@@ -454,5 +454,12 @@ This release contains the following changes :
 ^^^^^^
 
 This release contains the following changes :
+* Added dataSources property in APL RenderedDocumentState
 
-- Added dataSources property in APL RenderedDocumentState
+
+1.35.0
+~~~~~~
+
+This release contains the following changes :
+
+- Added SearchAndRefineSucceeded event for Alexa.Search
