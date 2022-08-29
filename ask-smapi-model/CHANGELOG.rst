@@ -270,6 +270,8 @@ Updating model definitions
 1.14.7
 ^^^^^^
 
+1.34.2
+
 This release contains the following changes : 
 
 - Update account linking api schema for VoiceForwardedAccount Linking
@@ -284,3 +286,13 @@ This release contains the following changes :
 
 - Add AcousticallyRecognizedPhonemes under SpeechRecognition to IntentRequest
 - Adding enum for dash 3p endpoints read scope in manifest permission name 
+
+
+1.15.0
+~~~~~~
+
+This release contains the following changes :
+
+- Added SearchAndRefineSucceeded event for Alexa.Search
+
+

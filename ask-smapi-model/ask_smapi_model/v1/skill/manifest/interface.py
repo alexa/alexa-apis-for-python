@@ -37,6 +37,8 @@ class Interface(object):
         This is an abstract class. Use the following mapping, to figure out
         the model class to be instantiated, that sets ``type`` variable.
 
+        | ALEXA_SEARCH: :py:class:`ask_smapi_model.v1.skill.manifest.alexa_search.AlexaSearch`,
+        |
         | ALEXA_PRESENTATION_APL: :py:class:`ask_smapi_model.v1.skill.manifest.alexa_presentation_apl_interface.AlexaPresentationAplInterface`,
         |
         | APP_LINKS: :py:class:`ask_smapi_model.v1.skill.manifest.app_link_interface.AppLinkInterface`,
@@ -66,6 +68,7 @@ class Interface(object):
     supports_multiple_types = False
 
     discriminator_value_class_map = {
+        'ALEXA_SEARCH': 'ask_smapi_model.v1.skill.manifest.alexa_search.AlexaSearch',
         'ALEXA_PRESENTATION_APL': 'ask_smapi_model.v1.skill.manifest.alexa_presentation_apl_interface.AlexaPresentationAplInterface',
         'APP_LINKS': 'ask_smapi_model.v1.skill.manifest.app_link_interface.AppLinkInterface',
         'ALEXA_PRESENTATION_HTML': 'ask_smapi_model.v1.skill.manifest.alexa_presentation_html_interface.AlexaPresentationHtmlInterface',

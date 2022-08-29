@@ -110,6 +110,7 @@ from .event_name_type import EventNameType
 from .audio_interface import AudioInterface
 from .smart_home_apis import SmartHomeApis
 from .alexa_for_business_interface_request_name import AlexaForBusinessInterfaceRequestName
+from .alexa_search import AlexaSearch
 from .custom_product_prompts import CustomProductPrompts
 from .app_link_v2_interface import AppLinkV2Interface
 from .alexa_for_business_apis import AlexaForBusinessApis
