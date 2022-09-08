@@ -296,3 +296,11 @@ This release contains the following changes :
 - Added SearchAndRefineSucceeded event for Alexa.Search
 
 
+
+
+1.15.1
+^^^^^^
+
+This release contains the following changes : 
+
+- Added Associates Field in ShoppingKit

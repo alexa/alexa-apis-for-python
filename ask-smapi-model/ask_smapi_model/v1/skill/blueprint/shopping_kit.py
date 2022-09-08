@@ -32,27 +32,34 @@ class ShoppingKit(object):
 
     :param is_shopping_actions_enabled: True if the skill uses Alexa Shopping Actions, false otherwise.
     :type is_shopping_actions_enabled: (optional) bool
+    :param is_amazon_associates_on_alexa_enabled: True if the skill uses Shopping Actions with Amazon Associates, false otherwise.
+    :type is_amazon_associates_on_alexa_enabled: (optional) bool
 
     """
     deserialized_types = {
-        'is_shopping_actions_enabled': 'bool'
+        'is_shopping_actions_enabled': 'bool',
+        'is_amazon_associates_on_alexa_enabled': 'bool'
     }  # type: Dict
 
     attribute_map = {
-        'is_shopping_actions_enabled': 'isShoppingActionsEnabled'
+        'is_shopping_actions_enabled': 'isShoppingActionsEnabled',
+        'is_amazon_associates_on_alexa_enabled': 'isAmazonAssociatesOnAlexaEnabled'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, is_shopping_actions_enabled=None):
-        # type: (Optional[bool]) -> None
+    def __init__(self, is_shopping_actions_enabled=None, is_amazon_associates_on_alexa_enabled=None):
+        # type: (Optional[bool], Optional[bool]) -> None
         """Defines the structure for Shopping Kit related information in the skill manifest.
 
         :param is_shopping_actions_enabled: True if the skill uses Alexa Shopping Actions, false otherwise.
         :type is_shopping_actions_enabled: (optional) bool
+        :param is_amazon_associates_on_alexa_enabled: True if the skill uses Shopping Actions with Amazon Associates, false otherwise.
+        :type is_amazon_associates_on_alexa_enabled: (optional) bool
         """
         self.__discriminator_value = None  # type: str
 
         self.is_shopping_actions_enabled = is_shopping_actions_enabled
+        self.is_amazon_associates_on_alexa_enabled = is_amazon_associates_on_alexa_enabled
 
     def to_dict(self):
         # type: () -> Dict[str, object]
