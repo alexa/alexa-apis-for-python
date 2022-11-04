@@ -27,15 +27,16 @@ if typing.TYPE_CHECKING:
 
 class HostedSkillRuntime(Enum):
     """
-    Hosted skill lambda runtime; Node.js 12.x is deprecated by Hosted Skill service as of September 28, 2022.
+    Hosted skill lambda runtime; Node.js 12.x is deprecated by Hosted Skill service as of October 24, 2022.
 
 
 
-    Allowed enum values: [NODE_10_X, PYTHON_3_7, NODE_12_X]
+    Allowed enum values: [NODE_10_X, PYTHON_3_7, NODE_12_X, NODE_16_X]
     """
     NODE_10_X = "NODE_10_X"
     PYTHON_3_7 = "PYTHON_3_7"
     NODE_12_X = "NODE_12_X"
+    NODE_16_X = "NODE_16_X"
 
     def to_dict(self):
         # type: () -> Dict[str, Any]

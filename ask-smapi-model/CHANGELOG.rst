@@ -304,3 +304,13 @@ This release contains the following changes :
 This release contains the following changes : 
 
 - Added Associates Field in ShoppingKit
+
+
+
+
+1.16.0
+~~~~~~
+
+This release contains the following changes :
+
+- Adding NODE_16_X as publicly accepted hosted skill runtime
