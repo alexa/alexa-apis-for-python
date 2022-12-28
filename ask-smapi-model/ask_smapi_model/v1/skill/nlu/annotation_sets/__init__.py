@@ -15,12 +15,12 @@
 from __future__ import absolute_import
 
 from .update_nlu_annotation_set_annotations_request import UpdateNLUAnnotationSetAnnotationsRequest
-from .list_nlu_annotation_sets_response import ListNLUAnnotationSetsResponse
 from .create_nlu_annotation_set_response import CreateNLUAnnotationSetResponse
-from .pagination_context import PaginationContext
-from .get_nlu_annotation_set_properties_response import GetNLUAnnotationSetPropertiesResponse
 from .create_nlu_annotation_set_request import CreateNLUAnnotationSetRequest
-from .annotation_set_entity import AnnotationSetEntity
-from .links import Links
+from .get_nlu_annotation_set_properties_response import GetNLUAnnotationSetPropertiesResponse
 from .update_nlu_annotation_set_properties_request import UpdateNLUAnnotationSetPropertiesRequest
+from .links import Links
+from .annotation_set_entity import AnnotationSetEntity
 from .annotation_set import AnnotationSet
+from .list_nlu_annotation_sets_response import ListNLUAnnotationSetsResponse
+from .pagination_context import PaginationContext

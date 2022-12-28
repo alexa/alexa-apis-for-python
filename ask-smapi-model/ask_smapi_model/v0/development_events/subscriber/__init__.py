@@ -14,13 +14,13 @@
 #
 from __future__ import absolute_import
 
-from .endpoint import Endpoint
-from .update_subscriber_request import UpdateSubscriberRequest
-from .endpoint_aws_authorization import EndpointAwsAuthorization
-from .subscriber_status import SubscriberStatus
-from .subscriber_info import SubscriberInfo
-from .endpoint_authorization import EndpointAuthorization
+from .subscriber_summary import SubscriberSummary
 from .create_subscriber_request import CreateSubscriberRequest
 from .endpoint_authorization_type import EndpointAuthorizationType
-from .subscriber_summary import SubscriberSummary
+from .subscriber_info import SubscriberInfo
+from .update_subscriber_request import UpdateSubscriberRequest
+from .subscriber_status import SubscriberStatus
 from .list_subscribers_response import ListSubscribersResponse
+from .endpoint import Endpoint
+from .endpoint_aws_authorization import EndpointAwsAuthorization
+from .endpoint_authorization import EndpointAuthorization

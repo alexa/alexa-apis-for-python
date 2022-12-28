@@ -314,3 +314,9 @@ This release contains the following changes :
 This release contains the following changes :
 
 - Adding NODE_16_X as publicly accepted hosted skill runtime
+
+
+1.17.0
+~~~~~~
+
+General bug fixes and updates

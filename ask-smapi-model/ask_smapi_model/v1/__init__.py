@@ -14,9 +14,9 @@
 #
 from __future__ import absolute_import
 
-from .stage_type import StageType
-from .bad_request_error import BadRequestError
-from .error import Error
 from .link import Link
-from .stage_v2_type import StageV2Type
+from .stage_type import StageType
 from .links import Links
+from .error import Error
+from .bad_request_error import BadRequestError
+from .stage_v2_type import StageV2Type

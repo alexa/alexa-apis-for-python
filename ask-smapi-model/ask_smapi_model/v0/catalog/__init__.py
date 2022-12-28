@@ -14,9 +14,9 @@
 #
 from __future__ import absolute_import
 
-from .list_catalogs_response import ListCatalogsResponse
 from .catalog_summary import CatalogSummary
-from .catalog_type import CatalogType
-from .catalog_details import CatalogDetails
 from .catalog_usage import CatalogUsage
+from .catalog_details import CatalogDetails
 from .create_catalog_request import CreateCatalogRequest
+from .list_catalogs_response import ListCatalogsResponse
+from .catalog_type import CatalogType
