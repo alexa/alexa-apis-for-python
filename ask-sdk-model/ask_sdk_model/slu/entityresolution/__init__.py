@@ -14,9 +14,9 @@
 #
 from __future__ import absolute_import
 
-from .resolution import Resolution
-from .status import Status
 from .status_code import StatusCode
+from .status import Status
+from .resolutions import Resolutions
+from .resolution import Resolution
 from .value_wrapper import ValueWrapper
 from .value import Value
-from .resolutions import Resolutions

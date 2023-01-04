@@ -14,16 +14,16 @@
 #
 from __future__ import absolute_import
 
-from .delegate_directive import DelegateDirective
 from .delegation_period import DelegationPeriod
-from .input_request import InputRequest
-from .confirm_slot_directive import ConfirmSlotDirective
-from .elicit_slot_directive import ElicitSlotDirective
-from .updated_request import UpdatedRequest
-from .input import Input
-from .updated_input_request import UpdatedInputRequest
 from .delegation_period_until import DelegationPeriodUntil
 from .confirm_intent_directive import ConfirmIntentDirective
+from .delegate_directive import DelegateDirective
+from .dynamic_entities_directive import DynamicEntitiesDirective
+from .elicit_slot_directive import ElicitSlotDirective
 from .updated_intent_request import UpdatedIntentRequest
 from .delegate_request_directive import DelegateRequestDirective
-from .dynamic_entities_directive import DynamicEntitiesDirective
+from .input import Input
+from .updated_request import UpdatedRequest
+from .confirm_slot_directive import ConfirmSlotDirective
+from .updated_input_request import UpdatedInputRequest
+from .input_request import InputRequest

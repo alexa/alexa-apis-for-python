@@ -463,3 +463,9 @@ This release contains the following changes :
 This release contains the following changes :
 
 - Added SearchAndRefineSucceeded event for Alexa.Search
+
+
+1.36.0
+~~~~~~
+
+General bug fixes and updates

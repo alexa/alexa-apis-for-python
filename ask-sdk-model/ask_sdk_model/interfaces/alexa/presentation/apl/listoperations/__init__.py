@@ -14,9 +14,9 @@
 #
 from __future__ import absolute_import
 
-from .insert_multiple_items_operation import InsertMultipleItemsOperation
+from .operation import Operation
 from .set_item_operation import SetItemOperation
-from .insert_item_operation import InsertItemOperation
+from .insert_multiple_items_operation import InsertMultipleItemsOperation
 from .delete_item_operation import DeleteItemOperation
 from .delete_multiple_items_operation import DeleteMultipleItemsOperation
-from .operation import Operation
+from .insert_item_operation import InsertItemOperation

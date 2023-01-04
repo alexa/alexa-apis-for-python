@@ -14,5 +14,5 @@
 #
 from __future__ import absolute_import
 
-from .charge_amazon_pay_request import ChargeAmazonPayRequest
 from .setup_amazon_pay_request import SetupAmazonPayRequest
+from .charge_amazon_pay_request import ChargeAmazonPayRequest

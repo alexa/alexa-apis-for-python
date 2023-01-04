@@ -16,6 +16,6 @@ from __future__ import absolute_import
 
 from .error_cause import ErrorCause
 from .exception_encountered_request import ExceptionEncounteredRequest
-from .error import Error
 from .system_state import SystemState
+from .error import Error
 from .error_type import ErrorType

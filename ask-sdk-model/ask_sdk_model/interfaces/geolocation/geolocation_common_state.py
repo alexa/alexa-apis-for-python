@@ -18,7 +18,6 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
-from ask_sdk_model.interfaces.geolocation.geolocation_common_state import GeolocationCommonState
 
 
 if typing.TYPE_CHECKING:
@@ -28,12 +27,11 @@ if typing.TYPE_CHECKING:
     from ask_sdk_model.interfaces.geolocation.heading import Heading as Heading_bf10e3ca
     from ask_sdk_model.interfaces.geolocation.speed import Speed as Speed_22d2d794
     from ask_sdk_model.interfaces.geolocation.coordinate import Coordinate as Coordinate_c6912a2
-    from ask_sdk_model.interfaces.geolocation.location_services import LocationServices as LocationServices_c8dfc485
 
 
-class GeolocationState(GeolocationCommonState):
+class GeolocationCommonState(object):
     """
-    The geolocation object used in the Context of API
+    The common object to define the basic geolocation states
 
 
     :param timestamp: Specifies the time when the geolocation data was last collected on the device.
@@ -46,8 +44,6 @@ class GeolocationState(GeolocationCommonState):
     :type heading: (optional) ask_sdk_model.interfaces.geolocation.heading.Heading
     :param speed: 
     :type speed: (optional) ask_sdk_model.interfaces.geolocation.speed.Speed
-    :param location_services: 
-    :type location_services: (optional) ask_sdk_model.interfaces.geolocation.location_services.LocationServices
 
     """
     deserialized_types = {
@@ -55,8 +51,7 @@ class GeolocationState(GeolocationCommonState):
         'coordinate': 'ask_sdk_model.interfaces.geolocation.coordinate.Coordinate',
         'altitude': 'ask_sdk_model.interfaces.geolocation.altitude.Altitude',
         'heading': 'ask_sdk_model.interfaces.geolocation.heading.Heading',
-        'speed': 'ask_sdk_model.interfaces.geolocation.speed.Speed',
-        'location_services': 'ask_sdk_model.interfaces.geolocation.location_services.LocationServices'
+        'speed': 'ask_sdk_model.interfaces.geolocation.speed.Speed'
     }  # type: Dict
 
     attribute_map = {
@@ -64,14 +59,13 @@ class GeolocationState(GeolocationCommonState):
         'coordinate': 'coordinate',
         'altitude': 'altitude',
         'heading': 'heading',
-        'speed': 'speed',
-        'location_services': 'locationServices'
+        'speed': 'speed'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, timestamp=None, coordinate=None, altitude=None, heading=None, speed=None, location_services=None):
-        # type: (Optional[str], Optional[Coordinate_c6912a2], Optional[Altitude_328a6962], Optional[Heading_bf10e3ca], Optional[Speed_22d2d794], Optional[LocationServices_c8dfc485]) -> None
-        """The geolocation object used in the Context of API
+    def __init__(self, timestamp=None, coordinate=None, altitude=None, heading=None, speed=None):
+        # type: (Optional[str], Optional[Coordinate_c6912a2], Optional[Altitude_328a6962], Optional[Heading_bf10e3ca], Optional[Speed_22d2d794]) -> None
+        """The common object to define the basic geolocation states
 
         :param timestamp: Specifies the time when the geolocation data was last collected on the device.
         :type timestamp: (optional) str
@@ -83,13 +77,14 @@ class GeolocationState(GeolocationCommonState):
         :type heading: (optional) ask_sdk_model.interfaces.geolocation.heading.Heading
         :param speed: 
         :type speed: (optional) ask_sdk_model.interfaces.geolocation.speed.Speed
-        :param location_services: 
-        :type location_services: (optional) ask_sdk_model.interfaces.geolocation.location_services.LocationServices
         """
         self.__discriminator_value = None  # type: str
 
-        super(GeolocationState, self).__init__(timestamp=timestamp, coordinate=coordinate, altitude=altitude, heading=heading, speed=speed)
-        self.location_services = location_services
+        self.timestamp = timestamp
+        self.coordinate = coordinate
+        self.altitude = altitude
+        self.heading = heading
+        self.speed = speed
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -134,7 +129,7 @@ class GeolocationState(GeolocationCommonState):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, GeolocationState):
+        if not isinstance(other, GeolocationCommonState):
             return False
 
         return self.__dict__ == other.__dict__

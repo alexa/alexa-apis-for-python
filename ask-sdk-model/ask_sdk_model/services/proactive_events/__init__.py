@@ -14,10 +14,10 @@
 #
 from __future__ import absolute_import
 
-from .error import Error
-from .relevant_audience import RelevantAudience
 from .relevant_audience_type import RelevantAudienceType
+from .proactive_events_service_client import ProactiveEventsServiceClient
 from .create_proactive_event_request import CreateProactiveEventRequest
 from .skill_stage import SkillStage
-from .proactive_events_service_client import ProactiveEventsServiceClient
 from .event import Event
+from .error import Error
+from .relevant_audience import RelevantAudience

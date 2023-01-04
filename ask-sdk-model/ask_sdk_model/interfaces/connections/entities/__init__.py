@@ -14,6 +14,6 @@
 #
 from __future__ import absolute_import
 
-from .base_entity import BaseEntity
-from .postal_address import PostalAddress
 from .restaurant import Restaurant
+from .postal_address import PostalAddress
+from .base_entity import BaseEntity

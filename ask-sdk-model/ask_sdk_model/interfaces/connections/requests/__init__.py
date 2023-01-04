@@ -14,9 +14,9 @@
 #
 from __future__ import absolute_import
 
+from .base_request import BaseRequest
+from .schedule_taxi_reservation_request import ScheduleTaxiReservationRequest
+from .print_web_page_request import PrintWebPageRequest
 from .print_pdf_request import PrintPDFRequest
 from .schedule_food_establishment_reservation_request import ScheduleFoodEstablishmentReservationRequest
 from .print_image_request import PrintImageRequest
-from .schedule_taxi_reservation_request import ScheduleTaxiReservationRequest
-from .base_request import BaseRequest
-from .print_web_page_request import PrintWebPageRequest
