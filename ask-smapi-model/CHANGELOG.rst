@@ -320,3 +320,9 @@ This release contains the following changes :
 ~~~~~~
 
 General bug fixes and updates
+
+
+1.18.0
+~~~~~~
+
+General bug fixes and updates
