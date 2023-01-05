@@ -71,6 +71,8 @@ class Request(object):
         |
         | Alexa.Presentation.HTML.Message: :py:class:`ask_sdk_model.interfaces.alexa.presentation.html.message_request.MessageRequest`,
         |
+        | Alexa.DataStore.Error: :py:class:`ask_sdk_model.interfaces.alexa.datastore.data_store_error.DataStoreError`,
+        |
         | LaunchRequest: :py:class:`ask_sdk_model.launch_request.LaunchRequest`,
         |
         | Alexa.Authorization.Grant: :py:class:`ask_sdk_model.authorization.authorization_grant_request.AuthorizationGrantRequest`,
@@ -175,6 +177,7 @@ class Request(object):
         'CanFulfillIntentRequest': 'ask_sdk_model.canfulfill.can_fulfill_intent_request.CanFulfillIntentRequest',
         'CustomInterfaceController.Expired': 'ask_sdk_model.interfaces.custom_interface_controller.expired_request.ExpiredRequest',
         'Alexa.Presentation.HTML.Message': 'ask_sdk_model.interfaces.alexa.presentation.html.message_request.MessageRequest',
+        'Alexa.DataStore.Error': 'ask_sdk_model.interfaces.alexa.datastore.data_store_error.DataStoreError',
         'LaunchRequest': 'ask_sdk_model.launch_request.LaunchRequest',
         'Alexa.Authorization.Grant': 'ask_sdk_model.authorization.authorization_grant_request.AuthorizationGrantRequest',
         'Reminders.ReminderCreated': 'ask_sdk_model.services.reminder_management.reminder_created_event_request.ReminderCreatedEventRequest',

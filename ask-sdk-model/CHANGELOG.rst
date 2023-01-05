@@ -469,3 +469,9 @@ This release contains the following changes :
 ~~~~~~
 
 General bug fixes and updates
+
+
+1.37.0
+~~~~~~
+
+General bug fixes and updates

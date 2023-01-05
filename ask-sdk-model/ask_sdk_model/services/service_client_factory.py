@@ -18,6 +18,7 @@ import os
 import re
 import six
 import typing
+from .datastore import DatastoreServiceClient
 from .device_address import DeviceAddressServiceClient
 from .directive import DirectiveServiceClient
 from .endpoint_enumeration import EndpointEnumerationServiceClient
