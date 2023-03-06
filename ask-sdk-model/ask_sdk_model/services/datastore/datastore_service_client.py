@@ -35,6 +35,7 @@ if typing.TYPE_CHECKING:
     from ask_sdk_model.services.datastore.v1.commands_request_error import CommandsRequestError as CommandsRequestError_c6945312
     from ask_sdk_model.services.datastore.v1.commands_response import CommandsResponse as CommandsResponse_271f32fb
     from ask_sdk_model.services.datastore.v1.queued_result_response import QueuedResultResponse as QueuedResultResponse_806720cc
+    from ask_sdk_model.services.datastore.v1.cancel_commands_request_error import CancelCommandsRequestError as CancelCommandsRequestError_26f4d59f
     from ask_sdk_model.services.datastore.v1.commands_request import CommandsRequest as CommandsRequest_4046908d
     from ask_sdk_model.services.datastore.v1.queued_result_request_error import QueuedResultRequestError as QueuedResultRequestError_fc34ffb1
 
@@ -151,6 +152,87 @@ class DatastoreServiceClient(BaseServiceClient):
             return api_response
         return api_response.body
         
+
+    def cancel_commands_v1(self, authorization, queued_result_id, **kwargs):
+        # type: (str, str, **Any) -> Union[ApiResponse, object, CancelCommandsRequestError_26f4d59f]
+        """
+        Cancel pending DataStore commands.
+
+        :param authorization: (required) 
+        :type authorization: str
+        :param queued_result_id: (required) A unique identifier to query result for queued delivery for offline devices (DEVICE_UNAVAILABLE).
+        :type queued_result_id: str
+        :param full_response: Boolean value to check if response should contain headers and status code information.
+            This value had to be passed through keyword arguments, by default the parameter value is set to False. 
+        :type full_response: boolean
+        :rtype: Union[ApiResponse, object, CancelCommandsRequestError_26f4d59f]
+        """
+        operation_name = "cancel_commands_v1"
+        params = locals()
+        for key, val in six.iteritems(params['kwargs']):
+            params[key] = val
+        del params['kwargs']
+        # verify the required parameter 'authorization' is set
+        if ('authorization' not in params) or (params['authorization'] is None):
+            raise ValueError(
+                "Missing the required parameter `authorization` when calling `" + operation_name + "`")
+        # verify the required parameter 'queued_result_id' is set
+        if ('queued_result_id' not in params) or (params['queued_result_id'] is None):
+            raise ValueError(
+                "Missing the required parameter `queued_result_id` when calling `" + operation_name + "`")
+
+        resource_path = '/v1/datastore/queue/{queuedResultId}/cancel'
+        resource_path = resource_path.replace('{format}', 'json')
+
+        path_params = {}  # type: Dict
+        if 'queued_result_id' in params:
+            path_params['queuedResultId'] = params['queued_result_id']
+
+        query_params = []  # type: List
+
+        header_params = []  # type: List
+        if 'authorization' in params:
+            header_params.append(('Authorization', params['authorization']))
+
+        body_params = None
+        header_params.append(('Content-type', 'application/json'))
+        header_params.append(('User-Agent', self.user_agent))
+
+        # Response Type
+        full_response = False
+        if 'full_response' in params:
+            full_response = params['full_response']
+
+        # Authentication setting
+        access_token = self._lwa_service_client.get_access_token_for_scope(
+            "alexa::datastore")
+        authorization_value = "Bearer " + access_token
+        header_params.append(('Authorization', authorization_value))
+
+        error_definitions = []  # type: List
+        error_definitions.append(ServiceClientResponse(response_type=None, status_code=204, message="Success. No content."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.datastore.v1.cancel_commands_request_error.CancelCommandsRequestError", status_code=400, message="Request validation fails."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.datastore.v1.cancel_commands_request_error.CancelCommandsRequestError", status_code=401, message="Not Authorized."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.datastore.v1.cancel_commands_request_error.CancelCommandsRequestError", status_code=403, message="The skill is not allowed to call this API commands."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.datastore.v1.cancel_commands_request_error.CancelCommandsRequestError", status_code=404, message="Unable to find the pending request."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.datastore.v1.cancel_commands_request_error.CancelCommandsRequestError", status_code=429, message="The client has made more calls than the allowed limit."))
+        error_definitions.append(ServiceClientResponse(response_type="ask_sdk_model.services.datastore.v1.cancel_commands_request_error.CancelCommandsRequestError", status_code=0, message="Unexpected error."))
+
+        api_response = self.invoke(
+            method="POST",
+            endpoint=self._api_endpoint,
+            path=resource_path,
+            path_params=path_params,
+            query_params=query_params,
+            header_params=header_params,
+            body=body_params,
+            response_definitions=error_definitions,
+            response_type=None)
+
+        if full_response:
+            return api_response
+        
+        return None
 
     def queued_result_v1(self, authorization, queued_result_id, **kwargs):
         # type: (str, str, **Any) -> Union[ApiResponse, object, QueuedResultResponse_806720cc, QueuedResultRequestError_fc34ffb1]

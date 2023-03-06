@@ -25,21 +25,21 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class DispatchResultType(Enum):
+class CancelCommandsRequestErrorType(Enum):
     """
-    Defines success or a type of error from dispatch. * &#x60;SUCCESS&#x60; - device has received the payload. * &#x60;INVALID_DEVICE&#x60; - device is not capable of processing the payload. * &#x60;DEVICE_UNAVAILABLE&#x60; - dispatch failed because device is offline. * &#x60;DEVICE_PERMANENTLY_UNAVAILABLE&#x60; - target no longer available to receive data. This is reported for a failed delivery attempt related to an unregistered device. * &#x60;CONCURRENCY_ERROR&#x60; - there are concurrent attempts to update to the same device. * &#x60;INTERNAL_ERROR&#x60;- dispatch failed because of unknown error - see message. * &#x60;PENDING_REQUEST_COUNT_EXCEEDS_LIMIT&#x60; - the count of pending requests exceeds the limit. 
+    Error code of the response. * &#x60;COMMANDS_DELIVERED&#x60; - The pending commands have been delivered. * &#x60;CONCURRENCY_ERROR&#x60; - There are concurrent attempts to deliver the pending commands. * &#x60;NOT_FOUND&#x60; - Unable to find pending request for the given queuedResultId. * &#x60;INVALID_ACCESS_TOKEN&#x60; - Access token is expire or invalid. * &#x60;DATASTORE_SUPPORT_REQUIRED&#x60; - Client has not opted into DataStore interface in skill manifest. * &#x60;TOO_MANY_REQUESTS&#x60; - The request has been throttled because client has exceed maximum allowed request rate. * &#x60;DATASTORE_UNAVAILABLE&#x60; - Internal service error.
 
 
 
-    Allowed enum values: [SUCCESS, INVALID_DEVICE, DEVICE_UNAVAILABLE, DEVICE_PERMANENTLY_UNAVAILABLE, CONCURRENCY_ERROR, INTERNAL_ERROR, PENDING_REQUEST_COUNT_EXCEEDS_LIMIT]
+    Allowed enum values: [COMMANDS_DELIVERED, CONCURRENCY_ERROR, NOT_FOUND, INVALID_ACCESS_TOKEN, DATASTORE_SUPPORT_REQUIRED, TOO_MANY_REQUESTS, DATASTORE_UNAVAILABLE]
     """
-    SUCCESS = "SUCCESS"
-    INVALID_DEVICE = "INVALID_DEVICE"
-    DEVICE_UNAVAILABLE = "DEVICE_UNAVAILABLE"
-    DEVICE_PERMANENTLY_UNAVAILABLE = "DEVICE_PERMANENTLY_UNAVAILABLE"
+    COMMANDS_DELIVERED = "COMMANDS_DELIVERED"
     CONCURRENCY_ERROR = "CONCURRENCY_ERROR"
-    INTERNAL_ERROR = "INTERNAL_ERROR"
-    PENDING_REQUEST_COUNT_EXCEEDS_LIMIT = "PENDING_REQUEST_COUNT_EXCEEDS_LIMIT"
+    NOT_FOUND = "NOT_FOUND"
+    INVALID_ACCESS_TOKEN = "INVALID_ACCESS_TOKEN"
+    DATASTORE_SUPPORT_REQUIRED = "DATASTORE_SUPPORT_REQUIRED"
+    TOO_MANY_REQUESTS = "TOO_MANY_REQUESTS"
+    DATASTORE_UNAVAILABLE = "DATASTORE_UNAVAILABLE"
 
     def to_dict(self):
         # type: () -> Dict[str, Any]
@@ -60,7 +60,7 @@ class DispatchResultType(Enum):
     def __eq__(self, other):
         # type: (Any) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, DispatchResultType):
+        if not isinstance(other, CancelCommandsRequestErrorType):
             return False
 
         return self.__dict__ == other.__dict__

@@ -19,12 +19,14 @@ from .commands_request_error import CommandsRequestError
 from .commands_response import CommandsResponse
 from .remove_object_command import RemoveObjectCommand
 from .commands_request_error_type import CommandsRequestErrorType
+from .cancel_commands_request_error_type import CancelCommandsRequestErrorType
 from .remove_namespace_command import RemoveNamespaceCommand
 from .target import Target
 from .commands_dispatch_result import CommandsDispatchResult
 from .put_object_command import PutObjectCommand
 from .command import Command
 from .response_pagination_context import ResponsePaginationContext
+from .cancel_commands_request_error import CancelCommandsRequestError
 from .queued_result_response import QueuedResultResponse
 from .commands_request import CommandsRequest
 from .user import User
