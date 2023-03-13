@@ -73,13 +73,11 @@ class DatastoreServiceClient(BaseServiceClient):
         else:
             self._lwa_service_client = lwa_client
 
-    def commands_v1(self, authorization, commands_request, **kwargs):
-        # type: (str, CommandsRequest_4046908d, **Any) -> Union[ApiResponse, object, CommandsResponse_271f32fb, CommandsRequestError_c6945312]
+    def commands_v1(self, commands_request, **kwargs):
+        # type: (CommandsRequest_4046908d, **Any) -> Union[ApiResponse, object, CommandsResponse_271f32fb, CommandsRequestError_c6945312]
         """
         Send DataStore commands to Alexa device.
 
-        :param authorization: (required) 
-        :type authorization: str
         :param commands_request: (required) 
         :type commands_request: ask_sdk_model.services.datastore.v1.commands_request.CommandsRequest
         :param full_response: Boolean value to check if response should contain headers and status code information.
@@ -92,10 +90,6 @@ class DatastoreServiceClient(BaseServiceClient):
         for key, val in six.iteritems(params['kwargs']):
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'authorization' is set
-        if ('authorization' not in params) or (params['authorization'] is None):
-            raise ValueError(
-                "Missing the required parameter `authorization` when calling `" + operation_name + "`")
         # verify the required parameter 'commands_request' is set
         if ('commands_request' not in params) or (params['commands_request'] is None):
             raise ValueError(
@@ -109,8 +103,6 @@ class DatastoreServiceClient(BaseServiceClient):
         query_params = []  # type: List
 
         header_params = []  # type: List
-        if 'authorization' in params:
-            header_params.append(('Authorization', params['authorization']))
 
         body_params = None
         if 'commands_request' in params:
@@ -153,13 +145,11 @@ class DatastoreServiceClient(BaseServiceClient):
         return api_response.body
         
 
-    def cancel_commands_v1(self, authorization, queued_result_id, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, object, CancelCommandsRequestError_26f4d59f]
+    def cancel_commands_v1(self, queued_result_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, object, CancelCommandsRequestError_26f4d59f]
         """
         Cancel pending DataStore commands.
 
-        :param authorization: (required) 
-        :type authorization: str
         :param queued_result_id: (required) A unique identifier to query result for queued delivery for offline devices (DEVICE_UNAVAILABLE).
         :type queued_result_id: str
         :param full_response: Boolean value to check if response should contain headers and status code information.
@@ -172,10 +162,6 @@ class DatastoreServiceClient(BaseServiceClient):
         for key, val in six.iteritems(params['kwargs']):
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'authorization' is set
-        if ('authorization' not in params) or (params['authorization'] is None):
-            raise ValueError(
-                "Missing the required parameter `authorization` when calling `" + operation_name + "`")
         # verify the required parameter 'queued_result_id' is set
         if ('queued_result_id' not in params) or (params['queued_result_id'] is None):
             raise ValueError(
@@ -191,8 +177,6 @@ class DatastoreServiceClient(BaseServiceClient):
         query_params = []  # type: List
 
         header_params = []  # type: List
-        if 'authorization' in params:
-            header_params.append(('Authorization', params['authorization']))
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
@@ -234,13 +218,11 @@ class DatastoreServiceClient(BaseServiceClient):
         
         return None
 
-    def queued_result_v1(self, authorization, queued_result_id, **kwargs):
-        # type: (str, str, **Any) -> Union[ApiResponse, object, QueuedResultResponse_806720cc, QueuedResultRequestError_fc34ffb1]
+    def queued_result_v1(self, queued_result_id, **kwargs):
+        # type: (str, **Any) -> Union[ApiResponse, object, QueuedResultResponse_806720cc, QueuedResultRequestError_fc34ffb1]
         """
         Query statuses of deliveries to offline devices returned by commands API.
 
-        :param authorization: (required) 
-        :type authorization: str
         :param queued_result_id: (required) A unique identifier to query result for queued delivery for offline devices (DEVICE_UNAVAILABLE).
         :type queued_result_id: str
         :param max_results: Maximum number of CommandsDispatchResult items to return.
@@ -257,10 +239,6 @@ class DatastoreServiceClient(BaseServiceClient):
         for key, val in six.iteritems(params['kwargs']):
             params[key] = val
         del params['kwargs']
-        # verify the required parameter 'authorization' is set
-        if ('authorization' not in params) or (params['authorization'] is None):
-            raise ValueError(
-                "Missing the required parameter `authorization` when calling `" + operation_name + "`")
         # verify the required parameter 'queued_result_id' is set
         if ('queued_result_id' not in params) or (params['queued_result_id'] is None):
             raise ValueError(
@@ -280,8 +258,6 @@ class DatastoreServiceClient(BaseServiceClient):
             query_params.append(('nextToken', params['next_token']))
 
         header_params = []  # type: List
-        if 'authorization' in params:
-            header_params.append(('Authorization', params['authorization']))
 
         body_params = None
         header_params.append(('Content-type', 'application/json'))
