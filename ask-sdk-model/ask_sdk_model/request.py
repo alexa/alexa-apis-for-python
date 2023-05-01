@@ -131,6 +131,8 @@ class Request(object):
         |
         | Alexa.DataStore.PackageManager.UsagesRemoved: :py:class:`ask_sdk_model.interfaces.alexa.datastore.packagemanager.usages_removed.UsagesRemoved`,
         |
+        | AlexaSkillEvent.NotificationSubscriptionChanged: :py:class:`ask_sdk_model.events.skillevents.notification_subscription_changed_request.NotificationSubscriptionChangedRequest`,
+        |
         | Dialog.API.Invoked: :py:class:`ask_sdk_model.interfaces.conversations.api_invocation_request.APIInvocationRequest`,
         |
         | Reminders.ReminderStarted: :py:class:`ask_sdk_model.services.reminder_management.reminder_started_event_request.ReminderStartedEventRequest`,
@@ -215,6 +217,7 @@ class Request(object):
         'Dialog.InputRequest': 'ask_sdk_model.dialog.input_request.InputRequest',
         'IntentRequest': 'ask_sdk_model.intent_request.IntentRequest',
         'Alexa.DataStore.PackageManager.UsagesRemoved': 'ask_sdk_model.interfaces.alexa.datastore.packagemanager.usages_removed.UsagesRemoved',
+        'AlexaSkillEvent.NotificationSubscriptionChanged': 'ask_sdk_model.events.skillevents.notification_subscription_changed_request.NotificationSubscriptionChangedRequest',
         'Dialog.API.Invoked': 'ask_sdk_model.interfaces.conversations.api_invocation_request.APIInvocationRequest',
         'Reminders.ReminderStarted': 'ask_sdk_model.services.reminder_management.reminder_started_event_request.ReminderStartedEventRequest',
         'AudioPlayer.PlaybackStopped': 'ask_sdk_model.interfaces.audioplayer.playback_stopped_request.PlaybackStoppedRequest',
