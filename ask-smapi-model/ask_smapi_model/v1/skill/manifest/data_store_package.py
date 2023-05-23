@@ -25,34 +25,34 @@ if typing.TYPE_CHECKING:
     from datetime import datetime
 
 
-class PaginationContext(object):
+class DataStorePackage(object):
     """
-    This holds all data needed to control pagination from the user. 
+    Represents a DataStore package authored by skill developer. This contains a reference to the DataStore package and doesn&#39;t contain the entire package itself.
 
 
-    :param next_token: The page token, this should be passed as a &#x60;nextToken&#x60; query parameter to the API to retrieve more items. If this field is not present the end of all of the items was reached. If a &#x60;maxResults&#x60; query parameter was specified then no more than &#x60;maxResults&#x60; items are returned. 
-    :type next_token: (optional) str
+    :param id: The identifier for the DataStore package.
+    :type id: (optional) str
 
     """
     deserialized_types = {
-        'next_token': 'str'
+        'id': 'str'
     }  # type: Dict
 
     attribute_map = {
-        'next_token': 'nextToken'
+        'id': 'id'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, next_token=None):
+    def __init__(self, id=None):
         # type: (Optional[str]) -> None
-        """This holds all data needed to control pagination from the user. 
+        """Represents a DataStore package authored by skill developer. This contains a reference to the DataStore package and doesn&#39;t contain the entire package itself.
 
-        :param next_token: The page token, this should be passed as a &#x60;nextToken&#x60; query parameter to the API to retrieve more items. If this field is not present the end of all of the items was reached. If a &#x60;maxResults&#x60; query parameter was specified then no more than &#x60;maxResults&#x60; items are returned. 
-        :type next_token: (optional) str
+        :param id: The identifier for the DataStore package.
+        :type id: (optional) str
         """
         self.__discriminator_value = None  # type: str
 
-        self.next_token = next_token
+        self.id = id
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -97,7 +97,7 @@ class PaginationContext(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, PaginationContext):
+        if not isinstance(other, DataStorePackage):
             return False
 
         return self.__dict__ == other.__dict__

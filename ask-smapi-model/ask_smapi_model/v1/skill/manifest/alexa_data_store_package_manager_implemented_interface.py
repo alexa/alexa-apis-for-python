@@ -23,45 +23,35 @@ from enum import Enum
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
-    from ask_smapi_model.v1.skill.asr.annotation_sets.annotation_with_audio_asset import AnnotationWithAudioAsset as AnnotationWithAudioAsset_9d046a40
-    from ask_smapi_model.v1.skill.asr.annotation_sets.pagination_context import PaginationContext as PaginationContext_8c68d512
+    from ask_smapi_model.v1.skill.manifest.data_store_package import DataStorePackage as DataStorePackage_6d063591
 
 
-class GetAsrAnnotationSetAnnotationsResponse(object):
+class AlexaDataStorePackageManagerImplementedInterface(object):
     """
-    This is the payload schema for annotation set contents. Note that when uploadId and filePathInUpload is present, and the payload content type is &#39;application/json&#39;, audioAsset is included in the returned annotation set content payload. For &#39;text/csv&#39; annotation set content type, audioAssetDownloadUrl and audioAssetDownloadUrlExpiryTime are included in the csv headers for representing the audio download url and the expiry time of the presigned audio download. 
 
-
-    :param annotations: 
-    :type annotations: (optional) list[ask_smapi_model.v1.skill.asr.annotation_sets.annotation_with_audio_asset.AnnotationWithAudioAsset]
-    :param pagination_context: 
-    :type pagination_context: (optional) ask_smapi_model.v1.skill.asr.annotation_sets.pagination_context.PaginationContext
+    :param packages: The list of data store packages that are authored by skill developer.
+    :type packages: (optional) list[ask_smapi_model.v1.skill.manifest.data_store_package.DataStorePackage]
 
     """
     deserialized_types = {
-        'annotations': 'list[ask_smapi_model.v1.skill.asr.annotation_sets.annotation_with_audio_asset.AnnotationWithAudioAsset]',
-        'pagination_context': 'ask_smapi_model.v1.skill.asr.annotation_sets.pagination_context.PaginationContext'
+        'packages': 'list[ask_smapi_model.v1.skill.manifest.data_store_package.DataStorePackage]'
     }  # type: Dict
 
     attribute_map = {
-        'annotations': 'annotations',
-        'pagination_context': 'paginationContext'
+        'packages': 'packages'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, annotations=None, pagination_context=None):
-        # type: (Optional[List[AnnotationWithAudioAsset_9d046a40]], Optional[PaginationContext_8c68d512]) -> None
-        """This is the payload schema for annotation set contents. Note that when uploadId and filePathInUpload is present, and the payload content type is &#39;application/json&#39;, audioAsset is included in the returned annotation set content payload. For &#39;text/csv&#39; annotation set content type, audioAssetDownloadUrl and audioAssetDownloadUrlExpiryTime are included in the csv headers for representing the audio download url and the expiry time of the presigned audio download. 
+    def __init__(self, packages=None):
+        # type: (Optional[List[DataStorePackage_6d063591]]) -> None
+        """
 
-        :param annotations: 
-        :type annotations: (optional) list[ask_smapi_model.v1.skill.asr.annotation_sets.annotation_with_audio_asset.AnnotationWithAudioAsset]
-        :param pagination_context: 
-        :type pagination_context: (optional) ask_smapi_model.v1.skill.asr.annotation_sets.pagination_context.PaginationContext
+        :param packages: The list of data store packages that are authored by skill developer.
+        :type packages: (optional) list[ask_smapi_model.v1.skill.manifest.data_store_package.DataStorePackage]
         """
         self.__discriminator_value = None  # type: str
 
-        self.annotations = annotations
-        self.pagination_context = pagination_context
+        self.packages = packages
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -106,7 +96,7 @@ class GetAsrAnnotationSetAnnotationsResponse(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, GetAsrAnnotationSetAnnotationsResponse):
+        if not isinstance(other, AlexaDataStorePackageManagerImplementedInterface):
             return False
 
         return self.__dict__ == other.__dict__

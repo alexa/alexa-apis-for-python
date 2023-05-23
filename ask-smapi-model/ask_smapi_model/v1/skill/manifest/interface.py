@@ -51,6 +51,8 @@ class Interface(object):
         |
         | APP_LINKS_V2: :py:class:`ask_smapi_model.v1.skill.manifest.app_link_v2_interface.AppLinkV2Interface`,
         |
+        | ALEXA_DATASTORE_PACKAGEMANAGER: :py:class:`ask_smapi_model.v1.skill.manifest.alexa_data_store_package_manager_interface.AlexaDataStorePackageManagerInterface`,
+        |
         | RENDER_TEMPLATE: :py:class:`ask_smapi_model.v1.skill.manifest.display_interface.DisplayInterface`,
         |
         | GADGET_CONTROLLER: :py:class:`ask_smapi_model.v1.skill.manifest.gadget_controller_interface.GadgetControllerInterface`,
@@ -75,6 +77,7 @@ class Interface(object):
         'AUDIO_PLAYER': 'ask_smapi_model.v1.skill.manifest.audio_interface.AudioInterface',
         'GAME_ENGINE': 'ask_smapi_model.v1.skill.manifest.game_engine_interface.GameEngineInterface',
         'APP_LINKS_V2': 'ask_smapi_model.v1.skill.manifest.app_link_v2_interface.AppLinkV2Interface',
+        'ALEXA_DATASTORE_PACKAGEMANAGER': 'ask_smapi_model.v1.skill.manifest.alexa_data_store_package_manager_interface.AlexaDataStorePackageManagerInterface',
         'RENDER_TEMPLATE': 'ask_smapi_model.v1.skill.manifest.display_interface.DisplayInterface',
         'GADGET_CONTROLLER': 'ask_smapi_model.v1.skill.manifest.gadget_controller_interface.GadgetControllerInterface',
         'VIDEO_APP': 'ask_smapi_model.v1.skill.manifest.video_app_interface.VideoAppInterface'

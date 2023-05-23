@@ -29,7 +29,7 @@ class SuppressedInterface(Enum):
     """
 
 
-    Allowed enum values: [AudioPlayer, PlaybackController, Display, VideoPlayer, GameEngine, GadgetController, CanHandleIntentRequest, CanFulfillIntentRequest, AlexaPresentationApl, AlexaPresentationHtml, AlexaDataStore, AlexaDataStorePackageManager, PhotoCaptureController, VideoCaptureController, UploadController, CustomInterface, AlexaAugmentationEffectsController]
+    Allowed enum values: [AudioPlayer, PlaybackController, Display, VideoPlayer, GameEngine, GadgetController, CanHandleIntentRequest, CanFulfillIntentRequest, AlexaPresentationApl, AlexaPresentationHtml, AlexaDataStore, PhotoCaptureController, VideoCaptureController, UploadController, CustomInterface, AlexaAugmentationEffectsController]
     """
     AudioPlayer = "AudioPlayer"
     PlaybackController = "PlaybackController"
@@ -42,7 +42,6 @@ class SuppressedInterface(Enum):
     AlexaPresentationApl = "AlexaPresentationApl"
     AlexaPresentationHtml = "AlexaPresentationHtml"
     AlexaDataStore = "AlexaDataStore"
-    AlexaDataStorePackageManager = "AlexaDataStorePackageManager"
     PhotoCaptureController = "PhotoCaptureController"
     VideoCaptureController = "VideoCaptureController"
     UploadController = "UploadController"

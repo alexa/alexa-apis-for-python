@@ -18,41 +18,47 @@ import re  # noqa: F401
 import six
 import typing
 from enum import Enum
+from ask_smapi_model.v1.skill.manifest.interface import Interface
 
 
 if typing.TYPE_CHECKING:
     from typing import Dict, List, Optional, Union, Any
     from datetime import datetime
+    from ask_smapi_model.v1.skill.manifest.data_store_package import DataStorePackage as DataStorePackage_6d063591
 
 
-class PaginationContext(object):
+class AlexaDataStorePackageManagerInterface(Interface):
     """
-    This holds all data needed to control pagination from the user. 
+    Skill use this interface to support functionality related to data store packages.
 
 
-    :param next_token: The page token, this should be passed as a &#x60;nextToken&#x60; query parameter to the API to retrieve more items. If this field is not present the end of all of the items was reached. If a &#x60;maxResults&#x60; query parameter was specified then no more than &#x60;maxResults&#x60; items are returned. 
-    :type next_token: (optional) str
+    :param packages: List of DataStore packages that the developer authored.
+    :type packages: (optional) list[ask_smapi_model.v1.skill.manifest.data_store_package.DataStorePackage]
 
     """
     deserialized_types = {
-        'next_token': 'str'
+        'object_type': 'str',
+        'packages': 'list[ask_smapi_model.v1.skill.manifest.data_store_package.DataStorePackage]'
     }  # type: Dict
 
     attribute_map = {
-        'next_token': 'nextToken'
+        'object_type': 'type',
+        'packages': 'packages'
     }  # type: Dict
     supports_multiple_types = False
 
-    def __init__(self, next_token=None):
-        # type: (Optional[str]) -> None
-        """This holds all data needed to control pagination from the user. 
+    def __init__(self, packages=None):
+        # type: (Optional[List[DataStorePackage_6d063591]]) -> None
+        """Skill use this interface to support functionality related to data store packages.
 
-        :param next_token: The page token, this should be passed as a &#x60;nextToken&#x60; query parameter to the API to retrieve more items. If this field is not present the end of all of the items was reached. If a &#x60;maxResults&#x60; query parameter was specified then no more than &#x60;maxResults&#x60; items are returned. 
-        :type next_token: (optional) str
+        :param packages: List of DataStore packages that the developer authored.
+        :type packages: (optional) list[ask_smapi_model.v1.skill.manifest.data_store_package.DataStorePackage]
         """
-        self.__discriminator_value = None  # type: str
+        self.__discriminator_value = "ALEXA_DATASTORE_PACKAGEMANAGER"  # type: str
 
-        self.next_token = next_token
+        self.object_type = self.__discriminator_value
+        super(AlexaDataStorePackageManagerInterface, self).__init__(object_type=self.__discriminator_value)
+        self.packages = packages
 
     def to_dict(self):
         # type: () -> Dict[str, object]
@@ -97,7 +103,7 @@ class PaginationContext(object):
     def __eq__(self, other):
         # type: (object) -> bool
         """Returns true if both objects are equal"""
-        if not isinstance(other, PaginationContext):
+        if not isinstance(other, AlexaDataStorePackageManagerInterface):
             return False
 
         return self.__dict__ == other.__dict__

@@ -15,6 +15,7 @@
 from __future__ import absolute_import
 
 from .event_name import EventName
+from .data_store_package import DataStorePackage
 from .skill_manifest_envelope import SkillManifestEnvelope
 from .alexa_search import AlexaSearch
 from .amazon_conversations_dialog_manager import AMAZONConversationsDialogManager
@@ -45,6 +46,7 @@ from .distribution_countries import DistributionCountries
 from .video_country_info import VideoCountryInfo
 from .custom_product_prompts import CustomProductPrompts
 from .display_interface_apml_version import DisplayInterfaceApmlVersion
+from .alexa_data_store_package_manager_interface import AlexaDataStorePackageManagerInterface
 from .event_name_type import EventNameType
 from .viewport_shape import ViewportShape
 from .dialog_management import DialogManagement
@@ -96,6 +98,7 @@ from .music_request import MusicRequest
 from .demand_response_apis import DemandResponseApis
 from .subscription_payment_frequency import SubscriptionPaymentFrequency
 from .manifest_version import ManifestVersion
+from .alexa_data_store_package_manager_implemented_interface import AlexaDataStorePackageManagerImplementedInterface
 from .tax_information import TaxInformation
 from .custom_task import CustomTask
 from .permission_name import PermissionName
