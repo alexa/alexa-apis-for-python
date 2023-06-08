@@ -14,7 +14,7 @@
 #
 from __future__ import absolute_import
 
-from .next_command_issued_request import NextCommandIssuedRequest
-from .previous_command_issued_request import PreviousCommandIssuedRequest
-from .play_command_issued_request import PlayCommandIssuedRequest
 from .pause_command_issued_request import PauseCommandIssuedRequest
+from .previous_command_issued_request import PreviousCommandIssuedRequest
+from .next_command_issued_request import NextCommandIssuedRequest
+from .play_command_issued_request import PlayCommandIssuedRequest

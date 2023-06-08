@@ -14,13 +14,13 @@
 #
 from __future__ import absolute_import
 
-from .authorize_attributes import AuthorizeAttributes
+from .provider_attributes import ProviderAttributes
 from .price import Price
 from .seller_order_attributes import SellerOrderAttributes
-from .provider_attributes import ProviderAttributes
+from .authorize_attributes import AuthorizeAttributes
 from .provider_credit import ProviderCredit
-from .billing_agreement_attributes import BillingAgreementAttributes
-from .base_amazon_pay_entity import BaseAmazonPayEntity
 from .payment_action import PaymentAction
+from .base_amazon_pay_entity import BaseAmazonPayEntity
 from .seller_billing_agreement_attributes import SellerBillingAgreementAttributes
 from .billing_agreement_type import BillingAgreementType
+from .billing_agreement_attributes import BillingAgreementAttributes

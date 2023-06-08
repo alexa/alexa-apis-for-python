@@ -14,7 +14,7 @@
 #
 from __future__ import absolute_import
 
-from .update_behavior import UpdateBehavior
 from .entity_list_item import EntityListItem
-from .entity_value_and_synonyms import EntityValueAndSynonyms
+from .update_behavior import UpdateBehavior
 from .entity import Entity
+from .entity_value_and_synonyms import EntityValueAndSynonyms

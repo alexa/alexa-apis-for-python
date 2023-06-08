@@ -14,7 +14,7 @@
 #
 from __future__ import absolute_import
 
-from .request import Request
-from .failure_response import FailureResponse
 from .success_response import SuccessResponse
+from .failure_response import FailureResponse
+from .request import Request
 from .base_response import BaseResponse

@@ -14,9 +14,9 @@
 #
 from __future__ import absolute_import
 
-from .ups_service_client import UpsServiceClient
-from .error_code import ErrorCode
-from .phone_number import PhoneNumber
-from .temperature_unit import TemperatureUnit
-from .distance_units import DistanceUnits
 from .error import Error
+from .distance_units import DistanceUnits
+from .temperature_unit import TemperatureUnit
+from .error_code import ErrorCode
+from .ups_service_client import UpsServiceClient
+from .phone_number import PhoneNumber

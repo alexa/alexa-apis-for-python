@@ -15,5 +15,5 @@
 from __future__ import absolute_import
 
 from .discrete_viewport_size import DiscreteViewportSize
-from .viewport_size import ViewportSize
 from .continuous_viewport_size import ContinuousViewportSize
+from .viewport_size import ViewportSize

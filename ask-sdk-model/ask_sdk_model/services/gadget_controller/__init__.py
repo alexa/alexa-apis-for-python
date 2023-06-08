@@ -14,7 +14,7 @@
 #
 from __future__ import absolute_import
 
-from .light_animation import LightAnimation
-from .set_light_parameters import SetLightParameters
-from .animation_step import AnimationStep
 from .trigger_event_type import TriggerEventType
+from .light_animation import LightAnimation
+from .animation_step import AnimationStep
+from .set_light_parameters import SetLightParameters
