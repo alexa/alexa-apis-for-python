@@ -14,6 +14,6 @@
 #
 from __future__ import absolute_import
 
-from .status import Status
 from .beta_test import BetaTest
 from .test_body import TestBody
+from .status import Status

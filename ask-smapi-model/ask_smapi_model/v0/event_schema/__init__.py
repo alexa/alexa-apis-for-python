@@ -14,13 +14,13 @@
 #
 from __future__ import absolute_import
 
+from .actor_attributes import ActorAttributes
+from .skill_event_attributes import SkillEventAttributes
+from .skill_review_event_attributes import SkillReviewEventAttributes
 from .interaction_model_event_attributes import InteractionModelEventAttributes
+from .subscription_attributes import SubscriptionAttributes
 from .base_schema import BaseSchema
 from .skill_review_attributes import SkillReviewAttributes
-from .skill_event_attributes import SkillEventAttributes
-from .interaction_model_attributes import InteractionModelAttributes
-from .skill_review_event_attributes import SkillReviewEventAttributes
 from .request_status import RequestStatus
-from .subscription_attributes import SubscriptionAttributes
+from .interaction_model_attributes import InteractionModelAttributes
 from .skill_attributes import SkillAttributes
-from .actor_attributes import ActorAttributes

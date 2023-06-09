@@ -14,12 +14,12 @@
 #
 from __future__ import absolute_import
 
-from .version_data import VersionData
-from .slot_type_update_object import SlotTypeUpdateObject
-from .slot_type_version_data_object import SlotTypeVersionDataObject
-from .list_slot_type_version_response import ListSlotTypeVersionResponse
-from .version_data_object import VersionDataObject
-from .slot_type_version_data import SlotTypeVersionData
 from .value_supplier_object import ValueSupplierObject
 from .slot_type_version_item import SlotTypeVersionItem
+from .slot_type_version_data import SlotTypeVersionData
+from .slot_type_update_object import SlotTypeUpdateObject
+from .version_data_object import VersionDataObject
+from .slot_type_version_data_object import SlotTypeVersionDataObject
+from .version_data import VersionData
+from .list_slot_type_version_response import ListSlotTypeVersionResponse
 from .slot_type_update import SlotTypeUpdate

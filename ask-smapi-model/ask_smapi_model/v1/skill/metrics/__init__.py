@@ -15,7 +15,7 @@
 from __future__ import absolute_import
 
 from .metric import Metric
-from .skill_type import SkillType
-from .get_metric_data_response import GetMetricDataResponse
-from .period import Period
 from .stage_for_metric import StageForMetric
+from .skill_type import SkillType
+from .period import Period
+from .get_metric_data_response import GetMetricDataResponse

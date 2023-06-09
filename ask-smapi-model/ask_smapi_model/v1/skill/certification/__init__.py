@@ -15,12 +15,12 @@
 from __future__ import absolute_import
 
 from .certification_response import CertificationResponse
-from .estimation_update import EstimationUpdate
-from .certification_result import CertificationResult
-from .review_tracking_info import ReviewTrackingInfo
 from .list_certifications_response import ListCertificationsResponse
+from .estimation_update import EstimationUpdate
+from .review_tracking_info import ReviewTrackingInfo
+from .distribution_info import DistributionInfo
+from .review_tracking_info_summary import ReviewTrackingInfoSummary
 from .publication_failure import PublicationFailure
+from .certification_result import CertificationResult
 from .certification_summary import CertificationSummary
 from .certification_status import CertificationStatus
-from .review_tracking_info_summary import ReviewTrackingInfoSummary
-from .distribution_info import DistributionInfo
