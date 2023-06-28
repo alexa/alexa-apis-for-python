@@ -65,6 +65,8 @@ class Directive(object):
         |
         | Alexa.Presentation.HTML.Start: :py:class:`ask_sdk_model.interfaces.alexa.presentation.html.start_directive.StartDirective`,
         |
+        | Alexa.SmartVision.SnapshotProvider.GetSnapshotDirective: :py:class:`ask_sdk_model.interfaces.alexa.smartvision.snapshotprovider.get_snapshot_directive.GetSnapshotDirective`,
+        |
         | AudioPlayer.Stop: :py:class:`ask_sdk_model.interfaces.audioplayer.stop_directive.StopDirective`,
         |
         | Dialog.ConfirmSlot: :py:class:`ask_sdk_model.dialog.confirm_slot_directive.ConfirmSlotDirective`,
@@ -130,6 +132,7 @@ class Directive(object):
         'Alexa.Presentation.APLA.RenderDocument': 'ask_sdk_model.interfaces.alexa.presentation.apla.render_document_directive.RenderDocumentDirective',
         'Dialog.ElicitSlot': 'ask_sdk_model.dialog.elicit_slot_directive.ElicitSlotDirective',
         'Alexa.Presentation.HTML.Start': 'ask_sdk_model.interfaces.alexa.presentation.html.start_directive.StartDirective',
+        'Alexa.SmartVision.SnapshotProvider.GetSnapshotDirective': 'ask_sdk_model.interfaces.alexa.smartvision.snapshotprovider.get_snapshot_directive.GetSnapshotDirective',
         'AudioPlayer.Stop': 'ask_sdk_model.interfaces.audioplayer.stop_directive.StopDirective',
         'Dialog.ConfirmSlot': 'ask_sdk_model.dialog.confirm_slot_directive.ConfirmSlotDirective',
         'AudioPlayer.Play': 'ask_sdk_model.interfaces.audioplayer.play_directive.PlayDirective',
