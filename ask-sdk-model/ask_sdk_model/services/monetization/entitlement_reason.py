@@ -27,15 +27,16 @@ if typing.TYPE_CHECKING:
 
 class EntitlementReason(Enum):
     """
-    Reason for the entitlement status. * &#39;PURCHASED&#39; - The user is entitled to the product because they purchased it. * &#39;NOT_PURCHASED&#39; - The user is not entitled to the product because they have not purchased it. * &#39;AUTO_ENTITLED&#39; - The user is auto entitled to the product because they have subscribed to a broader service.
+    Reason for the entitlement status. * &#39;PURCHASED&#39; - The user is entitled to the product because they purchased it directly. * &#39;NOT_PURCHASED&#39; - The user is not entitled to the product because they have not purchased it. * &#39;AUTO_ENTITLED&#39; - The user is auto entitled to the product because they have subscribed to a broader service. * &#39;BUNDLE_ENTITLED&#39; - The user is entitled to the product because they purchased it indirectly as part of a bundle. If the user is entitled via both PURCHASED and BUNDLE_ENTITLED, then BUNDLE_ENTITLED takes priority.
 
 
 
-    Allowed enum values: [PURCHASED, NOT_PURCHASED, AUTO_ENTITLED]
+    Allowed enum values: [PURCHASED, NOT_PURCHASED, AUTO_ENTITLED, BUNDLE_ENTITLED]
     """
     PURCHASED = "PURCHASED"
     NOT_PURCHASED = "NOT_PURCHASED"
     AUTO_ENTITLED = "AUTO_ENTITLED"
+    BUNDLE_ENTITLED = "BUNDLE_ENTITLED"
 
     def to_dict(self):
         # type: () -> Dict[str, Any]
