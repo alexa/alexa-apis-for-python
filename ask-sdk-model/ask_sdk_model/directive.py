@@ -55,6 +55,8 @@ class Directive(object):
         |
         | Dialog.ConfirmIntent: :py:class:`ask_sdk_model.dialog.confirm_intent_directive.ConfirmIntentDirective`,
         |
+        | Alexa.Advertisement.InjectAds: :py:class:`ask_sdk_model.interfaces.alexa.advertisement.inject_ads.InjectAds`,
+        |
         | CustomInterfaceController.SendDirective: :py:class:`ask_sdk_model.interfaces.custom_interface_controller.send_directive_directive.SendDirectiveDirective`,
         |
         | Alexa.Presentation.HTML.HandleMessage: :py:class:`ask_sdk_model.interfaces.alexa.presentation.html.handle_message_directive.HandleMessageDirective`,
@@ -127,6 +129,7 @@ class Directive(object):
         'Alexa.Presentation.APL.SendIndexListData': 'ask_sdk_model.interfaces.alexa.presentation.apl.send_index_list_data_directive.SendIndexListDataDirective',
         'Dialog.Delegate': 'ask_sdk_model.dialog.delegate_directive.DelegateDirective',
         'Dialog.ConfirmIntent': 'ask_sdk_model.dialog.confirm_intent_directive.ConfirmIntentDirective',
+        'Alexa.Advertisement.InjectAds': 'ask_sdk_model.interfaces.alexa.advertisement.inject_ads.InjectAds',
         'CustomInterfaceController.SendDirective': 'ask_sdk_model.interfaces.custom_interface_controller.send_directive_directive.SendDirectiveDirective',
         'Alexa.Presentation.HTML.HandleMessage': 'ask_sdk_model.interfaces.alexa.presentation.html.handle_message_directive.HandleMessageDirective',
         'Alexa.Presentation.APLA.RenderDocument': 'ask_sdk_model.interfaces.alexa.presentation.apla.render_document_directive.RenderDocumentDirective',

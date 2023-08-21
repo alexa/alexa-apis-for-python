@@ -45,6 +45,8 @@ class Request(object):
         This is an abstract class. Use the following mapping, to figure out
         the model class to be instantiated, that sets ``type`` variable.
 
+        | Alexa.Advertisement.AdNotRendered: :py:class:`ask_sdk_model.interfaces.alexa.advertisement.ad_not_rendered.AdNotRendered`,
+        |
         | Alexa.DataStore.PackageManager.InstallationError: :py:class:`ask_sdk_model.interfaces.alexa.datastore.packagemanager.installation_error.InstallationError`,
         |
         | AlexaSkillEvent.SkillEnabled: :py:class:`ask_sdk_model.events.skillevents.skill_enabled_request.SkillEnabledRequest`,
@@ -83,6 +85,8 @@ class Request(object):
         |
         | Alexa.Presentation.APLT.UserEvent: :py:class:`ask_sdk_model.interfaces.alexa.presentation.aplt.user_event.UserEvent`,
         |
+        | Alexa.Advertisement.ReadyToEnqueueAudio: :py:class:`ask_sdk_model.interfaces.alexa.advertisement.ready_to_enqueue_audio.ReadyToEnqueueAudio`,
+        |
         | AlexaHouseholdListEvent.ItemsUpdated: :py:class:`ask_sdk_model.services.list_management.list_items_updated_event_request.ListItemsUpdatedEventRequest`,
         |
         | AlexaHouseholdListEvent.ListCreated: :py:class:`ask_sdk_model.services.list_management.list_created_event_request.ListCreatedEventRequest`,
@@ -118,6 +122,8 @@ class Request(object):
         | AlexaSkillEvent.SkillPermissionChanged: :py:class:`ask_sdk_model.events.skillevents.permission_changed_request.PermissionChangedRequest`,
         |
         | Reminders.ReminderUpdated: :py:class:`ask_sdk_model.services.reminder_management.reminder_updated_event_request.ReminderUpdatedEventRequest`,
+        |
+        | Alexa.Advertisement.AdCompleted: :py:class:`ask_sdk_model.interfaces.alexa.advertisement.ad_completed.AdCompleted`,
         |
         | Alexa.DataStore.PackageManager.UpdateRequest: :py:class:`ask_sdk_model.interfaces.alexa.datastore.packagemanager.update_request.UpdateRequest`,
         |
@@ -174,6 +180,7 @@ class Request(object):
     supports_multiple_types = False
 
     discriminator_value_class_map = {
+        'Alexa.Advertisement.AdNotRendered': 'ask_sdk_model.interfaces.alexa.advertisement.ad_not_rendered.AdNotRendered',
         'Alexa.DataStore.PackageManager.InstallationError': 'ask_sdk_model.interfaces.alexa.datastore.packagemanager.installation_error.InstallationError',
         'AlexaSkillEvent.SkillEnabled': 'ask_sdk_model.events.skillevents.skill_enabled_request.SkillEnabledRequest',
         'AlexaHouseholdListEvent.ListUpdated': 'ask_sdk_model.services.list_management.list_updated_event_request.ListUpdatedEventRequest',
@@ -193,6 +200,7 @@ class Request(object):
         'Alexa.Authorization.Grant': 'ask_sdk_model.authorization.authorization_grant_request.AuthorizationGrantRequest',
         'Reminders.ReminderCreated': 'ask_sdk_model.services.reminder_management.reminder_created_event_request.ReminderCreatedEventRequest',
         'Alexa.Presentation.APLT.UserEvent': 'ask_sdk_model.interfaces.alexa.presentation.aplt.user_event.UserEvent',
+        'Alexa.Advertisement.ReadyToEnqueueAudio': 'ask_sdk_model.interfaces.alexa.advertisement.ready_to_enqueue_audio.ReadyToEnqueueAudio',
         'AlexaHouseholdListEvent.ItemsUpdated': 'ask_sdk_model.services.list_management.list_items_updated_event_request.ListItemsUpdatedEventRequest',
         'AlexaHouseholdListEvent.ListCreated': 'ask_sdk_model.services.list_management.list_created_event_request.ListCreatedEventRequest',
         'AudioPlayer.PlaybackStarted': 'ask_sdk_model.interfaces.audioplayer.playback_started_request.PlaybackStartedRequest',
@@ -211,6 +219,7 @@ class Request(object):
         'Display.ElementSelected': 'ask_sdk_model.interfaces.display.element_selected_request.ElementSelectedRequest',
         'AlexaSkillEvent.SkillPermissionChanged': 'ask_sdk_model.events.skillevents.permission_changed_request.PermissionChangedRequest',
         'Reminders.ReminderUpdated': 'ask_sdk_model.services.reminder_management.reminder_updated_event_request.ReminderUpdatedEventRequest',
+        'Alexa.Advertisement.AdCompleted': 'ask_sdk_model.interfaces.alexa.advertisement.ad_completed.AdCompleted',
         'Alexa.DataStore.PackageManager.UpdateRequest': 'ask_sdk_model.interfaces.alexa.datastore.packagemanager.update_request.UpdateRequest',
         'Alexa.Presentation.APL.RuntimeError': 'ask_sdk_model.interfaces.alexa.presentation.apl.runtime_error_event.RuntimeErrorEvent',
         'Alexa.Presentation.HTML.RuntimeError': 'ask_sdk_model.interfaces.alexa.presentation.html.runtime_error_request.RuntimeErrorRequest',
