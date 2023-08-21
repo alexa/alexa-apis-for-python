@@ -428,3 +428,9 @@ General bug fixes and updates
 ~~~~~~
 
 General bug fixes and updates
+
+
+1.36.0
+~~~~~~
+
+General bug fixes and updates
